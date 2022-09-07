@@ -109,7 +109,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -209,7 +209,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -281,7 +281,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -289,7 +289,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/rules/"><span>Rule library</span></a></li></ul></li>
       <li class="dd-item">
@@ -759,6 +759,8 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/resourceregistry/"><span>Resource Registry</span></a></li>
       <li class="dd-item">
+        <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/rrr/"><span>RRR</span></a></li>
+      <li class="dd-item">
         <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/xacml/"><span>XACML</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/solution/altinn-platform/events/"><span>Events</span></a></li>
@@ -1211,6 +1213,9 @@ This is work in progress
 <h3 id="altinn-policy-decision-point">Altinn Policy Decision Point</h3>
 <p>This is the core PDP responsible to evaluate if the user should get access to a given resource.</p>
 <p>Depends on Altinn Access Groups for groups information and Altinn Access Policies for policy information.</p>
+<h3 id="altinn-resource-rights-registry">Altinn Resource Rights Registry</h3>
+<p>A register that allows resource owner to control which organizations or person that can access a service resource.</p>
+<p><a href="https://github.com/Altinn/altinn-authorization/issues/53">Github Issue</a></p>
 <ul class="children children-li js-moveChildrenFrom">
 
 	
@@ -1244,6 +1249,9 @@ This is work in progress
 				</li><li>
 				<a href="/technology/architecture/components/application/solution/altinn-platform/authorization/resourceregistry/">Resource Registry</a>
 				<p>The Resource Registry</p>
+				</li><li>
+				<a href="/technology/architecture/components/application/solution/altinn-platform/authorization/rrr/">Resource Rights Registry</a>
+				<p>The Resource Rights Registry gives the administrator of a Resource in Resource Registry the capability to administrate which organizations and persons can access their resources.</p>
 				</li><li>
 				<a href="/technology/architecture/components/application/solution/altinn-platform/authorization/xacml/">XACML - Altinn Studio</a>
 				<p>XACML stands for &#34;eXtensible Access Control Markup Language&#34;.</p>

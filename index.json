@@ -1634,7 +1634,7 @@
 	"uri": "https://docs.altinn.studio/technology/solutions/altinn-apps/",
 	"title": "Altinn Apps",
 	"tags": ["solution", "apps"],
-	"description": "Altinn Apps is a flexible, scalable and isolated hosting solution where apps created in Altinn Studio is deployed.",
+	"description": "Altinn Apps is a flexible and scalable infrastructure for containerized applications created in Altinn Studio.",
 	"content": "The applications has a web native architecture and is deployed to Kubernetes Clusters as docker containers.\nThe Kubernetes clusters are isolated between the different applications owners and hosted in a public cloud solution making it highly scalable.\nApp\rDescription of the app created in Altinn Studio and that is deployed to Altinn Apps.\n"
 },
 {
@@ -3777,7 +3777,7 @@
 	"title": "Solutions",
 	"tags": [],
 	"description": "The latest generation Altinn platform consist of serveral solutions.",
-	"content": "\nAltinn ReStorage\rAltinn ReStorage is a comand line application that can be used by operators to recover and restore data from Altinn Platform Storage.\nAltinn Apps\rAltinn Apps is a flexible, scalable and isolated hosting solution where apps created in Altinn Studio is deployed.\nAltinn CLI\rAltinn CLI is a command line application that can be used by app owners to access Altinn APIs.\nAltinn Platform\rAltinn Platform contains components with central functionality that can be used by apps. Currently, this is storage, authentication, authorization, profile, register, receipt, pdf and events.\nAltinn Studio\rAltinn Studio is the design-time solution for developing, maintaining, building and deploying applications. Applications created can target both simple and complex user scenarios and have a modern web native architecture.\n"
+	"content": "\nAltinn ReStorage\rAltinn ReStorage is a comand line application that can be used by operators to recover and restore data from Altinn Platform Storage.\nAltinn Apps\rAltinn Apps is a flexible and scalable infrastructure for containerized applications created in Altinn Studio.\nAltinn CLI\rAltinn CLI is a command line application that can be used by app owners to access Altinn APIs.\nAltinn Platform\rAltinn Platform contains components with central functionality that can be used by apps. Currently, this is storage, authentication, authorization, profile, register, receipt, pdf and events.\nAltinn Studio\rAltinn Studio is the design-time solution for developing, maintaining, building and deploying applications. Applications created can target both simple and complex user scenarios and have a modern web native architecture.\n"
 },
 {
 	"uri": "https://docs.altinn.studio/tags/sporvalg/",

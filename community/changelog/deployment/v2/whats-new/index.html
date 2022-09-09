@@ -117,7 +117,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -217,7 +217,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -289,7 +289,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -297,7 +297,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/rules/"><span>Rule library</span></a></li></ul></li>
       <li class="dd-item">
@@ -1114,15 +1114,39 @@ if(host != "localhost")
           </div><div id="body-inner"><h1 class="a-fontBold">What&#39;s new</h1>
               <p class="a-leadText" id="leadText">Overview of changes introduced in v2 of deployment.</p><h2>On this page:</h2><nav id="TableOfContents">
   <ul>
+    <li><a href="#230">2.3.0</a></li>
+    <li><a href="#220">2.2.0</a></li>
     <li><a href="#210">2.1.0</a></li>
     <li><a href="#200">2.0.0</a></li>
   </ul>
-</nav><h2 id="210">2.1.0</h2>
+</nav><h2 id="230">2.3.0</h2>
+<h3 id="changes-introduced">Changes introduced</h3>
+<ul>
+<li>Upgraded HorizontalPodAutoscaler from version <em>autoscaling/v2beta2</em> to <em>autoscaling/v2</em></li>
+</ul>
+<div class="notices warning" >
+autoscaling/v2beta2 is deprecated in version 1.23+ of kubernetes and removed in version 1.26+
+Apps clusters will eventually be upgraded and deployment of apps using old chart versions will fail once cluster is upgraded to version 1.26+. 
+<p><a href="https://docs.microsoft.com/en-us/azure/aks/supported-kubernetes-versions?tabs=azure-cli#aks-kubernetes-release-calendar">AKS release calendar</a></p>
+</div>
+<p><a href="https://github.com/Altinn/altinn-studio-charts/releases/tag/deployment-2.3.0">View release on Github</a></p>
+<h2 id="220">2.2.0</h2>
+<h3 id="changes-introduced-1">Changes introduced</h3>
+<ul>
+<li>Make it possible to at custom annotations to pods in values.yaml</li>
+</ul>
+<h3 id="how-to-add-pod-annotations-in-valuesyaml">How to add pod annotations in values.yaml</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">deployment</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">podAnnotations</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">key1</span>: value1
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">key2</span>: value2
+</span></span></code></pre></div><p><a href="https://github.com/Altinn/altinn-studio-charts/releases/tag/deployment-2.2.0">View release on Github</a></p>
+<h2 id="210">2.1.0</h2>
 <div class="notices warning" >
 Enabling of liveness and/or readiness probe requires that your application is running 
 version 4.30.0 or higher of the Altinn.App.* nuget packages.
 </div>
-<h3 id="changes-introduced">Changes introduced</h3>
+<h3 id="changes-introduced-2">Changes introduced</h3>
 <ul>
 <li>Default CPU og memory requested per pod is reduced to 50m and 128Mi, respectively.</li>
 <li>Configurable liveness and readiness probes are available. Default behavior is that this is disabled.</li>
@@ -1174,12 +1198,13 @@ version 4.30.0 or higher of the Altinn.App.* nuget packages.
 <p><strong>12.</strong> Number of seconds after the container has started before liveness probes are initiated.</p>
 <p><strong>13.</strong> Minimum consecutive failures for the probe to be considered failed after having succeeded.</p>
 <p><strong>14.</strong> How often (in seconds) to perform the probe</p>
+<p><a href="https://github.com/Altinn/altinn-studio-charts/releases/tag/deployment-2.1.0">View release on Github</a></p>
 <h2 id="200">2.0.0</h2>
 <div class="notices warning" >
 Upgrading to 2.0.0 from 1.x.x leads to a short downtime during deployment. Subsequent deployments will run as normal.
 </div>
 <p>If your apps <em>deployment</em> folder contains the <em>templates</em> folder please follow the <a href="../../migration">migration guide</a>.</p>
-<h3 id="changes-introduced-1">Changes introduced</h3>
+<h3 id="changes-introduced-3">Changes introduced</h3>
 <ul>
 <li>Deployment renamed to <old-name>-v2 due to changes in selector fields (field is immutable) <em><strong>WARNING</strong></em> leads to downtime during first deploy</li>
 <li>Add resource requests to all deployments</li>
@@ -1234,6 +1259,7 @@ Upgrading to 2.0.0 from 1.x.x leads to a short downtime during deployment. Subse
 <p><strong>11.</strong> Number of seconds the average CPU utilization for all pods are below the threshold (avgCpuUtilization) before scaleDown starts.</p>
 <p><strong>14.</strong> CPU millicores reserved by the kubelet for each pod of this application. Used by HPA to calculate scale. Pods are allowed to consume more than this if it&rsquo;s available.</p>
 <p><strong>15.</strong> Memory reserved by the kubelet for each pod of this application. Pods are allowed to consume more than this if it&rsquo;s available</p>
+<p><a href="https://github.com/Altinn/altinn-studio-charts/releases/tag/deployment-2.0.0">View release on Github</a></p>
 <h3 id="new-optional-field-without-default-values-available-in-valuesyaml">New optional field without default values available in values.yaml</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

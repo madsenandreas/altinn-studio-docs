@@ -379,7 +379,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/launched-apps/digdir/be-om-api-nokkel/"><span>Tilgang til REST API</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -564,15 +564,39 @@ if(host != "localhost")
           </div><div id="body-inner"><h1 class="a-fontBold">Hva er nytt</h1>
               <p class="a-leadText" id="leadText">Oversikt over endringer som ble introdusert i v2 av deployment.</p><h2>På denne siden:</h2><nav id="TableOfContents">
   <ul>
+    <li><a href="#230">2.3.0</a></li>
+    <li><a href="#220">2.2.0</a></li>
     <li><a href="#210">2.1.0</a></li>
     <li><a href="#200">2.0.0</a></li>
   </ul>
-</nav><h2 id="210">2.1.0</h2>
+</nav><h2 id="230">2.3.0</h2>
+<h3 id="endringer-innført">Endringer innført</h3>
+<ul>
+<li>Oppgrader HorizontalPodAutoscaler fra versjon <em>autoscaling/v2beta2</em> til <em>autoscaling/v2</em></li>
+</ul>
+<div class="notices warning" >
+autoscaling/v2beta2 er deprecated i versjon 1.23+ av kubernetes og blir fjernet i versjon 1.26+
+Apps kluster vil ettervert bli oppgradert og deployment av apps som bruker eldre versjoner vil feile når clustrene blir oppgradert til 1.26+
+<p><a href="https://docs.microsoft.com/en-us/azure/aks/supported-kubernetes-versions?tabs=azure-cli#aks-kubernetes-release-calendar">AKS release kalender</a></p>
+</div>
+<p><a href="https://github.com/Altinn/altinn-studio-charts/releases/tag/deployment-2.3.0">Se release på Github</a></p>
+<h2 id="220">2.2.0</h2>
+<h3 id="endringer-innført-1">Endringer innført</h3>
+<ul>
+<li>Muliggjør å sette pod annotasjoner i values.yaml</li>
+</ul>
+<h3 id="hvordan-sette-pod-annotasjoner-i-valuesyaml">Hvordan sette pod annotasjoner i values.yaml</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">deployment</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">podAnnotations</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">key1</span>: value1
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">key2</span>: value2
+</span></span></code></pre></div><p><a href="https://github.com/Altinn/altinn-studio-charts/releases/tag/deployment-2.2.0">Se release på Github</a></p>
+<h2 id="210">2.1.0</h2>
 <div class="notices warning" >
 Aktivering av liveness og/elelr readiness probe krever at applikasjonen din kjører 
 versjon 4.30.0 eller høyere av Altinn.App.* nugetpakkene.
 </div>
-<h3 id="endringer-innført">Endringer innført</h3>
+<h3 id="endringer-innført-2">Endringer innført</h3>
 <ul>
 <li>Default CPU og minne tilgjengeliggjort per pod er redusert til henholdsvis 50m og 128Mi.</li>
 <li>Konfigurerbar liveness og readiness probes er tilgjengelig. Default er at dette er disablet.</li>
@@ -625,6 +649,7 @@ versjon 4.30.0 eller høyere av Altinn.App.* nugetpakkene.
 <p><strong>13.</strong> Minimum antall påfølgende feil før livenessproben ansees som feilet.</p>
 <p><strong>13.</strong> Frekvens for livenessprobing</p>
 <p><strong>14.</strong> Hvor mange sekunder før livenessproben timer ut</p>
+<p><a href="https://github.com/Altinn/altinn-studio-charts/releases/tag/deployment-2.1.0">Se release på Github</a></p>
 <h2 id="200">2.0.0</h2>
 <div class="notices warning" >
 Oppgradering til 2.0.0 fra 1.x.x vil føre til en kort nedetid ved første deploy. Påfølgende deployments vil gå som normalt
@@ -709,6 +734,7 @@ Oppgradering til 2.0.0 fra 1.x.x vil føre til en kort nedetid ved første deplo
 <ul>
 <li><a href="https://github.com/Altinn/altinn-studio-charts/pull/3">Horizontal Pod Autoscaler (PR #3)</a></li>
 </ul>
+<p><a href="https://github.com/Altinn/altinn-studio-charts/releases/tag/deployment-2.3.0">Se release på Github</a></p>
 
 
 <footer class=" footline" ></footer>

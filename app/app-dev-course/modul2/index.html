@@ -1283,9 +1283,11 @@ Se en oversikt over andre tilbud i kommunen her.
 <li><a href="https://altinncdn.no/schemas/json/prefill/prefill.schema.v1.json">Available prefill sources</a></li>
 <li><a href="/app/development/data/prefill/#prefill-from-national-register-and-user-profile">Prefill from national register and user profile</a></li>
 <li><a href="/app/development/data/prefill/#custom-prefill">Custom prefill</a></li>
-<li><a href="../../../api/models/instance/#instanceowner">Description of the InstanceOwner object</a></li>
+<li><a href="../../../api/models/instance/#instanceowner">Description of the InstanceOwner object</a> - This is where the social security number can be found.
+In the code, the properties are referred to with an uppercase first letter, not lowercase as in this overview.</li>
 </ul>
 <h3 id="help-with-code-calculating-age-from-social-security-number">Help with code: Calculating age from social security number</h3>
+<p>This function calculates the age from the social security number. It is important to add <code>using System;</code> to the top of the file in order to make it work.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">private</span> <span style="color:#ff79c6">static</span> <span style="color:#8be9fd">int</span> CalculateAge(<span style="color:#8be9fd">string</span> sosialSecNumber)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> MAX_D_NUMBER = <span style="color:#bd93f9">71</span>;

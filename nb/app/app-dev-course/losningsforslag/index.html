@@ -379,7 +379,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/launched-apps/digdir/be-om-api-nokkel/"><span>Tilgang til REST API</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -568,7 +568,7 @@ if(host != "localhost")
     <li><a href="#modul-1---forståelsessjekk-redigere-tekster">Modul 1 - Forståelsessjekk: Redigere tekster</a></li>
     <li><a href="#modul-2---forståelsessjekk-legge-til-infoside">Modul 2 - Forståelsessjekk: Legge til infoside</a></li>
     <li><a href="#modul-2---forståelsessjekk-alternativ-arbeidsflyt">Modul 2 - Forståelsessjekk: Alternativ arbeidsflyt</a></li>
-    <li><a href="#modul-2---forståelsessjekk-preutfylling-av-personopplysninger">Modul 2 - Forståelsessjekk: Preutfylling av personopplysninger</a></li>
+    <li><a href="#modul-2---forståelsessjekk-forhåndsutfylling-av-personopplysninger">Modul 2 - Forståelsessjekk: Forhåndsutfylling av personopplysninger</a></li>
     <li><a href="#modul-3---forståelsessjekk-deploye-applikasjon">Modul 3 - Forståelsessjekk: Deploye applikasjon</a></li>
     <li><a href="#modul-4---forståelsesssjekk-innsamling-av-arbeidsopplysninger">Modul 4 - Forståelsesssjekk: Innsamling av arbeidsopplysninger</a></li>
     <li><a href="#modul-4---forståelsesssjekk-differensiert-datagrunnlag-for-offentlig-og-privat-sektor">Modul 4 - Forståelsesssjekk: Differensiert datagrunnlag for offentlig og privat sektor</a></li>
@@ -592,15 +592,15 @@ if(host != "localhost")
 <h2 id="modul-1---forståelsessjekk-laste-opp-datamodell">Modul 1 - Forståelsessjekk: Laste opp datamodell</h2>
 <h3 id="hvilken-data-er-det-tjenesteeier-ønsker-å-samle-inn-her">Hvilken data er det tjenesteeier ønsker å samle inn her?</h3>
 <p>Datamodellen består av ett hovedelement: innflytter.
-Dette elementet består igjen av en del underobjekter som_Fornavn_, <em>Etternavn</em>, og <em>Mellomnavn</em>. I tillegg er det noen sammensatte elementer som <em>Adresse</em>,<em>Kontaktinformasjon</em> og <em>Arbeidsinformasjon</em>.</p>
+Dette elementet består igjen av en del underobjekter som_Fornavn_, <em>Etternavn</em>, og <em>Mellomnavn</em>. I tillegg er det noen sammensatte elementer som <em>Adresse</em>, <em>Kontaktinformasjon</em> og <em>Arbeidsinformasjon</em>.</p>
 <h3 id="hvilken-effekt-har-minoccurs-i-datamodellen-du-vil-se-at-feltet-har-ulik-verdi-for-_inflytterfornavn_-og-_inflyttermellomnavn_">Hvilken effekt har <strong>&lt;minOccurs&gt;</strong> i datamodellen? Du vil se at feltet har ulik verdi for <em>Inflytter.Fornavn</em> og <em>Inflytter.Mellomnavn</em></h3>
-<p>minOccurs_ sier noe om hvor mange ganger objektet minst må ære nevnt.</p>
-<p><code>minOccurs = 0</code> vil si at feltet ikke er påkrevd,
-<code>minOccurs=1</code> vil si at man forventer at det dukker oppminumum én gang i modellen.</p>
+<p>minOccurs_ sier noe om hvor mange ganger objektet minst må være nevnt.</p>
+<p><code>minOccurs=0</code> vil si at feltet ikke er påkrevd,
+<code>minOccurs=1</code> vil si at man forventer at det dukker opp minumum én gang i modellen.</p>
 <h3 id="hvilke-andre-egenskaper-er-satt-på-feltet-_innflyttermellomnavn_">Hvilke andre egenskaper er satt på feltet <em>Innflytter.Mellomnavn</em>?</h3>
-<p><code>nilable=true</code> er definert på mellomnavn-feltet. Det vil si at det er tillatt med en nullverdi på mellomnavn.</p>
+<p><code>nillable=true</code> er definert på mellomnavn-feltet. Det vil si at det er tillatt med en nullverdi på mellomnavn.</p>
 <h3 id="det-er-blitt-generert-en-_c_-_metadatajson_-og-_schemajson_-fil-i-tillegg-til-_xsd_-filen-som-du-lastet-opp-hva-er-sammenhengen-mellom-disse-filene">Det er blitt generert en <em>.C#</em>, <em>.metadata.json</em> og <em>.schema.json</em> fil i tillegg til <em>.xsd</em> filen som du lastet opp. Hva er sammenhengen mellom disse filene?</h3>
-<p>De nevnte filene er alle generert ut ifra xsd-beskrivelsen av datamodellen. De beskriver alle dataen og datafeltenes egenskaper. Alle egenskaper er ikke overført i alle filene nødvendigvis, men summen av dem skal opprettholde det som er beskrevet i xsd-filen.</p>
+<p>De nevnte filene er alle generert ut ifra xsd-beskrivelsen av datamodellen. De beskriver all dataen og datafeltenes egenskaper. Alle egenskaper er ikke nødvendigvis overført i alle filene, men summen av dem skal opprettholde det som er beskrevet i xsd-filen.</p>
 <ul>
 <li>C#-modellen benyttes av app backend til å deserialisere dataen og gjøre den tilgjengelig for prosessering og validering.</li>
 <li>.metadata.json benyttes i Altinn Studio for å enkelt kunne koble komponenter og dynamikk til datafeltene.</li>
@@ -609,8 +609,8 @@ Dette elementet består igjen av en del underobjekter som_Fornavn_, <em>Etternav
 <h3 id="enkelte-restriksjoner-fra-datamodellen-overføres-ikke-til-_c_-filen-hvilke-det-er-og-lagt-til-nye-egenskaper-hvilke">Enkelte restriksjoner fra datamodellen overføres ikke til <em>C#</em>-filen, hvilke? Det er og lagt til nye egenskaper, hvilke?</h3>
 <ul>
 <li><code>minOccurs</code>, <code>maxOccurs</code> er ikke overført til modellen.</li>
-<li><code>nillable</code> er kun overført på enkelte typer som f.eks <em>decimal</em>.</li>
-<li><code>XmlElement.Order</code> er innført som en dekorasjon på hver property.
+<li><code>nillable</code> er kun overført på enkelte typer som f.eks. <em>decimal</em>.</li>
+<li><code>XmlElement.Order</code> er innført som en dekorasjon på hver egenskap.
 <ul>
 <li>Dette sørger for at rekkefølgen på elementene alltid vil bli den samme når dataen serialiseres til xml.</li>
 </ul>
@@ -618,12 +618,12 @@ Dette elementet består igjen av en del underobjekter som_Fornavn_, <em>Etternav
 </ul>
 <h2 id="modul-1---forståelsessjekk-sette-opp-komponenter">Modul 1 - Forståelsessjekk: Sette opp komponenter</h2>
 <h3 id="finner-du-igjen-komponenten-som-er-koblet-til-e-post-feltet">Finner du igjen komponenten som er koblet til e-post-feltet?</h3>
-<p>Det er flere måter å finne igjen et felt i <em>FormLayout.json</em>.
-Raskeste veien til mål er ofte å søke etter navnet på feltet som komponenten er koblet til. Dette finner du under dataModelBindigs.</p>
+<p>Det er flere måter å finne igjen et felt i <em>FormLayout.json</em> på.
+Raskeste veien til mål er ofte å søke etter navnet på feltet som komponenten er koblet til. Dette finner du under <code>dataModelBindings</code>.</p>
 <p><img src="/app/app-dev-course/losningsforslag/epost-i-formlayout.png" alt="e-Post i formlayout"></p>
 <h3 id="hvilken-endring-kreves-i-denne-filen-dersom-e-post-feltet-ikke-lenger-skal-være-påkrevd">Hvilken endring kreves i denne filen dersom e-post-feltet ikke lenger skal være påkrevd?</h3>
-<p>For å gjøre et felt valgfritt kan man endre &ldquo;required=true&rdquo; til &ldquo;required=false&rdquo;</p>
-<h3 id="ved-å-endre-én-linje-i-_formlayoutjson_-er-det-mulig-å-endre-komponenten-knyttet-til-mellomnavn-til-et-input-felt-for-et-langt-svar-hvilken-endring-kreves">Ved å endre én linje i <em>FormLayout.json</em> er det mulig å endre komponenten knyttet til mellomnavn til et input felt for et langt svar. Hvilken endring kreves?</h3>
+<p>For å gjøre et felt valgfritt, kan man endre <code>required=true</code> til <code>required=false</code>.</p>
+<h3 id="ved-å-endre-én-linje-i-_formlayoutjson_-er-det-mulig-å-endre-komponenten-knyttet-til-mellomnavn-til-et-inndatafelt-for-et-langt-svar-hvilken-endring-kreves">Ved å endre én linje i <em>FormLayout.json</em> er det mulig å endre komponenten knyttet til mellomnavn til et inndatafelt for et langt svar. Hvilken endring kreves?</h3>
 <p>Løsningen er å endre <code>type</code>-feltet fra <em>Input</em> til <em>TextArea</em>
 som vist nedenfor.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
@@ -637,24 +637,24 @@ som vist nedenfor.</p>
 </span></span><span style="display:flex;"><span>  },
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;required&#34;</span>: <span style="color:#ff79c6">true</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;readOnly&#34;</span>: <span style="color:#ff79c6">false</span>
-</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="modul-1---forståelsessjekk-redigere-tekster">Modul 1 - Forståelsessjekk: Redigere tekster</h2>
 <h3 id="hvordan-får-du-inn-engelsk-språkstøtte-i-applikasjonen">Hvordan får du inn engelsk språkstøtte i applikasjonen?</h3>
-<p>For alle nye repoer vil <em>resources.nb.json</em> autogenereresmappen <em>config/texts</em>.
-For å få støtte for engelsk i en applikasjon må file_resources.en.json_ opprettes.
-Merk at language popertyen øverst i filen må settes til <strong>en</strong>.</p>
+<p>For alle nye repoer vil <em>resources.nb.json</em> autogenereres i mappen <em>config/texts</em>.
+For å få støtte for engelsk i en applikasjon, må file_resources.en.json_ opprettes.
+Merk at <code>language</code>-egenskapen øverst i filen må settes til <strong>en</strong>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&#34;language&#34;</span>: <span style="color:#f1fa8c">&#34;en&#34;</span>,
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&#34;resources&#34;</span>: []
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;language&#34;</span>: <span style="color:#f1fa8c">&#34;en&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;resources&#34;</span>: []
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="hvis-vi-en-dag-skal-støtte-ukrainsk-hvilken-språkkode-vil-du-da-måtte-annotere-filen-med">Hvis vi en dag skal støtte Ukrainsk, hvilken språkkode vil du da måtte annotere filen med?</h3>
+</span></span></code></pre></div><h3 id="hvis-vi-en-dag-skal-støtte-ukrainsk-hvilken-språkkode-vil-du-da-måtte-annotere-filen-med">Hvis vi en dag skal støtte ukrainsk, hvilken språkkode vil du da måtte annotere filen med?</h3>
 <p>Ifølge <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">listen over ISO 639-1 koder</a> så er koden for ukrainsk <code>uk</code>.</p>
 <h3 id="hvis-en-tekstnøkkel-refert-til-i-formlayourjson-ikke-finnes-i-tekstressursene-hva-vil-vises-da">Hvis en tekstnøkkel refert til i FormLayour.json ikke finnes i tekstressursene, hva vil vises da?</h3>
-<p>Hvis nevnte tekstnøkkel ikke finnes i tekstressursfilen vil tekstnøkkelen vises i stedet.</p>
+<p>Hvis nevnte tekstnøkkel ikke finnes i tekstressursfilen, vil tekstnøkkelen vises i stedet.</p>
 <h2 id="modul-2---forståelsessjekk-legge-til-infoside">Modul 2 - Forståelsessjekk: Legge til infoside</h2>
 <h3 id="hvilken-fil-i-applikasjonsrepoet-er-det-som-må-justeres-på-dersom-du-manuelt-ønsker-å-endre-siderekkefølgen-på-eksisterende-sider">Hvilken fil i applikasjonsrepoet er det som må justeres på dersom du manuelt ønsker å endre siderekkefølgen på eksisterende sider?</h3>
-<p>I <code>App/ui/Settings.json</code> ligger siderekkefølgen beskrevet.</p>
-<p>For å justere på siderekkefølgen må listen beskrevet under <em>pages.order</em> endres til å representere ønsket siderekkefølge.</p>
+<p>I <code>App/ui/Settings.json</code> ligger siderekkefølgen beskrevet.
+For å justere på siderekkefølgen, må listen beskrevet under <em>pages.order</em> endres til å representere ønsket siderekkefølge.</p>
 <h3 id="hvis-du-ønsker-å-gi-en-side-et-annet-navn-men-ikke-har-altinn-studio-tilgjengelig-hvilke-filer-må-oppdateres-med-det-nye-filnavnet">Hvis du ønsker å gi en side et annet navn, men ikke har Altinn Studio tilgjengelig, hvilke filer må oppdateres med det nye filnavnet?</h3>
 <ul>
 <li><em>Settings.json</em>: endre navnet på siden under <em>pages.order</em></li>
@@ -663,19 +663,19 @@ Merk at language popertyen øverst i filen må settes til <strong>en</strong>.</
 <h3 id="hvordan-oppnår-du-at-teksten-bryter-dersom-tekststrengen-ikke-er-lang-nok-til-å-naturlig-brytes">Hvordan oppnår du at teksten bryter dersom tekststrengen ikke er lang nok til å naturlig brytes?</h3>
 <p>Alle tekstressurser støtter markdown og dermed html-notasjon, så ved å benytte <code>&lt;br/&gt;</code> vil man kunne tvinge tekstbrytning.</p>
 <h2 id="modul-2---forståelsessjekk-alternativ-arbeidsflyt">Modul 2 - Forståelsessjekk: Alternativ arbeidsflyt</h2>
-<h3 id="hvis-en-bruker-går-tilbake-og-endrer-svaret-sitt-på-infosiden-får-den-da-opp-datainnsamlingssidene-hvis-ikke-hvilke-endringer-kan-du-gjøre-for-å-støtte-dette-i-din-applikasjon">Hvis en bruker går tilbake og endrer svaret sitt på infosiden, får den da opp datainnsamlingssidene? Hvis ikke. Hvilke endringer kan du gjøre for å støtte dette i din applikasjon?</h3>
-<p>I <code>App/logic/App.cs</code> finnes metoden GetPageOrder. Denne kalles fra frontend når man forlater en komponent som har konfigurert <code>&quot;triggers&quot;: [&quot;calculatePageOrder&quot;]</code> i layout filen.</p>
+<h3 id="hvis-en-bruker-går-tilbake-og-endrer-svaret-sitt-på-infosiden-får-den-da-opp-datainnsamlingssidene-hvis-ikke-hvilke-endringer-kan-du-gjøre-for-å-støtte-dette-i-din-applikasjon">Hvis en bruker går tilbake og endrer svaret sitt på infosiden, får den da opp datainnsamlingssidene? Hvis ikke, hvilke endringer kan du gjøre for å støtte dette i din applikasjon?</h3>
+<p>I <code>App/logic/App.cs</code> finnes metoden GetPageOrder. Denne kalles fra frontend når man forlater en komponent som har konfigurert <code>&quot;triggers&quot;: [&quot;calculatePageOrder&quot;]</code> i layoutfilen.</p>
 <p>Se over løsningsforslaget for modulen for hvordan dette gjøres. Filer av interesse er <code>App/ui/layouts/info.json</code> og <code>App/logic/App.cs</code>.</p>
 <h3 id="dersom-man-har-sporvalg-på-et-senere-tidspunkt-i-en-arbeidsflyt-og-en-sluttbruker-endrer-et-valg-hva-skjer-med-skjemdataen-man-tidligere-har-fylt-ut-dersom-siden-skjules-for-sluttbrukeren">Dersom man har sporvalg på et senere tidspunkt i en arbeidsflyt og en sluttbruker endrer et valg. Hva skjer med skjemdataen man tidligere har fylt ut, dersom siden skjules for sluttbrukeren?</h3>
-<p>Dersom du har denne typen logikk i en applikasjon der man kan fortsette til innsending for flere spor bør dataen på siden(e) som nå blir skjult for bruker nullstilles.</p>
-<h2 id="modul-2---forståelsessjekk-preutfylling-av-personopplysninger">Modul 2 - Forståelsessjekk: Preutfylling av personopplysninger</h2>
-<h3 id="er-det-mulig-å-endre-en-prefillverdi-når-den-først-er-satt">Er det mulig å endre en prefillverdi når den først er satt?</h3>
-<p>Ja, dersom man ikke gjør noen endringer vil en standardkomponent med prefilldata være redigerbar.</p>
-<h3 id="hvordan-kan-man-hindre-at-en-prefillverdi-endres-av-sluttbrukeren">Hvordan kan man hindre at en prefillverdi endres av sluttbrukeren?</h3>
-<p>Komponenten kan settes til <em>readonly</em>. Alternativt kan man kjøre valideringer av dataen serverside for å verifisere at dataen i feltet matcher dataen fra prefillkilden. Dette kan gjøres i prosesserings eller valideringslogikken til applikasjonen.</p>
-<h3 id="ikke-alle-norske-innbyggere-har-et-personnr-noen-får-tildelt-et-d-nummerhttpsjusleksikonnowikifc3b8dselsnummerd-nummer-hvordan-må-koden-din-justeres-for-å-ta-hensyn-til-dette-dersom-alder-skal-baseres-på-et-f-nr-eller-d-nr-som-sluttbruker-selv-taster-inn">Ikke alle norske innbyggere har et personnr, noen får tildelt et <a href="https://jusleksikon.no/wiki/F%C3%B8dselsnummer#D-nummer">D-nummer</a>. Hvordan må koden din justeres for å ta hensyn til dette dersom alder skal baseres på et f-nr eller d-nr som sluttbruker selv taster inn?</h3>
-<pre tabindex="0"><code class="language-rich" data-lang="rich">Et D-nummer er ellevesifret, som ordinære fødselsnummer, og består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet: en person født 1. januar 1980 får dermed fødselsdato 410180, mens en som er født 31. januar 1980 får 710180.
-</code></pre><p>Én måte å gå fra et vilkårlig f- eller d-nummer til en streng for fødselsdato på formatet <code>dd-MM-yy</code> er:</p>
+<p>Dersom du har denne typen logikk i en applikasjon der man kan fortsette til innsending for flere spor, bør dataen på siden(e) som nå blir skjult for bruker nullstilles.</p>
+<h2 id="modul-2---forståelsessjekk-forhåndsutfylling-av-personopplysninger">Modul 2 - Forståelsessjekk: Forhåndsutfylling av personopplysninger</h2>
+<h3 id="er-det-mulig-å-endre-en-forhåndsutfylt-verdi-når-den-først-er-satt">Er det mulig å endre en forhåndsutfylt verdi når den først er satt?</h3>
+<p>Ja, dersom man ikke gjør noen endringer, vil en standardkomponent med forhåndsutfylt data være redigerbar.</p>
+<h3 id="hvordan-kan-man-hindre-at-en-forhåndsutfylt-verdi-endres-av-sluttbrukeren">Hvordan kan man hindre at en forhåndsutfylt verdi endres av sluttbrukeren?</h3>
+<p>Komponenten kan settes til <em>readonly</em>. Alternativt kan man kjøre valideringer av dataen på serversiden for å verifisere at dataen i feltet matcher dataen fra forhåndsutfyllingskilden. Dette kan gjøres i prosesserings- eller valideringslogikken til applikasjonen.</p>
+<h3 id="ikke-alle-norske-innbyggere-har-et-fødselsnummer-noen-får-tildelt-et-d-nummerhttpsjusleksikonnowikifc3b8dselsnummerd-nummer-hvordan-må-koden-din-justeres-for-å-ta-hensyn-til-dette-dersom-alder-skal-baseres-på-et-fødselsnummer-eller-d-nummer-som-sluttbruker-selv-taster-inn">Ikke alle norske innbyggere har et fødselsnummer, noen får tildelt et <a href="https://jusleksikon.no/wiki/F%C3%B8dselsnummer#D-nummer">D-nummer</a>. Hvordan må koden din justeres for å ta hensyn til dette dersom alder skal baseres på et fødselsnummer eller D-nummer som sluttbruker selv taster inn?</h3>
+<pre tabindex="0"><code class="language-rich" data-lang="rich">Et D-nummer er ellevesifret, som ordinære fødselsnummer, og består av en modifisert sekssifret fødselsdato og et femsifret personnummer. Fødselsdatoen modifiseres ved at det legges til 4 på det første sifferet: En person født 1. januar 1980 får dermed fødselsdato 410180, mens en som er født 31. januar 1980 får 710180.
+</code></pre><p>Én måte å gå fra et vilkårlig fødsels- eller d-nummer til en streng for fødselsdato på formatet <code>dd-MM-yy</code> på er:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">static</span> <span style="color:#8be9fd">string</span> GetDOB(<span style="color:#8be9fd">string</span> fOrDNumber){
 </span></span><span style="display:flex;"><span>  List&lt;<span style="color:#8be9fd">string</span>&gt; firstCharsInDNumber = <span style="color:#ff79c6">new</span>(){<span style="color:#f1fa8c">&#34;4&#34;</span>, <span style="color:#f1fa8c">&#34;5&#34;</span>, <span style="color:#f1fa8c">&#34;6&#34;</span>, <span style="color:#f1fa8c">&#34;7&#34;</span> };
 </span></span><span style="display:flex;"><span>
@@ -701,10 +701,10 @@ Merk at language popertyen øverst i filen må settes til <strong>en</strong>.</
 </span></span></code></pre></div><h2 id="modul-3---forståelsessjekk-deploye-applikasjon">Modul 3 - Forståelsessjekk: Deploye applikasjon</h2>
 <h3 id="er-det-mulig-å-ha-to-versjoner-av-en-applikasjon-i-tt02-samtidig">Er det mulig å ha to versjoner av en applikasjon i TT02 samtidig?</h3>
 <p>Nei, det er kun mulig å ha én versjon av applikasjonen ute i et miljø av gangen.
-Deployer man en annen versjon vil eksisterende versjon av applikasjonen overskrives.</p>
+Deployer man en annen versjon, vil eksisterende versjon av applikasjonen overskrives.</p>
 <h3 id="hva-skjer-hvis-man-deployer-samme-versjon-av-applikasjonen-til-miljøet-en-gang-til">Hva skjer hvis man deployer samme versjon av applikasjonen til miljøet en gang til?</h3>
 <p>Da vil alle operasjoner i forbindelse med deploy kjøres igjen.
-Man lagrer ressurstekster og annen metadata i Altinn Platform,
+Man lagrer ressurstekster og annen metadata i Altinn Plattform,
 og deploy pipeline for å rulle ut applikasjonen i clusteret vil og kjøre.</p>
 <p>Det vil dog ikke bli spunnet opp nye poder i forbindelse med dette da det ikke er noen reelle endringer på
 tjenesten som kjører i miljøet.</p>
@@ -716,23 +716,23 @@ Dersom status er grønn i Altinn Studio skal du kunne nå applikasjonen.</p>
 Da må man kontakte support.
 Det vil i løpet av året bli tilgjengeliggjort funksjonalitet for at tjenesteeier selv kan gjøre denne operasjonen.</p>
 <h2 id="modul-4---forståelsesssjekk-innsamling-av-arbeidsopplysninger">Modul 4 - Forståelsesssjekk: Innsamling av arbeidsopplysninger</h2>
-<h3 id="hva-er-forskjellen-på-statiske-og-dynamiske-options">Hva er forskjellen på statiske og dynamiske options?</h3>
-<p>Statiske options er definert <strong>build time</strong>, og vil, som navnet tilsier, være statiske under hele sin levetid.
-Dynamiske options hentes ut <strong>runtime</strong> og kan dermed hente verdi basert på tiden på døgnet eller andre dynamiske verdier.</p>
-<h3 id="hva-vil-være-et-bruksområde-for-sikrede-dynamiske-options">Hva vil være et bruksområde for sikrede dynamiske options?</h3>
-<p>Options er by default åpent tilgjengelige og API&rsquo;et vil være mulig å nå for personer som ikke er logget inn i appen. Det er heller ingen restriksjoner på roller eller annet.
-For enkelte caser så kan det tenkes at man ønsker å eksponere options som er sensitive. Her kommer sikrede dynamiske options til sin rett hvor man får automatisk verifisering at den som gjør kallet har <code>Instance.Read</code> rettigheter.</p>
+<h3 id="hva-er-forskjellen-på-statiske-og-dynamiske-svaralternativer">Hva er forskjellen på statiske og dynamiske svaralternativer?</h3>
+<p>Statiske svaralternativer er definert <strong>build time</strong>, og vil, som navnet tilsier, være statiske under hele sin levetid.
+Dynamiske svaralternativer hentes ut <strong>runtime</strong> og kan dermed hente verdi basert på tiden på døgnet eller andre dynamiske verdier.</p>
+<h3 id="hva-vil-være-et-bruksområde-for-sikrede-dynamiske-svaralternativer">Hva vil være et bruksområde for sikrede dynamiske svaralternativer?</h3>
+<p>Svaralternativer er som standard åpent tilgjengelige og API&rsquo;et vil være mulig å nå for personer som ikke er logget inn i appen. Det er heller ingen restriksjoner på roller eller annet.
+For enkelte tilfeller så kan det tenkes at man ønsker å eksponere svaralternativer som er sensitive. Her kommer sikrede dynamiske svaralternativer til sin rett ved at man får automatisk verifisering på at den som gjør kallet har <code>Instance.Read</code>-rettigheter.</p>
 <h2 id="modul-4---forståelsesssjekk-differensiert-datagrunnlag-for-offentlig-og-privat-sektor">Modul 4 - Forståelsesssjekk: Differensiert datagrunnlag for offentlig og privat sektor</h2>
-<h3 id="om-en-option-liste-er-satt-opp-med-en-mapping-mot-datamodellen---hva-skjer-når-det-aktuell-feltet-endrer-verdi">Om en option-liste er satt opp med en mapping mot datamodellen - hva skjer når det aktuell feltet endrer verdi?</h3>
-<p>Om et felt i mappingen oppdateres så vil app-frontend gjøre et nytt kall for å hente ut options-listen.
+<h3 id="om-en-kodeliste-er-satt-opp-med-en-mapping-mot-datamodellen-hva-skjer-når-det-aktuelle-feltet-endrer-verdi">Om en kodeliste er satt opp med en mapping mot datamodellen, hva skjer når det aktuelle feltet endrer verdi?</h3>
+<p>Om et felt i mappingen oppdateres, så vil app-frontend gjøre et nytt kall for å hente ut kodelisten.
 Dette muliggjør å dynamisk vise valg som er skreddersydd til brukerens tidligere utfylte data.</p>
-<h3 id="hva-skjer-med-valgt-verdi-på-et-felt-som-er-koblet-til-en-option-liste-som-hentes-på-nytt-fra-server-siden">Hva skjer med valgt verdi på et felt som er koblet til en option-liste som hentes på nytt fra server siden?</h3>
-<p>Om brukeren f.eks har valgt kommune fra en nedtrekksliste over kommuner som er satt opp med en mapping på <code>Fylke</code>, går tilbake og endrer feltet <code>Fylke</code> så vil det valgte svaret i kommune-listen bli fjernet.</p>
+<h3 id="hva-skjer-med-valgt-verdi-på-et-felt-som-er-koblet-til-en-kodeliste-som-hentes-på-nytt-fra-serversiden">Hva skjer med valgt verdi på et felt som er koblet til en kodeliste som hentes på nytt fra serversiden?</h3>
+<p>Om brukeren f.eks. har valgt kommune fra en nedtrekksliste over kommuner som er satt opp med en mapping på <code>Fylke</code>, går tilbake og endrer feltet <code>Fylke</code>, så vil det valgte svaret i kommunelisten bli fjernet.</p>
 <h2 id="modul-4---forståelsessjekk-skreddersydd-tilbud-for-it-kompetanse">Modul 4 - Forståelsessjekk: Skreddersydd tilbud for IT-kompetanse</h2>
-<h3 id="om-du-legger-til-en-ny-funksjon-i-rulehandlerhelper---hvor-kjøres-disse-funksjonene-vil-dynamikk-fungere-uten-denne-definert">Om du legger til en ny funksjon i <code>RuleHandlerHelper</code> - hvor kjøres disse funksjonene? Vil dynamikk fungere uten denne definert?</h3>
+<h3 id="om-du-legger-til-en-ny-funksjon-i-rulehandlerhelper-hvor-kjøres-disse-funksjonene-vil-dynamikk-fungere-uten-denne-definert">Om du legger til en ny funksjon i <code>RuleHandlerHelper</code>, hvor kjøres disse funksjonene? Vil dynamikk fungere uten denne definert?</h3>
 <p>Funksjoner definert i <code>RuleHandlerHelper.js</code> kjøres som støttefunksjoner når man kobler opp dynamikken i Altinn Studio.
-Dynamikk kan settes opp uten disse definert og vil fortsatt fungere om man har satt opp funksjonene i <code>RuleHanlderObject.js</code> og definisjonene ligger i <code>RuleConfiguration.json</code>.</p>
-<h3 id="om-du-legger-til-en-ny-funksjon-i-rulehandlerobject---hvor-kjøres-disse-funksjonene-vil-dynamikk-fungere-uten-denne-definert">Om du legger til en ny funksjon i <code>RuleHandlerObject</code> - hvor kjøres disse funksjonene? Vil dynamikk fungere uten denne definert?</h3>
+Dynamikk kan settes opp uten disse definert og vil fortsatt fungere om man har satt opp funksjonene i <code>RuleHanlderObject.js</code>, og definisjonene ligger i <code>RuleConfiguration.json</code>.</p>
+<h3 id="om-du-legger-til-en-ny-funksjon-i-rulehandlerobject-hvor-kjøres-disse-funksjonene-vil-dynamikk-fungere-uten-denne-definert">Om du legger til en ny funksjon i <code>RuleHandlerObject</code>, hvor kjøres disse funksjonene? Vil dynamikk fungere uten denne definert?</h3>
 <p>Funksjoner definert i <code>RuleHandlerObject.js</code> er faktisk dynamikk som lastes av app-frontend runtime og kjøres som en del av applikasjonsflyten som treffer sluttbruker.
 Dynamikk vil <strong>ikke</strong> fungere uten denne definert.</p>
 <h3 id="hva-er-sammenhengen-mellom-funksjoner-definert-i-rulehandlerobject-og-filen-ruleconfigurationjson">Hva er sammenhengen mellom funksjoner definert i <code>RuleHandlerObject</code> og filen <code>RuleConfiguration.json</code>?</h3>
@@ -741,40 +741,40 @@ En funksjon definert i <code>RuleHandlerObject</code> kan settes opp flere gange
 <h2 id="modul-5---forståelsessjekk-utvide-prosess-med-et-bekreftelsessteg">Modul 5 - Forståelsessjekk: Utvide prosess med et bekreftelsessteg</h2>
 <h3 id="hvilke-altinn-spesifikke-egenskaper-er-satt-på-hver-prosesstask">Hvilke Altinn-spesifikke egenskaper er satt på hver prosesstask?</h3>
 <p><code>altinn:tasktype</code> er definert for hver task.</p>
-<h3 id="hvilke-begrensninger-vil-en-ekstern-bpmn-editor-ha-når-man-skal-redigere-prosessbeskrivelsen-til-en-altinn-app">Hvilke begrensninger vil en ekstern BPMN editor ha når man skal redigere prosessbeskrivelsen til en Altinn App?</h3>
+<h3 id="hvilke-begrensninger-vil-et-eksternt-bpmn-redigeringsverktøy-ha-når-man-skal-redigere-prosessbeskrivelsen-til-en-altinn-app">Hvilke begrensninger vil et eksternt BPMN-redigeringsverktøy ha når man skal redigere prosessbeskrivelsen til en Altinn-app?</h3>
 <p>Altinn-spesifikke egenskaper vil trolig ikke bli importert eller eksportert når man jobber med modellen.</p>
 <h3 id="vil-prosessflyten-kunne-gå-begge-veier-fra-utfylling-til-bekreftelse-og-fra-bekreftelse-til-utfylling">Vil prosessflyten kunne gå begge veier? Fra utfylling til bekreftelse og fra bekreftelse til utfylling?</h3>
-<p><em>SequenceFlow</em> i bpmn-filen beskriver kun at flyten går én fei, fra utfylling og til bekreftelse. Flyten vil dermed ikke kunne gå begge veier.</p>
+<p><em>SequenceFlow</em> i bpmn-filen beskriver kun at flyten går én vei, fra utfylling og til bekreftelse. Flyten vil dermed ikke kunne gå begge veier.</p>
 <h2 id="modul-5---forståelsessjekk-legge-til-autorisasjonsregler-for-bekreftelsessteget">Modul 5 - Forståelsessjekk: Legge til autorisasjonsregler for bekreftelsessteget</h2>
-<h3 id="hva-vil-skje-når-prosessflyten-går-videre-til-bekreftelse-steget-uten-at-autoriasjonsreglene-er-blitt-oppdatert">Hva vil skje når prosessflyten går videre til bekreftelse-steget uten at autoriasjonsreglene er blitt oppdatert?</h3>
-<p>Applikasjonen vil vise &ldquo;Ukjent feil&rdquo; når brukeren trykker på send inn knappen.</p>
+<h3 id="hva-vil-skje-når-prosessflyten-går-videre-til-bekreftelsessteget-uten-at-autoriasjonsreglene-er-blitt-oppdatert">Hva vil skje når prosessflyten går videre til bekreftelsessteget uten at autoriasjonsreglene er blitt oppdatert?</h3>
+<p>Applikasjonen vil vise &ldquo;Ukjent feil&rdquo; når brukeren trykker på &ldquo;send inn&rdquo;-knappen.</p>
 <h3 id="hva-skjer-dersom-du-ikke-spesifiserer-hvilke-roller-som-har-lov-til-å-utføre-en-aksjon-i-en-autorisasjonsregel">Hva skjer dersom du ikke spesifiserer hvilke roller som har lov til å utføre en aksjon i en autorisasjonsregel?</h3>
-<p>Da vil alle brukere, både med og uten roller, har tilattelse til å utføre <em>confirm</em> operasjonen for applikasjonen.</p>
+<p>Da vil alle brukere, både med og uten roller, ha tilattelse til å utføre <em>confirm</em>-operasjonen for applikasjonen.</p>
 <h2 id="modul-5---forståelsessjekk-validering-av-innsender">Modul 5 - Forståelsessjekk: Validering av innsender</h2>
-<h3 id="hvilken-endring-ville-du-foreslått-for-kunden-for-å-kunne-oppfylle-dette-kravet-uten-å-legge-inn-egendefinerte-valideringen-på-dette-steget">Hvilken endring ville du foreslått for kunden for å kunne oppfylle dette kravet uten å legge inn egendefinerte valideringen på dette steget?</h3>
-<p>Ved å heller endere policy til at kun rollen <em>PRIV</em>. som kun delegeres til en privatperson på vegne av en selv, har tilattelse til aksjonen <em>confirm</em>
+<h3 id="hvilken-endring-ville-du-foreslått-for-kunden-for-å-kunne-oppfylle-dette-kravet-uten-å-legge-inn-den-egendefinerte-valideringen-på-dette-steget">Hvilken endring ville du foreslått for kunden for å kunne oppfylle dette kravet uten å legge inn den egendefinerte valideringen på dette steget?</h3>
+<p>Ved å heller endre policy til at kun rollen <em>PRIV</em> – som kun delegeres til en privatperson på vegne av en selv – har tilattelse til aksjonen <em>confirm</em>,
 vil autorisasjonsreglene gjøre sjekken som nå er lagt inn som egen validering automatisk.</p>
 <h2 id="modul-6---forståelsessjekk-repeterende-grupper">Modul 6 - Forståelsessjekk: Repeterende grupper</h2>
 <h3 id="hvilket-felt-i-datamodellen-er-det-som-bestemmer-om-et-element-er-repeterende">Hvilket felt i datamodellen er det som bestemmer om et element er repeterende?</h3>
-<p>Feltet <code>maxOccurs</code> i xsd-modellen sier noe om et felt er repeterende. Om <code>maxOccurs</code> &gt; 1 vil man i praksis se på dette elementet som en liste.</p>
+<p>Feltet <code>maxOccurs</code> i xsd-modellen sier noe om hvorvidt et felt er repeterende. Om <code>maxOccurs</code> &gt; 1 vil man i praksis se på dette elementet som en liste.</p>
 <h3 id="hvor-mange-repetisjoner-er-tillatt-for-feltet-tidligerebosteder">Hvor mange repetisjoner er tillatt for feltet <code>TidligereBosteder</code>?</h3>
 <p>Det er tillatt 10 repetisjoner for <code>TidligereBosteder</code>.</p>
 <h2 id="modul-6---forståelsessjekk-validering">Modul 6 - Forståelsessjekk: Validering</h2>
 <h3 id="når-kjøres-valideringer-serverside">Når kjøres valideringer serverside?</h3>
 <p>Valideringer på serversiden kjøres som standard kun i det brukeren velger å bevege seg videre fra et steg.
-Denne oppførselen kan overstyres, og det er mulig å trigge valideringer både på enkelte felter og f.eks ved sidebytte mellom ulike sider.</p>
+Denne oppførselen kan overstyres, og det er mulig å trigge valideringer både på enkelte felter og f.eks. ved sidebytte mellom ulike sider.</p>
 <h3 id="hvorfor-burde-valideringer-som-legges-til-på-klientsiden-også-dupliseres-serverside">Hvorfor burde valideringer som legges til på klientsiden også dupliseres serverside?</h3>
 <p>Klientside-valideringer bør anses som et hjelpemiddel for bedre bruksopplevelse og ikke som en garanti på at data leveres på riktig format.
-Ondsinnede kan komme seg forbi disse valideringene, og klientside-valideringer vil ikke bli kjørt om man f.eks benytter seg av api&rsquo;ene direkte.
+Ondsinnede kan komme seg forbi disse valideringene, og klientsidevalideringer vil ikke bli kjørt om man f.eks. benytter seg av api&rsquo;ene direkte.
 Derfor bør valideringer som legges på frontend alltid gjenspeiles i logikken backend.</p>
 <h2 id="modul-6---forståelsessjekk-dataprosessering">Modul 6 - Forståelsessjekk: Dataprosessering</h2>
-<h3 id="når-blir-data-processing-kjørt">Når blir Data processing kjørt?</h3>
-<p>Data processing blir kjørt hver gang brukeren enten leser eller skriver data.
+<h3 id="når-blir-dataprosessering-kjørt">Når blir dataprosessering kjørt?</h3>
+<p>Dataprosessering blir kjørt hver gang brukeren enten leser eller skriver data.
 Det vil si at hver gang brukeren endrer et gitt felt så vil logikken kjøres.
-Dette stller derfor krav til apputvikler at optimaliserer koden som kjøres og unngår tunge og komplekse operasjoner på hver kalkulering.</p>
+Dette stiller derfor krav til at apputvikler optimaliserer koden som kjøres og unngår tunge og komplekse operasjoner på hver kalkulering.</p>
 <h3 id="hva-skiller-processdatawrite-og-processdataread">Hva skiller <code>ProcessDataWrite</code> og <code>ProcessDataRead</code>?</h3>
 <p><code>ProcessDataWrite</code> kjøres i det brukeren skriver data, altså når brukeren har fylt inn et felt eller oppdaterer en eksisterende verdi.
-<code>ProcessDataRead</code> kjøres i det brukeren leser data fra databasen, f.eks når man navigerer seg til en tidligere instans av applikasjonen og henter opp tildigere utfylt data.</p>
+<code>ProcessDataRead</code> kjøres i det brukeren leser data fra databasen, f.eks. når man navigerer seg til en tidligere instans av applikasjonen og henter opp tildigere utfylt data.</p>
 <h3 id="hva-er-forskjellen-på-dataprocessing-og-calculations">Hva er forskjellen på DataProcessing og Calculations?</h3>
 <p>Kjært barn har mange navn - også i dette tilfellet. <code>DataProcessing</code> og <code>calculations</code> er samme navn på samme konsept. I nugetpakkene før 4.7.0 gikk dette under navnet <code>calculations</code> eller <code>kalkuleringer</code>, mens dette nå omtales som <code>DataProcessing</code>.</p>
 

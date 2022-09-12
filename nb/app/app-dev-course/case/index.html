@@ -379,7 +379,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/launched-apps/digdir/be-om-api-nokkel/"><span>Tilgang til REST API</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -592,7 +592,7 @@ repositories Sogndal kommune har i Altinn Studio.</p>
 så man trenger ikke ta hensyn til årstall i navnet.</p>
 </li>
 </ul>
-<p>Det er et ønske om at et eller flere av ordene  &ldquo;tilflytter&rdquo; og  &ldquo;Sogndal&rdquo; er med i navnet.</p>
+<p>Det er et ønske om at et eller flere av ordene &ldquo;tilflytter&rdquo; og &ldquo;Sogndal&rdquo; er med i navnet.</p>
 
 		</div>
 	</div>
@@ -653,10 +653,10 @@ så man trenger ikke ta hensyn til årstall i navnet.</p>
 	<div id="tekster-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<ul>
-<li>Alle inputfelter skal ha forklarende ledetekster (labels) som beskriver hva som skal fylles inn</li>
+<li>Alle inputfelter skal ha forklarende ledetekster (labels) som beskriver hva som skal fylles inn.</li>
 <li>Applikasjonen må være tilgjengelig både på bokmål, nynorsk og engelsk.<br>
-I en første versjon er det tilstrekkelig at kun ett av disse språkene støttes</li>
-<li>Det er viktig at applikasjonens visningsnavn klinger godt og er beskrivende for tjenesten</li>
+I en første versjon er det tilstrekkelig at kun ett av disse språkene støttes.</li>
+<li>Det er viktig at applikasjonens visningsnavn klinger godt og er beskrivende for tjenesten.</li>
 </ul>
 
 		</div>
@@ -677,11 +677,11 @@ I en første versjon er det tilstrekkelig at kun ett av disse språkene støttes
 	<div id="infoside-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>Noen i kommunen har opprettet en skisse av informasjonssiden.</p>
-<p>Følgende er ønskelig at reflekteres i applikasjonen:</p>
+<p>Følgende er det ønskelig at reflekteres i applikasjonen:</p>
 <ul>
-<li>plassering av bilder</li>
-<li>tekststørrelser</li>
-<li>formatering av tekst</li>
+<li>Plassering av bilder</li>
+<li>Tekststørrelser</li>
+<li>Formatering av tekst</li>
 </ul>
 <p><a href="/app/app-dev-course/modul2/infoside_tilflyttere.pdf">Skisse på informasjonsside</a></p>
 <figure><a href="/app/app-dev-course/modul2/kommune-logo.png"><img src="/app/app-dev-course/modul2/kommune-logo.png" alt="&amp;ldquo;Sogndal kommunevåpen&amp;rdquo;" title="Et bilde av Sogndals kommunevåpen som kan benyttes i applikasjonen" /></a><figcaption><h4>Et bilde av Sogndals kommunevåpen som kan benyttes i applikasjonen</h4></figcaption></figure>
@@ -704,29 +704,29 @@ I en første versjon er det tilstrekkelig at kun ett av disse språkene støttes
 	<div id="sporvalg-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>En bruker som ikke oppfyller kravene for skjemaet skal stoppes så tidlig som mulig i arbeidsflyten.</p>
-<p>På infosiden er det ønskelig at brukeren skal oppgi om skjemaet gjelder dem eller ikke.</p>
+<p>På infosiden er det ønskelig at brukerne skal oppgi om skjemaet gjelder dem eller ikke.</p>
 <p>Hvordan dette gjøres er fritt fram, og feltet <code>Innflytter.KanBrukeSkjema</code> i datamodellen er mulig å benytte til dette formålet.</p>
 <p>Basert på svaret skal brukeren sendes videre til <em>Spor 1</em> eller <em>Spor 2</em>.</p>
 <h3 id="spor-1">Spor 1</h3>
 <ul>
-<li>Brukeren har ikke svart bekreftende på at skjemaet gjelder deres situasjon</li>
+<li>Brukeren har ikke svart bekreftende på at skjemaet gjelder vedkommendes situasjon.</li>
 <li>Bruker skal sendes til en side med følgende tekst:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>Dette skjemaet er ikke for deg.
 </span></span><span style="display:flex;"><span>Se en oversikt over andre tilbud i kommunen her.
 </span></span></code></pre></div></li>
-<li>Linje 2 i teksten skal være en hyperlenke som peker på <a href="https://www.sogndal.kommune.no/">https://www.sogndal.kommune.no/</a></li>
+<li>Linje 2 i teksten skal være en hyperlenke som peker på <a href="https://www.sogndal.kommune.no/">https://www.sogndal.kommune.no/</a>.</li>
 <li>Det skal ikke være mulig å navigere til andre skjemasider etter denne.</li>
 </ul>
 <h3 id="spor-2">Spor 2</h3>
 <ul>
-<li>Brukeren har svart bekreftende på at skjemaet gjelder deres situasjon</li>
+<li>Brukeren har svart bekreftende på at skjemaet gjelder vedkommendes situasjon.</li>
 <li>Brukeren sendes videre til datainnsamlingssidene.</li>
 </ul>
 
 		</div>
 	</div>
 </div>
-<h3 id="preutfylling-av-personopplysninger">Preutfylling av personopplysninger</h3>
+<h3 id="forhåndsutfylling-av-personopplysninger">Forhåndsutfylling av personopplysninger</h3>
 
 
 <div class="card adocs-expand">
@@ -741,7 +741,7 @@ I en første versjon er det tilstrekkelig at kun ett av disse språkene støttes
 	<div id="prefill-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<ul>
-<li>Følgende verdier skal preutfylles for brukeren:
+<li>Følgende verdier skal forhåndsutfylles for brukeren:
 <ul>
 <li>Fornavn: Innflytter.Fornavn</li>
 <li>Mellomnavn: Innflytter.Mellomnavn</li>
@@ -751,8 +751,8 @@ I en første versjon er det tilstrekkelig at kun ett av disse språkene støttes
 <li>Alder: Innflytter.Alder</li>
 </ul>
 </li>
-<li>Det skal <strong>ikke</strong> være mulig å endre preutfylt navn og alder</li>
-<li>Det skal være mulig å endre preutfylt e-post og telefonnummer</li>
+<li>Det skal <strong>ikke</strong> være mulig å endre forhåndsutfylt navn og alder</li>
+<li>Det skal være mulig å endre forhåndsutfylt e-post og telefonnummer</li>
 </ul>
 
 		</div>
@@ -772,10 +772,10 @@ I en første versjon er det tilstrekkelig at kun ett av disse språkene støttes
 	</div>
 	<div id="options-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<p>Vi ønsker at brukeren skal ha et ulikt sett med svaralternativer for bransje-valget
+			<p>Vi ønsker at brukerne skal ha et ulikt sett med svaralternativer for bransjevalget
 basert på hvilken sektor de har krysset av for.</p>
 <ul>
-<li>Privat sektor: <a href="../industry.json">Standard listen med bransjer</a></li>
+<li>Privat sektor: <a href="../industry.json">Standardlisten med bransjer</a></li>
 <li>Offentlig sektor: <code>Stat</code> og <code>Kommune</code></li>
 </ul>
 
@@ -798,13 +798,13 @@ basert på hvilken sektor de har krysset av for.</p>
 		<div class="a-collapseContent-inside">
 			<p>Vi ønsker at dersom brukeren velger <code>IKT (data/it)</code> under bransje at det vises en tekst med en lenke til en av våre stillingsutlysninger.</p>
 <ul>
-<li>Under bransje-valget skal følgende tekst presenteres
+<li>Under bransjevalget skal følgende tekst presenteres:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>Vi ser at du besitter kompetanse vi trenger i kommunen.
 </span></span><span style="display:flex;"><span>Se en oversikt over våre ledige stillinger her.
 </span></span></code></pre></div></li>
-<li>Linje 2 i teksten skal være en hyperlenke som peker på <a href="https://sogndal.easycruit.com/index.html">https://sogndal.easycruit.com/index.html</a></li>
+<li>Linje 2 i teksten skal være en hyperlenke som peker på <a href="https://sogndal.easycruit.com/index.html">https://sogndal.easycruit.com/index.html</a>.</li>
 </ul>
-<p>Tekst og lenke skal <strong>kun</strong> vises om man har valgt <code>IKT (data/it)</code> i alle andre tilfeller skal dette være skjult.</p>
+<p>Tekst og lenke skal <strong>kun</strong> vises om man har valgt <code>IKT (data/it)</code>. I alle andre tilfeller skal dette være skjult.</p>
 
 		</div>
 	</div>
@@ -823,7 +823,7 @@ basert på hvilken sektor de har krysset av for.</p>
 	</div>
 	<div id="bekreftelse-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<p>Vi ønsker at brukeren før innsending presenteres med hva dataen skal benyttes til
+			<p>Vi ønsker at brukeren før innsending presenteres for hva dataen skal benyttes til
 og samtykker (indirekte) til dette ved å sende inn skjemaet.</p>
 <h3 id="mulige-operasjoner">Mulige operasjoner</h3>
 <p>På dette punktet i arbeidsflyten skal brukeren kunne:</p>
@@ -841,7 +841,7 @@ og samtykker (indirekte) til dette ved å sende inn skjemaet.</p>
 <li>Det skal kun være mulig for brukeren som eier instansen å sende inn skjemaet, selv om andre måtte inneha de nødendigve rollene.</li>
 </ul>
 <h3 id="tekster">Tekster</h3>
-<p>Vi ønsker at brukeren skal presenteres med følgende tekst før innsending</p>
+<p>Vi ønsker at brukeren skal presenteres med følgende tekst før innsending:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>Du er nå klar for å sende inn melding om tilflytting til Sogndal kommune.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Ved å sende inn dette skjemaet samtykker du til at dataen du har fylt ut kan lagres og benyttes
@@ -866,7 +866,7 @@ og samtykker (indirekte) til dette ved å sende inn skjemaet.</p>
 	</div>
 	<div id="bosteder-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<p>For å kunne skreddersy et best mulig tilbud til nye innflyttere ønsker vi oss en oversikt over tidligere bosteder til innflytteren.</p>
+			<p>For å kunne skreddersy et best mulig tilbud til nye innflyttere, ønsker vi oss en oversikt over tidligere bosteder til innflytteren.</p>
 <p>På datasiden ønsker vi at det legges opp til at brukeren kan fylle inn tidligere bosteder.
 Tidligere bosteder skal inneholde følgende felter:</p>
 <ul>
@@ -893,8 +893,8 @@ Tidligere bosteder skal inneholde følgende felter:</p>
 	</div>
 	<div id="vendetta-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<p>Grunnet en personlig vendetta blant en av Sogndal-kommunes ansatte ønsker vi at om innflytter fyller inn
-postnummer <code>4619</code> som en av tidligere bosteder <strong>IKKE</strong> skal få lov til å flytte inn i Sogndal.</p>
+			<p>Grunnet en personlig vendetta blant en av Sogndal kommunes ansatte, ønsker vi at om innflytter fyller inn
+postnummer <code>4619</code> som en av tidligere bosteder, skal vedkommende <strong>IKKE</strong> få lov til å flytte inn i Sogndal.</p>
 <p>Her ønsker vi at det skal dukke opp en feilmelding på det aktuelle feltet med følgende tekst:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>Du er ikke velkommen til vår kommune. Beklager!
 </span></span></code></pre></div>
@@ -916,8 +916,8 @@ postnummer <code>4619</code> som en av tidligere bosteder <strong>IKKE</strong> 
 	<div id="dataprossesering-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>En av kommunens databehandlere har sett seg lei av å manuelt rette opp i en gateadresse som ofte blir skrevet feil av innflyttere.
-Vi ønsker derfor å programatisk fikse opp i dette under utfyllingen av appen.</p>
-<p>Om sluttbruker fyller inn <code>Sesame Street 1</code> i feltet <code>Innflytter.Adresse.Gateadresse</code> skal dette automatisk rettes til <code>Sesamsgate 1</code>.
+Vi ønsker derfor å programmatisk fikse opp i dette under utfyllingen av appen.</p>
+<p>Om sluttbruker fyller inn <code>Sesame Street 1</code> i feltet <code>Innflytter.Adresse.Gateadresse</code>, skal dette automatisk rettes til <code>Sesamsgate 1</code>.
 I alle andre tilfeller skal feltet forbli urørt.</p>
 
 		</div>

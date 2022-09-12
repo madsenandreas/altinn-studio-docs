@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Opprette app i Studio, sette opp lokalt utviklingsmiljø og local test">
+    <meta name="description" content="Opprette app i Studio, sette opp lokalt utviklingsmiljø og lokal test">
 
 <title>Modul 1 – Altinn</title><link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <link href="/css/nucleus.css" rel="stylesheet">
@@ -379,7 +379,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/launched-apps/digdir/be-om-api-nokkel/"><span>Tilgang til REST API</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -560,7 +560,7 @@ if(host != "localhost")
                 <span class="links"><a href='/nb/app/'>Lage apper</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/nb/app/app-dev-course/'>Introkurs</a> <span class='adocs-breadcrumb-divider'> / </span> Modul 1</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/apps">apps</a><a class="label label-default" href="https://docs.altinn.studio/tags/training">training</a><a class="label label-default" href="https://docs.altinn.studio/tags/datamodel">datamodel</a><a class="label label-default" href="https://docs.altinn.studio/tags/localtest">localtest</a><a class="label label-default" href="https://docs.altinn.studio/tags/texts">texts</a></div><div id="body-inner"><h1 class="a-fontBold">Modul 1</h1>
-              <p class="a-leadText" id="leadText">Opprette app i Studio, sette opp lokalt utviklingsmiljø og local test</p><p>I denne modulen skal du basert på kravene fra Sogndal kommune
+              <p class="a-leadText" id="leadText">Opprette app i Studio, sette opp lokalt utviklingsmiljø og lokal test</p><p>I denne modulen skal du basert på kravene fra Sogndal kommune
 sette opp førstesiden til applikasjonen for tilflyttere og verifisere at ting ser ut som forventet lokalt.</p>
 <p><strong>Temaer som dekkes i denne modulen:</strong></p>
 <ul>
@@ -635,7 +635,7 @@ og ta en nærmere titt på innholdet.</li>
 <h3 id="forståelsessjekk">Forståelsessjekk</h3>
 <ul>
 <li>Hvilken data er det tjenesteeier ønsker å samle inn her?</li>
-<li>Hvilken effekt har <strong>&lt;minOccurs&gt;</strong> i datamodellen? Du vil se at feltet har ulik verdi for <em>Inflytter.Fornavn</em> og <em>Inflytter.Mellomnavn</em></li>
+<li>Hvilken effekt har <strong>&lt;minOccurs&gt;</strong> i datamodellen? Du vil se at feltet har ulik verdi for <em>Innflytter.Fornavn</em> og <em>Innflytter.Mellomnavn</em>.</li>
 <li>Hvilke andre egenskaper er satt på feltet <em>Innflytter.Mellomnavn</em>?</li>
 <li>Det er blitt generert en <em>.C#</em>, <em>.metadata.json</em> og <em>.schema.json</em> fil i tillegg til <em>.xsd</em> filen som du lastet opp. Hva er sammenhengen mellom disse filene?</li>
 <li>Enkelte restriksjoner fra datamodellen overføres ikke til <em>C#</em>-filen, hvilke? Det er og lagt til nye egenskaper, hvilke?</li>
@@ -669,10 +669,10 @@ overskrifter og beskrivelser. Vi ønsker nå at dere legger til tekster som skal
 </div>
 <h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
 <ul>
-<li>Alle inputfelter skal ha forklarende labels som beskriver hva som skal fylles inn</li>
-<li>Applikasjonen må være tilgjengelig både på bokmål, nynorsk og engelsk
-I en første versjon er det tilstrekkelig at kun ett av disse språkene støttes</li>
-<li>Det er viktig at applikasjonens visningsnavn klinger godt og er beskrivende for tjenesten</li>
+<li>Alle inputfelter skal ha forklarende labels som beskriver hva som skal fylles inn.</li>
+<li>Applikasjonen må være tilgjengelig både på bokmål, nynorsk og engelsk.
+I en første versjon er det tilstrekkelig at kun ett av disse språkene støttes.</li>
+<li>Det er viktig at applikasjonens visningsnavn klinger godt og er beskrivende for tjenesten.</li>
 </ul>
 <h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>
 <ul>
@@ -681,10 +681,10 @@ I en første versjon er det tilstrekkelig at kun ett av disse språkene støttes
 <li><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1 standard</a></li>
 </ul>
 <h3 id="forståelsessjekk">Forståelsessjekk</h3>
-<p>I Altinn i dag støtter vi tre skriftspråk: bokmål, nynorsk og engelsk.</p>
+<p>I Altinn i dag støtter vi tre skriftspråk: Bokmål, nynorsk og engelsk.</p>
 <ul>
 <li>Hvordan får du inn engelsk språkstøtte i applikasjonen?</li>
-<li>Hvis vi en dag skal støtte Ukrainsk, hvilken språkkode vil du da måtte annotere filen med?</li>
+<li>Hvis vi en dag skal støtte ukrainsk, hvilken språkkode vil du da måtte annotere filen med?</li>
 <li>Hvis en tekstnøkkel refert til i FormLayout.json ikke finnes i tekstressursene, hva vil vises da?</li>
 </ul>
 
@@ -738,13 +738,13 @@ eller manuelt i json-filen som beskriver utseendet til en skjemaside <em>FormLay
 <li><a href="/nb/app/design/guidelines/components/">Retningslinjer for bruk av komponenter</a></li>
 </ul>
 <h3 id="forståelsessjekk">Forståelsessjekk</h3>
-<p>I applikasjonsrepoet ditt finner du <em>FormLayout.json</em> i mappen <code>App/ui/layouts</code>. JSON-filen beskriver skjemasiden du har satt opp i Altin Studio,
+<p>I applikasjonsrepoet ditt finner du <em>FormLayout.json</em> i mappen <code>App/ui/layouts</code>. JSON-filen beskriver skjemasiden du har satt opp i Altinn Studio,
 gitt at du har pushet endringene dine til master.</p>
 <ul>
 <li>Finner du igjen komponenten som er koblet til e-post-feltet?</li>
 <li>Hvilken endring kreves i denne filen dersom e-post-feltet ikke lenger skal være påkrevd?</li>
 <li>Ved å endre én linje i <em>FormLayout.json</em> er det mulig å endre komponenten knyttet til mellomnavn
-til et input felt for et langt svar. Hvilken endring kreves?</li>
+til et inndatafelt for et langt svar. Hvilken endring kreves?</li>
 </ul>
 
 		</div>
@@ -763,10 +763,10 @@ til et input felt for et langt svar. Hvilken endring kreves?</li>
 	</div>
 	<div id="laste-ned-app-lokalt" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<p>Enkelte applikasjonsfeatures er det ikke støtte for å utvikle i Altinn Studio.
+			<p>Enkelte applikasjonsfunksjoner er det ikke støtte for å utvikle i Altinn Studio.
 Disse må utvikles i et lokalt utviklingsmiljø.</p>
 <p>Selve utviklingen kan gjøres i ditt foretrukne utviklerverktøy,
-men trenger du en anbefaling er <a href="https://code.visualstudio.com/Download">Visual Studio Code</a> et godt alternativ.</p>
+men trenger du en anbefaling, er <a href="https://code.visualstudio.com/Download">Visual Studio Code</a> et godt alternativ.</p>
 <h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>
 <ul>
 <li><a href="/nb/app/getting-started/local-dev/#hvordan-klone-applikasjonen-til-et-lokalt-utviklingsmilj%C3%B8">Hvordan klone applikasjon til lokalt utviklingsmiljø</a></li>
@@ -789,7 +789,7 @@ men trenger du en anbefaling er <a href="https://code.visualstudio.com/Download"
 	</div>
 	<div id="kjore-i-localtest" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<p>Ved hjelp av en mock som kan spinnes opp lokalt av Altinn Plaform
+			<p>Ved hjelp av en mock som kan spinnes opp lokalt av Altinn Plattform
 er det mulig å gjøre enkel testing og verifikasjon av applikasjonen i det lokale utviklingsmiljøet.</p>
 <p>I denne oppgaven skal du få kjørt opp applikasjonen lokalt med støtte fra LocalTest.
 Når du har fått appen opp og kjøre og logget inn med en testbruker, bør du ha et resultat som likner dette:</p>
@@ -797,7 +797,7 @@ Når du har fått appen opp og kjøre og logget inn med en testbruker, bør du h
 <div class="notices info" ><p>Videre vil du ønske å teste endringene dine fortløpende i localtest.</p>
 <ul>
 <li>Ved endringer knyttet til formLayout og andre <em>json</em>-filer holder det med en refresh (F5) i nettleser.</li>
-<li>Ved endringer i prefill vil man måtte instansiere applikasjonen på nytt.</li>
+<li>Ved endringer i forhåndsutfylling vil man måtte instansiere applikasjonen på nytt.</li>
 <li>Ved endringer i <em>cs</em>-filer må applikasjonen stoppes og startes på nytt.
 Alternativt kan du benytte deg av <code>dotnet run watch</code> når du starter applikasjonen for hot reload.</li>
 </ul>
@@ -817,9 +817,9 @@ Alternativt kan du benytte deg av <code>dotnet run watch</code> når du starter 
 lastet opp en datamodell og satt opp en skjemaside som kobler komponenter til noen av feltene i datamodellen.
 Videre har du klonet repoet lokalt for å kunne videre applikasjonen i ditt lokale utvilkingsmiljø.</p>
 <p>Tjenesten skal kunne kjøres opp på din lokale maskin med local test og du skal kunne fylle inn feltene.</p>
-<p><strong>Husk å <em>pushe</em> de lokale endringene dine, så de blir tilgjengelig i Altinn Studio når du er fornøyd</strong></p>
+<p><strong>Husk å <em>pushe</em> de lokale endringene dine, så de blir tilgjengelige i Altinn Studio når du er fornøyd.</strong></p>
 <h3 id="løsningsforslag">Løsningsforslag</h3>
-<p>Dersom du ikke har fått til alle stegene har vi et <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/1">løsningsforslag</a> som du kan hente inspirasjon fra.</p>
+<p>Dersom du ikke har fått til alle stegene, har vi et <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/1">løsningsforslag</a> som du kan hente inspirasjon fra.</p>
 <figure><a href="/app/app-dev-course/modul1/data-screenshot.png"><img src="/app/app-dev-course/modul1/data-screenshot.png" alt="Skjermbilde av datainnsamlingsside" title="Skjermbilde av datainnsamlingsside" /></a><figcaption><h4>Skjermbilde av datainnsamlingsside</h4></figcaption></figure>
 
 

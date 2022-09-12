@@ -379,7 +379,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/launched-apps/digdir/be-om-api-nokkel/"><span>Tilgang til REST API</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -618,8 +618,8 @@ if(host != "localhost")
 	<div id="validering" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
-<p>Grunnet en personlig vendetta blant en av Sogndal-kommunes ansatte ønsker vi at om innflytter fyller inn postnummer <code>4619</code> som en av tidligere bosteder
-<strong>IKKE</strong> skal få lov til å flytte inn i Sogndal. Her ønsker vi at det skal dukke opp en feilmelding på det aktuelle feltet med følgende tekst:</p>
+<p>Grunnet en personlig vendetta blant en av Sogndal kommunes ansatte ønsker vi at om innflytter fyller inn postnummer <code>4619</code> som et av tidligere bosteder,
+skal denne <strong>IKKE</strong> få lov til å flytte inn i Sogndal. Her ønsker vi at det skal dukke opp en feilmelding på det aktuelle feltet med følgende tekst:</p>
 <pre tabindex="0"><code class="language-rich" data-lang="rich">Du er ikke velkommen til vår kommune. Beklager!
 </code></pre><h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>
 <ul>
@@ -630,7 +630,7 @@ if(host != "localhost")
 <h3 id="forståelsessjekk">Forståelsessjekk</h3>
 <ul>
 <li>Når kjøres valideringer serverside?</li>
-<li>Hvorfor burde valideringer som legges til på klientsiden også dupliseres serverside?</li>
+<li>Hvorfor burde valideringer som legges til på klientsiden også dupliseres på serversiden?</li>
 </ul>
 
 		</div>
@@ -651,7 +651,7 @@ if(host != "localhost")
 		<div class="a-collapseContent-inside">
 			<h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
 <p>En av kommunens databehandlere har sett seg lei av å manuelt rette opp i en gateadresse som ofte blir skrevet feil av innflyttere.
-Vi ønsker derfor å programatisk fikse opp i dette under utfyllingen av appen.</p>
+Vi ønsker derfor å programmatisk fikse opp i dette under utfyllingen av appen.</p>
 <p>Om sluttbruker fyller inn <code>Sesame Street 1</code> i feltet <code>Innflytter.Adresse.Gateadresse</code> skal dette automatisk rettes til <code>Sesamsgate 1</code>.
 I alle andre tilfeller skal feltet forbli urørt.</p>
 <h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>
@@ -661,7 +661,7 @@ I alle andre tilfeller skal feltet forbli urørt.</p>
 </ul>
 <h3 id="forståelsessjekk">Forståelsessjekk</h3>
 <ul>
-<li>Når blir Data processing kjørt?</li>
+<li>Når blir dataprosessering kjørt?</li>
 <li>Hva skiller <code>ProcessDataWrite</code> og <code>ProcessDataRead</code>?</li>
 <li>Hva er forskjellen på DataProcessing og Calculations?</li>
 </ul>
@@ -674,7 +674,7 @@ I alle andre tilfeller skal feltet forbli urørt.</p>
 Vi har også sett på hvordan man setter opp custom <strong>valideringer</strong> i backend for caser som ikke lar seg definere som en del av restriksjoner i datamodellen.
 Til slutt har vi sett på hvordan man kan sette opp <strong>dataprosessering</strong> som muliggjør manipulering av data runtime.</p>
 <h3 id="løsningsforslag">Løsningsforslag</h3>
-<p>Dersom du ikke har fått til alle stegene har vi et <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/6">løsningsforslag</a> som du kan hente inspirasjon fra.</p>
+<p>Dersom du ikke har fått til alle stegene, har vi et <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/6">løsningsforslag</a> som du kan hente inspirasjon fra.</p>
 <figure><a href="/app/app-dev-course/modul6/data-rep-grupper-screenshot.png"><img src="/app/app-dev-course/modul6/data-rep-grupper-screenshot.png" alt="Skjermbilde av datainnsamlingsside med repeterende gruppe" title="Skjermbilde av datainnsamlingsside med repeterende gruppe" /></a><figcaption><h4>Skjermbilde av datainnsamlingsside med repeterende gruppe</h4></figcaption></figure>
 
 

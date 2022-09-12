@@ -379,7 +379,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/launched-apps/digdir/be-om-api-nokkel/"><span>Tilgang til REST API</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -581,7 +581,7 @@ if(host != "localhost")
 	<div id="options-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>I mange applikasjoner er det behov for å gi brukeren et sett med svaralternativer for et datafelt.
-Svaralternativene  refereres dette til som <em>kodelister</em> eller <em>options</em>.</p>
+Svaralternativene refereres til som <em>kodelister</em> eller <em>options</em>.</p>
 <p>I Altinn Studio er dette støttet i form av radioknapper, avkrysningsbokser og nedtrekkslister.</p>
 <div class="notices info" ><p>Det er tre måter å sette opp kodelister i Altinn i dag</p>
 <ol>
@@ -603,12 +603,12 @@ Svaralternativene  refereres dette til som <em>kodelister</em> eller <em>options
 </li>
 <li>
 <p>Sett opp en <strong>avkrysningsboks</strong> for <em>Bransje</em>.
-Velg <em>Kodeliste</em> som metode for å legge til avkrysningsboker og legg inn <em>Kodeliste ID</em> <code>industry</code></p>
+Velg <em>Kodeliste</em> som metode for å legge til avkrysningsboker og legg inn <em>Kodeliste ID</em> <code>industry</code>.</p>
 <p>Resten av oppsettet for denne komponenten gjøres lokalt.</p>
 </li>
 <li>
-<p>Sett opp en <strong>nedrekksliste</strong> for <em>År i arbeidslivet</em>
-Legg inn <em>Kodeliste ID</em> <code>years-in-work-force</code></p>
+<p>Sett opp en <strong>nedrekksliste</strong> for <em>År i arbeidslivet</em>.
+Legg inn <em>Kodeliste ID</em> <code>years-in-work-force</code>.</p>
 <p>Resten av oppsettet for denne komponenten gjøres lokalt.</p>
 </li>
 <li>
@@ -619,7 +619,7 @@ og <em>Pull</em> endringene i ditt lokale utviklingsmiljø.</p>
 <h3 id="i-lokalt-utviklingsmiljø">I lokalt utviklingsmiljø</h3>
 <ol>
 <li>
-<p>Sogndal kommune har opprettet en <a href="../industry.json">kodeliste</a>  for <strong>bransjer</strong>. Last ned filen og plasser denne på rett sted i repoet.</p>
+<p>Sogndal kommune har opprettet <a href="../industry.json">en kodeliste for <strong>bransjer</strong></a>. Last ned filen og plasser denne på rett sted i repoet.</p>
 </li>
 <li>
 <p>Sett opp verdiene i kodelisten for <strong>År i arbeidslivet</strong> direkte i applikasjonslogikken.</p>
@@ -658,13 +658,12 @@ og <em>Pull</em> endringene i ditt lokale utviklingsmiljø.</p>
 <h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>
 <ul>
 <li><a href="/nb/app/development/data/options/#statisk-kodeliste-fra-app-repo">Hvordan sette opp statiske kodelister</a></li>
-<li><a href="/nb/app/development/data/options/#dynamisk-kodeliste-generert-runtime">Hvordan sette opp dynamiske kodelister</a></li>
-<li><a href="/nb/app/development/data/options/#sikrede-dynamiske-kodelister">Sikrede dynamiske options</a></li>
+<li><a href="/nb/app/development/data/options/#sikrede-dynamiske-kodelister">Sikrede dynamiske kodelister</a></li>
 </ul>
 <h3 id="forståelsessjekk">Forståelsessjekk</h3>
 <ul>
-<li>Hva er forskjellen på statiske og dynamiske options?</li>
-<li>Hva vil være et bruksområde for sikrede dynamiske options?</li>
+<li>Hva er forskjellen på statiske og dynamiske svaralternativer?</li>
+<li>Hva vil være et bruksområde for sikrede, dynamiske svaralternativer?</li>
 </ul>
 
 		</div>
@@ -687,20 +686,21 @@ og <em>Pull</em> endringene i ditt lokale utviklingsmiljø.</p>
 <p>Sogndal kommune ønsker at listen av bransjer å velge mellom skal spisses til hvilken sektor man jobber i.</p>
 <p>Les gjennom kravene til kommunen for å se om du kan hjelpe dem.</p>
 <h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
-<p>Vi ønsker at brukeren skal ha et ulikt sett med svaralternativer for bransje-valget
+<p>Vi ønsker at brukerne skal ha et ulikt sett med svaralternativer for bransjevalget
 basert på hvilken sektor de har krysset av for.</p>
 <ul>
-<li>Privat sektor: <a href="../industry.json">Standard listen med bransjer</a></li>
+<li>Privat sektor: <a href="../industry.json">Standardlisten med bransjer</a></li>
 <li>Offentlig sektor: <code>Stat</code> og <code>Kommune</code></li>
 </ul>
 <h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>
 <ul>
-<li><a href="/nb/app/development/data/options/#sende-med-query-parametere-ved-henting-av-options">Hvordan sende med query parameter ved henting av options</a></li>
+<li><a href="/nb/app/development/data/options/#sende-med-query-parametere-ved-henting-av-options">Hvordan sende med spørringsparametre ved henting av kodelister</a></li>
+<li><a href="/nb/app/development/data/options/#dynamisk-kodeliste-generert-runtime">Hvordan sette opp dynamiske kodelister</a></li>
 </ul>
 <h3 id="forståelsessjekk">Forståelsessjekk</h3>
 <ul>
-<li>Om en option-liste er satt opp med en mapping mot datamodellen - hva skjer når det aktuell feltet endrer verdi?</li>
-<li>Hva skjer med valgt verdi på et felt som er koblet til en option-liste som hentes på nytt fra server siden?</li>
+<li>Om en kodeliste er satt opp med en mapping mot datamodellen, hva skjer når det aktuelle feltet endrer verdi?</li>
+<li>Hva skjer med valgt verdi på et felt som er koblet til en kodeliste som hentes på nytt fra serversiden?</li>
 </ul>
 
 		</div>
@@ -723,16 +723,15 @@ basert på hvilken sektor de har krysset av for.</p>
 <p>Vi ønsker at dersom brukeren velger <code>IKT (data/it)</code> under bransje at det vises en tekst med en lenke til en av våre stillingsutlysninger.</p>
 <ul>
 <li>
-<p>Under bransje-valget skal følgende tekst presenteres</p>
+<p>Under bransje-valget skal følgende tekst presenteres:</p>
 <pre tabindex="0"><code class="language-rich" data-lang="rich">Vi ser at du besitter kompetanse vi trenger i kommunen.
 Se en oversikt over våre ledige stillinger her.
 </code></pre></li>
 <li>
-<p>Linje 2 i teksten skal være en hyperlenke som peker på:
-<a href="https://sogndal.easycruit.com/index.html">https://sogndal.easycruit.com/index.html</a></p>
+<p>Linje 2 i teksten skal være en hyperlenke som peker på <a href="https://sogndal.easycruit.com/index.html">https://sogndal.easycruit.com/index.html</a>.</p>
 </li>
 </ul>
-<p>Tekst og lenke skal <strong>kun</strong> vises om man har valgt <code>IKT (data/it)</code> i alle andre tilfeller skal dette være skjult.</p>
+<p>Tekst og lenke skal <strong>kun</strong> vises om man har valgt <code>IKT (data/it)</code>. I alle andre tilfeller skal dette være skjult.</p>
 <h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>
 <ul>
 <li><a href="/nb/app/development/logic/dynamic/#legg-tilrediger-funksjoner-for-beregninger-eller-visskjul">Legge til funksjoner for regler eller dynamikk</a></li>
@@ -740,12 +739,12 @@ Se en oversikt over våre ledige stillinger her.
 </ul>
 <h3 id="forståelsessjekk">Forståelsessjekk</h3>
 <ul>
-<li>Hvis du legger til en ny funksjon i <code>RuleHandlerHelper</code> - hvor kjøres disse funksjonene?
+<li>Hvis du legger til en ny funksjon i <code>RuleHandlerHelper</code>, hvor kjøres disse funksjonene?
 <ul>
 <li>Vil dynamikk fungere uten denne definert?</li>
 </ul>
 </li>
-<li>Hvis du legger til en ny funksjon i <code>RuleHandlerObject</code> - hvor kjøres disse funksjonene?
+<li>Hvis du legger til en ny funksjon i <code>RuleHandlerObject</code>, hvor kjøres disse funksjonene?
 <ul>
 <li>Vil dynamikk fungere uten denne definert?</li>
 </ul>
@@ -757,12 +756,12 @@ Se en oversikt over våre ledige stillinger her.
 	</div>
 </div>
 <h2 id="oppsummering">Oppsummering</h2>
-<p>I denne modulen har du satt opp nedtrekksliste, radioknapp og avkrysningsbokser og lagt inn verdier for disse komponentene manuelt, programatisk og dynamisk.</p>
-<p>Tjenesten skal kunne kjøres opp på din lokale maskin med local test
+<p>I denne modulen har du satt opp nedtrekksliste, radioknapp og avkrysningsbokser og lagt inn verdier for disse komponentene manuelt, programmatisk og dynamisk.</p>
+<p>Tjenesten skal kunne kjøres opp på din lokale maskin med lokal test
 og du skal kunne validere at komponentene presenterer forventede dataverdier.</p>
 <p><strong>Husk å <em>pushe</em> de lokale endringene dine, så de blir tilgjengelig i Altinn Studio når du er fornøyd</strong></p>
 <h3 id="løsningsforslag">Løsningsforslag</h3>
-<p>Dersom du ikke har fått til alle stegene har vi et <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/4">løsningsforslag</a> som du kan hente inspirasjon fra.</p>
+<p>Dersom du ikke har fått til alle stegene, har vi et <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/4">løsningsforslag</a> som du kan hente inspirasjon fra.</p>
 <p><img src="/app/app-dev-course/modul4/arbeidsopplysninger-privat-screenshot.png" alt="Skjermbilde av innsamling av arbeidsopplysninger for privat sektor" title="Skjermbilde av innsamling av arbeidsopplysninger for privat sektor">
 <img src="/app/app-dev-course/modul4/arbeidsopplysninger-offentlig-screenshot.png" alt="Skjermbilde av innsamling av arbeidsopplysninger for offentlig sektor" title="Skjermbilde av innsamling av arbeidsopplysninger for offentlig sektor"></p>
 

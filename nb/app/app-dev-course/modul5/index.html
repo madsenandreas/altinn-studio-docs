@@ -379,7 +379,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/launched-apps/digdir/be-om-api-nokkel/"><span>Tilgang til REST API</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -583,14 +583,15 @@ if(host != "localhost")
 	</div>
 	<div id="prosessbeskrivelse" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<p>En Altinn App har en prosessflyt som beskriver de ulike stegene i flyten.
-Standardflyten for en nyopprettet applikasjon består av én task og et utfyllingssteg.</p>
+			<p>En Altinn-app har en prosessflyt som beskriver de ulike stegene i flyten.
+Standardflyten for en nyopprettet applikasjon består av én oppgave og ett utfyllingssteg.</p>
 <p><img src="/app/app-dev-course/modul5/default-process.png" alt="Standard prosessflyt illustrert"></p>
-<p>Din oppgave er å utvide standard prosessflyten med et bekreftelsessteg som illustrert nedenfor.</p>
+<p>Din oppgave er å utvide standardprosessflyten med et bekreftelsessteg som illustrert nedenfor.
+Bekreftelsessiden blir lagt til automatisk når man legger til dette i BPMN-filen.</p>
 <p><img src="/app/app-dev-course/modul5/updated-process.png" alt="Oppdatert prosessflyt illustrert"></p>
-<div class="notices info" ><p><a href="https://github.com/Altinn/altinn-studio/tree/master/src/Altinn.Apps/AppTemplates/ProcessTemplates">Standard prosessflyter er tilgjengelig på GitHub</a>.
+<div class="notices info" ><p><a href="https://github.com/Altinn/altinn-studio/tree/master/src/Altinn.Apps/AppTemplates/ProcessTemplates">Standard prosessflyter er tilgjengelige på GitHub</a>.
 Finner du den som passer til flyten vi ønsker å oppnå her?</p>
-<p>Har du lyst på en ekstra utfordring kan du redigere prosessflyten manuelt eller i en BPMN editor,
+<p>Har du lyst på en ekstra utfordring, kan du redigere prosessflyten manuelt eller i et BPMN-redigeringsverktøy,
 og heller bruke <a href="https://raw.githubusercontent.com/Altinn/altinn-studio/master/src/Altinn.Apps/AppTemplates/ProcessTemplates/Data_Confirmation_Process.bpmn">malen på prosessflyt med data og bekreftelsessteg</a> som fasit.</p>
 </div>
 <h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
@@ -609,8 +610,8 @@ og heller bruke <a href="https://raw.githubusercontent.com/Altinn/altinn-studio/
 </ul>
 <h3 id="forståelsessjekk">Forståelsessjekk</h3>
 <ul>
-<li>Hvilke Altinn-spesifikke egenskaper er satt på hver prosesstask?</li>
-<li>Hvilke begrensninger vil en ekstern BPMN editor ha når man skal redigere prosessbeskrivelsen til en Altinn App?</li>
+<li>Hvilke Altinn-spesifikke egenskaper er satt på hver prosessoppgave?</li>
+<li>Hvilke begrensninger vil et eksternt BPMN-redigeringsverktøy ha når man skal redigere prosessbeskrivelsen til en Altinn-app?</li>
 <li>Vil prosessflyten kunne gå begge veier? Fra utfylling til bekreftelse og fra bekreftelse til utfylling?</li>
 </ul>
 
@@ -631,7 +632,7 @@ og heller bruke <a href="https://raw.githubusercontent.com/Altinn/altinn-studio/
 	<div id="autorisasjon" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>Policy-filen til applikasjonen din er tilpasset standard prosessflyt.
-Oppdater policyfilen, så den har autorisasjonsregler som dekker det nye prosessteget.</p>
+Oppdater policyfilen så den har autorisasjonsregler som dekker det nye prosessteget.</p>
 <h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
 <ul>
 <li>Det skal være samme rollekrav for å fylle ut og bekrefte en instans.</li>
@@ -643,7 +644,7 @@ Oppdater policyfilen, så den har autorisasjonsregler som dekker det nye prosess
 </ul>
 <h3 id="forståelsessjekk">Forståelsessjekk</h3>
 <ul>
-<li>Hva vil skje når prosessflyten går videre til bekreftelse-steget uten at autoriasjonsreglene er blitt oppdatert?</li>
+<li>Hva vil skje når prosessflyten går videre til bekreftelsessteget uten at autoriasjonsreglene er blitt oppdatert?</li>
 <li>Hva skjer dersom du ikke spesifiserer hvilke roller som har lov til å utføre en aksjon i en autorisasjonsregel?</li>
 </ul>
 
@@ -665,7 +666,7 @@ Oppdater policyfilen, så den har autorisasjonsregler som dekker det nye prosess
 		<div class="a-collapseContent-inside">
 			<h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
 <ul>
-<li>Det skal kun være mulig for brukeren som eier instansen å sende inn skjemaet, selv om andre måtte inneha de nødendigve rollene</li>
+<li>Det skal kun være mulig for brukeren som eier instansen å sende inn skjemaet, selv om andre måtte inneha de nødendige rollene</li>
 </ul>
 <h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>
 <ul>
@@ -673,7 +674,7 @@ Oppdater policyfilen, så den har autorisasjonsregler som dekker det nye prosess
 </ul>
 <h3 id="forståelsessjekk">Forståelsessjekk</h3>
 <ul>
-<li>Hvilken endring ville du foreslått for kunden for å kunne oppfylle dette kravet uten å legge inn egendefinerte valideringen på dette steget?</li>
+<li>Hvilken endring ville du foreslått for kunden for å kunne oppfylle dette kravet uten å legge inn den egendefinerte valideringen på dette steget?</li>
 </ul>
 
 		</div>
@@ -693,7 +694,7 @@ Oppdater policyfilen, så den har autorisasjonsregler som dekker det nye prosess
 	<div id="confirmation" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
-<p>Vi ønsker at brukeren skal presenteres med følgende tekst før innsending</p>
+<p>Vi ønsker at brukeren skal presenteres med følgende tekst før innsending:</p>
 <pre tabindex="0"><code class="language-rich" data-lang="rich">Du er nå klar for å sende inn melding om tilflytting til Sogndal kommune.
 
 Ved å sende inn dette skjemaet samtykker du til at dataen du har fylt ut kan lagres og benyttes til å tilpasse kommunens tilbud til deg de neste 18 månedene.
@@ -708,12 +709,12 @@ Før du sender inn vil vi anbefale å se over svarene dine. Du kan ikke endre sv
 	</div>
 </div>
 <h2 id="oppsummering">Oppsummering</h2>
-<p>I denne modulen har du utvided applikasjonen din med et bekreftelsessteg, tilpasset visningen, og lagt til validering og autorisasjonsregler knyttet til prosessteget.</p>
-<p>Tjenesten skal kunne kjøres opp på din lokale maskin med local test
+<p>I denne modulen har du utvidet applikasjonen din med et bekreftelsessteg, tilpasset visningen, og lagt til validering og autorisasjonsregler knyttet til prosessteget.</p>
+<p>Tjenesten skal kunne kjøres opp på din lokale maskin med lokal test
 og du skal kunne teste det nye prosessteget og bekrefte at visningen ser ut som ønsket.</p>
-<p><strong>Husk å <em>pushe</em> de lokale endringene dine, så de blir tilgjengelig i Altinn Studio når du er fornøyd</strong></p>
+<p><strong>Husk å <em>pushe</em> de lokale endringene dine, så de blir tilgjengelige i Altinn Studio når du er fornøyd</strong></p>
 <h3 id="løsningsforslag">Løsningsforslag</h3>
-<p>Dersom du ikke har fått til alle stegene har vi et <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/5">løsningsforslag</a> som du kan hente inspirasjon fra.</p>
+<p>Dersom du ikke har fått til alle stegene, har vi et <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/5">løsningsforslag</a> som du kan hente inspirasjon fra.</p>
 <figure><a href="/app/app-dev-course/modul5/bekreftelsesside-screenshot.png"><img src="/app/app-dev-course/modul5/bekreftelsesside-screenshot.png" alt="Skjermbilde av bekreftelsesside" title="Skjermbilde av bekreftelsesside" /></a><figcaption><h4>Skjermbilde av bekreftelsesside</h4></figcaption></figure>
 
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Legge til flere sider, sporvalg og prefill">
+    <meta name="description" content="Legge til flere sider, sporvalg og forhåndsutfylling">
 
 <title>Modul 2 – Altinn</title><link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <link href="/css/nucleus.css" rel="stylesheet">
@@ -379,7 +379,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/launched-apps/digdir/be-om-api-nokkel/"><span>Tilgang til REST API</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -560,13 +560,13 @@ if(host != "localhost")
                 <span class="links"><a href='/nb/app/'>Lage apper</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/nb/app/app-dev-course/'>Introkurs</a> <span class='adocs-breadcrumb-divider'> / </span> Modul 2</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/apps">apps</a><a class="label label-default" href="https://docs.altinn.studio/tags/training">training</a><a class="label label-default" href="https://docs.altinn.studio/tags/prefill">prefill</a><a class="label label-default" href="https://docs.altinn.studio/tags/sporvalg">sporvalg</a></div><div id="body-inner"><h1 class="a-fontBold">Modul 2</h1>
-              <p class="a-leadText" id="leadText">Legge til flere sider, sporvalg og prefill</p><p>I denne modulen skal du videreutvikle applikasjonen du laget i <a href="../modul1">modul 1</a> for å oppfylle flere av <a href="../case/#krav-fra-kommunen">kravene fra Sogndal kommune</a>.</p>
+              <p class="a-leadText" id="leadText">Legge til flere sider, sporvalg og forhåndsutfylling</p><p>I denne modulen skal du videreutvikle applikasjonen du laget i <a href="../modul1">modul 1</a> for å oppfylle flere av <a href="../case/#krav-fra-kommunen">kravene fra Sogndal kommune</a>.</p>
 <p><strong>Temaer som dekkes i denne modulen:</strong></p>
 <ul>
 <li>Flere sider</li>
 <li>Bildekomponent</li>
 <li>Sporvalg</li>
-<li>Prefill</li>
+<li>Forhåndsutfylling</li>
 </ul>
 <h2 id="oppgaver">Oppgaver</h2>
 
@@ -590,7 +590,7 @@ som vises <em>før</em> brukeren kommer til første datainnsamlingsside som ble 
 <ol>
 <li>Logge inn i Altinn Studio</li>
 <li>Finne applikasjonen din på dashboardet og trykke <em>Rediger app</em></li>
-<li>Navigér til <em>Lage</em>-fanenåpner</li>
+<li>Navigere til <em>Lage</em>-fanen</li>
 <li>Til høyre finner du området for administrasjon av skjemasider.</li>
 </ol>
 <div class="notices info" ><p>Opprettelse og administrasjon av flere sider kan enkelt gjøres i Altinn Studio,
@@ -662,7 +662,7 @@ Noen i kommunen har opprettet en skisse av informasjonssiden.</p>
 Se en oversikt over andre tilbud i kommunen her.
 </code></pre></li>
 <li>
-<p>Linje 2 i teksten skal være en hyperlenke som peker på:
+<p>Linje 2 i teksten skal være en hyperlenke som peker på
 <a href="https://www.sogndal.kommune.no/">https://www.sogndal.kommune.no/</a></p>
 </li>
 <li>
@@ -672,7 +672,7 @@ Se en oversikt over andre tilbud i kommunen her.
 <h3 id="spor-2">Spor 2</h3>
 <ul>
 <li>
-<p>Brukeren har svart bekreftende på at skjemaet gjelder deres situasjon</p>
+<p>Brukeren har svart bekreftende på at skjemaet gjelder deres situasjon.</p>
 </li>
 <li>
 <p>Brukeren sendes videre til datainnsamlingssidene.</p>
@@ -685,8 +685,8 @@ Se en oversikt over andre tilbud i kommunen her.
 </ul>
 <h3 id="forståelsessjekk">Forståelsessjekk</h3>
 <ul>
-<li>Hvis en bruker går tilbake og endrer svaret sitt på infosiden, får den da opp datainnsamlingssidene? Hvis ikke. Hvilke endringer kan du gjøre for å støtte dette i din applikasjon?</li>
-<li>Dersom man har sporvalg på et senere tidspunkt i en arbeidsflyt og en sluttbruker endrer et valg. Hva skjer med skjemdataen man tidligere har fylt ut, dersom siden skjules for sluttbrukeren?</li>
+<li>Hvis en bruker går tilbake og endrer svaret sitt på infosiden, får den da opp datainnsamlingssidene? Hvis ikke, hvilke endringer kan du gjøre for å støtte dette i din applikasjon?</li>
+<li>Dersom man har sporvalg på et senere tidspunkt i en arbeidsflyt og en sluttbruker endrer et valg, hva skjer med skjemdataen man tidligere har fylt ut, dersom siden skjules for sluttbrukeren?</li>
 </ul>
 
 		</div>
@@ -700,18 +700,18 @@ Se en oversikt over andre tilbud i kommunen her.
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Preutfylling av personopplysninger
+			Forhåndsutfylling av personopplysninger
 		</a>
 	</div>
 	<div id="prefill-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<p>En av fordelene til Altinn er at man allerede har metadata om både personer og virksomheter tilgjengelig. Ved hjelp av prefill kan man hente ned data om brukeren og presentere denne i en app, slik at de slipper å fylle inn disse feltene. Typiske prefillverdier vil være: navn, adresse, e-post ect.</p>
-<p>Dersom dataen er tilgjengelig i en av Altinns prefillkilder kan dette konfigureres mot et felt i datamodellen og automatisk populeres når skjemaet opprettes. Dersom man har andre behov for prefill kan dette løses med kode i applikasjonen.</p>
-<p>I denne oppgaven flyttes fokus tilbake til den første datainnsamlingssiden, og målet er å preutfylle personopplysninger om sluttbrukeren for å spare brukeren litt tid.</p>
+			<p>En av fordelene til Altinn er at man allerede har metadata om både personer og virksomheter tilgjengelig. Ved hjelp av forhåndsutfylling kan man hente ned data om brukerne og presentere den i utfylte felter, slik at de slipper å fylle dem ut selv. Typiske forhåndsutfyllingsverdier vil være navn, adresse, e-post osv.</p>
+<p>Dersom dataen er tilgjengelig i en av Altinns forhåndsutfyllingskilder, kan dette konfigureres mot et felt i datamodellen og automatisk populeres når skjemaet opprettes. Dersom man har andre behov for forhåndsutfylling, kan dette løses med kode i applikasjonen.</p>
+<p>I denne oppgaven flyttes fokus tilbake til den første datainnsamlingssiden, og målet er å forhåndsutfylle personopplysninger om sluttbrukeren for å spare brukeren for tid.</p>
 <h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
 <ul>
 <li>
-<p>Følgende verdier skal preutfylles for brukeren:</p>
+<p>Følgende verdier skal forhåndsutfylles for brukeren:</p>
 <ul>
 <li>Fornavn: Innflytter.Fornavn</li>
 <li>Mellomnavn: Innflytter.Mellomnavn</li>
@@ -722,20 +722,22 @@ Se en oversikt over andre tilbud i kommunen her.
 </ul>
 </li>
 <li>
-<p>Det skal <strong>ikke</strong> være mulig å endre preutfylt navn og alder</p>
+<p>Det skal <strong>ikke</strong> være mulig å endre forhåndsutfylt navn og alder</p>
 </li>
 <li>
-<p>Det skal være mulig å endre preutfylt e-post og telefonnummer</p>
+<p>Det skal være mulig å endre forhåndsutfylt e-post og telefonnummer</p>
 </li>
 </ul>
 <h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>
 <ul>
-<li><a href="https://altinncdn.no/schemas/json/prefill/prefill.schema.v1.json">Tilgjengelige prefillkilder</a></li>
-<li><a href="/nb/app/development/data/prefill/#prefill-fra-nasjonale-register-og-brukerprofil">Prefill fra nasjonale register og brukerprofil</a></li>
-<li><a href="/nb/app/development/data/prefill/#egendefinert-prefill">Egendefinert prefill</a></li>
-<li><a href="../../../api/models/instance/#instanceowner">Beskrivelse av InstanceOwner-objektet</a></li>
+<li><a href="https://altinncdn.no/schemas/json/prefill/prefill.schema.v1.json">Tilgjengelige forhåndsutfyllingskilder</a></li>
+<li><a href="/nb/app/development/data/prefill/#prefill-fra-nasjonale-register-og-brukerprofil">Forhåndsutfylling fra nasjonale registre og brukerprofil</a></li>
+<li><a href="/nb/app/development/data/prefill/#egendefinert-prefill">Egendefinert forhåndsutfylling</a></li>
+<li><a href="../../../api/models/instance/#instanceowner">Beskrivelse av InstanceOwner-objektet</a> - Her finner man personnummeret.
+Vær oppmerksom på at egenskapene refereres til med store forbokstaver i koden, ikke med små som i denne oversikten.</li>
 </ul>
 <h3 id="kodehjelp-beregning-av-alder-fra-personnummer">Kodehjelp: Beregning av alder fra personnummer</h3>
+<p>Denne funksjonen kan brukes til å beregne alder fra personnummeret. Det er viktig å legge til <code>using System;</code> øverst i filen for at den skal fungere.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">private</span> <span style="color:#ff79c6">static</span> <span style="color:#8be9fd">int</span> CalculateAge(<span style="color:#8be9fd">string</span> sosialSecNumber)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> MAX_D_NUMBER = <span style="color:#bd93f9">71</span>;
@@ -799,26 +801,26 @@ Se en oversikt over andre tilbud i kommunen her.
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="forståelsessjekk">Forståelsessjekk</h3>
 <ul>
-<li>Er det mulig å endre en prefillverdi når den først er satt?</li>
-<li>Hvordan kan man hindre at en prefillverdi endres av sluttbrukeren?</li>
-<li>Ikke alle norske innbyggere har et personnr,
-noen får tildelt et <a href="https://jusleksikon.no/wiki/F%C3%B8dselsnummer#D-nummer">D-nummer</a>. Hvordan må koden din justeres for å ta hensyn til dette dersom alder skal baseres på et f-nr eller d-nr som sluttbruker selv taster inn?</li>
+<li>Er det mulig å endre en forhåndsutfylt verdi når den først er satt?</li>
+<li>Hvordan kan man hindre at en forhåndsutfylt verdi endres av sluttbrukeren?</li>
+<li>Ikke alle norske innbyggere har et fødselsnummer,
+noen får tildelt et <a href="https://jusleksikon.no/wiki/F%C3%B8dselsnummer#D-nummer">D-nummer</a>. Hvordan må koden din justeres for å ta hensyn til dette dersom alder skal baseres på et fødselsnummer eller D-nummer som sluttbruker selv taster inn?</li>
 </ul>
 
 		</div>
 	</div>
 </div>
 <h2 id="oppsummering">Oppsummering</h2>
-<p>I denne modulen har du utvided applikasjonen din med mer funksjonalitet i form av å,
-legge til flere sider, sette opp sporvalg for å styre brukerflyten og satt opp preutfylling av skjemafelter
-både med tilgjengelig datakilder i Altinn og custom kode.</p>
-<p>Tjenesten skal kunne kjøres opp på din lokale maskin med local test og du skal kunne teste begge brukerflytene og
-bekrefte at riktige felter blir preutfylt.</p>
-<p><strong>Husk å <em>pushe</em> de lokale endringene dine, så de blir tilgjengelig i Altinn Studio når du er fornøyd</strong></p>
+<p>I denne modulen har du utvidet applikasjonen din med mer funksjonalitet i form av å
+legge til flere sider, sette opp sporvalg for å styre brukerflyten og sette opp forhåndsutfylling av skjemafelter
+både med tilgjengelige datakilder i Altinn og egendefinert kode.</p>
+<p>Tjenesten skal kunne kjøres opp på din lokale maskin med lokal test og du skal kunne teste begge brukerflytene og
+bekrefte at riktige felter blir forhåndsutfylt.</p>
+<p><strong>Husk å <em>pushe</em> de lokale endringene dine, så de blir tilgjengelige i Altinn Studio når du er fornøyd</strong></p>
 <h3 id="løsningsforslag">Løsningsforslag</h3>
 <p>Dersom du ikke har fått til alle stegene har vi et <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/2">løsningsforslag</a> som du kan hente inspirasjon fra.</p>
 <figure><a href="/app/app-dev-course/modul2/infopage-screenshot.png"><img src="/app/app-dev-course/modul2/infopage-screenshot.png" alt="Skjermbilde av infoside" title="Skjermbilde av infoside" /></a><figcaption><h4>Skjermbilde av infoside</h4></figcaption></figure>
-<figure><a href="/app/app-dev-course/modul2/data-screenshot.png"><img src="/app/app-dev-course/modul2/data-screenshot.png" alt="Skjermbilde av preutfylt dataside" title="Skjermbilde av preutfylt dataside" /></a><figcaption><h4>Skjermbilde av preutfylt dataside</h4></figcaption></figure>
+<figure><a href="/app/app-dev-course/modul2/data-screenshot.png"><img src="/app/app-dev-course/modul2/data-screenshot.png" alt="Skjermbilde av forhåndsutfylt dataside" title="Skjermbilde av forhåndsutfylt dataside" /></a><figcaption><h4>Skjermbilde av forhåndsutfylt dataside</h4></figcaption></figure>
 <figure><a href="/app/app-dev-course/modul2/ikke-for-deg-screenshot.png"><img src="/app/app-dev-course/modul2/ikke-for-deg-screenshot.png" alt="Skjermbilde av alternativ arbeidsflyt: denne siden er ikke for deg" title="Skjermbilde av alternativ arbeidsflyt: denne siden er ikke for deg" /></a><figcaption><h4>Skjermbilde av alternativ arbeidsflyt: denne siden er ikke for deg</h4></figcaption></figure>
 
 

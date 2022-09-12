@@ -1120,7 +1120,7 @@ The data values are appended to the application title when the instance is displ
 <h2 id="configuration">Configuration</h2>
 <p>Configuration of presentation fields is defined in <code>applicationmetadata.json</code>,
 which you can find in ythe appliation repository in the folder <code>App/config</code>.</p>
-<p>Add a new section named <code>presentationField</code> that consists of the proprties below</p>
+<p>Add a new section named <code>presentationField</code> that consists of the properties below.</p>
 <table>
 <thead>
 <tr>
@@ -1145,16 +1145,17 @@ which you can find in ythe appliation repository in the folder <code>App/config<
 </table>
 <p>The complete presentation fields configuration in an application might look like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#f1fa8c">&#34;presentationFields&#34;</span>: [
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;Ansettelse&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;path&#34;</span>: <span style="color:#f1fa8c">&#34;OpplysningerOmArbeidstakeren-grp-8819.Arbeidsforhold-grp-8856.AnsattAar-datadef-33267.value&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;dataTypeId&#34;</span>: <span style="color:#f1fa8c">&#34;default&#34;</span>
-</span></span><span style="display:flex;"><span>},
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;Navn&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;path&#34;</span>: <span style="color:#f1fa8c">&#34;OpplysningerOmArbeidstakeren-grp-8819.OpplysningerOmArbeidstakeren-grp-8855.AnsattNavn-datadef-1223.value&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;dataTypeId&#34;</span>: <span style="color:#f1fa8c">&#34;default&#34;</span>
-</span></span><span style="display:flex;"><span>}]
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;Ansettelse&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;path&#34;</span>: <span style="color:#f1fa8c">&#34;OpplysningerOmArbeidstakeren-grp-8819.Arbeidsforhold-grp-8856.AnsattAar-datadef-33267.value&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;dataTypeId&#34;</span>: <span style="color:#f1fa8c">&#34;default&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;Navn&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;path&#34;</span>: <span style="color:#f1fa8c">&#34;OpplysningerOmArbeidstakeren-grp-8819.OpplysningerOmArbeidstakeren-grp-8855.AnsattNavn-datadef-1223.value&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;dataTypeId&#34;</span>: <span style="color:#f1fa8c">&#34;default&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>]
 </span></span></code></pre></div><h2 id="result">Result</h2>
 <p>The result in the message box will be the title of the application followed by the presentation texts in a comma separated list.</p>
 <figure><a href="presentationtexts-msgbox.png"><img src="presentationtexts-msgbox.png" alt="Instances with presentation fields in the message box" title="Instances with presentation fields in the message box" /></a><figcaption><h4>Instances with presentation fields in the message box</h4></figcaption></figure>

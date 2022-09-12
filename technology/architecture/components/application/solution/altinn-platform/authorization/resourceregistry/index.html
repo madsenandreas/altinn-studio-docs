@@ -1134,6 +1134,149 @@ if(host != "localhost")
 <li>Samordna registermelding <a href="exampleresource4.json">Example 4</a> <a href="policysample4.xml">XACML</a></li>
 <li>Avtale om Arbeidstrening <a href="exampleresource6.json">Example 6</a> <a href="exampleresource6.json">XACML</a></li>
 </ul>
+<h2 id="resource-attributes">Resource attributes</h2>
+<p>The below table list the attributes a resource has in the resource registry. For attributes defined i cpsv:PublicService there is a link to the description.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-identifikator">Identifier</a></td>
+<td>Identifes the resource. String. Defined by resource owner.</td>
+<td>Used to identify correct policy</td>
+</tr>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-navn">Title</a></td>
+<td>The resource title</td>
+<td>Used for presenting i resource catalog. Searchable</td>
+</tr>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjenest-beskrivelse">Description</a></td>
+<td>Describes the resource.</td>
+<td>Used for service catalogue</td>
+</tr>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-harKompetentOrgan">hasCompetentAuthority</a></td>
+<td>If the resource is owned be a public organization this will be set</td>
+<td>Identifies owner of resource</td>
+</tr>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-kontaktpunkt">contactpoint</a></td>
+<td>Information about who to contact aboute the service</td>
+<td>Resource catalogue</td>
+</tr>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-hjemmeside">homepage</a></td>
+<td>Homepage for service</td>
+<td>Resource catalogue</td>
+</tr>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-temaomr%C3%A5de">thematicArea</a></td>
+<td>This property represents the Thematic Area of a Public Service as described in a controlled vocabulary.</td>
+<td>Resource catalogue</td>
+</tr>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-type">type</a></td>
+<td>This property represents the Type of a Public Service as described in a controlled vocabulary.</td>
+<td>Resource catalogue, filter</td>
+</tr>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-n%C3%A6ringsgruppering">sector</a></td>
+<td>This property represents the industry or sector a Public Service relates to, or is intended for. Note that a single Public Service may relate to multiple sectors.</td>
+<td>Resource catalog, filter</td>
+</tr>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-n%C3%B8kkelord">keyword</a></td>
+<td>This property represents a keyword, term or phrase to describe the Public Service.</td>
+<td>Catalogue, filter</td>
+</tr>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-status">status</a></td>
+<td>Indicates whether a Public Service is active, inactive, under development etc. according to a controlled vocabulary.</td>
+<td>Catalogue</td>
+</tr>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-erDelAv">isPartOf</a></td>
+<td>This property indicates a related service in which the described resource is included. This property is the inverse of dct:hasPart.</td>
+<td>Catalogue</td>
+</tr>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-dekningsomr%C3%A5de">spatial</a></td>
+<td>A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority.</td>
+<td>Catalogue</td>
+</tr>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-produserer">produces</a></td>
+<td>Links a Public Service to one or more instances of the Output class describing the actual result of executing a given Public Service.</td>
+<td>Catalogue</td>
+</tr>
+<tr>
+<td>validFrom</td>
+<td></td>
+<td>Authorization</td>
+</tr>
+<tr>
+<td>validTo</td>
+<td></td>
+<td>Authorization</td>
+</tr>
+<tr>
+<td>rightsDescription</td>
+<td>Describes the rights is delegated if resource access is delegated</td>
+<td>Altinn Access Managment</td>
+</tr>
+<tr>
+<td>publicService</td>
+<td>Defines if it is public</td>
+<td>Altinn</td>
+</tr>
+<tr>
+<td>isLimitedToSpesificUsers</td>
+<td>Defines if RRR will be used to controll access</td>
+<td>Access Management, PDP</td>
+</tr>
+<tr>
+<td>availableFor</td>
+<td>Defines what kind of actor that can use service</td>
+<td>Catalogue</td>
+</tr>
+<tr>
+<td>SelfIdentifiedUserEnabled</td>
+<td>The service can be used by selfidentifed users</td>
+<td>Catalogue, filter, access managment</td>
+</tr>
+<tr>
+<td>Reference</td>
+<td>Reference to the platform/service and where it is hosted. Example: Altinn 2 servicecodes</td>
+<td></td>
+</tr>
+<tr>
+<td>EnterpriseUserEnabled</td>
+<td>Service can be used by enterprise users</td>
+<td>Catalogue, Access management</td>
+</tr>
+<tr>
+<td>Scopes</td>
+<td>Identfies the scopes defined by service</td>
+<td>Maskinporten</td>
+</tr>
+<tr>
+<td>EvenTypes</td>
+<td>Identfies types of events a resource can publish</td>
+<td>Altinn Events, Catalogue</td>
+</tr>
+<tr>
+<td>Resourcetype</td>
+<td>Type of resource.</td>
+<td>Access management</td>
+</tr>
+</tbody>
+</table>
 <h2 id="resource-repository">Resource repository</h2>
 <p>To store resources there are two options</p>
 <ul>

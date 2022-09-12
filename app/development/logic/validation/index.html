@@ -427,7 +427,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/api/studio/"><span>Studio</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/community/"><span>Community</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/community/"><span>Community</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/about/"><span>About</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -435,7 +435,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/community/about/open-source/"><span>Open source</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/community/contributing/"><span>Contributing</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/community/contributing/"><span>Contributing</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/contributing/propose-component/"><span>Propose a new component</span></a></li>
       <li class="dd-item">
@@ -443,7 +443,7 @@ if(host != "localhost")
           <a href="/community/contributing/intro/">
             <span>Intro for developers</span></a></li>
       <li class="dd-item">
-        <a href="/community/contributing/handbook/"><span>Handbook</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/community/contributing/handbook/"><span>Handbook</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/contributing/handbook/azure-devops/"><span>Azure DevOps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -529,7 +529,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/community/contributing/handbook/routing/traefik/ingress-routes/"><span>Traefik ingress routes</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/community/contributing/handbook/securecoding/"><span>Secure DevOps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul><li class="dd-item">
+        <a href="/community/contributing/handbook/securecoding/"><span>Secure DevOps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
           <a href="/community/contributing/handbook/securecoding/checklist/">
             <span>Code Checklist</span></a></li></ul></li>
       <li class="dd-item">
@@ -1125,6 +1125,7 @@ if(host != "localhost")
 <p>Validations ensures that the user&rsquo;s input is valid with regard to the data model, 
 in addition to all custom rules that are set up for the application.
 Validations can be run either on the client- (the browser) or the server-side.</p>
+<p>Validations can also be set up to <a href="/app/development/ux/pages/navigation/#validation-on-page-navigation">trigger on page navigation</a>.</p>
 <h2 id="client-side-validation">Client-side validation</h2>
 <p>This is validation that is run in the browser, before data is sent to server for saving. This makes it possible to give quick feedback to 
 the user during the fillout process.</p>
@@ -1204,11 +1205,15 @@ input is a text longer than four characters.</p>
 </tbody>
 </table>
 <h3 id="more-about-error-messages-for-required-fields">More about error messages for required fields</h3>
+<p>For a smoother user experience, error messages for missing data in required fields won&rsquo;t be displayed automatically
+while filling out a form, unless validation is triggered <a href="#single-field-validation">for a single field</a>, when saving
+a <a href="#group-validation">row in a repeating group</a> or
+<a href="/app/development/ux/pages/navigation/#validation-on-page-navigation">when navigating to another page</a>.</p>
 <p>The error message for required fields is as defined above, <em>&ldquo;You have to fill out {0}&rdquo;</em>. The <code>{0}</code> symbol is replaced with the field that
 the error message is shown for. This is done in the following way:</p>
 <ul>
 <li>If <code>shortName</code> text is defined for the component, this is used. <em>This is a new text that is currently used only for this specific error message.</em></li>
-<li>If the <code>shortName</code> text is not defined, the <code>title</code> text for the component is used - this is the components label text.</li>
+<li>If the <code>shortName</code> text is not defined, the <code>title</code> text for the component is used - this is the components label text. The text will be converted to use a lowercase letter first, unless the text looks like an acronym.</li>
 <li>In some special cases (Address component) where there are multiple fields within the component, the default labels for the fields is used.</li>
 </ul>
 <h4 id="example-component-with-only-title">Example: Component with only <code>title</code></h4>

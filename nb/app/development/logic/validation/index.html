@@ -379,15 +379,15 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/launched-apps/digdir/be-om-api-nokkel/"><span>Tilgang til REST API</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/nb/api/apps/"><span>App</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/metadata/"><span>Metadata</span></a></li>
       <li class="dd-item">
         <a href="/nb/api/apps/instances/"><span>Instanser</span></a></li>
       <li class="dd-item">
-        <a href="/nb/api/apps/data-elements/"><span>Data-elementer</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/apps/data-elements/"><span>Data-elementer</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/data-elements/tags/"><span>Tags</span></a></li></ul></li>
       <li class="dd-item">
@@ -575,6 +575,7 @@ if(host != "localhost")
 <p>Valideringer sørger for at brukerens input er gyldig med tanke på datamodellen,
 i tillegg til alle egendefinerte regler som settes opp for applikasjonen.
 Valideringer kan kjøres enten på klient (dvs. browseren) eller serversiden.</p>
+<p>Man kan også sette opp validering til å <a href="/nb/app/development/ux/pages/navigation/#validering-ved-sidebytte">kjøre ved sidebytte</a>.</p>
 <h2 id="klientside-validering">Klientside-validering</h2>
 <p>Dette er validering som kjøres i browseren, FØR data er sendt til server for lagring. Dette gjør det mulig å gi raske tilbakemeldinger til 
 sluttbruker underveis i utfylling.</p>
@@ -654,11 +655,15 @@ input er en tekst med lengde mer enn 4 karakterer.</p>
 </tbody>
 </table>
 <h3 id="spesielt-om-standard-feilmelding-for-påkrevde-felter">Spesielt om standard feilmelding for påkrevde felter</h3>
+<p>For en smidigere brukeropplevelse vises ikke feilmeldinger for manglende utfylling av påkrevde felter under
+utfylling av et skjema, med mindre validering trigges <a href="#enkeltfeltvalidering">på et enkeltfelt</a>, ved lagring
+av <a href="#gruppevalidering">en rad i en repeterende gruppe</a> eller
+<a href="/nb/app/development/ux/pages/navigation/#validering-ved-sidebytte">ved navigering til en annen side</a>.</p>
 <p>Feilmeldingen for påkrevde felter er <em>&ldquo;Du må fylle ut {0}&rdquo;</em>. Her blir <code>{0}</code> erstattet med det feltet som feilmeldingen gjelder for.
 Dette gjøres på følgende måte:</p>
 <ul>
 <li>Bruker feltets <code>shortName</code> tekst. Dette er en ny tekst som kan settes opp pr. komponent på samme måte som ledetekst (<code>title</code>) settes i dag. <em>Denne teksten brukes pr nå KUN i forbindelse med feilmeldingen for påkrevde felter.</em></li>
-<li>Om <code>shortName</code> ikke er definert brukes feltets <code>title</code> tekst (det som er definert som ledetekst for feltet).</li>
+<li>Om <code>shortName</code> ikke er definert brukes feltets <code>title</code> tekst (det som er definert som ledetekst for feltet), og teksten vil bli forsøkt gjort om til en tekst med liten forbokstav (med mindre teksten ser ut som en forkortelse).</li>
 <li>I noen spesialtilfeller (Adresse-komponenten) der det er flere felter i ett brukes de standard-tekstene som er definert for feltene i komponenten.</li>
 </ul>
 <h4 id="eksempel-felt-med-kun-title">Eksempel: Felt med kun <code>title</code></h4>

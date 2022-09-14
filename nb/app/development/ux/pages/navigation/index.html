@@ -379,7 +379,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/launched-apps/digdir/be-om-api-nokkel/"><span>Tilgang til REST API</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -648,9 +648,7 @@ Navigasjonsbar lister opp alle sider i appen, og egner seg derfor ikke til bruk 
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Her vil sidene da vises i rekkefølgen spesifisert i <code>pages.order</code>. Om denne array&rsquo;en ikke settes i repo så vil man bruke alfabetisk rekkefølge som utgangspunkt for rekkefølgen på sidene.</p>
-<div class="notices info" >
-Funksjonalitet for å kunne dynamisk bestemme hvilken side som er neste er ikke noe som støttes i denne versionen av funksjonaliteten.
-</div>
+<p>Om du ønsker å dynamisk endre på rekkefølgen på sidene kan dette gjøres med <a href="../tracks/">sporvalg.</a></p>
 <h2 id="validering-ved-sidebytte">Validering ved sidebytte</h2>
 <p>Det er mulig å trigge validering i det brukeren prøver å bevege seg til neste side. Dette kan gjøres ved å legge til strengen <code>validatePage</code> i <code>triggers</code> på navigasjons-knapp komponenten. Eksempel:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{

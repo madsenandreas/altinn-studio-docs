@@ -1718,6 +1718,30 @@
                 href="https://docs.altinn.studio/nb/community/roadmap/studio/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_administration/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_administration/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_administration/"
+                />
+  </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/</loc>
     <xhtml:link
                 rel="alternate"
@@ -2136,6 +2160,18 @@
                 href="https://docs.altinn.studio/nb/app/development/api/expose/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_er/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_er/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_er/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/api/events/</loc>
     <xhtml:link
                 rel="alternate"
@@ -2514,6 +2550,18 @@
                 href="https://docs.altinn.studio/nb/app/testing/local/apitests/org/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_persons/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_persons/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_persons/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/tags/platform/</loc>
     <xhtml:link
                 rel="alternate"
@@ -2624,6 +2672,18 @@
                 href="https://docs.altinn.studio/nb/community/devops/roadmapprocess/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/api/scenarios/</loc>
     <xhtml:link
                 rel="alternate"
@@ -2634,6 +2694,18 @@
                 rel="alternate"
                 hreflang="nb"
                 href="https://docs.altinn.studio/nb/api/scenarios/"
+                />
+  </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_ske/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_ske/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_ske/"
                 />
   </url><url>
     <loc>https://docs.altinn.studio/nb/app/testing/local/apitests/user/</loc>
@@ -2792,6 +2864,18 @@
                 href="https://docs.altinn.studio/nb/app/testing/local/testusers/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/test_authorization_application/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/test_authorization_application/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/test_authorization_application/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/tags/texts/</loc>
     <xhtml:link
                 rel="alternate"
@@ -2924,6 +3008,30 @@
                 rel="alternate"
                 hreflang="nb"
                 href="https://docs.altinn.studio/nb/app/development/logic/validation/"
+                />
+  </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/"
+                />
+  </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_enterprices/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_enterprices/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_enterprices/"
                 />
   </url>
 </urlset>

@@ -1882,6 +1882,18 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/runtime/security/authentication/accesstoken/</loc>
   </url><url>
+    <loc>https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_administration/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_administration/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_administration/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/technology/tools/alpine-linux/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/altinn-apps/</loc>
@@ -1899,6 +1911,30 @@
     <loc>https://docs.altinn.studio/technology/architecture/components/application/solution/altinn-platform/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/solutions/altinn-platform/</loc>
+  </url><url>
+    <loc>https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"
+                />
+  </url><url>
+    <loc>https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"
+                />
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/devops/softwareconfiguration/deployment/altinn-studio/</loc>
   </url><url>
@@ -2542,7 +2578,31 @@
                 href="https://docs.altinn.studio/community/roadmap/studio/enduser/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_enterprices/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_enterprices/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_enterprices/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/devops/environments/</loc>
+  </url><url>
+    <loc>https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_er/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_er/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_er/"
+                />
   </url><url>
     <loc>https://docs.altinn.studio/tags/error-handling/</loc>
   </url><url>
@@ -2636,6 +2696,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://docs.altinn.studio/app/development/ux/fields/grouping/"
+                />
+  </url><url>
+    <loc>https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/"
                 />
   </url><url>
     <loc>https://docs.altinn.studio/community/contributing/handbook/</loc>
@@ -2954,6 +3026,18 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/solution/altinn-platform/authorization/pep/</loc>
   </url><url>
+    <loc>https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_persons/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_persons/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_persons/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/solution/altinn-platform/authorization/pip/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/platform/</loc>
@@ -3214,6 +3298,18 @@
                 href="https://docs.altinn.studio/app/development/ux/fields/settings/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_ske/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_ske/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_ske/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/devops/softwareconfiguration/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/solutions/cli/software-implementation/</loc>
@@ -3376,6 +3472,18 @@
   </url><url>
     <loc>https://docs.altinn.studio/tags/testing/</loc>
   </url><url>
+    <loc>https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/test_authorization_application/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/authorization/guidelines_authorization/test_authorization_application/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/test_authorization_application/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/text/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/texts/</loc>
@@ -3393,6 +3501,8 @@
     <loc>https://docs.altinn.studio/community/contributing/handbook/theming/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/third-party-tools/</loc>
+  </url><url>
+    <loc>https://docs.altinn.studio/technology/architecture/components/application/solution/altinn-platform/authorization/accessgroups/type-accessgroups/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/tls/</loc>
   </url><url>

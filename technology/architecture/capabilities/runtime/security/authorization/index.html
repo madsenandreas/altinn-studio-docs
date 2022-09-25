@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The Altinn 3 platform has very powerful and flexible authorization capabilities.">
+    <meta name="description" content="The Altinn platform has compelling and flexible authorization capabilities.">
 
 <title>Authorization – Altinn</title><link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <link href="/css/nucleus.css" rel="stylesheet">
@@ -291,9 +291,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -853,7 +853,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/acessgroups/"><span>Access Groups</span></a></li></ul></li>
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/acessgroups/"><span>Access Groups</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/resourceregistry/"><span>Resource Registry</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/events/"><span>Events</span></a></li>
       <li class="dd-item">
@@ -1125,22 +1127,22 @@ if(host != "localhost")
                 <span class="links"><a href='/technology/'>Technology</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/'>Architecture</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/capabilities/'>Capabilities</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/capabilities/runtime/'>Runtime</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/capabilities/runtime/security/'>Security</a> <span class='adocs-breadcrumb-divider'> / </span> Authorization</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/architecture">architecture</a><a class="label label-default" href="https://docs.altinn.studio/tags/security">security</a></div><div id="body-inner"><h1 class="a-fontBold">Authorization</h1>
-              <p class="a-leadText" id="leadText">The Altinn 3 platform has very powerful and flexible authorization capabilities.</p><p>The <a href="https://en.wikipedia.org/wiki/Authorization">authorization</a> capabilities are based around <a href="https://en.wikipedia.org/wiki/Attribute-based_access_control">ABAC</a> (Attribute-Based Access Controls)
-and the <a href="https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html">XACML 3.0 standard</a>.</p>
+              <p class="a-leadText" id="leadText">The Altinn platform has compelling and flexible authorization capabilities.</p><p>The <a href="https://en.wikipedia.org/wiki/Authorization">authorization</a> capabilities are based on <a href="https://en.wikipedia.org/wiki/Attribute-based_access_control">ABAC</a> (Attribute-Based Access Controls)
+and use the <a href="https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html">XACML 3.0 standard</a>.</p>
 <p>These capabilities include:</p>
 <ul>
-<li>The capability to define wide/narrow authorization policies for apps. Rules can be valid for the whole application or only valid for a subset of resources.</li>
+<li>The capability to define wide/narrow authorization policies for apps. Rules can be valid for the whole application or only for a subset of resources.</li>
 <li>The capability to evaluate policies  based on a request for a resource</li>
 <li>The capability to configure authorization policies for API endpoints</li>
 <li>The capability to enforce decision request (permit or deny)</li>
-<li>The capability to enrich decision request with needed information</li>
-<li>The capability to retrieve context information from different sources both regarding resources accessed and subjects doing that.</li>
+<li>The capability to enrich decision requests with needed information</li>
+<li>The capability to retrieve context information from different sources for subject and resource.</li>
 <li>The capability to authorize based on API scopes</li>
 </ul>
 <h2 id="main-concept">Main Concept</h2>
 <p>The following concepts are important</p>
 <h3 id="authorization-components">Authorization Components</h3>
-<p>The authorization capabilities are provided by the following solution components</p>
+<p>The following solution components provide authorization capabilities</p>
 <ul>
 <li>PAP - Policy Administration Point: Where the authorization policies are defined</li>
 <li>PDP - Policy Decision Point:  Where the authorization request is evaluated</li>
@@ -1232,8 +1234,8 @@ or when end users are accessing the apps through end-user-systems.</p>
 <li>altinn:serviceowner/instances.write  : Give orgs the right to access API for writing to instances</li>
 </ul>
 <h2 id="the-future">The Future</h2>
-<p>The below show the future of Authorization Component. Work in progress</p>
-<p><img src="../../../../components/application/solution/altinn-platform/authorization/authorizationdetailed2026.drawio.svg" alt="The future"></p>
+<p>The below show the future of Authorization Component. <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/#altinn-authorization---future">Work in progress</a></p>
+<p><img src="../../../../components/application/solution/altinn-platform/authorization/authorization_solution_components_future.drawio.svg" alt="The future"></p>
 
 
 <footer class=" footline" ></footer>

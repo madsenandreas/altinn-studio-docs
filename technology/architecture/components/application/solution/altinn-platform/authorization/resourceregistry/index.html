@@ -291,9 +291,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -853,7 +853,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/acessgroups/"><span>Access Groups</span></a></li></ul></li>
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/acessgroups/"><span>Access Groups</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/resourceregistry/"><span>Resource Registry</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/events/"><span>Events</span></a></li>
       <li class="dd-item">
@@ -1127,9 +1129,12 @@ if(host != "localhost")
                 <span class="links"><a href='/technology/'>Technology</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/'>Architecture</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/'>Components</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/'>Application</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/solution/'>Solution</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/solution/altinn-platform/'>Altinn Platform</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/solution/altinn-platform/authorization/'>Authorization</a> <span class='adocs-breadcrumb-divider'> / </span> Resource Registry</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/architecture">architecture</a><a class="label label-default" href="https://docs.altinn.studio/tags/security">security</a><a class="label label-default" href="https://docs.altinn.studio/tags/authorization">authorization</a><a class="label label-default" href="https://docs.altinn.studio/tags/xacml">xacml</a></div><div id="body-inner"><h1 class="a-fontBold">Resource Registry</h1>
-              <p class="a-leadText" id="leadText">The Resource Registry</p><p>WORK IN PROGRESS - NOT FINALIZED</p>
+              <p class="a-leadText" id="leadText">The Resource Registry</p><div class="notices warning" >
+This is work in progress
+</div>
+
 <p>The service registry will contain information about the service resources</p>
-<p>See <a href="https://github.com/Altinn/altinn-authorization/issues/24">Github #24</a></p>
+<p>See <a href="https://github.com/Altinn/altinn-resource-registry/issues/23">Github #24</a></p>
 <h2 id="type-of-resources">Type of resources</h2>
 <p>There are different types of resources that can be registrated</p>
 <ul>
@@ -1184,6 +1189,11 @@ if(host != "localhost")
 <td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-harKompetentOrgan">hasCompetentAuthority</a></td>
 <td>If the resource is owned be a public organization this will be set</td>
 <td>Identifies owner of resource</td>
+</tr>
+<tr>
+<td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#Tjeneste-eiesAv">ownedBy</a></td>
+<td>This property refers to the Agent who owns the Service.</td>
+<td>Identifies private owner of resource</td>
 </tr>
 <tr>
 <td><a href="https://informasjonsforvaltning.github.io/cpsv-ap-no/#OffentligTjeneste-kontaktpunkt">contactpoint</a></td>

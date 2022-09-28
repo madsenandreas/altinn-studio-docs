@@ -1142,7 +1142,7 @@ if(host != "localhost")
     <li><a href="#implement-the-client">Implement the client</a></li>
     <li><a href="#registering-the-client-in-the-application">Registering the client in the application</a></li>
     <li><a href="#using-the-client-in-the-application-logic">Using the client in the application logic</a></li>
-    <li><a href="#caching-of-respons-data">Caching of respons data</a></li>
+    <li><a href="#caching-of-response-data">Caching of response data</a></li>
   </ul>
 </nav><p>ASP.NET Core has good opportunities to consume different types of API.</p>
 <p>This can be useful if you want to expose your organization&rsquo;s own APIs via an app or need help from external APIs in the application logic.</p>
@@ -1210,7 +1210,7 @@ capital and region. We create a minimal response object that only contains the p
 <p>In this example, the API doesn&rsquo;t require a complex request object, so we only need this one model.
 Should you need a seperate model for the request object, a class can be created the same way.</p>
 <h2 id="setting-up-an-interface-for-the-client">Setting up an interface for the client</h2>
-<p>It is reccomended that an interface if defined for the client what will call the API. 
+<p>It is recommended that an interface is defined for the client that will call the API. 
 This enables you to benefit from the strenghts of .NET with dependency injection and efficient handeling of HTTP clients.</p>
 <p>In the application repository, a new folder <em>App/clients</em> is created.
 Within this folder, a new file <code>ICountryClient.cs</code> is created.</p>
@@ -1303,11 +1303,11 @@ which is what the methods using the client expect as an output.</p>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">using</span> Microsoft.Extensions.Logging;
 </span></span></code></pre></div><p>Further, we define the class and which interface it inherrits from</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">CountryClient</span> : ICountryClient
-</span></span></code></pre></div><p>Further, three private object _<em>client</em>, __logger and _<em>serializerOptions</em></p>
+</span></span></code></pre></div><p>Further, three private objects _<em>client</em>, __logger and _<em>serializerOptions</em></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">private</span> <span style="color:#ff79c6">readonly</span> HttpClient _client;
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">private</span> <span style="color:#ff79c6">readonly</span> ILogger&lt;ICountryClient&gt; _logger;
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">private</span> <span style="color:#ff79c6">readonly</span> JsonSerializerOptions _serializerOptions;
-</span></span></code></pre></div><p>The underscore before the name is simply a naming convention and does not a functional effect.</p>
+</span></span></code></pre></div><p>The underscore before the name is simply a naming convention and does not have a functional effect.</p>
 <ul>
 <li>_<em>client</em> will be populated with an HTTP client in the constructor</li>
 <li>_<em>logger</em> will be populated with a logger, enabling logging error messages and other messages in the client logic</li>
@@ -1325,10 +1325,10 @@ which is what the methods using the client expect as an output.</p>
 </span></span><span style="display:flex;"><span>          PropertyNameCaseInsensitive = <span style="color:#ff79c6">true</span>
 </span></span><span style="display:flex;"><span>      };
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Objects are populated if there is mathcing input in the constructor, 
-and the remaining objects are nstantiated directly in the constructor.</p>
+</span></span></code></pre></div><p>Objects are populated if there are mathcing inputs in the constructor, 
+and the remaining objects are instantiated directly in the constructor.</p>
 <p>If you require additional services in this class, simply add a private object and inject its interface
-in the constructor ad we have done for _<em>logger</em>  and _<em>client</em>.</p>
+in the constructor as we have done for _<em>logger</em>  and _<em>client</em>.</p>
 <p>Further, you find the implementation of <code>GetCountry</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;Country&gt; GetCountry(<span style="color:#8be9fd">string</span> country)
 </span></span><span style="display:flex;"><span>{
@@ -1350,23 +1350,21 @@ in the constructor ad we have done for _<em>logger</em>  and _<em>client</em>.</
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Here, the status code of the API call is verified before it is deserialized and the country object returned. 
-If the statusCode is not one that indicates success, a log entry is made and <em>null</em> is returned. 
-Her gjøres det en sjekk på at statuskoden på API-kallet er en suksess-kode før vi deserialiseres og returnerer objektet.
-Dersom det ikke er en suksess-statuskode logger vi en feil og returnerer null.</p>
+If the statusCode is not one that indicates success, a log entry is made and <em>null</em> is returned.</p>
 <h2 id="registering-the-client-in-the-application">Registering the client in the application</h2>
-<p>Once the interface and client is implemented, it should be registerd in <em>App/Program.cs</em> (.NET 6) or <em>App/Startup.cs</em> (.NET 5),
+<p>Once the interface and client is implemented, it should be registered in <em>App/Program.cs</em> (.NET 6) or <em>App/Startup.cs</em> (.NET 5),
 to make it available to use in the application.</p>
 <p>In the method <code>ConfigureServices</code>, the line below is included</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddHttpClient&lt;ICountryClient, CountryClient&gt;();
 </span></span></code></pre></div><h2 id="using-the-client-in-the-application-logic">Using the client in the application logic</h2>
-<p>To enrich the form data we need to include the use of our client in the logic in the method <em>ProcessDataWrite</em> in <em>App/logic/DataProcessingHandler.cs</em>.</p>
-<p>First the client must me made available by injecting it in the constructor of the class. 
+<p>To enrich the form data we need to include the use of our client in the logic of the method <em>ProcessDataWrite</em> in <em>App/logic/DataProcessingHandler.cs</em>.</p>
+<p>First the client must be made available by injecting it in the constructor of the class. 
 DataProcessingHandler does not have a constructor by default, so this needs to be created.
 In addition, <code>using Altinn.App.client;</code> must be added to the top of the file.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> DataProcessingHandler()
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Further, a private entry for the client, inject the client into the constructor and assign it to the private client instance. 
+</span></span></code></pre></div><p>Further, add a private field for the client, inject the client into the constructor and assign it to the private client instance. 
 The result should look like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">private</span> <span style="color:#ff79c6">readonly</span> ICountryClient _countryClient;
 </span></span><span style="display:flex;"><span>
@@ -1415,7 +1413,7 @@ so all dependencies must be included in this file and included in the initializa
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">using</span> Altinn.App.client;
 </span></span></code></pre></div></li>
 <li>
-<p>Inject <code>ICountryClient</code> as the last element of the pp.cs-constructor.</p>
+<p>Inject <code>ICountryClient</code> as the last element of the App.cs-constructor.</p>
 <p>This is done in line 14</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff79c6">public</span> App(
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    IAppResources appResourcesService,
@@ -1445,18 +1443,18 @@ so all dependencies must be included in this file and included in the initializa
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>        httpContextAccessor)
 </span></span></code></pre></div></li>
 <li>
-<p>Include countryClient in the initialization ofDataProcessingHandler</p>
+<p>Include countryClient in the initialization of DataProcessingHandler</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span>_dataProcessingHandler = <span style="color:#ff79c6">new</span> DataProcessingHandler(countryClient);
 </span></span></code></pre></div></li>
 </ul>
-<h2 id="caching-of-respons-data">Caching of respons data</h2>
-<p>A drawback of the example as it now stands if that a request will be made to the API each time 
+<h2 id="caching-of-response-data">Caching of response data</h2>
+<p>One drawback of the example as it now stands is that a request will be made to the API every time 
 a piece of the form data i updated.</p>
-<p>It is a reasonable assumption that a countries capital and region will not change frequiently.
+<p>It is a reasonable assumption that a country&rsquo;s capital and region will not change frequently.
 If information about Norway is retrieved, we can store this in the application for a period of time, 
-so the cost of the request is saved.</p>
+so that the cost of future requests are reduced.</p>
 <p>The changes to the code are not described in detail, but the complete code is available below.
-All the modifications are made to the <em>CountryClient.cs</em>-file.</p>
+All of the modifications are made to the <em>CountryClient.cs</em>-file.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">using</span> Altinn.App.models;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">using</span> Microsoft.Extensions.Caching.Memory;

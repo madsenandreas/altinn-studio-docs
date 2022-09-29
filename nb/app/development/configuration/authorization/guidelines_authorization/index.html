@@ -589,8 +589,8 @@ if(host != "localhost")
     <li><a href="#autorisasjonsregler-må-testes">Autorisasjonsregler må testes</a></li>
     <li><a href="#altinn-kan-pålegge-å-endre-autorisasjonsregler">Altinn kan pålegge å endre autorisasjonsregler</a></li>
   </ul>
-</nav><p>Autorisasjonsregler er defineres i henhold til XACML 3.0-standarden. Reglene vil angi hvilke betingelser som må være til stede for å gi
-en bestemt bruker tilgang til å utføre ett eller flere trinn i en applikasjonens <a href="/app/development/configuration/process/">definerte arbeidsprosess</a>.</p>
+</nav><p>Autorisasjonsregler defineres i henhold til XACML 3.0-standarden. Reglene vil angi hvilke betingelser som må være til stede for å gi
+en bestemt bruker tilgang til å utføre ett eller flere trinn i en applikasjons <a href="/app/development/configuration/process/">definerte arbeidsprosess</a>.</p>
 <h2 id="du-må-vite-hva-du-gjør">Du må vite hva du gjør!</h2>
 <p>Eier av tjenesten er selv ansvarlig for å lage autorisasjonsregler og velge riktige roller som gir tilgang til beskyttet informasjon. 
 Selv om XACML-standarden gir utvikleren stor frihet til å definere regler og velge de roller man ønsker, så må disse retningslinjene følges for å sikre at
@@ -598,12 +598,12 @@ tilgang til applikasjonen er korrekt og fungerer etter hensikten.</p>
 <p>For å ta de riktige valgene når du lager autorisasjonsregler for appen din trenger du en generell forståelse av hvordan Altinn Autorisasjon fungerer og hvordan den brukes til å kontrollere tilgang.
 På denne <a href="https://altinn.github.io/docs/utviklingsguider/styring-av-tilgang/for-tjenesteeier/">siden</a> kan du lese mer om Altinn Autorisasjon.</p>
 <h2 id="roller-må-velges-med-omhu">Roller må velges med omhu!</h2>
-<p>I konfigurasjonsfil for autorisasjons brukes roller for å definere hvem som har lov til å utføre hvilke handlinger.
+<p>I konfigurasjonsfil for autorisasjon brukes roller for å definere hvem som har lov til å utføre hvilke handlinger.
 Altinn tilbyr et sett med roller som kan brukes som betingelse for å få tilgang til et bestemt trinn i arbeidsprosessen og informasjon som vises.</p>
 <p>Før du velger hvilken rolle du skal bruke, må du være sikker på at du har en god forståelse av hva disse rollene betyr og hva slags tjenester og informasjon som forventes at denne rollen har tilgang til.
-Det er viktig at autorisasjonsregler og valg av roller samsvarer med intensjoner og forventninger som adminitrator for aktøren har. 
-F eks forventer antagelig admnistrator at rollen &ldquo;Skatt&rdquo; gir tilgang til tjenester knyttet til f eks skatterapportering, men ikke at denne rollen gir tilgang til tjenester innen Lønn og personalområdet. 
-På samme måte skal man være forsiktig med å bruke f eks rollen &ldquo;Kontaktperson&rdquo; fra Enhetregistert&quot; til å gi tilgang til tjenester med mindre man har vurdert grunnlaget for at denne får tilgang på en grundig måte. .</p>
+Det er viktig at autorisasjonsregler og valg av roller samsvarer med intensjoner og forventninger som administrator for aktøren har. 
+For eksempel forventer antagelig admnistrator at rollen &ldquo;Skatt&rdquo; gir tilgang til tjenester knyttet til for eksempel skatterapportering, men ikke at denne rollen gir tilgang til tjenester innen Lønn og personalområdet. 
+På samme måte skal man være forsiktig med å bruke for eksempel rollen &ldquo;Kontaktperson&rdquo; fra Enhetsregisteret til å gi tilgang til tjenester med mindre man har vurdert grunnlaget for at denne får tilgang på en grundig måte.</p>
 <p>Hvis du ikke finner en rolle du synes passer må du ta kontakt med Altinn slik at vi kan vurdere om nye roller bør opprettes.</p>
 <p><a href="roles_and_rights">Her</a> kan du lese mer om hvilke roller som finnes i Altinn.</p>
 <h2 id="unngå-endringer-autorisasjonsregler-etter-produksjonssetting">Unngå endringer autorisasjonsregler etter produksjonssetting</h2>
@@ -616,10 +616,10 @@ På samme måte skal man være forsiktig med å bruke f eks rollen &ldquo;Kontak
 </div>
 <h2 id="autorisasjonsregler-må-testes">Autorisasjonsregler må testes</h2>
 <p>Autorisasjonsregler må som alt annet testes før applikasjonen lanseres for å verifisere at riktige roller har tilgang til nødvendig data.</p>
-<p><a href="test_authorization_application">Her</a> kan du lese våre anbefalinger knyttet til testing av autorisasjonsregler</p>
+<p><a href="test_authorization_application">Her</a> kan du lese våre anbefalinger knyttet til testing av autorisasjonsregler.</p>
 <h2 id="altinn-kan-pålegge-å-endre-autorisasjonsregler">Altinn kan pålegge å endre autorisasjonsregler</h2>
 <p>Selv om det er applikasjonseierens ansvar å konstruere riktig autorisasjonsregel og velge riktige roller, vil Altinn gjennomføre stikkkontroller med autorisasjonsreglene for tjenester som settes i produksjon.
-Hvis vi oppdager det vi anser som feil bruk av Altinn Autorisasjon så vil vi, om nødvendig, ta tjenesten ut av produksjon eller pålegge endringer i autorisasjonsregler</p>
+Hvis vi oppdager det vi anser som feil bruk av Altinn Autorisasjon så vil vi, om nødvendig, ta tjenesten ut av produksjon eller pålegge endringer i autorisasjonsregler.</p>
 
 
 <footer class=" footline" ></footer>

@@ -1190,6 +1190,18 @@
                 href="https://docs.altinn.studio/nb/community/about/slide/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/data/data-model/seres-migration/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/data/data-model/seres-migration/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/data/data-model/seres-migration/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/api/apps/data-elements/tags/</loc>
     <xhtml:link
                 rel="alternate"

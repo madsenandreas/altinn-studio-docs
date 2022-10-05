@@ -144,7 +144,7 @@
 	"title": "Components",
 	"tags": [],
 	"description": "",
-	"content": "\rPanel\rPrintButton\rLikert\rHow to use a likert component\n"
+	"content": "\rMultipleSelect\rPanel\rPrintButton\rLikert\rHow to use a likert component\n"
 },
 {
 	"uri": "https://docs.altinn.studio/app/design/guidelines/consistency/",
@@ -222,6 +222,13 @@
 	"tags": ["translate-to-english"],
 	"description": "Altinn Studio is our new tool for developing public digital services. This can be anything from very simple forms to advanced applications.",
 	"content": "Prosessen for å lage skjemaer og meldinger vil være forskjellig alt etter som hvor stor eller liten målgruppen er, hvor mye data som skal behandles eller hvor mye jobb det er å legge til rette for at egne systemer kan snakke med Altinn.\nSlik går du frem:\nStart alltid med å definere brukerbehov\nTenk nøye gjennom hele prosessen fra et brukerperspektiv. Hva er utfordringen og hvem skal den løses for? Hva er databehovet? Lag gjerne en skisse til kommunikasjon med brukeren og test skissen på folk i målgruppen. Lese også vår guide til prototyping i Figma. God planlegging er nøkkelen til et godt resultat. Sjekk Guide: Hvordan jobbe brukerorientert? for inspirasjon. Få tilgang til systemer\nHvis du ikke har utviklet tjenester i Altinn Studio før trenger du å opprette en bruker. Har du ikke allerede en ferdig datamodell/XSD så trenger du i tillegg tilgang til SERES-domeneklient. Tilrettelegge egne systemer for sending og mottak av data\nDet finnes standardiserte mønstre basert på REST-API for å sende og motta data fra/til dine interne systemer. Autentisering skjer med Maskinporten og du laster ned data ved pull fra database, og laster opp data direkte mot API i den enkelte applikasjon. Vår referanseapplikasjon Altinn CLI ​viser disse mønstrene og kan brukes for å komme i gang. Utvikle tjenestene\nAltinn Studio brukes til å opprette applikasjoner (apps). En app kan være alt fra enkle skjemaer til større avanserte applikasjoner som digitaliserer komplekse prosesser. Det er viktig å tenke på at brukeren skal oppleve prosessene som sammenhengende og oversiktlige. Prosessene kan startes av det offentlige eller av brukeren selv, eller automatisk som en reaksjon på en hendelse. Teste tjenestene\nAltinn har et eget testmiljø hvor du kan teste om apper og opp-/nedlasting av data virker som det skal. I testmiljøet bruker du fiktive testpersoner og organisasjoner. Når du har kommet så langt i utviklingen er det også viktig å brukerteste den endelige løsningen på reelle folk i målgruppen. Dette for å sikre at det ikke er noen hinder for de som skal bruke tjenestene. Det er også mulig å teste app lokalt på egen maskin. Produksjonssette tjenestene\nTjenesteeier kan selv produksjonssette sine applikasjoner og gjøre vedlikehold av kode og avhengigheter. Melding av feil\nFeil meldes til Altinn fra den enkelte tjenesteeier sitt dashboard på Altinn Digitalisering (krever innlogging). "
+},
+{
+	"uri": "https://docs.altinn.studio/app/development/ux/components/multipleselect/",
+	"title": "MultipleSelect",
+	"tags": [],
+	"description": "",
+	"content": "MultipleSelect can be used when the user must choose one or more values. Offers search out of the box.\nFormLayout.json example:\n{ \u0026#34;id\u0026#34;: \u0026#34;multiple-select-component-id\u0026#34;, \u0026#34;type\u0026#34;: \u0026#34;MultipleSelect\u0026#34;, \u0026#34;textResourceBindings\u0026#34;: { \u0026#34;title\u0026#34;: \u0026#34;some.title\u0026#34; }, \u0026#34;dataModelBindings\u0026#34;: { \u0026#34;simpleBinding\u0026#34;: \u0026#34;some.field\u0026#34; }, \u0026#34;required\u0026#34;: true, \u0026#34;optionsId\u0026#34;: \u0026#34;someOptionId\u0026#34;, }, As the Checkbox-component the MultipleSelect saves values as a comma separated string.\nThe MultipleSelect component can be configured by adding options directly to the component using the options param:\n{ \u0026#34;id\u0026#34;: \u0026#34;multiple-select-component-id\u0026#34;, \u0026#34;type\u0026#34;: \u0026#34;MultipleSelect\u0026#34;, ... \u0026#34;options\u0026#34;: [ { \u0026#34;label\u0026#34;: \u0026#34;Label 1\u0026#34;, \u0026#34;value\u0026#34;: \u0026#34;value1\u0026#34; }, { \u0026#34;label\u0026#34;: \u0026#34;Label 2\u0026#34;, \u0026#34;value\u0026#34;: \u0026#34;value2\u0026#34; }, ], }, or by using api based options as described here.\n"
 },
 {
 	"uri": "https://docs.altinn.studio/app/development/ux/pages/navigation/",

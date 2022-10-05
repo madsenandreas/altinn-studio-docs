@@ -116,7 +116,7 @@
 	"title": "Komponenter",
 	"tags": [],
 	"description": "",
-	"content": "\rPanel\rPrintButton\rLikert\rHvordan ta i bruk en likert komponent\n"
+	"content": "\rMultipleSelect\rPanel\rPrintButton\rLikert\rHvordan ta i bruk en likert komponent\n"
 },
 {
 	"uri": "https://docs.altinn.studio/nb/app/design/guidelines/consistency/",
@@ -131,6 +131,13 @@
 	"tags": [],
 	"description": "Altinn Studio er vårt nye verktøy for å utvikle digitale tjenester (apps). Dette kan være alt fra helt enkle skjema til veldig avanserte applikasjoner.",
 	"content": "\rHvem kan ta i bruk Altinn Studio?\nDu må være tjenesteeier i Altinn samt godta bruksvilkår for Altinn i skyen for å kunne produksjonssette apper, men alle kan logge inn i altinn.studio og teste ut mulighetene.\nHvis du lurer på noe så er det bare å ta kontakt med oss på Slack eller GitHub, eller lese denne dokumentasjonen.\nKom i gang\rKom i gang slik at du kan utvikle apper i Altinn Studio.\nIntrokurs\rEt kursopplegg for å lære seg apputvikling med Altinn Studio og lokale verktøy.\nDesign og planlegging\rFor at tjenesten din skal bli best mulig for de som skal bruke den, er det viktig å starte med å fokusere på brukerne og forstå deres brukerbehov i møte med tjenesten din.\nUtvikling\rHvordan opprette og redigere apper i Altinn Studio.\nTesting av apper\rApplikasjoner (apper) kan testes i testmiljø, eller lokalt.\nProduksjonssetting av apper\rTjenesteeier kan selv produksjonssette sine applikasjoner, og gjøre vedlikehold av kode og avhengigheter.\nVedlikehold av app i produksjon\rApplikasjoner i produksjon krever jevnlig vedlikehold og oppdateringer.\nLanserte tjenester\rNoen av tjenestene som allerede er i produksjon, til informasjon og inspirasjon.\n"
+},
+{
+	"uri": "https://docs.altinn.studio/nb/app/development/ux/components/multipleselect/",
+	"title": "MultipleSelect",
+	"tags": [],
+	"description": "",
+	"content": "MultipleSelect kan benyttes når brukeren kan velge blant flere valg. Tilbyr filtrering ut av boksen.\nFormLayout.json eksempel\n{ \u0026#34;id\u0026#34;: \u0026#34;multiple-select-component-id\u0026#34;, \u0026#34;type\u0026#34;: \u0026#34;MultipleSelect\u0026#34;, \u0026#34;textResourceBindings\u0026#34;: { \u0026#34;title\u0026#34;: \u0026#34;some.title\u0026#34; }, \u0026#34;dataModelBindings\u0026#34;: { \u0026#34;simpleBinding\u0026#34;: \u0026#34;some.field\u0026#34; }, \u0026#34;required\u0026#34;: true, \u0026#34;optionsId\u0026#34;: \u0026#34;someOptionId\u0026#34;, }, Som Checkbox-komponenten vil MultipleSelect lagre valgene som en komma-separert liste.\nMultipleSelect komponenten kan bli konfigurert med kodelister direkte ved bruk at options parameteret:\n{ \u0026#34;id\u0026#34;: \u0026#34;multiple-select-component-id\u0026#34;, \u0026#34;type\u0026#34;: \u0026#34;MultipleSelect\u0026#34;, ... \u0026#34;options\u0026#34;: [ { \u0026#34;label\u0026#34;: \u0026#34;Label 1\u0026#34;, \u0026#34;value\u0026#34;: \u0026#34;value1\u0026#34; }, { \u0026#34;label\u0026#34;: \u0026#34;Label 2\u0026#34;, \u0026#34;value\u0026#34;: \u0026#34;value2\u0026#34; }, ], }, eller ved bruk av api-baserte kodelister som beskrevet her.\n"
 },
 {
 	"uri": "https://docs.altinn.studio/nb/app/development/ux/pages/navigation/",

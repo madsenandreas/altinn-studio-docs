@@ -119,7 +119,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -219,7 +219,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -295,7 +295,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,7 +303,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1157,12 +1157,12 @@ Beskrivelsen du finner her er laget for <a href="https://www.getpostman.com/">Po
 <p>I testmiljø og produksjon brukes maskinporten for å autentisere organisasjoner som eier apper.</p>
 <p>Testplattformen for lokal testing tilbyr et enkelt api for å autentisere organisjonen som er ansvarlig.</p>
 <p>Man trenger bare å oppgi tjenesteeier kode (som f.eks brg, skd osv)</p>
-<p>Url: <a href="http://altinn3local.no/Home/GetTestOrgToken/ttd">http://altinn3local.no/Home/GetTestOrgToken/ttd</a>   (ttd needs to be replaced with the org you want to authenticate)</p>
+<p>Url: <a href="http://local.altinn.cloud/Home/GetTestOrgToken/ttd">http://local.altinn.cloud/Home/GetTestOrgToken/ttd</a>   (ttd needs to be replaced with the org you want to authenticate)</p>
 <p>The response is a JWT token that should be uses as a Authorization header.</p>
 <figure><a href="login.png"><img src="login.png" alt="Login" title="Login request" /></a><figcaption><h4>Login request</h4></figcaption></figure>
 <h2 id="multipart-instansiering">Multipart instansiering</h2>
 <p>Applikasjonene støtter at man instansierer instanser til aktører. Personer eller organsiasjoner.</p>
-<p>Url: <a href="http://altinn3local.no/ttd/mva/instances">http://altinn3local.no/ttd/mva/instances</a></p>
+<p>Url: <a href="http://local.altinn.cloud/ttd/mva/instances">http://local.altinn.cloud/ttd/mva/instances</a></p>
 <p>Metode: POST</p>
 <p><strong>Headers:</strong></p>
 <ul>
@@ -1211,7 +1211,7 @@ Beskrivelsen du finner her er laget for <a href="https://www.getpostman.com/">Po
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#ff79c6">&#34;appId&#34;</span>: <span style="color:#f1fa8c">&#34;ttd/mva&#34;</span>,
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    <span style="color:#ff79c6">&#34;org&#34;</span>: <span style="color:#f1fa8c">&#34;ttd&#34;</span>,
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#ff79c6">&#34;selfLinks&#34;</span>: {
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#ff79c6">&#34;apps&#34;</span>: <span style="color:#f1fa8c">&#34;https://altinn3local.no/ttd/mva/instances/500000/b4a42747-882f-47fa-bcd3-94029fdbc918&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#ff79c6">&#34;apps&#34;</span>: <span style="color:#f1fa8c">&#34;https://local.altinn.cloud/ttd/mva/instances/500000/b4a42747-882f-47fa-bcd3-94029fdbc918&#34;</span>,
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#ff79c6">&#34;platform&#34;</span>: <span style="color:#f1fa8c">&#34;https://localhost:5101/storage/api/v1/instances/500000/b4a42747-882f-47fa-bcd3-94029fdbc918&#34;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    },
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    <span style="color:#ff79c6">&#34;dueBefore&#34;</span>: <span style="color:#ff79c6">null</span>,
@@ -1249,7 +1249,7 @@ Beskrivelsen du finner her er laget for <a href="https://www.getpostman.com/">Po
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>            <span style="color:#ff79c6">&#34;contentType&#34;</span>: <span style="color:#f1fa8c">&#34;application/xml&#34;</span>,
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>            <span style="color:#ff79c6">&#34;blobStoragePath&#34;</span>: <span style="color:#f1fa8c">&#34;ttd/mva/b4a42747-882f-47fa-bcd3-94029fdbc918/data/54d868aa-5bc9-47fb-9525-67ba4c2e595c&#34;</span>,
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>            <span style="color:#ff79c6">&#34;selfLinks&#34;</span>: {
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>                <span style="color:#ff79c6">&#34;apps&#34;</span>: <span style="color:#f1fa8c">&#34;https://altinn3local.no/ttd/mva/instances/500000/b4a42747-882f-47fa-bcd3-94029fdbc918/data/54d868aa-5bc9-47fb-9525-67ba4c2e595c&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>                <span style="color:#ff79c6">&#34;apps&#34;</span>: <span style="color:#f1fa8c">&#34;https://local.altinn.cloud/ttd/mva/instances/500000/b4a42747-882f-47fa-bcd3-94029fdbc918/data/54d868aa-5bc9-47fb-9525-67ba4c2e595c&#34;</span>,
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span>                <span style="color:#ff79c6">&#34;platform&#34;</span>: <span style="color:#f1fa8c">&#34;https://localhost:5101/storage/api/v1/instances/500000/b4a42747-882f-47fa-bcd3-94029fdbc918/data/54d868aa-5bc9-47fb-9525-67ba4c2e595c&#34;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span><span>            },
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span><span>            <span style="color:#ff79c6">&#34;size&#34;</span>: <span style="color:#bd93f9">1009</span>,

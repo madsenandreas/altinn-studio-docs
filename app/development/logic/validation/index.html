@@ -119,7 +119,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -219,15 +219,21 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/data/prefill/"><span>Prefill</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/data/prefill/config/"><span>Config</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/data/prefill/custom/"><span>Custom</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/data/prefill/instantiation/"><span>Http post</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/app/development/data/data-model/"><span>Data model</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/data-model/seres-migration/"><span>Sereserstatning</span></a></li></ul></li>
-      <li class="dd-item">
-        <a href="/app/development/data/prefill/"><span>Prefill</span></a></li>
       <li class="dd-item">
         <a href="/app/development/data/options/"><span>Code lists</span></a></li>
       <li class="dd-item">
@@ -295,7 +301,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,7 +309,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -334,6 +340,8 @@ if(host != "localhost")
         <a href="/app/development/configuration/process/auto-delete/"><span>Automatic deletion</span></a></li>
       <li class="dd-item">
         <a href="/app/development/configuration/process/customize/"><span>Customize Views</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/process/pre-post-hooks/"><span>Define custom process hooks</span></a></li>
       <li class="dd-item">
         <a href="/app/development/configuration/process/message/"><span>Message</span></a></li></ul></li>
       <li class="dd-item">
@@ -596,6 +604,12 @@ if(host != "localhost")
         <a href="/community/changelog/app-frontend/v3/whats-new/"><span>What&#39;s new</span></a></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/community/changelog/app-nuget/"><span>App nuget</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v7/"><span>v7</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v7/breaking-changes/"><span>Breaking changes</span></a></li>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v7/whats-new/"><span>What&#39;s new</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/community/changelog/app-nuget/v6/"><span>v6</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1158,7 +1172,7 @@ Validations can be run either on the client- (the browser) or the server-side.</
 <p>Validations can also be set up to <a href="/app/development/ux/pages/navigation/#validation-on-page-navigation">trigger on page navigation</a>.</p>
 <h2 id="client-side-validation">Client-side validation</h2>
 <p>This is validation that is run in the browser, before data is sent to server for saving. This makes it possible to give quick feedback to 
-the user during the fillout process.</p>
+the user during the process of filling out the form.</p>
 <p>Client-side validation is based on the data model of the form, and uses this to determine what is valid input in a field.
 Specifically, the JSON schema version of the data model is used for validation. This is automatically generated when uploading an XSD.
 It is possible to make changes in the JSON schema file directly to adapt the validation when needed.</p>
@@ -1329,10 +1343,36 @@ and run when the user attempts to submit form data or move the process to a new 
 <li>Task-validation will run each time validation is triggered either manually from the application or when you attempt to move forward in the process.</li>
 <li>Data-validation will run if you&rsquo;re on a step that has defined data elements associated with it.</li>
 </ul>
-<p>Validations are written in C#, in the <code>ValidationHandler.cs</code>-file in the application template.
+<p>Validations are written i C# and dependening on the version of the application template and Nuget packages you are using, the way the implementation is done varies slightly. In the earlier versions it&rsquo;s a pre-created file where you put your logic, while from version 7 and onwards you implement an interface in whatever class you like. The interface happens to be equal to the pre-defined class in the earlier versions. The examples below which referers to the methods to add your validation logic to is the same.</p>
+<ul id="content-version-selector"></ul>
+<div class="content-version-container">
+    <label class="content-version-label" hidden>
+        v4, v5, v6
+    </label>
+    
+    Validations should be added to the <code>ValidationHandler.cs</code>-file in the application template.
 The file can be accessed and edited in Altinn Studio through the logic menu, by selecting <em>Rediger valideringer</em>,
-or directly in the application repo where the file is under the <code>logic/Validation</code>-folder.</p>
-<p>Changes are made in the <code>ValidateData</code> and <code>ValidateTask</code>-methods (these are empty when the app is made).
+or directly in the application repo where the file is under the <code>logic/Validation</code>-folder.
+</div>
+
+<div class="content-version-container">
+    <label class="content-version-label" hidden>
+        v7
+    </label>
+    
+    <p>In version 7 the way to do custom code instantiation has changed. We now use an dependency injection based approach insted of overriding methods. If you previously used to place your custom code in the <em>ValidateData</em> and <em>ValidateTask</em> methods in the <em>ValidationHandler.cs</em> class you will see that it&rsquo;s mostly the same.</p>
+<ol>
+<li>Create a class that implements the <code>IInstanceValidator</code> interface found in the <code>Altinn.App.Core.Features.Validation</code> namespace.<br>
+You can name and place the file in any folder you like within your project, but we suggest you use meaningful namespaces like in any other .Net project.</li>
+<li>Register you custom implementation in the <em>Program.cs</em> class
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddTransient&lt;IInstanceValidator, InstanceValidator&gt;();
+</span></span></code></pre></div>This ensuers your custom code is known to the application and that it will be executed.</li>
+</ol>
+
+</div>
+
+<p>From here on the examples should be valid for all versions:)</p>
+<p>Custom logic are added to the <code>ValidateData</code> and <code>ValidateTask</code>-methods.
 The former takes in a data object and the latter takes in the instance and taskId.
 To add a validation error, the <code>AddModelError</code>-method of the <code>validationResult</code>-object, which is a parameter in both methods, is used.</p>
 <p>An example of a simple data validation that tests that the field <em>FirstName</em> does not contain the value <em>1337</em>, when the root element of the model is <code>Skjema</code> is shown below:</p>

@@ -223,11 +223,17 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/data/prefill/"><span>Preutfylling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/data/prefill/config/"><span>Konfigurasjon</span></a></li>
+      <li class="dd-item">
+        <a href="/nb/app/development/data/prefill/custom/"><span>Egendefinert</span></a></li>
+      <li class="dd-item">
+        <a href="/nb/app/development/data/prefill/instantiation/"><span>Http post</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/data/data-model/"><span>Datamodell</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/data/data-model/seres-migration/"><span>Sereserstatning</span></a></li></ul></li>
-      <li class="dd-item">
-        <a href="/nb/app/development/data/prefill/"><span>Preutfylling</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/data/options/"><span>Kodelister</span></a></li>
       <li class="dd-item">
@@ -332,6 +338,8 @@ if(host != "localhost")
         <a href="/nb/app/development/configuration/process/"><span>Prosess</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/process/auto-delete/"><span>Automatisk sletting</span></a></li>
+      <li class="dd-item">
+        <a href="/nb/app/development/configuration/process/pre-post-hooks/"><span>Definer egendefinerte prosess hooks</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/process/message/"><span>Melding</span></a></li>
       <li class="dd-item">
@@ -491,6 +499,12 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/community/changelog/app-nuget/"><span>App nuget</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/community/changelog/app-nuget/v7/"><span>v7</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/community/changelog/app-nuget/v7/breaking-changes/"><span>Breaking changes</span></a></li>
+      <li class="dd-item">
+        <a href="/nb/community/changelog/app-nuget/v7/whats-new/"><span>Hva er nytt?</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/community/changelog/app-nuget/v6/"><span>v6</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/community/changelog/app-nuget/v6/breaking-changes/"><span>Breaking changes</span></a></li>
@@ -587,8 +601,6 @@ if(host != "localhost")
           </div><div id="body-inner"><h1 class="a-fontBold">Dataprosessering</h1>
               <p class="a-leadText" id="leadText">Hvordan legge til kalkuleringer og annen dataprosessering?</p><h2>På denne siden:</h2><nav id="TableOfContents"></nav><p>Dataprosessering kjøres på serveren, og er basert på input fra sluttbruker/skjemadata.
 Dataprosessering kan være kan være rent matematiske kalkuleringer, det kan også være å overføre verdier mellom felter, resultater av API-kall, osv.</p>
-<p>Dataprosessering kodes i C#, i filen <code>DataProsessingHandler.cs</code>. Denne filen kan redigeres enklest ved å laste ned kildekoden til app&rsquo;en og redigere på egen maskin, f.eks. i Visual Studio Code.
-Datamodellen med skjemadata er tilgjengelig og kan redigeres/oppdateres etter ønske/behov.</p>
 <p>Dataprosessering kjøres hver gang data lagres og når data hentes ut fra API. Med auto-lagring på (dette er standard) vil dataprosessering kjøres hver gang en bruker har gjort en endring.</p>
 <p>For å sikre optimal opplevelse og kontroll er applikasjonstemplaten to forskjellige hendelser hvor logikk kan plasseres.</p>
 <ul>
@@ -600,6 +612,14 @@ VIKTIG: Når en dataprosessering er kjørt som har oppdatert dataene på server,
 For å gjøre dette, må `ProcessDataWrite`-metoden returnere `true` om det er noen av dataene som har blitt oppdatert.
 Hvis dette ikke gjøres, vil de oppdaterte dataen ikke være synlig for sluttbruker før de ev. laster inn siden på nytt.
 </div>
+<ul id="content-version-selector"></ul>
+<div class="content-version-container">
+    <label class="content-version-label" hidden>
+        v4, v5, v6
+    </label>
+    
+    <p>Dataprosessering kodes i C#, i filen <code>DataProsessingHandler.cs</code>. Denne filen kan redigeres enklest ved å laste ned kildekoden til app&rsquo;en og redigere på egen maskin, f.eks. i Visual Studio Code.
+Datamodellen med skjemadata er tilgjengelig og kan redigeres/oppdateres etter ønske/behov.</p>
 <p>Eksempel på kode fra app som prosesserer og populerer forskjellige data under lagring.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;<span style="color:#8be9fd">bool</span>&gt; ProcessDataWrite(
 </span></span><span style="display:flex;"><span>    Instance instance, Guid? dataId, <span style="color:#8be9fd">object</span> data)
@@ -651,6 +671,76 @@ Hvis dette ikke gjøres, vil de oppdaterte dataen ikke være synlig for sluttbru
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> Task.FromResult(edited);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
+</div>
+
+<div class="content-version-container">
+    <label class="content-version-label" hidden>
+        v7
+    </label>
+    
+    <p>I versjon 7 har vi endret måten preutfylling med egendefinert kode gjøres på. Vi benytter nå <em>dependency injection</em> i stedet for overstyring av metoder. Hvis du tidligere plasserte koden din i <em>ProcessDataRead</em> og <em>ProcessDataWrite</em> metodene in <em>DataProcessingHandler.cs</em> klassen så vil du erfare at det er mer eller mindre det samme som nå gjøres.</p>
+<ol>
+<li>Opprett en klasse som implementerer <code>IDataProcessor</code> grensesnittet som ligger i <code>Altinn.App.Core.Features.DateProcessing</code> navnerommet.<br>
+Du kan navngi og plassere filene i den mappestrukturen du selv ønsker i prosjektet ditt. Men vi anbefaler at du benytter meningsfulle navnerom som i et hvilket som helst annet .Net prosjekt.
+Eksempel på kode fra app som prosesserer og populerer forskjellige data under lagring.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;<span style="color:#8be9fd">bool</span>&gt; ProcessDataWrite(
+</span></span><span style="display:flex;"><span>    Instance instance, Guid? dataId, <span style="color:#8be9fd">object</span> data)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">bool</span> edited = <span style="color:#ff79c6">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (data <span style="color:#ff79c6">is</span> SoknadUnntakKaranteneHotellVelferd model)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">string</span> org = instance.Org;
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">string</span> app = instance.AppId.Split(<span style="color:#f1fa8c">&#34;/&#34;</span>)[<span style="color:#bd93f9">1</span>];
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> partyId = <span style="color:#8be9fd">int</span>.Parse(instance.InstanceOwner.PartyId);
+</span></span><span style="display:flex;"><span>        Guid instanceGuid = Guid.Parse(instance.Id.Split(<span style="color:#f1fa8c">&#34;/&#34;</span>)[<span style="color:#bd93f9">1</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// handling mapping of multiple choice velferdsgrunner</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (!<span style="color:#8be9fd">string</span>.IsNullOrEmpty(model.velferdsgrunner?.sammenstilling))
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            model.velferdsgrunner.helseproblemer = model.velferdsgrunner.sammenstilling.Contains(<span style="color:#f1fa8c">&#34;helseproblemer&#34;</span>);
+</span></span><span style="display:flex;"><span>            model.velferdsgrunner.barnefodsel = model.velferdsgrunner.sammenstilling.Contains(<span style="color:#f1fa8c">&#34;barnefodsel&#34;</span>);
+</span></span><span style="display:flex;"><span>            model.velferdsgrunner.begravelse = model.velferdsgrunner.sammenstilling.Contains(<span style="color:#f1fa8c">&#34;begravelse&#34;</span>);
+</span></span><span style="display:flex;"><span>            model.velferdsgrunner.naerstaaende = model.velferdsgrunner.sammenstilling.Contains(<span style="color:#f1fa8c">&#34;naerstaaende&#34;</span>);
+</span></span><span style="display:flex;"><span>            model.velferdsgrunner.adopsjon = model.velferdsgrunner.sammenstilling.Contains(<span style="color:#f1fa8c">&#34;adopsjon&#34;</span>);
+</span></span><span style="display:flex;"><span>            model.velferdsgrunner.sarligeOmsorg = model.velferdsgrunner.sammenstilling.Contains(<span style="color:#f1fa8c">&#34;sarligeOmsorg&#34;</span>);
+</span></span><span style="display:flex;"><span>            model.velferdsgrunner.barnAlene = model.velferdsgrunner.sammenstilling.Contains(<span style="color:#f1fa8c">&#34;barnAlene&#34;</span>);
+</span></span><span style="display:flex;"><span>            model.velferdsgrunner.hjemmeeksamen = model.velferdsgrunner.sammenstilling.Contains(<span style="color:#f1fa8c">&#34;hjemmeeksamen&#34;</span>);
+</span></span><span style="display:flex;"><span>            model.velferdsgrunner.arbeidunntak = model.velferdsgrunner.sammenstilling.Contains(<span style="color:#f1fa8c">&#34;arbeidunntak&#34;</span>);
+</span></span><span style="display:flex;"><span>            model.velferdsgrunner.andreVelferdshensyn = model.velferdsgrunner.sammenstilling.Contains(<span style="color:#f1fa8c">&#34;annet&#34;</span>);
+</span></span><span style="display:flex;"><span>            model.velferdsgrunner.andreVelferdshensynBeskrivelse = model.velferdsgrunner.sammenstilling.Contains(<span style="color:#f1fa8c">&#34;annet&#34;</span>) ? model.velferdsgrunner.andreVelferdshensynBeskrivelse : <span style="color:#ff79c6">null</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            edited = <span style="color:#ff79c6">true</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">else</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            model.velferdsgrunner = <span style="color:#ff79c6">null</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// set data for receipt if not set</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd">string</span>.IsNullOrEmpty(model.applogic?.altinnRef))
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            model.applogic ??= <span style="color:#ff79c6">new</span> Applogic();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            Party party = <span style="color:#ff79c6">await</span> _registerService.GetParty(
+</span></span><span style="display:flex;"><span>                <span style="color:#8be9fd">int</span>.Parse(instance.InstanceOwner.PartyId));
+</span></span><span style="display:flex;"><span>            model.applogic.avsender = 
+</span></span><span style="display:flex;"><span>                <span style="color:#f1fa8c">$&#34;{instance.InstanceOwner.PersonNumber}-{party.Name}&#34;</span>;
+</span></span><span style="display:flex;"><span>            model.applogic.altinnRef = instance.Id.Split(<span style="color:#f1fa8c">&#34;-&#34;</span>)[<span style="color:#bd93f9">4</span>];
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> Task.FromResult(edited);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>Registrer din implementering i <em>Program.cs</em> klassen
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddTransient&lt;IDataProcessor, DataProcessor&gt;();
+</span></span></code></pre></div>Dette sørger for at din kode er kjent for applikasjonen og at koden blir kjørt når den skal.</li>
+</ol>
+
+</div>
+
+
 
 <footer class=" footline" ></footer>
                 </div>

@@ -223,11 +223,17 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/data/prefill/"><span>Preutfylling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/data/prefill/config/"><span>Konfigurasjon</span></a></li>
+      <li class="dd-item">
+        <a href="/nb/app/development/data/prefill/custom/"><span>Egendefinert</span></a></li>
+      <li class="dd-item">
+        <a href="/nb/app/development/data/prefill/instantiation/"><span>Http post</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/data/data-model/"><span>Datamodell</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/data/data-model/seres-migration/"><span>Sereserstatning</span></a></li></ul></li>
-      <li class="dd-item">
-        <a href="/nb/app/development/data/prefill/"><span>Preutfylling</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/data/options/"><span>Kodelister</span></a></li>
       <li class="dd-item">
@@ -332,6 +338,8 @@ if(host != "localhost")
         <a href="/nb/app/development/configuration/process/"><span>Prosess</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/process/auto-delete/"><span>Automatisk sletting</span></a></li>
+      <li class="dd-item">
+        <a href="/nb/app/development/configuration/process/pre-post-hooks/"><span>Definer egendefinerte prosess hooks</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/process/message/"><span>Melding</span></a></li>
       <li class="dd-item">
@@ -491,6 +499,12 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/community/changelog/app-nuget/"><span>App nuget</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/community/changelog/app-nuget/v7/"><span>v7</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/community/changelog/app-nuget/v7/breaking-changes/"><span>Breaking changes</span></a></li>
+      <li class="dd-item">
+        <a href="/nb/community/changelog/app-nuget/v7/whats-new/"><span>Hva er nytt?</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/community/changelog/app-nuget/v6/"><span>v6</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/community/changelog/app-nuget/v6/breaking-changes/"><span>Breaking changes</span></a></li>
@@ -589,8 +603,35 @@ if(host != "localhost")
 <p>Det er to måter å ekskludere data fra PDF på</p>
 <ol>
 <li>Via konfigurasjon i filen <code>Settings.json</code> under <code>App/ui</code></li>
-<li>Programmatisk i filen <code>PdfHandler.cs</code> under <code>App/logic/Print</code>.</li>
+<li>Programmatisk
+For den programatiske måten er det noen mindre forskjeller avhengig av hvilke versjon av applikasjonsmalen du er på.</li>
 </ol>
+<ul id="content-version-selector"></ul>
+<div class="content-version-container">
+    <label class="content-version-label" hidden>
+        v4, v5, v6
+    </label>
+    
+    I tidligere versjoner så gjøres endringene i <code>PdfHandler.cs</code> filen under <code>App/logic/Print</code> katalogen.
+</div>
+
+<div class="content-version-container">
+    <label class="content-version-label" hidden>
+        v7
+    </label>
+    
+    <p>I versjon 7 har vi endret måten vi gjør kode baserte tilpassninger på. Vi benytter nå <em>dependency injection</em> i stedet for overstyring av metoder. Hvis du tidligere plasserte koden din i <em>FormatPdf</em> metoden in <em>PdfHandler.cs</em> klassen så vil du erfare at det er mer eller mindre det samme som nå gjøres.</p>
+<ol>
+<li>Opprett en klasse som implementerer <code>IInstanceValidator</code> grensesnittet som ligger i <code>Altinn.App.Core.Features.Validation</code> navnerommet.<br>
+Du kan navngi og plassere filene i den mappestrukturen du selv ønsker i prosjektet ditt. Men vi anbefaler at du benytter meningsfulle navnerom som i et hvilket som helst annet .Net prosjekt.</li>
+<li>Registrer din implementering i <em>Program.cs</em> klassen
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddTran  sient&lt;IInstanceValidator, InstanceValidator&gt;();
+</span></span></code></pre></div>Dette sørger for at din kode er kjent for applikasjonen og at koden blir kjørt når den skal.</li>
+</ol>
+
+</div>
+
+<p>Siden <code>IPdfFormater</code> grensesnittet har samme metode som <code>PdfHandler.cs</code> klassen er resten av dokumentasjonen og eksemplene felles for alle versjoner.</p>
 <div class="notices info" >
 Dersom en side/komponent alltid skal ekskluderes fra PDF er det anbefalt å sette det opp i konfigurasjonsfilen. 
 <p>Dersom ekskludering av en side/komponent er avhengig av dynamikk <em>må</em> dette gjøres programmatisk.</p>

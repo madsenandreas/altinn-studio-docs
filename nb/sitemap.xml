@@ -266,6 +266,18 @@
                 href="https://docs.altinn.studio/nb/app/development/ux/components/panel/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/data/prefill/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/data/prefill/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/data/prefill/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/app/development/ux/components/printbutton/</loc>
     <xhtml:link
                 rel="alternate"
@@ -1010,6 +1022,18 @@
                 href="https://docs.altinn.studio/nb/community/changelog/storage-interfaces/v3/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/community/changelog/app-nuget/v7/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/community/changelog/app-nuget/v7/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/community/changelog/app-nuget/v7/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/community/changelog/app-nuget/v6/</loc>
     <xhtml:link
                 rel="alternate"
@@ -1418,6 +1442,18 @@
                 href="https://docs.altinn.studio/nb/api/storage/instance-events/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/data/prefill/config/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/data/prefill/config/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/data/prefill/config/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/app/getting-started/navigation/</loc>
     <xhtml:link
                 rel="alternate"
@@ -1440,18 +1476,6 @@
                 rel="alternate"
                 hreflang="nb"
                 href="https://docs.altinn.studio/nb/app/development/configuration/messagebox/presentationfields/"
-                />
-  </url><url>
-    <loc>https://docs.altinn.studio/nb/app/development/data/prefill/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.altinn.studio/app/development/data/prefill/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="nb"
-                href="https://docs.altinn.studio/nb/app/development/data/prefill/"
                 />
   </url><url>
     <loc>https://docs.altinn.studio/nb/app/development/configuration/process/</loc>
@@ -1562,6 +1586,18 @@
                 href="https://docs.altinn.studio/nb/app/getting-started/navigation/code/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/data/prefill/custom/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/data/prefill/custom/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/data/prefill/custom/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/app/development/data/options/</loc>
     <xhtml:link
                 rel="alternate"
@@ -1608,6 +1644,18 @@
                 rel="alternate"
                 hreflang="nb"
                 href="https://docs.altinn.studio/nb/app/development/configuration/events/"
+                />
+  </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/data/prefill/instantiation/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/data/prefill/instantiation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/data/prefill/instantiation/"
                 />
   </url><url>
     <loc>https://docs.altinn.studio/nb/app/development/data/attachments/</loc>
@@ -1986,6 +2034,18 @@
                 href="https://docs.altinn.studio/nb/community/changelog/app-nuget/v6/breaking-changes/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/community/changelog/app-nuget/v7/breaking-changes/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/community/changelog/app-nuget/v7/breaking-changes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/community/changelog/app-nuget/v7/breaking-changes/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/community/changelog/deployment/v1/breaking-changes/</loc>
     <xhtml:link
                 rel="alternate"
@@ -2094,6 +2154,18 @@
                 rel="alternate"
                 hreflang="nb"
                 href="https://docs.altinn.studio/nb/app/testing/local/debug/"
+                />
+  </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/configuration/process/pre-post-hooks/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/process/pre-post-hooks/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/process/pre-post-hooks/"
                 />
   </url><url>
     <loc>https://docs.altinn.studio/nb/community/devops/definition-of-ready/</loc>
@@ -2316,6 +2388,18 @@
                 rel="alternate"
                 hreflang="nb"
                 href="https://docs.altinn.studio/nb/community/changelog/app-nuget/v6/whats-new/"
+                />
+  </url><url>
+    <loc>https://docs.altinn.studio/nb/community/changelog/app-nuget/v7/whats-new/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/community/changelog/app-nuget/v7/whats-new/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/community/changelog/app-nuget/v7/whats-new/"
                 />
   </url><url>
     <loc>https://docs.altinn.studio/nb/app/development/ux/fields/settings/</loc>

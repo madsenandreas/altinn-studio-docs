@@ -223,11 +223,17 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/data/prefill/"><span>Preutfylling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/data/prefill/config/"><span>Konfigurasjon</span></a></li>
+      <li class="dd-item">
+        <a href="/nb/app/development/data/prefill/custom/"><span>Egendefinert</span></a></li>
+      <li class="dd-item">
+        <a href="/nb/app/development/data/prefill/instantiation/"><span>Http post</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/data/data-model/"><span>Datamodell</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/data/data-model/seres-migration/"><span>Sereserstatning</span></a></li></ul></li>
-      <li class="dd-item">
-        <a href="/nb/app/development/data/prefill/"><span>Preutfylling</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/data/options/"><span>Kodelister</span></a></li>
       <li class="dd-item">
@@ -332,6 +338,8 @@ if(host != "localhost")
         <a href="/nb/app/development/configuration/process/"><span>Prosess</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/process/auto-delete/"><span>Automatisk sletting</span></a></li>
+      <li class="dd-item">
+        <a href="/nb/app/development/configuration/process/pre-post-hooks/"><span>Definer egendefinerte prosess hooks</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/process/message/"><span>Melding</span></a></li>
       <li class="dd-item">
@@ -491,6 +499,12 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/community/changelog/app-nuget/"><span>App nuget</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/community/changelog/app-nuget/v7/"><span>v7</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/community/changelog/app-nuget/v7/breaking-changes/"><span>Breaking changes</span></a></li>
+      <li class="dd-item">
+        <a href="/nb/community/changelog/app-nuget/v7/whats-new/"><span>Hva er nytt?</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/community/changelog/app-nuget/v6/"><span>v6</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/community/changelog/app-nuget/v6/breaking-changes/"><span>Breaking changes</span></a></li>
@@ -589,8 +603,6 @@ if(host != "localhost")
               <p class="a-leadText" id="leadText">Hvordan legge til dynamisk sporvalg i app</p><h2>På denne siden:</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#trigge-kalkulering-av-sporvalg-fra-frontend">Trigge kalkulering av sporvalg fra frontend</a></li>
-    <li><a href="#sette-opp-sporvalg-backend-nuget-versjon--500">Sette opp sporvalg backend (nuget versjon &gt; 5.0.0)</a></li>
-    <li><a href="#sette-opp-sporvalg-backend-nuget-versjon--500-1">Sette opp sporvalg backend (nuget versjon &lt; 5.0.0)</a></li>
     <li><a href="#reflektere-sporvalg-i-kvittering-pdf">Reflektere sporvalg i kvittering (PDF)</a></li>
   </ul>
 </nav><p>Dynamisk sporvalg i en applikasjon kan være nyttig dersom man ønsker å vise og/eller skjule enkelte sider 
@@ -625,25 +637,78 @@ navigasjonskomponentene man har i applikasjonen, eller legge til en trigger i <c
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Om <code>triggers</code> er satt på navigasjonskomponenten vil denne overstyre <code>triggers</code> som settes i Settings.json, på denne måten er det mulig å styre default-oppførsel på komponentnivå om ønskelig.</p>
-<h2 id="sette-opp-sporvalg-backend-nuget-versjon--500">Sette opp sporvalg backend (nuget versjon &gt; 5.0.0)</h2>
-<p>For å overstyre standard sporvalg må det gjøres to endringer.</p>
+<p>Måten dette implementeres på varierer litt avhengig av hvilken versjon av applikasjonsmalen og Nuget pakkene du bruker.</p>
+<ul id="content-version-selector"></ul>
+<div class="content-version-container">
+    <label class="content-version-label" hidden>
+        v4, v5
+    </label>
+    
+    <h2 id="sette-opp-sporvalg-backend-nuget-versjon--500">Sette opp sporvalg backend (nuget versjon &lt; 5.0.0)</h2>
+<div class="notices warning" ><p>For at sporvalg skal fungere for statless applikasjoner må nuget oppgraderes til 5.0.0 eller senere</p>
+</div>
+<p>I App.cs må man overstyre metoden som henter ut den standardrekkefølgen av sider som er definert i <code>Settings.json</code>
+Dette gjøres ved å legge til funksjonen nedenfor i App.cs.
+Forventet output fra denne metoden er en stortert liste som inneholder navnet på de relevante sidene i applikasjonen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#6272a4">/// &lt;inheritdoc /&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">override</span> <span style="color:#ff79c6">async</span> Task&lt;List&lt;<span style="color:#8be9fd">string</span>&gt;&gt; GetPageOrder(<span style="color:#8be9fd">string</span> org, <span style="color:#8be9fd">string</span> app, <span style="color:#8be9fd">int</span> instanceOwnerId, Guid instanceGuid, <span style="color:#8be9fd">string</span> layoutSetId, <span style="color:#8be9fd">string</span> currentPage, <span style="color:#8be9fd">string</span> dataTypeId, <span style="color:#8be9fd">object</span> formData)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    List&lt;<span style="color:#8be9fd">string</span>&gt; pageOrder = <span style="color:#ff79c6">new</span> List&lt;<span style="color:#8be9fd">string</span>&gt;();
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// Implement your own logic here</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> pageOrder;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Funksjonen får inn en rekke parametere som kan være nyttig dersom man skal benytte skjemadata
+eller annen informasjon om sluttbruker til å kalkulere sporvalget.</p>
+<ul>
+<li><em>layoutSetId</em> Dersom appen din definerer flere layout set vil id på det gjeldende layout settet sendes inn.
+Dersom applikasjonen ikke har layout set vil denne strengen være tom. Basert på denne parameteren kan man hente
+ut standard siderekkefølge som er definert i applikasjonen:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span>List&lt;<span style="color:#8be9fd">string</span>&gt; pageOrder = <span style="color:#ff79c6">new</span> List&lt;<span style="color:#8be9fd">string</span>&gt;();
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> (<span style="color:#8be9fd">string</span>.IsNullOrEmpty(layoutSetId))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    pageOrder = _appResourcesService.GetLayoutSettings().Pages.Order;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">else</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    pageOrder = _appResourcesService.GetLayoutSettingsForSet(layoutSetId).Pages.Order;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Dette forutsetter at servicen <code>IAppResources</code> gjøres tilgjengelig i App.cs. 
+Da servicen allerede dependency injectes inn i klasen er det kun to steg som kreves.</p>
 <ol>
-<li>Opprette en klasse som implementerer interfacet <a href="https://github.com/Altinn/app-lib-dotnet/blob/main/src/Altinn.App.PlatformServices/Interface/IPageOrder.cs">IPageOrder</a></li>
-<li>Registrere denne klassen som en Transient i <code>Startup.cs</code> (eller <code>Program.cs</code> i .NET 6)
-Typisk <code>services.AddTransient&lt;IPageOrder, CustomOrder&gt;();</code> i metoden <code>ConfigureServices</code>.</li>
+<li>Opprett en privat variabel i staten av klassen.</li>
 </ol>
-<h3 id="opprette-egen-klasse-for-styring-av-sporvalg">Opprette egen klasse for styring av sporvalg</h3>
-<p>Opprett en ny klasse i din applikasjon f.eks under mappen App/logic/Pages (mappen er ikke opprettet som standard).
-Denne klassen må implementere interfacet IPageOrder.
-Interfacet inneholder en metode med navn <em>GetPageOrder</em>. Forventet output fra denne er en sortert liste over navnene på de relevante sidene i applikasjonen.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">using</span> System;
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">using</span> System.Collections.Generic;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">private</span> <span style="color:#ff79c6">readonly</span> IAppResources _appResourcesService;
+</span></span></code></pre></div><ol start="2">
+<li>Definer den nye private variabelen lik servicen som sendes med i konstruktøren til App.cs</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span> _appResourcesService = appResourcesService;
+</span></span></code></pre></div><ul>
+<li><em>CurrentPage</em> Siden man ønsker å navigere fra vil være spesifisert i denne parameteren.</li>
+<li><em>FormData</em> inneholder skjemadataen. Den kan enkelt jobbes med som et objekt ved å caste den til riktig type <code>Skjema skjema = (Skjema)formData;</code>.
+Her heter C# modellen til skjemadataen <code>Skjema</code> for din applikasjon kan det være et annet navn. 
+Dette kan du sjekke ved å finne klassenavnet på C# filen i App/models-mappen.</li>
+</ul>
+
+</div>
+
+<div class="content-version-container">
+    <label class="content-version-label" hidden>
+        v6, v7
+    </label>
+    
+    <p>For å overstyre standard sporvalg må det gjøres to endringer.</p>
+<ol>
+<li>Opprett en klasse som implementerer <code>IPageOrder</code> grensesnittet som ligger i <code>Altinn.App.Core.Features.PageOrder</code> navnerommet.<br>
+Du kan navngi og plassere filene i den mappestrukturen du selv ønsker i prosjektet ditt. Men vi anbefaler at du benytter meningsfulle navnerom som i et hvilket som helst annet .Net prosjekt.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#ff79c6">using</span> System.Collections.Generic;
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">using</span> System.Threading.Tasks;
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">using</span> Altinn.App.Core.Features.PageOrder;
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">using</span> Altinn.App.Core.Models;
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">using</span> Altinn.App.Models;
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">using</span> Altinn.App.Services.Interface;
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">using</span> Altinn.App.PlatformServices.Models;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">namespace</span> Altinn.App.AppLogic.Pages
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">namespace</span> Altinn.App.AppLogic.Custom;
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">CustomOrder</span> : IPageOrder
 </span></span><span style="display:flex;"><span>    {
@@ -651,16 +716,22 @@ Interfacet inneholder en metode med navn <em>GetPageOrder</em>. Forventet output
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;List&lt;<span style="color:#8be9fd">string</span>&gt;&gt; GetPageOrder(AppIdentifier appIdentifier, InstanceIdentifier instanceIdentifier, <span style="color:#8be9fd">string</span> layoutSetId, <span style="color:#8be9fd">string</span> currentPage, <span style="color:#8be9fd">string</span> dataTypeId, <span style="color:#8be9fd">object</span> formData)
 </span></span><span style="display:flex;"><span>        {
 </span></span><span style="display:flex;"><span>            List&lt;<span style="color:#8be9fd">string</span>&gt; pageOrder = <span style="color:#ff79c6">new</span> List&lt;<span style="color:#8be9fd">string</span>&gt;();
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            <span style="color:#6272a4">// Implementer din logikk her.</span>
-</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#6272a4">// Implement your logic here.</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> Task.FromResult(pageOrder);
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Funksjonen får inn en rekke parametere som kan være nyttig dersom man skal benytte skjemadata
+</span></span></code></pre></div></li>
+<li>Registrer din implementering i <em>Startup.cs</em> eller <em>Program.cs</em> klassen (.Net 6)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddTransient&lt;IPageOrder, PageOrder&gt;();
+</span></span></code></pre></div>Dette sørger for at din kode er kjent for applikasjonen og at koden blir kjørt når den skal.</li>
+</ol>
+<p>Interfacet inneholder en metode med navn <em>GetPageOrder</em>. Forventet output fra denne er en sortert liste over navnene på de relevante sidene i applikasjonen.</p>
+<p>Funksjonen får inn en rekke parametere som kan være nyttig dersom man skal benytte skjemadata
 eller annen informasjon om sluttbruker til å kalkulere sporvalget.</p>
 <ul>
 <li>
@@ -709,52 +780,9 @@ Her heter C# modellen til skjemadataen <code>Skjema</code> for din applikasjon k
 Dette kan du sjekke ved å finne klassenavnet på C# filen i App/models-mappen.</p>
 </li>
 </ul>
-<h2 id="sette-opp-sporvalg-backend-nuget-versjon--500-1">Sette opp sporvalg backend (nuget versjon &lt; 5.0.0)</h2>
-<div class="notices warning" >
-For at sporvalg skal fungere for statless applikasjoner må nuget oppgraderes til 5.0.0 eller senere
+
 </div>
-<p>I App.cs må man overstyre metoden som henter ut den standardrekkefølgen av sider som er definert i <code>Settings.json</code>
-Dette gjøres ved å legge til funksjonen nedenfor i App.cs.
-Forventet output fra denne metoden er en stortert liste som inneholder navnet på de relevante sidene i applikasjonen.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#6272a4">/// &lt;inheritdoc /&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">override</span> <span style="color:#ff79c6">async</span> Task&lt;List&lt;<span style="color:#8be9fd">string</span>&gt;&gt; GetPageOrder(<span style="color:#8be9fd">string</span> org, <span style="color:#8be9fd">string</span> app, <span style="color:#8be9fd">int</span> instanceOwnerId, Guid instanceGuid, <span style="color:#8be9fd">string</span> layoutSetId, <span style="color:#8be9fd">string</span> currentPage, <span style="color:#8be9fd">string</span> dataTypeId, <span style="color:#8be9fd">object</span> formData)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    List&lt;<span style="color:#8be9fd">string</span>&gt; pageOrder = <span style="color:#ff79c6">new</span> List&lt;<span style="color:#8be9fd">string</span>&gt;();
-</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// Implement your own logic here</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> pageOrder;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Funksjonen får inn en rekke parametere som kan være nyttig dersom man skal benytte skjemadata
-eller annen informasjon om sluttbruker til å kalkulere sporvalget.</p>
-<ul>
-<li><em>layoutSetId</em> Dersom appen din definerer flere layout set vil id på det gjeldende layout settet sendes inn.
-Dersom applikasjonen ikke har layout set vil denne strengen være tom. Basert på denne parameteren kan man hente
-ut standard siderekkefølge som er definert i applikasjonen:</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span>List&lt;<span style="color:#8be9fd">string</span>&gt; pageOrder = <span style="color:#ff79c6">new</span> List&lt;<span style="color:#8be9fd">string</span>&gt;();
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> (<span style="color:#8be9fd">string</span>.IsNullOrEmpty(layoutSetId))
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    pageOrder = _appResourcesService.GetLayoutSettings().Pages.Order;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">else</span>
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    pageOrder = _appResourcesService.GetLayoutSettingsForSet(layoutSetId).Pages.Order;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Dette forutsetter at servicen <code>IAppResources</code> gjøres tilgjengelig i App.cs. 
-Da servicen allerede dependency injectes inn i klasen er det kun to steg som kreves.</p>
-<ol>
-<li>Opprett en privat variabel i staten av klassen.</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">private</span> <span style="color:#ff79c6">readonly</span> IAppResources _appResourcesService;
-</span></span></code></pre></div><ol start="2">
-<li>Definer den nye private variabelen lik servicen som sendes med i konstruktøren til App.cs</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span> _appResourcesService = appResourcesService;
-</span></span></code></pre></div><ul>
-<li><em>CurrentPage</em> Siden man ønsker å navigere fra vil være spesifisert i denne parameteren.</li>
-<li><em>FormData</em> inneholder skjemadataen. Den kan enkelt jobbes med som et objekt ved å caste den til riktig type <code>Skjema skjema = (Skjema)formData;</code>.
-Her heter C# modellen til skjemadataen <code>Skjema</code> for din applikasjon kan det være et annet navn. 
-Dette kan du sjekke ved å finne klassenavnet på C# filen i App/models-mappen.</li>
-</ul>
+
 <h2 id="reflektere-sporvalg-i-kvittering-pdf">Reflektere sporvalg i kvittering (PDF)</h2>
 <p>Som applikasjonsutvikler må man selv sørge for å reflektere de sporvalgene som gjøres i PDFen som opprettes i slutten av hver task. 
 I <code>App.cs</code> finnes funksjonen <code>FormatPdf</code>:</p>

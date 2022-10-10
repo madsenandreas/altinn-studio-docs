@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Involves everything from the capability to write and building code to the different types of testing of the code.">
+    <meta name="description" content="It involves everything from the capability to write and build code to the different types of testing of the code.">
 
 <title>Build &amp; Test Capabilities – Altinn</title><link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <link href="/css/nucleus.css" rel="stylesheet">
@@ -111,7 +111,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -211,7 +211,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -293,7 +293,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -301,7 +301,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1148,41 +1148,53 @@ if(host != "localhost")
                 <span class="links"><a href='/technology/'>Technology</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/'>Architecture</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/capabilities/'>Capabilities</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/capabilities/devops/'>DevOps</a> <span class='adocs-breadcrumb-divider'> / </span> Build & Test</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/architecture">architecture</a><a class="label label-default" href="https://docs.altinn.studio/tags/devops">devops</a><a class="label label-default" href="https://docs.altinn.studio/tags/todo">todo</a></div><div id="body-inner"><h1 class="a-fontBold">Build &amp; Test Capabilities</h1>
-              <p class="a-leadText" id="leadText">Involves everything from the capability to write and building code to the different types of testing of the code.</p><p>Below list the capabilities with a short description and possible link to the different components providing that capability.</p>
-<h2 id="software-generation-capabilties">Software Generation Capabilties</h2>
+              <p class="a-leadText" id="leadText">It involves everything from the capability to write and build code to the different types of testing of the code.</p><p>Below is a list of the capabilities with a short description and possible link to the different components providing that capability.</p>
+<h2 id="software-generation-capabilities">Software Generation Capabilities</h2>
 <h3 id="code--config-writing-capability">Code &amp; Config Writing Capability</h3>
 <p>Most of our code is written manually.</p>
 <p>See <a href="../../../components/application/nonsolutionspecific/development/">development application components</a>
-to get a overview over tools and application we use.</p>
+to get an overview of our tools and applications.</p>
+<h3 id="software-defined-infrastructure-definition-enablement">Software Defined Infrastructure Definition Enablement</h3>
+<p>We use Terraform to define infrastructure.</p>
 <h2 id="build--integration-enablement-capabilities">Build &amp; Integration Enablement Capabilities</h2>
 <h3 id="software-compilation--validation">Software Compilation &amp; Validation</h3>
-<p>The project uses .Net, Java or Typescript compilers.</p>
+<p>The project uses .Net, Java, or Typescript compilers.</p>
 <h3 id="sofware-linking--packaging">Sofware Linking &amp; Packaging</h3>
-<p>The project has the capability to build packages.</p>
-<p>See development application components for details how we do this.</p>
+<p>The project can build different software packages.</p>
+<p>See development application components for details on how we do this.</p>
 <h3 id="build-orchestration">Build Orchestration</h3>
-<p>We use <a href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Auzure Pipelines</a> to build the source code.</p>
+<p>We use <a href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Auzure Pipelines</a> to build the source code for releases..</p>
 <p>See <a href="../../../components/application/nonsolutionspecific/development/">development application components</a> to get a overview over tools and application we use.</p>
-<h2 id="continuous-integration-capabilities">Continuous Integration Capabilities</h2>
-<p>Azure Piplines are used for Continuous Integration.
-When a pull request is created a build is triggered that builds the code and run unit and integration tests.</p>
+<h3 id="continuous-integration-capabilities">Continuous Integration Capabilities</h3>
+<p>Github Actions are used for Continuous Integration.</p>
+<p>When a pull request is created a build is triggered that builds the code and run unit and integration tests.</p>
+<p>This is setup for relevant GitHub repositories.</p>
+<p>Examples</p>
+<ul>
+<li><a href="https://github.com/Altinn/altinn-resource-registry/actions">Altinn Resource Registry</a></li>
+<li><a href="https://github.com/Altinn/altinn-events/actions">Altinn Events</a></li>
+</ul>
 <h2 id="test-management-capabilities">Test Management Capabilities</h2>
 <h3 id="test-case--script-creation--management">Test Case &amp; Script Creation &amp; Management</h3>
-<ul>
-<li>Test scripts are collected in <a href="https://github.com/Altinn/altinn-studio/tree/master/src/test">Github</a>.</li>
-</ul>
+<p>For Altinn 2, we have manual test scripts in TFS.
+For Altinn 3, there are no manual test scripts.</p>
+<p>The DevOps teams use Github to store the automatic test scripts.</p>
 <h3 id="test-execution-tracking--reporting">Test Execution Tracking &amp; Reporting</h3>
-<p>The team</p>
+<p>For functionality, for Altinn 2 platform, the tracking is performed in TFS.</p>
+<p>For automatic tests covering Altinn 3 functionality, this is tracked in Azure Pipelines.</p>
 <h3 id="test-data-creation--management">Test Data Creation &amp; Management</h3>
 <ul>
 <li>Test data for local testing and integration testing is kept in <a href="https://github.com/Altinn/altinn-studio">Github</a>.</li>
 </ul>
 <h2 id="test-execution--automation-capabilities">Test Execution &amp; Automation Capabilities</h2>
 <h3 id="functional-test">Functional Test</h3>
-<p>The devopsteam has the capability to perform functional testing.</p>
+<p>The DevOps team can perform automatic functional testing. Testing is done with the help of Cypress and runs from Azure DevOps pipelines.</p>
+<p><img src="regressiontest.png" alt="Devops"></p>
 <h3 id="unit-test">Unit Test</h3>
-<p>As part of the development unit test are created. They are run for every pull request.</p>
+<p>As part of the development, unit tests are created. The tests run for every pull request.</p>
+<p>Sonarcloud verifies test coverage.</p>
 <h3 id="service--api-test">Service &amp; API Test</h3>
+<p>The teams use Postman for API testing.</p>
 <h3 id="performance-testing--profiling">Performance Testing &amp; Profiling</h3>
 <ul class="children children-li js-moveChildrenFrom">
 

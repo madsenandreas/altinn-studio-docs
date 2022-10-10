@@ -111,7 +111,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -211,7 +211,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -293,7 +293,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -301,7 +301,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1156,12 +1156,12 @@ if(host != "localhost")
 
 	</div><article class="post technology">
     <header class="post-header">
-        <h2 class="post-title"><a href="/technology/architecture/capabilities/devops/">Development &amp; Operations Capabilties</a></h2>
+        <h2 class="post-title"><a href="/technology/architecture/capabilities/devops/">Development &amp; Operations Capabilities</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>It covers the full spectrum of capabilities starting from development, going through a transition to operations, and ending with operations it-self.
-Each capability consists of people, the procedures they follow, and the software and hardware tools they use.
-This documentation currently focuses on the capabilities that can be shared and reused by others.
+        <p>It covers the full spectrum of capabilities, starting with development, going through a transition to operations, and ending with operations.
+Each capability comprises people, procedures, and software and hardware tools.
+This documentation currently focuses on the capabilities that others can learn from and reuse.
 See below for a capability map and the different DevOps capability areas.
 Full screen
 Analysis &amp; Design CapabilitiesAnalysis &amp; Design Capabilities are the capabilities needed to analyze needs and design solutions and applications for the Altinn 3 platform. <a class="read-more" href="/technology/architecture/capabilities/devops/">&raquo;</a></p>
@@ -1184,10 +1184,10 @@ Analysis &amp; Design CapabilitiesAnalysis &amp; Design Capabilities are the ca
     </header>
     <section class="post-excerpt">
         <p>Analysis Enablement Capabilities Requirement Capture Requirements are gathered through:
-input on Github talks with organization For some pilots, we choose to create larger epics on Github to group requirements.
+issues on Github talks with stakeholders using the platform (service owners and others) For some pilots, we choose to create larger epics on Github to group requirements.
 Some example issues are
-The issue for supporting Sirius App for tax department The issue for supporting NSM POB See development application components to get an overview of the tools and applications we use.
-User story Definition The DevOps team has the capability to define user stories in our GitHub repository. <a class="read-more" href="/technology/architecture/capabilities/devops/analysisanddesign/">&raquo;</a></p>
+The issue for supporting Sirius App for tax department The issue for supporting NSM POB See development application components to get an overview of our tools and applications.
+User story Definition The DevOps teams or stakeholders define user stories in our GitHub repositories <a class="read-more" href="/technology/architecture/capabilities/devops/analysisanddesign/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         
@@ -1206,11 +1206,11 @@ User story Definition The DevOps team has the capability to define user stories 
         <h2 class="post-title"><a href="/technology/architecture/capabilities/devops/build_and_test/">Build &amp; Test Capabilities</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Below list the capabilities with a short description and possible link to the different components providing that capability.
-Software Generation Capabilties Code &amp; Config Writing Capability Most of our code is written manually.
-See development application components to get a overview over tools and application we use.
-Build &amp; Integration Enablement Capabilities Software Compilation &amp; Validation The project uses .Net, Java or Typescript compilers.
-Sofware Linking &amp; Packaging The project has the capability to build packages. <a class="read-more" href="/technology/architecture/capabilities/devops/build_and_test/">&raquo;</a></p>
+        <p>Below is a list of the capabilities with a short description and possible link to the different components providing that capability.
+Software Generation Capabilities Code &amp; Config Writing Capability Most of our code is written manually.
+See development application components to get an overview of our tools and applications.
+Software Defined Infrastructure Definition Enablement We use Terraform to define infrastructure.
+Build &amp; Integration Enablement Capabilities Software Compilation &amp; Validation The project uses . <a class="read-more" href="/technology/architecture/capabilities/devops/build_and_test/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         
@@ -1305,11 +1305,12 @@ Backup &amp; Recovery The Altinn 3 platform has the capability to backup and res
         <h2 class="post-title"><a href="/technology/architecture/capabilities/devops/projectmanagement/">Project Management Capabilities</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Most of the project capabilties is not listed. The once that is listed is the ones where we use technolgies and teqniques that can be shared/reused.
-Agile Project Management Capabilties Backlog managmenent and prioritazion The project has capability to manage the backlog and prioritize it.
-This is done in Github and Zenhub.
-Burn-down / Tracking The project has capability to manage see the burn-down and track issues in backlog
-This is done in Github and Zenhub. <a class="read-more" href="/technology/architecture/capabilities/devops/projectmanagement/">&raquo;</a></p>
+        <p>Most of the project capabilties is not listed.
+Most of the project capabilities are not listed.
+The ones listed are where we use technologies and techniques that can be shared/reused.
+Backlog managmenent and prioritazion The different product owners manage the backlog for Altinn.
+Team Studio: FinnurO Team Platform: OddArneSeatervik Team Authorization: sivaglen The overall roadmap is available on this GitHub roadmap project.
+The issues in the roadmap project are based on the Roadmap repository or the different repositories used by the various teams/components. <a class="read-more" href="/technology/architecture/capabilities/devops/projectmanagement/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         
@@ -1351,10 +1352,8 @@ Static SW Analysis Enablement Every pull requsts needs to adhere to code quality
         <h2 class="post-title"><a href="/technology/architecture/capabilities/devops/softwareconfiguration/">Software Configuration &amp; Release Management Capabilities</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Version, Release &amp; Artefact Management Capabilities Version Management Artefact Management Software Configuration Management Release Management Continuous Del. Pipeline Management The goal is to deliver continously.
-Deployment Capabilities Deployment Orchestration Capabilites The devopsteam has the capability to orhecstrate deployes. Both autmatic and manual deploy is supported.
-See development application components to get a overview over tools and application we use.
-DeploymentThe Altinn Studio components are deployed as two different solutions. <a class="read-more" href="/technology/architecture/capabilities/devops/softwareconfiguration/">&raquo;</a></p>
+        <p>Version, Release &amp; Artefact Management Capabilities Version Management Azure DevOps pipelines control the version of each component. Each build gets its version. So the DevOps team can install an older component version at any time. In addition, the published NuGet packages have different versions handled by NuGet.
+Software Configuration Management We use value files in Azure DevOps for Helm Charts to control the different configurations for different environments. In addition, Azure Key vaults store configuration secrets. <a class="read-more" href="/technology/architecture/capabilities/devops/softwareconfiguration/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         

@@ -111,7 +111,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -211,7 +211,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -293,7 +293,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -301,7 +301,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1152,8 +1152,8 @@ if(host != "localhost")
 <h3 id="requirement-capture">Requirement Capture</h3>
 <p>Requirements are gathered through:</p>
 <ul>
-<li>input on Github</li>
-<li>talks with organization</li>
+<li>issues on Github</li>
+<li>talks with stakeholders using the platform (service owners and others)</li>
 </ul>
 <p>For some pilots, we choose to create larger epics on Github to group requirements.</p>
 <p>Some example issues are</p>
@@ -1161,27 +1161,31 @@ if(host != "localhost")
 <li><a href="https://github.com/Altinn/altinn-studio/issues/3747">The issue for supporting Sirius App for tax department</a></li>
 <li><a href="https://github.com/Altinn/altinn-studio/issues/4731">The issue for supporting NSM POB</a></li>
 </ul>
-<p>See <a href="../../../components/application/nonsolutionspecific/development/">development application components</a>  to get an overview of the tools and applications we use.</p>
+<p>See <a href="../../../components/application/nonsolutionspecific/development/">development application components</a>  to get an overview of our tools and applications.</p>
 <h3 id="user-story-definition">User story Definition</h3>
-<p>The DevOps team has the capability to define user stories in our GitHub repository.
-<a href="https://github.com/Altinn/altinn-studio/issues?q=label%3Akind%2Fuser-story+">See all user stories</a>.</p>
+<p>The DevOps teams or stakeholders define user stories in our GitHub repositories</p>
+<p><a href="/technology/architecture/capabilities/devops/projectmanagement/">See our repositories</a>.</p>
 <h3 id="requirement-validation">Requirement Validation</h3>
-<p>Product owners and architects together with the teams are responsible for validation of requirements.</p>
+<p>Product owners and architects, and the teams are responsible for validating requirements.</p>
+<p>This can be done through clarification on GitHub issues or meetings with stakeholders.</p>
 <h3 id="requirement-traceability">Requirement Traceability</h3>
-<p>Github keeps a full history on the different issues.</p>
+<p>GitHub keeps a complete history of the different issues.</p>
 <h3 id="prototypes-mock-ups--storyboarding">Prototypes, Mock-Ups &amp; Storyboarding</h3>
-<p>The devopsteam has the capability to create prototypes.</p>
+<p>The DevOps teams can create prototypes when needed.</p>
 <p>See development application components for tools used.</p>
 <h2 id="design-enablement-capabilities">Design Enablement Capabilities</h2>
 <h3 id="ui-design-enablement">UI Design Enablement</h3>
 <p>We use Figma to design the UI elements.</p>
+<p>We have made a <a href="/app/design/prototype/">Figma Library</a> available for anyone that wants to design apps.</p>
+<p>And we have a Storybook Design system where all components are implemented.</p>
+<p>See <a href="https://designsystem.altinn.studio/">Altinn Design System V2</a></p>
 <h3 id="data-modeling--design-capability">Data Modeling &amp; Design Capability</h3>
-<p>The devops team has the capability for data modelling and design.</p>
-<p>See <a href="../../../components/application/nonsolutionspecific/development/">development application components</a> to get an overview of the tools and applications we use.</p>
+<p>The DevOps team has the capability for data modeling and design.</p>
+<p>See <a href="../../../components/application/nonsolutionspecific/development/">development application components</a> to get an overview of our tools and applications.</p>
 <h3 id="architecture-design-enablement">Architecture Design Enablement</h3>
-<p>Architecture design is presented on this site using Markdown and Visio.</p>
+<p>Architecture design is presented on this site using Markdown and SVG.</p>
 <h3 id="application-design-enablement">Application Design Enablement</h3>
-<p>Application design is presented on this site using Markdown and Visio.</p>
+<p>Application design is presented on this site using Markdown and SVG.</p>
 
 
 <footer class=" footline" ></footer>

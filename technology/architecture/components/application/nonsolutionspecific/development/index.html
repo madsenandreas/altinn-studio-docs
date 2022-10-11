@@ -111,7 +111,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -211,7 +211,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -293,7 +293,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -301,7 +301,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1234,21 +1234,35 @@ This process is manual and performed by developer.</p>
 <p>Note as part of the runtime capabilityes we also use Azure Container Registry for apps created in Altinn Studio. See solution components</p>
 <h3 id="deployment-orchestration">Deployment Orchestration</h3>
 <p>We use Azure Pipelines for deployment orchestration of the different components in the different solutions.</p>
+<p>The deploy process consist of 3 types of pipelines</p>
+<ul>
+<li>Publish Build artifacts to Azure Pipelines: Deploy Helm chart from Azure Devops repos to Azure Devops pipelines</li>
+<li>Build Docker Image : Build Docker Images and publish to Container Registry</li>
+<li>Release pipeline: Deploy a given container version from Azure Container Registry to a Kubernetes Cluster</li>
+</ul>
 <p>The deploy pipelines has typical support for deployment to different environments (Stages).</p>
 <p><img src="releasepipeline.png" alt="Release pipelines"></p>
 <p>Helm is used to set environments variables for the different environments.</p>
-<h3 id="piplines">Piplines</h3>
-<p>The following pipelines is defined</p>
+<h4 id="piplines">Piplines</h4>
+<p>The following build pipelines is defined</p>
+<p>The following release pipelines is defined</p>
 <ul>
 <li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=18">Altinn Studio - Designer</a></li>
 <li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=5">Altinn Studio - Repositories</a></li>
-<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=20">Altinn Platform - Authorization</a></li>
-<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=20">Altinn Platform - Authentication</a></li>
-<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=21">Altinn Platform - PDF</a></li>
-<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=17">Altinn Platform - Profile</a></li>
-<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=16">Altinn Platform - Receipt</a></li>
-<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=19">Altinn Platform - Register</a></li>
-<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=22">Altinn Platform - Storage</a></li>
+<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=all&amp;definitionId=28">Altinn Studio - Loadbalancer</a></li>
+<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=all&amp;definitionId=32">Altinn Studio - Kubernetswrapper</a></li>
+<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=20">Altinn Authorization</a></li>
+<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=20">Altinn Authentication</a></li>
+<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=21">Altinn PDF</a></li>
+<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=17">Altinn Profile</a></li>
+<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=16">Altinn Receipt</a></li>
+<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=19">Altinn Register</a></li>
+<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=mine&amp;definitionId=22">Altinn Storage</a></li>
+<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=all&amp;definitionId=27">Altinn Events</a></li>
+<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=all&amp;definitionId=34">Altinn Notifications</a></li>
+<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=all&amp;definitionId=37">Altinn Access Management</a></li>
+<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=all&amp;definitionId=36">Altinn Resource Registry</a></li>
+<li><a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=all&amp;definitionId=31">Kubernets Wrapper</a></li>
 </ul>
 
 

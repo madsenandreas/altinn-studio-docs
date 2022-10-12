@@ -119,7 +119,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/nb/app/"><span>Lage apper</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/"><span>Lage apper</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/getting-started/"><span>Kom i gang</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -219,7 +219,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/design/guidelines/wcag/"><span>Tilgjengelighet</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/"><span>Utvikling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/"><span>Utvikling</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -301,7 +301,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/validation/"><span>Validering</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/"><span>Konfigurasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/"><span>Konfigurasjon</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/messagebox/"><span>Meldingsboks</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -309,13 +309,13 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/configuration/messagebox/hide_instances/"><span>Skjule instanser</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/"><span>Autorisasjon</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/authorization/rules/"><span>Regelbibliotek</span></a></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/"><span>Veiledning</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/"><span>Veiledning</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Roller</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Roller</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roller</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -600,22 +600,68 @@ if(host != "localhost")
             </div>
           </div><div id="body-inner"><h1 class="a-fontBold">Datamodell i Altinn Studio</h1>
               <p class="a-leadText" id="leadText">Slik importerer eller viser du datamodellen i Altinn Studio.</p><div class="notices info" >
-Det er planlagt datamodelleringsfunksjonalitet inn i Altinn Studio. Den midlertidige funksjonaliteten er derfor svært begrenset.
+Datamodelleringsfunksjonalitet utvikles nå i Altinn Studio. Funksjonalitet vil være begrenset, men vil 
+bygges på fortløpende.
 </div>
+<p>Når man kommer til den nye siden for datamodellering vises en dialog med informasjon om 
+den nye siden. 
+Om man ikke ønsker å se denne hver gang man går inn på siden kan man velge <em>Ikke vis igjen</em>. 
+Da vil dialogen skjules så lenge man bruker samme PC og nettleser.</p>
+<figure><a href="info-dialog.png"><img src="info-dialog.png" alt="Info om ny side" title="Info om ny side" /></a><figcaption><h4>Info om ny side</h4></figcaption></figure>
 <h2 id="laste-opp--vise-datamodell">Laste opp / vise datamodell</h2>
 <p>Datamodellen definerer hvilke data som kan sendes inn via en app, og hvilket format det skal sendes på.
 Per nå må datamodellen være definert som en XSD i et eksternt verktøy - gjerne <a href="https://altinn.github.io/docs/seres/brukerveiledninger/domeneklient/">Seres Domeneklient</a>.</p>
 <p>Det må lastes opp en datamodell for hver app.</p>
 <ol>
 <li>Åpne appen fra dashboardet</li>
-<li>Velg fanen Lage</li>
-<li>I navigasjonsmenyen velger du Datamodell <img src="datamodel-icon.png" alt="Ikon i navigasjonsmenyen" title="Ikon i navigasjonsmenyen"></li>
-<li>Klikk på <em>Velg XSD</em> og velg XSD-en i filvelgeren</li>
+<li>Velg fanen Datamodell</li>
+<li>Klikk på <em>Last opp datamodell</em> og velg XSD-en i filvelgeren</li>
 <li>Klikk <em>Last opp</em></li>
 </ol>
 <p>Datamodellen blir da parset, og alle nødvendige filer generert og lagret i app-repositoryet.
-Disse filene kan vises ved å velge de ulike fanene på datamodellsiden.</p>
-<figure><a href="add-datamodel.png"><img src="add-datamodel.png" alt="Legg til / vis datamodell" title="Legg til / vis datamodell" /></a><figcaption><h4>Legg til / vis datamodell</h4></figcaption></figure>
+Tre-visning av datamodellen kan åpnes for å se en visuell representasjon av datamodellen.</p>
+<figure><a href="upload-datamodel.png"><img src="upload-datamodel.png" alt="Last opp / vis datamodell" title="Last opp / vis datamodell" /></a><figcaption><h4>Last opp / vis datamodell</h4></figcaption></figure>
+<figure><a href="view-model.png"><img src="view-model.png" alt="Last opp / vis datamodell" title="Last opp / vis datamodell" /></a><figcaption><h4>Last opp / vis datamodell</h4></figcaption></figure>
+<h2 id="lage-ny-datamodell">Lage ny datamodell</h2>
+<p>Det er mulig å opprette en ny datamodell fra bunnen av:</p>
+<ol>
+<li>Klikk på <em>Lag ny datamodell</em>.</li>
+<li>Skriv inn navnet på datamodellen i feltet.</li>
+<li>Klikk på <em>Opprett modell</em>.</li>
+</ol>
+<p>Datamodellen opprettes med et eksempelfelt som er kalt <code>e1</code>.</p>
+<p><img src="create-new.png" alt="Lag ny modell" title="Lag ny modell">
+<img src="view-new-model.png" alt="Vis ny modell" title="Vis ny modell"></p>
+<h2 id="redigere-datamodell">Redigere datamodell</h2>
+<div class="notices warning" >
+Funksjonalitet for å redigere datamodell er under utvikling. Denne funksjonaliteten vil være begrenset,
+men bygges på fortløpende. 
+</div>
+<p>For å redigere en datamodell må modellen være valgt i nedtrekkslisten. I tillegg må man velge <em>Rediger</em>
+øverst til høyre i modellverktøyet - da vil et panel for å redigere modellen vises på høyre side av 
+verktøyet.</p>
+<p><strong>OBS!</strong> Husk på å trykke på <em>Lagre</em> når du har gjort endringer, da det p.t. ikke er autolagring
+for datamodelleringsverktøyet.</p>
+<h3 id="redigere-navn-på-felt">Redigere navn på felt</h3>
+<ol>
+<li>Klikk på feltet, og se at navnet på feltet vises i høyre-panelet.</li>
+<li>Endre navn til ønsket verdi.</li>
+<li>Navnet oppdateres.</li>
+</ol>
+<h3 id="legge-til-nytt-felt">Legge til nytt felt</h3>
+<ol>
+<li>Hold musepekeren over noden du ønsker å legge til et felt på.</li>
+<li>Klikk på de tre prikkene til høyre for noden.</li>
+<li>Velg <em>Legg til felt</em> fra menyen.</li>
+<li>Feltet blir lagt til.</li>
+</ol>
+<h3 id="slette-et-felt">Slette et felt</h3>
+<ol>
+<li>Hold musepekeren over noden du ønsker å slette.</li>
+<li>Klikk på de tre prikkene til høyre for noden.</li>
+<li>Velg <em>Slett felt</em> fra menyen.</li>
+<li>Feltet blir slettet.</li>
+</ol>
 
 
 <footer class=" footline" ></footer>

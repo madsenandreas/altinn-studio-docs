@@ -459,7 +459,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/api/studio/"><span>Studio</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/community/"><span>Community</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/community/"><span>Community</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/about/"><span>About</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -467,7 +467,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/community/about/open-source/"><span>Open source</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/community/contributing/"><span>Contributing</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/community/contributing/"><span>Contributing</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/contributing/propose-component/"><span>Propose a new component</span></a></li>
       <li class="dd-item">
@@ -475,7 +475,7 @@ if(host != "localhost")
           <a href="/community/contributing/intro/">
             <span>Intro for developers</span></a></li>
       <li class="dd-item">
-        <a href="/community/contributing/handbook/"><span>Handbook</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/community/contributing/handbook/"><span>Handbook</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/contributing/handbook/azure-devops/"><span>Azure DevOps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1259,7 +1259,10 @@ the group-element. The data is still saved.</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;openByDefault&#34;</span>: <span style="color:#f1fa8c">&#34;first&#34;</span>
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="display-group-as-part-of-panel">Display group as part of Panel</h2>
+</span></span></code></pre></div><h3 id="saveandnextbutton">saveAndNextButton</h3>
+<p>Determines whether the &ldquo;Save and open next&rdquo; button should be displayed when a group element is open in editing mode. This button is not visible if this parameter is not set.</p>
+<p>Note that this setting has no effect when be used with <code>&quot;mode&quot;: &quot;showAll&quot;</code>.</p>
+<h2 id="display-group-as-part-of-panel">Display group as part of Panel</h2>
 <p>A new parameter, <code>panel</code>, has been added which can be set up on a group component. This says that the group should be displayed as part of the <a href="../../../components/panel/">Panel component</a>.</p>
 <p>Here, you will recognize the appearance and settings that can be set on the panel component. Example configuration:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>      {

@@ -303,9 +303,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -783,8 +783,6 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/accessmanagement/"><span>Access Management</span></a></li>
       <li class="dd-item">
-        <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/accesspolicies/"><span>Access Policies</span></a></li>
-      <li class="dd-item">
         <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/contexthandler/"><span>Context Handler</span></a></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/pap/"><span>PAP</span></a></li>
@@ -1257,33 +1255,8 @@ Build &amp; Deploy Build and Code analysis are done by an Github action Build of
     </header>
     <section class="post-excerpt">
         <p>This is work in progressThe access management will provide the following functionality
-Delegate and revoke Altinn 2 roles Add and remove membership for Access Groups Delegate App and instance rights List access groups members List resources that is linked to access groups This design is in early phase. <a class="read-more" href="/technology/architecture/components/application/solution/altinn-platform/authorization/accessmanagement/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/security/">security</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/authorization/">authorization</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/xacml/">xacml</a>
-            
-        
-    </footer>
-</article>
-<article class="post technology">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/technology/architecture/components/application/solution/altinn-platform/authorization/accesspolicies/">Access Policies component</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>This is work in progressWork in progress
-In Altinn 3 platform it will support different types of Access Policies based on XACML 3.0
-App Policies The App Policies are policies for Apps created in Altinn Studio. The policy is created in Altinn Studio and migrated to the Access Policy component when the app is deployed to a test or production environment.
-An app policy contains information about the different resources in an App and who and what kind of operations they are allowed to perform. <a class="read-more" href="/technology/architecture/components/application/solution/altinn-platform/authorization/accesspolicies/">&raquo;</a></p>
+Delegate and revoke Altinn 2 roles Add and remove membership for Access Groups Delegate App and instance rights List access groups members List resources that is linked to access groups This design is in early phase.
+Delegated Policies Delegated policies are policies created by users when their own rights are delegated ot other persons/systems. The who is identified by user or partyId. <a class="read-more" href="/technology/architecture/components/application/solution/altinn-platform/authorization/accessmanagement/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         
@@ -1373,6 +1346,26 @@ Application construction components - Altinn Platform AuthorizationThe authoriz
 Application architecture authentication component - Altinn PlatformThe Authentication component is an a ASP.NET Core MVC Application exposing REST-API to Altinn Apps.
 Altinn Platform - AuthorizationThe authorization component provides functionality to authorize access to applications and components in Altinn Apps and Altinn Platform.
 Application architecture Events component - Altinn PlatformThe Events component is an a ASP. <a class="read-more" href="/technology/architecture/components/application/solution/altinn-platform/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/solution/">solution</a>
+            
+        
+    </footer>
+</article>
+<article class="post technology">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/technology/architecture/components/application/solution/altinn-studio/">Solution-specific application components Altinn Studio</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Solution-specific application components Altinn Studio DesignerAltinn Studio Designer is the custom appliaction where app developers manage and creates applications.
+Solution components Altinn Studio RepositoriesIn Altinn Studio Repos you find the functional components related to source control and access management of the application developer. <a class="read-more" href="/technology/architecture/components/application/solution/altinn-studio/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         

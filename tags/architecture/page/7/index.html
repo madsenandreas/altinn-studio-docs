@@ -303,9 +303,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -783,8 +783,6 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/accessmanagement/"><span>Access Management</span></a></li>
       <li class="dd-item">
-        <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/accesspolicies/"><span>Access Policies</span></a></li>
-      <li class="dd-item">
         <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/contexthandler/"><span>Context Handler</span></a></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/pap/"><span>PAP</span></a></li>
@@ -1160,30 +1158,6 @@ if(host != "localhost")
 
 	</div><article class="post technology">
     <header class="post-header">
-        <h2 class="post-title"><a href="/technology/architecture/components/infrastructure/">Infrastructure components</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Altinn 3 consists of three different technical solutions to make a complete application development platform.
-The diagram below shows an simplified overview over the infrastructure components.
-Altinn 3 is currently deployed to Microsoft Azure. This does not mean that Altinn 3 can&rsquo;t be deployed to other cloud providers.
-Below you find details about the different cloud components used.
-Compute componentsCompute components gives processor power to applications and software.
-Network componentensAll networking infrastructure is located in Azure. <a class="read-more" href="/technology/architecture/components/infrastructure/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/infrastructure/">infrastructure</a>
-            
-        
-    </footer>
-</article>
-<article class="post technology">
-    <header class="post-header">
         <h2 class="post-title"><a href="/technology/architecture/capabilities/devops/platformoperations/infrastructuremgmt/">Infrastructure management</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1366,6 +1340,31 @@ This screenshots show how a request flows through the different applications <a 
           
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
+            
+        
+    </footer>
+</article>
+<article class="post technology">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/technology/architecture/components/infrastructure/network/">Network componentens</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Altinn 3 is based on different network components in Azure.
+Virtual Network As part of the Altinn 3 platform there is serveral Virtual Networks. Each Kubernetes Cluster have their own Virtual Network.
+This increases security and isolates the different org cluster from eacother.
+Read more about Azure Virtual Networks.
+Azure Loadbalancer In front of every AKS cluster there is a Azure Loadbalancer that load traffic between the different nodes in the AKS cluster. <a class="read-more" href="/technology/architecture/components/infrastructure/network/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/infrastructure/">infrastructure</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/todo/">todo</a>
             
         
     </footer>

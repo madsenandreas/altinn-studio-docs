@@ -303,9 +303,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -782,8 +782,6 @@ if(host != "localhost")
         <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/accessgroups/type-accessgroups/"><span>Tilgangsgrupper 3.0</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/accessmanagement/"><span>Access Management</span></a></li>
-      <li class="dd-item">
-        <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/accesspolicies/"><span>Access Policies</span></a></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/contexthandler/"><span>Context Handler</span></a></li>
       <li class="dd-item">
@@ -1329,6 +1327,16 @@ This is work in progress
 </tr>
 </tbody>
 </table>
+<h2 id="policies">Policies</h2>
+<p>Polices defined for apps and resources will be stored by resource registry.</p>
+<h3 id="app-policies">App Policies</h3>
+<p>The App Policies are policies for Apps <a href="../../../../../../../../app/development/configuration/authorization/">created in Altinn Studio</a>. 
+The policy is created in Altinn Studio and migrated to the Access Policy component when the app is deployed to a test or production environment.</p>
+<p>An app policy contains information about the different resources in an App and who and what kind of operations they are allowed to perform. 
+The who is identified using Altinn Roles, Access Groups, or roles/groups from other sources.</p>
+<h3 id="resource-registry-policies">Resource Registry Policies</h3>
+<p>The resource registry policies are policies for resources that is not comming from Altinn 3 apps. It could be any functionality hosted on any platform.</p>
+<p>Both digital and analog services can be registrated in the resource registry.</p>
 <h2 id="construction">Construction</h2>
 <p>See <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/resourceregistry/">construction components</a> if you want to see how the component is built.</p>
 

@@ -303,9 +303,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -783,8 +783,6 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/accessmanagement/"><span>Access Management</span></a></li>
       <li class="dd-item">
-        <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/accesspolicies/"><span>Access Policies</span></a></li>
-      <li class="dd-item">
         <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/contexthandler/"><span>Context Handler</span></a></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/solution/altinn-platform/authorization/pap/"><span>PAP</span></a></li>
@@ -1244,11 +1242,6 @@ This is work in progress
 <p>Exposes API to list and delegate Access Groups.</p>
 <p><a href="https://github.com/Altinn/altinn-authorization/issues/25">Github issue</a></p>
 <p><a href="https://github.com/Altinn/altinn-authorization/issues/28">A POC is planned</a></p>
-<h3 id="altinn-access-policies">Altinn Access Policies</h3>
-<p>Store for the different policies. Able to identify the correct policy based on Authorization Request.</p>
-<p>Have functionality to create delegated policies</p>
-<p><a href="https://github.com/Altinn/altinn-authorization/issues/27">Github issue</a></p>
-<p><a href="https://github.com/Altinn/altinn-authorization/issues/27">A POC is planned</a></p>
 <h3 id="altinn-access-information">Altinn Access Information</h3>
 <p>Altinn Access Information exposes API for Reportee, access groups, and rights for external consumers. Therefore, it needs to be highly scalable.</p>
 <h3 id="altinn-consent">Altinn Consent</h3>
@@ -1269,9 +1262,6 @@ This is work in progress
 				</li><li>
 				<a href="/technology/architecture/components/application/solution/altinn-platform/authorization/accessmanagement/">Access Management component</a>
 				<p>The Access Management provides functionality to end users for managing groups, roles and rights</p>
-				</li><li>
-				<a href="/technology/architecture/components/application/solution/altinn-platform/authorization/accesspolicies/">Access Policies component</a>
-				<p>The Access Policies component is the policy store for all access policies in Altinn platform.</p>
 				</li><li>
 				<a href="/technology/architecture/components/application/solution/altinn-platform/authorization/contexthandler/">Context Handler</a>
 				<p>The responsibility to the Context Handler is to enrich a decision request sent from a PEP so it can be evaluated by PDP.</p>

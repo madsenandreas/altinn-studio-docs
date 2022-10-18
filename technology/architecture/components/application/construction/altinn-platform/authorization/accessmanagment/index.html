@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The Access Managment component in Altinn platform is constructed as an asp.net core 6 web API application deployed as a docker container to a Kubernetes cluster.">
+    <meta name="description" content="The Access Managment component in Altinn platform is constructed as an asp.net core 6 web API application with a REACT frontend deployed as a docker container to the Altinn Platform Kubernetes cluster.">
 
 <title>Application construction components - Altinn Access Management – Altinn</title><link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <link href="/css/nucleus.css" rel="stylesheet">
@@ -111,7 +111,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -211,7 +211,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -293,7 +293,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -301,7 +301,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1119,29 +1119,55 @@ if(host != "localhost")
                 <span class="links"><a href='/technology/'>Technology</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/'>Architecture</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/'>Components</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/'>Application</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/construction/'>Construction</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/construction/altinn-platform/'>Altinn Platform</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/construction/altinn-platform/authorization/'>Authorization</a> <span class='adocs-breadcrumb-divider'> / </span> Access Management</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/architecture">architecture</a><a class="label label-default" href="https://docs.altinn.studio/tags/solution">solution</a></div><div id="body-inner"><h1 class="a-fontBold">Application construction components - Altinn Access Management</h1>
-              <p class="a-leadText" id="leadText">The Access Managment component in Altinn platform is constructed as an asp.net core 6 web API application deployed as a docker container to a Kubernetes cluster.</p><p>Also see <a href="/technology/solutions/altinn-platform/authorization/accessmanagement/">solution components</a> for details about functionality.</p>
+              <p class="a-leadText" id="leadText">The Access Managment component in Altinn platform is constructed as an asp.net core 6 web API application with a REACT frontend deployed as a docker container to the Altinn Platform Kubernetes cluster.</p><p>See <a href="/technology/solutions/altinn-platform/authorization/accessmanagement/">solutions</a> for details about functionality provided by this component.</p>
 <figure><a href="accessmanagement.drawio.svg"><img src="accessmanagement.drawio.svg" alt="Access Management" title="Construction Components Altinn Resource Registry" /></a><figcaption><h4>Construction Components Altinn Resource Registry</h4></figcaption></figure>
-<h2 id="api">API</h2>
+<h2 id="frontend">Frontend</h2>
+<p>The frontend is created with REACT as a standalone REACT application.</p>
+<p>It uses the following frameworks</p>
+<ul>
+<li>Axios : For</li>
+<li>Redux :</li>
+<li>Redux Toolkit :</li>
+<li>Redux Query :</li>
+</ul>
+<h3 id="build--deploy">Build &amp; Deploy</h3>
+<p>We use GitHub Actions and Azure Devops to build Frontend applications.</p>
+<ul>
+<li><a href="">Github Action</a></li>
+<li>Azure DevOps Pipeline</li>
+</ul>
+<h3 id="hosting">Hosting</h3>
+<p>The backend hosts the compiled frontend application.
+Files is located in <a href="https://github.com/Altinn/altinn-access-management/tree/main/backend/src/Altinn.Authorizationadmin/Altinn.Authorizationadmin/wwwroot/AuthorizationAdmin">wwwroot</a> folder in the backend.</p>
+<h2 id="backend">Backend</h2>
+<h3 id="api">API</h3>
 <p>The following API is available in component</p>
 <ul>
-<li>DelegationAPI</li>
-<li>DelegationRequestAPI</li>
+<li><a href="https://github.com/Altinn/altinn-access-management/blob/main/backend/src/Altinn.Authorizationadmin/Altinn.Authorizationadmin/Controllers/DelegationsController.cs">DelegationAPI</a></li>
+<li><a href="https://github.com/Altinn/altinn-access-management/blob/main/backend/src/Altinn.Authorizationadmin/Altinn.Authorizationadmin/Controllers/DelegationRequestsController.cs">DelegationRequestAPI</a></li>
 <li>DelegationResourcesAPI</li>
 <li>AuthenticationAPI</li>
 </ul>
 <h3 id="security">Security</h3>
-<h2 id="repository">Repository</h2>
+<h4 id="authentication">Authentication</h4>
+<p>Apis are protected and required a authenticated user or organization.</p>
+<p>The token is provied through cookie for users using the React frontend</p>
+<h4 id="csrf-protection">CSRF protection</h4>
+<p>The API endpoints will have CSRF protection.</p>
+<h4 id="api-management-subscription">API Management subscription</h4>
+<p>Some functionality will require specific API management subscription</p>
+<h3 id="db-repository">Db Repository</h3>
 <p>Access Manamgent owns the delegated rights.</p>
 <ul>
 <li>PostgreSQL is used to store information about a delegated policy</li>
 <li>Azure Blob Storage is used</li>
 </ul>
 <p>See <a href="https://github.com/Altinn/altinn-access-management/tree/main/backend/src/Altinn.Authorizationadmin/Altinn.Authorizationadmin/Migration">migration scripts</a> for table structure and stored procedures.</p>
-<h2 id="build--deploy">Build &amp; Deploy</h2>
+<h2 id="build--deploy-1">Build &amp; Deploy</h2>
 <ul>
 <li>Build and Code analysis are done by an <a href="https://github.com/Altinn/altinn-resource-registry/actions">Github action</a></li>
-<li>Build of image is done in <a href="https://dev.azure.com/brreg/altinn-studio/_build?definitionId=385">Azure Devops</a></li>
-<li>Deploy of Image is done in <a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=all&amp;definitionId=36">Azure Devops</a></li>
+<li>Build of the image is done in <a href="https://dev.azure.com/brreg/altinn-studio/_build?definitionId=385">Azure Devops</a></li>
+<li>Deploy of the Image is done in <a href="https://dev.azure.com/brreg/altinn-studio/_release?_a=releases&amp;view=all&amp;definitionId=36">Azure Devops</a></li>
 </ul>
 
 

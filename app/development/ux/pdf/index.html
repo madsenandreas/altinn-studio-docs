@@ -119,7 +119,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -219,7 +219,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -301,7 +301,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -309,7 +309,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1131,21 +1131,22 @@ if(host != "localhost")
 <li>Programmatically<br>
 For the programatically option there are some minor differences dependening on the version you are using.</li>
 </ol>
-<ul id="content-version-selector"></ul>
+<div class="content-version-selector ">
+<pre><code>&lt;ul id=&quot;content-version-tabs&quot;&gt;&lt;/ul&gt;
+</code></pre>
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v4, v5, v6
     </label>
-    
-    In previous versions you modify the <code>PdfHandler.cs</code> file in the <code>App/logic/Print</code> folder.
+<pre><code>In previous versions you modify the &lt;code&gt;PdfHandler.cs&lt;/code&gt; file in the &lt;code&gt;App/logic/Print&lt;/code&gt; folder.
+</code></pre>
 </div>
-
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v7
     </label>
-    
-    <p>In version 7 the way to do custom code has changed. We now use an dependency injection based approach insted of overriding methods. If you previously used to place your custom code in the <em>FormatPdf</em> methods in the <em>PdfHandler.cs</em> class you will see that it&rsquo;s mostly the same, but in v7 there is no pre-defined class for you to put your custom code. Instead, do the following:</p>
+<pre><code>&lt;p&gt;In version 7 the way to do custom code has changed. We now use an dependency injection based approach insted of overriding methods. If you previously used to place your custom code in the &lt;em&gt;FormatPdf&lt;/em&gt; methods in the &lt;em&gt;PdfHandler.cs&lt;/em&gt; class you will see that it&amp;rsquo;s mostly the same, but in v7 there is no pre-defined class for you to put your custom code. Instead, do the following:&lt;/p&gt;
+</code></pre>
 <ol>
 <li>Create a class that implements the <code>IPdfFormater</code> interface found in the <code>Altinn.App.Core.Features.Pdf</code> namespace.<br>
 You can name and place the file in any folder you like within your project, but we suggest you use meaningful namespaces like in any other .Net project.</li>
@@ -1153,13 +1154,10 @@ You can name and place the file in any folder you like within your project, but 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddTransient&lt;IPdfFormater, PdfFormater&gt;();
 </span></span></code></pre></div>This ensuers your custom code is known to the application and that it will be executed.</li>
 </ol>
-
 </div>
-
 <p>Since the <code>IPdfFormater</code> interface has the same method as the old <code>PdfHandler.cs</code>class the rest of the documentation and examples applies to all versions.</p>
-<div class="notices info" >
-If a page/component is to always be excluded from the PDF, it is recommended that this is
-set in the configuraiton file.
+<div class="notices info" ><p>If a page/component is to always be excluded from the PDF, it is recommended that this is
+set in the configuraiton file.</p>
 <p>If exclusion of a page/component depends on dynamics it <em>must</em> be done programmatically.</p>
 </div>
 <h3 id="exclude-pages">Exclude pages</h3>
@@ -1225,6 +1223,7 @@ section above.</p>
 </span></span></code></pre></div><p>The picture below shows that the component with index 0 and 2 is kept in the PDF, 
 whilst the component with index 1 is excluded.</p>
 <figure><a href="exclude-componen-rep-group.png"><img src="exclude-componen-rep-group.png" alt="&amp;ldquo;Example excluding of component in repeating group&amp;rdquo;" title="Example excluding of component in repeating group" /></a><figcaption><h4>Example excluding of component in repeating group</h4></figcaption></figure>
+</div>
 
 
 <footer class=" footline" ></footer>

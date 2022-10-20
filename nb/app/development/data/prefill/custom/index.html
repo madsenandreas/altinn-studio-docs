@@ -119,7 +119,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/nb/app/"><span>Lage apper</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/"><span>Lage apper</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/getting-started/"><span>Kom i gang</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -219,7 +219,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/design/guidelines/wcag/"><span>Tilgjengelighet</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/"><span>Utvikling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/"><span>Utvikling</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -301,7 +301,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/validation/"><span>Validering</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/"><span>Konfigurasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/"><span>Konfigurasjon</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/messagebox/"><span>Meldingsboks</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -309,13 +309,13 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/configuration/messagebox/hide_instances/"><span>Skjule instanser</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/"><span>Autorisasjon</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/authorization/rules/"><span>Regelbibliotek</span></a></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/"><span>Veiledning</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/"><span>Veiledning</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Roller</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Roller</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roller</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -602,15 +602,17 @@ if(host != "localhost")
           </div><div id="body-inner"><h1 class="a-fontBold">Preutfylling av data med egendefinert kode</h1>
               <p class="a-leadText" id="leadText">Hvordan kode egendefinert preutfylling i applikasjonen.</p><p>Altinn-apper muliggjør forhåndsutfylling av en instans med egne data,
 enten det er resultatet av et API-kall, beregninger gjort under instansiering eller annen logikk.</p>
-<ul id="content-version-selector"></ul>
+<div class="content-version-selector ">
+<pre><code>&lt;ul id=&quot;content-version-tabs&quot;&gt;&lt;/ul&gt;
+</code></pre>
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v4, v5, v6
     </label>
-    
-    <p>Altinn apps muliggjør prefill av en instans med egendefinert data,
-det være seg resultet fra et API-kall, beregninger gjort under instansiering, eller annen logikk.
-Dette implementeres i metoden <em>DataCreation</em> i filen <em>InstansiationHandler.cs</em> som finnes i applikasjonsrepoet under <code>App/logic</code>.</p>
+<pre><code>&lt;p&gt;Altinn apps muliggjør prefill av en instans med egendefinert data,
+</code></pre>
+<p>det være seg resultet fra et API-kall, beregninger gjort under instansiering, eller annen logikk.
+Dette implementeres i metoden <em>DataCreation</em> i filen <em>InstansiationHandler.cs</em> som finnes i applikasjonsrepoet under <code>App/logic</code>.</p></p>
 <p>Eksempelet nedenfor populerer feltet <em>Bruker.FulltNavn</em> i modellen <em>Datamodell</em> med verdien &ldquo;Test Testesen&rdquo;.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task DataCreation(Instance instance, <span style="color:#8be9fd">object</span> data)
 </span></span><span style="display:flex;"><span>{
@@ -638,13 +640,12 @@ og &lsquo;Name&rsquo; er egne C# klasser.</p>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
 </div>
-
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v7
     </label>
-    
-    <p>I versjon 7 har vi endret måten preutfylling med egendefinert kode gjøres på. Vi benytter nå <em>dependency injection</em> i stedet for overstyring av metoder. Hvis du tidligere plasserte koden din i <em>DataCreation</em> metoden in <em>InstantiationHandler.cs</em> klassen så vil du erfare at det er mer eller mindre det samme som nå gjøres.</p>
+<pre><code>&lt;p&gt;I versjon 7 har vi endret måten preutfylling med egendefinert kode gjøres på. Vi benytter nå &lt;em&gt;dependency injection&lt;/em&gt; i stedet for overstyring av metoder. Hvis du tidligere plasserte koden din i &lt;em&gt;DataCreation&lt;/em&gt; metoden in &lt;em&gt;InstantiationHandler.cs&lt;/em&gt; klassen så vil du erfare at det er mer eller mindre det samme som nå gjøres.&lt;/p&gt;
+</code></pre>
 <ol>
 <li>Opprett en klasse som implementerer <code>IInstantiation</code> grensesnittet som ligger i <code>Altinn.App.Core.Features.Instantiation</code> navnerommet.<br>
 Du kan navngi og plassere filene i den mappestrukturen du selv ønsker i prosjektet ditt. Men vi anbefaler at du benytter meningsfulle navnerom som i et hvilket som helst annet .Net prosjekt.
@@ -684,9 +685,8 @@ Eksempelet nedenfor populerer feltet <em>Bruker.FulltNavn</em> i modellen <em>Da
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddTransient&lt;IInstantiation, Instantiation&gt;();
 </span></span></code></pre></div>Dette sørger for at din kode er kjent for applikasjonen og at koden blir kjørt når den skal.</li>
 </ol>
-
 </div>
-
+</div>
 
 
 <footer class=" footline" ></footer>

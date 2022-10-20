@@ -119,7 +119,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -219,7 +219,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -301,7 +301,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -309,7 +309,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1136,14 +1136,16 @@ IMPORTANT: When a data processing that has updated the data on the server has be
 To do this, the ProcessdataWrite method must return true if any of the data has been updated.
 If this is not done, the updated data won't be visible for the user until they refresh the page.
 </div>
-<ul id="content-version-selector"></ul>
+<div class="content-version-selector ">
+<pre><code>&lt;ul id=&quot;content-version-tabs&quot;&gt;&lt;/ul&gt;
+</code></pre>
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v4, v5, v6
     </label>
-    
-    <p>Data processing is coded in C#, in the file <code>DataProcessingHandler.cs</code>. This file can easily be edited by downloading the source code to the app and editing on your own computer, e.g. in Visual Studio Code.
-The data model with form data is available and can be edited/updated when needed.</p>
+<pre><code>&lt;p&gt;Data processing is coded in C#, in the file &lt;code&gt;DataProcessingHandler.cs&lt;/code&gt;. This file can easily be edited by downloading the source code to the app and editing on your own computer, e.g. in Visual Studio Code.
+</code></pre>
+<p>The data model with form data is available and can be edited/updated when needed.</p></p>
 <p>Example on code from app that processes and populates different data while saving.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;<span style="color:#8be9fd">bool</span>&gt; ProcessDataWrite(
 </span></span><span style="display:flex;"><span>    Instance instance, Guid? dataId, <span style="color:#8be9fd">object</span> data)
@@ -1196,13 +1198,12 @@ The data model with form data is available and can be edited/updated when needed
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
 </div>
-
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v7
     </label>
-    
-    <p>In version 7 the way to do custom code instantiation has changed. We now use an dependency injection based approach insted of overriding methods. If you previously used to place your custom code in the <em>ProcessDataWrite</em> and ProcessDataWrite_ methods in the <em>DataProcessingHandler.cs</em> class you will see that it&rsquo;s mostly the same.</p>
+<pre><code>&lt;p&gt;In version 7 the way to do custom code instantiation has changed. We now use an dependency injection based approach insted of overriding methods. If you previously used to place your custom code in the &lt;em&gt;ProcessDataWrite&lt;/em&gt; and ProcessDataWrite_ methods in the &lt;em&gt;DataProcessingHandler.cs&lt;/em&gt; class you will see that it&amp;rsquo;s mostly the same.&lt;/p&gt;
+</code></pre>
 <ol>
 <li>Create a class that implements the <code>IDataProcessor</code> interface found in the <code>Altinn.App.Core.Features.DataProcessing</code> namespace.<br>
 You can name and place the file in any folder you like within your project, but we suggest you use meaningful namespaces like in any other .Net project.
@@ -1261,9 +1262,8 @@ Example on code from app that processes and populates different data while savin
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddTransient&lt;IDataProcessor, DataProcessor&gt;();
 </span></span></code></pre></div>This ensuers your custom code is known to the application and that it will be executed.</li>
 </ol>
-
 </div>
-
+</div>
 
 
 <footer class=" footline" ></footer>

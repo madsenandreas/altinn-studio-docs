@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The Access Managment component in Altinn platform is constructed as an asp.net core 6 web API application with a REACT frontend deployed as a docker container to the Altinn Platform Kubernetes cluster." />
+    <meta name="description" content="The Access Management component in the Altinn platform is an asp.net core 6 web API application with a REACT frontend deployed as a docker container to the Altinn Platform Kubernetes cluster." />
 <meta name="altinn_pagedir" class="elastic" content="technology\architecture\components\application\construction\altinn-platform\authorization\accessmanagment\" />
 <meta name="altinn_title" class="elastic" content="Application construction components - Altinn Access Management" />
 
@@ -113,7 +113,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +213,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -295,7 +295,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,7 +303,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1121,7 +1121,7 @@ if(host != "localhost")
                 <span class="links"><a href='/technology/'>Technology</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/'>Architecture</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/'>Components</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/'>Application</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/construction/'>Construction</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/construction/altinn-platform/'>Altinn Platform</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/construction/altinn-platform/authorization/'>Authorization</a> <span class='adocs-breadcrumb-divider'> / </span> Access Management</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/architecture">architecture</a><a class="label label-default" href="https://docs.altinn.studio/tags/solution">solution</a></div><div id="body-inner"><h1 class="a-fontBold">Application construction components - Altinn Access Management</h1>
-              <p class="a-leadText" id="leadText">The Access Managment component in Altinn platform is constructed as an asp.net core 6 web API application with a REACT frontend deployed as a docker container to the Altinn Platform Kubernetes cluster.</p><p>See <a href="/technology/solutions/altinn-platform/authorization/accessmanagement/">solutions</a> for details about functionality provided by this component.</p>
+              <p class="a-leadText" id="leadText">The Access Management component in the Altinn platform is an asp.net core 6 web API application with a REACT frontend deployed as a docker container to the Altinn Platform Kubernetes cluster.</p><p>See <a href="/technology/solutions/altinn-platform/authorization/accessmanagement/">solutions</a> for details about the functionality provided by this component.</p>
 <figure><a href="accessmanagement.drawio.svg"><img src="accessmanagement.drawio.svg" alt="Access Management" title="Construction Components Altinn Resource Registry" /></a><figcaption><h4>Construction Components Altinn Resource Registry</h4></figcaption></figure>
 <h2 id="frontend">Frontend</h2>
 <p>The frontend is created with REACT as a standalone REACT application.</p>
@@ -1133,9 +1133,10 @@ if(host != "localhost")
 <li>Redux Query :</li>
 </ul>
 <h3 id="build--deploy">Build &amp; Deploy</h3>
-<p>We use GitHub Actions and Azure Devops to build Frontend applications.</p>
+<p>We use GitHub Actions and Azure DevOps to build Frontend applications. 
+The code is located in <a href="https://github.com/Altinn/altinn-access-management-frontend">altinn-access-mangement-frontend</a> repo</p>
 <ul>
-<li><a href="">Github Action</a></li>
+<li><a href="https://github.com/Altinn/altinn-access-management-frontend/actions">Github Action</a></li>
 <li>Azure DevOps Pipeline</li>
 </ul>
 <h3 id="hosting">Hosting</h3>
@@ -1145,19 +1146,26 @@ Files is located in <a href="https://github.com/Altinn/altinn-access-management/
 <h3 id="api">API</h3>
 <p>The following API is available in component</p>
 <ul>
-<li><a href="https://github.com/Altinn/altinn-access-management/blob/main/backend/src/Altinn.Authorizationadmin/Altinn.Authorizationadmin/Controllers/DelegationsController.cs">DelegationAPI</a></li>
-<li><a href="https://github.com/Altinn/altinn-access-management/blob/main/backend/src/Altinn.Authorizationadmin/Altinn.Authorizationadmin/Controllers/DelegationRequestsController.cs">DelegationRequestAPI</a></li>
+<li><a href="https://github.com/Altinn/altinn-access-management/blob/main/src/Altinn.AccessManagement/Controllers/DelegationsController.cs">DelegationAPI</a></li>
+<li><a href="https://github.com/Altinn/altinn-access-management/blob/main/src/Altinn.AccessManagement/Controllers/DelegationRequestsController.cs">DelegationRequestAPI</a></li>
 <li>DelegationResourcesAPI</li>
 <li>AuthenticationAPI</li>
 </ul>
 <h3 id="security">Security</h3>
 <h4 id="authentication">Authentication</h4>
-<p>Apis are protected and required a authenticated user or organization.</p>
-<p>The token is provied through cookie for users using the React frontend</p>
+<p>Apis are protected and require an authenticated user or organization.</p>
+<p>The token is provided through a cookie for users using the React frontend or through a bearer token header.</p>
+<p>Altinn Access Management has configured the JWTCookie authentication method created for Altinn. This support validation of both JWTCookie and JTW bearer token.</p>
+<p>Needs to be clarified: Do we support Maskinporten tokens directly?</p>
 <h4 id="csrf-protection">CSRF protection</h4>
 <p>The API endpoints will have CSRF protection.</p>
 <h4 id="api-management-subscription">API Management subscription</h4>
-<p>Some functionality will require specific API management subscription</p>
+<p>Some functionality will require a specific API management subscription.
+This requires external consumers to follow SLA and have an agreement for API usage.</p>
+<h3 id="authorization">Authorization</h3>
+<p>The API exposed will require authorization for the usage of different levels.</p>
+<p>Some APIs will require general access to a resource. This will be processed by the standard Policy Enforcement Point or a possible custom enforcement point.</p>
+<p>In addition, the APIS will often have its internal logic to filter data based on business rules. These are custom implementations</p>
 <h3 id="db-repository">Db Repository</h3>
 <p>Access Manamgent owns the delegated rights.</p>
 <ul>

@@ -113,7 +113,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +213,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -295,7 +295,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,7 +303,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1145,14 +1145,344 @@ The code is located in <a href="https://github.com/Altinn/altinn-access-manageme
 <p>The backend hosts the compiled frontend application.
 Files is located in <a href="https://github.com/Altinn/altinn-access-management/tree/main/backend/src/Altinn.Authorizationadmin/Altinn.Authorizationadmin/wwwroot/AuthorizationAdmin">wwwroot</a> folder in the backend.</p>
 <h2 id="backend">Backend</h2>
-<h3 id="api">API</h3>
-<p>The following API is available in component</p>
+<p>The following API  controllers is available in component</p>
 <ul>
 <li><a href="https://github.com/Altinn/altinn-access-management/blob/main/src/Altinn.AccessManagement/Controllers/DelegationsController.cs">DelegationAPI</a></li>
 <li><a href="https://github.com/Altinn/altinn-access-management/blob/main/src/Altinn.AccessManagement/Controllers/DelegationRequestsController.cs">DelegationRequestAPI</a></li>
 <li>DelegationResourcesAPI</li>
 <li>AuthenticationAPI</li>
 </ul>
+<h2 id="api">API</h2>
+<p>The following API is identifed</p>
+<h3 id="rights">Rights</h3>
+<p>Rights API List rights between two parties. (organizations/users/persons).</p>
+<p>Rights is based on rules defined by resource owner or rights defined by reportee as part of a rights delegation</p>
+<p>There is different consumers of API</p>
+<ul>
+<li>End user wondering which rights he/she have for the reportee</li>
+<li>Administrator for reportee</li>
+<li>Resource owner needing to know which rights A have for B</li>
+</ul>
+<h4 id="outbound-rights">Outbound Rights</h4>
+<p>The outbound API is targeted for administrators of the reportee.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span>/accessmanagement/api/v1/{who}/rights/outbound/?resource={resource}&amp;recevingParty={receivingparty}
+</span></span></code></pre></div><p><strong>Example</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span>/accessmanagement/api/v1/234234/rights/outbound/?resource=app:skd_flyttemelding&amp;recevingParty=556677
+</span></span></code></pre></div><h4 id="inbound-rights">Inbound Rights</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span>/accessmanagement/api/v1/{who}/rights/inbound/?resource={resource}&amp;recevingParty={receivingparty}
+</span></span></code></pre></div><p><strong>Example</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span>/accessmanagement/api/v1/234234/rights/inbound/?resource=app_skd_flyttemelding&amp;recevingParty=556677
+</span></span></code></pre></div><h4 id="response">Response</h4>
+<p>The list of rights for all types of relations is returned</p>
+<ul>
+<li>Rights from policy defined by resource owner (service owner) defining ER roles or Altinn roles</li>
+<li>Rights from delegated polices</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;PolicyId&#34;</span>: <span style="color:#f1fa8c">&#34;app:skd_flyttemelding&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;PolicyVersion&#34;</span>: <span style="color:#f1fa8c">&#34;??&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;RuleId&#34;</span> : <span style="color:#f1fa8c">&#34;1&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;OfferedByPartyId&#34;</span>: <span style="color:#f1fa8c">&#34;234234&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;CoveredBy&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:party&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;556677&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Subject&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:role&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;dagl&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Resource&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:org&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;skd&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:app&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;flyttemelding&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Action&#34;</span>:
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:action&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;read&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;RightSourceType&#34;</span>:<span style="color:#f1fa8c">&#34;Role&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;HasPermit&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;PolicyId&#34;</span>: <span style="color:#f1fa8c">&#34;app:skd_flyttemelding&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;PolicyVersion&#34;</span>: <span style="color:#f1fa8c">&#34;??&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;RuleId&#34;</span> : <span style="color:#f1fa8c">&#34;2&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;OfferedByPartyId&#34;</span>: <span style="color:#f1fa8c">&#34;234234&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;CoveredBy&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:party&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;556677&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Subject&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:role&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;dagl&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Resource&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:org&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;skd&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:app&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;flyttemelding&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Action&#34;</span>:
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:action&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;write&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;RightSourceType&#34;</span>:<span style="color:#f1fa8c">&#34;Role&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;HasPermit&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;PolicyId&#34;</span>: <span style="color:#f1fa8c">&#34;/skd_flyttemedling/234234/234234234&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;PolicyVersion&#34;</span>: <span style="color:#f1fa8c">&#34;2010-12-10 10:35:123&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;RuleId&#34;</span> : <span style="color:#f1fa8c">&#34;1&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;OfferedByPartyId&#34;</span>: <span style="color:#f1fa8c">&#34;234234&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;CoveredBy&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:party&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;556677&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Subject&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:user&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;234234&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Resource&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:org&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;skd&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:app&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;flyttemelding&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Action&#34;</span>:
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:action&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;sign&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;RightSourceType&#34;</span>:<span style="color:#f1fa8c">&#34;AppDelegation&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;HasPermit&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><h3 id="rights-delegations">Rights delegations</h3>
+<h4 id="list">List</h4>
+<p>Delegations list the existence of some rights between two parties for a specific resource or resource type</p>
+<p>In first iteration we will expose a specific endpoint for maskinportenschemes.</p>
+<p>This to delay the need for a generic endpoint</p>
+<p>Endpoint for enduser using the portal</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span>/accessmanagement/api/v1/{who}/delegations/maskinportenscheme/outbound/
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span>/accessmanagement/api/v1/admin/delegations/maskinportenscheme/outbound/?supplierORg=234234&amp;consumerOrg&amp;scope=www.navn.no
+</span></span></code></pre></div><p>Returns a list of delegations. Contains receiver, top resource and information about time.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;ResourceId&#34;</span>: <span style="color:#f1fa8c">&#34;resource:innteksapi&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;ResourceTitle&#34;</span>: <span style="color:#f1fa8c">&#34;2022-01-22&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Delegation&#34;</span>: [
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;CoveredByName&#34;</span>: <span style="color:#f1fa8c">&#34;EVRY&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;OfferedByName&#34;</span>: <span style="color:#f1fa8c">&#34;NAV&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;OfferedByPartyId&#34;</span>: <span style="color:#bd93f9">123134234</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;CoveredByPartyId&#34;</span>: <span style="color:#bd93f9">234234</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;PerformedByUserId&#34;</span>: <span style="color:#bd93f9">123123</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;Created&#34;</span>: <span style="color:#f1fa8c">&#34;2020-01-01&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;OfferedByOrganizationNumber&#34;</span>: <span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;CoveredByOrganizationNumber&#34;</span>: <span style="color:#ff79c6">null</span> 
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;CoveredByName&#34;</span>: <span style="color:#f1fa8c">&#34;KPMG&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;OfferedByName&#34;</span>: <span style="color:#f1fa8c">&#34;NAV&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;OfferedByPartyId&#34;</span>: <span style="color:#bd93f9">123134234</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;CoveredByPartyId&#34;</span>: <span style="color:#bd93f9">234234</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;PerformedByUserId&#34;</span>: <span style="color:#bd93f9">123123</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;Created&#34;</span>: <span style="color:#f1fa8c">&#34;2020-01-01&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;OfferedByOrganizationNumber&#34;</span>: <span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;CoveredByOrganizationNumber&#34;</span>: <span style="color:#ff79c6">null</span> 
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p><strong>POST</strong></p>
+<p>Delegates new rights with adding new rules</p>
+<h3 id="rights-delegation">Rights delegation</h3>
+<p>List details of a specific delegation.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span>/accessmanagement/api/v1/admin/delegations/rules/?offeredByPartyId=2324
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;PolicyId&#34;</span>: <span style="color:#f1fa8c">&#34;d9da781a-b8d0-46f6-ba33-882a2e47c0c6&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;RuleId&#34;</span> : <span style="color:#f1fa8c">&#34;asdfasdfsdaf&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;OfferedByPartyId&#34;</span>: <span style="color:#f1fa8c">&#34;234234&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;CoveredBy&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:party&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;556677&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Subject&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:userid&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;123123&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Resource&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:org&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;skd&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:app&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;flyttemelding&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Action&#34;</span>:
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:action&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;read&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;RightSourceType&#34;</span>:<span style="color:#f1fa8c">&#34;Role&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;HasPermit&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;PolicyId&#34;</span>: <span style="color:#f1fa8c">&#34;app:skd_flyttemelding&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;RuleId&#34;</span> : <span style="color:#f1fa8c">&#34;asdfasdfsdaf&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;OfferedByPartyId&#34;</span>: <span style="color:#f1fa8c">&#34;234234&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;CoveredBy&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:party&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;556677&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Subject&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:role&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;dagl&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Resource&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:org&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;skd&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:app&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;flyttemelding&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Action&#34;</span>:
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:action&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;write&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;RightSourceType&#34;</span>:<span style="color:#f1fa8c">&#34;Role&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;HasPermit&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><h5 id="delegations">Delegations</h5>
+<h5 id="access-groups">Access Groups</h5>
+<p>/accessmanagement/api/v1/accessgroups</p>
+<p>/accessmanagement/api/v1/accessgroups/offeredBy/{partyId}/coveredBy/{partyId}</p>
+<p>GET - List groups</p>
+<p>/accessmanagement/api/v1/accessgroups/{group}/resorucerights/</p>
+<p>/accessmanagement/api/v1/accessgroups/{group}/resorucerights/{resourceid}/</p>
+<p>GET</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;PolicyId&#34;</span>: <span style="color:#f1fa8c">&#34;d9da781a-b8d0-46f6-ba33-882a2e47c0c6&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;RuleId&#34;</span> : <span style="color:#f1fa8c">&#34;asdfasdfsdaf&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;OfferedByPartyId&#34;</span>: <span style="color:#f1fa8c">&#34;234234&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;CoveredBy&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:party&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;556677&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Subject&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:userid&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;123123&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Resource&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:org&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;skd&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:app&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;flyttemelding&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Action&#34;</span>:
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:action&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;read&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;RightSourceType&#34;</span>:<span style="color:#f1fa8c">&#34;Role&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;HasPermit&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;PolicyId&#34;</span>: <span style="color:#f1fa8c">&#34;app:skd_flyttemelding&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;RuleId&#34;</span> : <span style="color:#f1fa8c">&#34;asdfasdfsdaf&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;OfferedByPartyId&#34;</span>: <span style="color:#f1fa8c">&#34;234234&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;CoveredBy&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:party&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;556677&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Subject&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:role&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;dagl&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Resource&#34;</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:org&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;skd&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:app&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;flyttemelding&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;Action&#34;</span>:
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;urn:altinn:action&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;write&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;RightSourceType&#34;</span>:<span style="color:#f1fa8c">&#34;Role&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;HasPermit&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><h4 id="heading"></h4>
 <h3 id="security">Security</h3>
 <h4 id="authentication">Authentication</h4>
 <p>Apis are protected and require an authenticated user or organization.</p>

@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,7 +303,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -311,7 +311,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -545,7 +545,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/community/contributing/handbook/loadbalancer/ssl-certificate/"><span>Nginx SSL/TLS certificate</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/community/contributing/handbook/postgres/"><span>PostgreSQL</span></a></li>
+        <a href="/community/contributing/handbook/postgres/"><span>PostgreSQL</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/community/contributing/handbook/postgres/best-practice-postgresql/">
+            <span>Best practice</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/community/contributing/handbook/rest/"><span>RESTful APIs (Representation State Transfer)</span></a></li>
       <li class="dd-item">
@@ -1138,6 +1140,31 @@ if(host != "localhost")
 
 	</div><article class="post community">
     <header class="post-header">
+        <h2 class="post-title"><a href="/community/contributing/handbook/front-end/styling/">Styling (css)</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Summary Styling in React is done per component using a combination of Material-UI and compatible JSS.
+Components shall not be styled with CSS classes in .CSS files.
+Different component types should use different styling methods, or a combination.
+Proposed order of styling methods The following order is proposed when considering styling methods:
+Styled Components (Accepts props, logic, theming) Material-UI&rsquo;s JSS (Accepts theming) Inline Styling, the React way (Accepts props, logic, theming. <a class="read-more" href="/community/contributing/handbook/front-end/styling/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/front-end/">front-end</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/styling/">styling</a>
+            
+        
+    </footer>
+</article>
+<article class="post community">
+    <header class="post-header">
         <h2 class="post-title"><a href="/community/contributing/handbook/back-end/swagger/">Swagger</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1345,25 +1372,6 @@ Each time we make a change to a package, we need to update the version of the pa
                 <a class="label label-default" href="https://docs.altinn.studio/tags/front-end/">front-end</a>
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/versioning/">versioning</a>
-            
-        
-    </footer>
-</article>
-<article class="post community">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/community/contributing/handbook/test/xunit-testing/">Xunit Testing</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Find code on xunit tests here <a class="read-more" href="/community/contributing/handbook/test/xunit-testing/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/testing/">testing</a>
             
         
     </footer>

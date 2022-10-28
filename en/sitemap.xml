@@ -1180,6 +1180,8 @@
   </url><url>
     <loc>https://docs.altinn.studio/community/contributing/handbook/back-end/</loc>
   </url><url>
+    <loc>https://docs.altinn.studio/community/contributing/handbook/postgres/best-practice-postgresql/</loc>
+  </url><url>
     <loc>https://docs.altinn.studio/community/contributing/handbook/front-end/best-practices/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/community/contributing/handbook/front-end/build/</loc>
@@ -3163,6 +3165,8 @@
                 hreflang="en"
                 href="https://docs.altinn.studio/tags/policy/"
                 />
+  </url><url>
+    <loc>https://docs.altinn.studio/tags/postgresql/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/prefill/</loc>
     <xhtml:link

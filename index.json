@@ -903,6 +903,13 @@
 	"content": "\rApp template and deps\rGuidelines for working with the app template and its dependencies\nAsync programming\rGuidelines for asynchronous programming\nError handling\rGuidelines for exception handling in backend logic.\nLogging\rGuidelines logging in backend\nNuget Package\rOverview of nuget package usage in altinn studio\nSwagger\rGuidelines for setting up swagger\n"
 },
 {
+	"uri": "https://docs.altinn.studio/community/contributing/handbook/postgres/best-practice-postgresql/",
+	"title": "Best practice for PostgreSQL",
+	"tags": ["development", "postgresql"],
+	"description": "Best practice for PostgreSQL",
+	"content": "Introduction This is a work-in-progress. Reader discretion is adviced!\nIndex Consider the following when creating an index\nThe cost of maintaining index-trees for INSERT, UPDATE, and DELETE operations. Do not use an index if these operations are more performance critical than the retrieval. When multiple indices are used in combination: The order will impact performance greatly. If some of the columns in an combined index is not matched against, the optimizer is likely to revert to a Full Table Scan. Obfuscated Conditions - Smart Logic The type of index matters. Commands (Npgsql) Do not concatenate User-Defined types as strings into the SQL commands. (SQL injection preventation) Parameters Use parameters instead of embedding values in the SQL. Values sent as parameters will not be interpreted as SQL. (SQL injection preventation) Parameters are required for prepared statements. (Performance) Parameters | Npgsql Documentation Use positional parameter notation instead of named. (Performance) await using var cmd = new NpgsqlCommand(\u0026#34;INSERT INTO table (col1) VALUES ($1), ($2)\u0026#34;, conn) { Parameters = { new() { Value = \u0026#34;some_value\u0026#34; }, new() { Value = \u0026#34;some_other_value\u0026#34; } } }; await cmd.ExecuteNonQueryAsync(); Positional and named placeholders | Npgsql Documentation Functions (Stored Procedures) The difference between Postgres functions and stored procedures (after Postgres 11) is relatively small, and mostly related to functionality - not security or performance. Calling a function instead of embedding the SQL in a Npgsql command in C# will not prevent SQL injection attacks alone. (See Parameters) If a function calls an unsafe function from its body, and pass a parameter value to the it, it could negate the SQL injection prevention that parameters provide. Prepared statements Use prepared statements when you need performance. Use persistent prepared statements (Npgsql 3.2) to avoid resets when connections are closed, when using connection pooling. Prepared Statements, Connection Pooling and Npgsql 3.2 Prepared Statements | Npgsql Documentation TODO Use examine Statistics User priveliges Connection pooling "
+},
+{
 	"uri": "https://docs.altinn.studio/community/contributing/handbook/front-end/best-practices/",
 	"title": "Best practices",
 	"tags": ["development", "front-end"],
@@ -3362,6 +3369,13 @@
 {
 	"uri": "https://docs.altinn.studio/tags/policy/",
 	"title": "policy",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://docs.altinn.studio/tags/postgresql/",
+	"title": "postgresql",
 	"tags": [],
 	"description": "",
 	"content": ""

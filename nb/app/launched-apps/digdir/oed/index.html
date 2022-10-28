@@ -610,6 +610,7 @@ if(host != "localhost")
     <li><a href="#grensesnitt-for-å-hente-ut-data">Grensesnitt for å hente ut data</a></li>
     <li><a href="#custom-gui-for-hoved-app">Custom GUI for hoved app</a></li>
     <li><a href="#drift-og-overvåkning">Drift og overvåkning</a></li>
+    <li><a href="#utviklingsmiljø">Utviklingsmiljø</a></li>
   </ul>
 </nav><h2 id="innledning">Innledning</h2>
 <p>Figuren under viser de viktigste komponentene i løsningen. OED er
@@ -665,6 +666,24 @@ spesifikt i OED løsningen.</p>
 finnes her:</p>
 <p>OED: <a href="https://github.com/Altinn/oed/issues/442">https://github.com/Altinn/oed/issues/442</a><br>
 T3.0: <a href="https://github.com/Altinn/altinn-studio/issues/6880">https://github.com/Altinn/altinn-studio/issues/6880</a></p>
+<h3 id="vedlikehold-av-subapps">Vedlikehold av subapps</h3>
+<p>Det er laget en egen solution for felles vedlikehold av hovedapp og subapps.
+Denne ligger i repoet til hovedapp - SubApps/SubAppsMaster.sln. Sln&rsquo;en
+refererer både hovedapp og alle subapps. Eventuelle nye subapps må også
+linkes inn her. Multi-repo git operasjoner kan gjøres via ny funksjonalitet
+i VS2022.</p>
+<p>Scrptet SubApps/SyncItems.ps1 synkroniserer filer som vedlikeholdes i
+felles maler til de forskjellige subapp&rsquo;ene. Følgende er p.t. implementert:</p>
+<ul>
+<li>SubApps/SubAppsMaster.csproj kopieres til App.csproj</li>
+<li>SubApps/Policy.xml kopieres til subapps etter nødvendig substituering av navn</li>
+</ul>
+<p>Følende må gjøres når man lager en ny subapp:</p>
+<ul>
+<li>Subapp må lenkes inn i SubAppsMaster.sln</li>
+<li>SubApps/SyncItems.ps1 må kjøres</li>
+<li>Appsettings.development.json må oppdateres i Kestrel seksjonen slik at portnummeret blir unikt på tvers av alle OED apps</li>
+</ul>
 <h2 id="grensesnitt-mot-domstolene">Grensesnitt mot Domstolene</h2>
 <p>Grensesnittet for å motta data fra Domstolene er definert av Domstolene
 og ligger på <a href="https://github.com/Altinn/oed-da">GitHub - Altinn/oed-da</a>.
@@ -958,6 +977,15 @@ avklares om Altinn Forvaltning skal benyttes i denne sammenheng.</li>
 <li>Analyse av feillogger</li>
 <li>Sanering av data</li>
 </ul>
+<h2 id="utviklingsmiljø">Utviklingsmiljø</h2>
+<p>Man kan benytte et standard utviklingsmiljø for Tjenester 3.0 med
+følgende utvidelser:</p>
+<ul>
+<li>Installere digdir virksomhetssertifikat for test lokalt</li>
+<li>Kopiere serialisert sertifikat inn i App/secrets.json</li>
+<li>Oppdatere passord i App/secrets.json</li>
+</ul>
+<p>Sertifikat og passord kan ikke inkluderes i denne dokumentasjonen.</p>
 
 
 <footer class=" footline" ></footer>

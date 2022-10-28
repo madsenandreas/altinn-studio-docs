@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,7 +303,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -311,7 +311,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1137,9 +1137,12 @@ if(host != "localhost")
         <h2 class="post-title"><a href="/community/changelog/app-nuget/v6/breaking-changes/">Breaking changes</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Alpha Release
-This is a alpha relase and is not used by default in new applications. Currently the v6 is a technical update only and introduces no new features compared to the latest 5.x.x version. It&rsquo;s under consideration to include restructuring of app template, originally planned for the next major release, in this version as well to reduce the number of packages introducing breaking changes.
-Altinn.App.* librarires target .Net 6 now, which requires that the application does the same. <a class="read-more" href="/community/changelog/app-nuget/v6/breaking-changes/">&raquo;</a></p>
+        <p>Altinn.App.* librarires target .Net 6 now, which requires that the application does the same.
+In addition, all references to app and platform services have been moved from Startup.cs and should be replaced with two method calls.
+Follow the instructions below to ensure that the app is compatible with version 6 of the Altinn.App.* packages.
+Update target framework and package dependencies
+Install .Net 6 SDK before you start changing code.
+Navigate to you application repository and find App. <a class="read-more" href="/community/changelog/app-nuget/v6/breaking-changes/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         

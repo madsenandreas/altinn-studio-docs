@@ -790,24 +790,30 @@ og kjører når brukeren prøver å sende inn skjemadata eller flytte prosessen 
 <li>Data-validering vil kjøre dersom man står på et steg som har definerte dataelementer knyttet til seg.</li>
 </ul>
 <p>Valideringer skrives i C# og avhengig av hvilken versjon av applikasjonsmalen og Nuget pakkene du er på, så vil implementeringen variere litt. I tidligere versjon så er det en pre-definert fil med metoder du kan legge inn logikken, mens fra versjon 7 og fremover så implementerer du et grensesnitt i den klassen du selv vil. Grensesnittet er tilfeldigvis likt den pre-definerte filen. Eksemplene som refererer til metoder vil derfor være de samme for alle versjoner.</p>
-<div class="content-version-selector ">
-<pre><code>&lt;ul id=&quot;content-version-tabs&quot;&gt;&lt;/ul&gt;
-</code></pre>
+<div class="content-version-selector border-box">
+
+    
+    <ul id="content-version-tabs"></ul>
+
+    
+
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v4, v5, v6
     </label>
-<pre><code>Valideringer legges til i &lt;code&gt;ValidationHandler.cs&lt;/code&gt; -filen i applikasjonsmalen.
-</code></pre>
-<p>Filen kan aksesseres og endres i Altinn Studio via logikkmenyen, ved å velge <em>Rediger valideringer</em>,
-eller direkte i applikasjonsrepoet der ligger filen i <code>logic/Validation</code>-mappen.</p>
+    
+    Valideringer legges til i <code>ValidationHandler.cs</code> -filen i applikasjonsmalen.
+Filen kan aksesseres og endres i Altinn Studio via logikkmenyen, ved å velge <em>Rediger valideringer</em>,
+eller direkte i applikasjonsrepoet der ligger filen i <code>logic/Validation</code>-mappen.
 </div>
+
+
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v7
     </label>
-<pre><code>&lt;p&gt;I versjon 7 har vi endret måten preutfylling med egendefinert kode gjøres på. Vi benytter nå &lt;em&gt;dependency injection&lt;/em&gt; i stedet for overstyring av metoder. Hvis du tidligere plasserte koden din i _ValidationHandler og &lt;em&gt;ValidateTask&lt;/em&gt; metodene in &lt;em&gt;ValidationHandler.cs&lt;/em&gt; klassen så vil du erfare at det er mer eller mindre det samme som nå gjøres.&lt;/p&gt;
-</code></pre>
+    
+    <p>I versjon 7 har vi endret måten preutfylling med egendefinert kode gjøres på. Vi benytter nå <em>dependency injection</em> i stedet for overstyring av metoder. Hvis du tidligere plasserte koden din i _ValidationHandler og <em>ValidateTask</em> metodene in <em>ValidationHandler.cs</em> klassen så vil du erfare at det er mer eller mindre det samme som nå gjøres.</p>
 <ol>
 <li>Opprett en klasse som implementerer <code>IInstanceValidator</code> grensesnittet som ligger i <code>Altinn.App.Core.Features.Validation</code> navnerommet.<br>
 Du kan navngi og plassere filene i den mappestrukturen du selv ønsker i prosjektet ditt. Men vi anbefaler at du benytter meningsfulle navnerom som i et hvilket som helst annet .Net prosjekt.</li>
@@ -815,7 +821,12 @@ Du kan navngi og plassere filene i den mappestrukturen du selv ønsker i prosjek
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddTransient&lt;IInstanceValidator, InstanceValidator&gt;();
 </span></span></code></pre></div>Dette sørger for at din kode er kjent for applikasjonen og at koden blir kjørt når den skal.</li>
 </ol>
+
 </div>
+
+
+</div>
+
 <p>Fra dette punktet og videre skal eksemplene være de samme for alle versjoner :)</p>
 <p>Endringer gjøres i <code>ValidateData</code> og <code>ValidateTask</code>-metodene.
 Førstnevnte får inn et dataobjekt og sistnevnte får inn instansen og taskId.
@@ -888,9 +899,10 @@ så kan man sette opp en trigger for validering på enkeltfelter i <code>formLay
 </span></span><span style="display:flex;"><span>    ]
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="notices warning" ><p>Merk at dersom du definerer at et felt skal trigge validering på serverside, så er det kun resultatet av denne valideringen som vil vises. Det vil si at dersom det er 
+</span></span></code></pre></div><div class="notices warning" >
+Merk at dersom du definerer at et felt skal trigge validering på serverside, så er det kun resultatet av denne valideringen som vil vises. Det vil si at dersom det er 
 annen klient-side validering som er definert, så vil en ev. server-validering av feltet overskrive disse. Pass derfor på å implementere alle nødvendige
-valideringer på feltet også på server-siden, det går an å legge flere feilmeldinger på samme felt ved behov.</p>
+valideringer på feltet også på server-siden, det går an å legge flere feilmeldinger på samme felt ved behov.
 </div>
 <p>Konfigurasjonen overfor vil resultere i at din egendefinerte validering i <code>ValidationHandler.cs</code>
 vil trigges hver gang feltet oppdaterer seg. Dersom du har behov for å vite hvilket
@@ -1111,7 +1123,6 @@ Valideringer er skrevet i C#, i <code>ValidationHandler.cs</code>-filen i applik
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>For tips til hvordan man løser komplekse valideringer se ekemplene under <a href="#enkeltfeltvalidering">enkeltfeltvalidering</a>.</p>
-</div>
 
 
 <footer class=" footline" ></footer>

@@ -608,22 +608,28 @@ if(host != "localhost")
 <li>Programmatisk
 For den programatiske måten er det noen mindre forskjeller avhengig av hvilke versjon av applikasjonsmalen du er på.</li>
 </ol>
-<div class="content-version-selector ">
-<pre><code>&lt;ul id=&quot;content-version-tabs&quot;&gt;&lt;/ul&gt;
-</code></pre>
+<div class="content-version-selector border-box">
+
+    
+    <ul id="content-version-tabs"></ul>
+
+    
+
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v4, v5, v6
     </label>
-<pre><code>I tidligere versjoner så gjøres endringene i &lt;code&gt;PdfHandler.cs&lt;/code&gt; filen under &lt;code&gt;App/logic/Print&lt;/code&gt; katalogen.
-</code></pre>
+    
+    I tidligere versjoner så gjøres endringene i <code>PdfHandler.cs</code> filen under <code>App/logic/Print</code> katalogen.
 </div>
+
+
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v7
     </label>
-<pre><code>&lt;p&gt;I versjon 7 har vi endret måten vi gjør kode baserte tilpassninger på. Vi benytter nå &lt;em&gt;dependency injection&lt;/em&gt; i stedet for overstyring av metoder. Hvis du tidligere plasserte koden din i &lt;em&gt;FormatPdf&lt;/em&gt; metoden in &lt;em&gt;PdfHandler.cs&lt;/em&gt; klassen så vil du erfare at det er mer eller mindre det samme som nå gjøres.&lt;/p&gt;
-</code></pre>
+    
+    <p>I versjon 7 har vi endret måten vi gjør kode baserte tilpassninger på. Vi benytter nå <em>dependency injection</em> i stedet for overstyring av metoder. Hvis du tidligere plasserte koden din i <em>FormatPdf</em> metoden in <em>PdfHandler.cs</em> klassen så vil du erfare at det er mer eller mindre det samme som nå gjøres.</p>
 <ol>
 <li>Opprett en klasse som implementerer <code>IInstanceValidator</code> grensesnittet som ligger i <code>Altinn.App.Core.Features.Validation</code> navnerommet.<br>
 Du kan navngi og plassere filene i den mappestrukturen du selv ønsker i prosjektet ditt. Men vi anbefaler at du benytter meningsfulle navnerom som i et hvilket som helst annet .Net prosjekt.</li>
@@ -631,9 +637,15 @@ Du kan navngi og plassere filene i den mappestrukturen du selv ønsker i prosjek
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddTran  sient&lt;IInstanceValidator, InstanceValidator&gt;();
 </span></span></code></pre></div>Dette sørger for at din kode er kjent for applikasjonen og at koden blir kjørt når den skal.</li>
 </ol>
+
 </div>
+
+
+</div>
+
 <p>Siden <code>IPdfFormater</code> grensesnittet har samme metode som <code>PdfHandler.cs</code> klassen er resten av dokumentasjonen og eksemplene felles for alle versjoner.</p>
-<div class="notices info" ><p>Dersom en side/komponent alltid skal ekskluderes fra PDF er det anbefalt å sette det opp i konfigurasjonsfilen.</p>
+<div class="notices info" >
+Dersom en side/komponent alltid skal ekskluderes fra PDF er det anbefalt å sette det opp i konfigurasjonsfilen. 
 <p>Dersom ekskludering av en side/komponent er avhengig av dynamikk <em>må</em> dette gjøres programmatisk.</p>
 </div>
 <h2 id="ekskludere-sider">Ekskludere sider</h2>
@@ -698,7 +710,6 @@ intruksjonene i seksjonen over følges i stedet.</p>
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>Bildet illustrerer at komponenten med indeks 0 og 2 er bevart i PDF, mens komponent med indeks 1 er borte.</p>
 <figure><a href="exclude-componen-rep-group.png"><img src="exclude-componen-rep-group.png" alt="&amp;ldquo;Eksempel ekskludering av komponent i repeterende gruppe&amp;rdquo;" title="Eksempel ekskludering av komponent i repeterende gruppe" /></a><figcaption><h4>Eksempel ekskludering av komponent i repeterende gruppe</h4></figcaption></figure>
-</div>
 
 
 <footer class=" footline" ></footer>

@@ -461,7 +461,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/api/studio/"><span>Studio</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/community/"><span>Community</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/community/"><span>Community</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/about/"><span>About</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -469,7 +469,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/community/about/open-source/"><span>Open source</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/community/contributing/"><span>Contributing</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/community/contributing/"><span>Contributing</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/contributing/propose-component/"><span>Propose a new component</span></a></li>
       <li class="dd-item">
@@ -477,7 +477,7 @@ if(host != "localhost")
           <a href="/community/contributing/intro/">
             <span>Intro for developers</span></a></li>
       <li class="dd-item">
-        <a href="/community/contributing/handbook/"><span>Handbook</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/community/contributing/handbook/"><span>Handbook</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/contributing/handbook/azure-devops/"><span>Azure DevOps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1316,24 +1316,30 @@ and run when the user attempts to submit form data or move the process to a new 
 <li>Data-validation will run if you&rsquo;re on a step that has defined data elements associated with it.</li>
 </ul>
 <p>Validations are written i C# and dependening on the version of the application template and Nuget packages you are using, the way the implementation is done varies slightly. In the earlier versions it&rsquo;s a pre-created file where you put your logic, while from version 7 and onwards you implement an interface in whatever class you like. The interface happens to be equal to the pre-defined class in the earlier versions. The examples below which referers to the methods to add your validation logic to is the same.</p>
-<div class="content-version-selector ">
-<pre><code>&lt;ul id=&quot;content-version-tabs&quot;&gt;&lt;/ul&gt;
-</code></pre>
+<div class="content-version-selector border-box">
+
+    
+    <ul id="content-version-tabs"></ul>
+
+    
+
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v4, v5, v6
     </label>
-<pre><code>Validations should be added to the &lt;code&gt;ValidationHandler.cs&lt;/code&gt;-file in the application template.
-</code></pre>
-<p>The file can be accessed and edited in Altinn Studio through the logic menu, by selecting <em>Rediger valideringer</em>,
-or directly in the application repo where the file is under the <code>logic/Validation</code>-folder.</p>
+    
+    Validations should be added to the <code>ValidationHandler.cs</code>-file in the application template.
+The file can be accessed and edited in Altinn Studio through the logic menu, by selecting <em>Rediger valideringer</em>,
+or directly in the application repo where the file is under the <code>logic/Validation</code>-folder.
 </div>
+
+
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v7
     </label>
-<pre><code>&lt;p&gt;In version 7 the way to do custom code instantiation has changed. We now use an dependency injection based approach insted of overriding methods. If you previously used to place your custom code in the &lt;em&gt;ValidateData&lt;/em&gt; and &lt;em&gt;ValidateTask&lt;/em&gt; methods in the &lt;em&gt;ValidationHandler.cs&lt;/em&gt; class you will see that it&amp;rsquo;s mostly the same.&lt;/p&gt;
-</code></pre>
+    
+    <p>In version 7 the way to do custom code instantiation has changed. We now use an dependency injection based approach insted of overriding methods. If you previously used to place your custom code in the <em>ValidateData</em> and <em>ValidateTask</em> methods in the <em>ValidationHandler.cs</em> class you will see that it&rsquo;s mostly the same.</p>
 <ol>
 <li>Create a class that implements the <code>IInstanceValidator</code> interface found in the <code>Altinn.App.Core.Features.Validation</code> namespace.<br>
 You can name and place the file in any folder you like within your project, but we suggest you use meaningful namespaces like in any other .Net project.</li>
@@ -1341,7 +1347,13 @@ You can name and place the file in any folder you like within your project, but 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddTransient&lt;IInstanceValidator, InstanceValidator&gt;();
 </span></span></code></pre></div>This ensuers your custom code is known to the application and that it will be executed.</li>
 </ol>
+
 </div>
+
+
+
+</div>
+
 <p>From here on the examples should be valid for all versions:)</p>
 <p>Custom logic are added to the <code>ValidateData</code> and <code>ValidateTask</code>-methods.
 The former takes in a data object and the latter takes in the instance and taskId.
@@ -1414,9 +1426,10 @@ you can set up a trigger for validation on single fields in <code>formLayout.jso
 </span></span><span style="display:flex;"><span>    ]
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="notices warning" ><p>Note that if you define a field to trigger validation server-side, only the result of this validation will be displayed. Meaning,
+</span></span></code></pre></div><div class="notices warning" >
+Note that if you define a field to trigger validation server-side, only the result of this validation will be displayed. Meaning,
 if there is another client-side validation defined, a possible server-side validation of the field will overwrite these. Therefore, you should make sure
-to implement all necessary validations on the server-side as well. It is possible to attach multiple error messages to the same field if needed.</p>
+to implement all necessary validations on the server-side as well. It is possible to attach multiple error messages to the same field if needed.
 </div>
 <p>The configuration above will result in your own custom validation in <code>ValidationHandler.cs</code> 
 being triggered each time the field is updated. If you need to know which field
@@ -1637,7 +1650,6 @@ Validations are written in C# in the <code>ValidationHandler.cs</code>-file in t
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>For tips on how you solve complex validations, see the examples under <a href="#single-field-validation">single field validation</a>.</p>
-</div>
 
 
 <footer class=" footline" ></footer>

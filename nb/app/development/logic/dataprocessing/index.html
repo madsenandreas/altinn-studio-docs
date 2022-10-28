@@ -614,16 +614,20 @@ VIKTIG: Når en dataprosessering er kjørt som har oppdatert dataene på server,
 For å gjøre dette, må `ProcessDataWrite`-metoden returnere `true` om det er noen av dataene som har blitt oppdatert.
 Hvis dette ikke gjøres, vil de oppdaterte dataen ikke være synlig for sluttbruker før de ev. laster inn siden på nytt.
 </div>
-<div class="content-version-selector ">
-<pre><code>&lt;ul id=&quot;content-version-tabs&quot;&gt;&lt;/ul&gt;
-</code></pre>
+<div class="content-version-selector border-box">
+
+    
+    <ul id="content-version-tabs"></ul>
+
+    
+
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v4, v5, v6
     </label>
-<pre><code>&lt;p&gt;Dataprosessering kodes i C#, i filen &lt;code&gt;DataProsessingHandler.cs&lt;/code&gt;. Denne filen kan redigeres enklest ved å laste ned kildekoden til app&amp;rsquo;en og redigere på egen maskin, f.eks. i Visual Studio Code.
-</code></pre>
-<p>Datamodellen med skjemadata er tilgjengelig og kan redigeres/oppdateres etter ønske/behov.</p></p>
+    
+    <p>Dataprosessering kodes i C#, i filen <code>DataProsessingHandler.cs</code>. Denne filen kan redigeres enklest ved å laste ned kildekoden til app&rsquo;en og redigere på egen maskin, f.eks. i Visual Studio Code.
+Datamodellen med skjemadata er tilgjengelig og kan redigeres/oppdateres etter ønske/behov.</p>
 <p>Eksempel på kode fra app som prosesserer og populerer forskjellige data under lagring.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;<span style="color:#8be9fd">bool</span>&gt; ProcessDataWrite(
 </span></span><span style="display:flex;"><span>    Instance instance, Guid? dataId, <span style="color:#8be9fd">object</span> data)
@@ -676,12 +680,14 @@ Hvis dette ikke gjøres, vil de oppdaterte dataen ikke være synlig for sluttbru
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
 </div>
+
+
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v7
     </label>
-<pre><code>&lt;p&gt;I versjon 7 har vi endret måten preutfylling med egendefinert kode gjøres på. Vi benytter nå &lt;em&gt;dependency injection&lt;/em&gt; i stedet for overstyring av metoder. Hvis du tidligere plasserte koden din i &lt;em&gt;ProcessDataRead&lt;/em&gt; og &lt;em&gt;ProcessDataWrite&lt;/em&gt; metodene in &lt;em&gt;DataProcessingHandler.cs&lt;/em&gt; klassen så vil du erfare at det er mer eller mindre det samme som nå gjøres.&lt;/p&gt;
-</code></pre>
+    
+    <p>I versjon 7 har vi endret måten preutfylling med egendefinert kode gjøres på. Vi benytter nå <em>dependency injection</em> i stedet for overstyring av metoder. Hvis du tidligere plasserte koden din i <em>ProcessDataRead</em> og <em>ProcessDataWrite</em> metodene in <em>DataProcessingHandler.cs</em> klassen så vil du erfare at det er mer eller mindre det samme som nå gjøres.</p>
 <ol>
 <li>Opprett en klasse som implementerer <code>IDataProcessor</code> grensesnittet som ligger i <code>Altinn.App.Core.Features.DateProcessing</code> navnerommet.<br>
 Du kan navngi og plassere filene i den mappestrukturen du selv ønsker i prosjektet ditt. Men vi anbefaler at du benytter meningsfulle navnerom som i et hvilket som helst annet .Net prosjekt.
@@ -740,8 +746,12 @@ Eksempel på kode fra app som prosesserer og populerer forskjellige data under l
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddTransient&lt;IDataProcessor, DataProcessor&gt;();
 </span></span></code></pre></div>Dette sørger for at din kode er kjent for applikasjonen og at koden blir kjørt når den skal.</li>
 </ol>
+
 </div>
+
+
 </div>
+
 
 
 <footer class=" footline" ></footer>

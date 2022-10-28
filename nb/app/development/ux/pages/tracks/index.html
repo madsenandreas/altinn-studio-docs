@@ -640,15 +640,19 @@ navigasjonskomponentene man har i applikasjonen, eller legge til en trigger i <c
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Om <code>triggers</code> er satt på navigasjonskomponenten vil denne overstyre <code>triggers</code> som settes i Settings.json, på denne måten er det mulig å styre default-oppførsel på komponentnivå om ønskelig.</p>
 <p>Måten dette implementeres på varierer litt avhengig av hvilken versjon av applikasjonsmalen og Nuget pakkene du bruker.</p>
-<div class="content-version-selector ">
-<pre><code>&lt;ul id=&quot;content-version-tabs&quot;&gt;&lt;/ul&gt;
-</code></pre>
+<div class="content-version-selector border-box">
+
+    
+    <ul id="content-version-tabs"></ul>
+
+    
+
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v4, v5
     </label>
-<pre><code>&lt;h2 id=&quot;sette-opp-sporvalg-backend-nuget-versjon--500&quot;&gt;Sette opp sporvalg backend (nuget versjon &amp;lt; 5.0.0)&lt;/h2&gt;
-</code></pre>
+    
+    <h2 id="sette-opp-sporvalg-backend-nuget-versjon--500">Sette opp sporvalg backend (nuget versjon &lt; 5.0.0)</h2>
 <div class="notices warning" ><p>For at sporvalg skal fungere for statless applikasjoner må nuget oppgraderes til 5.0.0 eller senere</p>
 </div>
 <p>I App.cs må man overstyre metoden som henter ut den standardrekkefølgen av sider som er definert i <code>Settings.json</code>
@@ -693,13 +697,16 @@ Da servicen allerede dependency injectes inn i klasen er det kun to steg som kre
 Her heter C# modellen til skjemadataen <code>Skjema</code> for din applikasjon kan det være et annet navn. 
 Dette kan du sjekke ved å finne klassenavnet på C# filen i App/models-mappen.</li>
 </ul>
+
 </div>
+
+
 <div class="content-version-container">
     <label class="content-version-label" hidden>
         v6, v7
     </label>
-<pre><code>&lt;p&gt;For å overstyre standard sporvalg må det gjøres to endringer.&lt;/p&gt;
-</code></pre>
+    
+    <p>For å overstyre standard sporvalg må det gjøres to endringer.</p>
 <ol>
 <li>Opprett en klasse som implementerer <code>IPageOrder</code> grensesnittet som ligger i <code>Altinn.App.Core.Features.PageOrder</code> navnerommet.<br>
 Du kan navngi og plassere filene i den mappestrukturen du selv ønsker i prosjektet ditt. Men vi anbefaler at du benytter meningsfulle navnerom som i et hvilket som helst annet .Net prosjekt.
@@ -782,7 +789,12 @@ Her heter C# modellen til skjemadataen <code>Skjema</code> for din applikasjon k
 Dette kan du sjekke ved å finne klassenavnet på C# filen i App/models-mappen.</p>
 </li>
 </ul>
+
 </div>
+
+
+</div>
+
 <h2 id="reflektere-sporvalg-i-kvittering-pdf">Reflektere sporvalg i kvittering (PDF)</h2>
 <p>Som applikasjonsutvikler må man selv sørge for å reflektere de sporvalgene som gjøres i PDFen som opprettes i slutten av hver task. 
 I <code>App.cs</code> finnes funksjonen <code>FormatPdf</code>:</p>
@@ -831,8 +843,7 @@ Et kodeeksempel på en slik implementasjon følger. Denne kan for eksempel legge
 </span></span><span style="display:flex;"><span>    UpdatePageOrder(layoutSettings.Pages.Order, (FavorittArtist)data);
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> _pdfHandler.FormatPdf(layoutSettings, data);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></div>
-
+</span></span></code></pre></div>
 
 <footer class=" footline" ></footer>
                 </div>

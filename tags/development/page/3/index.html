@@ -313,9 +313,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -491,7 +491,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/community/contributing/handbook/back-end/async-programming/"><span>Async programming</span></a></li>
       <li class="dd-item">
-        <a href="/community/contributing/handbook/back-end/error-handling/"><span>Error handling</span></a></li>
+        <a href="/community/contributing/handbook/back-end/error-flow/"><span>Error flow</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/back-end/exception-handling/"><span>Exception handling</span></a></li>
       <li class="dd-item">
         <a href="/community/contributing/handbook/back-end/logging/"><span>Logging</span></a></li>
       <li class="dd-item">
@@ -1142,11 +1144,11 @@ if(host != "localhost")
 
 	</div><article class="post community">
     <header class="post-header">
-        <h2 class="post-title"><a href="/community/contributing/handbook/back-end/error-handling/">Error handling</a></h2>
+        <h2 class="post-title"><a href="/community/contributing/handbook/back-end/error-flow/">Error flow</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Exception Handling Exception handling is the act of catching an exception with the intention of handling the situation so that normal execution flow can continue. It should not be used as any part of an expected execution flow. It should also be avoided if the situation continue to be unrecoverable.
-.Net core provides a default middleware UseExceptionHandler that will catch exceptions and log them. You can read more about this here. <a class="read-more" href="/community/contributing/handbook/back-end/error-handling/">&raquo;</a></p>
+        <p>How to pass on error information from service to presentation layer ? We do not want the service layer to have any direct knowledge about HTTP status codes, however the controller does need to know which status code to return to the client if the service does provide a response indicating success.
+Currently, this is handled by the service returning a tuple if addition specification of the error is required. <a class="read-more" href="/community/contributing/handbook/back-end/error-flow/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         
@@ -1155,7 +1157,13 @@ if(host != "localhost")
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
             
-                <a class="label label-default" href="https://docs.altinn.studio/tags/error-handling/">error-handling</a>
+                <a class="label label-default" href="https://docs.altinn.studio/tags/business-layer/">business-layer</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/presentation-layer/">presentation-layer</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/service/">service</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/controller/">controller</a>
             
         
     </footer>
@@ -1175,6 +1183,28 @@ if(host != "localhost")
                 <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/error-handling/">error-handling</a>
+            
+        
+    </footer>
+</article>
+<article class="post community">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/community/contributing/handbook/back-end/exception-handling/">Exception handling</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Exception Handling Exception handling is the act of catching an exception with the intention of handling the situation so that normal execution flow can continue. It should not be used as any part of an expected execution flow. It should also be avoided if the situation continue to be unrecoverable.
+.Net core provides a default middleware UseExceptionHandler that will catch exceptions and log them. You can read more about this here. <a class="read-more" href="/community/contributing/handbook/back-end/exception-handling/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/error-handling/">error-handling</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/exception-handling/">exception-handling</a>
             
         
     </footer>
@@ -1324,26 +1354,6 @@ Set up k6 tests Clone the k6 tests from GitHub Repo Install docker and make sure
                 <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/logging/">logging</a>
-            
-        
-    </footer>
-</article>
-<article class="post community">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/community/contributing/handbook/naming/">Naming Conventions</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>C# The Altinn project will use Microsoft’s coding conventions as a general guideline when no other guidelines are given.
-Exceptions/additions to the general guideline:
-Implicit typing (var) should only be used when a variable is initialized with an anonymous type, which is a common scenario in LINQ query expressions. In general implicit typing makes the code more difficult to read and understand,and should be avoided. Altinn specific coding guidelines:
-Methods should not be more than 50 lines long When dealing with XML you should prefer XDocument to XmlDocument (especially in new methods) If/for/while/using and other structures should normally not be more than 2-3 levels deep All disposeable objects (proxies, DbCommand and so on) should be disposed by using a using block. <a class="read-more" href="/community/contributing/handbook/naming/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
             
         
     </footer>

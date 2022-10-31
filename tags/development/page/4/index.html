@@ -313,9 +313,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -491,7 +491,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/community/contributing/handbook/back-end/async-programming/"><span>Async programming</span></a></li>
       <li class="dd-item">
-        <a href="/community/contributing/handbook/back-end/error-handling/"><span>Error handling</span></a></li>
+        <a href="/community/contributing/handbook/back-end/error-flow/"><span>Error flow</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/back-end/exception-handling/"><span>Exception handling</span></a></li>
       <li class="dd-item">
         <a href="/community/contributing/handbook/back-end/logging/"><span>Logging</span></a></li>
       <li class="dd-item">
@@ -1142,6 +1144,26 @@ if(host != "localhost")
 
 	</div><article class="post community">
     <header class="post-header">
+        <h2 class="post-title"><a href="/community/contributing/handbook/naming/">Naming Conventions</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>C# The Altinn project will use Microsoft’s coding conventions as a general guideline when no other guidelines are given.
+Exceptions/additions to the general guideline:
+Implicit typing (var) should only be used when a variable is initialized with an anonymous type, which is a common scenario in LINQ query expressions. In general implicit typing makes the code more difficult to read and understand,and should be avoided. Altinn specific coding guidelines:
+Methods should not be more than 50 lines long When dealing with XML you should prefer XDocument to XmlDocument (especially in new methods) If/for/while/using and other structures should normally not be more than 2-3 levels deep All disposeable objects (proxies, DbCommand and so on) should be disposed by using a using block. <a class="read-more" href="/community/contributing/handbook/naming/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
+            
+        
+    </footer>
+</article>
+<article class="post community">
+    <header class="post-header">
         <h2 class="post-title"><a href="/community/contributing/handbook/loadbalancer/">Nginx loadbalancing in studio</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1325,27 +1347,6 @@ REST APIs should start with a short word to indicate the logical domain or group
     <section class="post-excerpt">
         <p>Routing Nginx routingInformation about routing with nginx
 Traefik routing <a class="read-more" href="/community/contributing/handbook/routing/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/routing/">routing</a>
-            
-        
-    </footer>
-</article>
-<article class="post community">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/community/contributing/handbook/securecoding/">Secure DevOps</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Having a Secure DevOps process requires that security is built into the applications, the process, the infrastructure, and the configuration, and more.
-Below you find information on what kind of tools, patterns, and processes we follow to make sure we think about application and infrastructure security for all phases.
-Planning phase During the planning phase, the requirements for features are gathered. Already in this phase, we identify changes that need special security considerations. <a class="read-more" href="/community/contributing/handbook/securecoding/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         

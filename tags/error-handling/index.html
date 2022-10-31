@@ -305,9 +305,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -483,7 +483,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/community/contributing/handbook/back-end/async-programming/"><span>Async programming</span></a></li>
       <li class="dd-item">
-        <a href="/community/contributing/handbook/back-end/error-handling/"><span>Error handling</span></a></li>
+        <a href="/community/contributing/handbook/back-end/error-flow/"><span>Error flow</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/back-end/exception-handling/"><span>Exception handling</span></a></li>
       <li class="dd-item">
         <a href="/community/contributing/handbook/back-end/logging/"><span>Logging</span></a></li>
       <li class="dd-item">
@@ -1130,11 +1132,10 @@ if(host != "localhost")
 
 	</div><article class="post community">
     <header class="post-header">
-        <h2 class="post-title"><a href="/community/contributing/handbook/back-end/error-handling/">Error handling</a></h2>
+        <h2 class="post-title"><a href="/community/contributing/handbook/front-end/error-handling/">Error handling</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Exception Handling Exception handling is the act of catching an exception with the intention of handling the situation so that normal execution flow can continue. It should not be used as any part of an expected execution flow. It should also be avoided if the situation continue to be unrecoverable.
-.Net core provides a default middleware UseExceptionHandler that will catch exceptions and log them. You can read more about this here. <a class="read-more" href="/community/contributing/handbook/back-end/error-handling/">&raquo;</a></p>
+        <p>This page is a work-in-progress. Because we do not have details on how potential errors should be shown to the users, this is only a general overview currently. More details will be added once we have a functional understanding of how users should experience errors. React components Error boundaries Error boundaries are React&rsquo;s official way of handling errors that occur in a component. This functionality is available from React 16. <a class="read-more" href="/community/contributing/handbook/front-end/error-handling/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         
@@ -1150,10 +1151,11 @@ if(host != "localhost")
 </article>
 <article class="post community">
     <header class="post-header">
-        <h2 class="post-title"><a href="/community/contributing/handbook/front-end/error-handling/">Error handling</a></h2>
+        <h2 class="post-title"><a href="/community/contributing/handbook/back-end/exception-handling/">Exception handling</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>This page is a work-in-progress. Because we do not have details on how potential errors should be shown to the users, this is only a general overview currently. More details will be added once we have a functional understanding of how users should experience errors. React components Error boundaries Error boundaries are React&rsquo;s official way of handling errors that occur in a component. This functionality is available from React 16. <a class="read-more" href="/community/contributing/handbook/front-end/error-handling/">&raquo;</a></p>
+        <p>Exception Handling Exception handling is the act of catching an exception with the intention of handling the situation so that normal execution flow can continue. It should not be used as any part of an expected execution flow. It should also be avoided if the situation continue to be unrecoverable.
+.Net core provides a default middleware UseExceptionHandler that will catch exceptions and log them. You can read more about this here. <a class="read-more" href="/community/contributing/handbook/back-end/exception-handling/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         
@@ -1163,6 +1165,8 @@ if(host != "localhost")
                 <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/error-handling/">error-handling</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/exception-handling/">exception-handling</a>
             
         
     </footer>

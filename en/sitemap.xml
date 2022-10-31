@@ -1258,9 +1258,11 @@
                 href="https://docs.altinn.studio/api/authentication/enterpriseuser/"
                 />
   </url><url>
-    <loc>https://docs.altinn.studio/community/contributing/handbook/back-end/error-handling/</loc>
+    <loc>https://docs.altinn.studio/community/contributing/handbook/back-end/error-flow/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/community/contributing/handbook/front-end/error-handling/</loc>
+  </url><url>
+    <loc>https://docs.altinn.studio/community/contributing/handbook/back-end/exception-handling/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/app/design/guidelines/components/file-upload/</loc>
     <xhtml:link
@@ -2368,6 +2370,8 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/</loc>
   </url><url>
+    <loc>https://docs.altinn.studio/tags/business-layer/</loc>
+  </url><url>
     <loc>https://docs.altinn.studio/technology/tools/c-sharp/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/repos/structure/calculationhandler/</loc>
@@ -2461,6 +2465,8 @@
     <loc>https://docs.altinn.studio/tags/containers/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/solutions/altinn-platform/authorization/contexthandler/</loc>
+  </url><url>
+    <loc>https://docs.altinn.studio/tags/controller/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/crds/</loc>
   </url><url>
@@ -2725,6 +2731,8 @@
                 />
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/altinn-platform/events/</loc>
+  </url><url>
+    <loc>https://docs.altinn.studio/tags/exception-handling/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/app/development/configuration/process/exclusive-gateways/</loc>
     <xhtml:link
@@ -3220,6 +3228,8 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/platform/presentation/</loc>
   </url><url>
+    <loc>https://docs.altinn.studio/tags/presentation-layer/</loc>
+  </url><url>
     <loc>https://docs.altinn.studio/community/presentations/</loc>
     <xhtml:link
                 rel="alternate"
@@ -3369,6 +3379,8 @@
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/runtime/security/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/security/</loc>
+  </url><url>
+    <loc>https://docs.altinn.studio/tags/service/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/repos/structure/service-configurations/</loc>
   </url><url>

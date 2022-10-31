@@ -2235,6 +2235,16 @@
     <loc>https://docs.altinn.studio/tags/bmpn/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/bpmn/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/tags/bpmn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/tags/bpmn/"
+                />
   </url><url>
     <loc>https://docs.altinn.studio/technology/tools/bpmn/</loc>
   </url><url>
@@ -2716,6 +2726,18 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/altinn-platform/events/</loc>
   </url><url>
+    <loc>https://docs.altinn.studio/app/development/configuration/process/exclusive-gateways/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/configuration/process/exclusive-gateways/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/configuration/process/exclusive-gateways/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/app/development/api/expose/</loc>
     <xhtml:link
                 rel="alternate"
@@ -2749,6 +2771,18 @@
     <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/repos/functional/</loc>
+  </url><url>
+    <loc>https://docs.altinn.studio/tags/gateways/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/tags/gateways/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/tags/gateways/"
+                />
   </url><url>
     <loc>https://docs.altinn.studio/tags/git/</loc>
   </url><url>

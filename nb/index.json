@@ -865,7 +865,7 @@
 	"title": "Definere applikasjonsprosess",
 	"tags": [],
 	"description": "Hvordan definere prosessen til en app.",
-	"content": "En applikasjon har definert en prosess som styrer flyten. Prosessen er definert som BPMN 2.0.\nStøttede prosess-task-typer Nåværende applikasjonsmal støtter følgende tasks.\nData (Data) (Tilsvarer utfyllingssteg i Altinn II) Bekreftelse (Confirmation) Feedback Fremtidige prosess-tasker (tentativ) Signering (Signing) Betaling (Payment) Parallellsignering (Paralell Signing) Brukerstyrt signering (User Controlled Signing) Ekstern validering (External Validation) Endre prosessen For å endre på prosessen kan du manuelt redigere BPMN-filen med en valgfri XML- eller BPMN-editor. Den ligger lagret i app-repoet som App/config/process/process.bpmn.\nAutomatisk sletting\rEn applikasjon kan konfigureres til å slette alle spor når prosessen er slutt.\nDefiner egendefinerte prosess hooks\rDefiner egendefinert kode som skal kjøres før eller etter en task er startet eller avsluttet\nMelding\rHvordan sette opp en melding i Altinn Studio.\nTilpasse visninger av steg\rHvordan tilpasse visninger i forskjellige steg av en prosess.\n"
+	"content": "En applikasjon har definert en prosess som styrer flyten. Prosessen er definert som BPMN 2.0.\nStøttede prosess-task-typer Nåværende applikasjonsmal støtter følgende tasks.\nData (Data) (Tilsvarer utfyllingssteg i Altinn II) Bekreftelse (Confirmation) Feedback Fremtidige prosess-tasker (tentativ) Signering (Signing) Betaling (Payment) Parallellsignering (Paralell Signing) Brukerstyrt signering (User Controlled Signing) Ekstern validering (External Validation) Endre prosessen For å endre på prosessen kan du manuelt redigere BPMN-filen med en valgfri XML- eller BPMN-editor. Den ligger lagret i app-repoet som App/config/process/process.bpmn.\nAutomatisk sletting\rEn applikasjon kan konfigureres til å slette alle spor når prosessen er slutt.\nDefiner egendefinerte prosess hooks\rDefiner egendefinert kode som skal kjøres før eller etter en task er startet eller avsluttet\nExclusive Gateways\rDefiner egendefinert kode som avgjør flyt ut av en exclusive gateway\nMelding\rHvordan sette opp en melding i Altinn Studio.\nTilpasse visninger av steg\rHvordan tilpasse visninger i forskjellige steg av en prosess.\n"
 },
 {
 	"uri": "https://docs.altinn.studio/nb/app/development/configuration/queryparameters/",
@@ -1162,6 +1162,13 @@
 	"content": "TODO: Dokumentasjon, screenshots, etc\nInfo Repo Kjørende tjeneste "
 },
 {
+	"uri": "https://docs.altinn.studio/nb/tags/bpmn/",
+	"title": "bpmn",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://docs.altinn.studio/nb/community/changelog/app-frontend/v3/breaking-changes/",
 	"title": "Breaking changes",
 	"tags": ["translate-to-norwegian"],
@@ -1356,6 +1363,20 @@
 	"tags": ["api", "translate-to-norwegian"],
 	"description": "Platform API for hendelser.",
 	"content": "Overview Events are in this context is information about events created by applications or other sources. The event itself is based on the CloudEvent standard and is a small JSON structure containing the most important information of an event. Details are found here.\nThe events APIs are used to access events created by applications in Altinn Apps and other event sources that use Altinn Platform as av \u0026ldquo;event hub\u0026rdquo;.\nSubscription The highly preferred way to use events is to set up a subscription that enables push of events to a webhook-endpoint. This is done through the subcriptions API. This API supports the following consumers\nPersons, authenticated through ID-porten Orgs, authenticated through Maskinporten The subscriptions API is described here as Swagger.\nThe webhook endpoint needs to be able to accept cloud event that is posted through HTTPS to the endpoint URL.\nThe push functionality also supports pushing events to Slack. Other platforms might be added at a later point.\nSearch API The search allows searching for events. The storage of events is limited to 90 days.\nThis is available to be used by the following consumers.\nPersons, authenticated through ID-porten Orgs, authenticated through Maskinporten The API is described in swagger here.\n"
+},
+{
+	"uri": "https://docs.altinn.studio/nb/app/development/configuration/process/exclusive-gateways/",
+	"title": "Exclusive Gateways",
+	"tags": ["gateways", "bpmn", "process", "prosess"],
+	"description": "Definer egendefinert kode som avgjør flyt ut av en exclusive gateway",
+	"content": "\rFunksjonaliteten beskrevet på denne siden krever minimum version 7.1.0 av Altinn nugets.\rForutsetninger Applikasjonen din benytter versjon 7.1.0 eller nyere av Altinn nugets En applikasjon med exclusive gateway(s) definert i prosessen sin Eksempel prosess med exclusive gateways \u0026lt;?xml version=\u0026#34;1.0\u0026#34; encoding=\u0026#34;UTF-8\u0026#34;?\u0026gt; \u0026lt;bpmn:definitions xmlns:xsi=\u0026#34;http://www.w3.org/2001/XMLSchema-instance\u0026#34; xmlns:bpmn=\u0026#34;http://www.omg.org/spec/BPMN/20100524/MODEL\u0026#34; xmlns:bpmndi=\u0026#34;http://www.omg.org/spec/BPMN/20100524/DI\u0026#34; xmlns:dc=\u0026#34;http://www.omg.org/spec/DD/20100524/DC\u0026#34; xmlns:di=\u0026#34;http://www.omg.org/spec/DD/20100524/DI\u0026#34; xmlns:altinn=\u0026#34;http://altinn.no\u0026#34; id=\u0026#34;Altinn_SingleDataTask_Process_Definition\u0026#34; targetNamespace=\u0026#34;http://bpmn.io/schema/bpmn\u0026#34; exporter=\u0026#34;bpmn-js (https://demo.bpmn.io)\u0026#34; exporterVersion=\u0026#34;10.2.0\u0026#34;\u0026gt; \u0026lt;bpmn:process id=\u0026#34;SingleDataTask\u0026#34; isExecutable=\u0026#34;false\u0026#34;\u0026gt; \u0026lt;bpmn:startEvent id=\u0026#34;StartEvent_1\u0026#34;\u0026gt; \u0026lt;bpmn:outgoing\u0026gt;Flow_s_t1\u0026lt;/bpmn:outgoing\u0026gt; \u0026lt;/bpmn:startEvent\u0026gt; \u0026lt;bpmn:sequenceFlow id=\u0026#34;Flow_s_t1\u0026#34; sourceRef=\u0026#34;StartEvent_1\u0026#34; targetRef=\u0026#34;Task_1\u0026#34; /\u0026gt; \u0026lt;bpmn:task id=\u0026#34;Task_1\u0026#34; name=\u0026#34;Utfylling\u0026#34; altinn:tasktype=\u0026#34;data\u0026#34;\u0026gt; \u0026lt;bpmn:incoming\u0026gt;Flow_s_t1\u0026lt;/bpmn:incoming\u0026gt; \u0026lt;bpmn:outgoing\u0026gt;Flow_t1_g1\u0026lt;/bpmn:outgoing\u0026gt; \u0026lt;/bpmn:task\u0026gt; \u0026lt;bpmn:sequenceFlow id=\u0026#34;Flow_t1_g1\u0026#34; sourceRef=\u0026#34;Task_1\u0026#34; targetRef=\u0026#34;Gateway_1\u0026#34; /\u0026gt; \u0026lt;bpmn:exclusiveGateway id=\u0026#34;Gateway_1\u0026#34;\u0026gt; \u0026lt;bpmn:incoming\u0026gt;Flow_t1_g1\u0026lt;/bpmn:incoming\u0026gt; \u0026lt;bpmn:outgoing\u0026gt;Flow_g1_g2\u0026lt;/bpmn:outgoing\u0026gt; \u0026lt;bpmn:outgoing\u0026gt;Flow_g1_t2\u0026lt;/bpmn:outgoing\u0026gt; \u0026lt;/bpmn:exclusiveGateway\u0026gt; \u0026lt;bpmn:sequenceFlow id=\u0026#34;Flow_g1_g2\u0026#34; sourceRef=\u0026#34;Gateway_1\u0026#34; targetRef=\u0026#34;Gateway_2\u0026#34; /\u0026gt; \u0026lt;bpmn:sequenceFlow id=\u0026#34;Flow_g1_t2\u0026#34; sourceRef=\u0026#34;Gateway_1\u0026#34; targetRef=\u0026#34;Task_2\u0026#34; /\u0026gt; \u0026lt;bpmn:task id=\u0026#34;Task_2\u0026#34; name=\u0026#34;Bekreftelse\u0026#34; altinn:tasktype=\u0026#34;confirmation\u0026#34;\u0026gt; \u0026lt;bpmn:incoming\u0026gt;Flow_g1_t2\u0026lt;/bpmn:incoming\u0026gt; \u0026lt;bpmn:outgoing\u0026gt;Flow_t2_g2\u0026lt;/bpmn:outgoing\u0026gt; \u0026lt;/bpmn:task\u0026gt; \u0026lt;bpmn:sequenceFlow id=\u0026#34;Flow_t2_g2\u0026#34; sourceRef=\u0026#34;Task_2\u0026#34; targetRef=\u0026#34;Gateway_2\u0026#34; /\u0026gt; \u0026lt;bpmn:exclusiveGateway id=\u0026#34;Gateway_2\u0026#34;\u0026gt; \u0026lt;bpmn:incoming\u0026gt;Flow_g1_g2\u0026lt;/bpmn:incoming\u0026gt; \u0026lt;bpmn:incoming\u0026gt;Flow_t2_g2\u0026lt;/bpmn:incoming\u0026gt; \u0026lt;bpmn:outgoing\u0026gt;Flow_g2_end\u0026lt;/bpmn:outgoing\u0026gt; \u0026lt;/bpmn:exclusiveGateway\u0026gt; \u0026lt;bpmn:sequenceFlow id=\u0026#34;Flow_g2_end\u0026#34; sourceRef=\u0026#34;Gateway_2\u0026#34; targetRef=\u0026#34;EndEvent_1\u0026#34; /\u0026gt; \u0026lt;bpmn:endEvent id=\u0026#34;EndEvent_1\u0026#34;\u0026gt; \u0026lt;bpmn:incoming\u0026gt;Flow_g2_end\u0026lt;/bpmn:incoming\u0026gt; \u0026lt;/bpmn:endEvent\u0026gt; \u0026lt;/bpmn:process\u0026gt; \u0026lt;!-- BPMN Diagram del er fjernet --\u0026gt; \u0026lt;/bpmn:definitions\u0026gt; Visuell representasjon av bpmn definisjonen over\nImplementer og inject egendefinert gateway kode For å velge riktig sequenceflow ut av en exclusive gateway basert på instansdataene må applikasjonen inneholde en implementasjon av Altinn.App.Core.Features.IProcessExclusiveGateway og registrere det med dependency injection systemet.\nInterfacet har en string Property GatewayId, og en metode FilterAsync\nGatewayId brukes for å identifisere gatewayen i processen som koden er koblet til.\nI eksempelet over vil en implementasjon ha propertien satt til Gateway_1 siden dette er verdien på attributtet id i gatewayen vi øsnker å skrive logikk for (eneste med to sequenceflows ut av seg).\nMetoden FilterAsync er hvor du implementerer din egendefinerte kode som skal filtrere og returnere gyldige sequenceflow(er) ut av gatewayen basert på instanses data.\nFor mer dokumentasjon av interfacet se xml dokumentasjonen på interfacet her\nEtter du har skrevet logikken din må den registreres i dependency injection systemet. Dette gjøres i metoden RegisterCustomAppServices i filen Program.cs\nEksempel:\nvoid RegisterCustomAppServices( IServiceCollection services, IConfiguration config, IWebHostEnvironment env) { services.AddTransient\u0026lt;IProcessExclusiveGateway, GatewayOne\u0026gt;(); } "
+},
+{
+	"uri": "https://docs.altinn.studio/nb/tags/gateways/",
+	"title": "gateways",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "https://docs.altinn.studio/nb/app/launched-apps/digdir/godkjenn-bruksvilkaar/",
@@ -1640,6 +1661,13 @@
 {
 	"uri": "https://docs.altinn.studio/nb/tags/process/",
 	"title": "process",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://docs.altinn.studio/nb/tags/prosess/",
+	"title": "prosess",
 	"tags": [],
 	"description": "",
 	"content": ""

@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="" />
 <meta name="altinn_pagedir" class="elastic" content="" />
-<meta name="altinn_title" class="elastic" content="BPMN" />
+<meta name="altinn_title" class="elastic" content="bpmn" />
 
-<title>BPMN – Altinn</title><link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<title>bpmn – Altinn</title><link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -61,6 +61,10 @@ if(host != "localhost")
       <img src="/images/en.svg" class="a-iconLeft a-flag" alt="" />
       <p>
         <span class="a-h3">English ✓</span><br><span>Most content is available in english.</span></p>
+    </a><a aria-hidden="true" class="dropdown-item" href="/nb/tags/bpmn/">
+      <img src="/images/nb.svg" class="a-iconLeft a-flag" alt="" />
+      <p>
+        <span class="a-h3">Bokmål</span><br><span>Noe innhold er tilgjengelig på bokmål.</span></p>
     </a></div>
 </li>
               <li>
@@ -87,6 +91,10 @@ if(host != "localhost")
       <img src="/images/en.svg" class="a-iconLeft a-flag" alt="" />
       <p>
         <span class="a-h3">English ✓</span><br><span>Most content is available in english.</span></p>
+    </a><a aria-hidden="true" class="dropdown-item" href="/nb/tags/bpmn/">
+      <img src="/images/nb.svg" class="a-iconLeft a-flag" alt="" />
+      <p>
+        <span class="a-h3">Bokmål</span><br><span>Noe innhold er tilgjengelig på bokmål.</span></p>
     </a></div>
 </li>
         </ul>
@@ -305,9 +313,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -336,6 +344,8 @@ if(host != "localhost")
         <a href="/app/development/configuration/process/customize/"><span>Customize Views</span></a></li>
       <li class="dd-item">
         <a href="/app/development/configuration/process/pre-post-hooks/"><span>Define custom process hooks</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/process/exclusive-gateways/"><span>Exclusive gateways</span></a></li>
       <li class="dd-item">
         <a href="/app/development/configuration/process/message/"><span>Message</span></a></li></ul></li>
       <li class="dd-item">
@@ -1114,9 +1124,9 @@ if(host != "localhost")
                     <span class="sr-only">Vis/skjul meny</span>
                   </a>
                 </span>
-                <span class="links"><a href='/tags/'>Tags</a> <span class='adocs-breadcrumb-divider'> / </span> BPMN</span>
+                <span class="links"><a href='/tags/'>Tags</a> <span class='adocs-breadcrumb-divider'> / </span> bpmn</span>
             </div>
-          </div><div id="body-inner"><h1 class="a-fontBold">BPMN</h1>
+          </div><div id="body-inner"><h1 class="a-fontBold">bpmn</h1>
               <p class="a-leadText" id="leadText"></p>
 
 <footer class=" footline" ></footer><div class="extra-pagination inner">
@@ -1126,7 +1136,28 @@ if(host != "localhost")
 	
 </nav>
 
-	</div><article class="post technology">
+	</div><article class="post app">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/app/development/configuration/process/exclusive-gateways/">Exclusive gateways</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Prerequisites Your applicaiton uses version 7.1.0 or newer of the Altinn nugets. Application with a process containing a exclusive gateway Example process with exclusive gateways &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;bpmn:definitions xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:bpmn=&#34;http://www.omg.org/spec/BPMN/20100524/MODEL&#34; xmlns:bpmndi=&#34;http://www.omg.org/spec/BPMN/20100524/DI&#34; xmlns:dc=&#34;http://www.omg.org/spec/DD/20100524/DC&#34; xmlns:di=&#34;http://www.omg.org/spec/DD/20100524/DI&#34; xmlns:altinn=&#34;http://altinn.no&#34; id=&#34;Altinn_SingleDataTask_Process_Definition&#34; targetNamespace=&#34;http://bpmn.io/schema/bpmn&#34; exporter=&#34;bpmn-js (https://demo.bpmn.io)&#34; exporterVersion=&#34;10.2.0&#34;&gt; &lt;bpmn:process id=&#34;SingleDataTask&#34; isExecutable=&#34;false&#34;&gt; &lt;bpmn:startEvent id=&#34;StartEvent_1&#34;&gt; &lt;bpmn:outgoing&gt;Flow_s_t1&lt;/bpmn:outgoing&gt; &lt;/bpmn:startEvent&gt; &lt;bpmn:sequenceFlow id=&#34;Flow_s_t1&#34; sourceRef=&#34;StartEvent_1&#34; targetRef=&#34;Task_1&#34; /&gt; &lt;bpmn:task id=&#34;Task_1&#34; name=&#34;Utfylling&#34; altinn:tasktype=&#34;data&#34;&gt; &lt;bpmn:incoming&gt;Flow_s_t1&lt;/bpmn:incoming&gt; &lt;bpmn:outgoing&gt;Flow_t1_g1&lt;/bpmn:outgoing&gt; &lt;/bpmn:task&gt; &lt;bpmn:sequenceFlow id=&#34;Flow_t1_g1&#34; sourceRef=&#34;Task_1&#34; targetRef=&#34;Gateway_1&#34; /&gt; &lt;bpmn:exclusiveGateway id=&#34;Gateway_1&#34;&gt; &lt;bpmn:incoming&gt;Flow_t1_g1&lt;/bpmn:incoming&gt; &lt;bpmn:outgoing&gt;Flow_g1_g2&lt;/bpmn:outgoing&gt; &lt;bpmn:outgoing&gt;Flow_g1_t2&lt;/bpmn:outgoing&gt; &lt;/bpmn:exclusiveGateway&gt; &lt;bpmn:sequenceFlow id=&#34;Flow_g1_g2&#34; sourceRef=&#34;Gateway_1&#34; targetRef=&#34;Gateway_2&#34; /&gt; &lt;bpmn:sequenceFlow id=&#34;Flow_g1_t2&#34; sourceRef=&#34;Gateway_1&#34; targetRef=&#34;Task_2&#34; /&gt; &lt;bpmn:task id=&#34;Task_2&#34; name=&#34;Bekreftelse&#34; altinn:tasktype=&#34;confirmation&#34;&gt; &lt;bpmn:incoming&gt;Flow_g1_t2&lt;/bpmn:incoming&gt; &lt;bpmn:outgoing&gt;Flow_t2_g2&lt;/bpmn:outgoing&gt; &lt;/bpmn:task&gt; &lt;bpmn:sequenceFlow id=&#34;Flow_t2_g2&#34; sourceRef=&#34;Task_2&#34; targetRef=&#34;Gateway_2&#34; /&gt; &lt;bpmn:exclusiveGateway id=&#34;Gateway_2&#34;&gt; &lt;bpmn:incoming&gt;Flow_g1_g2&lt;/bpmn:incoming&gt; &lt;bpmn:incoming&gt;Flow_t2_g2&lt;/bpmn:incoming&gt; &lt;bpmn:outgoing&gt;Flow_g2_end&lt;/bpmn:outgoing&gt; &lt;/bpmn:exclusiveGateway&gt; &lt;bpmn:sequenceFlow id=&#34;Flow_g2_end&#34; sourceRef=&#34;Gateway_2&#34; targetRef=&#34;EndEvent_1&#34; /&gt; &lt;bpmn:endEvent id=&#34;EndEvent_1&#34;&gt; &lt;bpmn:incoming&gt;Flow_g2_end&lt;/bpmn:incoming&gt; &lt;/bpmn:endEvent&gt; &lt;/bpmn:process&gt; &lt;! <a class="read-more" href="/app/development/configuration/process/exclusive-gateways/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/gateways/">gateways</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/bpmn/">bpmn</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/process/">process</a>
+            
+        
+    </footer>
+</article>
+<article class="post technology">
     <header class="post-header">
         <h2 class="post-title"><a href="/technology/architecture/capabilities/runtime/processing/process/">Business Process Processing Capabilities</a></h2>
     </header>

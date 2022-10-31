@@ -113,7 +113,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +213,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -295,7 +295,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,7 +303,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1124,41 +1124,63 @@ if(host != "localhost")
                 <span class="links"><a href='/technology/'>Technology</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/'>Architecture</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/'>Components</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/'>Application</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/construction/'>Construction</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/components/application/construction/altinn-platform/'>Altinn Platform</a> <span class='adocs-breadcrumb-divider'> / </span> Events</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/architecture">architecture</a><a class="label label-default" href="https://docs.altinn.studio/tags/solution">solution</a></div><div id="body-inner"><h1 class="a-fontBold">Application construction components - Altinn Platform Events</h1>
-              <p class="a-leadText" id="leadText">The Events component in Altinn platform is constructed as an asp.net core web API application deployed as a docker container to a Kubernetes cluster.</p><p>The Events components expose REST-APIs for publishing and subscribing to events. The Azure function are responsible for pushing events
-to subscriber webhooks. The below diagram shows the components</p>
-<figure><a href="altinn-events.drawio.svg"><img src="altinn-events.drawio.svg" alt="Event architecture diagram" title="Altinn Event Architecture" /></a><figcaption><h4>Altinn Event Architecture</h4></figcaption></figure>
-<p>When a publish request is received it will push the event document to the event storage.
-When a request is received it will query the events stored in the event storage.</p>
-<h2 id="api-controllers">Api controllers</h2>
+              <p class="a-leadText" id="leadText">The Events component in Altinn platform is constructed as an asp.net core web API application deployed as a docker container to a Kubernetes cluster.</p><p>The Events components expose public REST APIs for publishing, retrieving and subscribing to events.</p>
+<p><a href="https://docs.microsoft.com/en-us/azure/azure-functions/">Azure Functions</a> are used internally to process and forward incoming cloud events to subscriber webhooks.</p>
+<p>The following diagram illustrates the overall data flow.</p>
+<figure><a href="altinn-events.drawio.export.svg"><img src="altinn-events.drawio.export.svg" alt="Event architecture diagram" title="Altinn Event Architecture" /></a><figcaption><h4>Altinn Event Architecture</h4></figcaption></figure>
+<p>When a publish request is posted to the <code>/app</code> endpoint, the event will first be saved in the <code>events-registration</code> queue for operational resilience and flexibility.</p>
+<p>When an event retrieval request is received, it will respond with results from the internal relational database used for events persistence.</p>
+<h3 id="public-api">Public API</h3>
 <p>The following API controllers are defined</p>
 <ul>
-<li><a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Events/Controllers/EventsController.cs">EventsController</a> : responsible for registrating events and pull of events for consumers.</li>
-<li><a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Events/Controllers/PushController.cs">PushController</a> : responsible to validate if there is any subscriptions matching the event and if so authorize the subscriper before it pushes the event to the outbound queue</li>
-<li><a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Events/Controllers/SubscriptionController.cs">SubscriptionController</a> : responsible for managing subscriptions for consumers.</li>
+<li>
+<p><a href="https://github.com/Altinn/altinn-events/blob/main/src/Events/Controllers/AppController.cs">AppController</a> : publish (store and forward) and retrieve app events</p>
+</li>
+<li>
+<p><a href="https://github.com/Altinn/altinn-events/blob/main/src/Events/Controllers/SubscriptionController.cs">SubscriptionController</a> : create, retrieve, validate and delete event subscriptions</p>
+</li>
 </ul>
-<h3 id="eventscontroller">Eventscontroller</h3>
-<p>The <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Events/Controllers/EventsController.cs">EventsController</a> in the Events component is the one receiving events from Apps and other sources.</p>
-<p>It verifies if the app is authorized to creates events for the given source and then store in to event storage.</p>
+<h3 id="internal-api">Internal API</h3>
+<p>The following endpoints are intended for internal use only.</p>
+<ul>
+<li>
+<p><a href="https://github.com/Altinn/altinn-events/blob/main/src/Events/Controllers/StorageController.cs">StorageController</a> : save incoming events to persistent storage (database)</p>
+</li>
+<li>
+<p><a href="https://github.com/Altinn/altinn-events/blob/main/src/Events/Controllers/InboundController.cs">InboundController</a> : store events in <code>events-inbound</code> queue</p>
+</li>
+<li>
+<p><a href="https://github.com/Altinn/altinn-events/blob/main/src/Events/Controllers/OutboundController.cs">OutboundController</a> : forward events to authorized subscriber webhook endpoints, via <code>events-outbound</code> queue</p>
+</li>
+</ul>
+<h2 id="controller-details">Controller details</h2>
+<p>Base API url: <strong>/events/api/v1</strong></p>
+<h3 id="appcontroller">AppController</h3>
+<p>The <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events/Controllers/AppController.cs">AppController</a> in the Events component is the one receiving events from Apps and other sources.</p>
+<p>It verifies that the app is authorized to publish events for the given source before saving the event in a database for at least 90 days.</p>
 <p>It also exposes API to search for events and to get events.</p>
 <p>The access is controlled by the XACML Policy for the given App that is the source for an given event.</p>
-<p>The <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Events/Authorization/AuthorizationHelper.cs">AuthorizationHelper</a>
+<p>The <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events/Authorization/AuthorizationHelper.cs">AuthorizationHelper</a>
 is responsible for creating and performing the request to the <a href="../../../../../../solutions/altinn-platform/authorization/pdp/">Policy Decision Point</a>.</p>
-<h3 id="pushcontroller">PushController</h3>
-<p><a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Events/Controllers/PushController.cs">PushController</a> is called by the  <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Functions/EventsInbound.cs">EventsInbound</a> function.</p>
-<p>Based on details from the Event it will identify matching subscriptions.</p>
-<p>For each match it will authorize the consumer using the Policy Authorization Point.</p>
-<p>The <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Events/Authorization/AuthorizationHelper.cs">AuthorizationHelper</a>
-is responsible for creating and performing the request to the <a href="../../../../../../solutions/altinn-platform/authorization/pdp/">Policy Decision Point</a>.</p>
-<p>The access is controlled by the XACML Policy for the given App that is the source for an given event.</p>
-<p>If consumer is Authorized the event will be added to the &ldquo;events-outbound&rdquo; queue and picked up by the EventsOutbound function. (see below)</p>
 <h3 id="subscriptioncontroller">SubscriptionController</h3>
-<p>The <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Events/Controllers/SubscriptionController.cs">SubscriptionController</a> exposes API to</p>
+<p>The <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events/Controllers/SubscriptionController.cs">SubscriptionController</a> exposes API to</p>
 <ul>
 <li>Add subscriptions</li>
 <li>Delete subscriptions</li>
 <li>Get subscriptions</li>
 <li>Validate subscriptions</li>
 </ul>
+<h3 id="inboundcontroller">InboundController</h3>
+<p><em>Internal API</em></p>
+<p>Thin client to <code>events-inbound</code> queue storage, minimal processing logic.</p>
+<h3 id="outboundcontroller-previously-pushcontroller">OutboundController (previously PushController)</h3>
+<p><a href="https://github.com/Altinn/altinn-events/blob/main/src/Events/Controllers/OutboundController.cs">OutboundController</a> is called by the  <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/EventsInbound.cs">EventsInbound</a> function.</p>
+<p>Based on details from the Event it will identify matching subscriptions.</p>
+<p>For each match it will authorize the subscriber using the Policy Authorization Point.</p>
+<p>The <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events/Authorization/AuthorizationHelper.cs">AuthorizationHelper</a>
+is responsible for creating and performing the request to the <a href="../../../../../../solutions/altinn-platform/authorization/pdp/">Policy Decision Point</a>.</p>
+<p>The access is controlled by the XACML Policy for the given App that is the source for an given event.</p>
+<p>If the subscriber is Authorized, the event will be added to the &ldquo;events-outbound&rdquo; queue and picked up by the EventsOutbound function. (see below)</p>
 <h2 id="event-storage">Event storage</h2>
 <p>To be able to get the search capability needed for the Events component we have choosen to use  <a href="https://www.postgresql.org/">PostgreSQL</a>.</p>
 <p>Using <a href="https://www.postgresql.org/">PostgreSQL</a> makes is possible to sort the events based on a primary key and also makes it possible to search
@@ -1189,28 +1211,51 @@ over all events based on subject or source.</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">CONSTRAINT</span> eventssubscription_pkey <span style="color:#ff79c6">PRIMARY</span> <span style="color:#ff79c6">KEY</span> (id)
 </span></span><span style="display:flex;"><span>)
 </span></span></code></pre></div><p>Stored procedures is used to add, delete and query data from the above tables. 
-See all stored procedures <a href="https://github.com/Altinn/altinn-studio/tree/master/src/Altinn.Platform/Altinn.Platform.Events/Events/Migration">here</a>.</p>
+See all stored procedures <a href="https://github.com/Altinn/altinn-events/tree/main/src/Events/Migration">here</a>.</p>
 <h4 id="event-sequencing">Event sequencing</h4>
-<p>Events will be sequnced by sequence number that is the primary key of the Events table.</p>
+<p>Events will be sequenced by the field <code>sequenceno</code>, which is also the primary key of the Events table.</p>
 <h3 id="indexing">Indexing</h3>
 <p>The events table has indexes on the columns <em>subject</em>, <em>time</em>, <em>sourcefilter</em>.</p>
 <h2 id="functions">Functions</h2>
-<p>As part of the Event Component there is 3 <a href="https://docs.microsoft.com/en-us/azure/azure-functions/">Azure Functions</a> used for pushing events to the consumers. Click on name for code.</p>
+<p>As part of the Events Component there is a single Azure Function App with four functions involved in processing cloud events at various stages (Azure Queue Storage). Click on name for code.</p>
 <ul>
-<li><a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Functions/EventsInbound.cs">EventsInbound</a> : responsible for pushing new events to the push controller</li>
-<li><a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Functions/EventsOutbound.cs">EventsOutbound</a> : responsible for pushing event to consumer webhook</li>
-<li><a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Functions/ValidateSubscription.cs">ValidateSubscription</a> : responsible for validating the endpoint given in a subscription.</li>
+<li><a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/EventsRegistration.cs">EventsRegistration</a>
+<ul>
+<li>dequeue from <code>events-registration</code></li>
+<li>store to database</li>
+<li>forward to <code>events-inbound</code> queue</li>
+</ul>
+</li>
+<li><a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/EventsInbound.cs">EventsInbound</a>
+<ul>
+<li>dequeue from <code>events-inbound</code></li>
+<li>find valid subscriptions with filters that match event</li>
+<li>forward a copy of event to <code>events-outbound</code> queue for each matching subscription</li>
+</ul>
+</li>
+<li><a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/EventsOutbound.cs">EventsOutbound</a>
+<ul>
+<li>dequeue from <code>events-outbound</code></li>
+<li>POST cloud event to target webhook endpoint, retry as necessary</li>
+</ul>
+</li>
+<li><a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/SubscriptionValidation.cs">ValidateSubscription</a>
+<ul>
+<li>check that the user-defined webhook endpoint is ready to receive data</li>
+</ul>
+</li>
 </ul>
 <h3 id="eventsinbound">EventsInbound</h3>
-<p>The <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Functions/EventsInbound.cs">EventsInbound</a> function is triggered by QueueStorage changes in the &ldquo;events-inbound&rdquo; queue.</p>
-<p>It just forward the event to the PushController through the <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Functions/Services/PushEventsService.cs">pushEventService</a>.</p>
+<p>The <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/EventsInbound.cs">EventsInbound</a> function is executed automatically by the Azure Function runtime when new events are posted to the <code>events-inbound</code> queue.</p>
+<p>This function does not have 
+It just forward the event to the PushController through the <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/Services/PushEventsService.cs">pushEventService</a>.</p>
 <p>The Function uses Platform Access token to authenticate itself for the PushController</p>
 <p>It uses standard mechanismen for retry, if the call for pushcontroller fails.</p>
 <h3 id="eventsoutbound">EventsOutbound</h3>
-<p>The <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Functions/EventsInbound.cs">EventsOutbound</a> function is triggered byQueueStorage changes in the &ldquo;events-outbound&rdquo; queue.</p>
-<p>It will try to push the event to given subscription endpoint given in the <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Functions/Models/CloudEventEnvelope.cs">CloudEventEnvelope</a>
+<p>The <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/EventsInbound.cs">EventsOutbound</a> function is triggered byQueueStorage changes in the &ldquo;events-outbound&rdquo; queue.</p>
+<p>It will try to push the event to given subscription endpoint given in the <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/Models/CloudEventEnvelope.cs">CloudEventEnvelope</a>
 that is put on the queue and containing the event.</p>
-<p>This function is configured with <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Functions/Factories/CustomQueueProcessorFactory.cs">CustomQueueProcessorFactory</a> to handle retry if it is not possible to push event to the endpoint.</p>
+<p>This function is configured with <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/Factories/CustomQueueProcessorFactory.cs">CustomQueueProcessorFactory</a> to handle retry if it is not possible to push event to the endpoint.</p>
 <p>It will try send the event right away, but if the request to webhook fails  (Http status != 200) it will put the cloudevent back on the queue with a
 defined wait time.</p>
 <ol>
@@ -1228,10 +1273,10 @@ defined wait time.</p>
 </ol>
 <p>If it fails the 12. time it will put the event in the dead letter queue and will not try again.</p>
 <h3 id="subscriptionvalidation">SubscriptionValidation</h3>
-<p>The <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Functions/SubscriptionValidation.cs">SubscriptionValidation</a> function is triggered byQueueStorage changes in the &ldquo;subscription-validation&rdquo; queue.</p>
-<p>It will try to validate the endpoing given in the <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Functions/Models/Subscription.cs">Subscription</a>
+<p>The <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/SubscriptionValidation.cs">SubscriptionValidation</a> function is triggered byQueueStorage changes in the &ldquo;subscription-validation&rdquo; queue.</p>
+<p>It will try to validate the endpoing given in the <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/Models/Subscription.cs">Subscription</a>
 that is put on the queue.</p>
-<p>This function is configured with <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Functions/Factories/CustomQueueProcessorFactory.cs">CustomQueueProcessorFactory</a> to handle retry if it is not possible to push event to the endpoint.</p>
+<p>This function is configured with <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/Factories/CustomQueueProcessorFactory.cs">CustomQueueProcessorFactory</a> to handle retry if it is not possible to push event to the endpoint.</p>
 <p>It will try send the event right away, but if the request to webhook fails (Http status != 200) it will put the cloudevent back on the queue with a
 defined wait time.</p>
 <ol>
@@ -1248,7 +1293,7 @@ defined wait time.</p>
 <li>retries after 12 hours</li>
 </ol>
 <p>If it fails the 12. time it will put the event in the dead letter queue and will not try again.</p>
-<p>If endpoint responds with 200OK it will then set the subscription status to valid with calling the <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Events/Events/Controllers/SubscriptionController.cs#L111">validate</a> endpoint in the Subscription API.</p>
+<p>If endpoint responds with 200OK it will then set the subscription status to valid with calling the <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events/Controllers/SubscriptionController.cs#L111">validate</a> endpoint in the Subscription API.</p>
 
 
 <footer class=" footline" ></footer>

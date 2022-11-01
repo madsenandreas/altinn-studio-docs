@@ -455,7 +455,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/api/studio/"><span>Studio</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/community/"><span>Community</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/community/"><span>Community</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/about/"><span>About</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -463,7 +463,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/community/about/open-source/"><span>Open source</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/community/contributing/"><span>Contributing</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/community/contributing/"><span>Contributing</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/contributing/propose-component/"><span>Propose a new component</span></a></li>
       <li class="dd-item">
@@ -471,7 +471,7 @@ if(host != "localhost")
           <a href="/community/contributing/intro/">
             <span>Intro for developers</span></a></li>
       <li class="dd-item">
-        <a href="/community/contributing/handbook/"><span>Handbook</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/community/contributing/handbook/"><span>Handbook</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/contributing/handbook/azure-devops/"><span>Azure DevOps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1130,6 +1130,13 @@ if(host != "localhost")
 <p>Users and organizations get rights to access a service from defined rules and policies.</p>
 <p>The below drawing show all aspects that control who and what rights a user or organization has.</p>
 <figure><a href="rules.drawio.svg"><img src="rules.drawio.svg" alt="Rules" title="Access control aspects" /></a><figcaption><h4>Access control aspects</h4></figcaption></figure>
+<ul>
+<li>Resources - describes the resource a rule applies to. It can be an app, a resource in the resource register, a specific task, or any other sub-resources to an app or resource in the rescource registry.</li>
+<li>Action - describes which action the rules apply to. This can be any action like read, write, sign, fire, Opendoor +++</li>
+<li>Subject - describes who the rules apply to. It can be a role, access group, an organization number or a specific user, and many more</li>
+<li>Obligation - describes additional information like minimum authentication level.</li>
+<li>Condition - Describes additional conditions like the reportee needs to be registered in SRR/RRR for this resource/service.</li>
+</ul>
 <h2 id="conceptual-components">Conceptual Components</h2>
 <p>In 2022-2024, Altinn will modernize its authorization architecture and components. Therefore, the below description is a mix of as-is and to-be.</p>
 <p>Altinn uses <a href="https://en.wikipedia.org/wiki/Attribute-based_access_control">attribute-based access control (ABAC)</a>.</p>

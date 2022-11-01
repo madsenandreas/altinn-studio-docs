@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The authorization components provide access management and control functionality for Altinn Apps, Altinn Platform, and other consumers." />
+    <meta name="description" content="The authorization components provide access management and control functionality for digital and analog services hosted in the Altinn Platform or other places." />
 <meta name="altinn_pagedir" class="elastic" content="technology\solutions\altinn-platform\authorization\" />
 <meta name="altinn_title" class="elastic" content="Authorization" />
 
@@ -113,7 +113,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +213,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -295,7 +295,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,11 +303,11 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1123,11 +1123,18 @@ if(host != "localhost")
                 <span class="links"><a href='/technology/'>Technology</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/solutions/'>Solutions</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/solutions/altinn-platform/'>Altinn Platform</a> <span class='adocs-breadcrumb-divider'> / </span> Authorization</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/architecture">architecture</a><a class="label label-default" href="https://docs.altinn.studio/tags/solution">solution</a></div><div id="body-inner"><h1 class="a-fontBold">Authorization</h1>
-              <p class="a-leadText" id="leadText">The authorization components provide access management and control functionality for Altinn Apps, Altinn Platform, and other consumers.</p><p>In 2022-2024, Altinn will modernize its authorization architecture and components. Therefore, the below description is a mix of as-is and to-be.</p>
+              <p class="a-leadText" id="leadText">The authorization components provide access management and control functionality for digital and analog services hosted in the Altinn Platform or other places.</p><p>The typical scenario is that some event will be triggered, or data will be read, updated, or created by a digital or analog service. A service owner owns this service and has defined some business rules for who is allowed to use the service.</p>
+<p>This service needs to control who can access and modify data.</p>
+<p>Altinn Authorization provides the capability to verify and enforce this.</p>
+<figure><a href="userscenario.drawio.svg"><img src="userscenario.drawio.svg" alt="User Scenario" title="User scenario" /></a><figcaption><h4>User scenario</h4></figcaption></figure>
+<p>Users and organizations get rights to access a service from defined rules and policies.</p>
+<p>The below drawing show all aspects that control who and what rights a user or organization has.</p>
+<figure><a href="rules.drawio.svg"><img src="rules.drawio.svg" alt="Rules" title="Access control aspects" /></a><figcaption><h4>Access control aspects</h4></figcaption></figure>
+<h2 id="conceptual-components">Conceptual Components</h2>
+<p>In 2022-2024, Altinn will modernize its authorization architecture and components. Therefore, the below description is a mix of as-is and to-be.</p>
 <p>Altinn uses <a href="https://en.wikipedia.org/wiki/Attribute-based_access_control">attribute-based access control (ABAC)</a>.</p>
 <p>In short, Altinn authorization control access through rules defined in XACML Policies. Each rule defines which resource the rule describes, what operation, and who can perform it.</p>
 <p>When defining the authorization components, we used the <a href="https://en.wikipedia.org/wiki/XACML">XACML reference architecture</a>.</p>
-<h2 id="conceptual-components">Conceptual Components</h2>
 <p>We have defined the following conceptual components/functional areas from the reference architecture.</p>
 <h3 id="pdp---policy-decision-point">PDP - Policy Decision Point</h3>
 <p>The policy decision point is responsible for deciding if an authorization request

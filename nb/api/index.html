@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/nb/app/"><span>Lage apper</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/"><span>Lage apper</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/getting-started/"><span>Kom i gang</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/design/guidelines/wcag/"><span>Tilgjengelighet</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/"><span>Utvikling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/"><span>Utvikling</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,7 +303,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/validation/"><span>Validering</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/"><span>Konfigurasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/"><span>Konfigurasjon</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/messagebox/"><span>Meldingsboks</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -311,13 +311,13 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/configuration/messagebox/hide_instances/"><span>Skjule instanser</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/"><span>Autorisasjon</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/authorization/rules/"><span>Regelbibliotek</span></a></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/"><span>Veiledning</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/"><span>Veiledning</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Roller</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Roller</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roller</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -415,9 +415,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/launched-apps/digdir/be-om-api-nokkel/"><span>Tilgang til REST API</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/nb/api/apps/"><span>App</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/metadata/"><span>Metadata</span></a></li>
       <li class="dd-item">
@@ -602,17 +602,30 @@ if(host != "localhost")
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian">translate-to-norwegian</a></div><div id="body-inner"><h1 class="a-fontBold">Altinn 3 API</h1>
               <p class="a-leadText" id="leadText">Beskrivelse av Altinn API for sluttbrukere og applikasjonseiere.</p><h2>På denne siden:</h2><nav id="TableOfContents">
   <ul>
+    <li><a href="#the-two-primary-data-structures">The two primary data structures</a></li>
     <li><a href="#the-apis">The APIs</a></li>
     <li><a href="#api-user-groups">API user groups</a></li>
   </ul>
-</nav><h2 id="the-apis">The APIs</h2>
-<p>The new solution will have multiple APIs, but they can be divided in two groups. The app APIs and the Platform APIs.</p>
+</nav><h2 id="the-two-primary-data-structures">The two primary data structures</h2>
+<p>This will be an overview of the primary models used in Altinn 3. The primary purpose of this is to form a basic understanding of the models before introducing the APIs.</p>
+<figure><a href="instance.drawio.svg"><img src="instance.drawio.svg" alt="Instance" title="An instance can contain many data elements. Each data element must refer to a single data file." /></a><figcaption><h4>An instance can contain many data elements. Each data element must refer to a single data file.</h4></figcaption></figure>
+<h3 id="instance">Instance</h3>
+<p>The Instance model is the main metadata document in Altinn 3. It is used by Altinn to keep track of the state of an interaction between an end user and the owner of an app. An instance must be associated with an app and a reportee as the instance owner.</p>
+<p>Instances are also a little bit like containers for all other documents; forms and unstructured data collected during an interaction between an end user and the application owner. The number of documents and files being produced will depend on the app.</p>
+<p>In a simple app, an end user will fill in a form and submit it to the application owner. This would typically produce a one way interaction where only one or two documents are collected in the instance. In more advanced apps the number of documents and files would extend to multiple forms, attachments, and feedback or validation messages from the application owner.</p>
+<p>An instance can&rsquo;t reference data directly, but will hold a list of data elements with more information about collected data.</p>
+<h3 id="dataelement">DataElement</h3>
+<p>The DataElement model is a metadata document for a specific form or binary file. The most important aspects of this document is that it holds information about where the actual data is being stored, and how the data is being used by the application.</p>
+<p>Most apps will automatically create a data element to represent the form being filled out by the user. More advanced apps will also require the user to upload attachments or to fill in multiple forms.</p>
+<p>An instance can have many data elements, but each data element can not reference more than one data file.</p>
+<h2 id="the-apis">The APIs</h2>
+<p>The Altinn 3 solution has multiple APIs, but they can be divided in two groups. The app APIs and the Platform APIs.</p>
 <h3 id="app-api">App API</h3>
 <p>The application API is an API that provides access to specific instances of a specific app. The API provides features for working with data elements while keeping the metadata document for the instance and its data elements updated. The instance level endpoints revolves around moving an instance through its defined process and controlling some instance level settings.</p>
-<p>Metadata for an app is the second job of the app API. There are endpoint that give access to the metadata of the app itself, its data types and process description.</p>
-<p>Every app will expose almost identical endpoints and functionality. External parties should need only one client implementation across all app APIs. Technically there is nothing preventing an application owner from adding or making changes to the API, but in those cases it is probably an application with a different process flow. In these cases, the application might require some special handling, and additional documentation should be provided by the application owner.</p>
+<p>Metadata for an app is the second job of the app API. There are endpoints that give access to the metadata of the app itself, its data types and process description.</p>
+<p>Every app will expose almost identical endpoints and functionality. External parties should need only one client implementation across all app APIs, but it is possible for the application owner to extend the app API with additional endpoints and even make changes to default functionality. Documentation for app specific API and features must be retrived directly from the app or from the application owner.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span>https://{org}.apps.altinn.no/{org}/{appname}
-</span></span></code></pre></div><p>The URL identifies the application owner specific hostname using the short name <strong>org</strong>, and the identificator of the app consisting of both the application owner short name and the name of the app <strong>org/appname</strong>.</p>
+</span></span></code></pre></div><p>The URL identifies the application owner specific hostname using the short name <strong>org</strong>, and the identificator of the app consisting of both the application owner short name and the name of the app. Combining the org and appname results in what we call the app id <strong>org/appname</strong>.</p>
 <h3 id="platform-api">Platform API</h3>
 <p>The Platform APIs are primarily made to support the applications hosted on the platform, but a lot of endpoints can be used directly by both application owners and users. Primarily on the Authentication, Events and Storage APIs.</p>
 <p>The Storage API provides access to all instances across all applications. It can be used to access metadata about applications, instances, data elements and instance activitylog (events), as well as the actual data content. This API should be the preferred method for application owners to download data associated with instances created based on their applications. Application users can use it if they need a form of message box or want to retrieve archived instances and their data.</p>

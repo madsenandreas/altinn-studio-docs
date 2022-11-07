@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The Altinn Apps architecture support that applications can be buildt based on many different framworks/templates." />
+    <meta name="description" content="The Altinn App Template has an architecture that allows various frameworks and technologies to realize it." />
 <meta name="altinn_pagedir" class="elastic" content="technology\solutions\app-template\architecture\" />
 <meta name="altinn_title" class="elastic" content="Architecture" />
 
@@ -113,7 +113,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +213,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -295,7 +295,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,11 +303,11 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1111,16 +1111,17 @@ if(host != "localhost")
                 <span class="links"><a href='/technology/'>Technology</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/solutions/'>Solutions</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/solutions/app-template/'>App Template</a> <span class='adocs-breadcrumb-divider'> / </span> Architecture</span>
             </div>
           </div><div id="body-inner"><h1 class="a-fontBold">Architecture</h1>
-              <p class="a-leadText" id="leadText">The Altinn Apps architecture support that applications can be buildt based on many different framworks/templates.</p><p>These are the current supported templates:</p>
-<ul class="children children-li js-moveChildrenFrom">
-
-	
-		
-	
+              <p class="a-leadText" id="leadText">The Altinn App Template has an architecture that allows various frameworks and technologies to realize it.</p><p>The template has two parts.</p>
+<ul>
+<li>Frontend - modern javascript application that renders UI</li>
+<li>Backend - modern cloud-native application exposing API to frontend and other consumers</li>
 </ul>
-
-
-
+<figure><a href="architecture.app.drawio.svg"><img src="architecture.app.drawio.svg" alt="App architecture" title="App architecture" /></a><figcaption><h4>App architecture</h4></figcaption></figure>
+<h3 id="frontend">Frontend</h3>
+<p>The frontend is modern Single SPA applicaiton that consumes the API from backend.</p>
+<p>All configuration about how the UI should be rendered for a specific app is loaded from API.</p>
+<h3 id="backend">Backend</h3>
+<h3 id="technology">Technology</h3>
 
 
 <footer class=" footline" ></footer>

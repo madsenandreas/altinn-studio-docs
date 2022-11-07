@@ -113,7 +113,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +213,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -295,7 +295,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,11 +303,11 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1142,6 +1142,31 @@ For Altinn Studio Designer and Altinn.Platform.Receipt, these files are deployed
         
     </footer>
 </article>
+<article class="post technology">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/technology/solutions/app-template/ui/">User Interface</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>For digital services targeting API consumers strictly, there is no need for the front end.
+The application developer configures the UI in Altinn Studio UI-designer.
+The configuration files are deployed together with the application.
+UI rendering The UI-Render functionality in App Frontend renders the UI based on the configuration set in Altinn Studio when users access the digital service.
+Process views The App template front end has default support for the supported task types in the application. <a class="read-more" href="/technology/solutions/app-template/ui/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/app-template/">app-template</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/ui/">ui</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/front-end/">front-end</a>
+            
+        
+    </footer>
+</article>
 <article class="post community">
     <header class="post-header">
         <h2 class="post-title"><a href="/community/contributing/handbook/front-end/developing/">Developing locally</a></h2>
@@ -1314,31 +1339,6 @@ Usage Dispatching a message event is done the following way:
                 <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/front-end/">front-end</a>
-            
-        
-    </footer>
-</article>
-<article class="post community">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/community/contributing/handbook/front-end/styling/">Styling (css)</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Summary Styling in React is done per component using a combination of Material-UI and compatible JSS.
-Components shall not be styled with CSS classes in .CSS files.
-Different component types should use different styling methods, or a combination.
-Proposed order of styling methods The following order is proposed when considering styling methods:
-Styled Components (Accepts props, logic, theming) Material-UI&rsquo;s JSS (Accepts theming) Inline Styling, the React way (Accepts props, logic, theming. <a class="read-more" href="/community/contributing/handbook/front-end/styling/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/front-end/">front-end</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/styling/">styling</a>
             
         
     </footer>

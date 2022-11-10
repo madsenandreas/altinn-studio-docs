@@ -305,9 +305,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -981,6 +981,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/solutions/altinn-platform/authorization/contexthandler/"><span>Context Handler</span></a></li>
       <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/migration/"><span>Fremdriftsplan</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/migration/servicemigrationplan/"><span>Plan tjenestemigrering</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/technology/solutions/altinn-platform/authorization/pap/"><span>PAP</span></a></li>
       <li class="dd-item">
         <a href="/technology/solutions/altinn-platform/authorization/pdp/"><span>PDP</span></a></li>
@@ -1123,6 +1127,53 @@ if(host != "localhost")
 </nav>
 
 	</div><article class="post technology">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/technology/architecture/capabilities/devops/quality/">Quality Management Capabilities</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Quality Assurance &amp; Reviews All pull request in GitHub requires approved reviews of the changes before it can be merged in to the master branch.
+See current and earlier pull request.
+For infrastructure changes the pull request is done in Azure Devops with the same type of reviews.
+Defect Tracking &amp; Management Defects are tracked in Gitub as bugs. See active and closed bugs.
+Static SW Analysis Enablement Every pull requsts needs to adhere to code quality standard verifyed with static code analysis. <a class="read-more" href="/technology/architecture/capabilities/devops/quality/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/devops/">devops</a>
+            
+        
+    </footer>
+</article>
+<article class="post technology">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/technology/architecture/components/application/construction/altinn-platform/receipt/">Application architecture receipt component - Altinn Platform</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>The receipt frontend view is available at https://platform.at22.altinn.cloud/receipt/{instanceOwnerId}/{instanceId}.
+The receipt component also exposes apis that are intended for use by the receipt frontend. If you need information about the user, instance or party you should use their respective platform components.
+Receipt backend exposes two enitities through API endpoints prefixed with https://platform.at22.altinn.cloud/receipt/api/v1/; user and extendedInstance
+/users A user is the entity which is logged in in Altinn and performs actions for on behalf of an instance owner. <a class="read-more" href="/technology/architecture/components/application/construction/altinn-platform/receipt/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/solution/">solution</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/receipt/">receipt</a>
+            
+        
+    </footer>
+</article>
+<article class="post technology">
     <header class="post-header">
         <h2 class="post-title"><a href="/technology/architecture/components/application/construction/altinn-platform/register/">Application construction components - Altinn Platform Register</a></h2>
     </header>
@@ -1301,52 +1352,6 @@ Policy Enforcement PointThere are different types of Policy Enforcement Points 
                 <a class="label label-default" href="https://docs.altinn.studio/tags/security/">security</a>
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/runtime-capabilities/">runtime capabilities</a>
-            
-        
-    </footer>
-</article>
-<article class="post technology">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/technology/architecture/capabilities/devops/softwareconfiguration/">Software Configuration &amp; Release Management Capabilities</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Version, Release &amp; Artefact Management Capabilities Version Management Azure DevOps pipelines control the version of each component. Each build gets its version. So the DevOps team can install an older component version at any time. In addition, the published NuGet packages have different versions handled by NuGet.
-Software Configuration Management We use value files in Azure DevOps for Helm Charts to control the different configurations for different environments. In addition, Azure Key vaults store configuration secrets. <a class="read-more" href="/technology/architecture/capabilities/devops/softwareconfiguration/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/todo/">todo</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/devops/">devops</a>
-            
-        
-    </footer>
-</article>
-<article class="post technology">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/technology/architecture/components/application/construction/altinn-platform/storage/">Application Construction components - Storage</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>API Controllers Storage exposes functionality throug API controllers.
-The following controllers exist:
-Applications Data InstanceEvents Instances MessageboxInstances Process Dependencie Storage components
-See complete list of dependencies in Altinn.Platform.Storage.csproj file for storage.
-Docker configuration Storage listen on port 5010.
-See DockerFile for details. <a class="read-more" href="/technology/architecture/components/application/construction/altinn-platform/storage/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/solution/">solution</a>
             
         
     </footer>

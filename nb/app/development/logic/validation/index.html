@@ -1082,8 +1082,10 @@ må prefixes med typen validering man ønker å gi, f.eks <code>*WARNING*</code>
 <figure><a href="warning-message.jpeg"><img src="warning-message.jpeg" alt="&amp;ldquo;Informasjonsmelding&amp;rdquo;" title="Eksempel på advarselsmelding (*WARNING* - prefix)" /></a><figcaption><h4>Eksempel på advarselsmelding (*WARNING* - prefix)</h4></figcaption></figure>
 <p>Det er også mulig å overstyre tittelen man ser på meldingene ved å legge til nøkklene <code>soft_validation.info_title</code>, <code>soft_validation.warning_title</code>, og <code>soft_validation.success_title</code> i tekstressursene om man ønsker å sette custom tittel.</p>
 <h2 id="gruppevalidering">Gruppevalidering</h2>
-<p>Det er mulig å gjøre valideringer på en repeterende gruppe i det brukeren ønsker å lagre en gitt indeks.
-Dette gjøres ved å legge til en trigger på gruppe-komponenten i layoutfilen (f.eks <code>FormLayout.json</code>). Eksempel:</p>
+<p>Det er mulig å gjøre valideringer på en repeterende gruppe i det brukeren ønsker å lagre en gitt rad.
+Dette gjøres ved å legge til en trigger på gruppe-komponenten i layoutfilen (f.eks <code>FormLayout.json</code>).
+Det er to forskjellige triggere som kan brukes på grupper; <code>validation</code> kjører validering på hele gruppen,
+og <code>validateRow</code> kjører kun validering på raden brukeren prøver å lagre. Eksempel:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;data&#34;</span>: {
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;layout&#34;</span>: [
@@ -1097,13 +1099,13 @@ Dette gjøres ved å legge til en trigger på gruppe-komponenten i layoutfilen (
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
 </span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;group&#34;</span>: <span style="color:#f1fa8c">&#34;Endringsmelding-grp-9786.OversiktOverEndringene-grp-9788&#34;</span>
 </span></span><span style="display:flex;"><span>        },
-</span></span><span style="display:flex; background-color:#3d3f4a"><span>        <span style="color:#ff79c6">&#34;triggers&#34;</span>: [<span style="color:#f1fa8c">&#34;validation&#34;</span>]  <span style="color:#6272a4">// &lt;--- Legg til denne
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        <span style="color:#ff79c6">&#34;triggers&#34;</span>: [<span style="color:#f1fa8c">&#34;validateRow&#34;</span>]  <span style="color:#6272a4">// &lt;--- Legg til denne
 </span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>      },
 </span></span><span style="display:flex;"><span>      ...
 </span></span><span style="display:flex;"><span>    ]
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Dette vil da sørge for at det vil kjøres validering på komponentene som er en del av gruppen på den aktuelle indeksen man jobber på.
+</span></span></code></pre></div><p>Dette vil da sørge for at det vil kjøres validering på komponentene som er en del av gruppen på den aktuelle raden man jobber på.
 Om det finnes valideringsfeil så vil man stoppes fra å lagre gruppen før dette er rettet opp i.</p>
 <p>Om man legger til validering på gruppe-komponenten så vil det også gå et kall mot valideringen backend med en header som spesifiserer hvilken komponent som trigget valideringen: <code>ComponentId</code>.
 Valideringer er skrevet i C#, i <code>ValidationHandler.cs</code>-filen i applikasjonsmalen. I valideringen kan man så hente ut denne id&rsquo;en og skreddersy eventuelle valideringer som skal gjøres backend, eksempel:</p>

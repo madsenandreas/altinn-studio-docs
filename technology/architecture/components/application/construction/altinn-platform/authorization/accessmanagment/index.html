@@ -113,7 +113,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +213,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -295,7 +295,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,7 +303,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -455,7 +455,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/api/studio/"><span>Studio</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/community/"><span>Community</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/community/"><span>Community</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/about/"><span>About</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -463,7 +463,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/community/about/open-source/"><span>Open source</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/community/contributing/"><span>Contributing</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/community/contributing/"><span>Contributing</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/contributing/propose-component/"><span>Propose a new component</span></a></li>
       <li class="dd-item">
@@ -471,7 +471,7 @@ if(host != "localhost")
           <a href="/community/contributing/intro/">
             <span>Intro for developers</span></a></li>
       <li class="dd-item">
-        <a href="/community/contributing/handbook/"><span>Handbook</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/community/contributing/handbook/"><span>Handbook</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/contributing/handbook/azure-devops/"><span>Azure DevOps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1149,7 +1149,12 @@ Files is located in <a href="https://github.com/Altinn/altinn-access-management/
 <li>AuthenticationAPI</li>
 </ul>
 <h2 id="database">Database</h2>
-<p>The data for deelegation is stored in postgreSQL and Azure blob storage</p>
+<p>The data for delegation is stored in postgreSQL and Azure blob storage.</p>
+<ul>
+<li>Delegationchange - contains delegation info for app delegations</li>
+<li>ResourceDelegationChange - contains delegation change info for resoruce delegations</li>
+<li>AuthorizationResources - Extract from resource registry with the most important resource information</li>
+</ul>
 <figure><a href="dbmodel.drawio.svg"><img src="dbmodel.drawio.svg" alt="Database" title="Access management Database" /></a><figcaption><h4>Access management Database</h4></figcaption></figure>
 <h2 id="api">API</h2>
 <p>The following API is identifed</p>

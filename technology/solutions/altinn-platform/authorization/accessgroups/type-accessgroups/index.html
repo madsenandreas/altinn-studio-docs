@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="0.6 versjon av tilgangsgruppehierarki som skal benyttes for tjenester i Altinn autorisasjon 3.0" />
+    <meta name="description" content="Her finner du forslag til nye tilgangsgrupper for virksomheter. Disse skal erstatte Altinn rollene som i dag benyttes for å gi tilgang til en tjeneste" />
 <meta name="altinn_pagedir" class="elastic" content="technology\solutions\altinn-platform\authorization\accessgroups\type-accessgroups\" />
 <meta name="altinn_title" class="elastic" content="Forslag tilgangsgupper i 3.0" />
 
@@ -113,7 +113,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +213,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -295,7 +295,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,11 +303,11 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1117,13 +1117,16 @@ if(host != "localhost")
                 <span class="links"><a href='/technology/'>Technology</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/solutions/'>Solutions</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/solutions/altinn-platform/'>Altinn Platform</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/solutions/altinn-platform/authorization/'>Authorization</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/solutions/altinn-platform/authorization/accessgroups/'>Access Groups</a> <span class='adocs-breadcrumb-divider'> / </span> Tilgangsgrupper 3.0</span>
             </div>
           </div><div id="body-inner"><h1 class="a-fontBold">Forslag tilgangsgupper i 3.0</h1>
-              <p class="a-leadText" id="leadText">0.6 versjon av tilgangsgruppehierarki som skal benyttes for tjenester i Altinn autorisasjon 3.0</p><h2>On this page:</h2><nav id="TableOfContents">
+              <p class="a-leadText" id="leadText">Her finner du forslag til nye tilgangsgrupper for virksomheter. Disse skal erstatte Altinn rollene som i dag benyttes for å gi tilgang til en tjeneste</p><h2>On this page:</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#hva-er-tilgangsgruppe-og-hvordan-skal-de-brukes">Hva er tilgangsgruppe og hvordan skal de brukes</a></li>
+  </ul>
+
   <ul>
     <li><a href="#skatt-avgift-og-regnskap">Skatt, avgift og regnskap</a></li>
     <li><a href="#lønn-og-personal">Lønn og personal</a></li>
     <li><a href="#miljø-ulykke-og-sikkerhet">Miljø, ulykke og sikkerhet</a></li>
     <li><a href="#forhold-ved-virksomheten">Forhold ved virksomheten</a></li>
-    <li><a href="#postmottak">Postmottak</a></li>
     <li><a href="#offentlige-digitale-tjenester-tverrfaglig">Offentlige Digitale tjenester (tverrfaglig)</a></li>
     <li><a href="#tilgangsstyring-og-administrasjon">Tilgangsstyring og administrasjon</a></li>
     <li><a href="#jordbruk-skogbruk-fisk-og-akvakultur">Jordbruk, skogbruk, fisk og akvakultur</a></li>
@@ -1140,14 +1143,15 @@ if(host != "localhost")
     <li><a href="#revisor">Revisor</a></li>
     <li><a href="#konkursbo">Konkursbo</a></li>
   </ul>
-</nav><p>Tilgangsgrupper <strong>for virksomheter</strong> skal erstatte 2.0 rollene som i dag benyttes til å gi tilgang til en tjeneste, se <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_enterprices/">Altinn roller brukt av virksomheter.</a></p>
-<p>Den største forskjellen på dagens 2.0 roller og tilgangsgrupper i 3.0 vil være:</p>
+</nav><p><em>Denne siden er under arbeid.</em></p>
+<h2 id="hva-er-tilgangsgruppe-og-hvordan-skal-de-brukes">Hva er tilgangsgruppe og hvordan skal de brukes</h2>
+<p>Den største forskjellen på dagens <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_enterprices/">2.0 roller</a> og tilgangsgrupper i 3.0 vil være:</p>
 <ul>
 <li>tilgangsgruppene vil være flere, mer granulerte og inneholde tilgang til færre tjenester</li>
 <li>tilgangsgruppen vil grupperes i et hierarki slik at det blir lettere for administrator å finne frem til riktig tilgangsgruppe</li>
-<li>med mer granulerte tilgangsgrupper enn dagens 2.0 roller blir det enklere for tjenesteeiere å finne en tilgangsgruppe som treffer målgruppen for sin tjeneste</li>
+<li>med mer granulerte tilgangsgrupper enn dagens 2.0 roller blir det enklere for tjenesteeiere å finne en tilgangsgruppe som bedre treffer målgruppen for sin tjeneste</li>
 </ul>
-<p>Forslaget til inndeling i tilgangsgrupper har hentet inspirasjon til gruppering av tilganger blandt annet fra <a href="https://www.ssb.no/klass/klassifikasjoner/6">standarder for kategorisering av virksomheter hos SSB</a> og fra struktur på <a href="https://www.altinn.no/skjemaoversikt/?category=category">Altinns skjemakatalog</a></p>
+<p>Forslaget til inndeling i tilgangsgrupper har hentet inspirasjon til gruppering av virksomhetsområder og tjenester fra blandt annet <a href="https://www.ssb.no/klass/klassifikasjoner/6">standarder for kategorisering av virksomheter hos SSB</a> og fra dagens struktur på <a href="https://www.altinn.no/skjemaoversikt/?category=category">Altinns skjemakatalog</a></p>
 <p>Det vil kun være mulig å knytte tjenester til det &ldquo;laveste&rdquo; nivå i tilgangshierarkiet, også kalt løvnoden. 
 Det betyr at en tjeneste f eks ikke kan knyttes til tilgangsgruppen &ldquo;Skatt, avgift og regnskap&rdquo; eller til undergruppen &ldquo;Skatt&rdquo;, 
 men må knyttes til løvnodene som er &ldquo;Foretaksskatt&rdquo; og/eller &ldquo;Skattegrunnlag&rdquo;. De tilgangsgrupper som foreløpig er vurdert til <em>løvnoder</em> og er markert med * i oversikten. For noen løvnoder kan det bli aktuelt å granulere tilgangene mer, dersom det avdekkes behov for det.</p>
@@ -1155,7 +1159,14 @@ men må knyttes til løvnodene som er &ldquo;Foretaksskatt&rdquo; og/eller &ldqu
 <p>Delegering av tilgangsgruppe til en bruker vil kun registreres på laveste nivå (løvnode). 
 Årsaken til disse begrensningene er at det vil gi oss større frihet til å revidere tilgangsgrupper senere uten at det nødvendigvis betyr stor opprydding av delegeringer for sluttbruker eller tjenesteeier.</p>
 <p>Eksterne roller (fra f eks Enhetsregisteret) vil automatisk få tilgang til en tilgangsgruppe for en virksomhet. Altinn vil i samarbeid med Enhetsregisteret gjøre en ny vurdering av hvilke eksterne roller det er aktuelt å knytte til de ulike tilgangsgruppene.</p>
-<p>Forslag til nye tilgangsgrupper sendes ut på høring september 2022.</p>
+<h3 id="tilgangsgrupper-for-digital-post-kommer-senere">Tilgangsgrupper for digital post kommer senere</h3>
+<p>Virksomheter får i dag tilgang til sin digital post i Altinn gjennom roller rettet mot &ldquo;post/arkiv&rdquo; som settes på tjenestenivå. Det er pr i dag uklart om denne måten å styre tilgang til digital post skal videreføres når man migrerer digital post fra Altinn 2 til Altinn 3.</p>
+<p>Det er derfor i første versjonen av nye tilgangsgrupper vurdert behovet for tilgangsgrupper knyttet til mottak av digital post</p>
+<h3 id="høring">Høring</h3>
+<p>Forslag til nye tilgangsgrupper sendes ut på høring desember 2022.
+Vi ønsker at dagens tjenesteeiere vurderer om foreslåtte tilgangsgrupper er hensiktsmessige for deres tjenester. Vi ønsker også tilbakemelding hvis man har forslag til bedre/annen navngivning på tilgangsgruppene enn de som foreligger.</p>
+<p>Tilbakemelding kan gis på epost til <a href="mailto:servicedesk@altinn.no">servicedesk@altinn.no</a> innen 31 januar 2023.</p>
+<h1 id="forslag-til-tilgangsgrupper">Forslag til tilgangsgrupper:</h1>
 <h2 id="skatt-avgift-og-regnskap">Skatt, avgift og regnskap</h2>
 <p>Tilgangsgruppene vil være aktuell for alle virksomheter som er &ldquo;økonomisk aktive&rdquo; (skatte- og regnskapspliktig)</p>
 <p>Tilgangsgruppen har følgende undergrupper:</p>
@@ -1204,8 +1215,8 @@ men må knyttes til løvnodene som er &ldquo;Foretaksskatt&rdquo; og/eller &ldqu
 <li>*Miljørydding, miljørensing og lignende (tilsvarende som i Altinn skjemakatalog)</li>
 </ul>
 </li>
-<li>Sikkerhet og internkontroll (tilsvarende som i Altinn skjemakatalog)</li>
-<li>Ulykke og yrkesskade (tilsvarende som i Altinn skjemakatalog)</li>
+<li>*Sikkerhet og internkontroll (tilsvarende som i Altinn skjemakatalog)</li>
+<li>*Ulykke og yrkesskade (tilsvarende som i Altinn skjemakatalog)</li>
 </ul>
 <p>Beslektet rolle i 2.0:  &ldquo;Energi, miljø og klima&rdquo;</p>
 <h2 id="forhold-ved-virksomheten">Forhold ved virksomheten</h2>
@@ -1221,34 +1232,6 @@ men må knyttes til løvnodene som er &ldquo;Foretaksskatt&rdquo; og/eller &ldqu
 <li>*Tilskudd, støtte og erstatning (tilsvarende som i Altinn skjemakatalog)</li>
 </ul>
 <p>Beslektet rolle i 2.0: &ldquo;Signerer av samordnet registermelding&rdquo; og &ldquo;Patent, varemerke og design&rdquo;,</p>
-<h2 id="postmottak">Postmottak</h2>
-<p>Tilgangsgruppene vil være aktuell for alle virksomheter</p>
-<p>Tilgangsgruppen har følgende undergrupper:</p>
-<ul>
-<li>*Post uten angitt tema</li>
-<li>*Plan, bygg og geodata</li>
-<li>*Helse, sosial og omsorg</li>
-<li>*Taushetsbelagt post innen helse, sosial og omsorg</li>
-<li>*Oppvekst og utdanning</li>
-<li>*Taushetsbelagt post innen helse, sosial og omsorg</li>
-<li>*Kultur, idrett og fritid</li>
-<li>*Trafikk, reiser og samferdesl</li>
-<li>*Natur og miljø</li>
-<li>*Næringsutvikling</li>
-<li>*Skatter og avgifter</li>
-<li>*Tekniske tjenester</li>
-<li>Taushetsbelagt post
-<ul>
-<li>*Taushetsbelagt post uten angitt tema</li>
-<li>*Taushetsbelagt post innen helse, sosial og omsorg</li>
-<li>*Taushetsbelagt post innen oppvekst og utdanning</li>
-</ul>
-</li>
-</ul>
-<p>Beslektet rolle i 2.0: &ldquo;Post/arkiv&rdquo;. 
-Løvnode &ldquo;UPost uten angitt tema&rdquo; er tiltenkt generelle meldinger som ikke naturlig hører hjemme i en av de andre løvnodene, eller som brukes på tvers av ulike tema.</p>
-<p>Beslektet rolle i 2.0: &ldquo;Taushetsbelagt post&rdquo;. 
-Løvnode &ldquo;Taushetsbelagt post uten angitt tema&rdquo; er tiltenkt generelle meldinger som ikke naturlig hører hjemme i en av de andre løvnodene, eller som brukes på tvers av ulike tema.</p>
 <h2 id="offentlige-digitale-tjenester-tverrfaglig">Offentlige Digitale tjenester (tverrfaglig)</h2>
 <p>Tilgangsgruppene vil være aktuell for mange virksomheter</p>
 <p>Tilgangsgruppen har følgende undergrupper:</p>
@@ -1256,8 +1239,8 @@ Løvnode &ldquo;Taushetsbelagt post uten angitt tema&rdquo; er tiltenkt generell
 <li>*Mine sider hos kommunen</li>
 <li>Dataintegrasjoner
 <ul>
-<li>*Maskinportautorisasjon</li>
-<li>*Hendelser</li>
+<li>*Programmeringsgrensesnitt (API)</li>
+<li>*Maskinlesbare hendelser</li>
 </ul>
 </li>
 </ul>
@@ -1271,6 +1254,7 @@ Løvnode &ldquo;Taushetsbelagt post uten angitt tema&rdquo; er tiltenkt generell
 <li>*Hovedadministrator</li>
 <li>*Kundeadministrator (Kunde-leverandør)</li>
 </ul>
+<p>Beslektet rolle i 2.0: Klientaadministrator, Tilgangsstyrer, Hovedadministrator</p>
 <h2 id="jordbruk-skogbruk-fisk-og-akvakultur">Jordbruk, skogbruk, fisk og akvakultur</h2>
 <p>Tilgangsgruppene er bransjespesifikk og vil være aktuell for virksomheter som bruker tjenester rettet mot disse bransjene</p>
 <p>Tilgangsgruppen har følgende undergrupper:</p>
@@ -1389,20 +1373,22 @@ Løvnode &ldquo;Taushetsbelagt post uten angitt tema&rdquo; er tiltenkt generell
 <li>*Annen tjenesteyting</li>
 </ul>
 <h2 id="regnskapsfører">Regnskapsfører</h2>
-<p>Tilgjengelig kun for regnskapsfører og brukes for å gi egne ansatte tilgang til virksomheter/klienter de er registert som regnskapsførere for</p>
+<p>Tilgjengelig kun for regnskapsfører og brukes for å gi egne ansatte tilgang til virksomheter/klienter de er registert som regnskapsførere for i Enhetsregisteret</p>
 <p>Tilgangsgruppen har følgende undergrupper:</p>
 <ul>
 <li>*Regnskapsfører med signeringsrettighet</li>
 <li>*Regnskapsfører uten signeringsrettighet</li>
 <li>*Regnskapsfører lønn</li>
 </ul>
+<p>Disse tilgangsgruppen er videreføring av tilsvarende roller som finnes i dag for regnkspaførere</p>
 <h2 id="revisor">Revisor</h2>
-<p>Tilgjengelig kun for revisor og brukes for å gi egne ansatte tilgang til virksomheter/klienter de er registert som revisor for</p>
+<p>Tilgjengelig kun for revisor og brukes for å gi egne ansatte tilgang til virksomheter/klienter de er registert som revisor for  i Enhetsregisteret</p>
 <p>Tilgangsgruppen har følgende undergrupper:</p>
 <ul>
 <li>*Ansvarlig revisor</li>
 <li>*Revisormedarbeider</li>
 </ul>
+<p>Disse tilgangsgruppen er videreføring av tilsvarende roller som finnes i dag for revisorer</p>
 <h2 id="konkursbo">Konkursbo</h2>
 <p>Tilgjengelig kun for konkursbo og brukes for å gi kreditorer og andre tilgangt tilgang til opplysninger vedr et konkursbo</p>
 <p>Tilgangsgruppen har følgende undergrupper:</p>
@@ -1411,6 +1397,7 @@ Løvnode &ldquo;Taushetsbelagt post uten angitt tema&rdquo; er tiltenkt generell
 <li>*Konkursbo lesetilgang</li>
 <li>*Konkursbo skrivetilgang</li>
 </ul>
+<p>Disse tilgangsgruppen er videreføring av tilsvarende roller som finnes i dag for konkursbo</p>
 
 
 <footer class=" footline" ></footer>

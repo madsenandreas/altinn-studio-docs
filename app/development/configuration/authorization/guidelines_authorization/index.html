@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Defining authorizationrules must be done with care. These guidlines tell you what condiderations and choices the app-owner should do when defining good authorixationsrules for an application" />
+    <meta name="description" content="Authorization rules must be defined very carefully. These guidelines explain what the application owner must consider before authorization rules are set for an applicationn" />
 <meta name="altinn_pagedir" class="elastic" content="app\development\configuration\authorization\guidelines_authorization\" />
-<meta name="altinn_title" class="elastic" content="Guidelines authorizationrules" />
+<meta name="altinn_title" class="elastic" content="Guidelines for authorization rules" />
 
-<title>Guidelines authorizationrules – Altinn</title><link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<title>Guidelines for authorization rules – Altinn</title><link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -1123,32 +1123,45 @@ if(host != "localhost")
                 </span>
                 <span class="links"><a href='/app/'>Create apps</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/'>Development</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/configuration/'>Configuration</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/configuration/authorization/'>Authorization</a> <span class='adocs-breadcrumb-divider'> / </span> Guidelines</span>
             </div>
-          </div><div id="body-inner"><h1 class="a-fontBold">Guidelines authorizationrules</h1>
-              <p class="a-leadText" id="leadText">Defining authorizationrules must be done with care. These guidlines tell you what condiderations and choices the app-owner should do when defining good authorixationsrules for an application</p><h2>On this page:</h2><nav id="TableOfContents">
+          </div><div id="body-inner"><h1 class="a-fontBold">Guidelines for authorization rules</h1>
+              <p class="a-leadText" id="leadText">Authorization rules must be defined very carefully. These guidelines explain what the application owner must consider before authorization rules are set for an applicationn</p><h2>On this page:</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#make-sure-you-know-what-you-are-doing">Make sure you know what you are doing!</a></li>
     <li><a href="#roles-must-be-chosen-with-care">Roles must be chosen with care!</a></li>
-    <li><a href="#ask-for-help">Ask for help!</a></li>
-    <li><a href="#be-aware-of">Be aware of&hellip;</a></li>
+    <li><a href="#please-do-not-change-authorizaion-rules-after-production-launch">Please do NOT change authorizaion rules after production launch</a></li>
+    <li><a href="#contact-us---we-will-gladly-provide-assistance">Contact us - we will gladly provide assistance</a></li>
+    <li><a href="#authorization-rules-must-be-tested">Authorization rules must be tested</a></li>
+    <li><a href="#be-aware--altinn-can-impose-changes-to-the-authorization-rules">Be aware : Altinn can impose changes to the authorization rules</a></li>
   </ul>
-</nav><p>Authorizationrules are defined in accordance to the XACML 3.0 standard. The rules will define what conditions must be at place in order to give
-a certain user access to perform one or more steps of an applications <a href="/app/development/configuration/process/">defined workprosess</a>.</p>
+</nav><p>Authorization rules are defined in accordance to the XACML 3.0 standard. The rules will define the conditions that must be met in order to give
+a certain user access to perform one or more steps of an application <a href="/app/development/configuration/process/">defined workprosess</a>.</p>
 <h2 id="make-sure-you-know-what-you-are-doing">Make sure you know what you are doing!</h2>
-<p>The application owner is responsible for setting rules and choosing correct roles that give access to information in accordance with the intentions and expectations of the company og person who admnister roles on their behalf.</p>
-<p>So, even though the XACML standard gives the developer great freedom in defining rules, these guidelines must be considerd before making choses in order to ensure that 
-access to the application is correct and work as intended.</p>
-<p>In order to make the right choices for creating authorixationrules for you app you need and overall understanding of how Altinn Authorization works and how its used to controll access. 
+<p>The owner of the service is responsible for creating authorization rules and choosing the right roles that grant access to protected information.
+Although the XACML standard gives the developer great freedom to define rules and choose the roles they want, these guidelines must be followed to ensure that the particular
+user access to the application is correct and works as intended.</p>
+<p>In order to make the right choices for creating authorization rules for you app you need an overall understanding of how Altinn Authorization works and how it is used to control access. 
 At this <a href="https://altinn.github.io/docs/utviklingsguider/styring-av-tilgang/for-tjenesteeier/">page</a> you can read more about Altinn Authorization.</p>
 <h2 id="roles-must-be-chosen-with-care">Roles must be chosen with care!</h2>
-<p>In the authorization config roles are used to define who is allowd to perform what actions. 
-Altinn offers a set og roles that can be applied as condition to get access to a certain prosess step and information that is displayed. 
-Before you choose whitch role to use be sure that you have a good understanding of what these roles mean and what kind of services and information that is expected that this role has access to.</p>
-<h2 id="ask-for-help">Ask for help!</h2>
-<p>As application owner you must allways consider if the intentions in the description of the role are consistent with the service or acess to data that you application provides. 
-To give wrong people access to data they shouldnt have is never good marketing for your service and we therefore strongly advise you to contact Altinn for guidence in choice of roles and setup of authorization rules.</p>
-<h2 id="be-aware-of">Be aware of&hellip;</h2>
-<p>Even though construkting the right aurthorizationrule and choosing the right roles is the responsibility of the applicationowne, Altinn will supervice the authorizationrules for services that are put in production.
-If we detect what we consider to be a wrong use of Altinn Authorization we will, if nessesary take service out of production or impose changes of autorization rules.</p>
+<p>In the authorization configuration file, roles are used to define who is allowed to perform which actions.
+Altinn offers a set of roles required as a condition to access a specific step in the workflow and information displayed.</p>
+<p>Before choosing which role to use, make sure you have sufficient understanding of what these roles mean and what kind of services and information this role is expected to have access to.
+It is important that authorization rules and the choice of roles match the intentions and expectations of the administrator for the party.
+For example, the administrator probably expects that the role &ldquo;Tax&rdquo; gives access to services related to, for example, tax reporting, but simultaneously needs to avoid any role giving access to services within payroll and the personnel area.
+Similarly, please be careful about using, for example, the role &ldquo;Contact Person&rdquo; from the Entity Register to grant access to services - unless the basis for using this role has been thoroughly assessed.</p>
+<h2 id="please-do-not-change-authorizaion-rules-after-production-launch">Please do NOT change authorizaion rules after production launch</h2>
+<p>Changes to authorization rules after a production release will render existing users unable to access the service and must have the new role delegated and any previous role deleted.
+This will impose an unexpected administrative burden on businesses that will use the service because they will then have to clean up delegations made based on the old policy. Such a practice will usually result in dissatisfied users of the application.</p>
+<h2 id="contact-us---we-will-gladly-provide-assistance">Contact us - we will gladly provide assistance</h2>
+<p>As application owner you must allways consider if the intentions in the description of the role are consistent with the service or access to data that your application provides.</p>
+<div class="notices warning" >
+Giving wrong people access to data they shouldn't have is never good marketing for your service and we therefore strongly suggest you contact Altinn for guidance in choosing roles and setting up authorization rules if you have the slightest doubt.
+</div>
+<h2 id="authorization-rules-must-be-tested">Authorization rules must be tested</h2>
+<p>Authorization rules, like everything else, must be tested before the application is launched to verify that the correct roles have access to the necessary data.</p>
+<p><a href="test_authorization_application">Here</a> you can read our recommendations related to testing authorization rules.</p>
+<h2 id="be-aware--altinn-can-impose-changes-to-the-authorization-rules">Be aware : Altinn can impose changes to the authorization rules</h2>
+<p>Although it is the application owner&rsquo;s responsibility to construct the correct authorization rule and select the correct roles, Altinn will supervise or carry out spot checks with the authorization rules for services that are put into production.
+If we discover what we consider incorrect use of Altinn Authorization, we may choose to intervene and remove the service from production or impose changes in the authorization rules.</p>
 
 
 <footer class=" footline" ></footer>

@@ -113,7 +113,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +213,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -295,7 +295,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,7 +303,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1156,12 +1156,12 @@ if(host != "localhost")
 Det betyr at en tjeneste f eks ikke kan knyttes til tilgangsgruppen &ldquo;Skatt, avgift og regnskap&rdquo; eller til undergruppen &ldquo;Skatt&rdquo;, 
 men må knyttes til løvnodene som er &ldquo;Foretaksskatt&rdquo; og/eller &ldquo;Skattegrunnlag&rdquo;. De tilgangsgrupper som foreløpig er vurdert til <em>løvnoder</em> og er markert med * i oversikten. For noen løvnoder kan det bli aktuelt å granulere tilgangene mer, dersom det avdekkes behov for det.</p>
 <p>Det vil være mulig å knytte en tjeneste til flere tilgangsgrupper hvis tjenesteeier mener dette er riktig i forhold til tjenestens innhold.</p>
-<p>Delegering av tilgangsgruppe til en bruker vil kun registreres på laveste nivå (løvnode). 
+<p>Delegering utføres ved at en bruker legges til en tilgangsgruppe. En bruker kan kun legges til tilgangsgrupper på laveste nivå (løvnode). 
 Årsaken til disse begrensningene er at det vil gi oss større frihet til å revidere tilgangsgrupper senere uten at det nødvendigvis betyr stor opprydding av delegeringer for sluttbruker eller tjenesteeier.</p>
 <p>Eksterne roller (fra f eks Enhetsregisteret) vil automatisk få tilgang til en tilgangsgruppe for en virksomhet. Altinn vil i samarbeid med Enhetsregisteret gjøre en ny vurdering av hvilke eksterne roller det er aktuelt å knytte til de ulike tilgangsgruppene.</p>
 <h3 id="tilgangsgrupper-for-digital-post-kommer-senere">Tilgangsgrupper for digital post kommer senere</h3>
 <p>Virksomheter får i dag tilgang til sin digital post i Altinn gjennom roller rettet mot &ldquo;post/arkiv&rdquo; som settes på tjenestenivå. Det er pr i dag uklart om denne måten å styre tilgang til digital post skal videreføres når man migrerer digital post fra Altinn 2 til Altinn 3.</p>
-<p>Det er derfor i første versjonen av nye tilgangsgrupper vurdert behovet for tilgangsgrupper knyttet til mottak av digital post</p>
+<p>Det er derfor i første versjonen av nye tilgangsgrupper ikke foreslått tilgangsgrupper knyttet til mottak av digital post</p>
 <h3 id="høring">Høring</h3>
 <p>Forslag til nye tilgangsgrupper sendes ut på høring desember 2022.
 Vi ønsker at dagens tjenesteeiere vurderer om foreslåtte tilgangsgrupper er hensiktsmessige for deres tjenester. Vi ønsker også tilbakemelding hvis man har forslag til bedre/annen navngivning på tilgangsgruppene enn de som foreligger.</p>

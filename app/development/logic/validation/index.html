@@ -1567,7 +1567,9 @@ This prefix causes the error message that is set to be removed from the field in
 </span></span><span style="display:flex; background-color:#3d3f4a"><span>      <span style="color:#f1fa8c">&#34;*FIXED*Full name can not be longer than 50 characters.&#34;</span>);
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="soft-validations">Soft validations</h2>
+</span></span></code></pre></div><p>If you are having trouble with getting this to work, and you are instead seeing validation messages that include the <code>*FIXED*</code>-prefix, 
+double check that you have <code>&quot;FixedValidationPrefix&quot;: &quot;*FIXED*&quot;</code> set under <code>GeneralSettings</code> in <code>appsettings.json</code>.</p>
+<h2 id="soft-validations">Soft validations</h2>
 <p>Soft validations are validation messages that does not stop the user from submitting or move onto the next step of the process, but that are used to give the user different forms of information.
 These types of validations can for example be used to ask the user to verify input that seems wrong or strange, but which strictly speaking is not invalid, or give useful information for further filling out the form.</p>
 <p>Messages based on soft validation will be displayed once, but the user can choose to move on without making any changes.</p>

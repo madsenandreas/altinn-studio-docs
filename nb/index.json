@@ -480,7 +480,7 @@
 	"title": "Teknologi",
 	"tags": [],
 	"description": "Systemdokumentasjon for Altinn Studio, Altinn Apps og Altinn Platform.",
-	"content": "Dokumentasjon for teknologi er foreløpig kun tilgjengelig på engelsk.\n"
+	"content": "Dokumentasjon for teknologi er foreløpig kun tilgjengelig på engelsk.\nLøsningene\rDen nyeste generasjonen Altinn-plattform lar deg bygge, teste, kjøre og overvåke dine digitale tjenester i skyen.\n"
 },
 {
 	"uri": "https://docs.altinn.studio/nb/app/development/ux/texts/",
@@ -1517,6 +1517,13 @@
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "https://docs.altinn.studio/nb/technology/solutions/",
+	"title": "Løsningene",
+	"tags": [],
+	"description": "Den nyeste generasjonen Altinn-plattform lar deg bygge, teste, kjøre og overvåke dine digitale tjenester i skyen.",
+	"content": "Plattformen består av flere løsninger for å understøtte dette.\nAltinn Studio Altinn Studio er løsningen for å utvikle, vedlikeholde, bygge og distribuere applikasjoner. Applikasjoner som er opprettet kan dekke enkle og komplekse brukerscenarier og har moderne arkitektur.\nLes mer om Altinn Studio\nAltinn Apps Altinn Apps er en fleksibel og skalerbar infrastruktur for container baserte applikasjoner laget i Altinn Studio.\nLes mer om Altinn-apper\nAltinn Plattform Altinn Plattform inneholder komponenter med sentral funksjonalitet som apper og andre konsumenter kan nyttigjøre.\nFunksjonalitet inkluderer lagring, autentisering, autorisasjon, profil, register, kvittering, pdf og hendelser.\nLes mer om Altinn-plattformen\nAltinn App Mal Altinn App-malen er en applikasjonsmal med funksjonalitet for de vanligste scenariene for digitale tjenester.\nAltinn Studio baserer alle apper på denne malen. I tillegg inneholder malen integrasjon med Altinn Platform for å kunne nyttigjøre seg funksjonaliteten i Altinn Platform raskt og effektivt\nLes mer om Altinn App Template\nAltinn CLI Altinn CLI er en kommandolinjeapplikasjon som appeiere kan bruke for å få tilgang til Altinn APIer.\nLes mer om Altinn CLI\nAltinn ReStorage Altinn ReStorage er en kommandolinjeapplikasjon som operatører kan bruke til å gjenopprette og gjenopprette data fra Altinn Platform Storage.\nLes mer om Altinn ReStorage\n"
 },
 {
 	"uri": "https://docs.altinn.studio/nb/tags/losningsforslag/",

@@ -10,8 +10,8 @@
 	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/",
 	"title": "Altinn Studio",
 	"tags": [],
-	"description": "Altinn Studio is the design-time solution for developing, maintaining, building and deploying applications. Applications created can target both simple and complex user scenarios and have a modern web native architecture.",
-	"content": "Altinn Studio is a user-friendly solution where non-technical and technical developers can create apps based on reuse and configuration of existing building blocks.\nExamples on building blocks can be layouts, themes, web-components, texts, API-calls, code lists, and process tasks.\nAltinn Studio consist of serveral parts.\nThird Party Tools\rOne important aspect of the Altinn Studio is that we encourage to use third party development tools to create and modify applications.\nData Storage in Altinn Studio\rDescription of how the data is stored in Altinn Studio\nAltinn Studio Designer\rThis is where developers create, modify, build and deploy apps. In the background Designer uses Git to store code and config in Altinn Studio Repos.\nSolution-specific application components local deveolopment\rAs part of the platform it is created a solution to develop and test applications.\nAltinn Studio Repos\rThe Git repository solution for storing and versioning apps developed with Altinn Studio.\n"
+	"description": "Altinn Studio is the design-time solution for developing, maintaining, building, and deploying applications.",
+	"content": "Applications created can target simple and complex user scenarios and have modern web-native architecture.\nAltinn Studio consists of several parts.\nAltinn Studio Designer Altinn Studio Designer is the main component of Altinn studio and provides the user with the following capabilities.\nDashboard In Altinn Studio Dashboard, you can manage all your applications and create new ones for all organizations you are part of.\nApp configuration UI Designer The application developer can design a UI for digital services in the UI designer.\nAn extensive library of components and view options allows building the UI to match your needs.\nText Management Text management allows the application developer to configure text for all languages that the digital service should support. Even right-to-left languages are supported.\nGet the full details about Altinn Studio Designer.\nData modeling As part of Altinn Studio Designer, a new data modeling tool allows application developers to create and modify data models to be used in App or exported as XSD and used in other solutions.\nAltinn Studio Repos Altinn Studio Repos provides the GIT capability for Altinn Studio with separate repositories for each application or data modeling.\nThird party tools Altinn studio stores all code for an application in a GIT repository. The developer can clone the application code to any machine. The application developer can modify the code in their favorite tools like Visual Studio Code or Visual Studio.\nThe team has created a local platform mock so developers can run apps locally on the dev machine to test and integrate with platform functionality.\n"
 },
 {
 	"uri": "https://docs.altinn.studio/technology/solutions/altinn-platform/authentication/",
@@ -19,6 +19,13 @@
 	"tags": ["platform", "authentication"],
 	"description": "The authentication component provides functionality to authenticate users and systems accessing Altinn Apps and Altinn platform.",
 	"content": "The authentication component is not an ID-provider and only create authentication sessions based on external ID-providers.\nThe authentication component creates JWT tokens with claims about user and system. The claims are based on the authentication information coming from the ID-providers.\nToken exchange for Altinn Portal When a user logs in to the Altinn Portal (Legacy Solution) it gets a Cookie containing information about the logged-in user. This cookie is a propiaritary format for ASP.NET (Full Framework) and can only be understood with application based on .NET Framework having access to the symmetric encryption key.\nThe Altinn Platform is based on .ASP.NET Core and can`t understand the cookie.\nTo allow for a user accessing an App in Altinn Apps or a component in Altinn Platform the current platform will expose an API that can decrypt an ASP.NET cookie and return user information to the Authentication component in Altinn Platform.\nToken exchange for maskinporten Organizations authenticated in maskinporten can exchange their JWT token for a valid Altinn Platform JWT token to be used against Altinn Apps and Altinn Platform.\nToken exchange for ID-porten End users authenticated through ID-porten can exchange their JWT token for a valid Altinn Platform JWT token to be used agains Altinn Apps and Altinn Platform.\nThe solution is available at https://platform.altinn.cloud/authentication/api/v1.\nAuthenticate user The authentication resource enables authenticating a user and redirecting it to another Altinn-url. If the user is not authenticated already it will be sent to the login page before redirecting the user to its final destination {url}.\nGET /authentication?goto={url} Refresh a valid JwtToken GET /refresh Exchange a JWT token from an external token provider Accepted providers include: maskinporten and id-porten. Request must include a bearer token in the authorization header. Set test equal to true if retrieving a token for Testdepartementet. (This ony works with maskinporten as the token provider.)\nA token from id-porten contains both an id-token and and access-token. Only the access token it to be exhanged using this endpoint.\rGET /exchange/{tokenProvider}?test={bool} Architecture The application construction components for details how this component is constructued.\n"
+},
+{
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/",
+	"title": "Altinn Studio Designer",
+	"tags": ["altinn-repos"],
+	"description": "This is where developers create, modify, build and deploy apps. In the background Designer uses Git to store code and config in Altinn Studio Repos.",
+	"content": "\rBuilding and configuring apps\rAltinn Studio can been seen as a collection of different editors or applications specialized to create and edit different aspects of an Altinn Studio app.\nDashboard\rThe Dashboard in Altinn Studio gives the developer full overview over their apps.\nApp Deployment\rAltinn Studio will let the developer deploy apps to all enviroments without any manuel steps.\nVersion Control\rIn Altinn Studio a developer can perform version control operation on the source code for the app\n"
 },
 {
 	"uri": "https://docs.altinn.studio/community/contributing/handbook/front-end/getting-started/",
@@ -89,6 +96,13 @@
 	"tags": [],
 	"description": "Setup for repeating groups.",
 	"content": "Groups in the data model contain one or more fields. Groups are defined as repeating if they have maxOccurs \u0026gt; 1 in the xsd. A group that is repeating in the data model must also be set up as repeating in the form, if not, data saving will fail.\nExample Form with some single-fields and a repeating group that:\ncontains three fields can be repeated up to three times Setup in FormLayout.json from the example above:\n1{ 2 \u0026#34;data\u0026#34;: { 3 \u0026#34;layout\u0026#34;: [ 4 { 5 \u0026#34;id\u0026#34;: \u0026#34;gruppe-1\u0026#34;, 6 \u0026#34;type\u0026#34;: \u0026#34;Group\u0026#34;, 7 \u0026#34;children\u0026#34;: [ 8 \u0026#34;ac555386-ac2b-47a0-bb1b-842f8612eddb\u0026#34;, 9 \u0026#34;5c079cd4-c80c-44ea-b8b8-18e323267a37\u0026#34; 10 ], 11 \u0026#34;maxCount\u0026#34;: 3, 12 \u0026#34;dataModelBindings\u0026#34;: { 13 \u0026#34;group\u0026#34;: \u0026#34;spesifisering-grp-5836\u0026#34; 14 }, 15 \u0026#34;textResourceBindings\u0026#34;: { 16 \u0026#34;header\u0026#34;: \u0026#34;person\u0026#34; 17 } 18 }, 19 { 20 \u0026#34;id\u0026#34;: \u0026#34;ac555386-ac2b-47a0-bb1b-842f8612eddb\u0026#34;, 21 \u0026#34;type\u0026#34;: \u0026#34;Checkboxes\u0026#34;, 22 \u0026#34;componentType\u0026#34;: 5, 23 \u0026#34;textResourceBindings\u0026#34;: { 24 \u0026#34;title\u0026#34;: \u0026#34;Avkrysningsboks\u0026#34; 25 }, 26 \u0026#34;dataModelBindings\u0026#34;: { 27 \u0026#34;simpleBinding\u0026#34;: \u0026#34;klage-grp-5805.spesifisering-grp-5836.KlageSpesifisering-datadef-25457.value\u0026#34; 28 }, 29 \u0026#34;options\u0026#34;: [ 30 { 31 \u0026#34;label\u0026#34;: \u0026#34;25795.OppgavegiverNavnPreutfyltdatadef25795.Label\u0026#34;, 32 \u0026#34;value\u0026#34;: \u0026#34;Verdi1\u0026#34; 33 }, 34 { 35 \u0026#34;label\u0026#34;: \u0026#34;25796.OppgavegiverAdressePreutfyltdatadef25796.Label\u0026#34;, 36 \u0026#34;value\u0026#34;: \u0026#34;Verdi2\u0026#34; 37 } 38 ], 39 \u0026#34;required\u0026#34;: true 40 }, 41 { 42 \u0026#34;id\u0026#34;: \u0026#34;5c079cd4-c80c-44ea-b8b8-18e323267a37\u0026#34;, 43 \u0026#34;type\u0026#34;: \u0026#34;AddressComponent\u0026#34;, 44 \u0026#34;componentType\u0026#34;: 11, 45 \u0026#34;textResourceBindings\u0026#34;: { 46 \u0026#34;title\u0026#34;: \u0026#34;Adresse\u0026#34; 47 }, 48 \u0026#34;dataModelBindings\u0026#34;: { 49 \u0026#34;address\u0026#34;: \u0026#34;klage-grp-5805.spesifisering-grp-5836.KlageSpesifiseringg-datadef-12345.value\u0026#34; 50 }, 51 \u0026#34;simplified\u0026#34;: true, 52 \u0026#34;readOnly\u0026#34;: false, 53 \u0026#34;required\u0026#34;: true 54 } 55 ] 56 } 57} File attachment in repeating groups This is new functionality. Setup must be done manually for now.\rTo set up file uploading components in repeating groups, some additional setup is required.\nWhen uploading file attachments it may be difficult to distinguish which file attachments belongs to which rows in the repeating group, and thus which submitted information belongs to each attachment. Therefore, you must set up connections to the data model when file uploading are used in repeating groups, so that Altinn can fill out the unique identificator that belongs to each file attachment and send this together with the rest of the data in the instance.\nThe ability to place a reference to the file attachment in the data model can also be used outside of repeating groups if you want a reference to a file attachment together with the form data on the receivers end.\nThe following is an example of a data model expecting a reference to an uploaded file attachment.\n\u0026lt;xsd:schema xmlns:xsd=\u0026#34;http://www.w3.org/2001/XMLSchema\u0026#34; elementFormDefault=\u0026#34;qualified\u0026#34; attributeFormDefault=\u0026#34;unqualified\u0026#34;\u0026gt; \u0026lt;xsd:element name=\u0026#34;FamilieMedlemmer\u0026#34; type=\u0026#34;Skjema\u0026#34; /\u0026gt; \u0026lt;xsd:complexType name=\u0026#34;Skjema\u0026#34;\u0026gt; \u0026lt;xsd:sequence\u0026gt; \u0026lt;xsd:element name=\u0026#34;FamilyMember\u0026#34; type=\u0026#34;FamilyMember\u0026#34; maxOccurs=\u0026#34;99\u0026#34; /\u0026gt; \u0026lt;/xsd:sequence\u0026gt; \u0026lt;xsd:anyAttribute /\u0026gt; \u0026lt;/xsd:complexType\u0026gt; \u0026lt;xsd:complexType name=\u0026#34;FamilyMember\u0026#34;\u0026gt; \u0026lt;xsd:sequence\u0026gt; \u0026lt;xsd:element name=\u0026#34;FirstName\u0026#34; type=\u0026#34;xsd:string\u0026#34; /\u0026gt; \u0026lt;xsd:element name=\u0026#34;Picture\u0026#34; type=\u0026#34;xsd:string\u0026#34; /\u0026gt; \u0026lt;/xsd:sequence\u0026gt; \u0026lt;/xsd:complexType\u0026gt; \u0026lt;/xsd:schema\u0026gt; This is connected to the file upload component in the group:\n{ \u0026#34;id\u0026#34;: \u0026#34;picture\u0026#34;, \u0026#34;type\u0026#34;: \u0026#34;FileUpload\u0026#34;, \u0026#34;textResourceBindings\u0026#34;: { \u0026#34;title\u0026#34;: \u0026#34;Picture\u0026#34; }, \u0026#34;dataModelBindings\u0026#34;: { \u0026#34;simpleBinding\u0026#34;: \u0026#34;FamilyMember.Picture\u0026#34; }, \u0026#34;maxFileSizeInMB\u0026#34;: 25, \u0026#34;maxNumberOfAttachments\u0026#34;: 1, \u0026#34;minNumberOfAttachments\u0026#34;: 1, \u0026#34;displayMode\u0026#34;: \u0026#34;simple\u0026#34;, \u0026#34;required\u0026#34;: true } In cases where it is allowed to upload multiple files to the same file attachment component, use a data model attachment of the type list:\n\u0026lt;xsd:complexType name=\u0026#34;FamilyMember\u0026#34;\u0026gt; \u0026lt;xsd:sequence\u0026gt; \u0026lt;xsd:element name=\u0026#34;FirstName\u0026#34; type=\u0026#34;xsd:string\u0026#34; /\u0026gt; \u0026lt;xsd:element name=\u0026#34;Pictures\u0026#34; type=\u0026#34;xsd:string\u0026#34; maxOccurs=\u0026#34;5\u0026#34; /\u0026gt; \u0026lt;/xsd:sequence\u0026gt; \u0026lt;/xsd:complexType\u0026gt; { [...] \u0026#34;dataModelBindings\u0026#34;: { \u0026#34;list\u0026#34;: \u0026#34;FamilyMember.Pictures\u0026#34; } } The receiving end will then receive a list of multiple unique ID\u0026rsquo;s, one for each attachment. The same unique ID will also be displayed in the PDF receipt - but it is recommended to hide this, as attachments are shown seperately on the receipt page and the unique ID can become confusing to the users.\n"
+},
+{
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/repos/",
+	"title": "Altinn Studio Repos",
+	"tags": ["altinn-repos"],
+	"description": "The Git repository solution for storing and versioning apps developed with Altinn Studio.",
+	"content": "\rFunctionality in Repos\rFunksjonalitet for lagring og versjonering av tjenester i Git-repositories samt funksjonalitet for application lifecycle management.\nData Structure for Repos\rStruktur for repositories og filer i Gitea.\n"
 },
 {
 	"uri": "https://docs.altinn.studio/technology/solutions/altinn-platform/",
@@ -1848,7 +1862,7 @@
 	"content": ""
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/api-expose/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/api-expose/",
 	"title": "API expose",
 	"tags": ["api"],
 	"description": "Apps created in Altinn Studio can be exposed as API together with UI, or only as API without any UI.",
@@ -1862,7 +1876,7 @@
 	"content": "\rAPI use as an end user\rWhen running the application locally one can test the API intended for end user.\nAPI test org\rWhen running the applications locally along with the local test platform one can test the APIs the application exposes.\n"
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/api-use/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/api-use/",
 	"title": "API use",
 	"tags": ["api"],
 	"description": "To be able to support &#34;once-only&#34; it is essensial that it is easy to do API-call from an app to other systems APIs.",
@@ -1904,7 +1918,7 @@
 	"content": "App Frontend is a Single Page Application built using React + Redux.\nThis application is responsible for presenting a UI to the end user. The application consists of several different features that are responsible for handling the UI for different steps in the workflow.\nThe app frontend is automatically built and deployed to a CDN, and is versioned using semantic versioning. Each App developed in Altinn Studio will reference the app frontend, which will be served by the CDN. By default, an app will reference the latest major version that was available when the app was created. Each app may reference a specific version, so that there can be different versions of the app frontend for two different deployed apps.\nReact \u0026#43; Redux architecture\rHigh-level description of React \u0026#43; Redux architecture used in app frontend\nApp Frontend configuration files\rDescription of the different configuration files used by app frontend\nApp frontend features\rHigh-level description of app frontend features\nApp frontend code structure\rHigh-level overview of how the app frontend is structured\nApp frontend rendering and flow\rHigh-level overview of what happens when the app frontend is rendered\n"
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/code-editor/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/code-editor/",
 	"title": "Create AppLogic with code",
 	"tags": [],
 	"description": "App behavior can be controlled by code.",
@@ -1918,7 +1932,7 @@
 	"content": "Launched functionality For information on How to use the functionalities described here, see the Altinn Studio and API user documentation.\nGUI based app development In the Altinn Studio GUI you can do the following:\nCreate (and retrieve) an app Upload a data model Add and edit texts Create a simple form (one or more pages), which links elements, texts and data model Add and edit rules for dynamics (Note! Coded as JavaScript) Deploy app to test and production environments Code based app development By downloading the app code (through Git) locally (or by editing the app files in the repository view) you can do a wide variety of changes to the app. This includes standard functionality for:\nMaking rules for validation and calculation Add prefill Add lookup to external APIs Edit the process/workflow of the app Edit the authorisation rules for the app, and make custom logic for instantiating Make custom events Test locally Once you have your app code locally, you can also take advantage of a local test enviroment for most types of app testing.\nIntegration with app owner Altinn 3 has standardised APIs that the app owner can use to upload and download data. For downloading Altinn 3 relies on the app owner polling for information and downloading data (pull). In addition app owner can use the app APIs to instantiate or change the data and/or status for instances.\nYou can reduce the amount of polling by using push events - where app owner can be notified when there is data available for download (Q2 2021) (#4728) ✔️\nTo use the APIs as an app owner, you need to authenticate using Maskinporten.\nMaintaining apps App owners get access to monitoring their apps, so they can keep track of how they are functioning. See also the pages about app maintenance.\nLet developers easily copy an old app into a new one (Q3 2021) (#5923) ✔️ Upcoming functionality Altinn 3 is in constant development, and functionality is released continuously. The backlog is revised eight times a year, and minor changes may occur between these revisions. In general, the further into the future a functionality is planned, the less certain the time frame is for said functionality.\nChanges described in italic are regarded as ideas, and if they are to be developed has not yet been decided.\nGUI based app development For all upcoming functionality, we assess if it\u0026rsquo;s suitable for solving i the GUI. At some point (2023 or later) we will intensify the effort to make more functionality available through GUI.\nSupport branching in Altinn Studio (Q4 2021) (#985) Data modelling The dependency on data modelling having to be done in an external tool will be removed. Some highlights from the plans for data modelling in Altinn 3 is:\nTo work with a data modeli in a GUI (Q4 2021) (#5551) Integrations with Felles datakatalog (Q1 2022) (#3811) To get an auto-generated data model from the app GUI you build To get an auto-generated draft for an app GUI from the data model Maintaining apps We wish to make app owners able to maintain their apps themselves in Altinn 3. To achieve this we will (among other things):\nMake it possible to decomission an app (Q4 2021) (#3717) Add a Web analysis tool for the apps Integration with app owner Pull of data will stay as the main pattern for downloading data as an app owner, but a few exceptions will come:\nPossibility to use eFormidling as an interface to get data sent from Altinn to app owner (Q4 2021) (#4788) Split of data - multiple app owners can receive data from the same app (Q3 2022) (#4274) "
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/app-parameters/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/app-parameters/",
 	"title": "App Parameters",
 	"tags": ["todo"],
 	"description": "The application contain different parameters that controlls the behaviour.",
@@ -2079,7 +2093,7 @@
 	"content": "The authorization component consists of several solution components.\nFor a functional description see details in application solution components.\nThe diagram below shows where the different solution components are located\nThe Authorization component is constructed as a asp.net MVC application exposing API. The API communicates with the different solution components\nThe below diagram shows the data flow including PEP.\nDecision API The decision API is the API that orchestrates the decision process.\nThe API supports both XACML XML and XACML Json Profile request.\nSee Decision Controller for code details\nPolicy Decision Point - PDP This is implemented as a separate class library This is published to Nuget.\nThis library contains all models defined for XAMCL XML/JSON and utility methods to handle XACML documents.\nThe Policy Decision Point is implemented in this class.\nIt expects both decision request and policy to be inputed.\nPolicy Retrieval Point - PRP Policy Retrieval Point component that stores authorization policies for applications.\nThe policies are stored as XACML (xml) documents in a blob storage.\nWhen an authorization request is received to PDP, PRP identifies the correct policy document in the policy storage.\nSee code.\nPRP is configured as a service in the Authorization Component and can easily be replaced with other implementation.\nContext Handler Context handler enriches the authorization request with information about the user and the resource requested. Roles are retrieved from SBL Brigde while resource information is retrieved from Instances in storage.\nSee code.\nContext Handler is configured as a service in Authorization Component and can easily be replaced with other implementation.\nPolicy Information Point - Roles PIP for roles, calls SBL bridge to get the rules a user or system has for a resource party.\nThis is implemented as a service. See implementation\nThis can easily be replaced with other implementation.\nPolicy Information Point - Party This is implemented as a service. See implementation\nThis can easily be replaced with other implementation.\nPolicy Information Point - Resources PIP for resoruces checks storage for instance information.\nThis is implemented as a service. See implementation\nThis can easily be replaced with other implementation.\nApi controllers Decision Policy Roles Parties Dependencies See csproj.\nHow to use Altinn Platform Authorization in your setup The PDP does not contain any Altinn specific functionality. What you need to implement in your setup is\nContext Handler You would need to write your own context handler functionality that undestand your domain. Meaning it would need to understand what kind of enrichment that is needed. It the simplest scenarious this does not need to do anything if the authorization request contains all information needed by PDP\nPRP You need to implement funcionality to identify the correct XACML Policy. In Altinn we have different policies for the different apps, but in some simple scenarios you would only need to reference a static XACML Policy.\nPIP If context handler need to enrich\nApplication construction components - Altinn Access Groups\rThe Access Group component in Altinn platform is constructed as an asp.net core 6 web API application deployed as a docker container to a Kubernetes cluster.\nApplication construction components - Altinn Access Management\rThe Access Management component in the Altinn platform is an asp.net core 6 web API application with a REACT frontend deployed as a docker container to the Altinn Platform Kubernetes cluster.\nApplication construction components - Altinn Resource Registry\rThe Resource Registry component in Altinn platform is constructed as an asp.net core 6 web API application deployed as a docker container to a Kubernetes cluster.\n"
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/authorization-rules/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/authorization-rules/",
 	"title": "Set Authorization Rules",
 	"tags": [],
 	"description": "Altinn Studio let the developer set the authorization requirements for a App",
@@ -2247,7 +2261,7 @@
 	"content": "Build Pipelines Quality Build When creating a Pull Request a pipeline is building the applications, running tests and style check/linting. TSLint, SonarCloud (for Typescript) and Stylecop (C#) is used for style check/linting.\nTriggered by:\nPull Request Altinn Studio and Runtime Docker Images Separate pipelines will build and deploy the Altinn Studio Docker Image and the Runtime Docker Image to Azure Container Registry. The different Altinn Studio applications (React Apps) is built in seperate Docker images to utilize Docker\u0026rsquo;s cache technique and minimize unnecessary rebuilding.\nDocker-Compose is used when developing and running Altinn Studio locally, building several Docker images and using the same caching technique used in the Pipeline.\nTriggered by:\nGit Merge to Master Altinn Studio Release Build When the build for Altinn Studio is successfully ran, a release build will start. The Release Build will update the Kubernetes cluster with the images created in the Altinn Studio build pipelines.\nTriggered by:\nSuccessfull build of Altinn Studio. Generating Altinn Pipelines Images Summary The Altinn Azure Pipelines Image (image) is built with Packer. The Packer JSON configuration is based on the same configuration used by Microsoft to build their own Hosted Agent images. The image is built in Azure Pipelines passing in \u0026ldquo;secrets\u0026rdquo; to the Packer configuration with Environment Variables not visibly available during the build process. Usage Create a Virtual Machine in Azure using the pre built image found under \u0026ldquo;browse all images and disks\u0026rdquo;. Create a username and password (should be stored in Azure Vault). Installing Agent Host The script for installing the Agent Host is found at: Maintenance/azure-pipelines-image/scripts/agent/agent-install.sh (Currently a manual job)\nA computer can have one or several Agent Hosts installed. Several Agents, on one or several servers, can connect to one Agent Pool.\nCreating Pipelines Image with Packer.io The process of creating an Image with Packer is described here.\nThe variables used in the Packer JSON configuration file is passed in via hidden Pipelines environment variables.\nUbuntu1604-full The \u0026ldquo;full\u0026rdquo; image contains components for building Dotnet and NodeJS applications, running JavaScript based headless tests and running Docker Images. See the JSON file for specifications.\nUbuntu1604-light The \u0026ldquo;light\u0026rdquo; image only contains Git and Docker and is created for only running Docker images.\nClean-up Packer creates Resource Groups in Azure keeping the image build for history and debuggind purposes.\nTo remove this Resource Group run AZ Cli: az group delete -n PackerResourceGroup\n"
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/",
 	"title": "Building and configuring apps",
 	"tags": [],
 	"description": "Altinn Studio can been seen as a collection of different editors or applications specialized to create and edit different aspects of an Altinn Studio app.",
@@ -2345,7 +2359,7 @@
 	"content": "Components relationship The figure below shows the relationship between the different componentes in the technical architecture and the capabilities they provide.\nApplication Components\rThe Application Components is split in to application construction components and non-solution application components.\nData Components\rData is the most important part of the solutions in Altinn.\nInfrastructure components\rAltinn 3 is hosted in public cloud, and all infrastructure components are cloud based.\nPlatform Components\rPlatform components are a mix of managed services and standard software/frameworks used to created the needed capabilties.\n"
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/ui-designer/components/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/ui-designer/components/",
 	"title": "Available UI components",
 	"tags": ["ui-designer", "ui-components"],
 	"description": "Overview of the components that are available for use.",
@@ -2436,7 +2450,7 @@
 	"content": "An application wil have a process which the user of the application follows. Depending of the type of step the user is in, different views are presented. This page explains the different views and how they can be customized.\nData In this process task a form which the user can fill in data. The form can be edited using the UI editor or by changing FormLayout.json manually.\nConfirmation In this process task some standard texts are presented and the user can choose to confirm to go forward.\nThese texts can be overridden by manually adding each defined text keys in the apps text resources. More information about how this is done can be found here. In the following section we will present an overview of the different texts that can be customized.\nCustomize texts Text # (see image above) Text key 1 confirm.title 2 confirm.sender 3 confirm.body 4 confirm.answers 5 confirm.attachments 6 confirm.button_text Example of custom texts in the file resources.nb.json:\n{ \u0026#34;id\u0026#34;: \u0026#34;confirm.title\u0026#34;, \u0026#34;value\u0026#34;: \u0026#34;Vennligst bekreft at du ønsker å sende inn\u0026#34; }, { \u0026#34;id\u0026#34;: \u0026#34;confirm.body\u0026#34;, \u0026#34;value\u0026#34;: \u0026#34;Du må kun trykke send inn om du er helt sikker på at du vil sende inn. \u0026lt;br/\u0026gt;\u0026lt;br/\u0026gt;I det du trykker send inn kan du ikke gjøre endringer.\u0026#34; }, { \u0026#34;id\u0026#34;: \u0026#34;confirm.attachments\u0026#34;, \u0026#34;value\u0026#34;: \u0026#34;Dokumenter med opplysninger\u0026#34; }, { \u0026#34;id\u0026#34;: \u0026#34;confirm.button_text\u0026#34;, \u0026#34;value\u0026#34;: \u0026#34;Lagre og fortsett\u0026#34; } Note that in the example we have used the html-tag \u0026lt;br/\u0026gt; to make a line shift. For links and formatting use markdown.\nThis results in the following view:\nCustom form layout For the confirm task the app developer has the possibility for configuring their own layout set with corresponding form layout definitions and other ui-configuration files which are included in the data step.\nThis makes the confirmation page custumizable, and can use the components that are supported in Altinn Studio.\nSince the confirm step is not meant to be used for writing data, a good practice would be to use static components (header, paragraph) and set other components to readOnly.\nAn example setup of the layout-sets.json where Task_1 is a data step, and Task_2 a confirmation step:\n{ \u0026#34;sets\u0026#34;: [ { \u0026#34;id\u0026#34;: \u0026#34;simple\u0026#34;, \u0026#34;dataType\u0026#34;: \u0026#34;simple\u0026#34;, \u0026#34;tasks\u0026#34;: [ \u0026#34;Task_1\u0026#34; ] }, { \u0026#34;id\u0026#34;: \u0026#34;custom-receipt\u0026#34;, \u0026#34;dataType\u0026#34;: \u0026#34;simple\u0026#34;, \u0026#34;tasks\u0026#34;: [ \u0026#34;Task_2\u0026#34; ] } ] } Notice that the layout-set configuration for Task_2 references the data model used in Task_1.\nExample formLayout.json file that presents data from the data model used in the data-task:\n{ \u0026#34;$schema\u0026#34;: \u0026#34;https://altinncdn.no/schemas/json/layout/layout.schema.v1.json\u0026#34;, \u0026#34;data\u0026#34;: { \u0026#34;layout\u0026#34;: [ { \u0026#34;id\u0026#34;: \u0026#34;paragraph\u0026#34;, \u0026#34;type\u0026#34;: \u0026#34;Paragraph\u0026#34;, \u0026#34;textResourceBindings\u0026#34;: { \u0026#34;title\u0026#34;: \u0026#34;paragraph\u0026#34; } }, { \u0026#34;id\u0026#34;: \u0026#34;name\u0026#34;, \u0026#34;type\u0026#34;: \u0026#34;Input\u0026#34;, \u0026#34;textResourceBindings\u0026#34;: { \u0026#34;title\u0026#34;: \u0026#34;name.label\u0026#34; }, \u0026#34;dataModelBindings\u0026#34;: { \u0026#34;simpleBinding\u0026#34;: \u0026#34;Felt1\u0026#34; }, \u0026#34;required\u0026#34;: true, \u0026#34;readOnly\u0026#34;: true }, { \u0026#34;id\u0026#34;: \u0026#34;lastname\u0026#34;, \u0026#34;type\u0026#34;: \u0026#34;Input\u0026#34;, \u0026#34;textResourceBindings\u0026#34;: { \u0026#34;title\u0026#34;: \u0026#34;lastName.label\u0026#34; }, \u0026#34;dataModelBindings\u0026#34;: { \u0026#34;simpleBinding\u0026#34;: \u0026#34;Felt2\u0026#34; }, \u0026#34;required\u0026#34;: true, \u0026#34;readOnly\u0026#34;: true } ] } } The app structure would look look this:\n├───App │ ├───config │ ├───logic │ ├───models | | ... │ ├───ui │ │ ├───custom-receipt │ │ │ └───layouts | | | └─── ... │ │ └───simple │ │ └───layouts | | | └─── ... The end result:\nFor a complete setup of this feature see our example app.\nFeedback This is a process step where the application owner can validate the filled data to generate a feedback before the data is archived.\nIn the following section we will present an overview of the different texts that can be customized.\nCustomize texts Text # (see image above) Text key 1 feedback.title 2 feedback.body Example of custom texts in the file resources.nb.json:\n{ \u0026#34;id\u0026#34;: \u0026#34;feedback.title\u0026#34;, \u0026#34;value\u0026#34;: \u0026#34;Vent på at tjenesteeier sjekker data\u0026#34; }, { \u0026#34;id\u0026#34;: \u0026#34;feedback.body\u0026#34;, \u0026#34;value\u0026#34;: \u0026#34;Når tjenesteier har sjekket at alle data er godkjent vil du bli automatisk sendt videre til siste steg i prosessen.\u0026#34; } "
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/dashboard/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/dashboard/",
 	"title": "Dashboard",
 	"tags": [],
 	"description": "The Dashboard in Altinn Studio gives the developer full overview over their apps.",
@@ -2471,7 +2485,7 @@
 	"content": "Reporting Software Dashboard and reporting server software Application Insights is used for dashboard and reporting services for the platform solutions.\nData visualization software Application Insights is used for visualization.\nData Stores Multi model database service Altinn Platform uses Azure Cosmos as a Multi model database service.\nRead more about Azure Cosmos DB.\nRelational DBMs We use Azure Database for PostgreSQL as a relational database for Gitea.\nRead more about Azure Database for PostgreSQL.\nDirectory Services We use Azure Directory Services.\nFile Share We use Azure File Storage.\nObject Storage We use Azure Blob Storage to store both structured and unstructured data for applications in Altinn Platform.\n"
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/data-modeling/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/data-modeling/",
 	"title": "Data modeling",
 	"tags": ["data-modeling", "todo"],
 	"description": "Defining the data model(s) for an app is important. Altinn Studio will support importing existing data models and creating new data models.",
@@ -2562,7 +2576,7 @@
 	"content": ""
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/deployment/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/deployment/",
 	"title": "App Deployment",
 	"tags": [],
 	"description": "Altinn Studio will let the developer deploy apps to all enviroments without any manuel steps.",
@@ -2588,13 +2602,6 @@
 	"tags": [],
 	"description": "Designer is split in two applications. One frontend created in REACT that communicates with the back-end application through rest-API.",
 	"content": "\rApplication construction components - Designer Front-end\rDescription of the application construction components for Altinn Studio Designer Front-end\nAltinn Studio Designer - Back-end\rApplication construction components used in Altinn Studio Designer backend.\n"
-},
-{
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/",
-	"title": "Altinn Studio Designer",
-	"tags": ["altinn-repos"],
-	"description": "This is where developers create, modify, build and deploy apps. In the background Designer uses Git to store code and config in Altinn Studio Repos.",
-	"content": "\rFunctionality in Designer\rThe designer can been seen as a collection of different editors specialized to create and edit different aspects of an application.\n"
 },
 {
 	"uri": "https://docs.altinn.studio/tags/development/",
@@ -2800,13 +2807,6 @@
 	"content": "The functional requirements is extensive and is written as user stories. A good starting point is to look at issue 1337 at GitHub to get an overview of the required functionality.\n"
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/",
-	"title": "Functionality in Designer",
-	"tags": [],
-	"description": "The designer can been seen as a collection of different editors specialized to create and edit different aspects of an application.",
-	"content": "This aspects are controlled by code and configurations that is stored in source control in Altinn Studio Repos.\nBuilding and configuring apps\rAltinn Studio can been seen as a collection of different editors or applications specialized to create and edit different aspects of an Altinn Studio app.\nDashboard\rThe Dashboard in Altinn Studio gives the developer full overview over their apps.\nApp Deployment\rAltinn Studio will let the developer deploy apps to all enviroments without any manuel steps.\nVersion Control\rIn Altinn Studio a developer can perform version control operation on the source code for the app\n"
-},
-{
 	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/repos/functional/",
 	"title": "Functionality in Repos",
 	"tags": ["altinn-repos"],
@@ -2905,7 +2905,7 @@
 	"content": "\nWhat is helm? Helm is a kubernetes resource templating tool. Where all the defined kubernetes resources are deployed with combinations of templates and values. Therefore it is called the kubernetes package manager.\nA helm-package, or a helm-chart is a folder with a set file-structure.\n+-- altinn-designer | +-- templates | | +-- tests | | | +-- test-connection.yaml | | +-- NOTES.txt | | +-- _helpers.tpl | | +-- deployment.yaml | | +-- service.yaml | | +-- ingress.yaml (deleted in altinn studio, since we don\u0026#39;t use ingress. But an ingress template is included in a default helm-chart) | +-- .helmignore | +-- Chart.yaml | +-- values.yaml The Chart.yaml-file contains information about the chart, like the name, version and maintainers. The values.yaml-file contains different values. These values are accessable in the templates. So different environment variables can be defined in the values. Values can also be overwritten when running a upgrade or install of the chart.\nThe files in the templates-folder becomes populated with the values, and sent to the kubernetes clusters as the name of the files. So deployment.yaml should create a deployment in kubernetes. The same fore service.yaml and ingress.yaml.\n_helpers.tpl can be used to define functions to get release names, concatinated with other info. NOTES.txt is the info printed in the cli after an install or upgrade of an release, usually used to give usefull commands the user can run to access the pods.\nHelm usage in Altinn Studio We use helm to deploy our builds to the kubernetes cluster, both in development-, production- and SBL-cluster. Azure Dev Ops pipelines have support for helm, so this makes deploying to development trigger everytime we merge some code into master.\nLinks https://helm.sh https://github.com/helm/helm "
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/helptext/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/helptext/",
 	"title": "Configure help texts",
 	"tags": [],
 	"description": "Help developer configure help texts for components",
@@ -3430,7 +3430,7 @@
 	"content": ""
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/prefill/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/prefill/",
 	"title": "Configure Prefill",
 	"tags": [],
 	"description": "Altinn Studio will let the developer define prefill for datamodel from register and profile.",
@@ -3486,7 +3486,7 @@
 	"content": "Process API Apps created in Altinn Studio have a seperate Process API that exposes functionality to clients to controll the process.\nSee github for source code.\nInstance API Process Service The process service is where the business logic for BPMN processing is located. It is responsible for verifying state, and changes of state\nSee github for source code.\nBPMN Reader BPMN reader is the component that parses BPMN process in apps.\nSee github for source code.\nApp Logic When app process changes state app logic is run making it possible for app developers to implements specific app logic.\nSee AppBase.cs and IAltinnApp.\n"
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/define-process/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/define-process/",
 	"title": "Define app process",
 	"tags": ["process"],
 	"description": "As part of the development one must define a process for the app that end user needs to follow.",
@@ -3624,13 +3624,6 @@
 	"tags": [],
 	"description": "",
 	"content": ""
-},
-{
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/repos/",
-	"title": "Altinn Studio Repos",
-	"tags": ["altinn-repos"],
-	"description": "The Git repository solution for storing and versioning apps developed with Altinn Studio.",
-	"content": "\rFunctionality in Repos\rFunksjonalitet for lagring og versjonering av tjenester i Git-repositories samt funksjonalitet for application lifecycle management.\nData Structure for Repos\rStruktur for repositories og filer i Gitea.\n"
 },
 {
 	"uri": "https://docs.altinn.studio/technology/architecture/components/application/construction/altinn-studio/repositories/",
@@ -4011,7 +4004,7 @@
 	"content": "To bi translated\n"
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/text/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/text/",
 	"title": "Text and translations",
 	"tags": ["todo"],
 	"description": "Using texts when designing UI, defining workflow, other settings, deploy, and more.",
@@ -4123,7 +4116,7 @@
 	"content": ""
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/ui-designer/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/ui-designer/",
 	"title": "UI Design",
 	"tags": [],
 	"description": "The UI-designer is the part of Altinn Studio where the developer can create UI for the app.",
@@ -4193,7 +4186,7 @@
 	"content": ""
 },
 {
-	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/version-control/",
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-studio/designer/version-control/",
 	"title": "Version Control",
 	"tags": ["todo"],
 	"description": "In Altinn Studio a developer can perform version control operation on the source code for the app",

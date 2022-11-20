@@ -18,6 +18,8 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/solutions/altinn-platform/authentication/</loc>
   </url><url>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/</loc>
+  </url><url>
     <loc>https://docs.altinn.studio/community/contributing/handbook/front-end/getting-started/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/app/design/insight/</loc>
@@ -67,6 +69,8 @@
                 hreflang="en"
                 href="https://docs.altinn.studio/app/development/ux/fields/grouping/repeating/"
                 />
+  </url><url>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/repos/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/solutions/altinn-platform/</loc>
   </url><url>
@@ -2070,7 +2074,7 @@
                 href="https://docs.altinn.studio/tags/api/"
                 />
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/api-expose/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/api-expose/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/app/testing/local/apitests/</loc>
     <xhtml:link
@@ -2084,7 +2088,7 @@
                 href="https://docs.altinn.studio/app/testing/local/apitests/"
                 />
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/api-use/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/api-use/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/api/apps/</loc>
     <xhtml:link
@@ -2106,7 +2110,7 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/app/app-frontend/</loc>
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/code-editor/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/code-editor/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/community/roadmap/studio/appowner/</loc>
     <xhtml:link
@@ -2120,7 +2124,7 @@
                 href="https://docs.altinn.studio/community/roadmap/studio/appowner/"
                 />
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/app-parameters/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/app-parameters/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/app/</loc>
   </url><url>
@@ -2196,7 +2200,7 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/altinn-platform/authorization/</loc>
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/authorization-rules/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/authorization-rules/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/app/development/configuration/process/auto-delete/</loc>
     <xhtml:link
@@ -2374,7 +2378,7 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/devops/build_and_test/build/</loc>
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/business-layer/</loc>
   </url><url>
@@ -2432,7 +2436,7 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/</loc>
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/ui-designer/components/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/ui-designer/components/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/infrastructure/computing/</loc>
   </url><url>
@@ -2488,7 +2492,7 @@
                 href="https://docs.altinn.studio/app/development/configuration/process/customize/"
                 />
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/dashboard/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/dashboard/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/data/</loc>
   </url><url>
@@ -2498,7 +2502,7 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/platform/datareporting/</loc>
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/data-modeling/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/data-modeling/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/data-processing/</loc>
   </url><url>
@@ -2604,15 +2608,13 @@
                 href="https://docs.altinn.studio/tags/deploy/"
                 />
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/deployment/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/deployment/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/deployment/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/devops/softwareconfiguration/deployment/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/altinn-studio/designer/</loc>
-  </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/development/</loc>
     <xhtml:link
@@ -2772,8 +2774,6 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/requirements/functional/</loc>
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/</loc>
-  </url><url>
     <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/repos/functional/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/gateways/</loc>
@@ -2852,7 +2852,7 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/tools/helm/</loc>
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/helptext/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/helptext/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/tools/hugo/</loc>
   </url><url>
@@ -3222,7 +3222,7 @@
                 href="https://docs.altinn.studio/tags/prefill/"
                 />
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/prefill/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/prefill/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/runtime/presentation/</loc>
   </url><url>
@@ -3258,7 +3258,7 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/app/app-backend/process/</loc>
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/define-process/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/define-process/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/runtime/processing/</loc>
   </url><url>
@@ -3307,8 +3307,6 @@
     <loc>https://docs.altinn.studio/tags/repeating-groups/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/repos/</loc>
-  </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/repos/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/altinn-studio/repositories/</loc>
   </url><url>
@@ -3441,6 +3439,16 @@
                 />
   </url><url>
     <loc>https://docs.altinn.studio/technology/solutions/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/technology/solutions/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/technology/solutions/"
+                />
   </url><url>
     <loc>https://docs.altinn.studio/tags/sporvalg/</loc>
     <xhtml:link
@@ -3598,7 +3606,7 @@
                 href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/test_authorization_application/"
                 />
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/text/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/text/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/texts/</loc>
     <xhtml:link
@@ -3680,7 +3688,7 @@
   </url><url>
     <loc>https://docs.altinn.studio/tags/ui/</loc>
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/build-app/ui-designer/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/ui-designer/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/app/getting-started/navigation/designer/ui-editor/</loc>
     <xhtml:link
@@ -3750,7 +3758,7 @@
                 href="https://docs.altinn.studio/tags/validering/"
                 />
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/functional/version-control/</loc>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/version-control/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/versioning/</loc>
   </url><url>

@@ -1012,6 +1012,8 @@
                 href="https://docs.altinn.studio/app/testing/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/community/contributing/handbook/azure-storage/tools/</loc>
+  </url><url>
     <loc>https://docs.altinn.studio/api/models/data-element/</loc>
     <xhtml:link
                 rel="alternate"
@@ -1189,6 +1191,8 @@
                 />
   </url><url>
     <loc>https://docs.altinn.studio/community/contributing/handbook/azure-devops/</loc>
+  </url><url>
+    <loc>https://docs.altinn.studio/community/contributing/handbook/azure-storage/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/community/contributing/handbook/back-end/</loc>
   </url><url>
@@ -2226,6 +2230,8 @@
                 href="https://docs.altinn.studio/tags/autorisasjon/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/tags/azure/</loc>
+  </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/altinn-studio/designer/backend/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/devops/platformoperations/backupandrecovery/</loc>
@@ -3096,6 +3102,8 @@
                 href="https://docs.altinn.studio/api/storage/spec/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/tags/operations/</loc>
+  </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/nonsolutionspecific/operations/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/app/launched-apps/digdir/oed/</loc>
@@ -3276,6 +3284,10 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/devops/quality/</loc>
   </url><url>
+    <loc>https://docs.altinn.studio/tags/queue/</loc>
+  </url><url>
+    <loc>https://docs.altinn.studio/community/contributing/handbook/azure-storage/queues/</loc>
+  </url><url>
     <loc>https://docs.altinn.studio/tags/react/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/tools/react/</loc>
@@ -3421,6 +3433,8 @@
                 hreflang="en"
                 href="https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_ske/"
                 />
+  </url><url>
+    <loc>https://docs.altinn.studio/tags/software/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/devops/softwareconfiguration/</loc>
   </url><url>
@@ -3639,6 +3653,8 @@
                 hreflang="en"
                 href="https://docs.altinn.studio/tags/todo/"
                 />
+  </url><url>
+    <loc>https://docs.altinn.studio/tags/tools/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/tools/</loc>
   </url><url>

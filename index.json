@@ -805,6 +805,13 @@
 	"content": "\rTest of app locally\rDescription of how test of an app locally on your own machine.\nTest app in test environment\rDescription of how test in test environment can be performed.\n"
 },
 {
+	"uri": "https://docs.altinn.studio/community/contributing/handbook/azure-storage/tools/",
+	"title": "Tools &amp; Software",
+	"tags": ["development", "operations", "storage", "azure", "tools", "software"],
+	"description": "Overview of tools and software used for developing and operating Azure Storage",
+	"content": "Azurite Azurite is an emulator for local Azure Storage development. It sets up a local storage account containing blob, queue, and table.\nInstructions on downloading and getting started with Azurite.\nWe use Azurite during development of components that interact with Azure Storage. The local emulator enables us to verify that elements are stored and/or pushed correctly to the storage account and that our logic is successful in retrieving data from the storage account.\nAzure Storage Explorer The storage explorer allows you to view, upload, download and manage items in a Storage Account. We use the storage Explorer both for local development and operations of our test and production environments.\nInstructions on downloading and getting started with Storage Explorer\n"
+},
+{
 	"uri": "https://docs.altinn.studio/api/models/data-element/",
 	"title": "DataElement",
 	"tags": ["api"],
@@ -936,6 +943,13 @@
 	"tags": ["development"],
 	"description": "Guidelines for working with resources in Azure DevOps",
 	"content": "We use Azure DevOps for building and deploying both our solution and the app owners applications.\nPipelines\rQuality checklist and overview of pipelines in Azure DevOps\n"
+},
+{
+	"uri": "https://docs.altinn.studio/community/contributing/handbook/azure-storage/",
+	"title": "Azure Storage",
+	"tags": ["development", "operations", "storage", "azure"],
+	"description": "Guidelines for working with Azure Storage resources",
+	"content": "\rTools \u0026amp; Software\rOverview of tools and software used for developing and operating Azure Storage\nQueues\rGuidelines for working with Azure Queue Storage\n"
 },
 {
 	"uri": "https://docs.altinn.studio/community/contributing/handbook/back-end/",
@@ -2114,6 +2128,13 @@
 	"content": ""
 },
 {
+	"uri": "https://docs.altinn.studio/tags/azure/",
+	"title": "azure",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://docs.altinn.studio/technology/architecture/components/application/construction/altinn-studio/designer/backend/",
 	"title": "Altinn Studio Designer - Back-end",
 	"tags": [],
@@ -2895,7 +2916,7 @@
 	"title": "Development handbook",
 	"tags": ["development"],
 	"description": "Developer handbook for contributions to the Altinn code base.",
-	"content": "This should provide all basic information needed to get started with development on the altinn-studio repo. It should alto contain the information needed to make sure all developers write their code in a consistent way.\nThe guidelines should work as reference material, but it should also be possible to read throught the whole development handbook in a logical order so that new developers quickly get up and running.\nThe development handbook is a dynamic material and everybody should feel free to extend or correct articles when needed.\nAzure DevOps\rGuidelines for working with resources in Azure DevOps\nBack-end\rCoding guidelines for back-end\nCheat Sheet\rQucik guide for different commands\nCosmos DB\rGeneral guidelines and best practice for working with Cosmos DB\nDeployment\rGuidelines for deploying\nFront-end\rCoding guidelines for front-end\nGeneral\rGeneral coding guidelines\nGetting started\rInformation about how to get started\nGit\rInformation about version control with Git\nNaming Conventions\rNaming guidelines for Altinn Studio development\nNginx loadbalancing in studio\rInformation about routing with nginx\nPostgreSQL\rSetting up PostgreSQL for local development\nRESTful APIs (Representation State Transfer)\rGuidelines for designing REST apis for microservices in Altinn\nRouting\rInformation about routing\nSecure DevOps\rSecurity is an important concern in all the phases of the DevOps cycle for Altinn 3.\nTest\rCoding guidelines for tests\nBranching\rBranching information for Altinn Studio.\nFlight Rules\rFlight rules for Altinn Studio\nGitea\rHow to customize and configure Gitea.\nReusable resources\rA important feature with Altinn Studio is that it should promote developers to create reusable resources that can be reused by other developers.\nTheming and styling\rSolution for theming and styling conventions.\nTroubleshooting\rTroubleshooting of Altinn Studio.\n"
+	"content": "This should provide all basic information needed to get started with development on the altinn-studio repo. It should alto contain the information needed to make sure all developers write their code in a consistent way.\nThe guidelines should work as reference material, but it should also be possible to read throught the whole development handbook in a logical order so that new developers quickly get up and running.\nThe development handbook is a dynamic material and everybody should feel free to extend or correct articles when needed.\nAzure DevOps\rGuidelines for working with resources in Azure DevOps\nAzure Storage\rGuidelines for working with Azure Storage resources\nBack-end\rCoding guidelines for back-end\nCheat Sheet\rQucik guide for different commands\nCosmos DB\rGeneral guidelines and best practice for working with Cosmos DB\nDeployment\rGuidelines for deploying\nFront-end\rCoding guidelines for front-end\nGeneral\rGeneral coding guidelines\nGetting started\rInformation about how to get started\nGit\rInformation about version control with Git\nNaming Conventions\rNaming guidelines for Altinn Studio development\nNginx loadbalancing in studio\rInformation about routing with nginx\nPostgreSQL\rSetting up PostgreSQL for local development\nRESTful APIs (Representation State Transfer)\rGuidelines for designing REST apis for microservices in Altinn\nRouting\rInformation about routing\nSecure DevOps\rSecurity is an important concern in all the phases of the DevOps cycle for Altinn 3.\nTest\rCoding guidelines for tests\nBranching\rBranching information for Altinn Studio.\nFlight Rules\rFlight rules for Altinn Studio\nGitea\rHow to customize and configure Gitea.\nReusable resources\rA important feature with Altinn Studio is that it should promote developers to create reusable resources that can be reused by other developers.\nTheming and styling\rSolution for theming and styling conventions.\nTroubleshooting\rTroubleshooting of Altinn Studio.\n"
 },
 {
 	"uri": "https://docs.altinn.studio/technology/tools/helm/",
@@ -3269,6 +3290,13 @@
 	"content": ""
 },
 {
+	"uri": "https://docs.altinn.studio/tags/operations/",
+	"title": "operations",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://docs.altinn.studio/technology/architecture/components/application/nonsolutionspecific/operations/",
 	"title": "Operations Application",
 	"tags": ["solution", "architecture"],
@@ -3549,6 +3577,20 @@
 	"content": "Quality Assurance \u0026amp; Reviews All pull request in GitHub requires approved reviews of the changes before it can be merged in to the master branch.\nSee current and earlier pull request.\nFor infrastructure changes the pull request is done in Azure Devops with the same type of reviews.\nDefect Tracking \u0026amp; Management Defects are tracked in Gitub as bugs. See active and closed bugs.\nStatic SW Analysis Enablement Every pull requsts needs to adhere to code quality standard verifyed with static code analysis.\nThe build pipline in Azure Devops runs LGTM for static code analysis with focus on security and SonarCloud for general static code analysis.\n"
 },
 {
+	"uri": "https://docs.altinn.studio/tags/queue/",
+	"title": "queue",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://docs.altinn.studio/community/contributing/handbook/azure-storage/queues/",
+	"title": "Queues",
+	"tags": ["development", "operations", "storage", "azure", "queue"],
+	"description": "Guidelines for working with Azure Queue Storage",
+	"content": "Moving messages between queues During operations we sometimes need to move messages between queues. The most common scenario is wanting to re-process elements that have ended in the poison queue after too many failed attempts.\nPrerequisites Azure Storage Explorer An Azure AD account with write-permissions for the related storage account How to Open Storage Explorer. If you are working towards a test or production environment you must Sign into Azure under the Account Management tab select the storage account you want to work with Move to the Explorer tab and identify the source queue in the left hand menu You should now see the messages in the queue in the explorer. If you only want to move a single message, this should be highlighted Click the arrow next to Move messages to specify if all or just a single message should be moved In the dialogue, select the destination queue and click Move The messages will be moved immediatly. Check the destination queue to confirm. Manually adding messages in queue Manually adding a message to a queue is useful both when testing new functionality and during incident management.\nYou have two options when manually adding a message to a Storage Queue, the Azure Portal or Azure Storage Explorer.\nPrerequisites Azure Storage Explorer or a browser An Azure AD account with write-permissions for the related storage account How to (Azure Portal) Log onto the Azure Portal and identify the correct Storage Account Select Queues in the left hand menu and identify the queue to work with Click the queue you want to work with In the overview page of the queue click Add message Paste your message into the dialogue box, in our case it\u0026rsquo;s often a json document Ensure that Encode the message body in Base64 is checked Click OK How to (Storage Explorer) Open Storage Explorer. If you are working towards a test or production environment you must Sign into Azure under the Account Management tab select the storage account you want to work with Move to the Explorer tab and identify the queue you want to work with in the left hand menu Once selected, click Add message in the top ribbon Add the message in the dialogue box, in our case it\u0026rsquo;s often a json document Ensure encoding is set to Base64 and click ok "
+},
+{
 	"uri": "https://docs.altinn.studio/tags/react/",
 	"title": "react",
 	"tags": [],
@@ -3815,6 +3857,13 @@
 	"content": "To be translated\n"
 },
 {
+	"uri": "https://docs.altinn.studio/tags/software/",
+	"title": "software",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://docs.altinn.studio/technology/architecture/capabilities/devops/softwareconfiguration/",
 	"title": "Software Configuration &amp; Release Management Capabilities",
 	"tags": ["architecture", "todo", "devops"],
@@ -4048,6 +4097,13 @@
 {
 	"uri": "https://docs.altinn.studio/tags/todo/",
 	"title": "todo",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://docs.altinn.studio/tags/tools/",
+	"title": "tools",
 	"tags": [],
 	"description": "",
 	"content": ""

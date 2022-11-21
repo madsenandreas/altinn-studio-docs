@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,7 +303,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -311,7 +311,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -484,6 +484,12 @@ if(host != "localhost")
         <a href="/community/contributing/handbook/azure-devops/"><span>Azure DevOps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/contributing/handbook/azure-devops/pipelines/"><span>Pipelines</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/azure-storage/"><span>Azure Storage</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/azure-storage/tools/"><span>Tools &amp; Software</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/azure-storage/queues/"><span>Queues</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/community/contributing/handbook/back-end/"><span>Back-end</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1134,6 +1140,47 @@ if(host != "localhost")
 
 	</div><article class="post community">
     <header class="post-header">
+        <h2 class="post-title"><a href="/community/contributing/handbook/test/k6/">k6</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>k6 is a developer-centric, free and open-source load testing tool built for making performance testing a productive and enjoyable experience. read more about K6 here
+Set up k6 tests Clone the k6 tests from GitHub Repo Install docker and make sure the drive having the k6 tests is shared. Open cmd and download the latest k6 docker image docker pull loadimpact/k6 How to write k6 tests Find the area/collection where the new test has to be added. <a class="read-more" href="/community/contributing/handbook/test/k6/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/testing/">testing</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/api/">api</a>
+            
+        
+    </footer>
+</article>
+<article class="post community">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/community/contributing/handbook/back-end/logging/">Logging</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>This page is a work-in-progress. Because we do not have details on how potential errors should be shown to the users, this is only a general overview currently. More details will be added once we have a functional understanding of how users should experience errors. Logging .Net core provides a standard logging framework that can be used to log exceptions or events to a desired logging provider (console, eventlog, azure app service, application insights). <a class="read-more" href="/community/contributing/handbook/back-end/logging/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/logging/">logging</a>
+            
+        
+    </footer>
+</article>
+<article class="post community">
+    <header class="post-header">
         <h2 class="post-title"><a href="/community/contributing/handbook/naming/">Naming Conventions</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1305,47 +1352,6 @@ In your browser login to dev. <a class="read-more" href="/community/contributing
                 <a class="label label-default" href="https://docs.altinn.studio/tags/testing/">testing</a>
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/api/">api</a>
-            
-        
-    </footer>
-</article>
-<article class="post community">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/community/contributing/handbook/rest/">RESTful APIs (Representation State Transfer)</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>This page is work-in-progress. This is a proposed api which most likely is going to change.REST REST is an architectural style for designing loosely coupled applications over HTTP which was coined by Rob Fielding in 2000. We will define services according to REST.
-REST APIs should start with /api so that we with ease can differentiate between an rest api call and a ux-application call.
-REST APIs should start with a short word to indicate the logical domain or group of apis. <a class="read-more" href="/community/contributing/handbook/rest/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/api/">api</a>
-            
-        
-    </footer>
-</article>
-<article class="post community">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/community/contributing/handbook/routing/">Routing</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Routing Nginx routingInformation about routing with nginx
-Traefik routing <a class="read-more" href="/community/contributing/handbook/routing/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/routing/">routing</a>
             
         
     </footer>

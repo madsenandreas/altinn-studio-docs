@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,7 +303,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -311,7 +311,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -484,6 +484,12 @@ if(host != "localhost")
         <a href="/community/contributing/handbook/azure-devops/"><span>Azure DevOps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/contributing/handbook/azure-devops/pipelines/"><span>Pipelines</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/azure-storage/"><span>Azure Storage</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/azure-storage/tools/"><span>Tools &amp; Software</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/azure-storage/queues/"><span>Queues</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/community/contributing/handbook/back-end/"><span>Back-end</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1132,6 +1138,54 @@ if(host != "localhost")
 
 	</div><article class="post community">
     <header class="post-header">
+        <h2 class="post-title"><a href="/community/contributing/handbook/routing/traefik/">Traefik routing</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>In Altinn Tjenester 3.0 we are migrating from nginx to traefik for routing.
+Installation of Traefik 2.0How to install traefik
+TLS in Traefik 2.0How to set up TLS
+Traefik custom resourcesDefinitions for traefik 2.0 custom resources in kubernetes
+Traefik ingress routesHow to set up an ingress route and route trafic based on rules and middlewares <a class="read-more" href="/community/contributing/handbook/routing/traefik/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/traefik/">traefik</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/routing/">routing</a>
+            
+        
+    </footer>
+</article>
+<article class="post community">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/community/contributing/handbook/test/unit-testing/">Unit testing with Jest</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>When should you write tests? Unit testing includes testing of javascript functions and react/UI components. Listing of the highest priority of unit-testing:
+API calls with the correct formatted parameters Rendering of isolated components. Functions in general. Exporting and importing your component A quick way to get started testing your component is first to export the React Component:
+export class CloneServiceComponent extends React.Component&lt;ICloneServiceComponentProps &amp; RouteChildrenProps, ICloneServiceComponentState&gt; { and then reference it in your test the following way: <a class="read-more" href="/community/contributing/handbook/test/unit-testing/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/front-end/">front-end</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/testing/">testing</a>
+            
+        
+    </footer>
+</article>
+<article class="post community">
+    <header class="post-header">
         <h2 class="post-title"><a href="/community/contributing/handbook/front-end/versioning/">Versioning</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1254,6 +1308,32 @@ The development handbook is a dynamic material and everybody should feel free to
           
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
+            
+        
+    </footer>
+</article>
+<article class="post community">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/community/contributing/handbook/azure-storage/queues/">Queues</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Moving messages between queues During operations we sometimes need to move messages between queues. The most common scenario is wanting to re-process elements that have ended in the poison queue after too many failed attempts.
+Prerequisites Azure Storage Explorer An Azure AD account with write-permissions for the related storage account How to Open Storage Explorer. If you are working towards a test or production environment you must Sign into Azure under the Account Management tab select the storage account you want to work with Move to the Explorer tab and identify the source queue in the left hand menu You should now see the messages in the queue in the explorer. <a class="read-more" href="/community/contributing/handbook/azure-storage/queues/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/operations/">operations</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/storage/">storage</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/azure/">azure</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/queue/">queue</a>
             
         
     </footer>

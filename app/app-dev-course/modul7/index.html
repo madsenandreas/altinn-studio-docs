@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -297,13 +297,15 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/dynamic/"><span>Dynamics</span></a></li>
       <li class="dd-item">
+        <a href="/app/development/logic/expressions/"><span>Expressions</span></a></li>
+      <li class="dd-item">
         <a href="/app/development/logic/instantiation/"><span>Instantiation</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/services/"><span>Services</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -311,7 +313,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1132,16 +1134,24 @@ NOTE: This module is still under development. Come back later and it will probab
 <h2 id="tasks">Tasks</h2>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="Summary-page">
 	<div>
-		<a data-toggle="collapse" href="#Summary-page" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-Summary-page"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Summary page
+			
+				Summary page
+			
 		</a>
 	</div>
-	<div id="Summary-page" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-Summary-page" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
 <p>The municipality of Sogndal are experiencing an issue where some submissions contain incorrect information and typos that create unnecessary work for the caseworkers.
@@ -1162,16 +1172,24 @@ To avoid people submitting incorrect information, the municipality wishes that t
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="stateless">
 	<div>
-		<a data-toggle="collapse" href="#stateless" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-stateless"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Stateless frontpage
+			
+				Stateless frontpage
+			
 		</a>
 	</div>
-	<div id="stateless" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-stateless" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
 <p>The municipality of Sogndal has discovered that there is a lot of traffic from people who do not meet the requirements of the application.
@@ -1194,16 +1212,24 @@ an instance if you meet the requirements.</p>
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="variables-in-text">
 	<div>
-		<a data-toggle="collapse" href="#variables-in-text" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-variables-in-text"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Variables in text
+			
+				Variables in text
+			
 		</a>
 	</div>
-	<div id="variables-in-text" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-variables-in-text" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
 <p>IT competence is highly sought out. In <strong>module 4</strong> we set up a tailored offer for those with IT competence.</p>
@@ -1230,16 +1256,24 @@ Here is an overview of our vacant positions.
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="api">
 	<div>
-		<a data-toggle="collapse" href="#api" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-api"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			External API
+			
+				External API
+			
 		</a>
 	</div>
-	<div id="api" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-api" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>In some cases, you will have to use external API&rsquo;s to cover all the needs of an application.
 This could be to populate dropdown lists or to present data to the user based on the information they have provided.</p>
@@ -1268,16 +1302,24 @@ https://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr={p
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="messagebox">
 	<div>
-		<a data-toggle="collapse" href="#messagebox" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-messagebox"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Show and hide elements in message box
+			
+				Show and hide elements in message box
+			
 		</a>
 	</div>
-	<div id="messagebox" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-messagebox" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
 <h3 id="useful-documentation">Useful documentation</h3>
@@ -1288,16 +1330,24 @@ https://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr={p
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="presentation-texts">
 	<div>
-		<a data-toggle="collapse" href="#presentation-texts" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-presentation-texts"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Presentation Texts
+			
+				Presentation Texts
+			
 		</a>
 	</div>
-	<div id="presentation-texts" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-presentation-texts" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
 <h3 id="useful-documentation">Useful documentation</h3>
@@ -1308,16 +1358,24 @@ https://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr={p
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="Events">
 	<div>
-		<a data-toggle="collapse" href="#Events" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-Events"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Events
+			
+				Events
+			
 		</a>
 	</div>
-	<div id="Events" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-Events" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
 <h3 id="useful-documentation">Useful documentation</h3>

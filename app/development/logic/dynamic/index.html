@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -297,13 +297,15 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/dynamic/"><span>Dynamics</span></a></li>
       <li class="dd-item">
+        <a href="/app/development/logic/expressions/"><span>Expressions</span></a></li>
+      <li class="dd-item">
         <a href="/app/development/logic/instantiation/"><span>Instantiation</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/services/"><span>Services</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -311,7 +313,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1127,7 +1129,18 @@ if(host != "localhost")
     <li><a href="#example-with-more-complex-dynamics">Example with more complex dynamics</a></li>
     <li><a href="#dynamics-in-pdf">Dynamics in PDF</a></li>
   </ul>
-</nav><h2 id="introduction">Introduction</h2>
+</nav>
+
+<div class="panel panel-warning">
+	
+	<div class="panel-body"><p>⚠️ Dynamics are under active development. The <code>RuleHandler.js</code> file will in the future be replaced by
+<a href="../expressions">dynamic expressions</a>. Currently only show/hide dynamics are supported using expressions, but
+calculation and validation will be supported in the future.</p>
+</div>
+	
+</div>
+
+<h2 id="introduction">Introduction</h2>
 <p>Dynamics are events that happen on the client side. These can be separated in two categories:</p>
 <ul>
 <li>Calculations -  do calculations on the client side, and update the fields with new value.</li>

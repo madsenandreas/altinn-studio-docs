@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -297,13 +297,15 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/dynamic/"><span>Dynamics</span></a></li>
       <li class="dd-item">
+        <a href="/app/development/logic/expressions/"><span>Expressions</span></a></li>
+      <li class="dd-item">
         <a href="/app/development/logic/instantiation/"><span>Instantiation</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/services/"><span>Services</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -311,7 +313,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1128,16 +1130,24 @@ if(host != "localhost")
 <h2 id="tasks">Tasks</h2>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="process_description">
 	<div>
-		<a data-toggle="collapse" href="#process_description" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-process_description"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Expand process with a confirmation step
+			
+				Expand process with a confirmation step
+			
 		</a>
 	</div>
-	<div id="process_description" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-process_description" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>An Altinn App has a process flow that describes the different steps in the flow.
 The standard flow for a newly created application consists of one task; one fill out step.</p>
@@ -1176,16 +1186,24 @@ and rather use <a href="https://raw.githubusercontent.com/Altinn/altinn-studio/m
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="authorization">
 	<div>
-		<a data-toggle="collapse" href="#authorization" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-authorization"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Adding authorization rules for confirmation step
+			
+				Adding authorization rules for confirmation step
+			
 		</a>
 	</div>
-	<div id="authorization" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-authorization" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>Your application&rsquo;s Policy file is adapted to a standard process flow.
 Update the policy file so that it&rsquo;s authorization rules cover the new process step.</p>
@@ -1209,16 +1227,24 @@ Update the policy file so that it&rsquo;s authorization rules cover the new proc
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="validation">
 	<div>
-		<a data-toggle="collapse" href="#validation" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-validation"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Validation of submitter
+			
+				Validation of submitter
+			
 		</a>
 	</div>
-	<div id="validation" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-validation" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
 <ul>
@@ -1238,16 +1264,24 @@ Update the policy file so that it&rsquo;s authorization rules cover the new proc
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="confirmation">
 	<div>
-		<a data-toggle="collapse" href="#confirmation" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-confirmation"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Replace standard texts for confirmation page
+			
+				Replace standard texts for confirmation page
+			
 		</a>
 	</div>
-	<div id="confirmation" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-confirmation" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
 <p>The user should be presented with the following text before submitting the form.</p>

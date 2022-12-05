@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -297,13 +297,15 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/dynamic/"><span>Dynamics</span></a></li>
       <li class="dd-item">
+        <a href="/app/development/logic/expressions/"><span>Expressions</span></a></li>
+      <li class="dd-item">
         <a href="/app/development/logic/instantiation/"><span>Instantiation</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/services/"><span>Services</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -311,7 +313,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1129,16 +1131,24 @@ be setting up the first page of your application for newcomers and verify that e
 <h2 id="tasks">Tasks</h2>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="create-new-application">
 	<div>
-		<a data-toggle="collapse" href="#create-new-application" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-create-new-application"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Create new application
+			
+				Create new application
+			
 		</a>
 	</div>
-	<div id="create-new-application" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-create-new-application" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>Create the application in Altinn Studio with the organization that you have access to as an owner.
 Alternatively, you can create the application with you as the owner, if you are not testing it in a test environment.</p>
@@ -1164,16 +1174,24 @@ so the year does not need to be taken into account.</p>
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="upload-datamodel">
 	<div>
-		<a data-toggle="collapse" href="#upload-datamodel" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-upload-datamodel"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Upload data model
+			
+				Upload data model
+			
 		</a>
 	</div>
-	<div id="upload-datamodel" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-upload-datamodel" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>The municipality of Sogndal has created <a href="/app/app-dev-course/modul1/datamodel.xsd">a data model</a>
 that represents data they wish to collect from future residents.</p>
@@ -1213,16 +1231,24 @@ and take a closer look at the contents.</p>
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="edit-texts">
 	<div>
-		<a data-toggle="collapse" href="#edit-texts" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-edit-texts"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Edit texts
+			
+				Edit texts
+			
 		</a>
 	</div>
-	<div id="edit-texts" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-edit-texts" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>To make the service user friendly and available to use for those with visual impairments, it is important that all components have 
 descriptive titles and descriptions.</p>
@@ -1255,16 +1281,24 @@ In a first edition it is sufficient that only one of these languages is availabl
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="set-up-components">
 	<div>
-		<a data-toggle="collapse" href="#set-up-components" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-set-up-components"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Set up components
+			
+				Set up components
+			
 		</a>
 	</div>
-	<div id="set-up-components" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-set-up-components" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>The fields to be filled out on a form page can be created by using the &ldquo;drag and drop&rdquo; function in Altinn Studio
 or manually in the json-file that describes the appearance of a from page <em>FormLayout.json</em>.</p>
@@ -1314,16 +1348,24 @@ to an input field for a long answer. What change is required?</li>
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="download-app-locally">
 	<div>
-		<a data-toggle="collapse" href="#download-app-locally" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-download-app-locally"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Download application locally
+			
+				Download application locally
+			
 		</a>
 	</div>
-	<div id="download-app-locally" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-download-app-locally" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>Some application features are not supported for development in Altinn Studio.
 These must be developed in a local development environment.</p>
@@ -1340,16 +1382,24 @@ but if you need a recommendation <a href="https://code.visualstudio.com/Download
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="run-in-localtest">
 	<div>
-		<a data-toggle="collapse" href="#run-in-localtest" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-run-in-localtest"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Run application in LocalTest
+			
+				Run application in LocalTest
+			
 		</a>
 	</div>
-	<div id="run-in-localtest" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-run-in-localtest" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>By using a mock that can be spun up locally by Altinn Platform, it is possible to
 do simple testing and verification of the application in the local development environment.</p>

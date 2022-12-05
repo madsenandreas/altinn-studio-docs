@@ -301,6 +301,8 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/calculation/"><span>Kalkuleringer</span></a></li>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/expressions/"><span>Uttrykk</span></a></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/validation/"><span>Validering</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/"><span>Konfigurasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
@@ -617,16 +619,24 @@ sette opp førstesiden til applikasjonen for tilflyttere og verifisere at ting s
 <h2 id="oppgaver">Oppgaver</h2>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="opprette-ny-applikasjon">
 	<div>
-		<a data-toggle="collapse" href="#opprette-ny-applikasjon" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-opprette-ny-applikasjon"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Opprette ny applikasjon
+			
+				Opprette ny applikasjon
+			
 		</a>
 	</div>
-	<div id="opprette-ny-applikasjon" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-opprette-ny-applikasjon" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>Opprett applikasjonen i Altinn Studio med organisasjonen du har tilgang til som eier.
 Alternativt kan du opprette applikasjonen med deg selv som eier dersom du ikke skal teste den i et testmiljø.</p>
@@ -652,16 +662,24 @@ så man trenger ikke ta hensyn til årstall i navnet.</p>
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="late-opp-datamodel">
 	<div>
-		<a data-toggle="collapse" href="#late-opp-datamodel" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-late-opp-datamodel"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Laste opp datamodell
+			
+				Laste opp datamodell
+			
 		</a>
 	</div>
-	<div id="late-opp-datamodel" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-late-opp-datamodel" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>Sogndal kommune har opprettet <a href="datamodel.xsd">en datamodell</a>
 som representerer data de ønsker å samle inn fra fremtidige innbyggere.</p>
@@ -695,16 +713,24 @@ og ta en nærmere titt på innholdet.</li>
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="redigere-tekster">
 	<div>
-		<a data-toggle="collapse" href="#redigere-tekster" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-redigere-tekster"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Redigere tekster
+			
+				Redigere tekster
+			
 		</a>
 	</div>
-	<div id="redigere-tekster" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-redigere-tekster" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>For at tjenesten skal være brukervennlig og mulig å benytte for de som sitter med synshemninger er det viktig at alle komponenter har gode og beskrivende
 overskrifter og beskrivelser. Vi ønsker nå at dere legger til tekster som skal brukes for hvert datafelt.</p>
@@ -737,16 +763,24 @@ I en første versjon er det tilstrekkelig at kun ett av disse språkene støttes
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="sette-opp-komponenter">
 	<div>
-		<a data-toggle="collapse" href="#sette-opp-komponenter" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-sette-opp-komponenter"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Sette opp komponenter
+			
+				Sette opp komponenter
+			
 		</a>
 	</div>
-	<div id="sette-opp-komponenter" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-sette-opp-komponenter" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>Feltene som skal fylles ut på en skjemaside kan settes opp ved hjelp av &ldquo;drag and drop&rdquo; i Altinn Studio
 eller manuelt i json-filen som beskriver utseendet til en skjemaside <em>FormLayout.json</em>.</p>
@@ -796,16 +830,24 @@ til et inndatafelt for et langt svar. Hvilken endring kreves?</li>
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="laste-ned-app-lokalt">
 	<div>
-		<a data-toggle="collapse" href="#laste-ned-app-lokalt" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-laste-ned-app-lokalt"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Laste ned applikasjonen lokalt
+			
+				Laste ned applikasjonen lokalt
+			
 		</a>
 	</div>
-	<div id="laste-ned-app-lokalt" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-laste-ned-app-lokalt" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>Enkelte applikasjonsfunksjoner er det ikke støtte for å utvikle i Altinn Studio.
 Disse må utvikles i et lokalt utviklingsmiljø.</p>
@@ -822,16 +864,24 @@ men trenger du en anbefaling, er <a href="https://code.visualstudio.com/Download
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="kjore-i-localtest">
 	<div>
-		<a data-toggle="collapse" href="#kjore-i-localtest" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-kjore-i-localtest"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Kjøre appen i localtest
+			
+				Kjøre appen i localtest
+			
 		</a>
 	</div>
-	<div id="kjore-i-localtest" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-kjore-i-localtest" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>Ved hjelp av en mock som kan spinnes opp lokalt av Altinn Plattform
 er det mulig å gjøre enkel testing og verifikasjon av applikasjonen i det lokale utviklingsmiljøet.</p>

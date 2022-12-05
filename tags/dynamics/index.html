@@ -61,6 +61,10 @@ if(host != "localhost")
       <img src="/images/en.svg" class="a-iconLeft a-flag" alt="" />
       <p>
         <span class="a-h3">English ✓</span><br><span>Most content is available in english.</span></p>
+    </a><a aria-hidden="true" class="dropdown-item" href="/nb/tags/dynamics/">
+      <img src="/images/nb.svg" class="a-iconLeft a-flag" alt="" />
+      <p>
+        <span class="a-h3">Bokmål</span><br><span>Noe innhold er tilgjengelig på bokmål.</span></p>
     </a></div>
 </li>
               <li>
@@ -87,6 +91,10 @@ if(host != "localhost")
       <img src="/images/en.svg" class="a-iconLeft a-flag" alt="" />
       <p>
         <span class="a-h3">English ✓</span><br><span>Most content is available in english.</span></p>
+    </a><a aria-hidden="true" class="dropdown-item" href="/nb/tags/dynamics/">
+      <img src="/images/nb.svg" class="a-iconLeft a-flag" alt="" />
+      <p>
+        <span class="a-h3">Bokmål</span><br><span>Noe innhold er tilgjengelig på bokmål.</span></p>
     </a></div>
 </li>
         </ul>
@@ -113,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -289,13 +297,15 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/dynamic/"><span>Dynamics</span></a></li>
       <li class="dd-item">
+        <a href="/app/development/logic/expressions/"><span>Expressions</span></a></li>
+      <li class="dd-item">
         <a href="/app/development/logic/instantiation/"><span>Instantiation</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/services/"><span>Services</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -303,7 +313,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1148,9 +1158,9 @@ Code lists/Options Dynamic Tasks Vis/skjul innholdCollecting work informationI
         <h2 class="post-title"><a href="/app/development/logic/dynamic/">Dynamics</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Introduction Dynamics are events that happen on the client side. These can be separated in two categories:
-Calculations - do calculations on the client side, and update the fields with new value. Show/hide fields - decide if fields should be hidden or displayed based on form values. There are two ways to add and change dynamics for an Altinn App:
-Directly in Altinn Studio under Lage-tab. Select Rediger dynamikk in the right menu. <a class="read-more" href="/app/development/logic/dynamic/">&raquo;</a></p>
+        <p>⚠️ Dynamics are under active development. The RuleHandler.js file will in the future be replaced by dynamic expressions. Currently only show/hide dynamics are supported using expressions, but calculation and validation will be supported in the future.
+Introduction Dynamics are events that happen on the client side. These can be separated in two categories:
+Calculations - do calculations on the client side, and update the fields with new value. Show/hide fields - decide if fields should be hidden or displayed based on form values. <a class="read-more" href="/app/development/logic/dynamic/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         
@@ -1158,6 +1168,27 @@ Directly in Altinn Studio under Lage-tab. Select Rediger dynamikk in the right m
           
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/dynamics/">dynamics</a>
+            
+        
+    </footer>
+</article>
+<article class="post app">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/app/development/logic/expressions/">Dynamic expressions</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>⚠️ Dynamic behaviour is an area under active development. This functionality is not configurable directly in Altinn Studio yet, and must be configured manually in the JSON files.
+Introduksjon Dynamikk via uttrykk gjør det mulig å definere enkel dynamisk oppførsel i en Altinn 3 app, som for eksempel ved å definere om et skjemafelt skal vises eller skjules, om feltet skal være påkrevd eller skrivebeskyttet.
+Uttrykkene er tilgjengelige i alle Altinn 3-apper som bruker frontend-versjon 3. <a class="read-more" href="/app/development/logic/expressions/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/dynamics/">dynamics</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-english/">translate-to-english</a>
             
         
     </footer>

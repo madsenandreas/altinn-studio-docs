@@ -301,6 +301,8 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/calculation/"><span>Kalkuleringer</span></a></li>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/expressions/"><span>Uttrykk</span></a></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/validation/"><span>Validering</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/"><span>Konfigurasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
@@ -615,16 +617,24 @@ if(host != "localhost")
 <h2 id="oppgaver">Oppgaver</h2>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="legge-til-infoside">
 	<div>
-		<a data-toggle="collapse" href="#legge-til-infoside" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-legge-til-infoside"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Legge til infoside
+			
+				Legge til infoside
+			
 		</a>
 	</div>
-	<div id="legge-til-infoside" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-legge-til-infoside" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>For skjemaer der det samles inn eller gis mye informasjon
 vil det forbedre brukeropplevelsen dersom man deler applikasjonen opp i flere sider.</p>
@@ -676,19 +686,27 @@ Noen i kommunen har opprettet en skisse av informasjonssiden.</p>
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="innfore-sporvalg">
 	<div>
-		<a data-toggle="collapse" href="#innfore-sporvalg" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-innfore-sporvalg"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Alternativ arbeidsflyt (sporvalg)
+			
+				Alternativ arbeidsflyt
+			
 		</a>
 	</div>
-	<div id="innfore-sporvalg" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-innfore-sporvalg" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>I mange tilfeller er det ikke aktuelt å svare på alle spørsmål i et skjema, kanskje fordi svaret sier seg selv, eller fordi det ikke er relevant basert på noe man har svart tidligere i skjemaet. Da kan sporvalg være en god løsning.</p>
-<p>Ved hjelp av sporvalg kan man styre hvilke siden av en applikasjon som er synlige for brukeren.</p>
+<p>Ved hjelp av sporvalg kan man styre hvilke sider i en applikasjon som er synlige for brukeren.</p>
 <p>I denne oppgaven skal du sette opp sporvalg i applikasjonen basert på kravene fra Sogndal kommune.</p>
 <h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
 <p>En bruker som ikke oppfyller kravene for skjemaet skal stoppes så tidlig som mulig i arbeidsflyten.</p>
@@ -709,9 +727,6 @@ Se en oversikt over andre tilbud i kommunen her.
 <p>Linje 2 i teksten skal være en hyperlenke som peker på
 <a href="https://www.sogndal.kommune.no/">https://www.sogndal.kommune.no/</a></p>
 </li>
-<li>
-<p>Det skal ikke være mulig å navigere til andre skjemasider etter denne.</p>
-</li>
 </ul>
 <h3 id="spor-2">Spor 2</h3>
 <ul>
@@ -724,12 +739,13 @@ Se en oversikt over andre tilbud i kommunen her.
 </ul>
 <h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>
 <ul>
-<li><a href="/nb/app/development/ux/pages/tracks/">Hvordan sette opp sporvalg</a></li>
+<li><a href="/nb/app/development/logic/expressions">Dynamiske uttrykk</a></li>
+<li><a href="/nb/app/development/logic/expressions/#viseskjule-hele-sider">Hvordan vise/skjule hele sider</a></li>
 <li><a href="/nb/app/development/ux/texts/#formatering-av-tekster">Formatering av tekst</a></li>
 </ul>
 <h3 id="forståelsessjekk">Forståelsessjekk</h3>
 <ul>
-<li>Hvis en bruker går tilbake og endrer svaret sitt på infosiden, får den da opp datainnsamlingssidene? Hvis ikke, hvilke endringer kan du gjøre for å støtte dette i din applikasjon?</li>
+<li>Hvis en bruker går tilbake og endrer svaret sitt på infosiden, får den da opp datainnsamlingssidene?</li>
 <li>Dersom man har sporvalg på et senere tidspunkt i en arbeidsflyt og en sluttbruker endrer et valg, hva skjer med skjemdataen man tidligere har fylt ut, dersom siden skjules for sluttbrukeren?</li>
 </ul>
 
@@ -738,16 +754,24 @@ Se en oversikt over andre tilbud i kommunen her.
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="prefill-expandable">
 	<div>
-		<a data-toggle="collapse" href="#prefill-expandable" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-prefill-expandable"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Forhåndsutfylling av personopplysninger
+			
+				Forhåndsutfylling av personopplysninger
+			
 		</a>
 	</div>
-	<div id="prefill-expandable" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-prefill-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>En av fordelene til Altinn er at man allerede har metadata om både personer og virksomheter tilgjengelig. Ved hjelp av forhåndsutfylling kan man hente ned data om brukerne og presentere den i utfylte felter, slik at de slipper å fylle dem ut selv. Typiske forhåndsutfyllingsverdier vil være navn, adresse, e-post osv.</p>
 <p>Dersom dataen er tilgjengelig i en av Altinns forhåndsutfyllingskilder, kan dette konfigureres mot et felt i datamodellen og automatisk populeres når skjemaet opprettes. Dersom man har andre behov for forhåndsutfylling, kan dette løses med kode i applikasjonen.</p>

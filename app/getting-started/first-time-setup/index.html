@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -297,13 +297,15 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/dynamic/"><span>Dynamics</span></a></li>
       <li class="dd-item">
+        <a href="/app/development/logic/expressions/"><span>Expressions</span></a></li>
+      <li class="dd-item">
         <a href="/app/development/logic/instantiation/"><span>Instantiation</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/services/"><span>Services</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -311,7 +313,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1126,16 +1128,24 @@ if(host != "localhost")
 <p>Din Altinn Studio bruker er personlig for deg og kan knyttes til en eller flere organisasjoner for å samarbeide med andre og få tilgang til eksisterende apper.</p>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="lag-bruker-med-github-brukernavn">
 	<div>
-		<a data-toggle="collapse" href="#lag-bruker-med-github-brukernavn" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-lag-bruker-med-github-brukernavn"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Lag bruker med GitHub brukernavn
+			
+				Lag bruker med GitHub brukernavn
+			
 		</a>
 	</div>
-	<div id="lag-bruker-med-github-brukernavn" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-lag-bruker-med-github-brukernavn" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<ol>
 <li>Velg å logge inn på <a href="https://altinn.studio">altinn.studio</a>.
@@ -1155,16 +1165,24 @@ Brukeren i Altinn Studio vil bli koblet til din GitHub-bruker og du er klar for 
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="lag-en-bruker-med-epostadresse-uten-github">
 	<div>
-		<a data-toggle="collapse" href="#lag-en-bruker-med-epostadresse-uten-github" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-lag-en-bruker-med-epostadresse-uten-github"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Lag en bruker med epostadresse (uten GitHub)
+			
+				Lag en bruker med epostadresse (uten GitHub)
+			
 		</a>
 	</div>
-	<div id="lag-en-bruker-med-epostadresse-uten-github" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-lag-en-bruker-med-epostadresse-uten-github" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<ol>
 <li>På “Logg inn”-siden, klikk på knappen “Behov for konto? Registrer deg nå.”

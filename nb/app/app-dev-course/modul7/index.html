@@ -301,6 +301,8 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/calculation/"><span>Kalkuleringer</span></a></li>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/expressions/"><span>Uttrykk</span></a></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/validation/"><span>Validering</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/"><span>Konfigurasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
@@ -620,16 +622,24 @@ MERK: Denne modulen er fortsatt under utvikling. Ta en titt innom på et senere 
 <h2 id="oppgaver">Oppgaver</h2>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="Oppsummeringsside">
 	<div>
-		<a data-toggle="collapse" href="#Oppsummeringsside" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-Oppsummeringsside"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Oppsummeringsside
+			
+				Oppsummeringsside
+			
 		</a>
 	</div>
-	<div id="Oppsummeringsside" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-Oppsummeringsside" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
 <p>Sogndal kommune opplever at enkelte innsendinger inneholder feilopplysninger og skrivefeil som skaper unødig arbeid for saksbehandlere.
@@ -650,16 +660,24 @@ For å unngå at personer sender inn feil informasjon, ønsker kommunen at bruke
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="stateless">
 	<div>
-		<a data-toggle="collapse" href="#stateless" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-stateless"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Stateless førsteside
+			
+				Stateless førsteside
+			
 		</a>
 	</div>
-	<div id="stateless" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-stateless" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
 <p>Sogndal kommune har oppdaget at det er en del trafikk fra personer som ikke møter kriteriene i applikasjonen.
@@ -682,16 +700,24 @@ møter kriteriene.</p>
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="variabler-i-tekst">
 	<div>
-		<a data-toggle="collapse" href="#variabler-i-tekst" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-variabler-i-tekst"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Variabler i tekst
+			
+				Variabler i tekst
+			
 		</a>
 	</div>
-	<div id="variabler-i-tekst" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-variabler-i-tekst" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
 <p>IT-kompetanse er svært ettertraktet. I <strong>Modul 4</strong> satt vi opp et skreddersydd tilbud til de med IT-kompetanse.</p>
@@ -718,16 +744,24 @@ Se en oversikt over våre ledige stillinger her.
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="api">
 	<div>
-		<a data-toggle="collapse" href="#api" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-api"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Eksternt API
+			
+				Eksternt API
+			
 		</a>
 	</div>
-	<div id="api" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-api" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>I noen tilfeller vil man måtte ta i bruk eksterne APIer for å dekke alle behovene til en applikasjon. 
 Dette kan være for å berike nedtrekkslister eller å presentere data til brukeren basert på oppgitt informasjon.</p>
@@ -756,16 +790,24 @@ https://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr={p
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="messagebox">
 	<div>
-		<a data-toggle="collapse" href="#messagebox" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-messagebox"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Vise og skjule elementer i meldingsboks
+			
+				Vise og skjule elementer i meldingsboks
+			
 		</a>
 	</div>
-	<div id="messagebox" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-messagebox" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
 <h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>
@@ -776,16 +818,24 @@ https://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr={p
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="presentation-texts">
 	<div>
-		<a data-toggle="collapse" href="#presentation-texts" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-presentation-texts"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Presentasjonstekst
+			
+				Presentasjonstekst
+			
 		</a>
 	</div>
-	<div id="presentation-texts" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-presentation-texts" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
 <h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>
@@ -796,16 +846,24 @@ https://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr={p
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="Events">
 	<div>
-		<a data-toggle="collapse" href="#Events" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-Events"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Events
+			
+				Events
+			
 		</a>
 	</div>
-	<div id="Events" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-Events" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
 <h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>

@@ -301,6 +301,8 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/calculation/"><span>Kalkuleringer</span></a></li>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/expressions/"><span>Uttrykk</span></a></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/validation/"><span>Validering</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/"><span>Konfigurasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
@@ -617,16 +619,24 @@ if(host != "localhost")
 <h2 id="oppgaver">Oppgaver</h2>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="endre-resursser">
 	<div>
-		<a data-toggle="collapse" href="#endre-resursser" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-endre-resursser"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Sette egendefinerte krav for ressursbruk
+			
+				Sette egendefinerte krav for ressursbruk
+			
 		</a>
 	</div>
-	<div id="endre-resursser" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-endre-resursser" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>Alle applikasjoner kommer med et standardoppsett for ressursbruk og skalering i applikasjonsclusteret.
 Det oppsettet er det mulig å overstyre dersom applikasjonen din skulle ha andre behov.</p>
@@ -653,16 +663,24 @@ og for større applikasjoner sørge for at de har en optimal ytelse med alle nø
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="bygge-applikasjon">
 	<div>
-		<a data-toggle="collapse" href="#bygge-applikasjon" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-bygge-applikasjon"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Bygge applikasjon
+			
+				Bygge applikasjon
+			
 		</a>
 	</div>
-	<div id="bygge-applikasjon" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-bygge-applikasjon" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>Når man refererer til å bygge en applikasjon i Altinn Studio,
 betyr dette å opprette en versjon av applikasjonens nåværende tilstand
@@ -679,16 +697,24 @@ og legg til en beskrivende kommentar om hva versjonen inneholder.</p>
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="deploye-applikasjon">
 	<div>
-		<a data-toggle="collapse" href="#deploye-applikasjon" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-deploye-applikasjon"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Deploye applikasjon
+			
+				Deploye applikasjon
+			
 		</a>
 	</div>
-	<div id="deploye-applikasjon" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-deploye-applikasjon" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>Ved å deploye en applikasjon til testmiljø vil man kunne teste alle integrasjoner.
 I tillegg benyttes TT02 ofte til å verifisere at en applikasjon oppfører seg som forventet
@@ -717,16 +743,24 @@ for organisasjonen i Altinn Studio.</p>
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="instansiere-i-tt02">
 	<div>
-		<a data-toggle="collapse" href="#instansiere-i-tt02" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-instansiere-i-tt02"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Teste applikasjonen i TT02
+			
+				Teste applikasjonen i TT02
+			
 		</a>
 	</div>
-	<div id="instansiere-i-tt02" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-instansiere-i-tt02" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>På deploysiden finner du direktelenken til applikasjonen din.
 Den er på formatet <em>{org}.apps.tt02.altinn.no/{org}/{app}</em>.</p>

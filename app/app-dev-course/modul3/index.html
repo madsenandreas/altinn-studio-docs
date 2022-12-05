@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -297,13 +297,15 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/dynamic/"><span>Dynamics</span></a></li>
       <li class="dd-item">
+        <a href="/app/development/logic/expressions/"><span>Expressions</span></a></li>
+      <li class="dd-item">
         <a href="/app/development/logic/instantiation/"><span>Instantiation</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/services/"><span>Services</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -311,7 +313,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1129,16 +1131,24 @@ if(host != "localhost")
 <h2 id="tasks">Tasks</h2>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="change-resources">
 	<div>
-		<a data-toggle="collapse" href="#change-resources" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-change-resources"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Set custom requirements for resource use
+			
+				Set custom requirements for resource use
+			
 		</a>
 	</div>
-	<div id="change-resources" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-change-resources" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>All applications come with a standard setup for resource use and scaling in the application cluster.
 This setup can be overridden if your application has different needs.</p>
@@ -1165,16 +1175,24 @@ and for bigger applications make sure they have optimal performance with all nec
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="build-application">
 	<div>
-		<a data-toggle="collapse" href="#build-application" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-build-application"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Build application
+			
+				Build application
+			
 		</a>
 	</div>
-	<div id="build-application" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-build-application" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>When you refer to building an application in Altinn Studio,
 this means creating a version of the current state of the application
@@ -1191,16 +1209,24 @@ and add a descriptive comment of what the version includes.</p>
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="deploy-application">
 	<div>
-		<a data-toggle="collapse" href="#deploy-application" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-deploy-application"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Deploy application
+			
+				Deploy application
+			
 		</a>
 	</div>
-	<div id="deploy-application" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-deploy-application" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>By deploying an application to a test environment you will be able to test all integrations.
 In addition to this, TT02 is often used to verify an application is behaving as expected
@@ -1229,16 +1255,24 @@ for the organization in Altinn Studio.</p>
 </div>
 
 
-<div class="card adocs-expand">
+<div class="card adocs-expand" id="instantiate-in-tt02">
 	<div>
-		<a data-toggle="collapse" href="#instantiate-in-tt02" role="tab" aria-expanded="false" class="a-collapse-title no-decoration collapsed a-h3">
+		<a
+			data-toggle="collapse"
+			href="#expandable-instantiate-in-tt02"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
 			<span class="a-dropdownCircleArrow">
 			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
 			</span>
-			Test the application in TT02
+			
+				Test the application in TT02
+			
 		</a>
 	</div>
-	<div id="instantiate-in-tt02" class="a-collapseContent collapse" role="tabpanel">
+	<div id="expandable-instantiate-in-tt02" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>At the deployment page you will find the direct link to your application.
 It is in the format <em>{org}.apps.tt02.altinn.no/{org}/{app}</em></p>

@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Overview of dynamic expressions defined in JSON" />
+<meta name="altinn_pagedir" class="elastic" content="app\development\logic\expressions\" />
+<meta name="altinn_title" class="elastic" content="Dynamic expressions" />
+
+<title>Dynamic expressions – Altinn</title><link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+    <link href="/css/nucleus.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/hybrid.css" rel="stylesheet">
+    <link href="/css/horsey.css" rel="stylesheet">
+    <link href="/css/fortawesome.css" rel="stylesheet">
+    <link href="/css/designsystem.css" rel="stylesheet"><link href="/css/theme.css" rel="stylesheet"><script src="/js/jquery-2.x.min.js"></script>
+<link href="/css/custom.css" rel="stylesheet">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114303148-1"></script>
+<script>
+var host = window.location.hostname;
+if(host != "localhost")
+{
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-114303148-1', { 'anonymize_ip': true });
+}
+</script><style>
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+  </head>
+  <body class="a-page" data-url="/app/development/logic/expressions/"><nav class="a-jumpnav">
+  <ul class="no-decoration d-flex">
+    <li><a class="sr-only sr-only-focusable" href="#content">Jump to the main content</a></li><li><a class="sr-only sr-only-focusable" href="#docsmenu">Jump to the main menu</a></li></ul>
+</nav>
+
+<header class="a-header ">
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+
+        
+        <nav class="a-globalNav " id="primary-nav">
+          <a href="/" class="a-globalNav-logo">
+            <img src="/images/altinnstudio-logo-white.svg" alt="Altinn Studio logo" class="adocs-logo">
+            <span class="sr-only">To the frontpage</span>
+          </a>
+
+          <button class="navbar-toggler d-md-none" type="button"><span class="sr-only">Show/hide menu</span></button>
+          <div class="collapse navbar-toggleable-sm a-globalNav-main" id="exCollapsingNavbar2">
+            <ul id="exCollapsingNavbar">
+              <li class="d-md-none dropdown"><a class="nav-link dropdown-toggle a-languageSwitcher" aria-expanded="false" data-toggle="dropdown" aria-haspopup="true" href="#">
+  Language
+</a>
+<div class="dropdown-menu a-dropdown-languages a-dropdownTriangle"><a aria-hidden="true" class="dropdown-item" href="/app/development/logic/expressions/">
+      <img src="/images/en.svg" class="a-iconLeft a-flag" alt="" />
+      <p>
+        <span class="a-h3">English ✓</span><br><span>Most content is available in english.</span></p>
+    </a><a aria-hidden="true" class="dropdown-item" href="/nb/app/development/logic/expressions/">
+      <img src="/images/nb.svg" class="a-iconLeft a-flag" alt="" />
+      <p>
+        <span class="a-h3">Bokmål</span><br><span>Noe innhold er tilgjengelig på bokmål.</span></p>
+    </a></div>
+</li>
+              <li>
+                <a class="a-nav-link a-hvr-underline" href="/app/">apps</a>
+              </li>
+              <li>
+                <a class="a-nav-link a-hvr-underline" href="/api/">api</a>
+              </li>
+              <li>
+                <a class="a-nav-link a-hvr-underline" href="/community/">community</a>
+              </li>
+              <li>
+                <a class="a-nav-link a-hvr-underline " href="/technology/">tech</a>
+              </li>
+            </ul>
+          </div>
+
+        </nav> 
+        <ul class="nav nav-pills a-header-options" id="nav-list">
+          <li class="nav-item dropdown d-none d-md-block"><a class="nav-link dropdown-toggle a-languageSwitcher" aria-expanded="false" data-toggle="dropdown" aria-haspopup="true" href="#">
+  Language
+</a>
+<div class="dropdown-menu a-dropdown-languages a-dropdownTriangle"><a aria-hidden="true" class="dropdown-item" href="/app/development/logic/expressions/">
+      <img src="/images/en.svg" class="a-iconLeft a-flag" alt="" />
+      <p>
+        <span class="a-h3">English ✓</span><br><span>Most content is available in english.</span></p>
+    </a><a aria-hidden="true" class="dropdown-item" href="/nb/app/development/logic/expressions/">
+      <img src="/images/nb.svg" class="a-iconLeft a-flag" alt="" />
+      <p>
+        <span class="a-h3">Bokmål</span><br><span>Noe innhold er tilgjengelig på bokmål.</span></p>
+    </a></div>
+</li>
+        </ul>
+      </div>
+    </div> 
+  </div> 
+</header>
+<div class="container pt-2 pt-md-3 pt-lg-5">
+      <div class="adocs-scrollcontainer">
+        <div class="row">
+            <div class="col-sm-12"><nav id="sidebar" class=""><div class="highlightable">
+    <div id="header-wrapper"><div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script src="/js/lunr.min.js"></script>
+<script src="/js/horsey.js"></script>
+<script>
+    var baseurl = "https:\/\/docs.altinn.studio\/";
+    var language = "en";
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@elastic/app-search-javascript@8.4.1/dist/elastic_app_search.umd.min.js" integrity="sha256-lBVStH8hKdQM2xGo2BvLryEDqp8BXg86ABbUByBvZrk=" crossorigin="anonymous"></script>
+<script src="/js/search.js"></script></div>
+    <ul id="docsmenu" class="topics">
+      <li class="dd-item">
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/getting-started/intro/"><span>Introduction</span></a></li>
+      <li class="dd-item">
+        <a href="/app/getting-started/first-time-setup/"><span>Create user</span></a></li>
+      <li class="dd-item">
+        <a href="/app/getting-started/copy-app/"><span>Copy app</span></a></li>
+      <li class="dd-item">
+        <a href="/app/getting-started/create-app/"><span>Create app</span></a></li>
+      <li class="dd-item">
+        <a href="/app/getting-started/dashboard/"><span>Dashboard</span></a></li>
+      <li class="dd-item">
+        <a href="/app/getting-started/migrate-services/"><span>Migrate services</span></a></li>
+      <li class="dd-item">
+        <a href="/app/getting-started/access-management/"><span>Access</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/getting-started/access-management/apps/"><span>Apps</span></a></li>
+      <li class="dd-item">
+        <a href="/app/getting-started/access-management/studio/"><span>Studio</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/getting-started/navigation/"><span>Navigation</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/getting-started/navigation/designer/"><span>Designer</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/getting-started/navigation/designer/ui-editor/"><span>UI editor</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/getting-started/navigation/repos/"><span>Repos</span></a></li>
+      <li class="dd-item">
+        <a href="/app/getting-started/navigation/code/"><span>Code</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/getting-started/local-dev/"><span>Local development</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/app-dev-course/"><span>Intro course</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/app-dev-course/case/"><span>Case</span></a></li>
+      <li class="dd-item">
+        <a href="/app/app-dev-course/modul1/"><span>Module 1</span></a></li>
+      <li class="dd-item">
+        <a href="/app/app-dev-course/modul2/"><span>Module 2</span></a></li>
+      <li class="dd-item">
+        <a href="/app/app-dev-course/modul3/"><span>Module 3</span></a></li>
+      <li class="dd-item">
+        <a href="/app/app-dev-course/modul4/"><span>Module 4</span></a></li>
+      <li class="dd-item">
+        <a href="/app/app-dev-course/modul5/"><span>Module 5</span></a></li>
+      <li class="dd-item">
+        <a href="/app/app-dev-course/modul6/"><span>Module 6</span></a></li>
+      <li class="dd-item">
+        <a href="/app/app-dev-course/modul7/"><span>Module 7</span></a></li>
+      <li class="dd-item">
+        <a href="/app/app-dev-course/losningsforslag/"><span>Solution</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/design/"><span>Design</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/design/insight/"><span>Preliminary considerations</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/prototype/"><span>Prototype</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/usertest/"><span>User testing</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/consistency/"><span>Consistancy</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/content/"><span>Content in the form</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/design-principles/"><span>Design principles</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/link-to-app/"><span>Entering the form</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/components/"><span>UI-components</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/components/title-and-paragraph/"><span>Titles and paragraphs</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/components/button/"><span>Buttons and links</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/components/input/"><span>Input</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/components/date/"><span>Date</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/components/checkbox/"><span>Checkboxes</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/components/radiobutton/"><span>Radio button</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/components/select/"><span>Dropdown</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/components/helptext/"><span>Help texts</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/components/error-message/"><span>Error messages</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/components/file-upload/"><span>File upload</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/components/picture-component/"><span>Image</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/tone-of-voice/"><span>Language</span></a></li>
+      <li class="dd-item">
+        <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/data/prefill/"><span>Prefill</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/data/prefill/config/"><span>Config</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/data/prefill/custom/"><span>Custom</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/data/prefill/instantiation/"><span>Http post</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/data/data-model/"><span>Data model</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/data/data-model/seres-migration/"><span>Sereserstatning</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/data/options/"><span>Code lists</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/data/attachments/"><span>Attachments</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/"><span>User interface</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/ux/components/"><span>Components</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/ux/components/multipleselect/"><span>MultipleSelect</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/components/panel/"><span>Panel</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/components/printbutton/"><span>PrintButton</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/components/likert/"><span>Likert</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/pages/"><span>Pages</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/ux/pages/navigation/"><span>Navigation</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/pages/tracks/"><span>Tracks</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/pages/summary/"><span>Summary</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/pages/layout-sets/"><span>Layout sets</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/fields/"><span>Fields</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/ux/fields/grouping/"><span>Grouping</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/ux/fields/grouping/setup/"><span>Setup</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/fields/grouping/repeating/"><span>Repeating</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/fields/grouping/alternatives/"><span>Settings</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/fields/settings/"><span>Settings</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/styling/"><span>Styling</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/images/"><span>Images</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/texts/"><span>Texts</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/ux/texts/translation/"><span>Translation of texts</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/pdf/"><span>PDF</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/ux/widgets/"><span>Widgets</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/logic/dataprocessing/"><span>Data processing</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/logic/dynamic/"><span>Dynamics</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/logic/expressions/"><span>Expressions</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/logic/instantiation/"><span>Instantiation</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/logic/services/"><span>Services</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/configuration/messagebox/hide_instances/"><span>Hide instances</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_administration/"><span>Administration roles</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_enterprices/"><span>Enterprice roles</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_persons/"><span>Person roles</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_er/"><span>ER-Roles</span></a></li><li class="dd-item">
+          <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_ske/">
+            <span>SKE-roles</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/authorization/guidelines_authorization/test_authorization_application/"><span>Testing</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/authorization/rules/"><span>Rule library</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/partytype/"><span>Party types</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/datafields/"><span>Data fields</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/process/"><span>Process</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/configuration/process/auto-delete/"><span>Automatic deletion</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/process/customize/"><span>Customize Views</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/process/pre-post-hooks/"><span>Define custom process hooks</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/process/exclusive-gateways/"><span>Exclusive gateways</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/process/message/"><span>Message</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/queryparameters/"><span>Query parameters</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/secrets/"><span>Secrets</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/eformidling/"><span>eFormidling</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/events/"><span>Events</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/settings/"><span>Settings</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/startup/"><span>Startup</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/stateless/"><span>Stateless</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/deployment/"><span>Deployment</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/configuration/authentication/"><span>Authentication</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/development/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/api/consume/"><span>Consume</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/api/expose/"><span>Expose</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/api/instance/"><span>Instance</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/testing/"><span>Testing</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/testing/local/"><span>Locally</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/testing/local/apitests/"><span>API tests</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/testing/local/apitests/user/"><span>End user</span></a></li>
+      <li class="dd-item">
+        <a href="/app/testing/local/apitests/org/"><span>Org</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/testing/local/debug/"><span>Debugging</span></a></li>
+      <li class="dd-item">
+        <a href="/app/testing/local/testusers/"><span>Test users</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/testing/deploy/"><span>In test environment</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/deployment/"><span>Deployment</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/deployment/runtime-environment/"><span>Runtime Environment</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/deployment/runtime-environment/resource-allocation-tips/"><span>Practical tips for resource allocation</span></a></li>
+      <li class="dd-item">
+        <a href="/app/deployment/runtime-environment/resource-allocation/"><span>Resource Allocation</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/maintainance/"><span>Maintenance</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/maintainance/dependencies/"><span>Dependencies</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/app/launched-apps/"><span>Launched apps</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/api/apps/metadata/"><span>Metadata</span></a></li>
+      <li class="dd-item">
+        <a href="/api/apps/instances/"><span>Instances</span></a></li>
+      <li class="dd-item">
+        <a href="/api/apps/data-elements/"><span>Data elements</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/api/apps/data-elements/tags/"><span>Tags</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/api/apps/stateless-data-elements/"><span>Stateless data elements</span></a></li>
+      <li class="dd-item">
+        <a href="/api/apps/process/"><span>Process</span></a></li>
+      <li class="dd-item">
+        <a href="/api/apps/validation/"><span>Validation</span></a></li>
+      <li class="dd-item">
+        <a href="/api/apps/spec/"><span>OpenAPI</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/api/authentication/"><span>Authentication</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/api/authentication/enterpriseuser/"><span>Enterprise users</span></a></li>
+      <li class="dd-item">
+        <a href="/api/authentication/maskinporten/"><span>Maskinporten</span></a></li>
+      <li class="dd-item">
+        <a href="/api/authentication/id-porten/"><span>ID-porten</span></a></li>
+      <li class="dd-item">
+        <a href="/api/authentication/delegate-scopes/"><span>Delegate API Access</span></a></li>
+      <li class="dd-item">
+        <a href="/api/authentication/spec/"><span>OpenAPI</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/api/events/"><span>Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/api/events/spec/"><span>OpenAPI</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/api/models/"><span>Models</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/api/models/app-metadata/"><span>App metadata</span></a></li>
+      <li class="dd-item">
+        <a href="/api/models/instance/"><span>Instance</span></a></li>
+      <li class="dd-item">
+        <a href="/api/models/data-element/"><span>DataElement</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/api/scenarios/"><span>Scenarios</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/api/scenarios/authentication/"><span>Authentication</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/api/storage/"><span>Storage</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/api/storage/instances/"><span>Instances</span></a></li>
+      <li class="dd-item">
+        <a href="/api/storage/instance-events/"><span>Instance events</span></a></li>
+      <li class="dd-item">
+        <a href="/api/storage/spec/"><span>OpenAPI</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/api/studio/"><span>Studio</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/"><span>Community</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/about/"><span>About</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/about/goals/"><span>Goals</span></a></li>
+      <li class="dd-item">
+        <a href="/community/about/open-source/"><span>Open source</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/contributing/"><span>Contributing</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/contributing/propose-component/"><span>Propose a new component</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/develop-component/"><span>Develop a component</span></a></li><li class="dd-item">
+          <a href="/community/contributing/intro/">
+            <span>Intro for developers</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/"><span>Handbook</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/azure-devops/"><span>Azure DevOps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/azure-devops/pipelines/"><span>Pipelines</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/azure-storage/"><span>Azure Storage</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/azure-storage/tools/"><span>Tools &amp; Software</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/azure-storage/queues/"><span>Queues</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/back-end/"><span>Back-end</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/back-end/app-template-and-deps/"><span>App template and deps</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/back-end/async-programming/"><span>Async programming</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/back-end/error-flow/"><span>Error flow</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/back-end/exception-handling/"><span>Exception handling</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/back-end/logging/"><span>Logging</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/back-end/nuget-package/"><span>Nuget Package</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/back-end/swagger/"><span>Swagger</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/general/"><span>Cheat Sheet</span></a></li><li class="dd-item">
+          <a href="/community/contributing/handbook/cosmosdb/">
+            <span>Cosmos DB</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/deployment/"><span>Deployment</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/"><span>Front-end</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/getting-started/"><span>Getting started</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/developing/"><span>Developing locally</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/routine/"><span>Routines for development</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/new-component/"><span>Creating components</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/react/"><span>React</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/redux/"><span>Redux</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/debug/"><span>Debug</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/best-practices/"><span>Best practices</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/build/"><span>Build</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/component-library/"><span>Component Library</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/error-handling/"><span>Error handling</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/postmessage/"><span>Post Message</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/styling/"><span>Styling (css)</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/versioning/"><span>Versioning</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/cheatsheet/"><span>General</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/getting-started/"><span>Getting started</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/git/"><span>Git</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/naming/"><span>Naming Conventions</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/loadbalancer/"><span>Nginx loadbalancing in studio</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/loadbalancer/ssl-certificate/"><span>Nginx SSL/TLS certificate</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/postgres/"><span>PostgreSQL</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/community/contributing/handbook/postgres/best-practice-postgresql/">
+            <span>Best practice</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/rest/"><span>RESTful APIs (Representation State Transfer)</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/routing/"><span>Routing</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/routing/nginx/"><span>Nginx routing</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/routing/traefik/"><span>Traefik routing</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/routing/traefik/installation/"><span>Installation of Traefik 2.0</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/routing/traefik/tls-configuration/"><span>TLS in Traefik 2.0</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/routing/traefik/custom-resources/"><span>Traefik custom resources</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/routing/traefik/ingress-routes/"><span>Traefik ingress routes</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/securecoding/"><span>Secure DevOps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/community/contributing/handbook/securecoding/checklist/">
+            <span>Code Checklist</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/test/"><span>Test</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/test/automated-test-app/"><span>App for automated test</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/test/cypress/"><span>Cypress</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/test/k6/"><span>k6</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/test/postman/"><span>Postman</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/test/test-strategy/"><span>Test Strategy</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/test/unit-testing/"><span>Unit testing</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/test/xunit-testing/"><span>Xunit Testing</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/branching/"><span>Branching</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/flight-rules/"><span>Flight Rules</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/gitea/"><span>Gitea</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/reusable-resources/"><span>Reusable resources</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/theming/"><span>Theming and styling</span></a></li>
+      <li class="dd-item">
+        <a href="/community/contributing/handbook/troubleshooting/"><span>Troubleshooting</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/changelog/"><span>Changelog</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/app-frontend/"><span>App frontend</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/app-frontend/v3/"><span>v3</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/app-frontend/v3/breaking-changes/"><span>Breaking changes</span></a></li>
+      <li class="dd-item">
+        <a href="/community/changelog/app-frontend/v3/whats-new/"><span>What&#39;s new</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/"><span>App nuget</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v7/"><span>v7</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v7/breaking-changes/"><span>Breaking changes</span></a></li>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v7/whats-new/"><span>What&#39;s new</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v6/"><span>v6</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v6/breaking-changes/"><span>Breaking changes</span></a></li>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v6/whats-new/"><span>What&#39;s new</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v5/"><span>v5</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v5/breaking-changes/"><span>Breaking changes</span></a></li>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v5/whats-new/"><span>What&#39;s new</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v4/"><span>v4</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v4/breaking-changes/"><span>Breaking changes</span></a></li>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v4/whats-new/"><span>What&#39;s new</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v3/"><span>v3</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v3/breaking-changes/"><span>Breaking changes</span></a></li>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/v3/whats-new/"><span>What&#39;s new</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/older/"><span>Older</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/older/breaking-changes/"><span>Breaking changes</span></a></li>
+      <li class="dd-item">
+        <a href="/community/changelog/app-nuget/older/whats-new/"><span>What&#39;s new</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/changelog/deployment/"><span>Deployment</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/deployment/migration/"><span>Migration</span></a></li>
+      <li class="dd-item">
+        <a href="/community/changelog/deployment/v1/"><span>v1</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/deployment/v1/breaking-changes/"><span>Breaking changes</span></a></li>
+      <li class="dd-item">
+        <a href="/community/changelog/deployment/v1/whats-new/"><span>What&#39;s new</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/changelog/deployment/v2/"><span>v2</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/deployment/v2/breaking-changes/"><span>Breaking changes</span></a></li>
+      <li class="dd-item">
+        <a href="/community/changelog/deployment/v2/whats-new/"><span>What&#39;s new</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/changelog/storage-interfaces/"><span>Storage Interface</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/changelog/storage-interfaces/v3/"><span>v3</span></a></li>
+      <li class="dd-item">
+        <a href="/community/changelog/storage-interfaces/v2/"><span>v2</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/roadmap/"><span>Roadmap</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/roadmap/studio/"><span>Studio</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/roadmap/studio/appowner/"><span>App owner</span></a></li>
+      <li class="dd-item">
+        <a href="/community/roadmap/studio/enduser/"><span>End user</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/devops/"><span>DevOps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/devops/definition-of-ready/"><span>Definition of Ready</span></a></li>
+      <li class="dd-item">
+        <a href="/community/devops/roadmapprocess/"><span>Roadmap prosess</span></a></li>
+      <li class="dd-item">
+        <a href="/community/devops/teams/"><span>Teams</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/community/devops/teams/apps/"><span>Apps</span></a></li>
+      <li class="dd-item">
+        <a href="/community/devops/teams/platform/"><span>Platform</span></a></li>
+      <li class="dd-item">
+        <a href="/community/devops/teams/studio/"><span>Studio</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/community/presentations/"><span>Presentations</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/"><span>Technology</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/"><span>Architecture</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/requirements/"><span>Requirements</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/requirements/functional/"><span>Functional</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/requirements/non_functional/"><span>Non-Functional</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/principles/"><span>Principles</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/patterns/"><span>Patterns</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/"><span>Capabilities</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/"><span>Runtime</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/appdeploy/"><span>App Build &amp; Deploy</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/appdevelopment/"><span>App Development</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/data/"><span>Data</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/integration/"><span>Integration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/integration/events/"><span>Event capabilities</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/technology/architecture/capabilities/runtime/integration/events/scenarios/">
+            <span>Scenarios</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/presentation/"><span>Presentation</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/processing/"><span>Processing &amp; Execution</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/processing/process/"><span>Process</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/technology/architecture/capabilities/runtime/processing/process/process_interaction/">
+            <span>Process Interaction</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/security/"><span>Security</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/security/authentication/"><span>Authentication</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/security/authentication/accesstoken/"><span>Access Token</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/security/authentication/authentication-api/"><span>Authentication API</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/security/authentication/jwt-format/"><span>JWT Format</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/security/authentication/oidcproviders/"><span>OIDC Providers</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/security/authorization/"><span>Authorization</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/runtime/security/encryption/"><span>Encryption</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/devops/"><span>DevOps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/devops/analysisanddesign/"><span>Analysis &amp; Design</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/devops/build_and_test/"><span>Build &amp; Test</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/devops/build_and_test/build/"><span>Build process</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/devops/environments/"><span>Environments</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/devops/platformoperations/"><span>Platform Operations</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/devops/platformoperations/backupandrecovery/"><span>Backup &amp; Recovery</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/devops/platformoperations/infrastructuremgmt/"><span>Infrastructure mgmt</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/devops/platformoperations/monitoring/"><span>Monitoring</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/devops/projectmanagement/"><span>Project Management</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/devops/quality/"><span>Quality Management</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/devops/softwareconfiguration/"><span>Software Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/devops/softwareconfiguration/deployment/"><span>Deployment</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/capabilities/devops/softwareconfiguration/deployment/altinn-studio/"><span>Altinn Studio</span></a></li></ul></li></ul></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/"><span>Components</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/"><span>Application</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/"><span>Construction</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-studio/"><span>Altinn Studio</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-studio/designer/"><span>Designer</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-studio/designer/frontend/"><span>Front-end</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/technology/architecture/components/application/construction/altinn-studio/designer/frontend/applications/">
+            <span>Applications</span></a></li><li class="dd-item">
+          <a href="/technology/architecture/components/application/construction/altinn-studio/designer/frontend/structure/">
+            <span>Structure</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-studio/designer/backend/"><span>Back-end</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-studio/loadbalancer/"><span>Load balancer</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-studio/repositories/"><span>Repositories</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-apps/"><span>Altinn Apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-apps/kuberneteswrapper/"><span>Kubernetes Wrapper</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-apps/routing/"><span>Routing</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/"><span>Altinn Platform</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authentication/"><span>Authentication</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/acessgroups/"><span>Access Groups</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/accessmanagment/"><span>Access Management</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/resourceregistry/"><span>Resource Registry</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/events/"><span>Events</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/pdf/"><span>PDF</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/profile/"><span>Profile</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/receipt/"><span>Receipt</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/register/"><span>Register</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/storage/"><span>Storage</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/app/"><span>App template</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/app/app-backend/"><span>App Backend</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/app/app-backend/applogic-events/"><span>AppLogic Events</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/app/app-backend/process/"><span>Process</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/app/app-frontend/"><span>App Frontend</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/technology/architecture/components/application/construction/app/app-frontend/react/">
+            <span>React &#43; Redux</span></a></li><li class="dd-item">
+          <a href="/technology/architecture/components/application/construction/app/app-frontend/configuration/">
+            <span>Configuration files</span></a></li><li class="dd-item">
+          <a href="/technology/architecture/components/application/construction/app/app-frontend/features/">
+            <span>Features</span></a></li><li class="dd-item">
+          <a href="/technology/architecture/components/application/construction/app/app-frontend/structure/">
+            <span>Structure</span></a></li><li class="dd-item">
+          <a href="/technology/architecture/components/application/construction/app/app-frontend/rendering/">
+            <span>Rendering</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/security/"><span>Security</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/technology/architecture/components/application/construction/security/jwtcookie/">
+            <span>JWT</span></a></li><li class="dd-item">
+          <a href="/technology/architecture/components/application/construction/security/pep/">
+            <span>PEP</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/nonsolutionspecific/"><span>Non-Solution</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/nonsolutionspecific/development/"><span>Development</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/nonsolutionspecific/operations/"><span>Operations</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/nonsolutionspecific/operations/backupandrecovery/"><span>Backup &amp; Recovery</span></a></li></ul></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/data/conceptual/"><span>Conceptual</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/data/logical/"><span>Logical</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/infrastructure/"><span>Infrastructure</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/infrastructure/computing/"><span>Compute</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/infrastructure/computing/scaling/"><span>Scaling</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/infrastructure/network/"><span>Network</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/infrastructure/storage/"><span>Storage</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/platform/"><span>Platform</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/platform/datareporting/"><span>Data &amp; Reporting</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/platform/integration/"><span>Integration</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/platform/logicexecution/"><span>Logic Execution</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/platform/oscloudplatform/"><span>OS &amp; Cloud Platform</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/platform/oscloudplatform/kubernetes/"><span>Kubernetes</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/platform/presentation/"><span>Presentation</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/platform/presentation/altinn-cdn/"><span>Altinn CDN</span></a></li></ul></li></ul></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/"><span>Solutions</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/"><span>Altinn Studio</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/designer/"><span>Designer</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/designer/dashboard/"><span>Dashboard</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/designer/build-app/"><span>Building apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/designer/build-app/app-parameters/"><span>App Parameters</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/designer/build-app/data-modeling/"><span>Data modeling</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/designer/build-app/ui-designer/"><span>UI Design</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
+          <a href="/technology/solutions/altinn-studio/designer/build-app/ui-designer/components/">
+            <span>Components</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/designer/build-app/text/"><span>Texts</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/designer/build-app/define-process/"><span>Process</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/designer/build-app/authorization-rules/"><span>Authorization</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/designer/build-app/prefill/"><span>Prefill</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/designer/build-app/api-expose/"><span>API</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/designer/deployment/"><span>Deploy</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/"><span>Repos</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/functional/"><span>Functionality</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/structure/"><span>Structure</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/structure/app-csproj/"><span>App.csproj</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/structure/application-metadata/"><span>applicationmetadata.json</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/structure/calculationhandler/"><span>CalculationHandler.cs</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/structure/form-layout/"><span>FormLayout.json</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/structure/instantiationhandler/"><span>InstansiationHandler.cs</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/structure/reactapp/"><span>react-app.js</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/structure/rule-handler/"><span>RuleHandler.js</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/structure/service-configurations/"><span>ServiceConfigurations.json</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/structure/serviceimplementation/"><span>ServiceImplementation.cs</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/structure/servicemetadata/"><span>ServiceMetadata.json</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/structure/servicemodel/"><span>ServiceModel.cs</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/structure/servicemodelxsd/"><span>ServiceModel.xsd</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/repos/structure/validationhandler/"><span>ValidationHandler.cs</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/thirdpartytools/"><span>Third Party Tools</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/local-dev/"><span>Local dev</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-apps/"><span>Altinn Apps</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/"><span>Altinn Platform</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authentication/"><span>Authentication</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/accessgroups/"><span>Access Groups</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/accessgroups/type-accessgroups/"><span>Tilgangsgrupper 3.0</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/accessmanagement/"><span>Access Management</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/contexthandler/"><span>Context Handler</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/migration/"><span>Fremdriftsplan</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/migration/servicemigrationplan/"><span>Plan tjenestemigrering</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/pap/"><span>PAP</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/pdp/"><span>PDP</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/pep/"><span>PEP</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/pip/"><span>PIP</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/prp/"><span>PRP</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/resourceregistry/"><span>Resource Registry</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/rrr/"><span>RRR</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/authorization/xacml/"><span>XACML</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/events/"><span>Events</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/pdf/"><span>PDF</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/profile/"><span>Profile</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/receipt/"><span>Receipt</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/register/"><span>Register</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-platform/storage/"><span>Storage</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/app-template/"><span>App Template</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/solutions/app-template/ui/"><span>User Interface</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/app-template/processhandling/"><span>Process handling</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/app-template/app-api/"><span>App API</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/app-template/businesslogic/"><span>Business logic</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/app-template/architecture/"><span>Architecture</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-restorage/"><span>Altinn ReStorage</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/cli/"><span>Altinn CLI</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/solutions/cli/commands/"><span>Commands</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/cli/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/solutions/cli/configuration/maskinporten-setup/"><span>Maskinporten setup</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/cli/software-implementation/"><span>Software implementation</span></a></li></ul></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/terms/"><span>Terms</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/"><span>Tools</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/tools/dotnet-core/"><span>.NET Core</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/alpine-linux/"><span>Alpine Linux</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/bpmn/"><span>BPMN</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/c-sharp/"><span>C#</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/docker/"><span>Docker</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/git/"><span>Git</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/gitea/"><span>Gitea</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/go/"><span>Go</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/grafana/"><span>Grafana</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/helm/"><span>Helm</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/hugo/"><span>Hugo</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/jest/"><span>Jest</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/kubernetes/"><span>Kubernetes</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/markdown/"><span>Markdown</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/material-ui/"><span>Material UI</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/nginx/"><span>Nginx</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/node-js/"><span>Node.js</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/prometheus/"><span>Prometheus</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/react/"><span>React</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/tools/react/architecture/"><span>Kodearkitektur</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/react/redux/"><span>Redux</span></a></li></ul></li>
+      <li class="dd-item">
+        <a href="/technology/tools/stylecop/"><span>StyleCop</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/terraform/"><span>Terraform</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/traefik/"><span>Traefik</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/typescript/"><span>TypeScript</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/tools/vs-code/"><span>Visual Studio Code</span></a></li></ul></li></ul></li></ul>
+  </div>
+</nav>
+
+<script>
+          $("li.dd-item a[href='/app/']").parent().addClass("parent");
+ $("li.dd-item a[href='/app/development/']").parent().addClass("parent");
+ $("li.dd-item a[href='/app/development/logic/']").parent().addClass("parent");
+ $("li.dd-item a[href='/app/development/logic/expressions/']").parent().addClass("active");
+        </script>
+        <section id="body">
+          <div id="content" class="adocs-content js-moveChildrenTo">
+        <div id="overlay"></div>
+        <div class="a-text"><div id="top-bar">
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span" class="adocs-sidebarToggle">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                    <span class="sr-only">Vis/skjul meny</span>
+                  </a>
+                </span>
+                <span class="links"><a href='/app/'>Create apps</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/'>Development</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/logic/'>Logic</a> <span class='adocs-breadcrumb-divider'> / </span> Expressions</span>
+            </div>
+          </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/dynamics">dynamics</a><a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-english">translate-to-english</a></div><div id="body-inner"><h1 class="a-fontBold">Dynamic expressions</h1>
+              <p class="a-leadText" id="leadText">Overview of dynamic expressions defined in JSON</p><h2>On this page:</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduksjon">Introduksjon</a></li>
+    <li><a href="#funksjoner">Funksjoner</a></li>
+    <li><a href="#datatyper">Datatyper</a></li>
+    <li><a href="#tips-og-triks">Tips og triks</a></li>
+  </ul>
+</nav>
+
+<div class="panel panel-warning">
+	
+	<div class="panel-body"><p>⚠️ Dynamic behaviour is an area under active development. This functionality is not configurable directly in Altinn Studio
+yet, and must be configured manually in the JSON files.</p>
+</div>
+	
+</div>
+
+<h2 id="introduksjon">Introduksjon</h2>
+<p>Dynamikk via uttrykk gjør det mulig å definere enkel dynamisk oppførsel i en Altinn 3 app, som for eksempel ved å
+definere om et skjemafelt skal vises eller skjules, om feltet skal være påkrevd eller skrivebeskyttet.</p>
+<p>Uttrykkene er tilgjengelige i alle Altinn 3-apper som bruker frontend-versjon
+<a href="https://github.com/Altinn/app-frontend-react/releases/tag/v3.54.0">3.54.0</a> eller nyere. Bruker man denne versjonen
+(eller siste hovedversjon) har man mulighet til å benytte dynamiske uttrykk til <a href="#bruksomr%C3%A5der">flere bruksområder</a>.</p>
+<p>Fra versjon <code>7.2.0</code> av <a href="../../../maintainance/dependencies#nuget">nuget-pakkene</a> er også uttrykkene støttet i backend.
+Det gjør at serveren vil kunne evaluere uttrykkene og fjerne data som potensielt er lagret i instansen og er knyttet
+til felter/komponenter som i ettertid er skjult. Disse dataene kan da fjernes fra datamodellen når instansen sendes inn.
+Merk at dette bare gjelder data i datamodellen som er knyttet til skjulte komponenter - data i datamodellen som ikke
+er knyttet til komponenter (og dermed implisitt skjult for brukeren) vil ikke fjernes automatisk.</p>
+<p>Det gjør det også mulig å unnlate å sende inn data som ellers er tilknyttet påkrevde felter - dersom disse påkrevde
+feltene er skjult i skjemaet ved hjelp av dynamiske uttrykk. Dette gjelder også ved innsending direkte fra API.</p>
+<p><strong>NB:</strong> Automatisk fjerning av skjult data må foreløpig aktiveres manuelt (<em>opt-in</em>) ved at man legger til følgende
+linje i <code>App/appsettings.json</code> etter at man har oppgradert <a href="../../../maintainance/dependencies#nuget">nuget-pakkene</a>
+til <code>7.2.0</code> eller nyere:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;AppSettings&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;OpenIdWellKnownEndpoint&#34;</span>: <span style="color:#f1fa8c">&#34;http://localhost:5101/authentication/api/v1/openid/&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;RuntimeCookieName&#34;</span>: <span style="color:#f1fa8c">&#34;AltinnStudioRuntime&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;RegisterEventsWithEventsComponent&#34;</span>: <span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#ff79c6">&#34;RemoveHiddenDataPreview&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span></code></pre></div><h3 id="oppbygging-og-syntaks">Oppbygging og syntaks</h3>
+<p>Uttrykkene er bygget opp som et slags mini-programmeringsspråk, hvor alt er definert i JSON. Selve uttrykkene er alltid
+en liste (array) med verdier, hvor den første verdien i hver liste alltid er et <a href="#funksjoner">funksjonsnavn</a>. Resten
+av verdiene sendes som inndata/argumenter til funksjonen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[<span style="color:#f1fa8c">&#34;equals&#34;</span>, <span style="color:#f1fa8c">&#34;foo&#34;</span>, <span style="color:#f1fa8c">&#34;bar&#34;</span>]
+</span></span></code></pre></div><p>I eksempelet over blir strengene &ldquo;foo&rdquo; og &ldquo;bar&rdquo; sammenlignet. De er ulike, så resultatet av dette uttrykket blir en
+boolsk verdi; false.</p>
+<p>Denne funksjonen, <a href="#func-equals">equals</a>, forventer å få inn to <a href="#strenger">strenger</a> som inndata/argumenter. Det
+er også mulig å gi den andre uttrykk. Gjør man dette vil uttrykket bli tolket slik at de innerste funksjonene blir kjørt
+først, og de ytterste kjørt sist.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[<span style="color:#f1fa8c">&#34;equals&#34;</span>, [<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;firstName&#34;</span>], <span style="color:#f1fa8c">&#34;John&#34;</span>]
+</span></span></code></pre></div><p>I dette eksempelet blir det innerste uttrykket/funksjonskallet <code>[&quot;component&quot;, &quot;firstName&quot;]</code> kjørt først. Om verdien til
+komponenten &ldquo;firstName&rdquo; er lik strengen &ldquo;John&rdquo;, gir funksjonen resultatet den boolske verdien &ldquo;true&rdquo;.</p>
+<p>Dersom man da bruker dette uttrykket for <code>hidden</code>-egenskapen til en komponent, vil komponenten bli skjult dersom man
+skriver inn &ldquo;John&rdquo; i &ldquo;firstName&rdquo;-komponenten et annet sted i applikasjonen:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;lastName&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Input&#34;</span>,
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;hidden&#34;</span>: [<span style="color:#f1fa8c">&#34;equals&#34;</span>, [<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;firstName&#34;</span>], <span style="color:#f1fa8c">&#34;John&#34;</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Det er ingen begrensninger rundt hvor store/dype uttrykkene kan være. Som en øvelse, se om du klarer å lese hva dette
+uttrykket gjør, og hvilke mulige verdier det kan returnere:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;if&#34;</span>,
+</span></span><span style="display:flex;"><span>  [<span style="color:#f1fa8c">&#34;greaterThanEq&#34;</span>, [<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;age&#34;</span>], <span style="color:#bd93f9">16</span>],
+</span></span><span style="display:flex;"><span>  [
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;if&#34;</span>,
+</span></span><span style="display:flex;"><span>    [<span style="color:#f1fa8c">&#34;lessThan&#34;</span>, [<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;age&#34;</span>], <span style="color:#bd93f9">62</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;Please consider applying for our open position!&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;else&#34;</span>,
+</span></span><span style="display:flex;"><span>    [<span style="color:#f1fa8c">&#34;concat&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;At &#34;</span>, [<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;age&#34;</span>], <span style="color:#f1fa8c">&#34;, you are eligible for retirement&#34;</span>]
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;else&#34;</span>,
+</span></span><span style="display:flex;"><span>  [<span style="color:#f1fa8c">&#34;concat&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;At &#34;</span>, [<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;age&#34;</span>], <span style="color:#f1fa8c">&#34;, you should stay in (pre)school&#34;</span>]
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div>
+
+<div class="card adocs-expand" id="answer-expandable">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-answer-expandable"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				Røpealarm: Klikk her for en tolkning av uttrykket over
+			
+		</a>
+	</div>
+	<div id="expandable-answer-expandable" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>Uttrykket sjekker verdien til en tenkt komponent med ID &ldquo;alder&rdquo;. Dersom personen er 16 år eller mer,
+for eksempel 45 år gammel, returneres teksten:</p>
+<p><strong>Please consider applying for our open position!</strong></p>
+<p>For en person som er 62 år returneres teksten:</p>
+<p><strong>At 62, your are eligble for retirement</strong></p>
+<p>Og for en person som er 15 år (eller yngre, som f.eks. en 4-åring), returneres teksten:</p>
+<p><strong>At 4, you should stay in (pre)school</strong></p>
+
+		</div>
+	</div>
+</div>
+<h3 id="bruksområder">Bruksområder</h3>
+<p>Dynamiske uttrykk er foreløpig tilgjengelig for bruk i disse egenskapene, som definert i <a href="../../ux/pages">layout-filer</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Komponenter</th>
+<th>Egenskap</th>
+<th>Forventet verdi</th>
+<th>Frontend</th>
+<th>Backend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#viseskjule-hele-sider">Sider/layouts</a></td>
+<td><code>hidden</code></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Alle</td>
+<td><code>hidden</code></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Skjemakomponenter</td>
+<td><code>required</code></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Skjemakomponenter</td>
+<td><code>readOnly</code></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><a href="../../ux/fields/grouping/repeating">Repeterende grupper</a></td>
+<td><code>edit.addButton</code></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><a href="../../ux/fields/grouping/repeating">Repeterende grupper</a></td>
+<td><code>edit.saveButton</code> *</td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><a href="../../ux/fields/grouping/repeating">Repeterende grupper</a></td>
+<td><code>edit.deleteButton</code> *</td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><a href="../../ux/fields/grouping/repeating">Repeterende grupper</a></td>
+<td><code>edit.saveAndNextButton</code> *</td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+<p>* = Disse egenskapene kan foreløpig bare styres dynamisk for alle <a href="../../ux/fields/grouping/repeating">repeterende grupper</a>
+på en gang, ikke for hver enkelt rad.</p>
+<h3 id="testing-feilsøking-og-utvikling-av-uttrykk">Testing, feilsøking og utvikling av uttrykk</h3>
+<p>Når man skal skrive et uttrykk er det greit å vite noenlunde hva resultatet kommer til å bli, og om uttrykket er gyldig.
+Ugyldige uttrykk gir en advarsel i JavaScript-konsollet i nettleseren når siden lastes, så det kan være lurt å ha
+dette konsollet åpent når man utvikler en applikasjon og tester uttrykkene lokalt.</p>
+<p>Det er også mulig å teste ut kjøring av et uttrykk rett i nettleserens JavaScript-konsoll. Det gjøres ved å bruke
+funksjonen <code>evalExpression()</code>. Som første parameter tar den inn et hvilket som helst uttrykk, og resultatet skrives
+tilbake til konsollet:</p>
+<figure><a href="evalExpression.png"><img src="evalExpression.png" alt="&amp;ldquo;Eksempelkjøring av evalExpression()&amp;rdquo;" title="Eksempelkjøring av evalExpression()" /></a><figcaption><h4>Eksempelkjøring av evalExpression()</h4></figcaption></figure>
+<p>Uttrykk vil også kunne oppføre seg annerledes alt etter hvilken komponent de evalueres i nærheten av.
+Som et valgfritt andre parameter kan du også sende inn ID-en til en komponent som skal brukes som kontekst når
+uttrykket evalueres.  Hvis du er usikker på hvilke komponenter og IDer som er tilgjengelige på siden du ser på i
+applikasjonen, kan du prøve å sende inn en tom streng eller ugyldig komponent-ID som andre parameter, så vil du få tips
+til hvilke ID-er du kan bruke.</p>
+
+
+<div class="card adocs-expand" id="rep-group-expandable">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-rep-group-expandable"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				Eksempel på ID-er og evaluering i repterende grupper
+			
+		</a>
+	</div>
+	<div id="expandable-rep-group-expandable" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p><strong>NB:</strong> Her beskrives noen implementasjonsdetaljer i <a href="https://github.com/Altinn/app-frontend-react/">app-frontend-react</a>,
+og er kun relevant når du skal prøve et uttrykk i JavaScript-konsollet som er avhengig av en kjent posisjon i en
+repeterende gruppe. Dette kan endres i fremtiden, og slike endringer vil ikke påvirke uttrykk som man har definert i en
+applikasjon. Der hentes konteksten ut fra hvor uttrykket er definert i layout-filen.</p>
+<p>Se for deg en <a href="../../ux/fields/grouping/repeating">repeterende gruppe</a> for personer med to felt; <code>navn</code> og <code>alder</code>.
+Gitt dette uttrykket:</p>
+<p><code>[&quot;component&quot;, &quot;alder&quot;]</code></p>
+<p>Hva vil alderen være? Det vil være kunne variere etter hvilken gruppe som evaluerer
+uttrykket. Har man har to grupper/rader vil både <code>navn</code>- og <code>alder</code>-komponentene finnes to ganger hver. Disse vil få
+ID-ene <code>navn-0</code> og <code>alder-0</code> (for den første raden) og <code>navn-1</code> og <code>alder-1</code> (for den andre raden). Du kan lete etter
+den nærmeste alder-komponenten (den som tilhører samme gruppe/rad som <code>navn</code>-komponenten) ved å spesifisere en
+mer nøyaktig ID i tilfeller der uttrykk evalueres i repeterende gruppe.</p>
+<p>Tenk deg at følgende data er fyllt inn i en repeterende gruppe:</p>
+<table>
+<thead>
+<tr>
+<th>Navn</th>
+<th>Komponent-ID</th>
+<th>Alder</th>
+<th>Komponent-ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Per</td>
+<td><code>navn-0</code></td>
+<td>24</td>
+<td><code>alder-0</code></td>
+</tr>
+<tr>
+<td>Kari</td>
+<td><code>navn-1</code></td>
+<td>36</td>
+<td><code>alder-1</code></td>
+</tr>
+<tr>
+<td>Ola</td>
+<td><code>navn-2</code></td>
+<td>18</td>
+<td><code>alder-2</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>evalExpression([<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;alder&#34;</span>]); <span style="color:#6272a4">// Eksempel 1
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>evalExpression([<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;alder&#34;</span>], <span style="color:#f1fa8c">&#34;navn&#34;</span>); <span style="color:#6272a4">// Eksempel 2
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>evalExpression([<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;alder&#34;</span>], <span style="color:#f1fa8c">&#34;navn-0&#34;</span>); <span style="color:#6272a4">// Eksempel 3
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>evalExpression([<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;alder&#34;</span>], <span style="color:#f1fa8c">&#34;navn-1&#34;</span>); <span style="color:#6272a4">// Eksempel 4
+</span></span></span></code></pre></div><ol>
+<li>Denne vil finne &ldquo;første og beste&rdquo; <code>alder</code>-komponent, og finner dermed <code>alder-0</code>. Den returnerer
+derfor <em>24</em>, Per sin alder.</li>
+<li>Denne prøver å evaluere uttrykket i kontekst av den første <code>navn</code>-komponenten den finner, som er <code>navn-0</code>.
+Den nærmeste <code>alder</code>-komponenten til <code>navn-0</code> er <code>alder-0</code>, og dermed vår vi igjen <em>24</em>, Per sin alder.</li>
+<li>Her prøver vi å lete i kontekst av <code>navn</code>-komponenten på første rad, og igjen finner vi <em>24</em>, Per sin alder.</li>
+<li>I siste eksempel har vi spesifisert andre rad i den repeterende gruppen ved å evaluere i kontekst av <code>navn-1</code>.
+Her finner vi den nærmeste <code>alder</code>-komponenten <code>alder-1</code>, som er <em>36</em>, Kari sin alder.</li>
+</ol>
+
+		</div>
+	</div>
+</div>
+<h2 id="funksjoner">Funksjoner</h2>
+<p>Disse funksjonene er tilgjengelige for bruk i uttrykk:</p>
+<table>
+<thead>
+<tr>
+<th>Funksjonsnavn</th>
+<th>Parametre</th>
+<th>Returverdi</th>
+<th>Frontend</th>
+<th>Backend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#func-equals"><code>equals</code></a></td>
+<td><a href="#strenger">Streng</a>, <a href="#strenger">Streng</a></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#func-equals"><code>notEquals</code></a></td>
+<td><a href="#strenger">Streng</a>, <a href="#strenger">Streng</a></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#func-not"><code>not</code></a></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#func-gt"><code>greaterThan</code></a></td>
+<td><a href="#tall">Tall</a>, <a href="#tall">Tall</a></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#func-gt"><code>greaterThanEq</code></a></td>
+<td><a href="#tall">Tall</a>, <a href="#tall">Tall</a></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#func-gt"><code>lessThan</code></a></td>
+<td><a href="#tall">Tall</a>, <a href="#tall">Tall</a></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#func-gt"><code>lessThanEq</code></a></td>
+<td><a href="#tall">Tall</a>, <a href="#tall">Tall</a></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#func-concat"><code>concat</code></a></td>
+<td>Ingen eller flere <a href="#strenger">strenger</a></td>
+<td><a href="#strenger">Streng</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#func-and"><code>and</code></a></td>
+<td>En eller flere <a href="#boolske-verdier">boolske verdier</a></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#func-and"><code>or</code></a></td>
+<td>En eller flere <a href="#boolske-verdier">boolske verdier</a></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#func-if"><code>if</code></a></td>
+<td><a href="#func-if">Se detaljert beskrivelse</a></td>
+<td><a href="#func-if">Se detaljert beskrivelse</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#func-instancecontext"><code>instanceContext</code></a></td>
+<td><a href="#strenger">Streng</a></td>
+<td><a href="#strenger">Streng</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#func-frontendsettings"><code>frontendSettings</code></a></td>
+<td><a href="#strenger">Streng</a></td>
+<td><a href="#strenger">Streng</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#func-datamodel"><code>dataModel</code></a></td>
+<td><a href="#strenger">Streng</a></td>
+<td><a href="#strenger">Streng</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="#func-component"><code>component</code></a></td>
+<td><a href="#strenger">Streng</a></td>
+<td><a href="#strenger">Streng</a></td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p>Detaljerte beskrivelser og eksempler</p>
+
+
+<div class="card adocs-expand" id="func-equals">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-func-equals"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				equals / notEquals
+			
+		</a>
+	</div>
+	<div id="expandable-func-equals" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>Disse to funksjonene sammenligner to strenger for å sjekke om de er like (<code>equals</code>) eller ulike (<code>notEquals</code>). Om
+du sender inn andre verdier enn strenger, blir verdiene konvertert og sammenlignet som strenger
+(<a href="#strenger">les mer om konvertering her</a>).</p>
+<p>Eksempler:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;lastName&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Input&#34;</span>,
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;hidden&#34;</span>: [<span style="color:#f1fa8c">&#34;equals&#34;</span>,
+</span></span><span style="display:flex;"><span>    [<span style="color:#f1fa8c">&#34;dataModel&#34;</span>, <span style="color:#f1fa8c">&#34;My.Model.FirstName&#34;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;John&#34;</span>
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;readOnly&#34;</span>: [<span style="color:#f1fa8c">&#34;notEquals&#34;</span>,
+</span></span><span style="display:flex;"><span>    [<span style="color:#f1fa8c">&#34;frontendSettings&#34;</span>, <span style="color:#f1fa8c">&#34;FormIsEditable&#34;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>notEquals</code> er i prinsippet det samme som, og en snarvei til, <code>[&quot;not&quot;, [&quot;equals&quot;, ...]]</code>.</p>
+<p>Se også tips og triks under <a href="#streng-eller-mindre-streng-sammenligning"><em>Streng eller mindre streng sammenligning?</em></a></p>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="card adocs-expand" id="func-not">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-func-not"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				not
+			
+		</a>
+	</div>
+	<div id="expandable-func-not" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>Denne funksjonen tar inn en <a href="#boolske-verdier">boolsk verdi</a> eller noe som kan konverteres til en boolsk verdi, og
+returnerer den motsatte boolske verdien. Sann blir til usann, usann blir til sann.</p>
+<p>Funksjonen kan være nyttig om du ønsker å <em>snu</em> et uttrykk. Istedenfor å tenke at du skal skrive et uttrykk som
+<em>skjuler</em> en komponent gitt noen forutsetninger, kan du pakke uttrykket inn i <code>not</code> og skrive uttrykket ut fra
+hva som skal til for å <em>vise</em> komponenten:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;lastName&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Input&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;hidden&#34;</span>: [<span style="color:#f1fa8c">&#34;not&#34;</span>,
+</span></span><span style="display:flex;"><span>    [<span style="color:#f1fa8c">&#34;or&#34;</span>,
+</span></span><span style="display:flex;"><span>       [<span style="color:#f1fa8c">&#34;dataModel&#34;</span>, <span style="color:#f1fa8c">&#34;ShowLastName&#34;</span>],
+</span></span><span style="display:flex;"><span>       [<span style="color:#f1fa8c">&#34;frontendSettings&#34;</span>, <span style="color:#f1fa8c">&#34;ShowAllFields&#34;</span>]
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+		</div>
+	</div>
+</div>
+
+
+<div class="card adocs-expand" id="func-gt">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-func-gt"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				greaterThan / greaterThanEq / lessThan / lessThanEq
+			
+		</a>
+	</div>
+	<div id="expandable-func-gt" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>Disse 4 funksjonene forventer to tall inn, og sammenligner om <em>det første</em> med <em>det andre</em>. Det vil si, for funksjonen
+<code>greaterThan</code> er uttrykket sant dersom det første tallet er <em>større enn</em> det andre.</p>
+<table>
+<thead>
+<tr>
+<th>Funksjon</th>
+<th>Beskrivelse</th>
+<th>Symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>greaterThan</code></td>
+<td>Er det første tallet <em>større enn</em> det andre tallet?</td>
+<td>&gt;</td>
+</tr>
+<tr>
+<td><code>greaterThanEq</code></td>
+<td>Er det første tallet <em>større enn eller lik</em> det andre tallet?</td>
+<td>≥</td>
+</tr>
+<tr>
+<td><code>lessThan</code></td>
+<td>Er det første tallet <em>mindre enn</em> det andre tallet?</td>
+<td>&lt;</td>
+</tr>
+<tr>
+<td><code>lessThanEq</code></td>
+<td>Er det første tallet <em>mindre enn eller lik</em> det andre tallet?</td>
+<td>≤</td>
+</tr>
+</tbody>
+</table>
+<p>Dersom noen av argumentene til disse funksjonene er <a href="#null"><code>null</code></a> blir resultatet <code>false</code> (uavhengig av om det er det
+første eller andre argumentet).</p>
+<p>Eksempel som sjekker om alder er over (eller lik) 18:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[<span style="color:#f1fa8c">&#34;greaterThanEq&#34;</span>, [<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;alder&#34;</span>], <span style="color:#bd93f9">18</span>]
+</span></span></code></pre></div>
+		</div>
+	</div>
+</div>
+
+
+<div class="card adocs-expand" id="func-concat">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-func-concat"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				concat
+			
+		</a>
+	</div>
+	<div id="expandable-func-concat" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>Denne funksjonen tar inn 0 eller flere strenger som argumenter, og returnerer en streng hvor alle strengene i
+argumentene er slått sammen. Kalles funksjonen uten noen argumenter gis det en tom streng.</p>
+<p>Legg merke til at funksjonen ikke automatisk legger til mellomrom eller komma når den slår sammen strenger. For å gi
+et mer lesbart resultat anbefales det å legge inn bindetegn hvor nødvendig:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[<span style="color:#f1fa8c">&#34;concat&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#f1fa8c">&#34;Gratulerer med &#34;</span>,
+</span></span><span style="display:flex;"><span>   [<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;alder&#34;</span>],
+</span></span><span style="display:flex;"><span>   <span style="color:#f1fa8c">&#34;-årsdagen!&#34;</span>
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>Uttrykket over gir teksten <code>Gratulerer med 18-årsdagen!</code> dersom verdien i alder-komponenten var <code>18</code>.</p>
+<p>I <code>concat</code>-funksjonen tolkes <a href="#null"><code>null</code></a>-verdier som tomme strenger. <a href="#boolske-verdier">Boolske verdier</a> skrives
+ut som strengene <code>&quot;true&quot;</code> og <code>&quot;false&quot;</code>.</p>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="card adocs-expand" id="func-and">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-func-and"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				and / or
+			
+		</a>
+	</div>
+	<div id="expandable-func-and" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>Funksjonene <code>and</code> og <code>or</code> forventer 1 eller flere boolske verdier, og gir et resultat ut fra om henholdsvis <em>alle</em> eller
+<em>minst en</em> av verdiene var sanne (<code>true</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Funksjon</th>
+<th>Beskrivelse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>and</code></td>
+<td>Er <strong>alle</strong> argumentene sanne? (<code>true</code>)</td>
+</tr>
+<tr>
+<td><code>or</code></td>
+<td>Er <strong>minst ett</strong> av argumentene sanne? (<code>true</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Gir man <a href="#null"><code>null</code></a>-verdier tolkes disse som usann (<code>false</code>). Eksempler på bruk finnes
+under <a href="#streng-eller-mindre-streng-sammenligning"><em>Streng eller mindre streng sammenligning?</em></a></p>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="card adocs-expand" id="func-if">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-func-if"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				if
+			
+		</a>
+	</div>
+	<div id="expandable-func-if" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p><code>if</code>-funksjonen kan brukes for å forgrene et uttrykk slik at returverdien styres av resultatet av et annet
+boolsk uttrykk. Funksjonen kan kalles på to forskjellige måter; med 2 eller 4 argumenter:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Alternativ 1</th>
+<th>Alternativ 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Første argument</td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+</tr>
+<tr>
+<td>Andre argument</td>
+<td><a href="#datatyper">Vilkårlig type</a></td>
+<td><a href="#datatyper">Vilkårlig type</a></td>
+</tr>
+<tr>
+<td>Tredje argument</td>
+<td></td>
+<td>Strengen <code>&quot;else&quot;</code></td>
+</tr>
+<tr>
+<td>Fjerde argument</td>
+<td></td>
+<td><a href="#datatyper">Vilkårlig type</a></td>
+</tr>
+</tbody>
+</table>
+<p>I <strong>alternativ 1</strong> vil returverdien til funksjonen bli verdien gitt som andre argument <em>dersom første argument er sant
+(<code>true</code>)</em>. Om ikke returneres verdien <code>null</code>.</p>
+<p>I <strong>alternativ 2</strong> vil returverdien til funksjonen bli verdien gitt som andre argument <em>dersom første argument er sant
+(<code>true</code>)</em>. Om ikke returneres verdien gitt i fjerde argument. Man må <em>alltid</em> gi strengen <code>&quot;else&quot;</code> som tredje argument
+om man vil kalle funksjonen med 4 argumenter. Det tredje argumentet er bare til for å gjøre uttrykket mer lesbart, og
+har ingen funksjon ellers.</p>
+<p>Om man ønsker flere betingelser og mulige returverdier kan man nøste flere kall til <code>if</code> inne i andre eller fjerde
+argument:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[<span style="color:#f1fa8c">&#34;if&#34;</span>,
+</span></span><span style="display:flex;"><span>   [<span style="color:#f1fa8c">&#34;greaterThan&#34;</span>, [<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;birthYear&#34;</span>], <span style="color:#bd93f9">1945</span>],
+</span></span><span style="display:flex;"><span>   <span style="color:#f1fa8c">&#34;Du ble født etter verdenskrigene&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#34;else&#34;</span>,
+</span></span><span style="display:flex;"><span>  [<span style="color:#f1fa8c">&#34;if&#34;</span>,
+</span></span><span style="display:flex;"><span>     [<span style="color:#f1fa8c">&#34;greaterThanEq&#34;</span>, [<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;birthYear&#34;</span>], <span style="color:#bd93f9">1939</span>],
+</span></span><span style="display:flex;"><span>     <span style="color:#f1fa8c">&#34;Du ble født under andre verdenskrig&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;else&#34;</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#f1fa8c">&#34;Du ble født før andre verdenskrig&#34;</span>
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div>
+		</div>
+	</div>
+</div>
+
+
+<div class="card adocs-expand" id="func-instancecontext">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-func-instancecontext"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				instanceContext (oppslag)
+			
+		</a>
+	</div>
+	<div id="expandable-func-instancecontext" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>Denne funksjonen gjør det mulig å hente ut informasjon om gjeldende instans. Følgende nøkler kan brukes fom første
+argument:</p>
+<table>
+<thead>
+<tr>
+<th>Nøkkel</th>
+<th>Verdi</th>
+<th>Eksempelverdi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>instanceId</code></td>
+<td>Gjeldende instans-ID</td>
+<td><code>512345/48c31ffc-dcdd-416d-8bc7-194bec3b7bf0</code></td>
+</tr>
+<tr>
+<td><code>instanceOwnerPartyId</code></td>
+<td>Gjeldende aktør-ID</td>
+<td><code>512345</code></td>
+</tr>
+<tr>
+<td><code>appId</code></td>
+<td>Den aktive appen sin ID</td>
+<td><code>org/app-name</code></td>
+</tr>
+</tbody>
+</table>
+<p>Alle disse oppslagene vil gi verdien <code>null</code> om man jobber i en <a href="../../configuration/stateless">tiltandsløs kontekst</a>.
+Om man gir andre nøkler enn de over, vil oppslaget resultere i en feilmelding. Denne oppførselen er unik blant
+oppslagsfunksjonene, og gjøres for å sikre at man ikke prøver å hente informasjon som finnes i instansen men som ikke
+(enda) er eksponert via en nøkkel her. <a href="https://github.com/Altinn/app-frontend-react/issues/new?assignees=&amp;labels=kind%2Ffeature-request%2Cstatus%2Ftriage&amp;template=feature_request.yml">Gi oss en tilbakemelding</a> om du har ønsker om å hente ut
+instansdata som ikke er tilgjengelig i denne funksjonen.</p>
+<p>Oppslaget gjøres i samme datakilde som er tilgjengelig for <a href="../../ux/texts#data-sources">språk/tekster</a>.</p>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="card adocs-expand" id="func-frontendsettings">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-func-frontendsettings"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				frontendSettings (oppslag)
+			
+		</a>
+	</div>
+	<div id="expandable-func-frontendsettings" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>Dette oppslaget gjør det mulig å hente informasjon fra en datakilde som kan styres ulikt for hvert kjøretidsmiljø.</p>
+<p>Oppslaget gjøres i samme datakilde som er tilgjengelig for <a href="../../ux/texts#data-sources">språk/tekster, og oppsettet er beskrevet
+i detalj der</a>.</p>
+<p><strong>Merk</strong>: Datakilden heter <code>applicationSettings</code> når brukt i språk/tekster, men verdiene må alltid lagres under
+nøkkelen <code>FrontEndSettings</code> i <code>appsettings.{miljø}.json</code>). Av den grunn har funksjonen fått navnet <code>frontendSettings</code>
+her, for å indikere at oppslag ikke kan gjøres i resten av <code>appsettings.{miljø}.json</code>.</p>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="card adocs-expand" id="func-datamodel">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-func-datamodel"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				dataModel (oppslag)
+			
+		</a>
+	</div>
+	<div id="expandable-func-datamodel" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>Denne oppslagsfunksjonen gjør det mulig å hente verdier direkte fra gjeldende datamodell. Første og eneste argument
+må peke et sted i datamodellen, og bruker det samme punktum-separerte formatet som brukt i <code>dataModelBindings</code>. Ved
+bruk inne i <a href="../../ux/fields/grouping/repeating">repeterende grupper</a> trenger man <em>ikke</em> bruke plassholdere for
+indekser til gruppen - uttrykket finner selv den relative plasseringen i kontekst av en repeterende gruppe.</p>
+<p>Legg merke til at oppslag bare fungerer mot <a href="#datatyper">datatyper</a> som allerede er støttet i uttrykkene. Dersom man
+slår opp et objekt eller en liste/array i datamodellen med <code>dataModel</code>-funksjonen får man alltid resultatet <code>null</code>.
+Denne funksjonaliteten kan endres, da det er planlagt støtte for objekter og lister i uttrykkene i fremtiden.</p>
+<p>Eksempel på oppslag i repeterende gruppe:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;ansatte&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Group&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Ansatte i selskapet&#34;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;maxCount&#34;</span>: <span style="color:#bd93f9">99999</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;children&#34;</span>: [<span style="color:#f1fa8c">&#34;ansatt-navn&#34;</span>, <span style="color:#f1fa8c">&#34;ansatt-alder&#34;</span>],
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>         <span style="color:#ff79c6">&#34;group&#34;</span>: <span style="color:#f1fa8c">&#34;Ansatte&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>   },
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;ansatt-navn&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Input&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Fullt navn&#34;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>         <span style="color:#ff79c6">&#34;simpleBinding&#34;</span>: <span style="color:#f1fa8c">&#34;Ansatte.Navn&#34;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>      <span style="color:#ff79c6">&#34;hidden&#34;</span>: [<span style="color:#f1fa8c">&#34;lessThan&#34;</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        [<span style="color:#f1fa8c">&#34;dataModel&#34;</span>, <span style="color:#f1fa8c">&#34;Ansatte.Alder&#34;</span>],
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        <span style="color:#bd93f9">18</span>]
+</span></span><span style="display:flex;"><span>   },
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;ansatt-alder&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Input&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Alder&#34;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>         <span style="color:#ff79c6">&#34;simpleBinding&#34;</span>: <span style="color:#f1fa8c">&#34;Ansatte.Alder&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>      <span style="color:#f1fa8c">&#34;hidden&#34;</span>: [<span style="color:#f1fa8c">&#34;equals&#34;</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        [<span style="color:#f1fa8c">&#34;dataModel&#34;</span>, <span style="color:#f1fa8c">&#34;Ansatte[0].Navn&#34;</span>],
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        <span style="color:#f1fa8c">&#34;Ola Nordmann&#34;</span>]
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>Følgende kan observeres:</p>
+<ol>
+<li>Det første oppslaget (for å styre <code>hidden</code> på komponenten <code>ansatt-navn</code>) styres ut fra alderen til hver ansatt. Om
+den ansatte er under 18 år skjules <code>ansatt-navn</code>. Legg merke til at samme sti i datamodellen blir brukt som
+<code>simpleBinding</code> på <code>ansatt-alder</code>.</li>
+<li>Det andre oppslaget (for å styre <code>hidden</code> på komponenten <code>ansatt-alder</code>) bruker <code>[0]</code> på oppslaget i datamodellen.
+Dette fungerer også, men oppførselen er kanskje uventet; her skjules alle alder-komponenter dersom navnet på den <em>første</em>
+ansatte har navnet <em>Ola Nordmann</em>.</li>
+</ol>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="card adocs-expand" id="func-component">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-func-component"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				component (oppslag)
+			
+		</a>
+	</div>
+	<div id="expandable-func-component" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>Oppslag direkte på komponent tilsvarer på mange måter et oppslag mot datamodell med <a href="#func-datamodel"><code>dataModel</code></a>.
+Et uttrykk som slår opp verdien til en komponent kommer til å lete etter komponenten og returnere verdien lagret på
+komponenten sin <code>simpleBinding</code> i datamodellen. For øyeblikket støttes ingen andre verdier enn den lagret mot
+<code>simpleBinding</code> (om andre verdier ønskes må man gå direkte mot <a href="#func-datamodel"><code>dataModel</code></a>).</p>
+<p>Oppslag mot en komponent vil derimot returnere <code>null</code> dersom komponenten man slår opp verdien til er skjult (selv om
+komponenten ellers har tilknyttet data i datamodellen). Dette gjør det til en viss grad mulig å styre visning av en
+komponent basert på om en annen komponent er vist eller ikke. Dersom komponenten ble funnet på en helt annen (men skjult)
+side gir også oppslaget verdien <code>null</code> selv om datamodellen har en verdi tilknyttet komponenten.</p>
+<p>I likhet med <a href="#func-datamodel"><code>dataModel</code></a> vil oppslag mot en komponent-id forsøke å finne komponenten i nærheten av
+uttrykket i kontekst av <a href="../../ux/fields/grouping/repeating">repeterende grupper</a>. Det vil først søkes etter komponenten
+i gjeldende rad, før det letes oppover i sidestrukturen.</p>
+
+		</div>
+	</div>
+</div>
+<h2 id="datatyper">Datatyper</h2>
+<p>Funksjoner i uttrykkene har en forventning om at argumentene som blir sendt inn har en spefikk type. Dersom et argument
+blir sendt inn har en annen type enn forventet, blir verdien forsøkt konvertert til riktig type. Som et eksempel
+forventer funksjonen <code>equals</code> to strenger, men om du sender inn den boolske verdien <code>true</code> som det ene eller andre
+argumentet fungerer det også fint, siden den boolske verdien <code>true</code> blir konvertert til strengen <code>&quot;true&quot;</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[<span style="color:#f1fa8c">&#34;equals&#34;</span>, <span style="color:#ff79c6">true</span>, <span style="color:#f1fa8c">&#34;true&#34;</span>]
+</span></span></code></pre></div><p>Uttrykket over fungerer, og gir <code>true</code> som resultat (fordi <code>true</code> og <code>&quot;true&quot;</code> sammenlignes som samme verdi ved at
+<code>true</code> konverteres til <code>&quot;true&quot;</code> før sammenligningen). Dette gjør også at du kan kalle en funksjon som returnerer en
+datatype og f.eks. sammenligne med en helt annen datatype. Les mer om hvilke datatyper som kan konverteres til hva
+under.</p>
+<p>Alle funksjoner som forventer en spesifikk datatype som argument vil også kunne fungere om man sender
+inn <a href="#null"><code>null</code></a>, men noen steder vil en <code>null</code>-verdi gi en feilmelding - for eksempel om man prøver å slå opp i
+datamodellen med <code>[&quot;dataModel&quot;, null]</code>. I <code>concat</code>-funksjonen vil derimot en <code>null</code>-verdi bli tolket som en tom streng.</p>
+<h3 id="strenger">Strenger</h3>
+<p>Strenger inneholder vilkårlig tekst, og er en bred datatype som tall og boolske verdier kan konverteres til.</p>
+<p>Noen strenger kan også konverteres til andre datatyper:</p>
+<table>
+<thead>
+<tr>
+<th>Strengverdi</th>
+<th>Kan erstatte</th>
+<th>Eksempler</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heltall med eller uten negativt fortegn</td>
+<td><a href="#tall">Tall</a></td>
+<td><code>3</code>, <code>-8</code>, <code>71254</code></td>
+</tr>
+<tr>
+<td>Flyttall med eller uten negativt fortegn, med punktum istedenfor komma</td>
+<td><a href="#tall">Tall</a></td>
+<td><code>3.14</code>, <code>-33.0</code>, <code>123.123</code></td>
+</tr>
+<tr>
+<td><code>true</code> eller <code>false</code> med små eller store bokstaver</td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td><code>true</code>, <code>True</code>, <code>FALSE</code></td>
+</tr>
+<tr>
+<td><code>null</code> med små eller store bokstaver</td>
+<td><a href="#null">Null</a></td>
+<td><code>null</code>, <code>Null</code>, <code>NULL</code></td>
+</tr>
+</tbody>
+</table>
+<p>Alle andre strenger enn de i tabellen over vil gi feilmelding om de blir forsøkt konvertert til andre typer.</p>
+<h3 id="tall">Tall</h3>
+<p>Tallverdier gjelder positive og negative heltall og flyttall (tall med komma). Noen strenger blir også konvertert
+automatisk til en tallverdi, som vist i tabellen til strenger over. For at konvertering av en streng til et tall
+skal fungere, må strengen oppfylle følgende:</p>
+<ul>
+<li>Strengen inneholder bare et tall, ingen annen tekst foran/bak tallet</li>
+<li>Negativt fortegn (<code>-</code>) kan brukes, men positivt fortegn (<code>+</code>) støttes ikke.</li>
+<li>Flyttall må representeres med punktum, ikke komma.</li>
+<li>Tusenskilletegn eller annen tallformattering støttes ikke.</li>
+</ul>
+<p>Alle andre strenger vil gi en feilmelding om de blir forsøkt konvertert til et tall. Forsøker man å konvertere en
+<a href="#boolske-verdier">boolsk verdi</a> til et tall, gir det også en feilmelding.</p>
+<p>Funksjoner som forventer å få inn et tall kan også få inn <a href="#null"><code>null</code></a>. Se mer om hvilken effekt det har under
+beskrivelsen til hver funksjon.</p>
+<h3 id="boolske-verdier">Boolske verdier</h3>
+<p>Boolske verdier omfatter <code>true</code> (sann) og <code>false</code> (usann). Når man kaller en funksjon som forventer å få inn en boolsk
+verdi, kan man også sende inn enkelte andre typer, som blir konvertert til en boolsk verdi:</p>
+<ul>
+<li>Tallene <code>1</code> og <code>0</code> fungerer som henholdsvis <code>true</code> og <code>false</code></li>
+<li>Strengene <code>&quot;1&quot;</code> og <code>&quot;0&quot;</code> fungerer likt som tallene (og blir henholdsvis <code>true</code> og <code>false</code>)</li>
+<li>Strengene <code>&quot;true&quot;</code> og <code>&quot;false&quot;</code> konverteres også til en boolsk verdi</li>
+<li>Verdien <a href="#null"><code>null</code></a> fungerer likt som <code>false</code></li>
+</ul>
+<p>Alle andre verdier gir en feilmelding om de blir sendt til en funksjon som forventer en boolsk verdi. Legg merke til
+at disse reglene er litt forskjellige fra reglene til <a href="#strenger">strenger</a>. Det er dermed forskjell på hvilke verdier
+som kan <em>tolkes</em> som en boolsk verdi for en funksjon som forventer et boolsk argument - og hvilke verdier som er <em>like</em>
+en boolsk verdi. Funksjonen <a href="#func-equals"><code>equals</code></a> sammenligner verdier som strenger, og dermed vil tallet <code>1</code> og
+strengen <code>&quot;1&quot;</code> sammenlignes som like, men den vil ikke gjenkjenne <code>1</code> og <code>true</code> som like verdier.</p>
+<p>Det kan kanskje se ut som følgende uttrykk er like:</p>
+<ol>
+<li><code>&quot;hidden&quot;: [&quot;dataModel&quot;, &quot;hideName&quot;]</code></li>
+<li><code>&quot;hidden&quot;: [&quot;equals&quot;, [&quot;dataModel&quot;, &quot;hideName&quot;], true]</code></li>
+<li><code>&quot;hidden&quot;: [&quot;if&quot;, [&quot;dataModel&quot;, &quot;hideName&quot;], true, &quot;else&quot;, false]</code></li>
+</ol>
+<p>Hvis verdien (her gitt fra oppslaget <code>[&quot;dataModel&quot;, &quot;hideName&quot;]</code>) er <code>true</code> eller <code>&quot;true&quot;</code> vil
+komponenten skjules, men dersom verdien er <code>1</code> eller <code>&quot;1&quot;</code> vil komponenten bare skjules med uttrykkene i alternativ
+1 og 3. Dette fordi resultatet i uttrykket for <code>hidden</code> <a href="#bruksomr%C3%A5der">konverteres til en boolsk verdi</a>, og
+<code>if</code> <a href="#func-if">forventer en boolsk verdi som første argument</a>. Derimot vil <code>equals</code> sammenligne verdiene som strenger,
+og <code>&quot;1&quot;</code> er ikke lik <code>&quot;true&quot;</code>.</p>
+<p>Se også tips og triks under <a href="#streng-eller-mindre-streng-sammenligning"><em>Streng eller mindre streng sammenligning?</em></a></p>
+<h3 id="null">Null</h3>
+<p>De fleste steder hvor man forventer å få inn en <a href="#strenger">streng</a>, <a href="#tall">tall</a> eller
+<a href="#boolske-verdier">boolske verdier</a> skal også tåle en <code>null</code>-verdi. Null-verdier indikerer at en spesifikk verdi
+mangler, og det er forskjell på f.eks. en <code>null</code>-verdi, en tom <a href="#strenger">streng</a> og <a href="#tall">tallet</a> <code>0</code>.</p>
+<p>Dersom man gjør et oppslag i en funksjon som <code>dataModel</code>, og verdien man leter etter ikke finnes/er satt, vil som regel
+<code>null</code> bli resultatet.</p>
+<h2 id="tips-og-triks">Tips og triks</h2>
+<h3 id="viseskjule-hele-sider">Vise/skjule hele sider</h3>
+<p>Uttrykk kan brukes til å vise/skjule hele sider. I eksempelet under vil hele siden  skjules dersom en komponent
+(på en av de andre sidene) har verdien <em>no</em> eller ikke er satt.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;$schema&#34;</span>: <span style="color:#f1fa8c">&#34;https://altinncdn.no/schemas/json/layout/layout.schema.v1.json&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;data&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;hidden&#34;</span>: [<span style="color:#f1fa8c">&#34;or&#34;</span>,
+</span></span><span style="display:flex;"><span>         [<span style="color:#f1fa8c">&#34;equals&#34;</span>, [<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;hasComplaints&#34;</span>], <span style="color:#f1fa8c">&#34;no&#34;</span>],
+</span></span><span style="display:flex;"><span>         [<span style="color:#f1fa8c">&#34;equals&#34;</span>, [<span style="color:#f1fa8c">&#34;component&#34;</span>, <span style="color:#f1fa8c">&#34;hasComplaints&#34;</span>], <span style="color:#ff79c6">null</span>]
+</span></span><span style="display:flex;"><span>      ],
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;layout&#34;</span>: [
+</span></span><span style="display:flex;"><span>         ...
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Dette kan sees på som et alternativ til <a href="../../ux/pages/tracks">sporvalg-funksjonaliteten</a>, men i motsetning til
+sporvalg gjøres utregningen av disse uttrykkene i <em>både</em> frontend <em>og</em> backend, dermed er det ikke nødvendig å legge
+til <code>&quot;triggers&quot;: [&quot;calculatePageOrder&quot;]</code> for å få funksjonaliteten til å fungere.</p>
+<p>Dersom siden man stod på blir skjult, vil applikasjonen automatisk gå videre til neste tilgjengelige side
+i <a href="../../ux/pages/navigation#order">side-rekkefølgen</a>. Om alle de neste sidene er skjult, vises den første mulige
+siden i rekkefølgen istedenfor.</p>
+<h3 id="streng-eller-mindre-streng-sammenligning">Streng eller mindre streng sammenligning?</h3>
+<p>Måten uttrykkene kjøres på gjør at de kan virke litt strenge (ved at f.eks. <code>0</code> og <code>null</code> er ulike verdier når man
+sammenligner med <code>equals</code>). Det er et designvalg gjort i Altinn av to grunner:</p>
+<ol>
+<li>Strenge regler er tydelige regler. Uttrykkene vil heller gi en feilmelding om noe ikke er som forventet, enn å la deg
+lure på hvorfor det ble slikt det ble.</li>
+<li>Hvis uttrykkene behandler mange ulike verdier som like, fratar vi deg muligheten til å skille mellom dem om du skulle
+ønske det.</li>
+</ol>
+<p>Om man ønsker mindre streng sammenligning, kan man f.eks. konstruere et uttrykk som bruker <a href="#func-and"><code>or</code></a>-funksjonen
+til å gjenkjenne flere forskjellige verdier:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[<span style="color:#f1fa8c">&#34;or&#34;</span>,
+</span></span><span style="display:flex;"><span>   [<span style="color:#f1fa8c">&#34;equals&#34;</span>, [<span style="color:#f1fa8c">&#34;dataModel&#34;</span>, <span style="color:#f1fa8c">&#34;My.Path&#34;</span>], <span style="color:#bd93f9">0</span>],
+</span></span><span style="display:flex;"><span>   [<span style="color:#f1fa8c">&#34;equals&#34;</span>, [<span style="color:#f1fa8c">&#34;dataModel&#34;</span>, <span style="color:#f1fa8c">&#34;My.Path&#34;</span>], <span style="color:#ff79c6">false</span>],
+</span></span><span style="display:flex;"><span>   [<span style="color:#f1fa8c">&#34;equals&#34;</span>, [<span style="color:#f1fa8c">&#34;dataModel&#34;</span>, <span style="color:#f1fa8c">&#34;My.Path&#34;</span>], <span style="color:#ff79c6">null</span>],
+</span></span><span style="display:flex;"><span>   [<span style="color:#f1fa8c">&#34;equals&#34;</span>, [<span style="color:#f1fa8c">&#34;dataModel&#34;</span>, <span style="color:#f1fa8c">&#34;My.Path&#34;</span>], <span style="color:#f1fa8c">&#34;&#34;</span>]
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>Husk også at konvertering til <a href="#boolske-verdier">boolsk verdi</a> tillater flere alternativer enn strenger
+(som <code>equals</code> forventer). Siden funksjonen <code>or</code> forventer boolske verdier som argumenter, og verdiene
+<code>0</code>, <code>false</code> og <code>null</code> allerede tillates som boolske verdier vil følgende fungere likt som uttrykket over:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[<span style="color:#f1fa8c">&#34;or&#34;</span>,
+</span></span><span style="display:flex;"><span>   [<span style="color:#f1fa8c">&#34;dataModel&#34;</span>, <span style="color:#f1fa8c">&#34;My.Path&#34;</span>],
+</span></span><span style="display:flex;"><span>   [<span style="color:#f1fa8c">&#34;equals&#34;</span>, [<span style="color:#f1fa8c">&#34;dataModel&#34;</span>, <span style="color:#f1fa8c">&#34;My.Path&#34;</span>], <span style="color:#f1fa8c">&#34;&#34;</span>]
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div>
+
+<footer class=" footline" ></footer>
+                </div>
+              </div>
+              
+
+            </div><div id="top-github-link">
+                  <a class="" href="https://github.com/altinn/altinn-studio-docs/blob/master/content/app/development/logic/expressions/_index.en.md" target="blank">
+                    <i class="fa fa-code-fork"></i>
+                    Edit page on GitHub
+                  </a>
+                </div></section>
+        </div> 
+      </div> 
+    </div>
+    </div> <footer class="adocs-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <ul>
+                    <li>
+                        <a href="https://www.altinn.no/om-altinn/">About Altinn</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Altinn/altinn-studio/issues">Backlog</a>
+                    </li>
+                    <li>
+                        <a href="https://altinn.slack.com">Slack</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Altinn/altinn-studio">GitHub</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js"></script>
+    <script src="/js/html5shiv-printshiv.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js"></script>
+    <script src="/js/altinninfoportal.js"></script>
+    <script src="/js/altinndocs.js"></script>
+    <script src="/js/altinndocs-learn.js"></script>
+    <script src="/js/stickysidebar/rAF.js"></script>
+    <script src="/js/stickysidebar/ResizeSensor.js"></script>
+    <script src="/js/stickysidebar/sticky-sidebar.js"></script>
+
+    <script>
+      var a = new StickySidebar('#sidebar', {
+        topSpacing: 20,
+        bottomSpacing: 60,
+        containerSelector: '.adocs-scrollcontainer',
+        innerWrapperSelector: '.sidebar__inner',
+        minWidth: 768
+      });
+    </script>
+    <link href="/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+<script src="/js/custom.js"></script></body>
+</html>
+

@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="How to import or view the data model in Altinn Studio." />
+    <meta name="description" content="Information about datamodels and datamodelling in Altinn Studio" />
 <meta name="altinn_pagedir" class="elastic" content="app\development\data\data-model\" />
-<meta name="altinn_title" class="elastic" content="Data model in Altinn Studio" />
+<meta name="altinn_title" class="elastic" content="Datamodels in Altinn Studio" />
 
-<title>Data model in Altinn Studio – Altinn</title><link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<title>Datamodels in Altinn Studio – Altinn</title><link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -233,7 +233,17 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/data/prefill/instantiation/"><span>Http post</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/data/data-model/"><span>Data model</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/data/data-model/"><span>Datamodel</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/data/data-model/data-models-tool/"><span>Datamodellering</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/data/data-model/app-datamodels/"><span>Apper</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/data/data-model/org-datamodels/"><span>Organisasjoner</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/data/data-model/altinn-2/"><span>Altinn 2</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/data/data-model/known-issues/"><span>Kjente feil</span></a></li>
       <li class="dd-item">
         <a href="/app/development/data/data-model/seres-migration/"><span>Sereserstatning</span></a></li></ul></li>
       <li class="dd-item">
@@ -1116,77 +1126,35 @@ if(host != "localhost")
                     <span class="sr-only">Vis/skjul meny</span>
                   </a>
                 </span>
-                <span class="links"><a href='/app/'>Create apps</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/'>Development</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/data/'>Data</a> <span class='adocs-breadcrumb-divider'> / </span> Data model</span>
+                <span class="links"><a href='/app/'>Create apps</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/'>Development</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/data/'>Data</a> <span class='adocs-breadcrumb-divider'> / </span> Datamodel</span>
             </div>
-          </div><div id="body-inner"><h1 class="a-fontBold">Data model in Altinn Studio</h1>
-              <p class="a-leadText" id="leadText">How to import or view the data model in Altinn Studio.</p><div class="notices info" >
-Data modeling functionality is currently under development in Altinn Studio. 
-Functionality is limited, but will be continuously added.
-</div>
-<p>To get to the new data model page in Altinn Studio, simply open an app and select <em>Data model</em>
-from the top menu.</p>
-<p>When opening the page, a dialog with some information about the page is shown. You can choose 
-to not have this dialog open every time by clicking <em>Do not show again</em>. As long as you use the
-same computer/browser, the message will not be shown again.</p>
-<figure><a href="info-dialog.png"><img src="info-dialog.png" alt="Info om ny side" title="Info om ny side" /></a><figcaption><h4>Info om ny side</h4></figcaption></figure>
-<h2 id="upload--show-data-model">Upload / show data model</h2>
-<p>The data model defines which data that can be sent in via an app, and which format it should be on.
-In order to upload an existing data model, the model must be defined as an XSD in an external tool.</p>
-<p>Each app needs at least one data model.</p>
-<ol>
-<li>Open the app from the dashboard.</li>
-<li>Select the <em>Data model</em> meny item</li>
-<li>Click <em>Upload data model</em> and choose an XSD in the file browser.</li>
-<li>Click <em>Open</em> in the dialog to upload the XSD</li>
-</ol>
-<p>The data model is then parsed, and a C# class and JSON schema are generated from the XSD.
-You can see a tree view representation of the data model in the tool once it has been uploaded.</p>
-<figure><a href="upload-datamodel.png"><img src="upload-datamodel.png" alt="Upload / show model" title="Upload / show model" /></a><figcaption><h4>Upload / show model</h4></figcaption></figure>
-<figure><a href="view-model.png"><img src="view-model.png" alt="Upload / show model" title="Upload / show model" /></a><figcaption><h4>Upload / show model</h4></figcaption></figure>
-<h2 id="create-new-data-model">Create new data model</h2>
-<p>In addition to uploading a data model, a new model can be created from scratch.</p>
-<ol>
-<li>Click <em>Create new data model</em></li>
-<li>Type in the name of the model.</li>
-<li>Click <em>Create model</em> to create the model.</li>
-</ol>
-<p>The new model is created from a template, and has a single example field called <code>e1</code>.</p>
-<p><img src="create-new.png" alt="Create new model" title="Create new model">
-<img src="view-new-model.png" alt="Show new model" title="Show new model"></p>
-<h2 id="select-data-model">Select data model</h2>
-<p>Switch between already uploaded/created data models by using the dropdown list of available
-models in the top toolbar.</p>
-<h2 id="edit-data-model">Edit data model</h2>
-<div class="notices warning" >
-This functionality is under development and will be limited. Functionality is added
-continuously, and new functionality will be documented when it is ready.
-</div>
-<p>To edit a model, select that model from the models dropdown in the top toolbar. Then click <em>Edit</em>
-on the right hand side of the top toolbar to enable editing and to show the editing panel.</p>
-<p><strong>NB!</strong> Remember to <em>save</em> your model by clicking <em>Save</em> when making changes. There is no auto-save
-feature currently for the data modelling tool.</p>
-<h3 id="edit-field-name">Edit field name</h3>
-<ol>
-<li>Click on the field, and see that the data for the field is shown in the panel to the right.</li>
-<li>Change the name as wanted</li>
-<li>The name is updated in the tree view once you leave the field.</li>
-</ol>
-<p>Other properties of the field can be updated in the same way.</p>
-<h3 id="add-a-new-field">Add a new field</h3>
-<ol>
-<li>Click the node you want to add a field to, and/or</li>
-<li>Click the <code>...</code> on the right end of the node to open the context menu</li>
-<li>Choose <code>Add field</code> from the menu</li>
-<li>A new field is added</li>
-<li>Use the right hand panel to edit the properties of the field.</li>
-</ol>
-<h3 id="delete-a-field">Delete a field</h3>
-<ol>
-<li>Click the node you want to delete, and/or</li>
-<li>Click the <code>...</code> on the right end of the node to open the context menu</li>
-<li>Chose <code>Delete field</code> from the menu</li>
-<li>The field is deleted</li>
-</ol>
+          </div><div id="body-inner"><h1 class="a-fontBold">Datamodels in Altinn Studio</h1>
+              <p class="a-leadText" id="leadText">Information about datamodels and datamodelling in Altinn Studio</p><ul class="children children-li js-moveChildrenFrom">
+
+	
+		<li>
+				<a href="/app/development/data/data-model/data-models-tool/">Altinn Studio Datamodellering</a>
+				<p>Brukerguide for verktøyet Altinn Studio Datamodellering</p>
+				</li><li>
+				<a href="/app/development/data/data-model/app-datamodels/">Datamodeller for applikasjoner</a>
+				<p>Informasjon om datamodeller for applikasjoner</p>
+				</li><li>
+				<a href="/app/development/data/data-model/org-datamodels/">Datamodeller for organisasjoner</a>
+				<p>Informasjon om datamodeller for organisasjoner i Altinn Studio</p>
+				</li><li>
+				<a href="/app/development/data/data-model/altinn-2/">Utvikle datamodell for Altinn 2 i Altinn Studio</a>
+				<p>Hva må gjøres for å utvikle datamodell til Altinn 2?</p>
+				</li><li>
+				<a href="/app/development/data/data-model/known-issues/">Kjente feil og mangler</a>
+				<p>Informasjon om kjente feil og mangler i verktøyet for datamodellering i Altinn Studio</p>
+				</li><li>
+				<a href="/app/development/data/data-model/seres-migration/">Erstatning for Seres i Altinn Studio</a>
+				<p>Hva må gjøres når Seres erstattes?</p>
+				</li>
+	
+</ul>
+
+
 
 
 <footer class=" footline" ></footer>

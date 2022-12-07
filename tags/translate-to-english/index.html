@@ -233,7 +233,17 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/data/prefill/instantiation/"><span>Http post</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/data/data-model/"><span>Data model</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/data/data-model/"><span>Datamodel</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/data/data-model/data-models-tool/"><span>Datamodellering</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/data/data-model/app-datamodels/"><span>Apper</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/data/data-model/org-datamodels/"><span>Organisasjoner</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/data/data-model/altinn-2/"><span>Altinn 2</span></a></li>
+      <li class="dd-item">
+        <a href="/app/development/data/data-model/known-issues/"><span>Kjente feil</span></a></li>
       <li class="dd-item">
         <a href="/app/development/data/data-model/seres-migration/"><span>Sereserstatning</span></a></li></ul></li>
       <li class="dd-item">
@@ -1130,6 +1140,42 @@ if(host != "localhost")
 
 	</div><article class="post app">
     <header class="post-header">
+        <h2 class="post-title"><a href="/app/development/data/data-model/data-models-tool/">Altinn Studio Datamodellering</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Datamodelleringsfunksjonalitet utvikles nå i Altinn Studio. Funksjonalitet vil være begrenset, men vil bygges på fortløpende.Altinn Studio Datamodellering er et verktøy for å utvikle datamodeller. Den baserer seg på en datamodell i JSONSchema format, og kan ut fra dette generere XSD- og C#-modell.
+Navigere til Altinn Studio Datamodellering Logg inn i Altinn Studio På førstesiden, velg rediger (blått penn-ikon) på enten: a. En app, eller b. Datamodellerings repo for din organisasjon Velg Datamodell fanen i topp-menyen Når man kommer til den nye siden for datamodellering vises en dialog med informasjon om den nye siden. <a class="read-more" href="/app/development/data/data-model/data-models-tool/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-english/">translate-to-english</a>
+            
+        
+    </footer>
+</article>
+<article class="post app">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/app/development/data/data-model/app-datamodels/">Datamodeller for applikasjoner</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Datamodeller for applikasjoner ligger i samme mappe-struktur som resten av applikasjons-filene. Disse ligger lagret i Gitea, under App/models i filstrukturen til appen. En applikasjon har 4 modell-filer:
+&lt;model&gt;.cs: Denne brukes av applikasjonen sine API&rsquo;er til å behandle/validere data &lt;model&gt;.schema.json: Denne brukes av applikasjonen på klient-siden (browser) til å validere data fortløpende. Det er også denne filen man jobber med i datamodellerings-verktyøet. &lt;model&gt;.xsd: Denne brukes ikke direkte av applikasjonen, men kan lastes ned ved behov til f. <a class="read-more" href="/app/development/data/data-model/app-datamodels/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-english/">translate-to-english</a>
+            
+        
+    </footer>
+</article>
+<article class="post app">
+    <header class="post-header">
         <h2 class="post-title"><a href="/app/getting-started/intro/">Introduction to Altinn Studio</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1137,6 +1183,25 @@ if(host != "localhost")
 Slik går du frem:
 Start alltid med å definere brukerbehov
 Tenk nøye gjennom hele prosessen fra et brukerperspektiv. Hva er utfordringen og hvem skal den løses for? Hva er databehovet? <a class="read-more" href="/app/getting-started/intro/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-english/">translate-to-english</a>
+            
+        
+    </footer>
+</article>
+<article class="post app">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/app/development/data/data-model/org-datamodels/">Datamodeller for organisasjoner</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Datamodeller for organisasjoner ligger i Altinn Studio sin repos-løsning. For å få tilgang til disse må man logge inn med Altinn Studio bruker. Om det er første gang du bruker Altinn Studio må du lage en bruker.
+Datamodellene ligger i &lt;org&gt;-datamodels-repo, hvor &lt;org&gt; er den organisasjonen du tilhører. F.eks. ligger datamodellene til organisasjonen Testdepartementet (ttd) under https://altinn.studio/repos/ttd/ttd-datamodels.
+Lenke til dette repoet finner man på førstesiden i Altinn Studio. Velg Rediger (blått penn-ikon) for å komme til Altinn Studio Datamodellering verktøet. <a class="read-more" href="/app/development/data/data-model/org-datamodels/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         
@@ -1206,6 +1271,24 @@ Azure Kubernetes Services Kubernetes, og da spesielt hvordan ressurser administr
 </article>
 <article class="post app">
     <header class="post-header">
+        <h2 class="post-title"><a href="/app/development/data/data-model/altinn-2/">Utvikle datamodell for Altinn 2 i Altinn Studio</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Endre eksisterende datamodell Eksisterende datamodell (XSD) kan lastes opp i verktøyet og redigeres. Alle XSD attributter vil følge med fra den opprinnelige XSD&rsquo;en, selv om disse ikke kan redigeres i verktøyet.
+Dersom det kun er behov for små endringer på datamodellen, og det kun er behov for endringer ifm Altinn 2, anbefales det allikevel at man gjør disse endringene manuelt direkte på XSD&rsquo;en. Dette kan gjøres med forskjellige verktøy, noen eksempler følger: <a class="read-more" href="/app/development/data/data-model/altinn-2/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-english/">translate-to-english</a>
+            
+        
+    </footer>
+</article>
+<article class="post app">
+    <header class="post-header">
         <h2 class="post-title"><a href="/app/getting-started/first-time-setup/">Create user in Altinn Studio</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1230,79 +1313,6 @@ Vis/skjul innholdLag bruker med GitHub brukernavnVelg å logge inn på altinn.
         <p>Designer er verktøyet du starer i etter å ha logget inn på https://altinn.studio. Det er et verktøy for å opprette, konfigurere og deploye apper.
 Navigere til en app Alle apper du har tilgang til å endre på vises på dashboardet. Gå til appen ved å klikke på appen. Dersom du ikke har en lokal klone av appen, vil du bli bedt om å opprette det.
 Hvis du ønsker å gå til app-repositoryet når du er inne i en app i Designer, er det en lenke i menyen som ligger i profilmenyen øverst til høyre. <a class="read-more" href="/app/getting-started/navigation/designer/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-english/">translate-to-english</a>
-            
-        
-    </footer>
-</article>
-<article class="post app">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/app/testing/local/">Test of app locally</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Dersom man skal skrive en del kode (f.eks. logikk), eller kjapt sjekke hvordan skjema ser ut kan det være nytting å kunne teste endringer uten å måtte deploye hele appen til testmiljø.
-Når appen lages, kommer den med alle nødvendige filer og oppsett til å kunne kjøres som en frittstående applikasjon. Ved å laste ned alle filene knyttet til appen fra repoet til appen, kan man kjøre appen lokalt på egen maskin, og på den måten enkelt teste endringer. <a class="read-more" href="/app/testing/local/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-english/">translate-to-english</a>
-            
-        
-    </footer>
-</article>
-<article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/api/authentication/maskinporten/">Authenticate with Maskinporten</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Samarbeidsportalen I Min profil i Samarbeidsportalen så har du tilgang til selvbetjening for Maskinporten, og der kan du opprette nye integrasjoner (klienter).
-https://tt02.altinn.no er testmiljø for apper i Altinn, og det er koblet mot Ver 2-miljøet i Maskinporten. https://www.altinn.no er koblet mot Produksjon. Tilgang som tjenesteeier For å kunne hente data fra Storage i Altinn 3 via API som tjenesteeier, så må man opprette en integrasjon (klient) i Maskinporten, med nødvendige scopes. <a class="read-more" href="/api/authentication/maskinporten/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-english/">translate-to-english</a>
-            
-        
-    </footer>
-</article>
-<article class="post app">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/app/development/data/data-model/seres-migration/">Erstatning for Seres i Altinn Studio</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Denne siden beskriver hva som må gjøres ifm overgangen fra Seres til Altinn Studio som datamodelleringsverktøy. Siden vil oppdateres i takt med utviklings- og migreringsarbeidet som gjøres så det må forventes oppdateringer.Altinn Studio Datamodellering (ASD) Seres er et verktøy for å lage XSD&rsquo;er som igjen validerer korrektheten til en XML. Det nye datamodelleringsverktøyet jobber på Json Schema som igjen validerer Json. Prinsippet er det samme, men formatet er forskjellig. <a class="read-more" href="/app/development/data/data-model/seres-migration/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-english/">translate-to-english</a>
-            
-        
-    </footer>
-</article>
-<article class="post app">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/app/getting-started/migrate-services/">Migrate services</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Migrere en eksisterende tjeneste til Altinn 3 Gjør deg kjent med Tjenesteeier-funksjonalitet i Altinn 3.
-Opprett bruker og app i Altinn Studio.
-Når bruker er opprettet kan du be om å bli en del av en organisasjon. Dette for å kunne samarbeide med andre i organisasjonen og ha tilgang til å kjøre deploy av apper. Utvikle app/tjeneste.
-Her finner du veiledninger som er nyttige når man utvikler en app i Altinn Studio. <a class="read-more" href="/app/getting-started/migrate-services/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         

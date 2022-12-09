@@ -821,6 +821,8 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/accesscontrol/"><span>Access Control</span></a></li>
+      <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/acessgroups/"><span>Access Groups</span></a></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/accessmanagment/"><span>Access Management</span></a></li>
@@ -1258,6 +1260,30 @@ Operations ApplicationOperations Applications are used by the devops team for s
 </article>
 <article class="post technology">
     <header class="post-header">
+        <h2 class="post-title"><a href="/technology/architecture/components/application/construction/altinn-platform/authorization/accesscontrol/">Application construction components - Altinn Access Control</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>See solutions for details about the functionality provided by this component.
+The diagram below shows where the different solution components are located
+The Authorization component is constructed as a asp.net MVC application exposing API. The API communicates with the different solution components
+The below diagram shows the data flow including PEP.
+Decision API The decision API is the API that orchestrates the decision process.
+The API supports both XACML XML and XACML Json Profile request. <a class="read-more" href="/technology/architecture/components/application/construction/altinn-platform/authorization/accesscontrol/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/solution/">solution</a>
+            
+        
+    </footer>
+</article>
+<article class="post technology">
+    <header class="post-header">
         <h2 class="post-title"><a href="/technology/architecture/components/application/construction/altinn-platform/authorization/acessgroups/">Application construction components - Altinn Access Groups</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1321,31 +1347,6 @@ Github Action Azure DevOps Pipeline Hosting The backend hosts the compiled front
                 <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/solution/">solution</a>
-            
-        
-    </footer>
-</article>
-<article class="post technology">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/technology/solutions/altinn-platform/authorization/accessmanagement/">Access Management component</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>This is work in progressThe access management will provide functionality to manage different aspects of authorization in Altinn.
-Delegate and revoke Altinn 2 roles Add and remove membership for Access Groups Delegate App and instance rights Manage Delegatable Maskinporten API resources List access groups members List resources that is linked to access groups This design is in early phase.
-Delegation &amp; Administration of Delegated API Access This functionality allows users to delegate access throug API with help of delegating access in maskinporten. <a class="read-more" href="/technology/solutions/altinn-platform/authorization/accessmanagement/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/security/">security</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/authorization/">authorization</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/xacml/">xacml</a>
             
         
     </footer>

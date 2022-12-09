@@ -821,6 +821,8 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/accesscontrol/"><span>Access Control</span></a></li>
+      <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/acessgroups/"><span>Access Groups</span></a></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/accessmanagment/"><span>Access Management</span></a></li>
@@ -1134,6 +1136,30 @@ if(host != "localhost")
 
 	</div><article class="post technology">
     <header class="post-header">
+        <h2 class="post-title"><a href="/technology/solutions/altinn-platform/authorization/contexthandler/">Context Handler</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>As an example, a decision request could contain only userId and instanceId together with the action requested.
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; &lt;Request xsi:schemaLocation=&#34;urn:oasis:names:tc:xacml:3.0:core:schema:wd-17 http://docs.oasis-open.org/xacml/3.0/xacml-core-v3-schema-wd-17.xsd&#34; ReturnPolicyIdList=&#34;false&#34; CombinedDecision=&#34;false&#34; xmlns=&#34;urn:oasis:names:tc:xacml:3.0:core:schema:wd-17&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;&gt; &lt;Attributes Category=&#34;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&#34;&gt; &lt;Attribute IncludeInResult=&#34;false&#34; AttributeId=&#34;urn:altinn:user-id&#34;&gt; &lt;AttributeValue DataType=&#34;http://www.w3.org/2001/XMLSchema#string&#34;&gt;15468&lt;/AttributeValue&gt; &lt;/Attribute&gt; &lt;/Attributes&gt; &lt;Attributes Category=&#34;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&#34;&gt; &lt;Attribute IncludeInResult=&#34;false&#34; AttributeId=&#34;urn:altinn:instance-id&#34;&gt; &lt;AttributeValue DataType=&#34;http://www.w3.org/2001/XMLSchema#string&#34;&gt;cbdc7b44-9442-4fe0-854b-da278bf0b0e&lt;/AttributeValue&gt; &lt;/Attribute&gt; &lt;/Attributes&gt; &lt;Attributes Category=&#34;urn:oasis:names:tc:xacml:3.0:attribute-category:action&#34;&gt; &lt;Attribute IncludeInResult=&#34;false&#34; AttributeId=&#34;urn:oasis:names:tc:xacml:1.0:action:action-id&#34;&gt; &lt;AttributeValue DataType=&#34;http://www.w3.org/2001/XMLSchema#string&#34;&gt;Read&lt;/AttributeValue&gt; &lt;/Attribute&gt; &lt;/Attributes&gt; &lt;Attributes Category=&#34;urn:oasis:names:tc:xacml:3.0:attribute-category:environment&#34; /&gt; &lt;/Request&gt; The enriched decision request contains all the needed attributes for subject and resource so PDP can identify the correct policy and evauluate the request based on it. <a class="read-more" href="/technology/solutions/altinn-platform/authorization/contexthandler/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/security/">security</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/authorization/">authorization</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/xacml/">xacml</a>
+            
+        
+    </footer>
+</article>
+<article class="post technology">
+    <header class="post-header">
         <h2 class="post-title"><a href="/technology/architecture/capabilities/runtime/data/">Data management Capabilities</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1333,23 +1359,6 @@ Overordnet målsetning for modernisering Autorisasjon skal være en selvstendig 
                 <a class="label label-default" href="https://docs.altinn.studio/tags/plan/">plan</a>
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/authorization/">authorization</a>
-            
-        
-    </footer>
-</article>
-<article class="post technology">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/technology/architecture/requirements/functional/">Functional Requirements</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>The functional requirements is extensive and is written as user stories. A good starting point is to look at issue 1337 at GitHub to get an overview of the required functionality. <a class="read-more" href="/technology/architecture/requirements/functional/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
             
         
     </footer>

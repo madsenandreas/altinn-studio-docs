@@ -821,6 +821,8 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/accesscontrol/"><span>Access Control</span></a></li>
+      <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/acessgroups/"><span>Access Groups</span></a></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/accessmanagment/"><span>Access Management</span></a></li>
@@ -1134,6 +1136,23 @@ if(host != "localhost")
 
 	</div><article class="post technology">
     <header class="post-header">
+        <h2 class="post-title"><a href="/technology/architecture/requirements/functional/">Functional Requirements</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>The functional requirements is extensive and is written as user stories. A good starting point is to look at issue 1337 at GitHub to get an overview of the required functionality. <a class="read-more" href="/technology/architecture/requirements/functional/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
+            
+        
+    </footer>
+</article>
+<article class="post technology">
+    <header class="post-header">
         <h2 class="post-title"><a href="/technology/architecture/components/infrastructure/">Infrastructure components</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1310,29 +1329,6 @@ Applications in Altinn Apps and Altinn Platform that is based on Java runs on Ja
         <p>The following diagram shows the different entities stored. Click on the entity for the physical model used.
 Data is stored in Cosmos DB as JSON documents. In addition we use object database to store the raw objects of business data that org has defined for the application.
 Entities Entity Storage Created by Instance Cosmos DB user/app owner InstanceEvent Cosmos DB user/app owner InstanceData Cosmos DB user/app owner Data Blob storage user/app owner Events PostgreSQL App Applications Cosmos DB app owner See below for details <a class="read-more" href="/technology/architecture/components/data/logical/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
-            
-        
-    </footer>
-</article>
-<article class="post technology">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/technology/architecture/capabilities/devops/platformoperations/monitoring/">System and platform monitoring</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Altinn 3 uses serveral features of Azure Monitor.
-Monitoring Application Insights is used to monitor different aspects of the platform.
-The above screenshot shows statistics for different requests.
-This screenshots shows how Application Insights presents how traffic flows between the different applications in the solutions.
-This screenshots show how a request flows through the different applications
-This screenshots show how a request flows through the different applications
-This screenshots show how a request flows through the different applications <a class="read-more" href="/technology/architecture/capabilities/devops/platformoperations/monitoring/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         

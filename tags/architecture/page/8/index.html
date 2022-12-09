@@ -821,6 +821,8 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/accesscontrol/"><span>Access Control</span></a></li>
+      <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/acessgroups/"><span>Access Groups</span></a></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/accessmanagment/"><span>Access Management</span></a></li>
@@ -1134,6 +1136,27 @@ if(host != "localhost")
 
 	</div><article class="post technology">
     <header class="post-header">
+        <h2 class="post-title"><a href="/technology/solutions/altinn-platform/authorization/pep/">Policy Enforcement Point</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>The PEP is responsible for making sure that user/system is authorized befor a API operation is performed.
+The PEP will identify call the PDP to get a decision on a reuest.
+See construction components on details how the PEP are created. <a class="read-more" href="/technology/solutions/altinn-platform/authorization/pep/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/security/">security</a>
+            
+        
+    </footer>
+</article>
+<article class="post technology">
+    <header class="post-header">
         <h2 class="post-title"><a href="/technology/solutions/altinn-platform/authorization/pip/">Policy Information Point</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1323,33 +1346,6 @@ The issues in the roadmap project are based on the Roadmap repository or the dif
                 <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/devops/">devops</a>
-            
-        
-    </footer>
-</article>
-<article class="post technology">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/technology/solutions/altinn-platform/authorization/prp/">Policy Retrieval Point</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>During deployment of an app the rules for the app is added to the Altinn Storage.
-The rules are defined as a XACML 3.0 Policy document.
-For delegated rights Altinn II will provide the delegated policy.
-See Policy Adminstration Point for details about how the policies are created.
-See construction components how PRP is built. <a class="read-more" href="/technology/solutions/altinn-platform/authorization/prp/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/security/">security</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/authorization/">authorization</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/xacml/">xacml</a>
             
         
     </footer>

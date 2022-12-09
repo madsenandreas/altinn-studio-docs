@@ -821,6 +821,8 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/accesscontrol/"><span>Access Control</span></a></li>
+      <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/acessgroups/"><span>Access Groups</span></a></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/accessmanagment/"><span>Access Management</span></a></li>
@@ -1122,7 +1124,7 @@ if(host != "localhost")
                 <span class="links"><a href='/technology/'>Technology</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/solutions/'>Solutions</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/solutions/altinn-platform/'>Altinn Platform</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/solutions/altinn-platform/authorization/'>Authorization</a> <span class='adocs-breadcrumb-divider'> / </span> PDP</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/architecture">architecture</a><a class="label label-default" href="https://docs.altinn.studio/tags/security">security</a><a class="label label-default" href="https://docs.altinn.studio/tags/authorization">authorization</a><a class="label label-default" href="https://docs.altinn.studio/tags/xacml">xacml</a></div><div id="body-inner"><h1 class="a-fontBold">Policy Decision Point</h1>
-              <p class="a-leadText" id="leadText">The Policy Decision Point is responsible to evaluate if users and systems is authorized to perform the requested operation on a resource.</p><p>The Policy Decision Point is implemented in the <a href="https://github.com/Altinn/altinn-studio/issues/1166">authorization component</a> that is deployed Altinn Platform.</p>
+              <p class="a-leadText" id="leadText">The Policy Decision Point is responsible to evaluate if users and systems is authorized to perform the requested operation on a resource.</p><p>The Policy Decision Point is implemented in the <a href="../../../../architecture/components/application/construction/altinn-platform/authorization/accesscontrol/">access control component</a> that is deployed to Altinn Platform.</p>
 <p>The Policy Decision Point follow <a href="https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html">eXtensible Access Control Markup Language (XACML) Version 3.0</a>.</p>
 <p>This mean that the rules are defined in XACML Policies files and PDP evalutes request based on the rules.</p>
 <p>The PDP evaluates the Context Request based on standard XACML 3.0 behaviour. There is no specific Altinn behaviour.</p>
@@ -1153,12 +1155,12 @@ the instance workflow state and the reporteId for the existing resource.</p>
 <p>The PDP tries to follow XACML 3.0 standard and have implemented some conformance tests. The goal is to fully implement
 all conformance test.</p>
 <p>There exist no official XACML 3.0 conformance test but AT&amp;T research made som available for OASIS in <a href="https://lists.oasis-open.org/archives/xacml-comment/201404/msg00001.html">this thread</a>.</p>
-<p>See our tests <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Authorization/IntegrationTests/Xacml30ConformanceTests.cs">here</a>.</p>
-<p>Testdata for conformance tests is found <a href="https://github.com/Altinn/altinn-studio/tree/master/src/Altinn.Platform/Altinn.Platform.Authorization/IntegrationTests/Data/Xacml/3.0/ConformanceTests">here</a>, and official description of tests <a href="https://raw.githubusercontent.com/Altinn/altinn-studio/master/src/Altinn.Platform/Altinn.Platform.Authorization/IntegrationTests/Data/Xacml/3.0/ConformanceTests/ConformanceTests.html">here</a>.</p>
+<p>See our tests <a href="https://github.com/Altinn/altinn-authorization/blob/main/test/IntegrationTests/Xacml30ConformanceTests.cs">here</a>.</p>
+<p>Testdata for conformance tests is found <a href="https://github.com/Altinn/altinn-authorization/tree/main/test/IntegrationTests/Data/Xacml/3.0/ConformanceTests">here</a>, and official description of tests <a href="https://raw.githubusercontent.com/Altinn/altinn-studio/master/src/Altinn.Platform/Altinn.Platform.Authorization/IntegrationTests/Data/Xacml/3.0/ConformanceTests/ConformanceTests.html">here</a>.</p>
 <p><a href="https://github.com/Altinn/altinn-studio/issues/2818">See Github 2818 for status on conformance test coverage</a></p>
 <h2 id="implementation-and-construction-details">Implementation and construction details</h2>
 <p>Details about the implementation of PDP is found under
-<a href="../../../../architecture/components/application/construction/altinn-platform/authorization/#policy-decision-point---pdp">construction components for PDP.</a></p>
+<a href="../../../../architecture/components/application/construction/altinn-platform/authorization/accesscontrol#policy-decision-point---pdp">construction components for PDP.</a></p>
 
 
 <footer class=" footline" ></footer>

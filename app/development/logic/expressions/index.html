@@ -1290,29 +1290,43 @@ for eksempel 45 år gammel, returneres teksten:</p>
 </tr>
 <tr>
 <td><a href="../../ux/fields/grouping/repeating">Repeterende grupper</a></td>
-<td><code>edit.saveButton</code> *</td>
+<td><code>edit.saveButton</code></td>
 <td><a href="#boolske-verdier">Boolsk</a></td>
 <td>✅</td>
 <td>❌</td>
 </tr>
 <tr>
 <td><a href="../../ux/fields/grouping/repeating">Repeterende grupper</a></td>
-<td><code>edit.deleteButton</code> *</td>
+<td><code>edit.deleteButton</code></td>
 <td><a href="#boolske-verdier">Boolsk</a></td>
 <td>✅</td>
 <td>❌</td>
 </tr>
 <tr>
 <td><a href="../../ux/fields/grouping/repeating">Repeterende grupper</a></td>
-<td><code>edit.saveAndNextButton</code> *</td>
+<td><code>edit.alertOnDelete</code></td>
 <td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><a href="../../ux/fields/grouping/repeating">Repeterende grupper</a></td>
+<td><code>edit.saveAndNextButton</code></td>
+<td><a href="#boolske-verdier">Boolsk</a></td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Alle</td>
+<td><code>textResourceBindings.[textResourceBinding]</code> *</td>
+<td><a href="#strenger">Streng</a></td>
 <td>✅</td>
 <td>❌</td>
 </tr>
 </tbody>
 </table>
-<p>* = Disse egenskapene kan foreløpig bare styres dynamisk for alle <a href="../../ux/fields/grouping/repeating">repeterende grupper</a>
-på en gang, ikke for hver enkelt rad.</p>
+<p>*= Hvilke verdier man kan overstyre med textResourceBindings varierer fra komponent til komponent, men vil fungere på
+alle steder der det brukes. TextResourceBindigs for repeterende grupper finner du <a href="../../ux/fields/grouping/setup#textresourcebindings">her</a></p>
 <h3 id="testing-feilsøking-og-utvikling-av-uttrykk">Testing, feilsøking og utvikling av uttrykk</h3>
 <p>Når man skal skrive et uttrykk er det greit å vite noenlunde hva resultatet kommer til å bli, og om uttrykket er gyldig.
 Ugyldige uttrykk gir en advarsel i JavaScript-konsollet i nettleseren når siden lastes, så det kan være lurt å ha

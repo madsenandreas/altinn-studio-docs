@@ -429,7 +429,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/apps/"><span>App</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/metadata/"><span>Metadata</span></a></li>
       <li class="dd-item">
@@ -647,10 +647,10 @@ For den programatiske måten er det noen mindre forskjeller avhengig av hvilke v
     
     <p>I versjon 7 har vi endret måten vi gjør kode baserte tilpassninger på. Vi benytter nå <em>dependency injection</em> i stedet for overstyring av metoder. Hvis du tidligere plasserte koden din i <em>FormatPdf</em> metoden in <em>PdfHandler.cs</em> klassen så vil du erfare at det er mer eller mindre det samme som nå gjøres.</p>
 <ol>
-<li>Opprett en klasse som implementerer <code>IInstanceValidator</code> grensesnittet som ligger i <code>Altinn.App.Core.Features.Validation</code> navnerommet.<br>
+<li>Opprett en klasse som implementerer <code>IPdfFormatter</code> grensesnittet som ligger i <code>Altinn.App.Core.Features</code> navnerommet.<br>
 Du kan navngi og plassere filene i den mappestrukturen du selv ønsker i prosjektet ditt. Men vi anbefaler at du benytter meningsfulle navnerom som i et hvilket som helst annet .Net prosjekt.</li>
 <li>Registrer din implementering i <em>Program.cs</em> klassen
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddTran  sient&lt;IInstanceValidator, InstanceValidator&gt;();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddTransient&lt;IPdfFormatter, PdfFormatter&gt;();
 </span></span></code></pre></div>Dette sørger for at din kode er kjent for applikasjonen og at koden blir kjørt når den skal.</li>
 </ol>
 

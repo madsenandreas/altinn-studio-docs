@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="How to define authorization rules (access management) for an app." />
+    <meta name="description" content="In Altinn Studio designer, the application developer can define the policy for the application created" />
 <meta name="altinn_pagedir" class="elastic" content="app\development\configuration\authorization\" />
-<meta name="altinn_title" class="elastic" content="Authorization" />
+<meta name="altinn_title" class="elastic" content="Defining Authorization Policy" />
 
-<title>Authorization – Altinn</title><link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<title>Defining Authorization Policy – Altinn</title><link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -315,7 +315,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -323,11 +323,11 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -937,11 +937,11 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/solutions/altinn-studio/designer/build-app/define-process/"><span>Process</span></a></li>
       <li class="dd-item">
-        <a href="/technology/solutions/altinn-studio/designer/build-app/authorization-rules/"><span>Authorization</span></a></li>
-      <li class="dd-item">
         <a href="/technology/solutions/altinn-studio/designer/build-app/prefill/"><span>Prefill</span></a></li>
       <li class="dd-item">
-        <a href="/technology/solutions/altinn-studio/designer/build-app/api-expose/"><span>API</span></a></li></ul></li>
+        <a href="/technology/solutions/altinn-studio/designer/build-app/api-expose/"><span>API</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/solutions/altinn-studio/designer/build-app/authorization-rules/"><span>Authorization</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/technology/solutions/altinn-studio/designer/deployment/"><span>Deploy</span></a></li></ul></li>
       <li class="dd-item">
@@ -1130,33 +1130,132 @@ if(host != "localhost")
                 </span>
                 <span class="links"><a href='/app/'>Create apps</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/'>Development</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/configuration/'>Configuration</a> <span class='adocs-breadcrumb-divider'> / </span> Authorization</span>
             </div>
-          </div><div id="body-inner"><h1 class="a-fontBold">Authorization</h1>
-              <p class="a-leadText" id="leadText">How to define authorization rules (access management) for an app.</p><p>Authorization rules for an application is defined in a XACML policy file which is placed in the app repository.
-The XACML Policy contains one or more rules which define who can perform different actions on different resources.</p>
-<p>Description of the XACML structure and definition of rules can be found <a href="/technology/solutions/altinn-studio/designer/build-app/authorization-rules/">here</a></p>
-<p>The XACML file can be edited in a text editor of your choice.</p>
+          </div><div id="body-inner"><h1 class="a-fontBold">Defining Authorization Policy</h1>
+              <p class="a-leadText" id="leadText">In Altinn Studio designer, the application developer can define the policy for the application created</p><p>The application developer defines the authorization rules for an application in an XACML policy file placed in the app repository. The XACML Policy contains one or more rules which determine who can perform different actions on different resources.
+You can edit the XACML file in a text editor of your choice.</p>
 <h2 id="rules-from-the-application-template">Rules from the application template</h2>
-<p>When an app is created in Altinn Studio it is based an the current asp.net template, and will include an autogenerated XACML policy file.
-The rules that are defined in this file is described below.</p>
-<p>The aforementioned rules can be changed in <em>policy.xml</em> which lies in <code>App/config/authorization</code> in the application repository.
-Details about configuring the policy file can be found <a href="/technology/solutions/altinn-studio/designer/build-app/authorization-rules/">here</a>
+<p>When you create an app in Altinn studio, it is based on the current asp.net template and will include an autogenerated <a href="https://raw.githubusercontent.com/Altinn/altinn-studio/master/src/studio/AppTemplates/AspNet/App/config/authorization/policy.xml">XACML policy file</a>.</p>
+<p>The application developer can change the authorization rules in <em>policy.xml</em>, which lies in <code>App/config/authorization</code> in the application repository.
+You can find details about configuring the policy file below. 
 You can also find a good amount of example rules <a href="rules">here</a>.</p>
 <div class="notices warning" >
-Please note that changes to the policy file is at your own risk,
-and that it is recommended to always delegate read permissions to entities with writing permissions.
+Please note that changes to the policy file are at your own risk and that it is always recommended to delegate read permissions to entities with writing permissions.
 </div>
-<h3 id="permissions-for-roles">Permissions for roles</h3>
-<p>The rules that give the CEO (DAGL) or accountant assistant (REGNA) permissions to instantiate, write 
-read and delete instances of the application are defined in the policy file.</p>
+<h2 id="resource-attributes">Resource Attributes</h2>
+<p>The resource attributes of rules describe which application or part of the rules apply.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>urn:altinn:org</td>
+<td>The org part of the resource attribute defines which org that owns the app.</td>
+</tr>
+<tr>
+<td>urn:altinn:app</td>
+<td>The app part that identifies the app itself.</td>
+</tr>
+<tr>
+<td>urn:altinn:task</td>
+<td>The task part of the resource makes it possible to have separate rules for the different tasks.</td>
+</tr>
+<tr>
+<td>urn:altinn:event</td>
+<td>The event part of the resource makes it possible to have separate  rules for reading events.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example">Example</h3>
+<p>The below example shows a part of the XACML 3.0 Policy where a resource is defined.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;xacml:AllOf&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&lt;xacml:Match</span> <span style="color:#50fa7b">MatchId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:1.0:function:string-equal&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#ff79c6">&lt;xacml:AttributeValue</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">&gt;</span>skd<span style="color:#ff79c6">&lt;/xacml:AttributeValue&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;xacml:AttributeDesignator</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:altinn:org&#34;</span> <span style="color:#50fa7b">Category=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&#34;</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span> <span style="color:#50fa7b">MustBePresent=</span><span style="color:#f1fa8c">&#34;false&#34;</span><span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&lt;/xacml:Match&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&lt;xacml:Match</span> <span style="color:#50fa7b">MatchId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:1.0:function:string-equal&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#ff79c6">&lt;xacml:AttributeValue</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">&gt;</span>taxreport<span style="color:#ff79c6">&lt;/xacml:AttributeValue&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;xacml:AttributeDesignator</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:altinn:app&#34;</span> <span style="color:#50fa7b">Category=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&#34;</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span> <span style="color:#50fa7b">MustBePresent=</span><span style="color:#f1fa8c">&#34;false&#34;</span><span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&lt;/xacml:Match&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&lt;xacml:Match</span> <span style="color:#50fa7b">MatchId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:1.0:function:string-equal&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#ff79c6">&lt;xacml:AttributeValue</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">&gt;</span>instansiate<span style="color:#ff79c6">&lt;/xacml:AttributeValue&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;xacml:AttributeDesignator</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:altinn:event&#34;</span> <span style="color:#50fa7b">Category=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:3.0:attribute-category:resource&#34;</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span> <span style="color:#50fa7b">MustBePresent=</span><span style="color:#f1fa8c">&#34;false&#34;</span><span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&lt;/xacml:Match&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;/xacml:AllOf&gt;</span>
+</span></span></code></pre></div><h2 id="subject-attributes">Subject Attributes</h2>
+<p>The subject part of the target for the rule defines who the rule target.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>urn:altinn:rolecode</td>
+<td>The role code is used for rule that target end users and systems.</td>
+</tr>
+<tr>
+<td>urn:altinn:org</td>
+<td>The org code is used for rule that target orgs.</td>
+</tr>
+</tbody>
+</table>
 <p>A complete list of role types can be found <a href="https://www.altinn.no/api/metadata/roledefinitions">here</a>.</p>
-<h3 id="permissions-for-the-application-owner">Permissions for the application owner</h3>
-<p>The application owner (organization) has rights to instantiate, write and read instances of the application.
-They also have permissions to mark instances as completed.</p>
-<h3 id="required-authentication-level">Required authentication level</h3>
-<p>Reqired authentication level is set to 2 by default. This is done as an obligation in the XACML Policy file.</p>
-<p>If the required authentication level is set to 4 you have to define that the service owner can interact with it through level 3 authentification for Maskinporten.
-This is because Maskinporten is defined as level 3. See the rule library for examples. Notice: the app requires nuget version<code>3.1.5</code> or higher.</p>
-<ul class="children children-li js-moveChildrenFrom">
+<p><strong>It is important to read the <a href="guidelines_authorization">guidlines</a> before selecting role.</strong></p>
+<h3 id="examples">Examples</h3>
+<p>Example with role code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;xacml:AllOf&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&lt;xacml:Match</span> <span style="color:#50fa7b">MatchId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:1.0:function:string-equal&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#ff79c6">&lt;xacml:AttributeValue</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">&gt;</span>regna<span style="color:#ff79c6">&lt;/xacml:AttributeValue&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;xacml:AttributeDesignator</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:altinn:rolecode&#34;</span> <span style="color:#50fa7b">Category=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&#34;</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span> <span style="color:#50fa7b">MustBePresent=</span><span style="color:#f1fa8c">&#34;false&#34;</span><span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&lt;/xacml:Match&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;/xacml:AllOf&gt;</span>
+</span></span></code></pre></div><p>Example with org:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;xacml:AllOf&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&lt;xacml:Match</span> <span style="color:#50fa7b">MatchId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:1.0:function:string-equal&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#ff79c6">&lt;xacml:AttributeValue</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">&gt;</span>skd<span style="color:#ff79c6">&lt;/xacml:AttributeValue&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;xacml:AttributeDesignator</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:altinn:org&#34;</span> <span style="color:#50fa7b">Category=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:1.0:subject-category:access-subject&#34;</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span> <span style="color:#50fa7b">MustBePresent=</span><span style="color:#f1fa8c">&#34;false&#34;</span><span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&lt;/xacml:Match&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;/xacml:AllOf&gt;</span>
+</span></span></code></pre></div><h2 id="action-attributes">Action Attributes</h2>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>urn:oasis:names:tc:xacml:1.0:action:action-id</td>
+<td>The action that rule apply to. In <a href="https://github.com/Altinn/app-lib-dotnet/blob/main/src/Altinn.App.Api/Extensions/ServiceCollectionExtensions.cs#L96">app</a> this can be read, write, instantiate, complete and delete. This will be expanded when new functionality is added</td>
+</tr>
+</tbody>
+</table>
+<p>Example with read action:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;xacml:Match</span> <span style="color:#50fa7b">MatchId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:1.0:function:string-equal&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#ff79c6">&lt;xacml:AttributeValue</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span><span style="color:#ff79c6">&gt;</span>read<span style="color:#ff79c6">&lt;/xacml:AttributeValue&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&lt;xacml:AttributeDesignator</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:1.0:action:action-id&#34;</span> <span style="color:#50fa7b">Category=</span><span style="color:#f1fa8c">&#34;urn:oasis:names:tc:xacml:3.0:attribute-category:action&#34;</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span> <span style="color:#50fa7b">MustBePresent=</span><span style="color:#f1fa8c">&#34;false&#34;</span><span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;/xacml:Match&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;/xacml:AllOf&gt;</span>
+</span></span></code></pre></div><h2 id="obligation">Obligation</h2>
+<p>The obligation part is used to define information that should be used by PEP. The required authentication level is set to 2 by default. This is done as an obligation in the XACML Policy file.</p>
+<p>If the required authentication level is set to 4, you must define that the service owner can interact with it through level 3 authentification for Maskinporten.
+This is because Maskinporten is defined as level 3. See the rule library for examples.</p>
+<p>Example with authentication level 2</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;xacml:ObligationExpressions&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;xacml:ObligationExpression</span> <span style="color:#50fa7b">FulfillOn=</span><span style="color:#f1fa8c">&#34;Permit&#34;</span> <span style="color:#50fa7b">ObligationId=</span><span style="color:#f1fa8c">&#34;urn:altinn:obligation:authenticationLevel1&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&lt;xacml:AttributeAssignmentExpression</span> <span style="color:#50fa7b">AttributeId=</span><span style="color:#f1fa8c">&#34;urn:altinn:obligation1-assignment1&#34;</span> <span style="color:#50fa7b">Category=</span><span style="color:#f1fa8c">&#34;urn:altinn:minimum-authenticationlevel&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        <span style="color:#ff79c6">&lt;xacml:AttributeValue</span> <span style="color:#50fa7b">DataType=</span><span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#integer&#34;</span><span style="color:#ff79c6">&gt;</span>2<span style="color:#ff79c6">&lt;/xacml:AttributeValue&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&lt;/xacml:AttributeAssignmentExpression&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;/xacml:ObligationExpression&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&lt;/xacml:ObligationExpressions&gt;</span>
+</span></span></code></pre></div><ul class="children children-li js-moveChildrenFrom">
 
 	
 		<li>

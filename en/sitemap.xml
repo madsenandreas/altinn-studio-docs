@@ -144,8 +144,6 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/requirements/</loc>
   </url><url>
-    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/authorization-rules/</loc>
-  </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/principles/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/solutions/altinn-platform/receipt/</loc>
@@ -2275,6 +2273,8 @@
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/runtime/security/authorization/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/altinn-platform/authorization/</loc>
+  </url><url>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/designer/build-app/authorization-rules/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/app/development/configuration/process/auto-delete/</loc>
     <xhtml:link

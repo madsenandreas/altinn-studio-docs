@@ -1172,6 +1172,11 @@ The pipeline is triggered whenever new code is merged into the master branch tha
 <li>trigger: final step in build/deploy app image pipelines</li>
 <li>details: Sends request to designer to update status of a given buil or release of an app.</li>
 </ul>
+<h4 id="pdf-generator-master">PDF-generator master</h4>
+<ul>
+<li>trigger: new code is pushed to the gh-pages branch of the <a href="https://github.com/Altinn/altinn-studio-charts">altinn-studio-charts repository</a></li>
+<li>default: the created build is used as the artifact to trigger the release pipeline for the PDF generator to AT-environments.</li>
+</ul>
 <h3 id="altinn-platform--altinn-studio">altinn-platform / altinn-studio</h3>
 <p>Pipelines in altinn-platform and altinn-studio share the same structure.
 There is a <em>pull request</em> and <em>master</em> pipeline for each component.</p>

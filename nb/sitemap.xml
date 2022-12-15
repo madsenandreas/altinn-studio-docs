@@ -2008,6 +2008,18 @@
                 href="https://docs.altinn.studio/nb/tags/autorisasjon/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/community/devops/teams/authorization/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/community/devops/teams/authorization/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/community/devops/teams/authorization/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/app/maintainance/dependencies/</loc>
     <xhtml:link
                 rel="alternate"
@@ -2275,6 +2287,8 @@
                 hreflang="nb"
                 href="https://docs.altinn.studio/nb/tags/deploy/"
                 />
+  </url><url>
+    <loc>https://docs.altinn.studio/nb/community/devops/teams/authorization/designfrontendprocess/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/nb/tags/development/</loc>
     <xhtml:link

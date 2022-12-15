@@ -1176,6 +1176,13 @@
 	"content": ""
 },
 {
+	"uri": "https://docs.altinn.studio/nb/community/devops/teams/authorization/",
+	"title": "Autorisasjon",
+	"tags": [],
+	"description": "Autorisasjon DevOps team har hovedsaklig ansvar for løsnigner som leverer Autentisering og Autorisasjonsfunksjonalitet i Altinn 2 og Altinn 3 løsningen",
+	"content": "Ansvar i Altinn 3: Autorisasjonsteamet har ansvar for følgende tjenester på Altinn 3 plattformen. Dette inkluderer oppgaver som utvikling av ny funksjonalitet, feilretting, drift og support.\nAutentisering Autentiseringskomponenten sørger for å autentisere brukere og systemer som får tilgang til Altinn Apps og Altinn-plattformen.\nRepository\nAutorisasjon Autorisasjonskomponentene gir tilgangsstyring og tilgangskontroll for tjenester til offentlige tjenester. Dette gjelder tjenester på og utenfor Altinn-plattformen. Løsningen er dokumenterthere\nRepository for authorization\nRepository for access policies\nRepository for access groups\nRepository for resource registry\nRepository for access management\nRepository for access management frontend\nRepository for Design system used in access management frontend\nRegister Registerapplikasjonen gir Altinn 3 tilgang til registerdata om personer og organisasjoner i Norge.\nRepository\nAnsvar i Altinn 2: Autorisasjonsteamet har ansvar for følgende tjenester på Altinn 2 plattformen. Dette inkluderer support, feilretting og nødvendig videreutvikling for å sikre migering av tjenester fra Altinn 2 til Altinn 3. Hendelser av kritisk karakter (support saker eller feilretting) håndteres ikke av Autorisasjonsteamet på Altinn 2.\nSamtykketjenesten Med samtykke/fullmakt kan du be om lov til å hente/dele data det offentlige har om en innbygger eller virksomhet, eller utføre noe på vegne av dem. Du får da midlertidig innsyns- eller handlingsrett på et spesifikt sett med opplysninger eller tjenester fra brukeren. Dette kan for eksempel være ligningsdata fra Skatteetaten. Les mer her\nStyring av tilgang Altinn kan benyttes til autorisasjon og tilgangskontroll for eksterne tjenester, altså tjenester på andre nettsteder enn i Altinn-plattformen. Altinn Autorisasjon kan benyttes av tjenesteeiere som ønsker å tilgjengeliggjøre informasjon og tjenester på egen plattform og nettsted, men ikke kan utføre en full autorisasjon av brukers tilganger. Les mer her\nStyring av tilgang til API Maskinporten er delen av den felles nasjonale innloggingsløsningen Digdir som tilbyr sikring av API-tilganger via maskin-til-maskin-autentisering og en OAuth2-scope basert autorisasjonsmekanisme. I Altinn er det utvklet en løsning som gjør det mulig for virksomheter som er gitt tilgang til et API gjennom Maskinporten å gi denne videre til for eksempel en leverandør som skal utføre den tekniske implementasjonen på deres vegne. Les mer her\nBrukere og autentisering av disse Altinn 2 tilbyr følgende brukertyper: personer (pnr/dnr), organisasjoner (orgnr), virksomhetsbrukere, selvidentfiserte brukere, datasystem (systemID) Autentisering via Portal og i API inkl integrasjon mot IDporten, Maskinporten og Altinn-spesifikke autentiseringsløsninger\n"
+},
+{
 	"uri": "https://docs.altinn.studio/nb/app/maintainance/dependencies/",
 	"title": "Oppdatere avhengigheter i app",
 	"tags": [],
@@ -1342,6 +1349,13 @@
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "https://docs.altinn.studio/nb/community/devops/teams/authorization/designfrontendprocess/",
+	"title": "Desgin/Frontend prosess",
+	"tags": [],
+	"description": "Slik jobber vi med design og frontendutvikling",
+	"content": "Bli enig om hovedfunksjonalitet og konsept Oppstart – tverrfaglig (backend, frontend, funksjonell) Skaffe innsikt Presentere case Lande «rammer» for utvikling. Diskutere tverrfaglig: utvikling i Altinn2 eller Altinn 3? kartlegge begrensninger i forhold til migrering? skal funksjonalitet i Altinn 2 videreføres i Altinn 3? UX – konseptskisser Diskutere tverrfaglig Brukerteste konsept Prototype Skissere i Figma - UX Tegne brukerflyt - UX Diskutere tverrfaglig – (teksnisk, frontend, test, funksjonell) Lage prototype - UX Brukerteste prototype – UX Detaljskisse Tegne «ferdig» skisser i figma Diskutere tverrfaglig Identifisere nye komponenter i Designsystemer Oppdatere skisser Definition of Prepared før neste trinn: Overordnet beskrivelse av UI som skal utvikles foreligger Alle designelementer er skissert Beskrive avhengigheter mellom elementer som skal brukes Detaljert beskrivelse av hva som skal utvikles gjennom skjermdumper og beskrivende tekst (funksjonelt design) Beskrive eventuelle uavklarte punkter Feilmeldinger skal være beskrevet QA av skisser opp mot Designsystem – Marianne/Lasse (ansvarlig designsystem) I henhold til overordnet Altinn-design (designsystem-team) Komponenter i Designsystem Lage skisser i Figma av enkelskomponenter til designsystem - UX QA av skisser opp mot Designsystem – Marianne/Lasse (ansvarlig designsystem) Definition of Prepared før neste trinn: Farge, font, navngivning av komponent, hoverover, ikoner, ?, ? Gjennomgått med ansvarlig for designsystem Implementere i Designsystem - frontend Review av kode designkomponenter - annen frontend utvikler Ferdigstille skisser som skal implementeres i frontend Oppdatere skisser Diskutere tverrfaglig – UX, frontend, test, teksnisk Ferdigstille skisser Definition of Prepared før neste trinn: Alle designelementer finnes i skisser Alle komponenter i skissen er designimplementert Forklaring på skisser hvordan de skal fungere, hva skjer når man gjør ulike ting Feilsitusajoner og feilmeldinger skal være beskrevet Implementere skisser Gjennomgang av skisse mellom - UX og frontend Implementere skisser i frontend Review av implementasjon – annen frontendutvikler "
 },
 {
 	"uri": "https://docs.altinn.studio/nb/tags/development/",
@@ -1845,7 +1859,7 @@
 	"title": "Teams",
 	"tags": [],
 	"description": "Våre DevOps-teams",
-	"content": "\rApps\rTeam Apps sitt hovedansvar er å assistere tjenesteeiere i migrering av tjenester fra Altinn 2 og utvikling av nye tjenester på Altinn 3.\nPlatform\rDevOps teamet Platform jobber hovedsaklig med Altinn 3 sine platform applikasjoner og drift av disse.\nStudio\rTeam Studio jobber hovedsaklig produkter relatert til bygging og utvikling av Altinn 3 applikasjoner.\n"
+	"content": "\rApps\rTeam Apps sitt hovedansvar er å assistere tjenesteeiere i migrering av tjenester fra Altinn 2 og utvikling av nye tjenester på Altinn 3.\nAutorisasjon\rAutorisasjon DevOps team har hovedsaklig ansvar for løsnigner som leverer Autentisering og Autorisasjonsfunksjonalitet i Altinn 2 og Altinn 3 løsningen\nPlatform\rDevOps teamet Platform jobber hovedsaklig med Altinn 3 sine platform applikasjoner og drift av disse.\nStudio\rTeam Studio jobber hovedsaklig produkter relatert til bygging og utvikling av Altinn 3 applikasjoner.\n"
 },
 {
 	"uri": "https://docs.altinn.studio/nb/tags/test/",

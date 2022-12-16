@@ -325,9 +325,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1235,7 +1235,7 @@ uttrykket gjør, og hvilke mulige verdier det kan returnere:</p>
 for eksempel 45 år gammel, returneres teksten:</p>
 <p><strong>Please consider applying for our open position!</strong></p>
 <p>For en person som er 62 år returneres teksten:</p>
-<p><strong>At 62, your are eligble for retirement</strong></p>
+<p><strong>At 62, your are eligible for retirement</strong></p>
 <p>Og for en person som er 15 år (eller yngre, som f.eks. en 4-åring), returneres teksten:</p>
 <p><strong>At 4, you should stay in (pre)school</strong></p>
 
@@ -1327,8 +1327,60 @@ for eksempel 45 år gammel, returneres teksten:</p>
 </tr>
 </tbody>
 </table>
-<p>*= Hvilke verdier man kan overstyre med textResourceBindings varierer fra komponent til komponent, men vil fungere på
+<p>* = Hvilke verdier man kan overstyre med textResourceBindings varierer fra komponent til komponent, men vil fungere på
 alle steder der det brukes. TextResourceBindigs for repeterende grupper finner du <a href="../../ux/fields/grouping/setup#textresourcebindings">her</a></p>
+
+
+<div class="card adocs-expand" id="rep-group-edit-button-text">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-rep-group-edit-button-text"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				Eksempel: Styre redigeringsknapp-tekst i repeterende gruppe
+			
+		</a>
+	</div>
+	<div id="expandable-rep-group-edit-button-text" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>Her endrer vi teksten til redigeringsknappen i en repeterende gruppe basert på om <code>IsPrefill</code> er satt til <code>true</code> i
+en gitt adresse i datamodellen. Dersom <code>IsPrefill</code> er <code>true</code> for en adresse, vil raden som viser frem den adressen ha en
+redigerings-knapp med teksten <code>&quot;View&quot;</code>. Hvis <code>IsPrefill</code> er <code>false</code> blir teksten på knappen til den spesifikke raden
+<code>&quot;Edit&quot;</code>.</p>
+<p>Det er verdt å merke seg at dersom et oppslag på <code>IsPrefill</code> gir resultatet <code>null</code>(ikke funnet) så konverteres
+resultatet til <code>false</code> når det blir brukt i en <code>if</code>. Les mer detaljert om dette i seksjonene <a href="#func-if">if</a> og <a href="#datatyper">datatyper</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;repeatingAddressGroup&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Group&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;children&#34;</span>: [
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;field-id-one&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;field-id-two&#34;</span>,
+</span></span><span style="display:flex;"><span>   ],
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;group&#34;</span>: <span style="color:#f1fa8c">&#34;Citizen.FormerAdresses&#34;</span>
+</span></span><span style="display:flex;"><span>   },
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;maxCount&#34;</span>: <span style="color:#bd93f9">10</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;edit_button_open&#34;</span>: [
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;if&#34;</span>,
+</span></span><span style="display:flex;"><span>      [ <span style="color:#f1fa8c">&#34;dataModel&#34;</span>, <span style="color:#f1fa8c">&#34;Citizen.FormerAdresses.IsPrefill&#34;</span> ],
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;View&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;else&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;Edit&#34;</span>
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+		</div>
+	</div>
+</div>
 <h3 id="testing-feilsøking-og-utvikling-av-uttrykk">Testing, feilsøking og utvikling av uttrykk</h3>
 <p>Når man skal skrive et uttrykk er det greit å vite noenlunde hva resultatet kommer til å bli, og om uttrykket er gyldig.
 Ugyldige uttrykk gir en advarsel i JavaScript-konsollet i nettleseren når siden lastes, så det kan være lurt å ha

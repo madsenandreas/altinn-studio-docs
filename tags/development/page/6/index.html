@@ -529,6 +529,8 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/community/contributing/handbook/front-end/getting-started/"><span>Getting started</span></a></li>
       <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/studio-component/"><span>Studio components</span></a></li>
+      <li class="dd-item">
         <a href="/community/contributing/handbook/front-end/developing/"><span>Developing locally</span></a></li>
       <li class="dd-item">
         <a href="/community/contributing/handbook/front-end/routine/"><span>Routines for development</span></a></li>
@@ -1140,11 +1142,40 @@ if(host != "localhost")
 	
 	    <a class="newer-posts" href="/tags/development/page/5/">&larr; Previous Pages</a>
 	
-	<span class="page-number">Page 6 on 6</span>
+	<span class="page-number">Page 6 on 7</span>
+	
+	    <a class="older-posts" href="/tags/development/page/7/">Next Pages &rarr;</a>
 	
 </nav>
 
 	</div><article class="post community">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/community/contributing/handbook/routing/traefik/ingress-routes/">Traefik ingress routes</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Before traefik 2.0 the only supported way of routing in kubernetes was through the Kubernetes Ingress prodvider, which limited the functionality traefik could offer.
+As a result of introducing the custom resource IngressRoutes in traefik 2.0 we don&rsquo;t need to write many annotations on the ingress. And it is easier to configure access to a kubernetes cluster.
+Resource configuration apiVersion: traefik.containo.us/v1alpha1 kind: IngressRoute metadata: name: altinn-runtime spec: entryPoints: - web - websecure routes: - match: Host(`dev. <a class="read-more" href="/community/contributing/handbook/routing/traefik/ingress-routes/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/routing/">routing</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/traefik/">traefik</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/ingress-routes/">ingress routes</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/ingress/">ingress</a>
+            
+        
+    </footer>
+</article>
+<article class="post community">
     <header class="post-header">
         <h2 class="post-title"><a href="/community/contributing/handbook/routing/traefik/">Traefik routing</a></h2>
     </header>
@@ -1346,31 +1377,15 @@ Prerequisites Azure Storage Explorer An Azure AD account with write-permissions 
         
     </footer>
 </article>
-<article class="post community">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/community/contributing/handbook/troubleshooting/">Troubleshooting</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Altinn.studio is under heavy development and errors are most likely to come with it. If the error is not covered here, please submit a bug report.
-Check out Flight Rules. Check out known issues: Altinn Studio Front-end App libraries  <a class="read-more" href="/community/contributing/handbook/troubleshooting/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
-            
-        
-    </footer>
-</article>
 <div style="margin-bottom:2rem"></div>
 
 	<nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/tags/development/page/5/">&larr; Previous Pages</a>
 	
-	<span class="page-number">Page 6 on 6</span>
+	<span class="page-number">Page 6 on 7</span>
+	
+	    <a class="older-posts" href="/tags/development/page/7/">Next Pages &rarr;</a>
 	
 </nav>
 

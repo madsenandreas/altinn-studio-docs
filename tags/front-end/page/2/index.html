@@ -521,6 +521,8 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/community/contributing/handbook/front-end/getting-started/"><span>Getting started</span></a></li>
       <li class="dd-item">
+        <a href="/community/contributing/handbook/front-end/studio-component/"><span>Studio components</span></a></li>
+      <li class="dd-item">
         <a href="/community/contributing/handbook/front-end/developing/"><span>Developing locally</span></a></li>
       <li class="dd-item">
         <a href="/community/contributing/handbook/front-end/routine/"><span>Routines for development</span></a></li>
@@ -1137,6 +1139,27 @@ if(host != "localhost")
 </nav>
 
 	</div><article class="post community">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/community/contributing/handbook/front-end/postmessage/">Post Message</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Window.postMessage() is introduced to handle communication between components that has no connection other then the need to communicate/trigger events. Eg. its used to communicate with the syncBar to get it to perform a new status check. To read more see: Window.postMessage
+Usage Dispatching a message event is done the following way:
+// variables should be used for messages var SAVED_EVENT = &#39;SAVED&#39; window.postMessage(SAVED_EVENT, window.location.href); Catching the event is done by adding an event listener to the component one needs to communicate with: <a class="read-more" href="/community/contributing/handbook/front-end/postmessage/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/development/">development</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/front-end/">front-end</a>
+            
+        
+    </footer>
+</article>
+<article class="post community">
     <header class="post-header">
         <h2 class="post-title"><a href="/community/contributing/handbook/front-end/styling/">Styling (css)</a></h2>
     </header>

@@ -113,7 +113,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +213,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -307,7 +307,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -315,7 +315,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1133,17 +1133,18 @@ if(host != "localhost")
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/architecture">architecture</a><a class="label label-default" href="https://docs.altinn.studio/tags/solution">solution</a></div><div id="body-inner"><h1 class="a-fontBold">Application construction components - Altinn Platform Authentication</h1>
               <p class="a-leadText" id="leadText">The authentication component in Altinn platform is constructed as an asp.net core web API application deployed as a docker container to a Kubernetes cluster.</p><p>The application runs on port 5040.
-See full details in <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Authentication/Authentication/Dockerfile">dockerfile</a></p>
+See full details in <a href="https://github.com/Altinn/altinn-authentication/blob/main/Dockerfile">dockerfile</a></p>
 <h2 id="api-controllers">Api Controllers</h2>
 <ul>
-<li><a href="https://github.com/Altinn/altinn-studio/tree/master/src/Altinn.Platform/Altinn.Platform.Authentication/Authentication/Controllers">Authentication</a> : Functionality to convert the different ID-tokens from ID providers</li>
-<li><a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Authentication/Authentication/Controllers/OpenIdController.cs">OpenID</a> :  Contains well known endpoint</li>
-<li><a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Authentication/Authentication/Controllers/OrganisationController.cs">Organization</a> : TODO. is this needed</li>
+<li><a href="https://github.com/Altinn/altinn-authentication/blob/main/src/Authentication/Controllers/AuthenticationController.cs">Authentication</a> : Functionality to convert the different ID-tokens from ID providers</li>
+<li><a href="https://github.com/Altinn/altinn-authentication/blob/main/src/Authentication/Controllers/OpenIdController.cs">OpenID</a> :  Contains well known endpoint</li>
+<li><a href="https://github.com/Altinn/altinn-authentication/blob/main/src/Authentication/Controllers/LogoutController.cs">Logout</a> : Logout</li>
+<li><a href="https://github.com/Altinn/altinn-authentication/blob/main/src/Authentication/Controllers/IntrospectionController.cs">Introspection</a></li>
 </ul>
 <h2 id="dependencies">Dependencies</h2>
 <p>Authentication component take use of libraries for OpenID connect to create and validate JWT tokens.</p>
 <p>See full list of dependencies in
-<a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Authentication/Authentication/Altinn.Platform.Authentication.csproj">csproj</a>.</p>
+<a href="https://github.com/Altinn/altinn-authentication/blob/main/src/Authentication/Altinn.Platform.Authentication.csproj">csproj</a>.</p>
 
 
 <footer class=" footline" ></footer>

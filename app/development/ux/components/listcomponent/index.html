@@ -1140,7 +1140,142 @@ if(host != "localhost")
                 <span class="links"><a href='/app/'>Create apps</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/'>Development</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/ux/'>User interface</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/ux/components/'>Components</a> <span class='adocs-breadcrumb-divider'> / </span> List component</span>
             </div>
           </div><div id="body-inner"><h1 class="a-fontBold">List component</h1>
-              <p class="a-leadText" id="leadText"></p><p>Currently only in Norwegian.</p>
+              <p class="a-leadText" id="leadText"></p><p>The list component is used to present data to the user in a table. Every row in the table is selectable. The component 
+is supporting search, sorting and pagination.</p>
+<div class="notices warning" >
+This is new functionality. 
+The setup must be done manually as of today. Support for setup through Altinn Studio will be launched shortly.
+</div>
+<figure><a href="listComponent.png"><img src="listComponent.png" alt="ListComponent" title="Eksempel på hvordan listekomponenten ser ut" /></a><figcaption><h4>Eksempel på hvordan listekomponenten ser ut</h4></figcaption></figure>
+<h2 id="how-to-define-the-component-in-code">How to define the component in code</h2>
+<p>The component is of type <code>List</code>. One example on defintion of list component in layout.json:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;list-component&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;List&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Hvem gjelder saken?&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;name&#34;</span>: <span style="color:#f1fa8c">&#34;SelectedItem&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;profession&#34;</span>: <span style="color:#f1fa8c">&#34;SelectedItemProfession&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;bindingToShowInSummary&#34;</span>: <span style="color:#f1fa8c">&#34;SelectedItem&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;dataListId&#34;</span>: <span style="color:#f1fa8c">&#34;people&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;tableHeaders&#34;</span>: [ <span style="color:#f1fa8c">&#34;Navn&#34;</span>, <span style="color:#f1fa8c">&#34;Alder&#34;</span>, <span style="color:#f1fa8c">&#34;Yrke&#34;</span> ],
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;sortableColumns&#34;</span>: [ <span style="color:#f1fa8c">&#34;Alder&#34;</span> ],
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;pagination&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;alternatives&#34;</span>: [ <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">10</span> ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;default&#34;</span>: <span style="color:#bd93f9">5</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;required&#34;</span>: <span style="color:#f1fa8c">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>},
+</span></span></code></pre></div><h2 id="populating-the-table">Populating the table</h2>
+<p>The list component is populated with dynamic data. The data is defined in a seperate file which implements the interface
+<code>IDataListProvider</code>. This works similar to code lists/options. The field <code>dataListId</code> defines which data list the component refers to.
+The dynamic data lists kan be either open or secured. 
+Here is one example of a class that implements the interface <code>IDataListProvider</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">ListCases</span> : IDataListProvider
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">string</span> Id { <span style="color:#ff79c6">get</span>; <span style="color:#ff79c6">set</span>; } = <span style="color:#f1fa8c">&#34;people&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;DataList&gt; GetDataListAsync(<span style="color:#8be9fd">string</span> language, Dictionary&lt;<span style="color:#8be9fd">string</span>, <span style="color:#8be9fd">string</span>&gt; keyValuePairs)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> start = <span style="color:#bd93f9">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> count = <span style="color:#bd93f9">10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (keyValuePairs.ContainsKey(<span style="color:#f1fa8c">&#34;size&#34;</span>) &amp;&amp; keyValuePairs.ContainsKey(<span style="color:#f1fa8c">&#34;page&#34;</span>))
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">string</span> size = keyValuePairs[<span style="color:#f1fa8c">&#34;size&#34;</span>];
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">string</span> page = keyValuePairs[<span style="color:#f1fa8c">&#34;page&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            start = <span style="color:#8be9fd">int</span>.Parse(size) * <span style="color:#8be9fd">int</span>.Parse(page);
+</span></span><span style="display:flex;"><span>            count = <span style="color:#8be9fd">int</span>.Parse(size);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        List&lt;ListItem&gt; items = <span style="color:#ff79c6">new</span> List&lt;ListItem&gt;();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        items.Add(<span style="color:#ff79c6">new</span> ListItem { Name = <span style="color:#f1fa8c">&#34;Caroline&#34;</span>, Age = <span style="color:#bd93f9">28</span>, Profession = <span style="color:#f1fa8c">&#34;Utvikler&#34;</span> });
+</span></span><span style="display:flex;"><span>        items.Add(<span style="color:#ff79c6">new</span> ListItem { Name = <span style="color:#f1fa8c">&#34;Kåre&#34;</span>, Age = <span style="color:#bd93f9">37</span>, Profession = <span style="color:#f1fa8c">&#34;Sykepleier&#34;</span> });
+</span></span><span style="display:flex;"><span>        items.Add(<span style="color:#ff79c6">new</span> ListItem { Name = <span style="color:#f1fa8c">&#34;Johanne&#34;</span>, Age = <span style="color:#bd93f9">27</span>, Profession = <span style="color:#f1fa8c">&#34;Utvikler&#34;</span> });
+</span></span><span style="display:flex;"><span>        items.Add(<span style="color:#ff79c6">new</span> ListItem { Name = <span style="color:#f1fa8c">&#34;Kari&#34;</span>, Age = <span style="color:#bd93f9">56</span>, Profession = <span style="color:#f1fa8c">&#34;Snekker&#34;</span> });
+</span></span><span style="display:flex;"><span>        items.Add(<span style="color:#ff79c6">new</span> ListItem { Name = <span style="color:#f1fa8c">&#34;Petter&#34;</span>, Age = <span style="color:#bd93f9">19</span>, Profession = <span style="color:#f1fa8c">&#34;Personlig trener&#34;</span> });
+</span></span><span style="display:flex;"><span>        items.Add(<span style="color:#ff79c6">new</span> ListItem { Name = <span style="color:#f1fa8c">&#34;Hans&#34;</span>, Age = <span style="color:#bd93f9">80</span>, Profession = <span style="color:#f1fa8c">&#34;Pensjonist&#34;</span> });
+</span></span><span style="display:flex;"><span>        items.Add(<span style="color:#ff79c6">new</span> ListItem { Name = <span style="color:#f1fa8c">&#34;Siri&#34;</span>, Age = <span style="color:#bd93f9">28</span>, Profession = <span style="color:#f1fa8c">&#34;UX designer&#34;</span> });
+</span></span><span style="display:flex;"><span>        items.Add(<span style="color:#ff79c6">new</span> ListItem { Name = <span style="color:#f1fa8c">&#34;Tiril&#34;</span>, Age = <span style="color:#bd93f9">40</span>, Profession = <span style="color:#f1fa8c">&#34;Arkitekt&#34;</span> });
+</span></span><span style="display:flex;"><span>        items.Add(<span style="color:#ff79c6">new</span> ListItem { Name = <span style="color:#f1fa8c">&#34;Karl&#34;</span>, Age = <span style="color:#bd93f9">49</span>, Profession = <span style="color:#f1fa8c">&#34;Skuespiller&#34;</span> });
+</span></span><span style="display:flex;"><span>        items.Add(<span style="color:#ff79c6">new</span> ListItem { Name = <span style="color:#f1fa8c">&#34;Mette&#34;</span>, Age = <span style="color:#bd93f9">33</span>, Profession = <span style="color:#f1fa8c">&#34;Artist&#34;</span> });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (keyValuePairs.ContainsKey(<span style="color:#f1fa8c">&#34;sortDirection&#34;</span>))
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">string</span> sortDirection = keyValuePairs[<span style="color:#f1fa8c">&#34;sortDirection&#34;</span>];
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> (sortDirection == <span style="color:#f1fa8c">&#34;asc&#34;</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                items = items.OrderBy(o =&gt; o.Age).ToList();
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (sortDirection == <span style="color:#f1fa8c">&#34;desc&#34;</span>) 
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                items = items.OrderBy(o =&gt; o.Age).ToList();
+</span></span><span style="display:flex;"><span>                items.Reverse();
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        DataListMetadata appListsMetaData = <span style="color:#ff79c6">new</span> DataListMetadata() { TotaltItemsCount = items.Count };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        List&lt;<span style="color:#8be9fd">object</span>&gt; objectList = <span style="color:#ff79c6">new</span> List&lt;<span style="color:#8be9fd">object</span>&gt;();
+</span></span><span style="display:flex;"><span>        items.ForEach(o =&gt; objectList.Add(o));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> DataList { ListItems = objectList.GetRange(start, count), _metaData = appListsMetaData };
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this example the list is created in code, but it is also possible to call an API which returns that data to be presented in the table. 
+If this API supports sorting, pagination and search, you can pass this variables to the API to avoid fetching unnecessary data.</p>
+<h2 id="columns">Columns</h2>
+<p>The table columns is defined in the component with the field <code>tableHeaders</code>. It is an array of strings. To support multiple 
+languages this array can be populated with keys from the language files. For the content of the cells to match the header, you 
+need to make sure that the table data is structured in the same order as the table headers.</p>
+<h2 id="sorting">Sorting</h2>
+<p>In <code>layout.json</code> you define which columns should be sortable with the field <code>sortableColumns</code>.
+This is an array of strings, and the strings you use here also has to be defined as a header in the field <code>tableHeaders</code>.
+When a column is sortable the column header will have an arrow to show the direction of the sorting.
+The sorting logic you will have to implement your self. The method <code>GetDataListAsync</code> takes the parameter <code>keyValuePairs</code> 
+which contains <code>sortDirection</code> and <code>sortColumn</code> for this purpose. This logic can be implemented directly in the <code>GetDataListAsync</code>
+method, like in the previous example, or you can forward the sorting parameters to an external API you use.</p>
+<h2 id="pagination">Pagination</h2>
+<p>To define pagination you use the field <code>pagination</code>, which takes an object as value. In this object you define <code>alternatives</code> with
+an array of numbers which represents the choices the user will have for number of rows in the table. In addition you define <code>default</code>
+which is the default of how many rows to be shown in the list. In the same way as with sorting, the pagination logic need to be implemented
+for the correct data to show. The parameter <code>keyValuePairs</code> consists of the values size and page for this.</p>
+<h2 id="search">Search</h2>
+<p>For a user to be able to search the list, you need to add a text field of type search. This text field is connected to a field in the data model, 
+and then this value in the data model can be used for search. I the list component you need to add the field <code>mapping</code>.
+An example of this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#f1fa8c">&#34;mapping&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;soknad.navn&#34;</span>: <span style="color:#f1fa8c">&#34;search&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The value of the data model field <code>soknad.navn</code> will then be sent as a key value pair with the key <code>search</code>. 
+OBS! The <code>mapping</code> field can also be used to send any other query parameters.</p>
+<h2 id="how-to-store-data-in-the-data-model">How to store data in the data model</h2>
+<p>The selected row is stored in the data model. You choose which column/cell values to store. Each column is stored in a seperate field in the data model. 
+This is defined with the field <code>dataModelBindings</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#f1fa8c">&#34;dataModelBindings&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;name&#34;</span>: <span style="color:#f1fa8c">&#34;SelectedItem&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;profession&#34;</span>: <span style="color:#f1fa8c">&#34;SelectedItemProfession&#34;</span>
+</span></span><span style="display:flex;"><span>},
+</span></span></code></pre></div><p>SelectedItem and SelectedItemProfesstion are fields in the data model, and name and professtion are properties in the model used to describe a row in this case.
+In the example shown here it is created a model to present a row like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">ListItem</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">string</span> Name { <span style="color:#ff79c6">get</span>; <span style="color:#ff79c6">set</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">int</span> Age { <span style="color:#ff79c6">get</span>; <span style="color:#ff79c6">set</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">string</span> Profession { <span style="color:#ff79c6">get</span>; <span style="color:#ff79c6">set</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="list-component-in-the-summary">List component in the summary</h2>
+<p>If you want to show the selected row from the list component in the form summary, it will be shown simply with only one value. 
+Which value is defined with the property <code>bindingToShowInSummary</code>, and will look like this:</p>
+<figure><a href="listComponentSummary.png"><img src="listComponentSummary.png" alt="ListComponentSummary" title="List component in summary" /></a><figcaption><h4>List component in summary</h4></figcaption></figure>
+<h2 id="secured-data-lists">Secured data lists</h2>
+<p>In the same way as with code lists, you can secure the data list if they contain sensitive data. You then use the interface
+<code>IInstanceDataListProvider</code> for the class, and add the <code>secure</code> boolean to the component in layout.json.</p>
 
 
 <footer class=" footline" ></footer>

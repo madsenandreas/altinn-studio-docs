@@ -1195,40 +1195,37 @@ is responsible for creating and performing the request to the <a href="../../../
 <p>The access is controlled by the XACML Policy for the given App that is the source for an given event.</p>
 <p>If the subscriber is Authorized, the event will be added to the &ldquo;events-outbound&rdquo; queue and picked up by the EventsOutbound function. (see below)</p>
 <h2 id="event-storage">Event storage</h2>
-<p>To be able to get the search capability needed for the Events component we have choosen to use  <a href="https://www.postgresql.org/">PostgreSQL</a>.</p>
+<p>To be able to get the search capability needed for the Events component we have choosen to use <a href="https://www.postgresql.org/">PostgreSQL</a>.</p>
 <p>Using <a href="https://www.postgresql.org/">PostgreSQL</a> makes is possible to sort the events based on a primary key and also makes it possible to search
-over all events based on subject or source.</p>
+over all events as a serialized json document based on properties such as subject or source.</p>
 <p>The table structure</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">CREATE</span> <span style="color:#ff79c6">TABLE</span> <span style="color:#ff79c6">IF</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">EXISTS</span> events.events
 </span></span><span style="display:flex;"><span>(
-</span></span><span style="display:flex;"><span>    sequenceno BIGSERIAL,
-</span></span><span style="display:flex;"><span>    id <span style="color:#8be9fd;font-style:italic">character</span> <span style="color:#8be9fd;font-style:italic">varying</span> <span style="color:#ff79c6">COLLATE</span> pg_catalog.<span style="color:#f1fa8c">&#34;default&#34;</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">source</span> <span style="color:#8be9fd;font-style:italic">character</span> <span style="color:#8be9fd;font-style:italic">varying</span> <span style="color:#ff79c6">COLLATE</span> pg_catalog.<span style="color:#f1fa8c">&#34;default&#34;</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>,
-</span></span><span style="display:flex;"><span>    subject <span style="color:#8be9fd;font-style:italic">character</span> <span style="color:#8be9fd;font-style:italic">varying</span> <span style="color:#ff79c6">COLLATE</span> pg_catalog.<span style="color:#f1fa8c">&#34;default&#34;</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;time&#34;</span> timestamptz  <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">type</span> <span style="color:#8be9fd;font-style:italic">character</span> <span style="color:#8be9fd;font-style:italic">varying</span> <span style="color:#ff79c6">COLLATE</span> pg_catalog.<span style="color:#f1fa8c">&#34;default&#34;</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>,
-</span></span><span style="display:flex;"><span>    cloudevent <span style="color:#8be9fd;font-style:italic">text</span> <span style="color:#ff79c6">COLLATE</span> pg_catalog.<span style="color:#f1fa8c">&#34;default&#34;</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>,
+</span></span><span style="display:flex;"><span>    sequenceno <span style="color:#8be9fd;font-style:italic">bigint</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span> <span style="color:#ff79c6">DEFAULT</span> nextval(<span style="color:#f1fa8c">&#39;events.events_sequenceno_seq1&#39;</span>::regclass),
+</span></span><span style="display:flex;"><span>    cloudevent jsonb <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>,
+</span></span><span style="display:flex;"><span>    registeredtime <span style="color:#ff79c6">timestamp</span> <span style="color:#ff79c6">with</span> time <span style="color:#ff79c6">zone</span> <span style="color:#ff79c6">DEFAULT</span> (now() <span style="color:#ff79c6">AT</span> TIME <span style="color:#ff79c6">ZONE</span> <span style="color:#f1fa8c">&#39;utc&#39;</span>::<span style="color:#8be9fd;font-style:italic">text</span>),
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">CONSTRAINT</span> events_pkey <span style="color:#ff79c6">PRIMARY</span> <span style="color:#ff79c6">KEY</span> (sequenceno)
 </span></span><span style="display:flex;"><span>)
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">CREATE</span> <span style="color:#ff79c6">TABLE</span> <span style="color:#ff79c6">IF</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">EXISTS</span> events.subscription
 </span></span><span style="display:flex;"><span>(
-</span></span><span style="display:flex;"><span>    id BIGSERIAL,
+</span></span><span style="display:flex;"><span>    id <span style="color:#8be9fd;font-style:italic">bigint</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span> <span style="color:#ff79c6">DEFAULT</span> nextval(<span style="color:#f1fa8c">&#39;events.subscription_id_seq&#39;</span>::regclass),
 </span></span><span style="display:flex;"><span>    sourcefilter <span style="color:#8be9fd;font-style:italic">character</span> <span style="color:#8be9fd;font-style:italic">varying</span> <span style="color:#ff79c6">COLLATE</span> pg_catalog.<span style="color:#f1fa8c">&#34;default&#34;</span>,
 </span></span><span style="display:flex;"><span>    subjectfilter <span style="color:#8be9fd;font-style:italic">character</span> <span style="color:#8be9fd;font-style:italic">varying</span> <span style="color:#ff79c6">COLLATE</span> pg_catalog.<span style="color:#f1fa8c">&#34;default&#34;</span>,
 </span></span><span style="display:flex;"><span>    typefilter <span style="color:#8be9fd;font-style:italic">character</span> <span style="color:#8be9fd;font-style:italic">varying</span> <span style="color:#ff79c6">COLLATE</span> pg_catalog.<span style="color:#f1fa8c">&#34;default&#34;</span>,
 </span></span><span style="display:flex;"><span>    consumer <span style="color:#8be9fd;font-style:italic">character</span> <span style="color:#8be9fd;font-style:italic">varying</span> <span style="color:#ff79c6">COLLATE</span> pg_catalog.<span style="color:#f1fa8c">&#34;default&#34;</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>,
 </span></span><span style="display:flex;"><span>    endpointurl <span style="color:#8be9fd;font-style:italic">character</span> <span style="color:#8be9fd;font-style:italic">varying</span> <span style="color:#ff79c6">COLLATE</span> pg_catalog.<span style="color:#f1fa8c">&#34;default&#34;</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>,
 </span></span><span style="display:flex;"><span>    createdby <span style="color:#8be9fd;font-style:italic">character</span> <span style="color:#8be9fd;font-style:italic">varying</span> <span style="color:#ff79c6">COLLATE</span> pg_catalog.<span style="color:#f1fa8c">&#34;default&#34;</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>,
-</span></span><span style="display:flex;"><span>    validated <span style="color:#8be9fd;font-style:italic">BOOLEAN</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;time&#34;</span> timestamptz  <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>,
+</span></span><span style="display:flex;"><span>    validated <span style="color:#8be9fd;font-style:italic">boolean</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;time&#34;</span> <span style="color:#ff79c6">timestamp</span> <span style="color:#ff79c6">with</span> time <span style="color:#ff79c6">zone</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>,
+</span></span><span style="display:flex;"><span>    sourcefilterhash <span style="color:#8be9fd;font-style:italic">character</span> <span style="color:#8be9fd;font-style:italic">varying</span>(<span style="color:#bd93f9">32</span>) <span style="color:#ff79c6">COLLATE</span> pg_catalog.<span style="color:#f1fa8c">&#34;default&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">CONSTRAINT</span> eventssubscription_pkey <span style="color:#ff79c6">PRIMARY</span> <span style="color:#ff79c6">KEY</span> (id)
 </span></span><span style="display:flex;"><span>)
-</span></span></code></pre></div><p>Stored procedures is used to add, delete and query data from the above tables. 
-See all stored procedures <a href="https://github.com/Altinn/altinn-events/tree/main/src/Events/Migration">here</a>.</p>
+</span></span></code></pre></div><p>Functions and procedurees are used to add, delete and query data from the above tables. 
+See all functions and stored procedures <a href="https://github.com/Altinn/altinn-events/tree/main/src/Events/Migration">here</a>.</p>
 <h4 id="event-sequencing">Event sequencing</h4>
 <p>Events will be sequenced by the field <code>sequenceno</code>, which is also the primary key of the Events table.</p>
 <h3 id="indexing">Indexing</h3>
-<p>The events table has indexes on the columns <em>subject</em>, <em>time</em>, <em>sourcefilter</em>.</p>
+<p>The events table has indexes on the columns <em>cloudevent</em> (gin index) and  <em>registeredtime</em> (btree index).</p>
 <h2 id="functions">Functions</h2>
 <p>As part of the Events Component there is a single Azure Function App with four functions involved in processing cloud events at various stages (Azure Queue Storage). Click on name for code.</p>
 <ul>
@@ -1252,20 +1249,24 @@ See all stored procedures <a href="https://github.com/Altinn/altinn-events/tree/
 <li>POST cloud event to target webhook endpoint, retry as necessary</li>
 </ul>
 </li>
-<li><a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/SubscriptionValidation.cs">ValidateSubscription</a>
+<li><a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/SubscriptionValidation.cs">SubscriptionValidation</a>
 <ul>
 <li>check that the user-defined webhook endpoint is ready to receive data</li>
 </ul>
 </li>
 </ul>
+<h3 id="eventsregistration">EventsRegistration</h3>
+<p>The <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/EventsRegistration.cs">EventsRegistration</a> function is executed automatically by the Azure Function runtime when new events are posted to the <code>events-registration</code> queue.</p>
+<p>It first sends the event to storage for persistence, once sucessfully persisten, the event is forwarded to the inbound controller.
+The Function uses Platform Access token to authenticate itself for the Inbound and Storage controllers.</p>
+<p>It uses standard mechanismen for retry, if the call for controllers fails.</p>
 <h3 id="eventsinbound">EventsInbound</h3>
 <p>The <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/EventsInbound.cs">EventsInbound</a> function is executed automatically by the Azure Function runtime when new events are posted to the <code>events-inbound</code> queue.</p>
-<p>This function does not have 
-It just forward the event to the PushController through the <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/Services/PushEventsService.cs">pushEventService</a>.</p>
+<p>It forwards the event to the PushController through the <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/Services/PushEventsService.cs">pushEventService</a>.</p>
 <p>The Function uses Platform Access token to authenticate itself for the PushController</p>
 <p>It uses standard mechanismen for retry, if the call for pushcontroller fails.</p>
 <h3 id="eventsoutbound">EventsOutbound</h3>
-<p>The <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/EventsInbound.cs">EventsOutbound</a> function is triggered byQueueStorage changes in the &ldquo;events-outbound&rdquo; queue.</p>
+<p>The <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/EventsOutbound.cs">EventsOutbound</a> function is triggered by QueueStorage changes in the &ldquo;events-outbound&rdquo; queue.</p>
 <p>It will try to push the event to given subscription endpoint given in the <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/Models/CloudEventEnvelope.cs">CloudEventEnvelope</a>
 that is put on the queue and containing the event.</p>
 <p>This function is configured with <a href="https://github.com/Altinn/altinn-events/blob/main/src/Events.Functions/Factories/CustomQueueProcessorFactory.cs">CustomQueueProcessorFactory</a> to handle retry if it is not possible to push event to the endpoint.</p>

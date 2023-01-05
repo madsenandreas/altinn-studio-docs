@@ -1413,9 +1413,10 @@ to a Slack webhook</p>
 </span></span></code></pre></div><h3 id="api-documentation">API Documentation</h3>
 <p>The full detail for this API is described <a href="/api/events/spec">here</a>.</p>
 <h2 id="push-functions">Push Functions</h2>
-<p>A important part of the Events components are three different Azure Functions that is responsible for the following</p>
+<p>A important part of the Events components are four different Azure Functions that is responsible for the following</p>
 <ul>
-<li>Inbound Function: Send every event to an subscription matching and authorization function</li>
+<li>Registration function: Pulls incomming events from queue for further processing</li>
+<li>Inbound Function: Sends every event to subscription matching and authorization</li>
 <li>Outbound Function: Pushes events to subscription endpoints</li>
 <li>Subscription Validation Function</li>
 </ul>

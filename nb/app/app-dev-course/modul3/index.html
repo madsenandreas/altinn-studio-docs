@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -622,9 +626,7 @@ if(host != "localhost")
                 <span class="links"><a href='/nb/app/'>Lage apper</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/nb/app/app-dev-course/'>Introkurs</a> <span class='adocs-breadcrumb-divider'> / </span> Modul 3</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/apps">apps</a><a class="label label-default" href="https://docs.altinn.studio/tags/training">training</a><a class="label label-default" href="https://docs.altinn.studio/tags/build">build</a><a class="label label-default" href="https://docs.altinn.studio/tags/deploy">deploy</a><a class="label label-default" href="https://docs.altinn.studio/tags/test">test</a></div><div id="body-inner"><h1 class="a-fontBold">Modul 3</h1>
-              <p class="a-leadText" id="leadText">Bygg og deploy applikasjon til testmiljø</p><div class="notices warning" >
- Denne modulen krever at du er medlem av en organisasjon som har et etablert testmiljø for Altinn Apps. Dersom dette ikke er tilfellet, går du bare videre til neste modul.
-</div>
+              <p class="a-leadText" id="leadText">Bygg og deploy applikasjon til testmiljø</p><div class="notices warning" >Denne modulen krever at du er medlem av en organisasjon som har et etablert testmiljø for Altinn Apps. Dersom dette ikke er tilfellet, går du bare videre til neste modul.</div>
 <p>I denne modulen skal du bygge og deploye applikasjonen til Altinns testmiljø (TT02) og verifisere at alt fungerer som forventet også der.</p>
 <p><strong>Temaer som dekkes i denne modulen:</strong></p>
 <ul>
@@ -666,8 +668,7 @@ og for større applikasjoner sørge for at de har en optimal ytelse med alle nø
 <p>For denne testapplikasjonen ønsker vi at du skal skalere ned resursbruken til det minimale.</p>
 <p>Skalering: <code>replicaCount: 1</code></p>
 <p>Ressursbruk: Sett <em>requests</em> til <code>cpu: 50m</code> og <code>memory: 128Mi</code></p>
-<div class="notices info" ><p>Alle endringer knyttet til skalering og ressursbruk gjøres i <code>deployment/values.yaml</code>-filen</p>
-</div>
+<div class="notices info" >Alle endringer knyttet til skalering og ressursbruk gjøres i <code>deployment/values.yaml</code>-filen</div>
 <h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>
 <ul>
 <li><a href="/nb/app/development/configuration/deployment/#skalering">Sette egendefinerte regler for skalering</a></li>
@@ -735,11 +736,10 @@ og legg til en beskrivende kommentar om hva versjonen inneholder.</p>
 			<p>Ved å deploye en applikasjon til testmiljø vil man kunne teste alle integrasjoner.
 I tillegg benyttes TT02 ofte til å verifisere at en applikasjon oppfører seg som forventet
 før man deployer til produksjon.</p>
-<div class="notices info" ><p>For å kunne deploye en applikasjon til TT02,
+<div class="notices info" >For å kunne deploye en applikasjon til TT02,
 må organisasjonen som eier applikasjonen ha et apps-cluster i testmiljøet.
 I tillegg trenger utvikleren som skal deplopye applikasjonen <a href="/nb/app/getting-started/access-management/studio/#deploy-tt02">rollen Deploy-TT02</a>
-for organisasjonen i Altinn Studio.</p>
-</div>
+for organisasjonen i Altinn Studio.</div>
 <p><strong>Deploy applikasjonen din til TT02.</strong></p>
 <h3 id="nyttig-dokumentasjon">Nyttig dokumentasjon</h3>
 <ul>

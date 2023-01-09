@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -629,10 +633,8 @@ if(host != "localhost")
     <li><a href="#pushe-egendefinerte-events-i-applikasjonen-din">Pushe egendefinerte events i applikasjonen din</a></li>
   </ul>
 </nav><h2 id="aktivere-generering-av-events-i-applikasjonen-din">Aktivere generering av events i applikasjonen din</h2>
-<div class="notices info" >
-For at applikasjonen din skal kunne generere events må den referere til nugetversjon >= 1.2.4.
-Se hvordan du oppdaterer nugetreferanser for applikasjonen din [her](../update/#nuget-pakker).
-</div>
+<div class="notices info" >For at applikasjonen din skal kunne generere events må den referere til nugetversjon &gt;= 1.2.4.
+Se hvordan du oppdaterer nugetreferanser for applikasjonen din <a href="/app/maintainance/dependencies/">her</a>.</div>
 <p>Generering og lagring av events er ikke enablet som default i applikasjonene per 22.10.2020.
 Det må derfor et manuelt steg til for at applikasjonen din skal generere events.</p>
 <p>I filen <code>appsettings.json</code> i mappen <em>App</em> må følgende legges til i seksjonen <em>AppSettings</em></p>

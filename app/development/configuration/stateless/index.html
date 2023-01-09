@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1154,8 +1158,7 @@ Because of this, a stateless application is a good choice for information transp
 one or more resources or presents data from a third party based on who the user is. 
 It is also possible to configure a stateless application to only allow anonymous users, or users that are not logged on.</p>
 <h2 id="configuration">Configuration</h2>
-<div class="notices warning" >
-<p>This is brand new functionality. Setup has to be completed manually until further notice.</p>
+<div class="notices warning" ><p>This is brand new functionality. Setup has to be completed manually until further notice.</p>
 <p><strong>Notice:</strong> To make use of this functionality, version &gt;= 4.5.2 of the nuget packages <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> and <code>Altinn.App.Api</code> is required.</p>
 </div>
 <p>In the application metadata it is possible to control behaviours during startup. Your application can now act like a stateless application if it is enabled.
@@ -1231,8 +1234,7 @@ In <code>layout-sets.json</code> you add the actual set you are refering to from
 </ul>
 <p>App frontend will read the configuration in <code>applicationmetadata.json</code> and understand that it isn&rsquo;t supposed to instantiate, and then collect the layout-files and the connected datamodel, and present it to the end user.</p>
 <h3 id="configuring-access-without-login">Configuring access without login</h3>
-<div class="notices warning" >
-Note! Form components that affect process (Button for submission or instantiation) are not supported for anonymous users!
+<div class="notices warning" ><p>Note! Form components that affect process (Button for submission or instantiation) are not supported for anonymous users!</p>
 <p><strong>Note:</strong> To make use of this functionality you must use version &gt;= 5.1.0 of the nuget packages <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> and <code>Altinn.App.Api</code>.</p>
 </div>
 <p>To permit use of an app by a user that is not logged in, you must follow the steps that are described above. You <em>also</em> have to define the data type which is used by the stateless app to allow anonymous use. This is done by modifying the <code>dataType</code>-element in <code>applicationMetadata.json</code>.
@@ -1503,8 +1505,7 @@ return false;
 Again, `true` is returned to indicate that a data value has been changed, and `false` if this is not the case.
 </code></pre>
 <h2 id="starting-an-instance-from-a-stateless-form">Starting an instance from a stateless form</h2>
-<div class="notices warning" >
-<p>This is brand new functionality. Setup must be completed manually until further notice and will not be supported in Altinn Studio.</p>
+<div class="notices warning" ><p>This is brand new functionality. Setup must be completed manually until further notice and will not be supported in Altinn Studio.</p>
 <p><strong>Note:</strong> To make use of this functionality you must use version &gt;= 4.17.2 of the nuget packages <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> og <code>Altinn.App.Api</code>.</p>
 </div>
 <p>In a stateless application you have the opportunity to use the <code>InstantiationButton</code> component to start an instance.

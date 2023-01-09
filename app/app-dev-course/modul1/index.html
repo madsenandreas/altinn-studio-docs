@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1215,11 +1219,10 @@ so the year does not need to be taken into account.</p>
 		<div class="a-collapseContent-inside">
 			<p>The municipality of Sogndal has created <a href="/app/app-dev-course/modul1/datamodel.xsd">a data model</a>
 that represents data they wish to collect from future residents.</p>
-<div class="notices info" ><p>As an app developer you will in some cases have to create a data model 
+<div class="notices info" >As an app developer you will in some cases have to create a data model 
 for a service yourself. You will then be able to use the data modelling tool in 
 Altinn Studio (launching Spring 2022), or use an existing data model as a starting point and 
-edit it in for example Visual Studio or a text editing program of your own choosing.</p>
-</div>
+edit it in for example Visual Studio or a text editing program of your own choosing.</div>
 <ol>
 <li>
 <p><a href="datamodel.xsd">Download the xsd-file</a>, open it in a text editing program
@@ -1273,8 +1276,7 @@ and take a closer look at the contents.</p>
 			<p>To make the service user friendly and available to use for those with visual impairments, it is important that all components have 
 descriptive titles and descriptions.</p>
 <p>It is possible to connect texts to components in both Altinn Studio and locally.</p>
-<div class="notices warning" ><p><strong>NOTE</strong>: Display name for the application must be changed in both <code>App/config/applicationMetadata.json</code> and in the text resources.</p>
-</div>
+<div class="notices warning" ><strong>NOTE</strong>: Display name for the application must be changed in both <code>App/config/applicationMetadata.json</code> and in the text resources.</div>
 <h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
 <ul>
 <li>All inputfields should have descriptive labels that clarifies what should be filled in.</li>

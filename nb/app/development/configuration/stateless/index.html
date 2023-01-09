@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -638,8 +642,7 @@ Derfor passer stateless applikasjoner godt som innsynstjenester der en sluttbruk
 evt. presenterer data fra en tredjepart basert på hvem brukeren er.
 Det er også mulig å konfigurere en stateless applikasjon til å tillate bruk av anonyme brukere, altså brukere som ikke er pålogget.</p>
 <h2 id="konfigurasjon">Konfigurasjon</h2>
-<div class="notices warning" >
-<p>Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt inntil videre.</p>
+<div class="notices warning" ><p>Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt inntil videre.</p>
 <p><strong>MERK:</strong> for å benytte denne funksjonaliteten må man versjon &gt;= 4.5.2 av nugetpakkene <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> og <code>Altinn.App.Api</code>.</p>
 </div>
 <p>I applikasjonsmetadataen er det mulig styre oppførselen en applikasjonen har under oppstart. Om man ønsker at applikasjonen skal oppføre seg som en tilstandsløs applikasjon vil det nå være mulig.
@@ -715,8 +718,7 @@ I <code>layout-sets.json</code> legger man så inn det aktuelle settet man refer
 </ul>
 <p>App frontend vil så skjønne ut fra konfigurasjonen i <code>applicationmetadata.json</code> at den ikke skal instansiere, og hente ned de aktuelle layout-filene og den tilkoblede datamodellen og presentere dette til sluttbrukeren.</p>
 <h3 id="konfigurere-tilgang-uten-innlogging">Konfigurere tilgang uten innlogging</h3>
-<div class="notices warning" >
-OBS! Skjemakomponenter som påvirker prosess (knapp for innsending eller instansiering) er ikke støttet for anonyme brukere!
+<div class="notices warning" ><p>OBS! Skjemakomponenter som påvirker prosess (knapp for innsending eller instansiering) er ikke støttet for anonyme brukere!</p>
 <p><strong>MERK:</strong> for å benytte denne funksjonaliteten må man bruke versjon &gt;= 5.1.0 av nugetpakkene <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> og <code>Altinn.App.Api</code>.</p>
 </div>
 <p>For å tillate bruk av appen for bruker som ikke er innlogget, må man følge stegene som beskrevet over. <em>I tillegg</em> må man definere at den datatypen som er satt opp
@@ -979,8 +981,7 @@ Igjen returneres <code>true</code> for å indikere at en dataverdi er blitt endr
 </li>
 </ol>
 <h2 id="starte-instans-fra-et-stateless-skjema">Starte instans fra et stateless skjema</h2>
-<div class="notices warning" >
-<p>Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt inntil videre og vil ikke være støttet i Altinn Studio.</p>
+<div class="notices warning" ><p>Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt inntil videre og vil ikke være støttet i Altinn Studio.</p>
 <p><strong>MERK:</strong> for å benytte denne funksjonaliteten må man versjon &gt;= 4.17.2 av nugetpakkene <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> og <code>Altinn.App.Api</code>.</p>
 </div>
 <p>Fra en tilstandsløs applikasjon har man mulighet til å benytte <code>InstantiationButton</code>-komponenten til å starte en instans.

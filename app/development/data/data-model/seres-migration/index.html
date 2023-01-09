@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1140,18 +1144,13 @@ if(host != "localhost")
                 <span class="links"><a href='/app/'>Create apps</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/'>Development</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/data/'>Data</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/data/data-model/'>Datamodel</a> <span class='adocs-breadcrumb-divider'> / </span> Sereserstatning</span>
             </div>
           </div><div id="body-inner"><h1 class="a-fontBold">Erstatning for Seres i Altinn Studio</h1>
-              <p class="a-leadText" id="leadText">Hva må gjøres når Seres erstattes?</p><div class="notices info" >
-Denne siden beskriver hva som må gjøres ifm. overgangen fra Seres til Altinn Studio som datamodelleringsverktøy. 
-Siden vil oppdateres i takt med utviklings- og migreringsarbeidet som gjøres så det må forventes oppdateringer.
-</div>
-<div class="notices info" >
-Alle XSD'er som lå i Altinn 2 pr. 06.12.2022 er importert til Altinn Studio.
-</div>
+              <p class="a-leadText" id="leadText">Hva må gjøres når Seres erstattes?</p><div class="notices info" >Denne siden beskriver hva som må gjøres ifm. overgangen fra Seres til Altinn Studio som datamodelleringsverktøy. 
+Siden vil oppdateres i takt med utviklings- og migreringsarbeidet som gjøres så det må forventes oppdateringer.</div>
+<div class="notices info" >Alle XSD&rsquo;er som lå i Altinn 2 pr. 06.12.2022 er importert til Altinn Studio.</div>
 <h2 id="altinn-studio-datamodellering">Altinn Studio Datamodellering</h2>
 <p>Seres er et verktøy for å lage XSD&rsquo;er som igjen validerer korrektheten til en XML. Det nye datamodelleringsverktøyet jobber på Json Schema som igjen validerer Json. Prinsippet er det samme, men formatet er forskjellig.</p>
 <p>Selv om datamodelleringsverktøyet jobber på Json Schema vil det fortsatt være mulig å hente ut en XSD hvis man trenger det, f. eks. i et mottakssystem. Json Schema vil da bli konvertert til XSD. En XSD produsert i Seres og som leses inn i ASD vil inneholde nok metadata til å kunne re-generere XSD&rsquo;en slik den var. Dette muliggjør at man kan bruke verktøyet til å jobbe med datamodeller for Altinn 2 ev. lage en Altinn 3 applikasjon som leverer samme format som Altinn 2.</p>
-<div class="notices warning" >
-Selv om både XSD og Json Schema handler om å beskrive og validere dataformater så har de begge forskjellige egenskaper og måter å beskrive datatyper og datastrukturer på. Json Schema startet som et noe mer lettvekts alternativ til XSD - noe av denne "lettheten" blir dog borte når man må kunne re-generere en XSD 100%. 
+<div class="notices warning" ><p>Selv om både XSD og Json Schema handler om å beskrive og validere dataformater så har de begge forskjellige egenskaper og måter å beskrive datatyper og datastrukturer på. Json Schema startet som et noe mer lettvekts alternativ til XSD - noe av denne &ldquo;lettheten&rdquo; blir dog borte når man må kunne re-generere en XSD 100%.</p>
 <p>Det anbefales derfor at man starter fra bunnen av og modellerer på nytt for en Altinn 3 applikasjon hvis man har muligheten til dette, slik at man sikrer mest mulig enkle og oversiktlige datamodeller.</p>
 </div>
 <h2 id="overgangen-fra-seres-til-altinn-studio-datamodellering---hva-må-du-som-tjenesteeier-gjøre">Overgangen fra Seres til Altinn Studio Datamodellering - Hva må du som tjenesteeier gjøre?</h2>
@@ -1164,8 +1163,7 @@ og klikke på den grønne <em>repository</em> lenken.</p>
 <figure><a href="datamodels-folder-structure.png"><img src="datamodels-folder-structure.png" alt="Mappestruktur" title="Mappestruktur" /></a><figcaption><h4>Mappestruktur</h4></figcaption></figure>
 <p>I tillegg vil du se en <em>readme.md</em> fil som vises på forsiden av <em>repository</em>. Denne inneholder en tekstlig beskrivelse av alle XSD&rsquo;ene som er hentet ut fra Altinn 2.</p>
 <figure><a href="datamodels-readme.png"><img src="datamodels-readme.png" alt="Importerte filer fra Altinn 2" title="Importerte filer fra Altinn 2" /></a><figcaption><h4>Importerte filer fra Altinn 2</h4></figcaption></figure>
-<div class="notices info" >
-Ifm. at dette arbeidet ble startet i 2021 ble det gjort et uttrekk av XSD'er da, disse ligger igjen. Vi har kjørt et nytt uttrekk i 23. november 2022, og igjen 6. desember 2022.
+<div class="notices info" ><p>Ifm. at dette arbeidet ble startet i 2021 ble det gjort et uttrekk av XSD&rsquo;er da, disse ligger igjen. Vi har kjørt et nytt uttrekk i 23. november 2022, og igjen 6. desember 2022.</p>
 <p>Vi har ikke slettet skjemaer som allerede er overført til ny løsning selv om de er fjernet i Altinn 2.</p>
 </div>
 <p>Det gjøres ingen endringer i XSD&rsquo;ene ifm. uttrekket og overføringen til <em>repository</em> i Altinn Studio. XSD&rsquo;ene skal være 

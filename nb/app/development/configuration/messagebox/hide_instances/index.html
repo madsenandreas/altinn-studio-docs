@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -627,9 +631,7 @@ if(host != "localhost")
               <p class="a-leadText" id="leadText">Konfiurasjon for å skjule instanser fra meldingsboksen.</p><p>For applikasjoner med en kompleks appflyt kan det være nyttig å skjule instanser
 fra meldingsboksen under deler av prosessen eller for hele prosessen.</p>
 <h2 id="konfigurasjon">Konfigurasjon</h2>
-<div class="notices info" >
-Konfigurasjonen har tilbakevirkende kraft på tidligere opprettede instanser.
-</div>
+<div class="notices info" >Konfigurasjonen har tilbakevirkende kraft på tidligere opprettede instanser.</div>
 <p>Konfigurasjon av skjuling fra meldingsboks gjøres i <code>applicationmetadata.json</code> som ligger i repoet under mappen <code>App/config</code>.</p>
 <p>Legg til en ny seksjon med navn <code>messageBoxConfiguration</code> med følgende underfeltet <code>hideSettings</code>.</p>
 <p>HideSettings kan igjen bestå av én av  to properties</p>

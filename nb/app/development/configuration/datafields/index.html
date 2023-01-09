@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -673,10 +677,8 @@ if(host != "localhost")
 <code>dataValues</code>er resultatet av konfigureringen som gjøres på <code>dataFields</code>.</p>
 <h2 id="manuelt">Manuelt</h2>
 <p>For å legge til dataverdier manuelt benyttes metoden <code>UpdateDataValues</code> fra IInstance interfacet. Det er den samme metoden som kalles når dataverdier populeres fra konfigurasjon og den sørger for å flette sammen verdiene til en liste.</p>
-<div class="notices warning" >
-Merk at det er applikasjonsutvikler sitt ansvar å sørge for unike id'er hvis man kombinerer dataverdier fra konfgiurasjon og manuelt.
-Har man ikke unike id'er vil verdier overskrives, og man har ingen garanti for hvilken som blir lagret på instansen.
-</div>
+<div class="notices warning" >Merk at det er applikasjonsutvikler sitt ansvar å sørge for unike id&rsquo;er hvis man kombinerer dataverdier fra konfgiurasjon og manuelt.
+Har man ikke unike id&rsquo;er vil verdier overskrives, og man har ingen garanti for hvilken som blir lagret på instansen.</div>
 <p>Eksemplet under viser hvordan man kan sette datavedier manuelt. I dette tilfellet gjøres det ved å gjøre legge inn kode 
 i <code>RunProcessTaskEnd</code> i <code>App.cs</code> som kjører når en task avsluttes.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">override</span> <span style="color:#ff79c6">async</span> Task RunProcessTaskEnd(<span style="color:#8be9fd">string</span> taskId, Instance instance)
@@ -688,9 +690,7 @@ i <code>RunProcessTaskEnd</code> i <code>App.cs</code> som kjører når en task 
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">await</span> Task.CompletedTask;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="notices warning" >
-Man bør også tenke gjennom når man trenger disse verdiene på instansobjektet slik at man ikke gjør unødvendige api kall og dermed får en dårligere ytelse på applikasjonen.
-</div>
+</span></span></code></pre></div><div class="notices warning" >Man bør også tenke gjennom når man trenger disse verdiene på instansobjektet slik at man ikke gjør unødvendige api kall og dermed får en dårligere ytelse på applikasjonen.</div>
 
 
 <footer class=" footline" ></footer>

@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1386,9 +1390,7 @@ In the following section we will present an overview of the different texts that
 <p>This results in the following view:</p>
 <figure><a href="receipt-step-custom.png"><img src="receipt-step-custom.png" alt="Receipt view" title="Overridden texts in the receipt view" /></a><figcaption><h4>Overridden texts in the receipt view</h4></figcaption></figure>
 <h3 id="custom-form-layout-1">Custom form layout</h3>
-<div class="notices warning" >
-This is a temporary approach for customizing the receipt page just as any other pages in the form. When support for layout-sets is available in Altinn Studio it will be possible to customize the receipt page in the same way as the confirmation page.
-</div>
+<div class="notices warning" >This is a temporary approach for customizing the receipt page just as any other pages in the form. When support for layout-sets is available in Altinn Studio it will be possible to customize the receipt page in the same way as the confirmation page.</div>
 <p>A custom receipt can be made in the same way as any other form page. The functionality will also be available in Altinn Studio shortly.</p>
 <p>Build the layout as usual and refer to the filename of the layout in <code>setting.json</code> with the key <code>receiptLayoutName</code>. See below example where the layoutfile <code>receipt.json</code> is referred to.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{

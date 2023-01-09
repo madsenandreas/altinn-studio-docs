@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -631,16 +635,12 @@ if(host != "localhost")
 </nav><p>Klargjøring av app og deploy til testmiljø gjøres fra <em>Deploy</em>-fanen i Altinn Studio.</p>
 <h2 id="bygge-app">Bygge app</h2>
 <p>Før en app kan deployes til testmiljø, må alle nødvendige filer samles sammen i en pakke som kan deplpoyes. Dette gjøres ved å <em>bygge</em> appen.</p>
-<div class="notices info" >
-Merk at det er filene fra app-repoet som benyttes i bygget. Dersom en har gjort endringer på en app i Altinn Studio så må disse sendes til repoet for at endringene skal bli med i bygg-pakken.
-Dette gjøres ved å velge _Push_ fra _Lage_-fanen i Altinn Studio.
-</div>
+<div class="notices info" >Merk at det er filene fra app-repoet som benyttes i bygget. Dersom en har gjort endringer på en app i Altinn Studio så må disse sendes til repoet for at endringene skal bli med i bygg-pakken.
+Dette gjøres ved å velge <em>Push</em> fra <em>Lage</em>-fanen i Altinn Studio.</div>
 <p>Når en app er klar til test, kan den bygges ved å gå til <em>Deploy</em>-fanen i Altinn Studio (inne på den appen som skal deployes).</p>
 <p>På høyre side vises et panel for å bygge appen.</p>
-<div class="notices info" >
-Merk at det kun er mulig å bygge ny versjon av appen dersom det faktisk er gjort endringer i appen. Dersom det er gjort endringer og det ikke er mulig å bygge ny versjon, pass på at endringene har 
-blitt sendt til app repoet.
-</div>
+<div class="notices info" >Merk at det kun er mulig å bygge ny versjon av appen dersom det faktisk er gjort endringer i appen. Dersom det er gjort endringer og det ikke er mulig å bygge ny versjon, pass på at endringene har 
+blitt sendt til app repoet.</div>
 <ol>
 <li>Skriv inn versjonsnummer for den versjonen av appen som skal bygges. Må være unikt (altså ikke brukt tidligere for denne appen).</li>
 <li>Skriv inn beskrivelse for denne versjonen av app&rsquo;en.</li>

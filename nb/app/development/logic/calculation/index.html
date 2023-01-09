@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -642,11 +646,9 @@ Kalkuleringer trenger ikke å være rent matematiske, det kan også være å ove
 <p>Kalkuleringer kodes i C#, i filen <code>CalculationHandler.cs</code>. Denne filen kan redigeres enklest ved å laste ned kildekoden til app&rsquo;en og redigere på egen maskin, f.eks. i Visual Studio Code.
 Datamodellen med skjemadata er tilgjengelig og kan redigeres/oppdateres etter ønske/behov.</p>
 <p>Kalkuleringer kjøres hver gang data lagres. Med auto-lagring på (dette er standard) vil kalkulering kjøres hver gang en bruker har gjort en endring.</p>
-<div class="notices info" >
-VIKTIG: Når en kalkulering er kjørt som har oppdatert dataene på server, må front-end få beskjed om dette, sånn at de oppdaterte dataene kan lastes inn.
-For å gjøre dette, må `Calculate`-metoden returnere `true` om det er noen av dataene som har blitt oppdatert.
-Hvis dette ikke gjøres, vil de oppdaterte dataen ikke være synlig for sluttbruker før de ev. laster inn siden på nytt.
-</div>
+<div class="notices info" >VIKTIG: Når en kalkulering er kjørt som har oppdatert dataene på server, må front-end få beskjed om dette, sånn at de oppdaterte dataene kan lastes inn.
+For å gjøre dette, må <code>Calculate</code>-metoden returnere <code>true</code> om det er noen av dataene som har blitt oppdatert.
+Hvis dette ikke gjøres, vil de oppdaterte dataen ikke være synlig for sluttbruker før de ev. laster inn siden på nytt.</div>
 <p>Eksempel på kode som erstatter en gitt verdi (<code>12345678</code>) med en annen verdi (<code>22222222</code>) i et gitt felt vises under:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#8be9fd">bool</span> Calculate(<span style="color:#8be9fd">object</span> data)
 </span></span><span style="display:flex;"><span>{

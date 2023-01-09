@@ -293,6 +293,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1167,10 +1171,8 @@ If the user is not authenticated already it will be sent to the login page befor
 Request must include a bearer token in the authorization header.
 Set test equal to true if retrieving a token for Testdepartementet.
 (This ony works with maskinporten as the token provider.)</p>
-<div class="notices info" >
-A token from id-porten contains both an id-token and and access-token. 
-Only the access token it to be exhanged using this endpoint.
-</div>
+<div class="notices info" >A token from id-porten contains both an id-token and and access-token. 
+Only the access token it to be exhanged using this endpoint.</div>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span>GET /exchange/{tokenProvider}?test={bool}
 </span></span></code></pre></div><h2 id="architecture">Architecture</h2>
 <p>The <a href="../../../architecture/components/application/construction/altinn-platform/authentication/">application construction components</a>

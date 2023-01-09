@@ -293,6 +293,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1395,11 +1399,9 @@ or inspect your code.</li>
 As of v2 of app frontend, client-side validation has support for type-checking basic types, including enums.
 When upgrading the frontend version to v2, the app <em>must</em> use nuget versions 1.0.82-alpha or newer. See details below.</p>
 <p>In order to implement this, we have made changes to how we bind the data model to fields in the forms.</p>
-<div class="notices info" >
-The change is only breaking for apps using OR-type xsd (or have fields with `-`-character in xsd).
+<div class="notices info" >The change is only breaking for apps using OR-type xsd (or have fields with <code>-</code>-character in xsd).
 Most Seres-type data models will not be affected, and will work without needing to make changes, even after updating to v2 of app frontend.
-If you do experience any problems with submitting/validating form data even with a seres-type xsd, follow the steps below.
-</div>
+If you do experience any problems with submitting/validating form data even with a seres-type xsd, follow the steps below.</div>
 <h3 id="errors-7">Errors</h3>
 <p>For apps that use an OR-type xsd (or have fields with <code>-</code>-character in xsd), the app may crash during submission/validation because the data model binding used does not match the true path in the json schema (and xsd). This is because we have been using a simplified path previously, to match with the C# model. We have now changed that so that the data binding name corresponds to the true xpath for the field.</p>
 <h3 id="how-to-fix-7">How to fix</h3>

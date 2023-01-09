@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -626,7 +630,6 @@ if(host != "localhost")
               <p class="a-leadText" id="leadText">Hvordan konfigurere eFormidling integrasjon for en app.</p><h2>På denne siden:</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#aktivere-integrasjon-med-eformidling-i-applikasjonen-din">Aktivere integrasjon med eFormidling i applikasjonen din</a></li>
-    <li><a href="#legge-til-støtte-for-eformidling-i-appcs">Legge til støtte for eFormidling i App.cs</a></li>
     <li><a href="#konfigurere-nøkkelverdier-for-eformidling-i-applikasjonen-din">Konfigurere nøkkelverdier for eFormidling i applikasjonen din</a></li>
     <li><a href="#generering-av-metadata-til-forsendelsen-i-applikasjonen">Generering av metadata til forsendelsen i applikasjonen</a></li>
     <li><a href="#sette-mottaker-for-forsendelse-i-applikasjonslogikken">Sette mottaker for forsendelse i applikasjonslogikken</a></li>
@@ -634,10 +637,9 @@ if(host != "localhost")
     <li><a href="#test-av-eformidling-integrasjon-i-testmiljø">Test av eFormidling integrasjon i testmiljø</a></li>
   </ul>
 </nav><h2 id="aktivere-integrasjon-med-eformidling-i-applikasjonen-din">Aktivere integrasjon med eFormidling i applikasjonen din</h2>
-<div class="notices info" >
-For at applikasjonen din skal kunne sende instansdata videre til eFormidling må den referere til nugetversjon >= 4.22.0.
-[Se hvordan du oppdaterer nugetreferanser for applikasjonen din her](../update/#nuget-pakker).
-</div>
+<div class="notices info" >For at applikasjonen din skal kunne sende instansdata videre til eFormidling må den referere til nugetversjon &gt;= 4.22.0.
+<a href="/app/maintainance/dependencies/">Se hvordan du oppdaterer nugetreferanser for applikasjonen din her</a>.</div>
+<div class="notices info" >I versjon 7 ble det innført en endring for å sikre at applikasjonen kjenner den endelige leveransestatsus for meldinger sent gjennom integrasjonspunktet til eFormidling og i tilfelle feilende leveranser vil disse logges eksplisitt. Denne endringer introduserer behovet for <a href="/app/development/logic/events">hendelsestøtte i applikasjonen</a>.</div>
 <p>Dersom man har behov for integrasjon med eFormidling i applikasjonen må dette aktiveres.</p>
 <p>I filen <em>appsettings.json</em> i mappen <em>App</em> må følgende legges til i seksjonen <em>AppSettings</em></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#f1fa8c">&#34;EnableEFormidling&#34;</span>:  <span style="color:#ff79c6">true</span>
@@ -657,7 +659,19 @@ denne konfigurasjonen i <em>appsettings.Development.json</em>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#f1fa8c">&#34;AppSettings&#34;</span>: {
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;EnableEFormidling&#34;</span>: <span style="color:#ff79c6">false</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="legge-til-støtte-for-eformidling-i-appcs">Legge til støtte for eFormidling i App.cs</h2>
+</span></span></code></pre></div><div class="content-version-selector border-box">
+
+    
+    <ul id="content-version-tabs"></ul>
+
+    
+
+<div class="content-version-container">
+    <label class="content-version-label" hidden>
+        v4, v5, v6
+    </label>
+    
+    <h2 id="legge-til-støtte-for-eformidling-i-appcs">Legge til støtte for eFormidling i App.cs</h2>
 <p>Neste steg for å få støtte for eFormidling i tjenesten din er å tilgjengeliggjøre services som appen behøver.
 Endringene skal alle gjøres i filen <em>App.cs</em> som ligger i mappen _App/logic.</p>
 <p>Øverst i filen, blant bibliotekreferansene legges disse tre linjene til.</p>
@@ -700,7 +714,25 @@ så her er kun et eksempel på det vanligste oppsettet.</p>
 </span></span><span style="display:flex;"><span>appsettings,
 </span></span><span style="display:flex;"><span>platformSettings,
 </span></span><span style="display:flex;"><span>tokenGenerator)
-</span></span></code></pre></div><h2 id="konfigurere-nøkkelverdier-for-eformidling-i-applikasjonen-din">Konfigurere nøkkelverdier for eFormidling i applikasjonen din</h2>
+</span></span></code></pre></div>
+</div>
+
+
+<div class="content-version-container">
+    <label class="content-version-label" hidden>
+        v7
+    </label>
+    
+    <p>eFormidlingsintegrasjonen er en del av Altinn.App.Core nuget pakken, men er ikke aktivert som standard. For å aktivere støtte for eFormidling in applikasjonen må du registrere tjenestene ved å legge til følgende i <em>Program.cs</em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>services.AddEFormidlingServices&lt;EFormidlingMetadata, EFormidlingReceivers&gt;(config);
+</span></span></code></pre></div>
+</div>
+
+
+
+</div>
+
+<h2 id="konfigurere-nøkkelverdier-for-eformidling-i-applikasjonen-din">Konfigurere nøkkelverdier for eFormidling i applikasjonen din</h2>
 <p>Det kreves en del metadata om eFormidlingsforsendelsen og denne defineres i applicationmetadata.json_.
 Filen finner du i repoet under mappen <em>App/config</em>.</p>
 <p>Opprett seksjonen <code>eFormidling</code> og fyll ut verdier for følgende parametre.</p>
@@ -772,7 +804,7 @@ Filen finner du i repoet under mappen <em>App/config</em>.</p>
 </span></span></code></pre></div><h2 id="generering-av-metadata-til-forsendelsen-i-applikasjonen">Generering av metadata til forsendelsen i applikasjonen</h2>
 <p>Apputvikler er selv ansvarlig for å sette opp meldingen til en forsendelse som skal via eFormidling.
 <a href="https://docs.digdir.no/eformidling_nm_message.html#meldingstypene">Les om de ulike meldingstypene tilgjengelig i eFormidling.</a></p>
-<p>Dette gjøres ved å legge til funksjonen nedenfor i <em>App.cs</em>.</p>
+<p>I versjon 4, 5 og 6 ble dette gjort ved å legge til funksjonen nedenfor i <em>App.cs</em>. Mens i versjon gjør man dette ved å legge til en klasse som implementerer <code>IEFormidlingMetadata</code> grensesnittet som har samme metode og signatur. Husk at i versjon 7 må du også registrere implementeringen din i <em>Program.cs</em>.</p>
 <p>Forventet output fra denne metoden er en tuppel som inneholder navnet på metadatafilen som første element
 og en stream med metadataen som andre element.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#6272a4">/// &lt;inheritdoc /&gt;</span>
@@ -791,9 +823,21 @@ og en stream med metadataen som andre element.</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> Task.FromResult((<span style="color:#f1fa8c">&#34;arkivmelding.xml&#34;</span>, stream));
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="sette-mottaker-for-forsendelse-i-applikasjonslogikken">Sette mottaker for forsendelse i applikasjonslogikken</h2>
-<p>I App.cs kan man overstyre metoden som henter ut mottaker av forsendelsen fra applicationmetadata.json_.
-Denne funksjonaliteten kan benyttes dersom mottaker av forsendelsen skal avgjøres dynamisk.</p>
-<p>Det må tre steg til for å sette mottaker i applikasjonslogikken, og alle endringer gjøres i <em>App.cs</em>.</p>
+<p>Denne funksjonaliteten kan benyttes dersom mottaker av forsendelsen skal avgjøres dynamisk.</p>
+<p>I App.cs kan man overstyre metoden som henter ut mottaker av forsendelsen fra applicationmetadata.json_.</p>
+<div class="content-version-selector border-box">
+
+    
+    <ul id="content-version-tabs"></ul>
+
+    
+
+<div class="content-version-container">
+    <label class="content-version-label" hidden>
+        v4, v5, v6
+    </label>
+    
+    <p>Det må tre steg til for å sette mottaker i applikasjonslogikken, og alle endringer gjøres i <em>App.cs</em>.</p>
 <ol>
 <li>Øverst i filen må det legges til en referanse til eFormidlings biblioteket.</li>
 </ol>
@@ -822,6 +866,35 @@ Merk at det kun er norske organisasjonsnummer som støttes,
 og at prefiksen <code>0192:</code> er påkrevd før organisasjonsnummeret.</p>
 </li>
 </ol>
+
+</div>
+
+<div class="content-version-container">
+    <label class="content-version-label" hidden>
+        v7
+    </label>
+    
+    <p>I versjon 7 er GetEformidlingReceivers metoden flyttet til <code>IEFormidlingReceivers</code> grensesnittet. Lag en klasse som implementerer dette grensesnittet og registrer den i <em>Program.cs</em>. Nedefor er et eksempel på rammene for en slik implementering:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;List&lt;Receiver&gt;&gt; GetEFormidlingReceivers(Instance instance)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Identifier identifier = <span style="color:#ff79c6">new</span> Identifier
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Authority = <span style="color:#f1fa8c">&#34;iso6523-actorid-upis&#34;</span>
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// 0192 prefix for all Norwegian organisations.</span>
+</span></span><span style="display:flex;"><span>    identifier.Value = <span style="color:#f1fa8c">&#34;[INSERT ORGANISATION NUMBER HERE WITH PREFIX `0192:`]&#34;</span> ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Receiver receiver = <span style="color:#ff79c6">new</span> Receiver { Identifier = identifier };
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> List&lt;Receiver&gt; { receiver };
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</div>
+
+
+
+</div>
+
 <h2 id="lokal-test-av-applikasjon-med-eformidling">Lokal test av applikasjon med eFormidling</h2>
 <p>Det er mulig å teste eFormidlingsintegrasjonen i applikasjonen lokalt på utviklingsmiljøet ditt.
 I tillegg til Altinn Localtest og applikasjonen er det to ting som må kjøre:</p>
@@ -865,13 +938,11 @@ Dersom du har en nyere versjon av integrasjonspunktet enn <code>2.2.0</code>  m�
 </ul>
 <p>Les mer om mockløsningen <a href="https://github.com/felleslosninger/efm-mocks">her</a></p>
 <h2 id="test-av-eformidling-integrasjon-i-testmiljø">Test av eFormidling integrasjon i testmiljø</h2>
-<div class="notices warning" >
-Det oppfordres til grundig testing av eFormidlingsintegrasjonen i applikasjonene.
+<div class="notices warning" >Det oppfordres til grundig testing av eFormidlingsintegrasjonen i applikasjonene.
 Det er lagt inn sikringer og retry mekanismer for å få en forsendelse fram til
 mottaker dersom feil skyldes svakheter i nettverksforbindelse.
 I tilfellet ugyldige forsendelser, herunder manglende vedlegg eller feil i arkivmelding,
-vil forsendelsen feile uten eksplisitt varsling til sluttbruker eller tjenesteeier.
-</div>
+vil forsendelsen feile uten eksplisitt varsling til sluttbruker eller tjenesteeier.</div>
 <p>Integrasjonspunktet eksponerer endepunkter der man kan følge statusen for en forsendelse. 
 <code>https://platform.altinn.no/eformidling/api/conversations?messageId={instanceGuid}</code></p>
 <p>Bytt ut <code>{instanceGuid}</code> med guiden til instansen som er blitt innsendt.</p>

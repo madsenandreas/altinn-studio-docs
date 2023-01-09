@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1140,9 +1144,8 @@ if(host != "localhost")
                 <span class="links"><a href='/app/'>Create apps</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/'>Development</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/ux/'>User interface</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/ux/components/'>Components</a> <span class='adocs-breadcrumb-divider'> / </span> Likert</span>
             </div>
           </div><div id="body-inner"><h1 class="a-fontBold">Likert</h1>
-              <p class="a-leadText" id="leadText">How to use a likert component</p><div class="notices warning" >
-This is new functionality. The setup must be done manually as of today. Support for setup through Altinn Studio 
-will be launched shortly.
+              <p class="a-leadText" id="leadText">How to use a likert component</p><div class="notices warning" ><p>This is new functionality. The setup must be done manually as of today. Support for setup through Altinn Studio 
+will be launched shortly.</p>
 <p>Note that the Likert-component only can be used as part of a repeating group.</p>
 </div>
 <h2 id="desktop-and-mobile-view">Desktop and mobile view</h2>
@@ -1212,9 +1215,7 @@ Example on setup of data model in App/logic/InstantiationHandler.cs:</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;readOnly&#34;</span>: <span style="color:#ff79c6">false</span>
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>]
-</span></span></code></pre></div><div class="notices warning" >
-The Likert-component works the same as RadioButtons and CheckBoxes.
-</div>
+</span></span></code></pre></div><div class="notices warning" >The Likert-component works the same as RadioButtons and CheckBoxes.</div>
 <p>OptionsId is linked to the codelist-file (likertOptions.json)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
 </span></span><span style="display:flex;"><span>      {

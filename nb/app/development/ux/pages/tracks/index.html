@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -686,8 +690,7 @@ navigasjonskomponentene man har i applikasjonen, eller legge til en trigger i <c
     </label>
     
     <h2 id="sette-opp-sporvalg-backend-nuget-versjon--500">Sette opp sporvalg backend (nuget versjon &lt; 5.0.0)</h2>
-<div class="notices warning" ><p>For at sporvalg skal fungere for statless applikasjoner må nuget oppgraderes til 5.0.0 eller senere</p>
-</div>
+<div class="notices warning" >For at sporvalg skal fungere for statless applikasjoner må nuget oppgraderes til 5.0.0 eller senere</div>
 <p>I App.cs må man overstyre metoden som henter ut den standardrekkefølgen av sider som er definert i <code>Settings.json</code>
 Dette gjøres ved å legge til funksjonen nedenfor i App.cs.
 Forventet output fra denne metoden er en stortert liste som inneholder navnet på de relevante sidene i applikasjonen.</p>

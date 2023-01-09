@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1173,15 +1177,11 @@ calculation and validation will be supported in the future.</p>
 </ol>
 <p>All dynamics are written as Javascript functions in the <em>RuleHandler</em> file.
 Functions that are defined in this file can be configured to run for selected fields in the app.</p>
-<div class="notices info" >
-The dynamic code to show/hide fields or perform calculations should be set up so that it handles possible errors in the input gracefully.
+<div class="notices info" >The dynamic code to show/hide fields or perform calculations should be set up so that it handles possible errors in the input gracefully.
 It should for instance handle empty fields or strings where you expect numbers without crashing.
-If the dynamic does not work as expected, take a look at the code that defines the dynamic and verify that it handles errors.
-</div>
-<div class="notices warning" >
-NOTE: in order to support dynamics in older browsers the code defined in `RuleHandler.js` must be written in the version of ECMA-script as the given browser supports.
-For IE11 this is ECMA-script 5.
-</div>
+If the dynamic does not work as expected, take a look at the code that defines the dynamic and verify that it handles errors.</div>
+<div class="notices warning" >NOTE: in order to support dynamics in older browsers the code defined in <code>RuleHandler.js</code> must be written in the version of ECMA-script as the given browser supports.
+For IE11 this is ECMA-script 5.</div>
 <h2 id="add-or-edit-functions-for-dynamics">Add or edit functions for dynamics</h2>
 <p>There are two javascript objects in the file <code>RuleHandler.js</code>:</p>
 <ul>

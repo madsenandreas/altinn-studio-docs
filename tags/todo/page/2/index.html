@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1176,7 +1180,7 @@ Components: describes the components in the schema and configurations connected 
         <h2 class="post-title"><a href="/technology/solutions/altinn-studio/repos/structure/instantiationhandler/">InstansiationHandler.cs</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Arbeidet med POC har føreløpig ikke konkludert angående bruk av denne filen. Vil jobbesvidere med i MVP.Overordnet &lsquo;InstansiationHandler.cs&rsquo; er en C# klasse hvor tjenesteutvikler kan plassere forretningslogikk som hånderer instansiering av en tjeneste.
+        <p>Arbeidet med POC har føreløpig ikke konkludert angående bruk av denne filen. Vil jobbes videre med i MVP.Overordnet &lsquo;InstansiationHandler.cs&rsquo; er en C# klasse hvor tjenesteutvikler kan plassere forretningslogikk som hånderer instansiering av en tjeneste.
 Format Standard C# kode som kan gjøre bortimot alt.
 Uavklart: Hvordan Tjenester 3.0 skal validere/verifisere denne logikken.
 Utvikling Under opprettelse av en tjeneste vil en tom InstansiationHandler opprettes.
@@ -1348,7 +1352,7 @@ Format API connections Strukturen under beskriver api koblinger til et skjema. O
         <h2 class="post-title"><a href="/technology/solutions/altinn-studio/repos/structure/serviceimplementation/">ServiceImplementation.cs</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Arbeidet med POC har føreløpig ikke konkludert angående bruk av denne filen. Vil jobbesvidere med i MVP.Overordnet &lsquo;ServiceImplementation.cs&rsquo; er hovedgrensesnittet mellom Altinn Core runtime og foretningslogikken i tjenesten som kjører på server.
+        <p>Arbeidet med POC har føreløpig ikke konkludert angående bruk av denne filen. Vil jobbes videre med i MVP.Overordnet &lsquo;ServiceImplementation.cs&rsquo; er hovedgrensesnittet mellom Altinn Core runtime og foretningslogikken i tjenesten som kjører på server.
 Format &lsquo;ServiceImplementation.cs&rsquo; implementerer grensesnittet IServiceImplementation som har følgende metoder definert.
 object CreateNewServiceModel(); Metode som oppretter nytt datamodell objekt basert på den datamodellen som tjenesten definerer
 void SetServiceModel(object model); Metode som gjør at plattformen kan tilgjengeliggjøre en populert datamodell til tjenesteimplementasjonen <a class="read-more" href="/technology/solutions/altinn-studio/repos/structure/serviceimplementation/">&raquo;</a></p>

@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -677,10 +681,8 @@ Liste med kriterier er basert på verdi av ett eller flere felter i gruppen, på
 </span></span></code></pre></div><p>Dersom det er flere kriterier, må alle matche for at elementet skal vises.</p>
 <p>Om det kun er ett resultat, vises dette automatsk i redigerings-modus. Om det er flere elementer i gruppen som matcher filteret, vil disse vises.
 Andre elementer i gruppen skjules. <code>filter</code> kan kombineres med <code>mode</code>-parameter.</p>
-<div class="notices warning" >
-Om man kombinerer `"mode": "showAll"` med `"filter"`, vil det ikke fungere å legge til nye elementer i gruppen. Dette er fordi man med "showAll" kun
-viser redigerings-flaten, og så lenge filteret ikke matcher, vil ikke elementet vises.
-</div>
+<div class="notices warning" >Om man kombinerer <code>&quot;mode&quot;: &quot;showAll&quot;</code> med <code>&quot;filter&quot;</code>, vil det ikke fungere å legge til nye elementer i gruppen. Dette er fordi man med &ldquo;showAll&rdquo; kun
+viser redigerings-flaten, og så lenge filteret ikke matcher, vil ikke elementet vises.</div>
 <h3 id="addbutton">addButton</h3>
 <p>Bestemmer om &ldquo;Legg til ny&rdquo;-knappen vises under tabellen. Nyttig å skjule denne om man kun ønsker å presentere data.</p>
 <h3 id="savebutton">saveButton</h3>
@@ -839,9 +841,9 @@ Følgende gruppe-komponent ligger som et barn av gruppe-2:</p>
 <figure><a href="panel-reference-demo.gif"><img src="panel-reference-demo.gif" alt="Demonstrasjon av groupReference" title="Demonstrasjon av groupReference" /></a><figcaption><h4>Demonstrasjon av groupReference</h4></figcaption></figure>
 <p>Se <a href="https://altinn.studio/repos/ttd/input-panel-demo">eksempel app</a> for fullstendig oppsett i fom layout.</p>
 <h2 id="flere-sider-innad-i-gruppe-visning">Flere sider innad i gruppe-visning</h2>
-<div class="notices info" > Denne funksjonaliteten er p.t. kun tilgjengelig for repeterende grupper. Visning av gruppe over
+<div class="notices info" >Denne funksjonaliteten er p.t. kun tilgjengelig for repeterende grupper. Visning av gruppe over
 flere sider inne i redigerings-flaten til gruppen støttes KUN for grupper på øverste nivå, og støttes ikke
-for grupper i grupper. </div>
+for grupper i grupper.</div>
 <p>Når man skal legge inn data i en gruppe, kan det være tilfeller der hvert element i gruppen inneholder mange felter, og at det dermed blir mye scrolling
 og uoversiktlig for sluttbruker. For å løse dette er det innført en mulighet til å dele opp utfyllingen over flere visninger, som bruker kan navigere
 frem/tilbake mellom mens de fyller ut gruppe-elementet. Navigeringen her skjer innad i en layout, og oppdaterer

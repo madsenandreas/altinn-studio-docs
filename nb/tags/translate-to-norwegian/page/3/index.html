@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -632,7 +636,48 @@ if(host != "localhost")
 	
 </nav>
 
-	</div><article class="post api">
+	</div><article class="post community">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/nb/community/changelog/app-nuget/v6/breaking-changes/">Breaking changes</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Altinn.App.* librarires target .Net 6 now, which requires that the application does the same.
+In addition, all references to app and platform services have been moved from Startup.cs and should be replaced with two method calls.
+Follow the instructions below to ensure that the app is compatible with version 6 of the Altinn.App.* packages.
+Update target framework and package dependencies
+Install .Net 6 SDK before you start changing code.
+Navigate to you application repository and find App. <a class="read-more" href="/nb/community/changelog/app-nuget/v6/breaking-changes/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
+            
+        
+    </footer>
+</article>
+<article class="post community">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/nb/community/changelog/app-nuget/v7/breaking-changes/">Breaking changes</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>If your application still is on version v5 or lower you should read the breaking changes guides until your application is updated to v6.Updating Altinn.App.* PackageReferences from v6 to v7 As mentioned here we have moved the code around and reduced the number of nugets to two.
+To upgrade from v6 nuget to v7 nugets the Altinn.App.* PackageReferences in App/App.csproj needs to be changed from:
+&lt;ItemGroup&gt; &lt;PackageReference Include=&#34;Altinn.App.Api&#34; Version=&#34;6.0.2&#34;&gt; &lt;CopyToOutputDirectory&gt;lib\$(TargetFramework)\*. <a class="read-more" href="/nb/community/changelog/app-nuget/v7/breaking-changes/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
+            
+        
+    </footer>
+</article>
+<article class="post api">
     <header class="post-header">
         <h2 class="post-title"><a href="/nb/api/events/">Events API</a></h2>
     </header>

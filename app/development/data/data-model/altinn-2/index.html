@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1165,11 +1169,10 @@ Pass på å legge til følgende på rot i <code>{model}.schema.json</code>-filen
 kjenne igjen modellen som en SERES-modell.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#f1fa8c">&#34;@xsdRootElement&#34;</span>: <span style="color:#f1fa8c">&#34;melding&#34;</span>,
 </span></span></code></pre></div><p>For mer informasjon om utvikling av modell fra bunn av i ASD, se <a href="../data-models-tool">denne guiden</a>.</p>
-<div class="notices info" >
-Dersom man gjør endringer på datamodell via Altinn Studio Datamodellering anbefales det at alle
-manuelle endringer som gjøres i tillegg, gjøres på `{model}.schema.json`-filen . Denne filen opprettes/genereres automatisk
+<div class="notices info" ><p>Dersom man gjør endringer på datamodell via Altinn Studio Datamodellering anbefales det at alle
+manuelle endringer som gjøres i tillegg, gjøres på <code>{model}.schema.json</code>-filen . Denne filen opprettes/genereres automatisk
 når man lager en ny datamodell, eller laster/henter opp XSD.
-Dette er for å slippe å måtte gjøre de samme manuelle endringene på XSD hver gang man gjør endringer på modellen.
+Dette er for å slippe å måtte gjøre de samme manuelle endringene på XSD hver gang man gjør endringer på modellen.</p>
 <p>Dersom man kun gjør endringer direkte på XSD utenfor ASD, vil ikke denne <code>{model}.schema.json</code>-filen bli generert
 og man kan jobbe direkte på XSD.</p>
 </div>

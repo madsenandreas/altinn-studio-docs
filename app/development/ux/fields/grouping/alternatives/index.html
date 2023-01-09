@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1193,10 +1197,8 @@ List of criteria is based on values of one or more fields in the group, on the f
 </span></span></code></pre></div><p>If there are multiple criteria, all must match for the element to be displayed.</p>
 <p>If there is only one result, this is displayed automatically in editing-mode. If there are multiple elements in the group that match the filter, these will be displayed.
 Other elements in the group will be hidden. <code>filter</code> can be combined with the <code>mode</code>-parameter.</p>
-<div class="notices warning" >
-If you combine `"mode": "showAll"` with `"filter"`, it will not be possible to add more elements to the group. This is because with "showAll" only the editing area is displayed, 
-and as long as the filter does not match, the element will not be displayed.
-</div>
+<div class="notices warning" >If you combine <code>&quot;mode&quot;: &quot;showAll&quot;</code> with <code>&quot;filter&quot;</code>, it will not be possible to add more elements to the group. This is because with &ldquo;showAll&rdquo; only the editing area is displayed, 
+and as long as the filter does not match, the element will not be displayed.</div>
 <h3 id="addbutton">addButton</h3>
 <p>Determines whether the &ldquo;Add new&rdquo; button is displayed below the table. It is useful to hide this if you only wish to display data.</p>
 <h3 id="savebutton">saveButton</h3>
@@ -1355,9 +1357,9 @@ The following group component is one of the children of group-2:</p>
 <figure><a href="panel-reference-demo.gif"><img src="panel-reference-demo.gif" alt="Demonstration of groupReference" title="Demonstration of groupReference" /></a><figcaption><h4>Demonstration of groupReference</h4></figcaption></figure>
 <p>See <a href="https://altinn.studio/repos/ttd/input-panel-demo">example app</a> for complete setup in form layout.</p>
 <h2 id="multiple-pages-within-group-display">Multiple pages within group-display</h2>
-<div class="notices info" > This functionality is as of today only available for repeating groups. Displayment of groups over 
+<div class="notices info" >This functionality is as of today only available for repeating groups. Displayment of groups over 
 multiple pages inside the editing area of the group is only supported for groups at the top level, and is not supported
-for nested groups. </div>
+for nested groups.</div>
 <p>When entering data in a group, there may be incidents where each element in the group contains multiple fields, which may result in a lot of scrolling 
 and confusion for the user. To solve this, there has been implemented a possibility to split the fillout over multiple pages, which the user can navigate
 through while filling out the group element. The navigation takes place within a layout, and updates 

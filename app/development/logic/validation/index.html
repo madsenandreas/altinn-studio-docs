@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1310,10 +1314,8 @@ Example:</p>
 </span></span><span style="display:flex;"><span>      ...
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="notices warning" >
-Note that when the XSD is changed, the custom error messages will de removed from the JSON schema.
-In the future, there will be support for setting custom error messages in the data modelling tool in Altinn Studio. But for now, this is a manual job.
-</div>
+</span></span></code></pre></div><div class="notices warning" >Note that when the XSD is changed, the custom error messages will de removed from the JSON schema.
+In the future, there will be support for setting custom error messages in the data modelling tool in Altinn Studio. But for now, this is a manual job.</div>
 <h2 id="server-side-validation">Server-side validation</h2>
 <p>Server-side validation can be split into two categories:</p>
 <ul>
@@ -1411,9 +1413,7 @@ To add a validation error, the <code>AddModelError</code>-method of the <code>va
 <p>If there is a need for immediate validation of a field
 that can not be covered in the client side validation,
 you can set up a trigger for validation on single fields in <code>formLayout.json</code></p>
-<div class="notices warning" >
-<p><strong>NOTE</strong>: Trigger for validation on single fields in Stateless apps is not currently supported.</p>
-</div>
+<div class="notices warning" ><strong>NOTE</strong>: Trigger for validation on single fields in Stateless apps is not currently supported.</div>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;data&#34;</span>: {
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;layout&#34;</span>: [
@@ -1441,11 +1441,9 @@ you can set up a trigger for validation on single fields in <code>formLayout.jso
 </span></span><span style="display:flex;"><span>    ]
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="notices warning" >
-Note that if you define a field to trigger validation server-side, only the result of this validation will be displayed. Meaning,
+</span></span></code></pre></div><div class="notices warning" >Note that if you define a field to trigger validation server-side, only the result of this validation will be displayed. Meaning,
 if there is another client-side validation defined, a possible server-side validation of the field will overwrite these. Therefore, you should make sure
-to implement all necessary validations on the server-side as well. It is possible to attach multiple error messages to the same field if needed.
-</div>
+to implement all necessary validations on the server-side as well. It is possible to attach multiple error messages to the same field if needed.</div>
 <p>The configuration above will result in your own custom validation in <code>ValidationHandler.cs</code> 
 being triggered each time the field is updated. If you need to know which field
 triggered the validation, this is available in the http-context as a header of the request named <em>ValidationTriggerField</em>.</p>

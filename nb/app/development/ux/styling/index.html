@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -630,8 +634,7 @@ if(host != "localhost")
     <li><a href="#formatering-av-tall">Formatering av tall</a></li>
     <li><a href="#justering-av-tekst-i-input-felter">Justering av tekst i input felter</a></li>
   </ul>
-</nav><div class="notices warning" >
-<p>Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt inntil videre. Støtte for oppsett via Altinn Studio kommer snart.</p>
+</nav><div class="notices warning" ><p>Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt inntil videre. Støtte for oppsett via Altinn Studio kommer snart.</p>
 <p><strong>MERK:</strong> for å benytte denne funksjonaliteten må man ha app-frontend versjon 3. Se <a href="/nb/community/changelog/app-frontend/v3/breaking-changes/">denne lenken</a> om endringer som må til i appen.</p>
 </div>
 <h2 id="sidestilte-komponenter-grid">Sidestilte komponenter (grid)</h2>
@@ -783,9 +786,7 @@ et slikt layout på de minste skjermene, så bruk gjerne <code>md</code></p>
 Input-komponenten. Formateringsmuligheter er dokumentert i et <a href="https://altinncdn.no/schemas/json/component/number-format.schema.v1.json">JSON-schema</a>,
 og vil dukke opp automatisk i intellisense når man redigerer komponenten i f.eks. VSCode.</p>
 <p>Eksempelet under vil resultere i et inputfelt for tall, hvor tallet vil bli formatert med <code>,</code> mellom hver tusen, og <code>$</code> foran tallet.</p>
-<div class="notices info" >
-Formateringen er kun for visning i frontend, og tallene som legges inn i et inputfelt med formatering vil lagres uformatert.
-</div>
+<div class="notices info" >Formateringen er kun for visning i frontend, og tallene som legges inn i et inputfelt med formatering vil lagres uformatert.</div>
 <figure><a href="number-format-money.png"><img src="number-format-money.png" alt="Formattert tall i input-felt" title="Formattert tall i input-felt" /></a><figcaption><h4>Formattert tall i input-felt</h4></figcaption></figure>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;numberComponent&#34;</span>,

@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -632,7 +636,45 @@ if(host != "localhost")
 	
 </nav>
 
-	</div><article class="post api">
+	</div><article class="post app">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/nb/app/development/logic/events/">App Events</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Introduction App Events is the support for Altinn Events within the application template, providing standard event functionality for the application developers.
+The functionality provided within the template is:
+Pushing events Enabling of standard events through configuration Pushing custom events through code Receiving events Subscribing to events Validate subscription Run custom code when receiving events Subscribing to events Subscring to events is descibed here
+Validate subscriptions Once the application succesfully have created a subscription, the Event Service will sende a ping event. <a class="read-more" href="/nb/app/development/logic/events/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
+            
+        
+    </footer>
+</article>
+<article class="post app">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/nb/app/development/logic/events/subscribing/">Subscribing</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Subscribing to events In order to receive events in the application you need create a subscription. While you can create a subscription authenticated as a user, most scenarios will probably be to authenticate as the organization owning the application, and to create the subscription as part of the startup process of the application. This example covers authenticating as an organization through maskinporten.
+You should first make sure you have a client definition registered in Maskinporten for your application. <a class="read-more" href="/nb/app/development/logic/events/subscribing/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
+            
+        
+    </footer>
+</article>
+<article class="post api">
     <header class="post-header">
         <h2 class="post-title"><a href="/nb/api/">Altinn 3 API</a></h2>
     </header>
@@ -780,47 +822,6 @@ As API-provider Altinn registres a scope in Maskinporten POST /scopes { &#34;pre
 basePath
 {org}/{appname}/instances/{instanceOwnerPartyId}/{instanceGuid}/data Get data Endpoint for downloading the data blob.
 GET basePath/{dataGuid} Accept: application/{xml/json} The response will depend on the type of blob. There are currently 2 primary types: form data based on a model and attachments. An Accept header in a request will be considered only when the requested data element is connected to a data model. <a class="read-more" href="/nb/api/apps/data-elements/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/api/">api</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
-            
-        
-    </footer>
-</article>
-<article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/nb/api/storage/instances/">Instanser</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Overview An instance works as a form of envelope or folder where data can be collected and exchanged between the user and owner of the application. The instance document is a way for Altinn and external parties to track the state of one specific data exchange. How long an instance can live and how many interactions there can be between the application owner and user will vary from one app to another. <a class="read-more" href="/nb/api/storage/instances/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/api/">api</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
-            
-        
-    </footer>
-</article>
-<article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/nb/api/apps/stateless-data-elements/">Tilstandsløse data</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Overview A stateless data element is a data object based on a data model without relations to an instance, instance owner or a state. The data is never persisted anywhere, and the avilable endpoints simply creates, prefills and/or runs calculations on a data object before returning it to the caller.
-basePath
-{org}/{app}/v1/data Create new data Endpoint for creating a new stateless dataelement based on a data type.
-POST basePath?dataType=[dataTypeId] Accept: application/{xml/json} The dataType parameter is required and should reference one of the data types defined on the application that requires app logic. <a class="read-more" href="/nb/api/apps/stateless-data-elements/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         

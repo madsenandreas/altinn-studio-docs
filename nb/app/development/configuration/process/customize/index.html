@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -872,9 +876,7 @@ overstyres.</p>
 <p>Dette resulterer i følgende visning:</p>
 <figure><a href="receipt-step-custom.png"><img src="receipt-step-custom.png" alt="Kvitterings-visningen" title="Overstyrte tekster på kvitterings-visningen" /></a><figcaption><h4>Overstyrte tekster på kvitterings-visningen</h4></figcaption></figure>
 <h3 id="custom-form-layout-1">Custom form layout</h3>
-<div class="notices warning" >
-Dette er en midlertidig fremgangsmåte for å fleksibelt bygge kvitteringssiden på samme måte som andre skjemasider. Når støtte for layout-sets blir tilgjengelig i Altinn Studio vil tilpasning av kvittering skje på tilsvarende måte som for bekreftelsessiden.
-</div>
+<div class="notices warning" >Dette er en midlertidig fremgangsmåte for å fleksibelt bygge kvitteringssiden på samme måte som andre skjemasider. Når støtte for layout-sets blir tilgjengelig i Altinn Studio vil tilpasning av kvittering skje på tilsvarende måte som for bekreftelsessiden.</div>
 <p>En egendefinert kvitteringsside kan nå lages på samme måte som alle andre skjemasider. Funksjonaliteten vil også innen kort tid bli tilgjengelig i Altinn Studio.</p>
 <p>Bygg layoutfilen på vanlig måte og referer til navnet på denne layoutfilen i <code>settings.json</code> med nøkkelen <code>receiptLayoutName</code>. Se eksempelet under for en layout med filnavnet <code>kvittering.json</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{

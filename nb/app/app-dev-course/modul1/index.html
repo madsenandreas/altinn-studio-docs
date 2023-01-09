@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -699,11 +703,10 @@ så man trenger ikke ta hensyn til årstall i navnet.</p>
 		<div class="a-collapseContent-inside">
 			<p>Sogndal kommune har opprettet <a href="datamodel.xsd">en datamodell</a>
 som representerer data de ønsker å samle inn fra fremtidige innbyggere.</p>
-<div class="notices info" ><p>Som applikasjonsutvikler vil man i noen tilfeller måtte opprette datamodell
+<div class="notices info" >Som applikasjonsutvikler vil man i noen tilfeller måtte opprette datamodell
 for en tjeneste selv. Da vil man kunne benytte seg av datamodelleringsverktøyet i
 Altinn Studio (lanseres våren 2022), eller ta utgangspunkt i en eksisterende datamodell og
-redigere den i f.eks. Visual Studio eller et selvvalgt tekstredigeringsprogram.</p>
-</div>
+redigere den i f.eks. Visual Studio eller et selvvalgt tekstredigeringsprogram.</div>
 <ol>
 <li><a href="datamodel.xsd">Last ned xsd-filen</a>, åpne den i et tekstredigeringsprogram
 og ta en nærmere titt på innholdet.</li>
@@ -751,8 +754,7 @@ og ta en nærmere titt på innholdet.</li>
 			<p>For at tjenesten skal være brukervennlig og mulig å benytte for de som sitter med synshemninger er det viktig at alle komponenter har gode og beskrivende
 overskrifter og beskrivelser. Vi ønsker nå at dere legger til tekster som skal brukes for hvert datafelt.</p>
 <p>Det er mulig å koble tekster til komponenter både i Altinn Studio og lokalt.</p>
-<div class="notices warning" ><p><strong>MERK</strong>: Visningsnavn for applikasjonen må endres både i <code>App/config/applicationMetadata.json</code> og i tekstressursene.</p>
-</div>
+<div class="notices warning" ><strong>MERK</strong>: Visningsnavn for applikasjonen må endres både i <code>App/config/applicationMetadata.json</code> og i tekstressursene.</div>
 <h3 id="krav-fra-kommunen">Krav fra kommunen</h3>
 <ul>
 <li>Alle inputfelter skal ha forklarende labels som beskriver hva som skal fylles inn.</li>

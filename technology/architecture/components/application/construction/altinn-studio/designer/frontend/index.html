@@ -293,6 +293,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1150,11 +1154,9 @@ if(host != "localhost")
 <figure><a href="/community/contributing/handbook/front-end/getting-started/structure-studio.drawio.svg"><img src="/community/contributing/handbook/front-end/getting-started/structure-studio.drawio.svg" alt="High-level overview of Designer frontend applications" title="High-level overview of Designer frontend applications" /></a><figcaption><h4>High-level overview of Designer frontend applications</h4></figcaption></figure>
 <p>During build of the Designer application, the top-level applications are transpiled into javascript-files and CSS, which are copied into the Designer backends <code>wwwroot</code> folder and hosted there.
 The Designer backend is a web application with views, that reference the javascript files and CSS.</p>
-<div class="notices info" >
-**NOTE:** Parts of the front-end is currently built in .NET Core.
+<div class="notices info" ><strong>NOTE:</strong> Parts of the front-end is currently built in .NET Core.
 This will gradually be ported over to React as we work with the different functional areas. The exception here is the static landing page, which will remain
-as a custom view in the .NET application.
-</div>
+as a custom view in the .NET application.</div>
 <h2 id="react-architecture">React architecture</h2>
 <p>The front-end of Altinn Studio designer is set up using the same React + Redux architecture as the App frontend, take a look <a href="../../../app/app-frontend/react">here</a> 
 for more details.</p>

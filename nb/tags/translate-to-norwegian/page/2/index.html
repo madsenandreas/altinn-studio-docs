@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -634,7 +638,48 @@ if(host != "localhost")
 	
 </nav>
 
-	</div><article class="post community">
+	</div><article class="post api">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/nb/api/storage/instances/">Instanser</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Overview An instance works as a form of envelope or folder where data can be collected and exchanged between the user and owner of the application. The instance document is a way for Altinn and external parties to track the state of one specific data exchange. How long an instance can live and how many interactions there can be between the application owner and user will vary from one app to another. <a class="read-more" href="/nb/api/storage/instances/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/api/">api</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
+            
+        
+    </footer>
+</article>
+<article class="post api">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/nb/api/apps/stateless-data-elements/">Tilstandsløse data</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Overview A stateless data element is a data object based on a data model without relations to an instance, instance owner or a state. The data is never persisted anywhere, and the avilable endpoints simply creates, prefills and/or runs calculations on a data object before returning it to the caller.
+basePath
+{org}/{app}/v1/data Create new data Endpoint for creating a new stateless dataelement based on a data type.
+POST basePath?dataType=[dataTypeId] Accept: application/{xml/json} The dataType parameter is required and should reference one of the data types defined on the application that requires app logic. <a class="read-more" href="/nb/api/apps/stateless-data-elements/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/api/">api</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
+            
+        
+    </footer>
+</article>
+<article class="post community">
     <header class="post-header">
         <h2 class="post-title"><a href="/nb/community/changelog/storage-interfaces/v2/">v2</a></h2>
     </header>
@@ -785,48 +830,6 @@ Navigate to you application repository and find App.csproj in the App folder. <a
         <p>1. PDF generation implementation moved out from AppBase/IAltinnApp All code related the generation of Pdf has been extracted from AppBase.cs and moved into PdfService.cs which in turn implements IPdfService. This opens up and allows us as service developers to replace the default Pdf implementation entirely.
 Since App.cs passes parameteres to AppBase.cs you need to remove thos no longer in use in the call to base(...) in the cosntructor:
 processService settings textService Your App constructor should then look something like this: <a class="read-more" href="/nb/community/changelog/app-nuget/v5/breaking-changes/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
-            
-        
-    </footer>
-</article>
-<article class="post community">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/nb/community/changelog/app-nuget/v6/breaking-changes/">Breaking changes</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Altinn.App.* librarires target .Net 6 now, which requires that the application does the same.
-In addition, all references to app and platform services have been moved from Startup.cs and should be replaced with two method calls.
-Follow the instructions below to ensure that the app is compatible with version 6 of the Altinn.App.* packages.
-Update target framework and package dependencies
-Install .Net 6 SDK before you start changing code.
-Navigate to you application repository and find App. <a class="read-more" href="/nb/community/changelog/app-nuget/v6/breaking-changes/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
-            
-        
-    </footer>
-</article>
-<article class="post community">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/nb/community/changelog/app-nuget/v7/breaking-changes/">Breaking changes</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Alpha Release
-This is a alpha relase and is not used by default in new applications. Version 7 is a major rewrite of the app libraries to reduce Altinns dotnet code in a application.
-If your application still is on version v5 or lower you should read the breaking changes guides until your application is updated to v6.
-Updating Altinn.App.* PackageReferences from v6 to v7 As mentioned here we have moved the code around and reduced the number of nugets to two. <a class="read-more" href="/nb/community/changelog/app-nuget/v7/breaking-changes/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         

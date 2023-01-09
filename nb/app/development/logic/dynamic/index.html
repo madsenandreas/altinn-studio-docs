@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -657,15 +661,13 @@ også kunne brukes for å utføre beregninger og styre valideringsmeldinger.</p>
 </ol>
 <p>All dynamikk skrives som funksjoner i JavaScript i <em>RuleHandler</em>-filen. 
 Funksjonene som er definert i denne filen kan videre konfigureres til å kjøres for feltene i skjemaet.</p>
-<div class="notices info" >
-Koden som definerer beregninger eller regler for vis/skjul bør settes opp slik at den håndterer eventuell feil i input.
+<div class="notices info" >Koden som definerer beregninger eller regler for vis/skjul bør settes opp slik at den håndterer eventuell feil i input.
 Blant annet bør de håndtere å motta et tomt felt, eller tekst der man forventer et tall, uten å kræsje.
 Dersom dynamikken ikke fungerer som forventet, ta en titt på koden som definerer
-beregninger eller regler for vis/skjul for å se om det er noe feilhåndtering som mangler.
-</div>
+beregninger eller regler for vis/skjul for å se om det er noe feilhåndtering som mangler.</div>
 <div class="notices warning" >MERK: for å støtte beregning/vis-skjul felter på eldre nettlesere må man skrive 
-javascript koden man legger i `RuleHandler.js` i den versjonen av ECMA-script som den aktuelle nettleseren støtter. 
-For IE11 vil dette være ECMA-script 5. </div>
+javascript koden man legger i <code>RuleHandler.js</code> i den versjonen av ECMA-script som den aktuelle nettleseren støtter. 
+For IE11 vil dette være ECMA-script 5.</div>
 <h2 id="legg-tilrediger-funksjoner-for-beregninger-eller-visskjul">Legg til/rediger funksjoner for beregninger eller vis/skjul</h2>
 <p>I filen <code>RuleHandler.js</code> er det satt opp 2 javascript-objekter:</p>
 <ul>

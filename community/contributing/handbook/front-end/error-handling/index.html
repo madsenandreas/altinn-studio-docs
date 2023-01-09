@@ -293,6 +293,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1132,9 +1136,7 @@ if(host != "localhost")
                 <span class="links"><a href='/community/'>Community</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/community/contributing/'>Contributing</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/community/contributing/handbook/'>Handbook</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/community/contributing/handbook/front-end/'>Front-end</a> <span class='adocs-breadcrumb-divider'> / </span> Error handling</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/development">development</a><a class="label label-default" href="https://docs.altinn.studio/tags/error-handling">error-handling</a></div><div id="body-inner"><h1 class="a-fontBold">Error handling</h1>
-              <p class="a-leadText" id="leadText">Guidelines for error handling front-end</p><div class="notices warning" >
-This page is a work-in-progress. Because we do not have details on how potential errors should be shown to the users, this is only a general overview currently. More details will be added once we have a functional understanding of how users should experience errors. 
-</div>
+              <p class="a-leadText" id="leadText">Guidelines for error handling front-end</p><div class="notices warning" >This page is a work-in-progress. Because we do not have details on how potential errors should be shown to the users, this is only a general overview currently. More details will be added once we have a functional understanding of how users should experience errors.</div>
 <h3 id="react-components">React components</h3>
 <h4 id="error-boundaries">Error boundaries</h4>
 <p>Error boundaries are React&rsquo;s official way of handling errors that occur in a component. This functionality is available from React 16. Using this allows a component to fail without unmounting the whole application, and allows us to control how the user is exposed to unexpected errors.</p>
@@ -1154,9 +1156,7 @@ This page is a work-in-progress. Because we do not have details on how potential
 <h4 id="reducers">Reducers</h4>
 <p>If an error handling action is triggered, the reducer should update the corresponding error object in the state to reflect that an error has occured.</p>
 <h3 id="logging-errors">Logging errors</h3>
-<div class="notices info" >
-We need to decide if all errors should be logged on the server or not. If all front-end errors should be logged on the server, we need to create an API we can call from the front-end to to the logging. 
-</div>
+<div class="notices info" >We need to decide if all errors should be logged on the server or not. If all front-end errors should be logged on the server, we need to create an API we can call from the front-end to to the logging.</div>
 <p>All errors that are caught should be logged to the console using <code>console.error</code>.</p>
 
 

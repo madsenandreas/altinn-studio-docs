@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1147,11 +1151,9 @@ Data processing can be purely mathematical calculations, or it could transfer va
 <li>ProcessDataWrite runs when data is saved</li>
 <li>ProcessDataRead runs when data is read from the database</li>
 </ul>
-<div class="notices info" >
-IMPORTANT: When a data processing that has updated the data on the server has been run, the front-end must be notified so that the updated data can be loaded.
+<div class="notices info" >IMPORTANT: When a data processing that has updated the data on the server has been run, the front-end must be notified so that the updated data can be loaded.
 To do this, the ProcessdataWrite method must return true if any of the data has been updated.
-If this is not done, the updated data won't be visible for the user until they refresh the page.
-</div>
+If this is not done, the updated data won&rsquo;t be visible for the user until they refresh the page.</div>
 <div class="content-version-selector border-box">
 
     

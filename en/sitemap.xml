@@ -168,6 +168,18 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/application/</loc>
   </url><url>
+    <loc>https://docs.altinn.studio/app/development/logic/events/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/logic/events/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/logic/events/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/community/changelog/app-frontend/</loc>
     <xhtml:link
                 rel="alternate"
@@ -413,6 +425,18 @@
                 />
   </url><url>
     <loc>https://docs.altinn.studio/community/contributing/handbook/front-end/studio-component/</loc>
+  </url><url>
+    <loc>https://docs.altinn.studio/app/development/logic/events/subscribing/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/logic/events/subscribing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/logic/events/subscribing/"
+                />
   </url><url>
     <loc>https://docs.altinn.studio/app/design/guidelines/components/title-and-paragraph/</loc>
     <xhtml:link

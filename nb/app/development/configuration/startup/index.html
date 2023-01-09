@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -631,9 +635,7 @@ if(host != "localhost")
 Dette gjøres under feltet <code>onEntry.show</code>, hvor man har mulighet til å sette verdiene <code>new-instance</code> (default) eller <code>select-instance</code>.
 Standard oppførsel om dette feltet ikke er satt er at det lages en ny instans for brukeren som besøker applikasjonen.</p>
 <h2 id="velge-fra-aktive-instanser">Velge fra aktive instanser</h2>
-<div class="notices warning" >
-<p><strong>MERK:</strong> for å benytte denne funksjonaliteten må man ha versjon &gt;= 4.15.2 av nugetpakkene <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> og <code>Altinn.App.Api</code>.</p>
-</div>
+<div class="notices warning" ><strong>MERK:</strong> for å benytte denne funksjonaliteten må man ha versjon &gt;= 4.15.2 av nugetpakkene <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> og <code>Altinn.App.Api</code>.</div>
 <p>Om man setter feltet til <code>onEntry.show</code> til <code>select-instance</code> vil brukeren bli presentert med en liste av aktive instanser for den valgte avgiver når man navigerer seg til en applikasjon.</p>
 <h3 id="eksempel">Eksempel</h3>
 <p>Følgende konfigurasjon legges til i <code>applicationmetadata.json</code> for å sette opp valg av aktive instanser.</p>

@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1201,8 +1205,7 @@ the navigation components in the application, or by adding a trigger in <code>Se
         v4, v5
     </label>
     
-    <div class="notices warning" ><p>For track selection to work for stateless applications, NuGet must be upgraded to 5.0.0 or later.</p>
-</div>
+    <div class="notices warning" >For track selection to work for stateless applications, NuGet must be upgraded to 5.0.0 or later.</div>
 <p>In the file App.cs one must override the method that retrieves the default order of pages defined in <code>Settings.json</code>
 This is done by adding the below function in App.cs.
 The expected output from this method is a capitalized list containing the name of the relevant pages in the application.</p>

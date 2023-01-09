@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/"><span>Logikk</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/nb/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/nb/app/development/logic/generic/"><span>Generelt</span></a></li>
       <li class="dd-item">
         <a href="/nb/app/development/logic/services/"><span>Tjenester</span></a></li>
@@ -624,19 +628,7 @@ if(host != "localhost")
                 <span class="links"><a href='/nb/community/'>Community</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/nb/community/changelog/'>Endringslogg</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/nb/community/changelog/app-nuget/'>App nuget</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/nb/community/changelog/app-nuget/v7/'>v7</a> <span class='adocs-breadcrumb-divider'> / </span> Breaking changes</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian">translate-to-norwegian</a></div><div id="body-inner"><h1 class="a-fontBold">Breaking changes</h1>
-              <p class="a-leadText" id="leadText">Oversikt over breaking changes introdusert i App Nuget-pakker i v7.0.0.</p>
-
-<div class="panel panel-primary">
-	
-	<div class="panel-body"><p><strong>Alpha Release</strong><br>
-This is a alpha relase and is not used by default in new applications. Version 7 is a major rewrite of the app libraries to reduce Altinns dotnet code in a application.</p>
-</div>
-	
-</div>
-
-<div class="notices warning" >
-<p>If your application still is on version v5 or lower you should read the breaking changes guides until your application is updated to v6.</p>
-</div>
+              <p class="a-leadText" id="leadText">Oversikt over breaking changes introdusert i App Nuget-pakker i v7.0.0.</p><div class="notices warning" >If your application still is on version v5 or lower you should read the breaking changes guides until your application is updated to v6.</div>
 <h2 id="updating-altinnapp-packagereferences-from-v6-to-v7">Updating Altinn.App.* PackageReferences from v6 to v7</h2>
 <p>As mentioned <a href="../">here</a> we have moved the code around and reduced the number of nugets to two.</p>
 <p>To upgrade from v6 nuget to v7 nugets the Altinn.App.* PackageReferences in <code>App/App.csproj</code> needs to be changed from:</p>

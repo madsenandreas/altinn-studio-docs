@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1150,19 +1154,7 @@ if(host != "localhost")
     <li><a href="#noteable-namespace-changes">Noteable namespace changes</a></li>
     <li><a href="#recomended-plugin-for-visual-studio-code">Recomended plugin for Visual Studio Code</a></li>
   </ul>
-</nav>
-
-<div class="panel panel-primary">
-	
-	<div class="panel-body"><p><strong>Alpha Release</strong><br>
-This is a alpha relase and is not used by default in new applications. Version 7 is a major rewrite of the app libraries to reduce Altinns dotnet code in a application.</p>
-</div>
-	
-</div>
-
-<div class="notices warning" >
-<p>If your application still is on version v5 or lower you should read the breaking changes guides until your application is updated to v6.</p>
-</div>
+</nav><div class="notices warning" >If your application still is on version v5 or lower you should read the breaking changes guides until your application is updated to v6.</div>
 <h2 id="updating-altinnapp-packagereferences-from-v6-to-v7">Updating Altinn.App.* PackageReferences from v6 to v7</h2>
 <p>As mentioned <a href="../">here</a> we have moved the code around and reduced the number of nugets to two.</p>
 <p>To upgrade from v6 nuget to v7 nugets the Altinn.App.* PackageReferences in <code>App/App.csproj</code> needs to be changed from:</p>

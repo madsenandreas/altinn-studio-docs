@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1189,10 +1193,8 @@ if(host != "localhost")
 result of the configuration which is done in <code>dataFields</code>.</p>
 <h2 id="manually">Manually</h2>
 <p>To manually add data values the method <code>UpdateDataValues</code>from the IInstance interface is used. It is the same method which is called when the fields in <code>dataValues</code> are populated from configuration and it will merge all values into a list.</p>
-<div class="notices warning" >
-Be aware that it is the application developer's responsibility to ensure unique IDs if you combine data values between configuration and a manual implementation.
-Values that share IDs will override each other and there is no way to guarantee which will be saved in the instance. 
-</div>
+<div class="notices warning" >Be aware that it is the application developer&rsquo;s responsibility to ensure unique IDs if you combine data values between configuration and a manual implementation.
+Values that share IDs will override each other and there is no way to guarantee which will be saved in the instance.</div>
 <p>The example below displays how to set data values manually. In this case it is done by adding code
 within <code>RunProcessTaskEnd</code> in <code>App.cs</code>, which is run when a task is completed.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">override</span> <span style="color:#ff79c6">async</span> Task RunProcessTaskEnd(<span style="color:#8be9fd">string</span> taskId, Instance instance)
@@ -1204,9 +1206,7 @@ within <code>RunProcessTaskEnd</code> in <code>App.cs</code>, which is run when 
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">await</span> Task.CompletedTask;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="notices warning" >
-It is recommended to think through the necessity of these values for the instance object so that it avoids unnecessary API calls which impact the performance of the application.
-</div>
+</span></span></code></pre></div><div class="notices warning" >It is recommended to think through the necessity of these values for the instance object so that it avoids unnecessary API calls which impact the performance of the application.</div>
 
 
 <footer class=" footline" ></footer>

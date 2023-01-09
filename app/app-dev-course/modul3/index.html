@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1138,9 +1142,7 @@ if(host != "localhost")
                 <span class="links"><a href='/app/'>Create apps</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/app-dev-course/'>Intro course</a> <span class='adocs-breadcrumb-divider'> / </span> Module 3</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/apps">apps</a><a class="label label-default" href="https://docs.altinn.studio/tags/training">training</a><a class="label label-default" href="https://docs.altinn.studio/tags/build">build</a><a class="label label-default" href="https://docs.altinn.studio/tags/deploy">deploy</a><a class="label label-default" href="https://docs.altinn.studio/tags/test">test</a></div><div id="body-inner"><h1 class="a-fontBold">Module 3</h1>
-              <p class="a-leadText" id="leadText">Build and deploy application to test environment</p><div class="notices warning" >
- This module requires that you are part of an organization with an enabled test environment for Altinn Apps. If this is not the case, move on to the next module.
-</div>
+              <p class="a-leadText" id="leadText">Build and deploy application to test environment</p><div class="notices warning" >This module requires that you are part of an organization with an enabled test environment for Altinn Apps. If this is not the case, move on to the next module.</div>
 <p>In this module you are going to build and deploy the application to Altinns test environment (TT02) and verify that everything works as expected.</p>
 <p><strong>Topics covered in this module:</strong></p>
 <ul>
@@ -1182,8 +1184,7 @@ and for bigger applications make sure they have optimal performance with all nec
 <p>For this test application, we want you to scale down resource usage to a minimum.</p>
 <p>Scaling: <code>replicaCount: 1</code></p>
 <p>Resource use: Set <em>requests</em> to <code>cpu: 50m</code> and <code>memory: 128Mi</code></p>
-<div class="notices info" ><p>All changes related to scaling and resource use are made in the <code>deployment/values.yaml</code> file</p>
-</div>
+<div class="notices info" >All changes related to scaling and resource use are made in the <code>deployment/values.yaml</code> file</div>
 <h3 id="useful-documentation">Useful documentation</h3>
 <ul>
 <li><a href="/app/development/configuration/deployment/#scale">Set custom rules for scaling</a></li>
@@ -1251,11 +1252,10 @@ and add a descriptive comment of what the version includes.</p>
 			<p>By deploying an application to a test environment you will be able to test all integrations.
 In addition to this, TT02 is often used to verify an application is behaving as expected
 before deploying to production.</p>
-<div class="notices info" ><p>To be able to deploy an application to TT02,
+<div class="notices info" >To be able to deploy an application to TT02,
 the organization that owns the application has to have an app cluster in the test environment.
 In addition to this, the developer deploying the application needs the <a href="/app/getting-started/access-management/studio/#deploy-tt02">role Deploy-TT02</a>
-for the organization in Altinn Studio.</p>
-</div>
+for the organization in Altinn Studio.</div>
 <p><strong>Deploy your application to TT02.</strong></p>
 <h3 id="useful-documentation">Useful documentation</h3>
 <ul>

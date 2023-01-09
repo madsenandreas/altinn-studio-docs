@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1158,11 +1162,9 @@ Calculations does not have to be purely mathematical, they can also transfer val
 <p>Calculations are coded in C#, in the file <code>CalculationHandler.cs</code>. This file can be edited the easiest by downloading the source code of the app and editing it on your own computer, e.g. in Visual Studio Code.
 The data model with form data is available and can be edited/updated when needed.</p>
 <p>Calculations are run every time data is saved. With autosave on (default), calculations are run each time a user makes a change.</p>
-<div class="notices info" >
-IMPORTANT: When a calculation that has updated the data on the server has been run, the front-end must be notified so that the updated data can be loaded.
-To do this, the `Calculate`-method must return `true` if any of the data has been updated.
-If this is not done, the updated data will not be visible for the user until they reload the page.
-</div>
+<div class="notices info" >IMPORTANT: When a calculation that has updated the data on the server has been run, the front-end must be notified so that the updated data can be loaded.
+To do this, the <code>Calculate</code>-method must return <code>true</code> if any of the data has been updated.
+If this is not done, the updated data will not be visible for the user until they reload the page.</div>
 <p>Example on code that replaces a given value (<code>12345678</code>) with another value (<code>22222222</code>) in a given field is shown below:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#8be9fd">bool</span> Calculate(<span style="color:#8be9fd">object</span> data)
 </span></span><span style="display:flex;"><span>{

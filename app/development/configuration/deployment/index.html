@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1159,9 +1163,7 @@ if(host != "localhost")
 </span></span></code></pre></div><p>To override this in your <em>deployment/values.yaml</em> you add it as a child to the deployment section:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">deployment</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">replicaCount</span>: <span style="color:#bd93f9">3</span>
-</span></span></code></pre></div><div class="notices warning" >
-Note the addition of "deployment:" and that the "replicaCount" is indented with two spaces (yaml-indents are spaces and not tab, your yaml will not be valid with tab indents!)
-</div>
+</span></span></code></pre></div><div class="notices warning" >Note the addition of &ldquo;deployment:&rdquo; and that the &ldquo;replicaCount&rdquo; is indented with two spaces (yaml-indents are spaces and not tab, your yaml will not be valid with tab indents!)</div>
 <h2 id="scale">Scale</h2>
 <h3 id="initial-scale">Initial scale</h3>
 <p>The initial scale is controlled by the field <code>replicaCount</code>. If autoscaling is enabled the autoscaler will override this value.

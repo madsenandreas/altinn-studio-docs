@@ -301,6 +301,10 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/"><span>Logic</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
+        <a href="/app/development/logic/events/"><span>App Events</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/app/development/logic/events/subscribing/"><span>Subscribing</span></a></li></ul></li>
+      <li class="dd-item">
         <a href="/app/development/logic/generic/"><span>Generic</span></a></li>
       <li class="dd-item">
         <a href="/app/development/logic/calculation/"><span>Calculations</span></a></li>
@@ -1143,9 +1147,7 @@ if(host != "localhost")
               <p class="a-leadText" id="leadText">Configuration for hiding instances from the message box.</p><p>For applications with a complex process flow it can be useful to hide
 instances from the message box during parts of, or the whole, process.</p>
 <h2 id="configuration">Configuration</h2>
-<div class="notices info" >
-The configuration has a retroactive effect and will also apply to previously created instances.
-</div>
+<div class="notices info" >The configuration has a retroactive effect and will also apply to previously created instances.</div>
 <p>Configuration for hiding instances is defined in <code>applicationmetadata.json</code>,
 which you can find in ythe appliation repository in the folder <code>App/config</code>.</p>
 <p>Add a new section called <code>messageBoxConfiguration</code> with the child property <code>hideSettings</code>.</p>

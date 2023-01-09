@@ -86,6 +86,18 @@
                 href="https://docs.altinn.studio/nb/app/design/prototype/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/logic/events/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/logic/events/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/logic/events/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/community/changelog/app-frontend/</loc>
     <xhtml:link
                 rel="alternate"
@@ -336,6 +348,18 @@
                 rel="alternate"
                 hreflang="nb"
                 href="https://docs.altinn.studio/nb/app/development/ux/pages/"
+                />
+  </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/logic/events/subscribing/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/logic/events/subscribing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/logic/events/subscribing/"
                 />
   </url><url>
     <loc>https://docs.altinn.studio/nb/app/design/guidelines/components/title-and-paragraph/</loc>

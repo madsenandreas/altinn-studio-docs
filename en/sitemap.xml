@@ -2106,6 +2106,8 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/runtime/security/authentication/accesstoken/</loc>
   </url><url>
+    <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/altinn-platform/authentication/accesstoken/</loc>
+  </url><url>
     <loc>https://docs.altinn.studio/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/altinn_roles_administration/</loc>
     <xhtml:link
                 rel="alternate"
@@ -3052,7 +3054,7 @@
   </url><url>
     <loc>https://docs.altinn.studio/app/development/configuration/authorization/json/</loc>
   </url><url>
-    <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/security/jwtcookie/</loc>
+    <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/altinn-platform/authentication/jwtcookie/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/runtime/security/authentication/jwt-format/</loc>
   </url><url>
@@ -3502,8 +3504,6 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/solutions/altinn-studio/repos/structure/rule-handler/</loc>
   </url><url>
-    <loc>https://docs.altinn.studio/tags/runtime-capabilities/</loc>
-  </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/infrastructure/computing/scaling/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/api/scenarios/</loc>
@@ -3523,8 +3523,6 @@
     <loc>https://docs.altinn.studio/tags/security/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/capabilities/runtime/security/</loc>
-  </url><url>
-    <loc>https://docs.altinn.studio/technology/architecture/components/application/construction/security/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/tags/service/</loc>
   </url><url>

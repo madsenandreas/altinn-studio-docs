@@ -113,7 +113,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +213,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -313,7 +313,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -321,11 +321,11 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -829,7 +829,11 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/"><span>Altinn Platform</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/technology/architecture/components/application/construction/altinn-platform/authentication/"><span>Authentication</span></a></li>
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authentication/"><span>Authentication</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authentication/accesstoken/"><span>Access Token</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authentication/jwtcookie/"><span>JWT Cookie</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -873,11 +877,7 @@ if(host != "localhost")
           <a href="/technology/architecture/components/application/construction/app/app-frontend/structure/">
             <span>Structure</span></a></li><li class="dd-item">
           <a href="/technology/architecture/components/application/construction/app/app-frontend/rendering/">
-            <span>Rendering</span></a></li></ul></li></ul></li>
-      <li class="dd-item">
-        <a href="/technology/architecture/components/application/construction/security/"><span>Security</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/technology/architecture/components/application/construction/security/jwtcookie/">
-            <span>JWT</span></a></li></ul></li></ul></li>
+            <span>Rendering</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/nonsolutionspecific/"><span>Non-Solution</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1226,9 +1226,31 @@ Delegation &amp; Administration of Delegated API Access This functionality allow
         <h2 class="post-title"><a href="/technology/architecture/capabilities/runtime/security/authentication/accesstoken/">Access Token</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Altinn Studio The designer application creates a JWT based Access Token based on a certificate that designer has available when running in the Altinn Studio Kubernetes Cluster. The different Altinn Studio environments have their own certificate.
-This makes it possible for each Altinn Platform environment to configure which Altinn Studio environment that is allowed to deploy and modify applications in that specific environment.
-The token is generated with help of the Access Token generator and this is generated for each call designer are doing aginst the platform solution for Storage and Authorization. <a class="read-more" href="/technology/architecture/capabilities/runtime/security/authentication/accesstoken/">&raquo;</a></p>
+        <p>Altinn Studio Altinn Studio Designer creates a JWT-based Access Token signed by a certificate that the Altinn Studio Designer has available when running in the Altinn Studio Kubernetes Cluster. The certificate is different for each environment.
+Using separate certificates makes it possible for each Altinn Platform environment to configure which Altinn Studio environment is allowed to deploy and modify applications in that specific environment.
+Altinn Studio Designer generates a token with the help of the Access Token generator for each call to the platform components. <a class="read-more" href="/technology/architecture/capabilities/runtime/security/authentication/accesstoken/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/security/">security</a>
+            
+        
+    </footer>
+</article>
+<article class="post technology">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/technology/architecture/components/application/construction/altinn-platform/authentication/accesstoken/">Access Token</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>AccessToken Client .Net applications use AccessToken clients needing to call protected APIs in the Altinn Platform infrastructure.
+The AccessToken Client has an Access Token generator
+that generates a JWT based on a unique certificate made available in the Kubernetes clusters.
+Example usage App template calling register. App template calling Altinn Events. Altinn Events function calling Altinn Events. Configuration To use the Access Token client, you need to add the following to program. <a class="read-more" href="/technology/architecture/components/application/construction/altinn-platform/authentication/accesstoken/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         
@@ -1349,26 +1371,6 @@ Storage encryption The storage component uses Azure Cosmos DB and Azrue Blob sto
                 <a class="label label-default" href="https://docs.altinn.studio/tags/security/">security</a>
             
                 <a class="label label-default" href="https://docs.altinn.studio/tags/encryption/">encryption</a>
-            
-        
-    </footer>
-</article>
-<article class="post technology">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/technology/architecture/components/application/construction/security/jwtcookie/">JWTCookieAuthentication</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>JWTCookieAuthentication is a ASP.NET Core authentication service created for supporting Json Web Tokens (JWT) as bearer tokens and JWT in Cookies. It is based on JWTBearer
-This is created for scenarios where you have need for APIs that will be accessed from system using bearer tokens and from Single Page Applications (SPA) where you want to protect the JWT from this SPA. (XSS attacks). When JWT is put in a http only cookie it is not accessible from the SPA and can&rsquo;t be stolen by malicous javascript running in the browser. <a class="read-more" href="/technology/architecture/components/application/construction/security/jwtcookie/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/security/">security</a>
             
         
     </footer>

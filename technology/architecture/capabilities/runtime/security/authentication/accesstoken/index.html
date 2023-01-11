@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A additional access token are used in the scenarious where we need to authenticate the application or component callin a component in Altinn Platform." />
+    <meta name="description" content="To protect API that should not be able to be used by other apps or platform components, we have an additional access token." />
 <meta name="altinn_pagedir" class="elastic" content="technology\architecture\capabilities\runtime\security\authentication\accesstoken\" />
 <meta name="altinn_title" class="elastic" content="Access Token" />
 
@@ -113,7 +113,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +213,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -313,7 +313,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -321,11 +321,11 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -829,7 +829,11 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/"><span>Altinn Platform</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/technology/architecture/components/application/construction/altinn-platform/authentication/"><span>Authentication</span></a></li>
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authentication/"><span>Authentication</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authentication/accesstoken/"><span>Access Token</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authentication/jwtcookie/"><span>JWT Cookie</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -873,11 +877,7 @@ if(host != "localhost")
           <a href="/technology/architecture/components/application/construction/app/app-frontend/structure/">
             <span>Structure</span></a></li><li class="dd-item">
           <a href="/technology/architecture/components/application/construction/app/app-frontend/rendering/">
-            <span>Rendering</span></a></li></ul></li></ul></li>
-      <li class="dd-item">
-        <a href="/technology/architecture/components/application/construction/security/"><span>Security</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/technology/architecture/components/application/construction/security/jwtcookie/">
-            <span>JWT</span></a></li></ul></li></ul></li>
+            <span>Rendering</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/nonsolutionspecific/"><span>Non-Solution</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1138,26 +1138,16 @@ if(host != "localhost")
                 <span class="links"><a href='/technology/'>Technology</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/'>Architecture</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/capabilities/'>Capabilities</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/capabilities/runtime/'>Runtime</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/capabilities/runtime/security/'>Security</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/technology/architecture/capabilities/runtime/security/authentication/'>Authentication</a> <span class='adocs-breadcrumb-divider'> / </span> Access Token</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/architecture">architecture</a><a class="label label-default" href="https://docs.altinn.studio/tags/security">security</a></div><div id="body-inner"><h1 class="a-fontBold">Access Token</h1>
-              <p class="a-leadText" id="leadText">A additional access token are used in the scenarious where we need to authenticate the application or component callin a component in Altinn Platform.</p><h2>On this page:</h2><nav id="TableOfContents">
-  <ul>
-    <li><a href="#altinn-studio">Altinn Studio</a></li>
-    <li><a href="#apps">Apps</a></li>
-  </ul>
-</nav><h2 id="altinn-studio">Altinn Studio</h2>
-<p>The designer application creates a JWT based Access Token based on a certificate that designer has available when running
-in the Altinn Studio Kubernetes Cluster. The different Altinn Studio environments have their own certificate.</p>
-<p>This makes it possible for each Altinn Platform environment to configure which Altinn Studio environment that is allowed to deploy
+              <p class="a-leadText" id="leadText">To protect API that should not be able to be used by other apps or platform components, we have an additional access token.</p><h2 id="altinn-studio">Altinn Studio</h2>
+<p>Altinn Studio Designer creates a JWT-based Access Token signed by a certificate that the Altinn Studio Designer has available when running in the Altinn Studio Kubernetes Cluster. The certificate is different for each environment.</p>
+<p>Using separate certificates makes it possible for each Altinn Platform environment to configure which Altinn Studio environment is allowed to deploy
 and modify applications in that specific environment.</p>
-<p>The token is generated with help of the <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Common/Altinn.Common.AccessToken/Altinn.Common.AccessTokenClient/Services/AccessTokenGenerator.cs">Access Token generator</a> 
-and this is generated for each call designer are doing aginst the platform solution for Storage and Authorization.</p>
+<p>Altinn Studio Designer generates a token with the help of the Access Token generator for each call to the platform components.</p>
 <h2 id="apps">Apps</h2>
-<p>To be able to limit the clients that can access some of the functionality in Altinn Platform, some components/functionality requires 
-that a AccessToken is added to the request header in addition to the JWT that identifes the user triggering the request.</p>
-<p>The applications generes a token based on a org certificate available in the Kubernetes Cluster for the given org.</p>
-<p>The token is generated with help of the <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Common/Altinn.Common.AccessToken/Altinn.Common.AccessTokenClient/Services/AccessTokenGenerator.cs">Access Token generator</a> 
-and is used when calling <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Apps/AppTemplates/AspNet/Altinn.App.PlatformServices/Implementation/RegisterAppSI.cs">Register as an example</a>.</p>
-<p>The required check is enabled in the platform components with enabling a AuthorizationRequirement on the controller. 
-Example on Party controller <a href="https://github.com/Altinn/altinn-studio/blob/master/src/Altinn.Platform/Altinn.Platform.Register/Register/Controllers/PartiesController.cs">here</a>.</p>
+<p>An access token requirement is enabled for some platform APIs to limit the clients that can access.</p>
+<p>The application generates a token based on an org-specific certificate available in the Kubernetes Cluster for the given org.</p>
+<h2 id="implementation-details">Implementation details</h2>
+<p>To see Access Token construction details and examples of use, visit <a href="/technology/architecture/components/application/construction/altinn-platform/authentication/accesstoken/">Access Token construction components</a>.</p>
 
 
 <footer class=" footline" ></footer>

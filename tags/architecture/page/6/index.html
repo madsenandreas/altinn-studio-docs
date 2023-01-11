@@ -113,7 +113,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +213,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -313,7 +313,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -321,11 +321,11 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -829,7 +829,11 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/"><span>Altinn Platform</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/technology/architecture/components/application/construction/altinn-platform/authentication/"><span>Authentication</span></a></li>
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authentication/"><span>Authentication</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authentication/accesstoken/"><span>Access Token</span></a></li>
+      <li class="dd-item">
+        <a href="/technology/architecture/components/application/construction/altinn-platform/authentication/jwtcookie/"><span>JWT Cookie</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/construction/altinn-platform/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -873,11 +877,7 @@ if(host != "localhost")
           <a href="/technology/architecture/components/application/construction/app/app-frontend/structure/">
             <span>Structure</span></a></li><li class="dd-item">
           <a href="/technology/architecture/components/application/construction/app/app-frontend/rendering/">
-            <span>Rendering</span></a></li></ul></li></ul></li>
-      <li class="dd-item">
-        <a href="/technology/architecture/components/application/construction/security/"><span>Security</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul><li class="dd-item">
-          <a href="/technology/architecture/components/application/construction/security/jwtcookie/">
-            <span>JWT</span></a></li></ul></li></ul></li>
+            <span>Rendering</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
         <a href="/technology/architecture/components/application/nonsolutionspecific/"><span>Non-Solution</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1148,6 +1148,28 @@ if(host != "localhost")
 
 	</div><article class="post technology">
     <header class="post-header">
+        <h2 class="post-title"><a href="/technology/solutions/altinn-platform/authorization/migration/">Fremdriftplaner for modernisering av Altinn Autorisasjon</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Innen juni 2025 så skal dagens Altinn løsning være modernisert og migrert til skyen. Det innebærer at mye av dagens løsning må utvikles på nytt.
+Overordnet målsetning for modernisering Autorisasjon skal være en selvstendig komponent og eget produkt Sikre en robust og sikker drift samtidig som vi understøtter stor vekst i bruken av autorisasjon. Øke endringstakten i Autorisasjon slik at veien fra behov til løsning blir raskere. Forbedre og forenkle brukerflyten slik at det blir enklere å administrere tilganger Tilby nye og moderne API som gjør det enklere å integrere mot og ta i bruk Altinn Autorisasjon som tilgangsstyringløsning for andre offentlige tjenester Hva skal gjøres? <a class="read-more" href="/technology/solutions/altinn-platform/authorization/migration/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/plan/">plan</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/authorization/">authorization</a>
+            
+        
+    </footer>
+</article>
+<article class="post technology">
+    <header class="post-header">
         <h2 class="post-title"><a href="/technology/architecture/requirements/functional/">Functional Requirements</a></h2>
     </header>
     <section class="post-excerpt">
@@ -1253,11 +1275,11 @@ Integration Libraries We use integration libraries to interact with different ex
 </article>
 <article class="post technology">
     <header class="post-header">
-        <h2 class="post-title"><a href="/technology/architecture/components/application/construction/security/jwtcookie/">JWTCookieAuthentication</a></h2>
+        <h2 class="post-title"><a href="/technology/architecture/components/application/construction/altinn-platform/authentication/jwtcookie/">JWTCookieAuthentication</a></h2>
     </header>
     <section class="post-excerpt">
         <p>JWTCookieAuthentication is a ASP.NET Core authentication service created for supporting Json Web Tokens (JWT) as bearer tokens and JWT in Cookies. It is based on JWTBearer
-This is created for scenarios where you have need for APIs that will be accessed from system using bearer tokens and from Single Page Applications (SPA) where you want to protect the JWT from this SPA. (XSS attacks). When JWT is put in a http only cookie it is not accessible from the SPA and can&rsquo;t be stolen by malicous javascript running in the browser. <a class="read-more" href="/technology/architecture/components/application/construction/security/jwtcookie/">&raquo;</a></p>
+This is created for scenarios where you have need for APIs that will be accessed from system using bearer tokens and from Single Page Applications (SPA) where you want to protect the JWT from this SPA. (XSS attacks). When JWT is put in a http only cookie it is not accessible from the SPA and can&rsquo;t be stolen by malicous javascript running in the browser. <a class="read-more" href="/technology/architecture/components/application/construction/altinn-platform/authentication/jwtcookie/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         
@@ -1322,25 +1344,6 @@ Nodes We can scale up and down Nodes. <a class="read-more" href="/technology/arc
 For Java Applications we use Tomcat.
 Language Virtual Machines &amp; Code Containers Applicatons in Altinn Studio, Altinn Apps and Altinn Platform that is based on .NET Core uses Common Language Runetime as a virual machine.
 Applications in Altinn Apps and Altinn Platform that is based on Java runs on Java Virtual Machine. <a class="read-more" href="/technology/architecture/components/platform/logicexecution/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/architecture/">architecture</a>
-            
-        
-    </footer>
-</article>
-<article class="post technology">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/technology/architecture/components/data/logical/">Logical datamodel</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>The following diagram shows the different entities stored. Click on the entity for the physical model used.
-Data is stored in Cosmos DB as JSON documents. In addition we use object database to store the raw objects of business data that org has defined for the application.
-Entities Entity Storage Created by Instance Cosmos DB user/app owner InstanceEvent Cosmos DB user/app owner InstanceData Cosmos DB user/app owner Data Blob storage user/app owner Events PostgreSQL App Applications Cosmos DB app owner See below for details <a class="read-more" href="/technology/architecture/components/data/logical/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         

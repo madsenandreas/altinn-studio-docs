@@ -3008,6 +3008,8 @@
   </url><url>
     <loc>https://docs.altinn.studio/technology/tools/hugo/</loc>
   </url><url>
+    <loc>https://docs.altinn.studio/technology/solutions/altinn-platform/authorization/migration/servicemigrationplan/_letter-api-reources/</loc>
+  </url><url>
     <loc>https://docs.altinn.studio/tags/infrastructure/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/technology/architecture/components/infrastructure/</loc>
@@ -3121,6 +3123,8 @@
                 hreflang="en"
                 href="https://docs.altinn.studio/app/development/configuration/process/message/"
                 />
+  </url><url>
+    <loc>https://docs.altinn.studio/tags/migration/</loc>
   </url><url>
     <loc>https://docs.altinn.studio/community/changelog/deployment/migration/</loc>
     <xhtml:link

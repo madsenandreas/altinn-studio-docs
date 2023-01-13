@@ -481,7 +481,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/api/studio/"><span>Studio</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/community/"><span>Community</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/community/"><span>Community</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/about/"><span>About</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -489,7 +489,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/community/about/open-source/"><span>Open source</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/community/contributing/"><span>Contributing</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/community/contributing/"><span>Contributing</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/contributing/propose-component/"><span>Propose a new component</span></a></li>
       <li class="dd-item">
@@ -497,7 +497,7 @@ if(host != "localhost")
           <a href="/community/contributing/intro/">
             <span>Intro for developers</span></a></li>
       <li class="dd-item">
-        <a href="/community/contributing/handbook/"><span>Handbook</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/community/contributing/handbook/"><span>Handbook</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/community/contributing/handbook/azure-devops/"><span>Azure DevOps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1362,8 +1362,13 @@ If the statusCode is not one that indicates success, a log entry is made and <em
 <h2 id="registering-the-client-in-the-application">Registering the client in the application</h2>
 <p>Once the interface and client is implemented, it should be registered in <em>App/Program.cs</em> (.NET 6) or <em>App/Startup.cs</em> (.NET 5),
 to make it available to use in the application.</p>
-<p>In the method <code>ConfigureServices</code>, the line below is included</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddHttpClient&lt;ICountryClient, CountryClient&gt;();
+<p>In the <code>Program.cs</code> class, the line below is included. In addition, <code>using Altinn.App.client;</code> and <code>using Altinn.App.AppLogic.DataProcessing;</code> is added at the top of the file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#ff79c6">void</span> RegisterCustomAppServices(IServiceCollection services, IConfiguration config, IWebHostEnvironment env)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    services.AddHttpClient&lt;ICountryClient, CountryClient&gt;();
+</span></span><span style="display:flex;"><span>    services.AddTransient&lt;IDataProcessor, DataProcessor&gt;();
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// Register your apps custom service implementations here.</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="using-the-client-in-the-application-logic">Using the client in the application logic</h2>
 <p>To enrich the form data we need to include the use of our client in the logic in the method <em>ProcessDataWrite</em> in <em>App/logic/DataProcessingHandler.cs</em> for versions prior to v7 of the application template. For v7 please refer to the documentation on <a href="../../logic/dataprocessing/">DataProcessing</a>.</p>
 <p>First the client must be made available by injecting it in the constructor of the class. 

@@ -647,13 +647,18 @@ senere.</div>
 </span></span><span style="display:flex;"><span>    },
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;bindingToShowInSummary&#34;</span>: <span style="color:#f1fa8c">&#34;SelectedItem&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;dataListId&#34;</span>: <span style="color:#f1fa8c">&#34;people&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;tableHeaders&#34;</span>: [ <span style="color:#f1fa8c">&#34;Navn&#34;</span>, <span style="color:#f1fa8c">&#34;Alder&#34;</span>, <span style="color:#f1fa8c">&#34;Yrke&#34;</span> ],
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;sortableColumns&#34;</span>: [ <span style="color:#f1fa8c">&#34;Alder&#34;</span> ],
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;tableHeaders&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;name&#34;</span>: <span style="color:#f1fa8c">&#34;Navn&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;age&#34;</span>: <span style="color:#f1fa8c">&#34;Alder&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;profession&#34;</span>: <span style="color:#f1fa8c">&#34;Yrke&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;sortableColumns&#34;</span>: [ <span style="color:#f1fa8c">&#34;age&#34;</span> ],
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;pagination&#34;</span>: {
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;alternatives&#34;</span>: [ <span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">10</span> ],
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;default&#34;</span>: <span style="color:#bd93f9">5</span>
 </span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;required&#34;</span>: <span style="color:#f1fa8c">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;required&#34;</span>: <span style="color:#ff79c6">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;tableHeadersMobile&#34;</span>: [ <span style="color:#f1fa8c">&#34;name&#34;</span>, <span style="color:#f1fa8c">&#34;age&#34;</span> ]
 </span></span><span style="display:flex;"><span>},
 </span></span></code></pre></div><h2 id="populering-av-tabell">Populering av tabell</h2>
 <p>Listekomponenten populeres med dynamiske data. Dataene defineres i en egen fil som implementerer interfacet <code>IDataListProvider</code>. 
@@ -716,12 +721,14 @@ Eksempel på en klasse som implementerer interfacet <code>IDataListProvider</cod
 </span></span></code></pre></div><p>Her blir listen laget i koden, men her kan man istedet kalle på et annet API som returnerer data man vil vise i tabellen.
 Hvis dette APIet støtter sortering og paginering kan man videresende disse verdiene til APIet slik at man ikke henter unødvendig data.</p>
 <h2 id="kolonner">Kolonner</h2>
-<p>Hvilke kolonner tabellen skal bestå av defineres med feltet <code>tableHeaders</code>. Dette feltet er en array av strings. For å støtte 
-flere språk kan man bruke referanser til nøkler i språkfilene her. Det er innholdet er som vil stå i header av tabellen. 
+<p>Hvilke kolonner tabellen skal bestå av defineres med feltet <code>tableHeaders</code>. Dette feltet er et objekt. 
+Nøkler i objektet skal tilsvare felter i modellen du har som representerer en rad.
+I eksempelet over er det ListItem med name, age og profession. Verdiene knyttet til hver nøkkel er teksten som vises i header. For å støtte 
+flere språk kan man bruke referanser til nøkler i språkfilene her. Det er innholdet her som vil stå i header av tabellen. 
 Du må selv sørge for at dataene i tabellen populeres i samme rekkefølge, slik at innholdet i cellene stemmer med header.</p>
 <h2 id="sortering">Sortering</h2>
 <p>I layout.json definerer du hvilke kolonner som skal være sorterbare gjennom feltet <code>sortableColumns</code>. 
-Dette er en array av strings, og strings du bruker her må være definert som en header i feltet <code>tableHeaders</code>. Dette gjør 
+Dette er en array av strings, og strings du bruker her må også være en nøkkel i feltet <code>tableHeaders</code>. Dette gjør 
 at de valgte kolonnene får en pil som viser hvilken retning kolonnen er sortert, og kolonnen som styrer sortering nå blir markert. 
 Selve sorteringslogikken må man selv implementere. Metoden <code>GetDataListAsync</code> tar inn parameteren keyValuePairs som
 inneholder sortDirection og sortColumn til dette formålet.
@@ -760,6 +767,9 @@ Dette defineres med property <code>bindingToShowInSummary</code>, og vil se slik
 <h2 id="sikrede-datalister">Sikrede datalister</h2>
 <p>På samme måte som med kodelister kan man for datalister også sikre listene dersom de inneholder sensitive data. Da benytter
 man interfacet <code>IInstanceDataListProvider</code>, og tillegg må man legge til en <code>secure</code> boolean på komponenten.</p>
+<h2 id="mobilvisning">Mobilvisning</h2>
+<p>Tabell i mobilvisning er ganske komprimert, og man kan derfor velge hvilke felter per rad man vil vise på mobil. Det gjør man 
+med feltet <code>tableHeadersMobile</code> som er en array med strings som representerer de headerverdiene man vil vise på mobil.</p>
 
 
 <footer class=" footline" ></footer>

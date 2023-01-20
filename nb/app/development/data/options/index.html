@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/nb/app/"><span>Lage apper</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/"><span>Lage apper</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/getting-started/"><span>Kom i gang</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/design/guidelines/wcag/"><span>Tilgjengelighet</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/"><span>Utvikling</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/"><span>Utvikling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -321,7 +321,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/validation/"><span>Validering</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/"><span>Konfigurasjon</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/"><span>Konfigurasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/messagebox/"><span>Meldingsboks</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -329,13 +329,13 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/configuration/messagebox/hide_instances/"><span>Skjule instanser</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/"><span>Autorisasjon</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/authorization/rules/"><span>Regelbibliotek</span></a></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/"><span>Veiledning</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/"><span>Veiledning</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Roller</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Roller</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roller</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -433,9 +433,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/launched-apps/digdir/be-om-api-nokkel/"><span>Tilgang til REST API</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/apps/"><span>App</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/metadata/"><span>Metadata</span></a></li>
       <li class="dd-item">
@@ -634,6 +634,7 @@ if(host != "localhost")
     <li><a href="#koble-en-komponent-til-kodeliste">Koble en komponent til kodeliste</a></li>
     <li><a href="#sende-med-query-parametere-ved-henting-av-options">Sende med query parametere ved henting av options</a></li>
     <li><a href="#options-basert-på-repeterende-grupper-i-datamodellen">Options basert på repeterende grupper i datamodellen</a></li>
+    <li><a href="#options-delt-mellom-flere-apper-fra-altinn-2">Options delt mellom flere apper (fra altinn 2)</a></li>
   </ul>
 </nav><p>Altinn tilbyr i dag to ulike måter en app kan eksponere kodelister - statisk og dynamisk. Dette gjøres gjennom et options-api som er eksponert av appen, og kodelisten vil være tilgjengelig på endepunktet <code>{org}/{app}/api/options/{optionsId}</code>.
 Checkbox, Dropdown og RadioButton komponenter vil automatisk kunne hente ut en slik liste om man kobler denne komponenten til en slik options-id.</p>
@@ -891,7 +892,32 @@ Dette følger samme syntax som <strong>value</strong>, og vil være kjent for de
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>I dette eksempelet har vi satt opp to parametere i teksten som refererer til felter i gruppen.
 Vi kjenner også igjen <code>[{0}]</code> syntaksen i <code>key</code> feltet som muliggjør gjenbruk av labelen for hver index i gruppen.</p>
-
+<h2 id="options-delt-mellom-flere-apper-fra-altinn-2">Options delt mellom flere apper (fra altinn 2)</h2>
+<p>Altinn 3 har foreløpig ikke noe system for å dele kodelister mellom ulike apper slik som det finnes i Altinn 2.
+Hvis det er behov for enkel oppdatering av kodelister som deles mellom ulike apper er det mulig å koble til eksterne apier.
+Altinn 2 har heldigvis et <a href="https://altinn.github.io/docs/api/rest/metadata/#hente-oversikt-over-kodelister">API</a>
+for kodelister som også kan nåes fra Altinn 3, og de kan registreres direkte i <code>Program.cs</code> om det er ønskelig.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#ff79c6">using</span> Altinn.App.Core.Features.Options;
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>services.AddAltinn2CodeList(
+</span></span><span style="display:flex;"><span>    id: <span style="color:#f1fa8c">&#34;ASF_Land&#34;</span>,
+</span></span><span style="display:flex;"><span>    transform: (code) =&gt; <span style="color:#ff79c6">new</span> (){ Value = code.Code, Label = code.Value1 }, 
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// filter: (code) =&gt; int.Parse(code.Value3) &gt; 100,</span>
+</span></span><span style="display:flex;"><span>    codeListVersion: <span style="color:#bd93f9">3994</span>, <span style="color:#6272a4">// Optional (use latest version if missing)</span>
+</span></span><span style="display:flex;"><span>    metadataApiId: <span style="color:#f1fa8c">&#34;ASF_Land&#34;</span> <span style="color:#6272a4">// Code list name in Altinn 2 (use id if missing)</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>Det eneste som er påkrevd er <code>id</code> for hva kodelisten heter i Altinn 2, og <code>transform</code> for å fortelle hvilke kolonner du
+ønsker å bruke som <code>Value</code> og <code>Label</code>. Oversetting fungerer automatisk. Etter versjon <code>v7.2.0</code> vil <code>nb</code> bli brukt om
+listen manger språket brukeren har valgt. Om du ønsker to ulike transformasjoner av samme liste, blir <code>id</code> navnet
+som brukes i Altinn 3 og <code>metadataApiId</code> brukes i oppslaget mot Altinn 2</p>
+<p>Bruken er som alle andre kodelister der <code>id</code> kommer igjen som <code>optionsId</code> i komponenten.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;landvelger&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Dropdown&#34;</span>,
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;optionsId&#34;</span>: <span style="color:#f1fa8c">&#34;ASF_Land&#34;</span>
+</span></span><span style="display:flex;"><span>},
+</span></span></code></pre></div>
 
 <footer class=" footline" ></footer>
                 </div>

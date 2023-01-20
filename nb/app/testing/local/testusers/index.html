@@ -629,17 +629,18 @@ if(host != "localhost")
           </div><div id="body-inner"><h1 class="a-fontBold">Testbrukere lokalt</h1>
               <p class="a-leadText" id="leadText">Vi har definert et lite sett med testbrukere som er tilgjengelig for lokal test.</p><h2>På denne siden:</h2><nav id="TableOfContents">
   <ul>
-    <li><a href="#sophie-salt">Sophie Salt</a></li>
-    <li><a href="#ola-nordmann">Ola Nordmann.</a></li>
+    <li><a href="#standard-brukere">Standard brukere</a></li>
+    <li><a href="#app-spesifikke-brukere">App spesifikke brukere</a></li>
   </ul>
-</nav><p>Disse kan man velge når man logger inn i lokal test.</p>
+</nav><h2 id="standard-brukere">Standard brukere</h2>
+<p>Disse kan man velge når man logger inn i lokal test.</p>
 <figure><a href="userselection.png"><img src="userselection.png" alt="testbrukere" title="Valg av testbrukere" /></a><figcaption><h4>Valg av testbrukere</h4></figcaption></figure>
-<h2 id="sophie-salt">Sophie Salt</h2>
+<h3 id="sophie-salt">Sophie Salt</h3>
 <p>Sophie er en svært driftig dame som bor i Oslo. Hun har startet en kjede med treningsententer som heter DDG Fitness og til nå er det startet 3 underenheter i Oslo, Bergen og Trondheim.
 Sophie har rollen DAGL og dens underroller for DDG Fitness AS og dens underhenheter.</p>
 <p>I tilegg er hun ekspert på helse og har startet eget konsulentfirma for helsetjenester. Sophie har rollen LEDE + knyttede roller for EAS Health Consulting.</p>
 <p>Hun er også styremedlem i borettslaget der hun bor. &ldquo;Oslos Vakreste Borettslag&rdquo;.  Sophie har rollen MEDL + knyttede roller for &ldquo;Oslos Vakreste Borettslag&rdquo;.</p>
-<h3 id="avgivere">Avgivere</h3>
+<h4 id="avgivere">Avgivere</h4>
 <table>
 <thead>
 <tr>
@@ -679,14 +680,154 @@ Sophie har rollen DAGL og dens underroller for DDG Fitness AS og dens underhenhe
 </tbody>
 </table>
 <figure><a href="selectparty.png"><img src="selectparty.png" alt="testbrukere" title="Avgiver valg Sophie Salt" /></a><figcaption><h4>Avgiver valg Sophie Salt</h4></figcaption></figure>
-<h2 id="ola-nordmann">Ola Nordmann.</h2>
+<h3 id="ola-nordmann">Ola Nordmann.</h3>
 <p>Ola Nordmann er en privatperson som kun kan representere seg selv. 
 Er bosatt på Stokmarknes.</p>
-<h3 id="avgivere-1">Avgivere</h3>
+<h4 id="avgivere-1">Avgivere</h4>
 <ul>
 <li><a href="https://github.com/Altinn/altinn-studio/blob/master/src/development/TestData/Register/Person/01017512345.json">01017512345 Ola Nordmann</a></li>
 </ul>
-
+<h3 id="andre-brukere">Andre brukere</h3>
+<p>For å teste skjema relatert til barn og oppvekst (barnehage og skole) er det lagt til noen spesifikke brukere. NB! Disse er hentet fra Tenors testdatasett, men ligger der med andre navn.
+| Avgiver                           | Barn  | Inntekt |
+| 01899699552 Pengelens Partner     | 0     | Lav     |
+| 17858296439 Gjentagende Forelder  | 3     | Middels |
+| 29917097109 Rik forelder          | 2     | Høy     |</p>
+<p>Det er ikke dokumentert hva slags egenskaper disse skal ha.</p>
+<h2 id="app-spesifikke-brukere">App spesifikke brukere</h2>
+<p>Om standard settet med brukere ikke passer for å teste din app lokalt, kan du legge sørge for at appen din svarer med et
+json dokoument på url <code>/[org]/[appId]/testData.json</code>. Den enkleste måten er å legge fila på <code>App/wwwroot/testData.json</code></p>
+<p>Typiske endringer du kan være interresert i er å bruke andre organisasjonsnummer/fødselsnummer for at oppslag i apier som
+appene er avhengig av skal virke, eller testing av autorisasjonsreglene med andre roller enn det standard brukerene har.</p>
+<h3 id="json-struktur">Json Struktur</h3>
+<p>Det finnes et <a href="https://altinncdn.no/schemas/json/test-users/test-users.schema.v1.json">JsonSchema</a> som hjelper deg å skrive
+en <code>testData.json</code> fil i verktøy som VSCode. En full versjon av brukerene som ligger i TestData mappa er tilgjengelig i
+<a href="testData.json">testData.json</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;$schema&#34;</span>: <span style="color:#f1fa8c">&#34;https://altinncdn.no/schemas/json/test-users/test-users.schema.v1.json&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;persons&#34;</span>: [
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;partyId&#34;</span>: <span style="color:#bd93f9">512345</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;ssn&#34;</span>: <span style="color:#f1fa8c">&#34;01017512345&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;firstName&#34;</span>: <span style="color:#f1fa8c">&#34;Ola&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;middleName&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;lastName&#34;</span>: <span style="color:#f1fa8c">&#34;Nordmann&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;customClaims&#34;</span>: [
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;some:extra:claim&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;claimValue&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;valueType&#34;</span>: <span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;partyRoles&#34;</span>: {
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">&#34;512345&#34;</span>: [
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>              <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;altinn&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;regna&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>              <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;altinn&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;dagl&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>              <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;altinn&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;priv&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>          ]
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;addressCity&#34;</span>: <span style="color:#f1fa8c">&#34;Stokarknes&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;addressHouseLetter&#34;</span>: <span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;addressHouseNumber&#34;</span>: <span style="color:#f1fa8c">&#34;7&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;addressMunicipalName&#34;</span>: <span style="color:#f1fa8c">&#34;Hadsel&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;addressMunicipalNumber&#34;</span>: <span style="color:#f1fa8c">&#34;1866&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;addressPostalCode&#34;</span>: <span style="color:#f1fa8c">&#34;8450&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;addressStreetName&#34;</span>: <span style="color:#f1fa8c">&#34;Bl\u00E5b\u00E6rveien&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;mailingAddress&#34;</span>: <span style="color:#f1fa8c">&#34;Bl\u00E5b\u00E6reveien 7&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;mailingPostalCity&#34;</span>: <span style="color:#f1fa8c">&#34;Stokmarknes&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;mailingPostalCode&#34;</span>: <span style="color:#f1fa8c">&#34;8450&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;mobileNumber&#34;</span>: <span style="color:#f1fa8c">&#34;87654321&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;telephoneNumber&#34;</span>: <span style="color:#f1fa8c">&#34;12345678&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;email&#34;</span>: <span style="color:#f1fa8c">&#34;test@test.com&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;userId&#34;</span>: <span style="color:#bd93f9">12345</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;language&#34;</span>: <span style="color:#f1fa8c">&#34;nb&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;userName&#34;</span>: <span style="color:#f1fa8c">&#34;OlaNordmann&#34;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;partyId&#34;</span>: <span style="color:#bd93f9">501337</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;ssn&#34;</span>: <span style="color:#f1fa8c">&#34;01039012345&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;firstName&#34;</span>: <span style="color:#f1fa8c">&#34;Sophie&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;middleName&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;lastName&#34;</span>: <span style="color:#f1fa8c">&#34;Salt&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;customClaims&#34;</span>: [
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;some:extra:claim&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;claimValue&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;valueType&#34;</span>: <span style="color:#f1fa8c">&#34;http://www.w3.org/2001/XMLSchema#string&#34;</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;partyRoles&#34;</span>: {
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">&#34;500000&#34;</span>: [
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>              <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;altinn&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;DAGL&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>              <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;altinn&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;UTINN&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>          ],
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">&#34;501337&#34;</span>: [
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>              <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;altinn&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;PRIV&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>              <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;altinn&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;UTINN&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>          ]
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;addressCity&#34;</span>: <span style="color:#f1fa8c">&#34;Oslo&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;addressHouseLetter&#34;</span>: <span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;addressHouseNumber&#34;</span>: <span style="color:#f1fa8c">&#34;9&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;addressMunicipalName&#34;</span>: <span style="color:#f1fa8c">&#34;Oslo&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;addressMunicipalNumber&#34;</span>: <span style="color:#f1fa8c">&#34;0301&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;addressPostalCode&#34;</span>: <span style="color:#f1fa8c">&#34;0151&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;addressStreetName&#34;</span>: <span style="color:#f1fa8c">&#34;Grev Wedels Plass&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;mailingAddress&#34;</span>: <span style="color:#f1fa8c">&#34;Grev Wedels Plass 9&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;mailingPostalCity&#34;</span>: <span style="color:#f1fa8c">&#34;Oslo&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;mailingPostalCode&#34;</span>: <span style="color:#f1fa8c">&#34;0157&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;mobileNumber&#34;</span>: <span style="color:#f1fa8c">&#34;87654321&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;telephoneNumber&#34;</span>: <span style="color:#f1fa8c">&#34;12345678&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;email&#34;</span>: <span style="color:#f1fa8c">&#34;1337@altinnstudiotestusers.com&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;userId&#34;</span>: <span style="color:#bd93f9">1337</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;language&#34;</span>: <span style="color:#f1fa8c">&#34;nn&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;userName&#34;</span>: <span style="color:#f1fa8c">&#34;SophieDDG&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;orgs&#34;</span>: [
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;partyId&#34;</span>: <span style="color:#bd93f9">500000</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;orgNumber&#34;</span>: <span style="color:#f1fa8c">&#34;897069650&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;parentPartyId&#34;</span>: <span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;name&#34;</span>: <span style="color:#f1fa8c">&#34;DDG Fitness&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;businessAddress&#34;</span>: <span style="color:#f1fa8c">&#34;Sofies Gate 1&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;businessPostalCity&#34;</span>: <span style="color:#f1fa8c">&#34;By&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;businessPostalCode&#34;</span>: <span style="color:#f1fa8c">&#34;0170&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;eMailAddress&#34;</span>: <span style="color:#f1fa8c">&#34;central@ddgfitness.no&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;faxNumber&#34;</span>: <span style="color:#f1fa8c">&#34;92110000&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;internetAddress&#34;</span>: <span style="color:#f1fa8c">&#34;http://ddgfitness.no&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;mailingAddress&#34;</span>: <span style="color:#f1fa8c">&#34;Sofies Gate 1&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;mailingPostalCity&#34;</span>: <span style="color:#f1fa8c">&#34;Oslo&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;mailingPostalCode&#34;</span>: <span style="color:#f1fa8c">&#34;0170&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;mobileNumber&#34;</span>: <span style="color:#f1fa8c">&#34;92010000&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;telephoneNumber&#34;</span>: <span style="color:#f1fa8c">&#34;12345678&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;unitStatus&#34;</span>: <span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;unitType&#34;</span>: <span style="color:#f1fa8c">&#34;AS&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div>
 
 <footer class=" footline" ></footer>
                 </div>

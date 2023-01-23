@@ -1148,6 +1148,8 @@ if(host != "localhost")
     <li><a href="#datafield">DataField</a></li>
     <li><a href="#eformidlingcontract">eFormidlingContract</a></li>
     <li><a href="#messageboxconfig">messageBoxConfig</a></li>
+    <li><a href="#copyinstancesettings">CopyInstanceSettings</a></li>
+    <li><a href="#onentry">OnEntry</a></li>
     <li><a href="#complete-example">Complete example</a></li>
   </ul>
 </nav><h2 id="application">Application</h2>
@@ -1453,6 +1455,46 @@ An application configured to enable eFormidling integration in combination with 
 <tr>
 <td>hideOnTask</td>
 <td>A list of tasks where the instance should be hidden from the message box</td>
+</tr>
+</tbody>
+</table>
+<h2 id="copyinstancesettings">CopyInstanceSettings</h2>
+<p>Configure if copying data from an archived instance is allowed and what datatypes and datafields that should be excluded in the new instance</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enabled</td>
+<td>true/false if its possible to create a copy of an instance.</td>
+</tr>
+<tr>
+<td>excludedDataTypes</td>
+<td>List of DataTypes that should be excluded when a new copy is made.</td>
+</tr>
+<tr>
+<td>excludedDataFields</td>
+<td>List of fields in the DataModel that should be excluded when a new copy is made.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="onentry">OnEntry</h2>
+<p>Configure how the application behaves when a user opens the application without an instance id set</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>show</td>
+<td>Possible values: new-instance or select-instance. <br/><em>new-instance</em> : user will always get a new instance. <br/> <em>select-instance</em> : user will be presented with a list of active instances if any, if no active instances a new one will be created.</td>
 </tr>
 </tbody>
 </table>

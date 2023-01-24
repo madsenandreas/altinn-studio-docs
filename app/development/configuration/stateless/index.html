@@ -1155,7 +1155,7 @@ one or more resources or presents data from a third party based on who the user 
 It is also possible to configure a stateless application to only allow anonymous users, or users that are not logged on.</p>
 <h2 id="configuration">Configuration</h2>
 <div class="notices warning" ><p>This is brand new functionality. Setup has to be completed manually until further notice.</p>
-<p><strong>Notice:</strong> To make use of this functionality, version &gt;= 4.5.2 of the nuget packages <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> and <code>Altinn.App.Api</code> is required.</p>
+<p><strong>Notice:</strong> To make use of this functionality, version &gt;= 4.5.2 of the <a href="../../../maintainance/dependencies#nuget">nuget-packages</a> <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> and <code>Altinn.App.Api</code> is required.</p>
 </div>
 <p>In the application metadata it is possible to control behaviours during startup. Your application can now act like a stateless application if it is enabled.
 For an application like this, no data or metadata is stored, and the application will also not end up in the message box of an end user. This is equivalent to a stateless application in Altinn 2.</p>
@@ -1231,7 +1231,7 @@ In <code>layout-sets.json</code> you add the actual set you are refering to from
 <p>App frontend will read the configuration in <code>applicationmetadata.json</code> and understand that it isn&rsquo;t supposed to instantiate, and then collect the layout-files and the connected datamodel, and present it to the end user.</p>
 <h3 id="configuring-access-without-login">Configuring access without login</h3>
 <div class="notices warning" ><p>Note! Form components that affect process (Button for submission or instantiation) are not supported for anonymous users!</p>
-<p><strong>Note:</strong> To make use of this functionality you must use version &gt;= 5.1.0 of the nuget packages <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> and <code>Altinn.App.Api</code>.</p>
+<p><strong>Note:</strong> To make use of this functionality you must use version &gt;= 5.1.0 of the <a href="../../../maintainance/dependencies#nuget">nuget-packages</a> <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> and <code>Altinn.App.Api</code>.</p>
 </div>
 <p>To permit use of an app by a user that is not logged in, you must follow the steps that are described above. You <em>also</em> have to define the data type which is used by the stateless app to allow anonymous use. This is done by modifying the <code>dataType</code>-element in <code>applicationMetadata.json</code>.
 The datatype&rsquo;s <code>appLogic</code>-object needs a new setting, <code>&quot;allowAnonymousOnStateless&quot;: true</code>. See example below:</p>
@@ -1502,7 +1502,7 @@ Again, `true` is returned to indicate that a data value has been changed, and `f
 </code></pre>
 <h2 id="starting-an-instance-from-a-stateless-form">Starting an instance from a stateless form</h2>
 <div class="notices warning" ><p>This is brand new functionality. Setup must be completed manually until further notice and will not be supported in Altinn Studio.</p>
-<p><strong>Note:</strong> To make use of this functionality you must use version &gt;= 4.17.2 of the nuget packages <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> og <code>Altinn.App.Api</code>.</p>
+<p><strong>Note:</strong> To make use of this functionality you must use version &gt;= 4.17.2 of the <a href="../../../maintainance/dependencies#nuget">nuget-packages</a> <code>Altinn.App.PlatformServices</code>, <code>Altinn.App.Common</code> og <code>Altinn.App.Api</code>.</p>
 </div>
 <p>In a stateless application you have the opportunity to use the <code>InstantiationButton</code> component to start an instance.
 Currently we only support starting an instance from within the same application the stateless form is displayed in. Starting an instance in another application is functionality we will add in the future.</p>

@@ -2699,7 +2699,7 @@
 	"title": "Application Construction Components Designer",
 	"tags": [],
 	"description": "Designer is split in two applications. One frontend created in REACT that communicates with the back-end application through rest-API.",
-	"content": "\rApplication construction components - Designer Front-end\rDescription of the application construction components for Altinn Studio Designer Front-end\nAltinn Studio Designer - Back-end\rApplication construction components used in Altinn Studio Designer backend.\n"
+	"content": " Full size\nApplication construction components - Designer Front-end\rDescription of the application construction components for Altinn Studio Designer Front-end\nAltinn Studio Designer - Back-end\rApplication construction components used in Altinn Studio Designer backend.\n"
 },
 {
 	"uri": "https://docs.altinn.studio/tags/development/",

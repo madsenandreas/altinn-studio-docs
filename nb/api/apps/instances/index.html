@@ -711,6 +711,7 @@ It supports both key-value prefilling and copying data from an archived instance
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span>POST {basePath}/create
 </span></span></code></pre></div><p>Required body differs for the two features, and examples of the request body are available below.</p>
 <h3 id="instantiation-with-key-value-prefill">Instantiation with key-value prefill</h3>
+<p>Note that prefill is a <code>Dictionary&lt;string,string&gt;</code>, so if you have recursive models you need to use the same key as in <code>dataModelBindings</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;instanceOwner&#34;</span>: {
@@ -718,7 +719,9 @@ It supports both key-value prefilling and copying data from an archived instance
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;organisationNumber&#34;</span>: <span style="color:#ff79c6">null</span>
 </span></span><span style="display:flex;"><span>    },
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;prefill&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;navnGarantist&#34;</span> : <span style="color:#f1fa8c">&#34;Ole Hansen&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;navnGarantist&#34;</span> : <span style="color:#f1fa8c">&#34;Ole Hansen&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;addresse.gatenavn&#34;</span>: <span style="color:#f1fa8c">&#34;Gateveien&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;addresse.husnummer&#34;</span>: <span style="color:#f1fa8c">&#34;4&#34;</span>
 </span></span><span style="display:flex;"><span>     },
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;dueBefore&#34;</span>: <span style="color:#f1fa8c">&#34;2019-06-01T12:00:00Z&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;visibleAfter&#34;</span>: <span style="color:#f1fa8c">&#34;2019-05-20T00:00:00Z&#34;</span>

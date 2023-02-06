@@ -628,7 +628,7 @@ if(host != "localhost")
     <li><a href="#kategorier">Kategorier</a></li>
     <li><a href="#eksempel-på-oppsummeringsside">Eksempel på oppsummeringsside</a></li>
   </ul>
-</nav><div class="notices warning" ><p>Dette er helt ny funksjonalitet. Oppsett må gjøres manuelt inntil videre. Støtte for oppsett via Altinn Studio kommer på et senere tidspunkt.</p>
+</nav><div class="notices warning" ><p>Oppsett må gjøres manuelt inntil videre. Støtte for oppsett via Altinn Studio kommer på et senere tidspunkt.</p>
 <p><strong>MERK</strong>: PDF-genereringen har per nå ikke støtte for oppsummerings-komponenten. For at PDF-generering skal fungere må enten alle oppsummerings-komponentene, eller hele oppsummerings-siden(e) ekskluderes fra PDF. Dette gjøres i <code>Settings.json</code>-filen knyttet til layout-filene.</p>
 </div>
 <h2 id="oppsett">Oppsett</h2>
@@ -663,9 +663,34 @@ slik at feltene blir slått sammen til en enkel tekst.</p>
 <p>Oppsummeringsvisningen for filvedlegg viser en liste over de vedleggene som er lastet opp for den aktuelle
 komponenten.</p>
 <figure><a href="attachment-summary.png"><img src="attachment-summary.png" alt="Oppsummering vedleggskomponent" title="Oppsummering vedleggskomponent" /></a><figcaption><h4>Oppsummering vedleggskomponent</h4></figcaption></figure>
-<h3 id="repeterende-grupper">Repeterende grupper</h3>
-<figure><a href="group-summary.png"><img src="group-summary.png" alt="Oppsummering repeterende grupper" title="Oppsummering repeterende grupper" /></a><figcaption><h4>Oppsummering repeterende grupper</h4></figcaption></figure>
-<h3 id="grupper-i-grupper">Grupper i grupper</h3>
+<h3 id="grupper">Grupper</h3>
+<p>Peker man på en <code>Group</code>-komponent vil en oppsummering vises for alle under-komponentene i gruppa.</p>
+<figure><a href="group-summary.png"><img src="group-summary.png" alt="Oppsummering for gruppe" title="Oppsummering for gruppe" /></a><figcaption><h4>Oppsummering for gruppe</h4></figcaption></figure>
+<p>Det er også mulig å ekskludere enkelte under-komponenter fra å vise i uppsummeringen ved å bruke
+<code>excludedChildren</code>-egenskapen. Denne egenskapen skal innholde en liste over komponent-IDer man ikke ønsker vist.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;main-group&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Group&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Hovedgruppe&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;group&#34;</span>: <span style="color:#f1fa8c">&#34;model.mainGroup&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;children&#34;</span>: [
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;child1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;child2&#34;</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#f1fa8c">&#34;child3&#34;</span>
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;summary-of-group&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Summary&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;componentRef&#34;</span>: <span style="color:#f1fa8c">&#34;main-group&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;pageRef&#34;</span>: <span style="color:#f1fa8c">&#34;FormLayout&#34;</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>  <span style="color:#ff79c6">&#34;excludedChildren&#34;</span>: [<span style="color:#f1fa8c">&#34;child3&#34;</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="grupper-i-grupper">Grupper i grupper</h3>
 <p>Oppsummering støttes også for repeterende grupper <em>inne i</em> repeterende grupper. Vi støtter kun ett nivå av 
 grupper i grupper. I dette tilfellet vises oppsummeringen av hvert innslag av gruppen på øverst nivå som en
 egen <a href="#kategorier">kategori</a>, og gruppen på nederste nivå vises på samme måte som vanlige repeterende

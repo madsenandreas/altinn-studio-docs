@@ -625,6 +625,7 @@ if(host != "localhost")
               <p class="a-leadText" id="leadText">Hvordan sette opp navigasjon mellom sider.</p><h2>På denne siden:</h2><nav id="TableOfContents">
   <ul>
     <li><a href="#legge-til-knapp-for-navigering">Legge til knapp for navigering</a></li>
+    <li><a href="#fremdriftsindikator">Fremdriftsindikator</a></li>
     <li><a href="#navigasjonsbar">Navigasjonsbar</a></li>
     <li><a href="#rekkefølge">Rekkefølge</a></li>
     <li><a href="#validering-ved-sidebytte">Validering ved sidebytte</a></li>
@@ -670,7 +671,29 @@ if(host != "localhost")
 </tr>
 </tbody>
 </table>
-<h2 id="navigasjonsbar">Navigasjonsbar</h2>
+<h2 id="fremdriftsindikator">Fremdriftsindikator</h2>
+<p>Det er mulig å aktivere en fremdriftsindikator som viser øverst i høyre hjørne av appen, som indikerer til brukeren
+hvor langt man har kommet i utfyllingen av en applikasjon med flere sider.</p>
+<figure><a href="progress.png"><img src="progress.png" alt="Fremdriftsindikator" title="Fremdriftsindikator" /></a><figcaption><h4>Fremdriftsindikator</h4></figcaption></figure>
+<div class="notices info" >Alle sider i gjeldende <a href="../../../configuration/process">prosess-steg</a> teller mot det totale antall sider som vises i
+fremdriftsindikatoren. Hvis det er satt opp <a href="../tracks">sporvalg</a> eller flere
+<a href="../../../logic/expressions#viseskjule-hele-sider">dynamisk skjulte sider</a> vil antallet kunne variere mye og oppføre seg
+forvirrende for brukeren. Sjekk at fremdriftsindikatoren gir mening og verdi for brukeren før den aktiveres.</div>
+<h3 id="konfigurasjon">Konfigurasjon</h3>
+<p>For å sette opp fremdriftsindikatoren, legg til denne linjen i <code>App/ui/Settings.json</code>-filen
+(du kan eventuelt ha en <code>Settings.json</code>-fil per <a href="../layout-sets">layout-set</a>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;$schema&#34;</span>: <span style="color:#f1fa8c">&#34;https://altinncdn.no/schemas/json/layout/layoutSettings.schema.v1.json&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;pages&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;order&#34;</span>: [
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;student-info&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;school-work&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f1fa8c">&#34;well-being&#34;</span>
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#ff79c6">&#34;showProgress&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="navigasjonsbar">Navigasjonsbar</h2>
 <p>Navigasjonsbar gir enkel tilgang til alle sider i en applikasjon.</p>
 <div class="notices info" >Navigasjonsbar lister opp alle sider i appen, og egner seg derfor ikke til bruk ved sporvalg.</div>
 <figure><a href="navigationbar-desktop.png"><img src="navigationbar-desktop.png" alt="Navigasjonsbar desktop" title="Navigasjonsbar desktop" /></a><figcaption><h4>Navigasjonsbar desktop</h4></figcaption></figure>

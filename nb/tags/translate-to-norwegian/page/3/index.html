@@ -295,7 +295,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/ux/texts/translation/"><span>Oversettelse av tekster</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/ux/pdf/"><span>PDF</span></a></li>
+        <a href="/nb/app/development/ux/pdf/"><span>PDF</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/ux/pdf/local-development/"><span>Local development</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/nb/app/development/ux/widgets/"><span>Widgets</span></a></li></ul></li>
       <li class="dd-item">
@@ -639,6 +641,25 @@ if(host != "localhost")
 </nav>
 
 	</div><article class="post community">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/nb/community/changelog/app-nuget/v5/breaking-changes/">Breaking changes</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>1. PDF generation implementation moved out from AppBase/IAltinnApp All code related the generation of Pdf has been extracted from AppBase.cs and moved into PdfService.cs which in turn implements IPdfService. This opens up and allows us as service developers to replace the default Pdf implementation entirely.
+Since App.cs passes parameteres to AppBase.cs you need to remove thos no longer in use in the call to base(...) in the cosntructor:
+processService settings textService Your App constructor should then look something like this: <a class="read-more" href="/nb/community/changelog/app-nuget/v5/breaking-changes/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
+            
+        
+    </footer>
+</article>
+<article class="post community">
     <header class="post-header">
         <h2 class="post-title"><a href="/nb/community/changelog/app-nuget/v6/breaking-changes/">Breaking changes</a></h2>
     </header>

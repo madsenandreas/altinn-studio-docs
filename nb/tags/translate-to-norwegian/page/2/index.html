@@ -295,7 +295,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/ux/texts/translation/"><span>Oversettelse av tekster</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/ux/pdf/"><span>PDF</span></a></li>
+        <a href="/nb/app/development/ux/pdf/"><span>PDF</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/ux/pdf/local-development/"><span>Local development</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/nb/app/development/ux/widgets/"><span>Widgets</span></a></li></ul></li>
       <li class="dd-item">
@@ -642,6 +644,28 @@ if(host != "localhost")
 
 	</div><article class="post api">
     <header class="post-header">
+        <h2 class="post-title"><a href="/nb/api/apps/data-elements/">Data-elementer</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Overview A data element consist of two parts: its metadata document and the actual data blob. This API work primarily with the blob while keeping the metadata document updated.
+basePath
+{org}/{appname}/instances/{instanceOwnerPartyId}/{instanceGuid}/data Get data Endpoint for downloading the data blob.
+GET basePath/{dataGuid} Accept: application/{xml/json} The response will depend on the type of blob. There are currently 2 primary types: form data based on a model and attachments. An Accept header in a request will be considered only when the requested data element is connected to a data model. <a class="read-more" href="/nb/api/apps/data-elements/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/api/">api</a>
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
+            
+        
+    </footer>
+</article>
+<article class="post api">
+    <header class="post-header">
         <h2 class="post-title"><a href="/nb/api/storage/instances/">Instanser</a></h2>
     </header>
     <section class="post-excerpt">
@@ -813,25 +837,6 @@ In addition, all references to app and platform services have been moved from St
 Follow the instructions below to ensure that the app is compatible with version 4 of the Altinn.App.* packages.
 Update target framework and package dependencies
 Navigate to you application repository and find App.csproj in the App folder. <a class="read-more" href="/nb/community/changelog/app-nuget/v4/breaking-changes/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
-            
-        
-    </footer>
-</article>
-<article class="post community">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/nb/community/changelog/app-nuget/v5/breaking-changes/">Breaking changes</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>1. PDF generation implementation moved out from AppBase/IAltinnApp All code related the generation of Pdf has been extracted from AppBase.cs and moved into PdfService.cs which in turn implements IPdfService. This opens up and allows us as service developers to replace the default Pdf implementation entirely.
-Since App.cs passes parameteres to AppBase.cs you need to remove thos no longer in use in the call to base(...) in the cosntructor:
-processService settings textService Your App constructor should then look something like this: <a class="read-more" href="/nb/community/changelog/app-nuget/v5/breaking-changes/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         

@@ -295,7 +295,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/ux/texts/translation/"><span>Oversettelse av tekster</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/ux/pdf/"><span>PDF</span></a></li>
+        <a href="/nb/app/development/ux/pdf/"><span>PDF</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+      <li class="dd-item">
+        <a href="/nb/app/development/ux/pdf/local-development/"><span>Local development</span></a></li></ul></li>
       <li class="dd-item">
         <a href="/nb/app/development/ux/widgets/"><span>Widgets</span></a></li></ul></li>
       <li class="dd-item">
@@ -774,6 +776,24 @@ Properties Name Description id A gobally unique id for the instance. The value h
         
     </footer>
 </article>
+<article class="post app">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/nb/app/development/ux/pdf/local-development/">Local development</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Set up localtest according to the description in app-localtest When you get to step 2 - add the pdf profile to your docker command
+This ensures the new pdf service is created. docker compose --profile pdf --profile localtest up -d --build Add PdfGenerationSettings to you appsettings.Development.json file &#34;PdfGeneratorSettings&#34;: { &#34;ServiceEndpointUri&#34;: &#34;http://local.altinn.cloud/pdfservice/pdf&#34;, &#34;AppPdfPageUriTemplate&#34;: &#34;http://{hostName}/{appId}/#/instance/{instanceId}?pdf=1&#34;, &#34;WaitForSelector&#34;: &#34;#readyForPrint&#34; } Change the HostName under GeneralSettings in appsettings.json &#34;GeneralSettings&#34;: { &#34;HostName&#34;: &#34;local.altinn.cloud&#34; } This used to say altinn3local. <a class="read-more" href="/nb/app/development/ux/pdf/local-development/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+        
+
+          
+            
+                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
+            
+        
+    </footer>
+</article>
 <article class="post api">
     <header class="post-header">
         <h2 class="post-title"><a href="/nb/api/models/data-element/">DataElement</a></h2>
@@ -802,28 +822,6 @@ Properties Name Description id A globally unique id for the data element. instan
         <p>Authentication for application owners Application owners should be authenticated with Maskinporten.
 API provisioning in Maskinporten API-provider To provide an API in maskinporten Altinn has to do two operations.
 As API-provider Altinn registres a scope in Maskinporten POST /scopes { &#34;prefix&#34;: &#34;altinn&#34;, &#34;subscope&#34;: &#34;instances/metadata.read&#34;, &#34;description&#34;: &#34;Clients can access metadata for all instances for all apps of the organisation&#34; } As API-provider Altinn has to give access to its scope for a given organisation PUT /scopes/access/889640782? <a class="read-more" href="/nb/api/scenarios/authentication/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-        
-
-          
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/api/">api</a>
-            
-                <a class="label label-default" href="https://docs.altinn.studio/tags/translate-to-norwegian/">translate-to-norwegian</a>
-            
-        
-    </footer>
-</article>
-<article class="post api">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/nb/api/apps/data-elements/">Data-elementer</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Overview A data element consist of two parts: its metadata document and the actual data blob. This API work primarily with the blob while keeping the metadata document updated.
-basePath
-{org}/{appname}/instances/{instanceOwnerPartyId}/{instanceGuid}/data Get data Endpoint for downloading the data blob.
-GET basePath/{dataGuid} Accept: application/{xml/json} The response will depend on the type of blob. There are currently 2 primary types: form data based on a model and attachments. An Accept header in a request will be considered only when the requested data element is connected to a data model. <a class="read-more" href="/nb/api/apps/data-elements/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
         

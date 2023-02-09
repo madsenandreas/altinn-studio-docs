@@ -170,6 +170,18 @@
                 href="https://docs.altinn.studio/nb/app/design/guidelines/design-principles/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/app/monitoring/prerequisites/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/monitoring/prerequisites/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/monitoring/prerequisites/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/app/development/logic/generic/</loc>
     <xhtml:link
                 rel="alternate"
@@ -470,6 +482,18 @@
                 href="https://docs.altinn.studio/nb/app/design/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/app/monitoring/faq/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/monitoring/faq/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/monitoring/faq/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/app/development/ux/fields/</loc>
     <xhtml:link
                 rel="alternate"
@@ -696,6 +720,18 @@
                 rel="alternate"
                 hreflang="nb"
                 href="https://docs.altinn.studio/nb/app/development/ux/pages/summary/"
+                />
+  </url><url>
+    <loc>https://docs.altinn.studio/nb/app/monitoring/references/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/monitoring/references/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/monitoring/references/"
                 />
   </url><url>
     <loc>https://docs.altinn.studio/nb/app/design/guidelines/</loc>
@@ -1020,6 +1056,18 @@
                 rel="alternate"
                 hreflang="nb"
                 href="https://docs.altinn.studio/nb/api/models/data-element/"
+                />
+  </url><url>
+    <loc>https://docs.altinn.studio/nb/app/monitoring/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/monitoring/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/monitoring/"
                 />
   </url><url>
     <loc>https://docs.altinn.studio/nb/app/design/guidelines/components/radiobutton/</loc>

@@ -621,7 +621,24 @@ if(host != "localhost")
                 <span class="links"><a href='/nb/app/'>Lage apper</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/nb/app/development/'>Utvikling</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/nb/app/development/ux/'>Brukergrensesnitt</a> <span class='adocs-breadcrumb-divider'> / </span> PDF</span>
             </div>
           </div><div id="body-inner"><h1 class="a-fontBold">PDF</h1>
-              <p class="a-leadText" id="leadText">Hvordan konfigurere generering av PDF.</p><p>Det er mulig å ekskludere enkelte komponenter, eller hele sider fra å bli med i pdf.</p>
+              <p class="a-leadText" id="leadText">Hvordan konfigurere generering av PDF.</p><div class="notices warning" ><h2 id="ny-pdf-generering">Ny PDF generering</h2>
+<h3 id="aktivere-ny-pdf-generering">Aktivere ny PDF generering</h3>
+<p>Fra og med versjon 7.5 av nuget pakkene (Altinn.App.Api and Altinn.App.Core) er det lansert en ny måte å generere PDF&rsquo;er på. Denne nye måten kan skrus av og på ved å legge til følgende seksjon og innstilling i <em>appsettings.json</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;FeatureManagement&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;NewPdfGeneration&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>Dette vil sørge for at den nye PDF tjenesten kalles. Denne aksepterer en url som peker tilbake til en automatisk generert side i appen. Siden bygges opp og danner grunnlaget for PDF&rsquo;en. <code>IPdfFormatter</code> grensesnittet som dokumentert nedenfor er fortsatt relevant hvis du trenger spesiallogikk for skjuling av komponenter/sider fra PDF&rsquo;en.</p>
+<h3 id="innstillinger">Innstillinger</h3>
+<p>Selv om standard innstillingene for den nye tjenesten skal være nok for de fleste applikasjoner kan de overstyres ved å legge til en PdfGeneratorSettings seksjon i <em>appsettings.json</em> (standard innstillinger vises under).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;PdfGeneratorSettings&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;ServiceEndpointUri&#34;</span>: <span style="color:#f1fa8c">&#34;https://{org}.apps.{hostName}/{appId}/#/instance/{instanceId}&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;AppPdfPageUriTemplate&#34;</span>: <span style="color:#f1fa8c">&#34;http://{hostName}/{appId}/#/instance/{instanceId}?pdf=1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;WaitForSelector&#34;</span>: <span style="color:#f1fa8c">&#34;#readyForPrint&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;WaitForTime&#34;</span>: <span style="color:#bd93f9">5000</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>Hvis WaitForSelector er satt så blir WaitForTime ignorert. WaitForSelector sikrer at siden er ferdig oppbygd og presentert før PDF&rsquo;en genereres.</p>
+</div>
+<p>Det er mulig å ekskludere enkelte komponenter, eller hele sider fra å bli med i pdf.</p>
 <p>Det er to måter å ekskludere data fra PDF på</p>
 <ol>
 <li>Via konfigurasjon i filen <code>Settings.json</code> under <code>App/ui</code></li>

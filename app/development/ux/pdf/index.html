@@ -1170,14 +1170,23 @@ if(host != "localhost")
 </span></span><span style="display:flex;"><span>  }
 </span></span></code></pre></div><p>If the WaitForSelector is set, the WaitForTime will be ignored. The WaitForSelector ensures that the page will be completely rendered before the PDF is generated.</p>
 </div>
-<p>It is possible to exclude components, or entire pages from being a part of the pdf generation.</p>
-<p>There are two options when excluding data from a PDF:</p>
-<p>Det er to måter å ekskludere data fra PDF på</p>
+<p>There are two different methods of configuring the generation of PDFs:</p>
 <ol>
-<li>Configuring in the <code>Settings.json</code> file in the <code>App/ui</code> folder</li>
-<li>Programmatically<br>
-For the programatically option there are some minor differences dependening on the version you are using.</li>
+<li><a href="#automatic-configuration">Automatically based on your form layouts</a></li>
+<li><a href="#custom-layout-configuration">Manually by defining a custom PDF layout (v7.5+ only)</a></li>
 </ol>
+<p>It is also possible to get a <a href="#preview-in-the-browser">preview</a> of what the PDF will look like in the browser while developing (v7.5+ only).</p>
+<h2 id="automatic-configuration">Automatic configuration</h2>
+<p>This method is used by default unless you specify a <a href="#custom-layout-configuration">custom PDF layout file</a>.
+This method exctracts all of your pages and components in the order they appear, and displays them in the PDF document.</p>
+<h3 id="excluding-pages-and-components">Excluding pages and components</h3>
+<p>Often, you will need to exclude certain pages or components that are not relevant to the PDF document.
+This is can be configured in two different ways:</p>
+<ol>
+<li>By modifying the <code>Settings.json</code> file for your layout set.</li>
+<li>Programmatically by implementing it in code. This allows for dynamic exclusion depending on the form data.</li>
+</ol>
+<p>Depending on the version you are using, the programmatic method is set up differently, but the logic is the same. See below how to set this up for the version you are on:
 <div class="content-version-selector border-box">
 
     
@@ -1190,7 +1199,7 @@ For the programatically option there are some minor differences dependening on t
         v4, v5, v6
     </label>
     
-    In previous versions you modify the <code>PdfHandler.cs</code> file in the <code>App/logic/Print</code> folder.
+    Modify the <code>PdfHandler.cs</code> file under <code>App/logic/Print</code>.
 </div>
 
 
@@ -1199,88 +1208,300 @@ For the programatically option there are some minor differences dependening on t
         v7
     </label>
     
-    <p>In version 7 the way to do custom code has changed. We now use an dependency injection based approach insted of overriding methods. If you previously used to place your custom code in the <em>FormatPdf</em> methods in the <em>PdfHandler.cs</em> class you will see that it&rsquo;s mostly the same, but in v7 there is no pre-defined class for you to put your custom code. Instead, do the following:</p>
-<ol>
+    <ol>
 <li>Create a class that implements the <code>IPdfFormater</code> interface found in the <code>Altinn.App.Core.Features.Pdf</code> namespace.<br>
 You can name and place the file in any folder you like within your project, but we suggest you use meaningful namespaces like in any other .Net project.</li>
 <li>Register you custom implementation in the <em>Program.cs</em> class
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>services.AddTransient&lt;IPdfFormater, PdfFormater&gt;();
-</span></span></code></pre></div>This ensuers your custom code is known to the application and that it will be executed.</li>
+</span></span></code></pre></div>This ensures your custom code is known to the application and that it will be executed.</li>
 </ol>
 
 </div>
 
 
 </div>
+</p>
 
-<p>Since the <code>IPdfFormater</code> interface has the same method as the old <code>PdfHandler.cs</code>class the rest of the documentation and examples applies to all versions.</p>
-<div class="notices info" ><p>If a page/component is to always be excluded from the PDF, it is recommended that this is
-set in the configuraiton file.</p>
-<p>If exclusion of a page/component depends on dynamics it <em>must</em> be done programmatically.</p>
-</div>
-<h3 id="exclude-pages">Exclude pages</h3>
-<p>In the examples below, the page with id <em>page2</em> is excluded from the PDF PDF.</p>
-<h3 id="configuration">Configuration</h3>
-<p>Setup in <code>Settings.json</code> under <code>App/ui</code>:</p>
+
+<div class="card adocs-expand" id="exclude-page">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-exclude-page"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				Excluding pages
+			
+		</a>
+	</div>
+	<div id="expandable-exclude-page" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<h3 id="1-settingsjson">1. Settings.json</h3>
+<p>Add a list of page names to exclude called <code>excludeFromPdf</code> under <code>pages</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;$schema&#34;</span>: <span style="color:#f1fa8c">&#34;https://altinncdn.no/schemas/json/layout/layoutSettings.schema.v1.json&#34;</span>,
 </span></span><span style="display:flex; background-color:#3d3f4a"><span>  <span style="color:#ff79c6">&#34;pages&#34;</span>: {
 </span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#ff79c6">&#34;excludeFromPdf&#34;</span>: [<span style="color:#f1fa8c">&#34;page2&#34;</span>]
 </span></span><span style="display:flex; background-color:#3d3f4a"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="programmatically">Programmatically</h3>
+</span></span></code></pre></div><h3 id="2-programmatically">2. Programmatically</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;LayoutSettings&gt; FormatPdf(LayoutSettings layoutSettings, <span style="color:#8be9fd">object</span> data)
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (data.GetType() == <span style="color:#ff79c6">typeof</span>(Skjema))
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        layoutSettings.Pages ??= <span style="color:#ff79c6">new</span>();
-</span></span><span style="display:flex;"><span>        layoutSettings.Pages.ExcludeFromPdf ??= <span style="color:#ff79c6">new</span>();
-</span></span><span style="display:flex;"><span>        layoutSettings.Pages.ExcludeFromPdf.Add(<span style="color:#f1fa8c">&#34;page2&#34;</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> Task.FromResult(layoutSettings);
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">if</span> (data.GetType() == <span style="color:#ff79c6">typeof</span>(Skjema))
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    layoutSettings.Pages.ExcludeFromPdf.Add(<span style="color:#f1fa8c">&#34;page2&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> Task.FromResult(layoutSettings);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="exclude-components">Exclude components</h2>
-<p>In the examples below, the component with id <em>image-component-id</em> is excluded from the PDF.</p>
-<h3 id="configuration-1">Configuration</h3>
-<p>Setup in <code>Settings.json</code> under <code>App/ui</code>:</p>
+</span></span></code></pre></div><br>
+<p><strong>Note</strong>: You only need to choose one of the above methods.</p>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="card adocs-expand" id="exclude-component">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-exclude-component"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				Excluding components
+			
+		</a>
+	</div>
+	<div id="expandable-exclude-component" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<h3 id="1-settingsjson">1. Settings.json</h3>
+<p>Add a list of component IDs to exclude called <code>excludeFromPdf</code> under <code>components</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;$schema&#34;</span>: <span style="color:#f1fa8c">&#34;https://altinncdn.no/schemas/json/layout/layoutSettings.schema.v1.json&#34;</span>,
 </span></span><span style="display:flex; background-color:#3d3f4a"><span>  <span style="color:#ff79c6">&#34;components&#34;</span>: {
 </span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#ff79c6">&#34;excludeFromPdf&#34;</span>: [<span style="color:#f1fa8c">&#34;image-component-id&#34;</span>]
 </span></span><span style="display:flex; background-color:#3d3f4a"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="programmatically-1">Programmatically</h3>
+</span></span></code></pre></div><h3 id="2-programmatically">2. Programmatically</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;LayoutSettings&gt; FormatPdf(LayoutSettings layoutSettings, <span style="color:#8be9fd">object</span> data)
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (data.GetType() == <span style="color:#ff79c6">typeof</span>(Skjema))
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        layoutSettings.Components ??= <span style="color:#ff79c6">new</span>();
-</span></span><span style="display:flex;"><span>        layoutSettings.Components.ExcludeFromPdf ??= <span style="color:#ff79c6">new</span>();
-</span></span><span style="display:flex;"><span>        layoutSettings.Components.ExcludeFromPdf.Add(<span style="color:#f1fa8c">&#34;image-component-id&#34;</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> Task.FromResult(layoutSettings);
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">if</span> (data.GetType() == <span style="color:#ff79c6">typeof</span>(Skjema))
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    layoutSettings.Components.ExcludeFromPdf.Add(<span style="color:#f1fa8c">&#34;image-component-id&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> Task.FromResult(layoutSettings);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="exclude-components-in-a-repeating-group">Exclude components in a repeating group</h2>
-<p>If you need to exclude one or more components from an entry in a repeating group, 
-this is done by specifying the index of the group element in addition to the component id.</p>
+</span></span></code></pre></div><br>
+<p><strong>Note</strong>: You only need to choose one of the above methods.</p>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="card adocs-expand" id="exclude-specific-component">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-exclude-specific-component"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				Excluding components from a specific row in a repeating group
+			
+		</a>
+	</div>
+	<div id="expandable-exclude-specific-component" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>If you need to exclude one or more components from a specific entry in a repeating group, this is done by specifying the index of the group element in addition to the component id.</p>
 <p>The required format is: <code>componentId-&lt;groupIndex&gt;</code>.</p>
-<p>If the component should be excluded for all elements in the repeating group, follow the instructions for the
-section above.</p>
-<p>In the example below, the component with id <em>ownerId</em> in the group element with index 1 is excluded from the PDF.</p>
-<h3 id="programmatically-2">Programmatically</h3>
+<h3 id="1-settingsjson">1. Settings.json</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;$schema&#34;</span>: <span style="color:#f1fa8c">&#34;https://altinncdn.no/schemas/json/layout/layoutSettings.schema.v1.json&#34;</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>  <span style="color:#ff79c6">&#34;components&#34;</span>: {
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#ff79c6">&#34;excludeFromPdf&#34;</span>: [<span style="color:#f1fa8c">&#34;ownerId-1&#34;</span>]
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="2-programmatically">2. Programmatically</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#ff79c6">public</span> <span style="color:#ff79c6">async</span> Task&lt;LayoutSettings&gt; FormatPdf(LayoutSettings layoutSettings, <span style="color:#8be9fd">object</span> data)
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (data.GetType() == <span style="color:#ff79c6">typeof</span>(Skjema))
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            layoutSettings.Components ??= <span style="color:#ff79c6">new</span>();
-</span></span><span style="display:flex;"><span>            layoutSettings.Components.ExcludeFromPdf ??= <span style="color:#ff79c6">new</span>();
-</span></span><span style="display:flex;"><span>            layoutSettings.Components.ExcludeFromPdf.Add(<span style="color:#f1fa8c">&#34;ownerId-1&#34;</span>);
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> Task.FromResult(layoutSettings);
-</span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><p>The picture below shows that the component with index 0 and 2 is kept in the PDF, 
-whilst the component with index 1 is excluded.</p>
-<figure><a href="exclude-componen-rep-group.png"><img src="exclude-componen-rep-group.png" alt="&amp;ldquo;Example excluding of component in repeating group&amp;rdquo;" title="Example excluding of component in repeating group" /></a><figcaption><h4>Example excluding of component in repeating group</h4></figcaption></figure>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">if</span> (data.GetType() == <span style="color:#ff79c6">typeof</span>(Skjema))
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    layoutSettings.Components.ExcludeFromPdf.Add(<span style="color:#f1fa8c">&#34;ownerId-1&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">await</span> Task.FromResult(layoutSettings);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><br>
+<p><strong>Note</strong>: You only need to choose one of the above methods.</p>
+
+		</div>
+	</div>
+</div>
+<h2 id="custom-layout-configuration">Custom layout configuration</h2>
+<div class="notices warning" >This method is only available in version 7.5 and higher.</div>
+<p>This method lets you fully customize the generated PDF by using a layout file to specify what it should contain.</p>
+<p>To use this method you need to create a new layout file for the PDF and set <code>pdfLayoutName</code> in <code>Settings.json</code> to point to that file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;$schema&#34;</span>: <span style="color:#f1fa8c">&#34;https://altinncdn.no/schemas/json/layout/layoutSettings.schema.v1.json&#34;</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>  <span style="color:#ff79c6">&#34;pages&#34;</span>: {
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#ff79c6">&#34;pdfLayoutName&#34;</span>: <span style="color:#f1fa8c">&#34;myPdfLayout&#34;</span>
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This layout file is configured in exactly the same way as any other layout file, except that not all component types are allowed. The component types that can be used for a PDF layout file are the following:</p>
+<ul>
+<li><code>Summary</code></li>
+<li><code>Group</code></li>
+<li><code>InstanceInformation</code></li>
+<li><code>Header</code></li>
+<li><code>Paragraph</code></li>
+<li><code>Image</code></li>
+<li><code>Panel</code></li>
+</ul>
+
+
+<div class="card adocs-expand" id="include-instance-information">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-include-instance-information"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				Including instance information
+			
+		</a>
+	</div>
+	<div id="expandable-include-instance-information" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>The automatic layout includes a front page with instance information like sender, receiver, date sent, and reference number. This information should also be included in your custom layout. The example below shows how to include this information in exactly same way as in the automatic method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;$schema&#34;</span>: <span style="color:#f1fa8c">&#34;https://altinncdn.no/schemas/json/layout/layout.schema.v1.json&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;data&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;layout&#34;</span>: [
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>      {
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;pdf-instance&#34;</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;InstanceInformation&#34;</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        <span style="color:#ff79c6">&#34;elements&#34;</span>: {
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        <span style="color:#ff79c6">&#34;dateSent&#34;</span>: <span style="color:#ff79c6">true</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        <span style="color:#ff79c6">&#34;sender&#34;</span>: <span style="color:#ff79c6">true</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        <span style="color:#ff79c6">&#34;receiver&#34;</span>: <span style="color:#ff79c6">true</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        <span style="color:#ff79c6">&#34;referenceNumber&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        },
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        <span style="color:#ff79c6">&#34;pageBreak&#34;</span>: {
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>          <span style="color:#ff79c6">&#34;breakAfter&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>        }
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>      }
+</span></span><span style="display:flex;"><span>      ...
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+		</div>
+	</div>
+</div>
+
+
+<div class="card adocs-expand" id="adding-page-breaks">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-adding-page-breaks"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				Adding page breaks
+			
+		</a>
+	</div>
+	<div id="expandable-adding-page-breaks" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>You can specify that a component should start on a new page or that a page break should occur immediately following a component using the <code>pageBreak</code> property. This property can be applied to any component. In the example below it is applied to a header to have a different section start on a new page:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;pdf-header&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Header&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;textResourceBindings&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;This is a new section&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;dataModelBindings&#34;</span>: {},
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;size&#34;</span>: <span style="color:#f1fa8c">&#34;L&#34;</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>  <span style="color:#ff79c6">&#34;pageBreak&#34;</span>: {
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#ff79c6">&#34;breakBefore&#34;</span>: <span style="color:#f1fa8c">&#34;always&#34;</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>    <span style="color:#ff79c6">&#34;breakAfter&#34;</span>: <span style="color:#f1fa8c">&#34;avoid&#34;</span>
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Note</strong>: The value of <code>breakBefore</code> and <code>breakAfter</code> can either be <code>auto</code> (default), <code>always</code>, <code>avoid</code>, or an <a href="/app/development/logic/expressions/">expression</a> returning any of these values.</p>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="card adocs-expand" id="exclude-components-from-groups">
+	<div>
+		<a
+			data-toggle="collapse"
+			href="#expandable-exclude-components-from-groups"
+			role="tab"
+			aria-expanded="false"
+			class="a-collapse-title no-decoration collapsed a-h3"
+		>
+			<span class="a-dropdownCircleArrow">
+			<i class="ai ai-expand ai-sm"><span class="sr-only">Vis/skjul innhold</span></i>
+			</span>
+			
+				Exclude child components from groups
+			
+		</a>
+	</div>
+	<div id="expandable-exclude-components-from-groups" class="a-collapseContent collapse" role="tabpanel">
+		<div class="a-collapseContent-inside">
+			<p>It is possible to exclude child components from a group by using the <code>excludedChildren</code> property on a <code>Summary</code> component pointing to a <code>Group</code> component. This is done by adding the child component id to the list of excluded components like in the following example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;pdf-group-summary&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Summary&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;componentRef&#34;</span>: <span style="color:#f1fa8c">&#34;some-group-component&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;pageRef&#34;</span>: <span style="color:#f1fa8c">&#34;Form&#34;</span>,
+</span></span><span style="display:flex; background-color:#3d3f4a"><span>  <span style="color:#ff79c6">&#34;excludedChildren&#34;</span>: [<span style="color:#f1fa8c">&#34;some-child-component&#34;</span>]
+</span></span><span style="display:flex;"><span>},
+</span></span></code></pre></div>
+		</div>
+	</div>
+</div>
+<h2 id="preview-in-the-browser">Preview in the browser</h2>
+<div class="notices warning" >This feature only applies to version 7.5 and higher.</div>
+<p>It is possible to get a preview of what the generated PDF will look like in the browser while you are developing. Follow the instructions below:</p>
+<ol>
+<li><strong>Important</strong>: Use Google Chrome to preview the PDF.<br>The PDF generator uses a version of Chrome to generate the PDF, and other browsers will not produce the correct result.</li>
+<li>In the app you want to preview, add <code>?pdf=preview</code> to the end of the URL in the browser and hit enter.<br>This will continuously run the PDF layout in the background so that you can get an instant preview. You may expecience slower performance when in this mode.</li>
+<li>When you are ready to preview, use Chrome&rsquo;s built in print function (<code>Ctrl+P</code>/<code>⌘+P</code>) to get a preview of what the PDF document will look like.</li>
+</ol>
 
 
 <footer class=" footline" ></footer>

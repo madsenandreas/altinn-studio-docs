@@ -333,9 +333,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Altinn Roles</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roles</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1156,13 +1156,33 @@ if(host != "localhost")
           </div><div id="body-inner"><h1 class="a-fontBold">What&#39;s new</h1>
               <p class="a-leadText" id="leadText">Overview of changes introduced in v2 of deployment.</p><h2>On this page:</h2><nav id="TableOfContents">
   <ul>
+    <li><a href="#250">2.5.0</a></li>
+    <li><a href="#240">2.4.0</a></li>
     <li><a href="#230">2.3.0</a></li>
     <li><a href="#220">2.2.0</a></li>
     <li><a href="#210">2.1.0</a></li>
     <li><a href="#200">2.0.0</a></li>
   </ul>
-</nav><h2 id="230">2.3.0</h2>
+</nav><h2 id="250">2.5.0</h2>
 <h3 id="changes-introduced">Changes introduced</h3>
+<ul>
+<li>Raise value resource request memory to 256Mi</li>
+</ul>
+<h2 id="240">2.4.0</h2>
+<h3 id="changes-introduced-1">Changes introduced</h3>
+<ul>
+<li>
+<p>Remove hard values linkerd resources</p>
+</li>
+<li>
+<p>Add help text for extra annotations</p>
+</li>
+<li>
+<p>Add if linkerd add annotation cluster-autoscaler.kubernetes.io/safe-to-evict: true</p>
+</li>
+</ul>
+<h2 id="230">2.3.0</h2>
+<h3 id="changes-introduced-2">Changes introduced</h3>
 <ul>
 <li>Upgraded HorizontalPodAutoscaler from version <em>autoscaling/v2beta2</em> to <em>autoscaling/v2</em></li>
 </ul>
@@ -1172,7 +1192,7 @@ Apps clusters will eventually be upgraded and deployment of apps using old chart
 </div>
 <p><a href="https://github.com/Altinn/altinn-studio-charts/releases/tag/deployment-2.3.0">View release on Github</a></p>
 <h2 id="220">2.2.0</h2>
-<h3 id="changes-introduced-1">Changes introduced</h3>
+<h3 id="changes-introduced-3">Changes introduced</h3>
 <ul>
 <li>Make it possible to at custom annotations to pods in values.yaml</li>
 </ul>
@@ -1185,7 +1205,7 @@ Apps clusters will eventually be upgraded and deployment of apps using old chart
 <h2 id="210">2.1.0</h2>
 <div class="notices warning" >Enabling of liveness and/or readiness probe requires that your application is running 
 version 4.30.0 or higher of the Altinn.App.* nuget packages.</div>
-<h3 id="changes-introduced-2">Changes introduced</h3>
+<h3 id="changes-introduced-4">Changes introduced</h3>
 <ul>
 <li>Default CPU og memory requested per pod is reduced to 50m and 128Mi, respectively.</li>
 <li>Configurable liveness and readiness probes are available. Default behavior is that this is disabled.</li>
@@ -1241,7 +1261,7 @@ version 4.30.0 or higher of the Altinn.App.* nuget packages.</div>
 <h2 id="200">2.0.0</h2>
 <div class="notices warning" >Upgrading to 2.0.0 from 1.x.x leads to a short downtime during deployment. Subsequent deployments will run as normal.</div>
 <p>If your apps <em>deployment</em> folder contains the <em>templates</em> folder please follow the <a href="../../migration">migration guide</a>.</p>
-<h3 id="changes-introduced-3">Changes introduced</h3>
+<h3 id="changes-introduced-5">Changes introduced</h3>
 <ul>
 <li>Deployment renamed to <old-name>-v2 due to changes in selector fields (field is immutable) <em><strong>WARNING</strong></em> leads to downtime during first deploy</li>
 <li>Add resource requests to all deployments</li>

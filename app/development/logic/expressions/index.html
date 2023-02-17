@@ -1177,8 +1177,8 @@ definere om et skjemafelt skal vises eller skjules, om feltet skal være påkrev
 <a href="https://github.com/Altinn/app-frontend-react/releases/tag/v3.54.0">3.54.0</a> eller nyere. Bruker man denne versjonen
 (eller siste hovedversjon) har man mulighet til å benytte dynamiske uttrykk til <a href="#bruksomr%C3%A5der">flere bruksområder</a>.</p>
 <p>Fra versjon <code>7.2.0</code> av <a href="../../../maintainance/dependencies#nuget">nuget-pakkene</a> er også uttrykkene støttet i backend.
-Det gjør at serveren vil kunne evaluere uttrykkene og fjerne data som potensielt er lagret i instansen og er knyttet
-til felter/komponenter som i ettertid er skjult. Disse dataene kan da fjernes fra datamodellen når instansen sendes inn.
+Det gjør at serveren vil kunne evaluere uttrykkene og fjerne data ved innsending som potensielt er lagret
+i <a href="../../data/data-model">datamodellen</a> og er knyttet til felter/komponenter som i ettertid er skjult.
 Merk at dette bare gjelder data i datamodellen som er knyttet til skjulte komponenter - data i datamodellen som ikke
 er knyttet til komponenter (og dermed implisitt skjult for brukeren) vil ikke fjernes automatisk.</p>
 <p>Det gjør det også mulig å unnlate å sende inn data som ellers er tilknyttet påkrevde felter - dersom disse påkrevde
@@ -1442,7 +1442,7 @@ applikasjon. Der hentes konteksten ut fra hvor uttrykket er definert i layout-fi
 <p>Se for deg en <a href="../../ux/fields/grouping/repeating">repeterende gruppe</a> for personer med to felt; <code>navn</code> og <code>alder</code>.
 Gitt dette uttrykket:</p>
 <p><code>[&quot;component&quot;, &quot;alder&quot;]</code></p>
-<p>Hva vil alderen være? Det vil være kunne variere etter hvilken gruppe som evaluerer
+<p>Hva vil alderen være? Det vil kunne variere etter hvilken gruppe som evaluerer
 uttrykket. Har man har to grupper/rader vil både <code>navn</code>- og <code>alder</code>-komponentene finnes to ganger hver. Disse vil få
 ID-ene <code>navn-0</code> og <code>alder-0</code> (for den første raden) og <code>navn-1</code> og <code>alder-1</code> (for den andre raden). Du kan lete etter
 den nærmeste alder-komponenten (den som tilhører samme gruppe/rad som <code>navn</code>-komponenten) ved å spesifisere en
@@ -2167,7 +2167,7 @@ datamodellen med <code>[&quot;dataModel&quot;, null]</code>. I <code>concat</cod
 <td><code>3</code>, <code>-8</code>, <code>71254</code></td>
 </tr>
 <tr>
-<td>Flyttall med eller uten negativt fortegn, med punktum istedenfor komma</td>
+<td>Desimaltall med eller uten negativt fortegn</td>
 <td><a href="#tall">Tall</a></td>
 <td><code>3.14</code>, <code>-33.0</code>, <code>123.123</code></td>
 </tr>
@@ -2185,13 +2185,13 @@ datamodellen med <code>[&quot;dataModel&quot;, null]</code>. I <code>concat</cod
 </table>
 <p>Alle andre strenger enn de i tabellen over vil gi feilmelding om de blir forsøkt konvertert til andre typer.</p>
 <h3 id="tall">Tall</h3>
-<p>Tallverdier gjelder positive og negative heltall og flyttall (tall med komma). Noen strenger blir også konvertert
+<p>Tallverdier gjelder positive og negative heltall og desimaltall. Noen strenger blir også konvertert
 automatisk til en tallverdi, som vist i tabellen til strenger over. For at konvertering av en streng til et tall
 skal fungere, må strengen oppfylle følgende:</p>
 <ul>
 <li>Strengen inneholder bare et tall, ingen annen tekst foran/bak tallet</li>
 <li>Negativt fortegn (<code>-</code>) kan brukes, men positivt fortegn (<code>+</code>) støttes ikke.</li>
-<li>Flyttall må representeres med punktum, ikke komma.</li>
+<li>Desimaltall må representeres med punktum, ikke komma.</li>
 <li>Tusenskilletegn eller annen tallformattering støttes ikke.</li>
 </ul>
 <p>Alle andre strenger vil gi en feilmelding om de blir forsøkt konvertert til et tall. Forsøker man å konvertere en

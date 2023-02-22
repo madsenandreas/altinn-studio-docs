@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/nb/app/"><span>Lage apper</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/"><span>Lage apper</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/getting-started/"><span>Kom i gang</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/design/guidelines/wcag/"><span>Tilgjengelighet</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/"><span>Utvikling</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/"><span>Utvikling</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -323,7 +323,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/logic/validation/"><span>Validering</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/"><span>Konfigurasjon</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/"><span>Konfigurasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/messagebox/"><span>Meldingsboks</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -331,13 +331,13 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/development/configuration/messagebox/hide_instances/"><span>Skjule instanser</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/"><span>Autorisasjon</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/"><span>Autorisasjon</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/authorization/rules/"><span>Regelbibliotek</span></a></li>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/"><span>Veiledning</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/"><span>Veiledning</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Roller</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/"><span>Roller</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/app/development/configuration/authorization/guidelines_authorization/roles_and_rights/roles_altinn/"><span>Altinn Roller</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -443,9 +443,9 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/app/launched-apps/digdir/be-om-api-nokkel/"><span>Tilgang til REST API</span></a></li></ul></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/nb/api/"><span>API</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/apps/"><span>App</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/metadata/"><span>Metadata</span></a></li>
       <li class="dd-item">
@@ -642,7 +642,7 @@ if(host != "localhost")
 <p>Selv om standard innstillingene for den nye tjenesten skal være nok for de fleste applikasjoner kan de overstyres ved å legge til en PdfGeneratorSettings seksjon i <em>appsettings.json</em> (standard innstillinger vises under).</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;PdfGeneratorSettings&#34;</span>: {
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;ServiceEndpointUri&#34;</span>: <span style="color:#f1fa8c">&#34;https://{org}.apps.{hostName}/{appId}/#/instance/{instanceId}&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;AppPdfPageUriTemplate&#34;</span>: <span style="color:#f1fa8c">&#34;http://{hostName}/{appId}/#/instance/{instanceId}?pdf=1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;AppPdfPageUriTemplate&#34;</span>: <span style="color:#f1fa8c">&#34;https://{org}.apps.{hostName}/{appId}/#/instance/{instanceId}?pdf=1&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;WaitForSelector&#34;</span>: <span style="color:#f1fa8c">&#34;#readyForPrint&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;WaitForTime&#34;</span>: <span style="color:#bd93f9">5000</span>
 </span></span><span style="display:flex;"><span>  }

@@ -1164,7 +1164,7 @@ if(host != "localhost")
 <p>While the default settings for the new service should be enough for most applications they can be overridden by adding a PdfGeneratorSettings section in <em>appsettings.json</em> (default settings shown below).</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;PdfGeneratorSettings&#34;</span>: {
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;ServiceEndpointUri&#34;</span>: <span style="color:#f1fa8c">&#34;https://{org}.apps.{hostName}/{appId}/#/instance/{instanceId}&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;AppPdfPageUriTemplate&#34;</span>: <span style="color:#f1fa8c">&#34;http://{hostName}/{appId}/#/instance/{instanceId}?pdf=1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;AppPdfPageUriTemplate&#34;</span>: <span style="color:#f1fa8c">&#34;https://{org}.apps.{hostName}/{appId}/#/instance/{instanceId}?pdf=1&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;WaitForSelector&#34;</span>: <span style="color:#f1fa8c">&#34;#readyForPrint&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;WaitForTime&#34;</span>: <span style="color:#bd93f9">5000</span>
 </span></span><span style="display:flex;"><span>  }

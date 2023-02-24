@@ -445,7 +445,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/nb/api/apps/"><span>App</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/metadata/"><span>Metadata</span></a></li>
       <li class="dd-item">
@@ -655,8 +655,13 @@ if(host != "localhost")
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>Dette er __fet tekst__ laget med understrek.
 </span></span><span style="display:flex;"><span>Dette er også **fet tekst**, men laget med stjerner!
 </span></span></code></pre></div><h3 id="lenker">Lenker</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>Trykk [<span style="color:#ff79c6">her</span>](<span style="color:#50fa7b">https://altinn.no</span>) for å komme til Altinn.
-</span></span></code></pre></div><h3 id="overskrifter">Overskrifter</h3>
+<p>Enkle lenker kan bruke markdown-syntaks:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>Åpne [<span style="color:#ff79c6">forsiden av Altinn</span>](<span style="color:#50fa7b">https://altinn.no</span>).
+</span></span></code></pre></div><p>Om man skal sette flere egenskaper kan man også bruke HTML-syntaks:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Gå til &lt;<span style="color:#ff79c6">a</span> <span style="color:#50fa7b">href</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;https://altinn.no&#34;</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;same-window&#39;</span>&gt;forsiden av Altinn&lt;/<span style="color:#ff79c6">a</span>&gt;.
+</span></span></code></pre></div><p>Ved å spesifisere at lenken åpner i samme vindu, vil brukeren navigeres bort fra skjemaet når lenken åpnes.
+Tilstanden til skjemaet lagres i instansen, om brukeren vender tilbake senere.</p>
+<h3 id="overskrifter">Overskrifter</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="font-weight:bold"># Dette er en stor heading (H1)
 </span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span><span style="font-weight:bold">## Dette er en litt mindre heading (H2)
 </span></span></span><span style="display:flex;"><span><span style="font-weight:bold">### Og enda litt mindre (H3)

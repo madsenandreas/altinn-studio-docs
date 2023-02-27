@@ -4256,6 +4256,20 @@
 	"content": "Altinn.studio is under heavy development and errors are most likely to come with it.\rIf the error is not covered here, please submit a bug report.\nCheck out Flight Rules. Check out known issues: Altinn Studio Front-end App libraries "
 },
 {
+	"uri": "https://docs.altinn.studio/technology/solutions/altinn-platform/ttplog/",
+	"title": "TTP Log",
+	"tags": ["platform", "ttplog"],
+	"description": "The TTP log is responsible for logging TTP events",
+	"content": "Authenticaiton Events Loging of authentication events is described here\nAuthorization Events "
+},
+{
+	"uri": "https://docs.altinn.studio/tags/ttplog/",
+	"title": "ttplog",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://docs.altinn.studio/technology/tools/typescript/",
 	"title": "TypeScript",
 	"tags": ["tech", "programming"],

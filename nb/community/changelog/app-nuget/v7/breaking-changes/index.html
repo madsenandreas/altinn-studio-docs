@@ -445,7 +445,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/nb/api/"><span>API</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
-        <a href="/nb/api/apps/"><span>App</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/nb/api/apps/"><span>App</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/nb/api/apps/metadata/"><span>Metadata</span></a></li>
       <li class="dd-item">
@@ -1114,7 +1114,7 @@ The class should look something like this after the interface is implemented:
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></li>
-<li>Move code from <code>RunProcessTaskEnd</code> to the method <code>HandleTaskEnd</code> in the class implementing IProcessTaskEnd</li>
+<li>Move code from <code>RunProcessTaskEnd</code> to the method <code>End</code> in the class implementing IProcessTaskEnd</li>
 <li>Register your custom implementation of <code>IProcessTaskEnd</code> in the method <code>RegisterCustomAppServices</code> inside <code>App/Program.cs</code>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>  <span style="color:#ff79c6">void</span> RegisterCustomAppServices(IServiceCollection services, IConfiguration config)
 </span></span><span style="display:flex;"><span> {

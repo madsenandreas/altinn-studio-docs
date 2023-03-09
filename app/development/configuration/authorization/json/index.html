@@ -113,7 +113,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -213,7 +213,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -315,7 +315,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -323,7 +323,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1148,7 +1148,16 @@ if(host != "localhost")
                 <span class="links"><a href='/app/'>Create apps</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/'>Development</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/configuration/'>Configuration</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/development/configuration/authorization/'>Authorization</a> <span class='adocs-breadcrumb-divider'> / </span> JSON</span>
             </div>
           </div><div id="body-inner"><h1 class="a-fontBold">Regelbibliotek JSON - UNDER ARBEID!</h1>
-              <p class="a-leadText" id="leadText">Bibliotek av autorisasjonsregler som kan brukes i en app. Husk å bytte ut tags ([ORG], [APP], [RULE_ID]) med din egen data.</p>
+              <p class="a-leadText" id="leadText">Bibliotek av autorisasjonsregler som kan brukes i en app. Husk å bytte ut tags ([ORG], [APP], [RULE_ID]) med din egen data.</p><h2>On this page:</h2><nav id="TableOfContents">
+  <ul>
+    <li><a href="#org-can-instantiate-an-instance-of-orgapp">[ORG] can instantiate an instance of [ORG]/[APP]</a></li>
+    <li><a href="#user-with-role-regna-can-read-instances-of-orgapp-when-it-is-in-task_1">User with role REGNA can read instances of [ORG]/[APP] when it is in Task_1</a></li>
+    <li><a href="#org-can-write-to-an-instance-of-orgapp-in-any-task-or-event">[ORG] can write to an instance of [ORG]/[APP] in any task or event</a></li>
+    <li><a href="#user-with-role-regna-or-dagl-can-confirm-instances-of-orgapp-when-it-is-in-task_2">User with role REGNA or DAGL can confirm instances of [ORG]/[APP] when it is in Task_2</a></li>
+    <li><a href="#user-with-role-regna-can-read-instanes-of-orgapp-when-it-is-in-endevent_1">User with role REGNA can read instanes of [ORG]/[APP] when it is in EndEvent_1</a></li>
+    <li><a href="#rule-that-defines-that-org-can-complete-an-instance-of-orgapp-which-state-is-at-the-end-event">Rule that defines that [ORG] can complete an instance of [ORG]/[APP] which state is at the end event.</a></li>
+  </ul>
+</nav>
 
 
 

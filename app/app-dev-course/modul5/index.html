@@ -1186,15 +1186,14 @@ if(host != "localhost")
 	<div id="expandable-process_description" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>An Altinn App has a process flow that describes the different steps in the flow.
-The standard flow for a newly created application consists of one task; one fill out step.</p>
+The standard flow for a newly created application consists of one task; the fill out step.</p>
 <p><img src="/app/app-dev-course/modul5/default-process.png" alt="Standard process flow illustrated"></p>
 <p>Your task is to expand the standard process flow with a confirmation step as illustrated below.
 The confirmation page is added automatically when the step is added to the BPMN file.</p>
-<p><img src="/app/app-dev-course/modul5/updated-process.png" alt="Updated process flow illsutrated"></p>
+<p><img src="/app/app-dev-course/modul5/updated-process.png" alt="Updated process flow illustrated"></p>
 <div class="notices info" ><p><a href="../../development/configuration/process">Standard process flow is available on GitHub</a>.
 Can you find the one that matches the flow we wish to achieve here?</p>
-<p>If you want an extra challenge, you can edit the process flow manually or in a BPMN editor,
-and rather use <a href="../../development/configuration/process/Data_Confirmation_Process.bpmn">the template on process flow with data and confirmation step</a> as a solution.</p>
+<p>If you want an extra challenge you can edit the process flow manually or in a BPMN editor, using <a href="../../development/configuration/process/Data_Confirmation_Process.bpmn">the template for process flow with data and confirmation step</a> as an inspiration.</p>
 </div>
 <h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
 <p>At this point in the workflow, the user should be able to:</p>
@@ -1241,8 +1240,8 @@ and rather use <a href="../../development/configuration/process/Data_Confirmatio
 	</div>
 	<div id="expandable-authorization" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<p>Your application&rsquo;s Policy file is adapted to a standard process flow.
-Update the policy file so that it&rsquo;s authorization rules cover the new process step.</p>
+			<p>Your application&rsquo;s policy file is adapted to a standard process flow.
+Update the policy file so that the authorization rules cover the new process step.</p>
 <h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
 <ul>
 <li>The same role requirements should apply to both fill out and confirm an instance.</li>
@@ -1292,7 +1291,7 @@ Update the policy file so that it&rsquo;s authorization rules cover the new proc
 </ul>
 <h3 id="knowledge-check">Knowledge check</h3>
 <ul>
-<li>Which change would you suggest for the client to be able to meet this requirement without adding custom validation at this step?</li>
+<li>Which change could be made to meet this requirement without adding custom validation at this step?</li>
 </ul>
 
 		</div>
@@ -1337,11 +1336,10 @@ Før du sender inn vil vi anbefale å se over svarene dine. Du kan ikke endre sv
 </div>
 <h2 id="summary">Summary</h2>
 <p>In this module you have expanded the application with a confirmation step, customized the view and implemented validation and authorization rules attached to the process step.</p>
-<p>The service should be able to run on your local computer with local test
-and you should be able to test the new process step and confirm that the view is as desired.</p>
+<p>The service should be able to run on your local computer with local test and you should be able to test the new process step and confirm that the view is as desired.</p>
 <p><strong>Remember to <em>push</em> your local changes, so that they are available in Altinn Studio when you&rsquo;re happy with them</strong></p>
 <h3 id="solution">Solution</h3>
-<p>If you did not manage to complete all the steps, we have an <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/5">example of a solution</a> that you can use as inspiration.</p>
+<p>If you did not manage to complete all the steps, we have an <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/5">example solution</a> that you can use as inspiration.</p>
 <figure><a href="/app/app-dev-course/modul5/bekreftelsesside-screenshot.png"><img src="/app/app-dev-course/modul5/bekreftelsesside-screenshot.png" alt="Screenshot of confirmation page" title="Screenshot of confirmation page" /></a><figcaption><h4>Screenshot of confirmation page</h4></figcaption></figure>
 
 

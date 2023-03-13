@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Description of the municipalitys requirements and wishes for the service." />
+    <meta name="description" content="Description of the municipality&#39;s requirements and wishes for the service." />
 <meta name="altinn_pagedir" class="elastic" content="app\app-dev-course\case\" />
 <meta name="altinn_title" class="elastic" content="Case description" />
 
@@ -1154,10 +1154,10 @@ if(host != "localhost")
                 <span class="links"><a href='/app/'>Create apps</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/app-dev-course/'>Intro course</a> <span class='adocs-breadcrumb-divider'> / </span> Case</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/apps">apps</a><a class="label label-default" href="https://docs.altinn.studio/tags/case">case</a><a class="label label-default" href="https://docs.altinn.studio/tags/training">training</a></div><div id="body-inner"><h1 class="a-fontBold">Case description</h1>
-              <p class="a-leadText" id="leadText">Description of the municipalitys requirements and wishes for the service.</p><p>Sogndal is in need of more young residents and wishes to become a desirable 
-municipality for young adults and others who wishes to settle down.</p>
+              <p class="a-leadText" id="leadText">Description of the municipality&#39;s requirements and wishes for the service.</p><p>Sogndal is in need of more young residents and wishes to become a desirable 
+municipality for young adults and others who wish to settle down.</p>
 <p>That is why they wish to create a service in Altinn aimed at people 
-who is moving to Sogndal over the next six months.</p>
+who are moving to Sogndal over the next six months.</p>
 <p>By collecting data about newcomers at an early point, the municipality may facilitate 
 and customize the services to the newcomers before the first moving box has even been packed.</p>
 <p>Sogndal has a few requirements for the services described in the sections below.</p>
@@ -1190,7 +1190,7 @@ and customize the services to the newcomers before the first moving box has even
 of repositories, Sogndal keeps in Altinn Studio.</p>
 </li>
 <li>
-<p>There are no preliminary plans for yearly revisions of the app,
+<p>There are currently no plans for yearly revisions of the app,
 so the year does not need to be taken into account.</p>
 </li>
 </ul>
@@ -1224,9 +1224,9 @@ so the year does not need to be taken into account.</p>
 			<ul>
 <li>Name and age of the person who is a newcomer
 <ul>
-<li>Firstname</li>
-<li>Middlename (optional)</li>
-<li>Lastname</li>
+<li>First name</li>
+<li>Middle name (optional)</li>
+<li>Last name</li>
 <li>Age</li>
 </ul>
 </li>
@@ -1273,7 +1273,7 @@ so the year does not need to be taken into account.</p>
 			<ul>
 <li>All input fields should have descriptive labels that clarify what should be filled in.</li>
 <li>The application must be available in bokmål, nynorsk and english.
-In a first edition it is sufficient that only one of these languages is available.</li>
+For the first edition it is sufficient that only one of these languages is available.</li>
 <li>It is important that the title of the application sounds good and is descriptive of the service.</li>
 </ul>
 
@@ -1338,8 +1338,8 @@ In a first edition it is sufficient that only one of these languages is availabl
 	<div id="expandable-dynamic-tracks-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>A user who does not meet the requirements for the form should be stopped as early as possible in the process.</p>
-<p>On the information page, the user should be able to state whether the form applies to them or not.</p>
-<p>How this is done is optional, and the field <code>Innflytter.KanBrukeSkjema</code> in the datamodel is possible to use for this purpose.</p>
+<p>On the information page the user should be able to select whether or not the form applies to them.</p>
+<p>How this is done is optional, the field <code>Innflytter.KanBrukeSkjema</code> in the datamodel can be used for this purpose.</p>
 <p>Based on the answer, the user will be sent to either <em>Track 1</em> or <em>Track 2</em>.</p>
 <h3 id="track-1">Track 1</h3>
 <ul>
@@ -1392,7 +1392,7 @@ In a first edition it is sufficient that only one of these languages is availabl
 <li>Age: Innflytter.Alder</li>
 </ul>
 </li>
-<li>It should <strong>not</strong> be possible to change the prefilled name and age</li>
+<li>It should <strong>not</strong> be possible to change any of the prefilled names and the age</li>
 <li>It should be possible to change the prefilled email and phone number</li>
 </ul>
 
@@ -1605,10 +1605,10 @@ postal code <code>4619</code> as a previous residence should <strong>NOT</strong
 	</div>
 	<div id="expandable-dataprocessing-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<p>One of the data processors of Sogndal is sick of manually correcting a street address that often is being incorrectly entered by newcomers.
-Therefore, we wish to programmatic correct this while the user is filling out the app.</p>
-<p>If the user enters <code>Sesame Street 1</code> in the field <code>Innflytter.Adresse.Gateadresse</code>, this should automatically be corrected to <code>Sesamsgate 1</code>.
-In all other cases, the field should remain the same.</p>
+			<p>There is an address in Sogndal which is often misspelled by newcomers which leads to case workers having to spend a lot of time manually correcting it.
+Therefore, we want the app to automatically fix this mistake when the misspelled address is detected.</p>
+<p>If the user enters <code>Sesame Street 1</code> in the field <code>Innflytter.Adresse.Gateadresse</code>, it should automatically be corrected to <code>Sesamsgate 1</code>.
+For all other addresses the field should remain the same.</p>
 
 		</div>
 	</div>

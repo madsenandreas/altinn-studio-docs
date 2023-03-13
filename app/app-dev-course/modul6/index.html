@@ -1239,8 +1239,8 @@ should <strong>NOT</strong> be allowed to move to Sogndal. In this case, an erro
 </ul>
 <h3 id="knowledge-check">Knowledge check</h3>
 <ul>
-<li>When are validations server-side running?</li>
-<li>Why should validations added on the client side also be duplicated server-side?</li>
+<li>When are server-side validations run?</li>
+<li>Why is it not enough to only perform validation on the client-side?</li>
 </ul>
 
 		</div>
@@ -1268,10 +1268,10 @@ should <strong>NOT</strong> be allowed to move to Sogndal. In this case, an erro
 	<div id="expandable-processing" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
-<p>One of the data processors of Sogndal is sick of manually correcting a street address that often is being incorrectly entered by newcomers.
-Therefore, we wish to programmatic correct this while the user is filling out the app.</p>
-<p>If the user enters <code>Sesame Street 1</code> in the field <code>Innflytter.Adresse.Gateadresse</code>, this should automatically be corrected to <code>Sesamsgate 1</code>.
-In all other cases, the field should remain the same.</p>
+<p>There is an address in Sogndal which is often misspelled by newcomers which leads to case workers having to spend a lot of time manually correcting it.
+Therefore, we want the app to automatically fix this mistake when the misspelled address is detected.</p>
+<p>If the user enters <code>Sesame Street 1</code> in the field <code>Innflytter.Adresse.Gateadresse</code>, it should automatically be corrected to <code>Sesamsgate 1</code>.
+For all other addresses the field should remain the same.</p>
 <h3 id="useful-documentation">Useful documentation</h3>
 <ul>
 <li><a href="/app/development/logic/dataprocessing/">Data processing</a></li>
@@ -1280,7 +1280,7 @@ In all other cases, the field should remain the same.</p>
 <h3 id="knowledge-check">Knowledge check</h3>
 <ul>
 <li>When is data processing running?</li>
-<li>What seperates <code>ProcessDataWrite</code> and <code>ProcessDataRead</code>?</li>
+<li>What separates <code>ProcessDataWrite</code> and <code>ProcessDataRead</code>?</li>
 <li>What is the difference between DataProcessing and Calculations?</li>
 </ul>
 
@@ -1292,7 +1292,7 @@ In all other cases, the field should remain the same.</p>
 We have also had a look at how to set up custom <strong>validations</strong> in the backend for cases that will not be defined as a part of restrictions in the data model.
 Lastly, we have looked at how to set up <strong>data processing</strong> that enables manipulation of data runtime.</p>
 <h3 id="solution">Solution</h3>
-<p>If you did not manage to complete all the steps, we have an <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/6">example of a solution</a> that you can use as inspiration.</p>
+<p>If you did not manage to complete all the steps, we have an <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/6">example solution</a> that you can use as inspiration.</p>
 <figure><a href="/app/app-dev-course/modul6/data-rep-grupper-screenshot.png"><img src="/app/app-dev-course/modul6/data-rep-grupper-screenshot.png" alt="Screenshot of data collecting page with repeating groups" title="Screenshot of data collecting page with repeating groups" /></a><figcaption><h4>Screenshot of data collecting page with repeating groups</h4></figcaption></figure>
 
 

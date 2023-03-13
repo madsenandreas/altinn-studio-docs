@@ -1154,7 +1154,7 @@ if(host != "localhost")
                 <span class="links"><a href='/app/'>Create apps</a> <span class='adocs-breadcrumb-divider'> / </span> <a href='/app/app-dev-course/'>Intro course</a> <span class='adocs-breadcrumb-divider'> / </span> Module 4</span>
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/apps">apps</a><a class="label label-default" href="https://docs.altinn.studio/tags/training">training</a><a class="label label-default" href="https://docs.altinn.studio/tags/options">options</a><a class="label label-default" href="https://docs.altinn.studio/tags/code-lists">code lists</a><a class="label label-default" href="https://docs.altinn.studio/tags/dynamics">dynamics</a></div><div id="body-inner"><h1 class="a-fontBold">Module 4</h1>
-              <p class="a-leadText" id="leadText">Add code lists manually, progmatic and dynamically</p><p>In this module you&rsquo;re expanding the application you made in the previous modules to support even more of the <a href="../case/#requirements-from-the-municipality">requirements of the municipality of Sogndal</a>.</p>
+              <p class="a-leadText" id="leadText">Add code lists manually, progmatic and dynamically</p><p>In this module you&rsquo;re expanding the application you made in the previous modules to support more of the <a href="../case/#requirements-from-the-municipality">requirements of the municipality of Sogndal</a>.</p>
 <p><strong>Topics covered in this module:</strong></p>
 <ul>
 <li>Code lists/Options</li>
@@ -1187,16 +1187,9 @@ The answer options are referred to as <em>code lists</em> or <em>options</em>.</
 <p>In Altinn Studio this is supported in the form of radio buttons, checkboxes and dropdown lists.</p>
 <div class="notices info" ><p>There are three ways to set up code lists in Altinn today</p>
 <ol>
-<li>
-<p>Directly on the component through Altinn Studio or manually in <em>FormLayout.json</em>*</p>
-</li>
-<li>
-<p>In a static json-file referred to in the component</p>
-</li>
-<li>
-<p>Programmatic in the application logic</p>
-<p>* only available on radio buttons and check boxes</p>
-</li>
+<li>Directly on the component through Altinn Studio or manually in <em>FormLayout.json</em>*</li>
+<li>In a static json-file referred to in the component</li>
+<li>Programmatically through application logic (only available for radio buttons and check boxes)</li>
 </ol>
 </div>
 <p>In this task, you will get to try out all three ways to set up a code list.</p>
@@ -1207,7 +1200,7 @@ The answer options are referred to as <em>code lists</em> or <em>options</em>.</
 <p>Create a new form page to collect data about working conditions</p>
 </li>
 <li>
-<p>Set up a <strong>radio button</strong> component for <em>Sector</em>. Create the answer options <code>Offentlig</code> and <code>private</code> manually.</p>
+<p>Set up a <strong>radio button</strong> component for <em>Sector</em>. Create the answer options <code>Offentlig</code> and <code>Privat</code> manually.</p>
 </li>
 <li>
 <p>Set up a <strong>check box</strong> component for <em>Industry</em>.
@@ -1299,11 +1292,9 @@ and <em>Pull</em> the changes to your local development environment.</p>
 	<div id="expandable-dynamic-expandable" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>In some cases the values displayed in a code list may be attached to a different field in the form.</p>
-<p>The municipality of Sogndal wishes that the list of industries to choose from is personalised to what sector you work in.</p>
-<p>Read through the requirements from the municipality to see if you can help them.</p>
+<p>The municipality of Sogndal wants the list of industries to choose from to be personalised based on which sector the user works in.</p>
 <h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
-<p>We want the user to be presented with a different set of options for the industry choice
-based on which sector they are in.</p>
+<p>We want the user to be presented with a different set of options for the industry choice based on which sector they work in.</p>
 <ul>
 <li>Private sector: <a href="../industry.json">Standard list of industries</a></li>
 <li>Public sector: <code>State</code> and <code>Municipality</code></li>
@@ -1356,7 +1347,7 @@ Se en oversikt over våre ledige stillinger her.
 <a href="https://sogndal.easycruit.com/index.html">https://sogndal.easycruit.com/index.html</a></p>
 </li>
 </ul>
-<p>The text and link should <strong>only</strong> be visible if the user has chosen <code>IKT (data/it)</code>. In all other cases this will be hidden.</p>
+<p>The text and link should <strong>only</strong> be visible if the user has chosen <code>IKT (data/it)</code>.</p>
 <h3 id="useful-documentation">Useful documentation</h3>
 <ul>
 <li><a href="/app/development/logic/dynamic/#add-or-edit-functions-for-dynamics">Add functions for dynamics</a></li>
@@ -1364,7 +1355,7 @@ Se en oversikt over våre ledige stillinger her.
 </ul>
 <h3 id="knowledge-check">Knowledge check</h3>
 <ul>
-<li>If you add a new function to <code>RuleHandlerHelper</code> - where will these functions run?
+<li>If you add a new function to <code>RuleHandlerHelper</code> - where will it run?
 <ul>
 <li>Would dynamic work without this defined?</li>
 </ul>
@@ -1376,12 +1367,11 @@ Se en oversikt over våre ledige stillinger her.
 	</div>
 </div>
 <h2 id="summary">Summary</h2>
-<p>In this module you have set up a dropdown list, radio buttons and checkboxes and added values for these components manually, programmatically and dynamically.</p>
-<p>The service should run on your local computer with local test
-and you should be able to validate that the components present expected data values.</p>
+<p>In this module you have set up the dropdown list, radio button and checkbox components and added options for them manually, programmatically and dynamically.</p>
+<p>The service should run on your local computer with local test and it should be possible to select the expected option from each component.</p>
 <p><strong>Remember to <em>push</em> your local changes, so that they are available in Altinn Studio when you&rsquo;re happy with them</strong></p>
 <h3 id="solution">Solution</h3>
-<p>If you did not manage to complete all the steps, we have an <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/4">example of a solution</a> that you can use as inspiration.</p>
+<p>If you did not manage to complete all the steps, we have an <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/4">example solution</a> that you can use as inspiration.</p>
 <p><img src="/app/app-dev-course/modul4/arbeidsopplysninger-privat-screenshot.png" alt="Screenshot of collection of work information for private sector" title="Screenshot of collection of work information for private sector">
 <img src="/app/app-dev-course/modul4/arbeidsopplysninger-offentlig-screenshot.png" alt="Screenshot of collection of work information for public sector" title="Screenshot of collection of work information for public sector"></p>
 

@@ -1155,14 +1155,14 @@ if(host != "localhost")
             </div>
           </div><div id="tags"><a class="label label-default" href="https://docs.altinn.studio/tags/apps">apps</a><a class="label label-default" href="https://docs.altinn.studio/tags/training">training</a><a class="label label-default" href="https://docs.altinn.studio/tags/datamodel">datamodel</a><a class="label label-default" href="https://docs.altinn.studio/tags/localtest">localtest</a><a class="label label-default" href="https://docs.altinn.studio/tags/texts">texts</a></div><div id="body-inner"><h1 class="a-fontBold">Module 1</h1>
               <p class="a-leadText" id="leadText">Create app in Studio, set up local development environment and local test</p><p>In this module you will, based on the requirements of the municipality of Sogndal,
-be setting up the first page of your application for newcomers and verify that everything looks as expected locally.</p>
+set up the first page of your application for newcomers and verify that everything looks as expected locally.</p>
 <p><strong>Topics covered in this module:</strong></p>
 <ul>
 <li>Create new application</li>
 <li>Add data model and connect fields</li>
 <li>Develop app in local developing environment</li>
 <li>Editing of text resources</li>
-<li>Test application in local developement environment (LocalTest)</li>
+<li>Test application in local development environment (LocalTest)</li>
 </ul>
 <h2 id="tasks">Tasks</h2>
 
@@ -1186,8 +1186,8 @@ be setting up the first page of your application for newcomers and verify that e
 	</div>
 	<div id="expandable-create-new-application" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
-			<p>Create the application in Altinn Studio with the organization that you have access to as an owner.
-Alternatively, you can create the application with you as the owner, if you are not testing it in a test environment.</p>
+			<p>Create a new application in Altinn Studio, the owner should be an organization that you have access to.
+If you are only running the application locally you can set yourself as the owner.</p>
 <h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
 <ul>
 <li>
@@ -1195,7 +1195,7 @@ Alternatively, you can create the application with you as the owner, if you are 
 of repositories Sogndal keeps in Altinn Studio.</p>
 </li>
 <li>
-<p>There are no preliminary plans for yearly revisions of the app,
+<p>There are currently no plans for yearly revisions of the app,
 so the year does not need to be taken into account.</p>
 </li>
 </ul>
@@ -1230,11 +1230,11 @@ so the year does not need to be taken into account.</p>
 	<div id="expandable-upload-datamodel" class="a-collapseContent collapse" role="tabpanel">
 		<div class="a-collapseContent-inside">
 			<p>The municipality of Sogndal has created <a href="/app/app-dev-course/modul1/datamodel.xsd">a data model</a>
-that represents data they wish to collect from future residents.</p>
-<div class="notices info" >As an app developer you will in some cases have to create a data model 
-for a service yourself. You will then be able to use the data modelling tool in 
-Altinn Studio (launching Spring 2022), or use an existing data model as a starting point and 
-edit it in for example Visual Studio or a text editing program of your own choosing.</div>
+representing data they wish to collect from future residents.</p>
+<div class="notices info" >In some cases you might have to create the data model 
+for a service yourself. This can be done by using the data modelling tool in 
+Altinn Studio (launching Spring 2022), or by using an existing model as a starting point and 
+editing it using a text editor.</div>
 <ol>
 <li>
 <p><a href="datamodel.xsd">Download the xsd-file</a>, open it in a text editing program
@@ -1252,8 +1252,8 @@ and take a closer look at the contents.</p>
 <li>Which data is it the service owner wishes to collect here?</li>
 <li>Which effect has <strong>&lt;minOccurs&gt;</strong> in the data model? You may notice that the field has a different value for <em>Innflytter.Fornavn</em> and <em>Innflytter.Mellomnavn</em>.</li>
 <li>Which other properties is set on the field <em>Innflytter.Mellomnavn</em>?</li>
-<li>A <em>.C#</em>, <em>.metadata.json</em> and <em>.schema.json</em> file has been generated in addition to the <em>.xsd</em> file you uploaded. What is the correlation between these files?</li>
-<li>Some restrictions from the data model is not transferred to the <em>C#</em>-file, which ones? Some new properties has also been added, which ones?</li>
+<li>A <em>.cs</em>, <em>.metadata.json</em> and <em>.schema.json</em> file has been generated in addition to the <em>.xsd</em> file you uploaded. What is the correlation between these files?</li>
+<li>Some restrictions from the data model are not transferred to the <em>C#</em>-file, which ones? Some new properties have also been added, which ones?</li>
 </ul>
 <h3 id="useful-documentation">Useful documentation</h3>
 <ul>
@@ -1291,7 +1291,7 @@ descriptive titles and descriptions.</p>
 <div class="notices warning" ><strong>NOTE</strong>: Display name for the application must be changed in both <code>App/config/applicationMetadata.json</code> and in the text resources.</div>
 <h3 id="requirements-from-the-municipality">Requirements from the municipality</h3>
 <ul>
-<li>All inputfields should have descriptive labels that clarifies what should be filled in.</li>
+<li>All input fields should have descriptive labels that clarifies what should be filled in.</li>
 <li>The application must be available in bokmål, nynorsk and english.
 In a first edition it is sufficient that only one of these languages is available.</li>
 <li>It is important that the display name of the application sounds good and is descriptive of the service.</li>
@@ -1341,9 +1341,9 @@ or manually in the json-file that describes the appearance of a from page <em>Fo
 <ul>
 <li>Name and age of the person who is a newcomer
 <ul>
-<li>Firstname</li>
-<li>Middlename (optional)</li>
-<li>Lastname</li>
+<li>First name</li>
+<li>Middle name (optional)</li>
+<li>Last name</li>
 <li>Age</li>
 </ul>
 </li>
@@ -1465,7 +1465,7 @@ Furthermore, you have cloned the repository locally to further develop the appli
 <p>The service should be able to run on your local computer with LocalTest and you should be able to fill in the fields.</p>
 <p><strong>Remember to <em>push</em> your local changes to make them available in Altinn Studio when you are happy with them.</strong></p>
 <h3 id="solution">Solution</h3>
-<p>If you have not completed all the steps, we have an <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/1">example of a solution</a> that you can use as inspiration.</p>
+<p>If you have not completed all the steps, we have an <a href="https://altinn.studio/repos/ttd/tilflytter-sogndal-lf/src/branch/bolk/1">example solution</a> that you can use as inspiration.</p>
 <figure><a href="/app/app-dev-course/modul1/data-screenshot.png"><img src="/app/app-dev-course/modul1/data-screenshot.png" alt="Screenshot of data collecting page" title="Screenshot of data collecting page" /></a><figcaption><h4>Screenshot of data collecting page</h4></figcaption></figure>
 
 

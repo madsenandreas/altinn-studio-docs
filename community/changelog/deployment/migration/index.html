@@ -121,7 +121,7 @@ if(host != "localhost")
 <script src="/js/search.js"></script></div>
     <ul id="docsmenu" class="topics">
       <li class="dd-item">
-        <a href="/app/"><span>Create apps</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/"><span>Create apps</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/getting-started/"><span>Get started</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -221,7 +221,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/design/guidelines/wcag/"><span>Accessibility</span></a></li></ul></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/"><span>Development</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/"><span>Development</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/data/"><span>Data</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -323,7 +323,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/logic/validation/"><span>Validation</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/"><span>Configuration</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/"><span>MessageBox</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -331,7 +331,7 @@ if(host != "localhost")
       <li class="dd-item">
         <a href="/app/development/configuration/messagebox/presentationfields/"><span>Presentation fields</span></a></li></ul></li>
       <li class="dd-item">
-        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
+        <a href="/app/development/configuration/authorization/"><span>Authorization</span><i class="fa fa-sort-down fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
         <a href="/app/development/configuration/authorization/guidelines_authorization/"><span>Guidelines</span><i class="fa fa-caret-right fa-lg category-icon"></i></a><ul>
       <li class="dd-item">
@@ -1199,7 +1199,7 @@ if(host != "localhost")
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">dependencies</span>:
 </span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">name</span>: deployment
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">repository</span>: https://charts.altinn.studio/
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">version</span>: <span style="color:#bd93f9">2.5.0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">version</span>: <span style="color:#bd93f9">2.8.0</span>
 </span></span></code></pre></div><p>You are using the latest deployment strategy.</p>
 <p>How to configure your deployment is documented <a href="/app/development/configuration/deployment">here</a></p>
 <div class="notices info" >Newer version are available. If the new version is a major version please note that there could be breaking changes.</div>
@@ -1211,7 +1211,7 @@ if(host != "localhost")
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">dependencies</span>:
 </span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">name</span>: deployment
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">repository</span>: https://charts.altinn.studio/
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">version</span>: <span style="color:#bd93f9">2.5.0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">version</span>: <span style="color:#bd93f9">2.8.0</span>
 </span></span></code></pre></div>Your Chart.yaml should now look like this:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">apiVersion</span>: v1
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">description</span>: A Helm chart for Kubernetes
@@ -1222,7 +1222,7 @@ if(host != "localhost")
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">dependencies</span>:
 </span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">name</span>: deployment
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">repository</span>: https://charts.altinn.studio/
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">version</span>: <span style="color:#bd93f9">2.5.0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">version</span>: <span style="color:#bd93f9">2.8.0</span>
 </span></span></code></pre></div></li>
 <li>Add a new line at the top of your values.yaml containing the string <code>deployment:</code> and indent all the old lines with two spaces (yaml treats spaces and tab diffrently so check that you add spaces) <br><br>Given that your values.yaml looked like this:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">replicaCount</span>: <span style="color:#bd93f9">3</span>

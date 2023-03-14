@@ -634,6 +634,9 @@ if(host != "localhost")
           </div><div id="body-inner"><h1 class="a-fontBold">Hva er nytt</h1>
               <p class="a-leadText" id="leadText">Oversikt over endringer som ble introdusert i v2 av deployment.</p><h2>På denne siden:</h2><nav id="TableOfContents">
   <ul>
+    <li><a href="#280">2.8.0</a></li>
+    <li><a href="#270">2.7.0</a></li>
+    <li><a href="#260">2.6.0</a></li>
     <li><a href="#250">2.5.0</a></li>
     <li><a href="#240">2.4.0</a></li>
     <li><a href="#230">2.3.0</a></li>
@@ -641,7 +644,20 @@ if(host != "localhost")
     <li><a href="#210">2.1.0</a></li>
     <li><a href="#200">2.0.0</a></li>
   </ul>
-</nav><h2 id="250">2.5.0</h2>
+</nav><h2 id="280">2.8.0</h2>
+<ul>
+<li>Lagt til annotation config.linkerd.io/skip-outbound-ports: &ldquo;443&rdquo;</li>
+<li>lagt til port 80 i l5d-dst-override url i middleware</li>
+</ul>
+<h2 id="270">2.7.0</h2>
+<ul>
+<li>Oppdatert timeoutSeconds: 30 for readiness og liveness prober</li>
+</ul>
+<h2 id="260">2.6.0</h2>
+<ul>
+<li>Lagt til opsjon for startupprobe</li>
+</ul>
+<h2 id="250">2.5.0</h2>
 <h3 id="endringer-innført">Endringer innført</h3>
 <ul>
 <li>Øke verdi resource request memory til 256Mi</li>

@@ -675,7 +675,7 @@ if(host != "localhost")
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">dependencies</span>:
 </span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">name</span>: deployment
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">repository</span>: https://charts.altinn.studio/
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">version</span>: <span style="color:#bd93f9">2.5.0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">version</span>: <span style="color:#bd93f9">2.8.0</span>
 </span></span></code></pre></div><p>Benytter din applikasjon siste deployment strategi.</p>
 <p>Hvordan du konfigurerer din deployment er dokumentert <a href="/nb/app/development/configuration/deployment">her</a></p>
 <div class="notices info" >Nye  versjoner er tilgjengelige. Hvis det er ny major versjon må du være obs på breaking changes.</div>
@@ -687,7 +687,7 @@ if(host != "localhost")
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">dependencies</span>:
 </span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">name</span>: deployment
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">repository</span>: https://charts.altinn.studio/
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">version</span>: <span style="color:#bd93f9">2.5.0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">version</span>: <span style="color:#bd93f9">2.8.0</span>
 </span></span></code></pre></div>Your Chart.yaml should now look like this:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">apiVersion</span>: v1
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">description</span>: A Helm chart for Kubernetes
@@ -698,7 +698,7 @@ if(host != "localhost")
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">dependencies</span>:
 </span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">name</span>: deployment
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">repository</span>: https://charts.altinn.studio/
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">version</span>: <span style="color:#bd93f9">2.5.0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">version</span>: <span style="color:#bd93f9">2.8.0</span>
 </span></span></code></pre></div></li>
 <li>Legg til en ny linje i toppen av values.yaml og skriv inn <code>deployment:</code> på denne linjen. Legg til to space først på hver linje etter dette (yaml behandler tab og mellomrom forskjellig så forsikre deg om at det er mellomrom). <br><br>Gitt at din values.yaml ser ut som det her:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">replicaCount</span>: <span style="color:#bd93f9">3</span>

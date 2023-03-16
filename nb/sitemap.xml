@@ -626,6 +626,18 @@
                 href="https://docs.altinn.studio/nb/app/design/guidelines/tone-of-voice/"
                 />
   </url><url>
+    <loc>https://docs.altinn.studio/nb/app/development/ux/footer/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.altinn.studio/app/development/ux/footer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nb"
+                href="https://docs.altinn.studio/nb/app/development/ux/footer/"
+                />
+  </url><url>
     <loc>https://docs.altinn.studio/nb/community/</loc>
     <xhtml:link
                 rel="alternate"

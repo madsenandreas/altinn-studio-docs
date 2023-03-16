@@ -14,7 +14,7 @@ eller via skjemaeditor i Atinn Studio ved å bruke Gruppe-komponenten.
 Noen punkter å notere seg ved manuelt oppsett:
 
 - Gruppen må ligge _før_ ev. komponenter som skal inngå i gruppen i FormLayout.json.
-- En gruppe _MÅ_ ha `type: "group"` satt for at den skal registreres som en gruppe
+- En gruppe _MÅ_ ha `type: "Group"` satt for at den skal registreres som en gruppe
 
 Eksempel på en (repeterende) gruppe definert i `FormLayout.json` som inneholder 4 felter som kan repetere 3 ganger:
 En gruppe defineres på følgende måte i FormLayout.json:
@@ -22,7 +22,7 @@ En gruppe defineres på følgende måte i FormLayout.json:
 ```json {hl_lines=[3,"8-12"]}
 {
   "id": "<unik-id>",
-  "type": "group",
+  "type": "Group",
   "dataModelBindings": {
     "group": "<gruppen i datamodellen (kun repeterende grupper)>"
   },
@@ -44,7 +44,7 @@ En gruppe defineres på følgende måte i FormLayout.json:
 | Parameter             | Påkrevd | Beskrivelse                                                                                                                               |
 | --------------------- | ------- |-------------------------------------------------------------------------------------------------------------------------------------------|
 | id                    | Ja      | Unik ID, tilsvarer ID på andre komponenter. Må være unik i FormLayout.json-filen.                                                         |
-| type                  | Ja      | MÅ være "group". Sier at dette er en gruppe.                                                                                              |
+| type                  | Ja      | MÅ være "Group". Sier at dette er en gruppe.                                                                                              |
 | dataModelBindings     | Nei     | MÅ være satt for repeterende grupper, med `group`-parameteren som i eksempelet over. Skal peke på den repeterende gruppen i datamodellen. |
 | textResourceBindings  | Nei     | Kan være satt for repeterende grupper, se [beskrivelse.](#textresourcebindings)                                                           |
 | maxCount              | Ja      | Antall ganger en gruppe kan repetere. Settes til `1` om gruppen ikke er repeterende.                                                      |
